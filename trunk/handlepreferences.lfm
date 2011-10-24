@@ -1,0 +1,116 @@
+object PreferencesDialog: TPreferencesDialog
+  Left = 442
+  Height = 275
+  Top = 568
+  Width = 522
+  AlphaBlend = True
+  AlphaBlendValue = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsDialog
+  Caption = 'SimThyr Preferences'
+  ClientHeight = 275
+  ClientWidth = 522
+  OnShow = FormShow
+  LCLVersion = '0.9.30.2RC1'
+  Visible = True
+  object OKButton: TButton
+    Left = 425
+    Height = 25
+    Top = 228
+    Width = 75
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 13
+    BorderSpacing.Bottom = 13
+    Caption = 'OK'
+    Default = True
+    OnClick = OKButtonClick
+    TabOrder = 0
+  end
+  object CancelButton: TButton
+    AnchorSideRight.Control = OKButton
+    Left = 337
+    Height = 25
+    Top = 228
+    Width = 75
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 13
+    BorderSpacing.Bottom = 13
+    Cancel = True
+    Caption = 'Cancel'
+    OnClick = CancelButtonClick
+    TabOrder = 1
+  end
+  object GroupBox1: TGroupBox
+    Left = 24
+    Height = 185
+    Top = 24
+    Width = 476
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Right = 13
+    Caption = 'Measurement Units:'
+    ClientHeight = 163
+    ClientWidth = 468
+    TabOrder = 2
+    object TSHMassPrefixCombo: TComboBox
+      Left = 76
+      Height = 21
+      Top = 14
+      Width = 40
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        'm'
+        'µ'
+      )
+      OnChange = TSHMassPrefixComboChange
+      TabOrder = 0
+      Text = 'm'
+    end
+    object Label1: TLabel
+      Left = 12
+      Height = 17
+      Top = 18
+      Width = 26
+      Caption = 'TSH'
+      ParentColor = False
+    end
+    object TSHMassUnitLabel: TLabel
+      Left = 124
+      Height = 17
+      Top = 18
+      Width = 17
+      Caption = 'U/'
+      ParentColor = False
+    end
+    object TSHVolumePrefixCombo: TComboBox
+      Left = 148
+      Height = 21
+      Top = 14
+      Width = 40
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+        'm'
+      )
+      OnChange = TSHVolumePrefixComboChange
+      TabOrder = 1
+    end
+    object TSHVolumeUnitLabel: TLabel
+      Left = 194
+      Height = 17
+      Top = 18
+      Width = 5
+      Caption = 'l'
+      ParentColor = False
+    end
+    object TSHExampleLabel: TLabel
+      Left = 244
+      Height = 17
+      Top = 18
+      Width = 63
+      Caption = 'Example: '
+      ParentColor = False
+    end
+  end
+end
