@@ -6,6 +6,8 @@ program SimThyr;
 
 { This is the main project file }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}{$H+}{$R+}
 {$define UseCThreads}
 

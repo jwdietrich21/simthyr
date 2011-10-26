@@ -6,6 +6,8 @@ unit StructureParameters;
 
 { This unit iplements an editor for structure parameters }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}
 
 interface

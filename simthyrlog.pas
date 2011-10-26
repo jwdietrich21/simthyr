@@ -6,6 +6,8 @@ unit SimThyrLog;
 
 { This unit draws a spreadsheet-like grid with simulation results }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}{$R+}
 
 interface
@@ -123,4 +125,4 @@ initialization
   {$I simthyrlog.lrs}
 
 end.
-
+

@@ -6,6 +6,8 @@ unit Simulator;
 
 { This unit implements the main simulation methods }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}{$R+}
 {$define UseCThreads}
 

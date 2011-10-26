@@ -6,6 +6,8 @@ unit SimOptions;
 
 { This unit supports a small dialog with additional simulation settings }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}
 
 interface
@@ -100,4 +102,4 @@ initialization
   {$I simoptions.lrs}
 
 end.
-
+

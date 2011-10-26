@@ -6,6 +6,8 @@ unit ScenarioHandler;
 
 { This unit reads and writes scenarios as XML files }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}
 
 interface

@@ -6,6 +6,8 @@ unit ShowIPS;
 
 { This unit draws the information processing structure }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}{$R+}
 
 interface

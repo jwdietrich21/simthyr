@@ -6,6 +6,8 @@ unit LaunchDialog;
 
 { This unit delivers the launch dialog with simulation settings }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}{$R+}
 
 interface

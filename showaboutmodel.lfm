@@ -16,13 +16,13 @@ object AboutModelForm: TAboutModelForm
   ClientHeight = 730
   ClientWidth = 577
   Color = clWhite
-  LCLVersion = '0.9.30'
+  LCLVersion = '0.9.30.2RC2'
   Visible = True
   object Label1: TLabel
     Left = 56
-    Height = 14
+    Height = 17
     Top = 96
-    Width = 68
+    Width = 78
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -42,10 +42,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 360
-    Height = 14
+    Left = 307
+    Height = 17
     Top = 64
-    Width = 160
+    Width = 213
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -111,4 +111,4 @@ object AboutModelForm: TAboutModelForm
     ScrollBars = ssAutoBoth
     TabOrder = 1
   end
-end
+end

@@ -336,7 +336,7 @@ LazarusResources.Add('TPrediction','FORMDATA',[
   +#255#172'A'#255#255#172'A'#227'?'#172'A'#193#15#172'A'#192#15#172'A'#192#7
   +#172'A'#128#7#172'A'#128#7#172'A'#132#135#172'A'#140#135#172'A'#140#195#172
   +'A'#140#195#172'A'#204#227#172'A'#205#243#172'A'#239#255#172'A'#255#255#172
-  +'A'#10'LCLVersion'#6#11'0.9.30.2RC1'#7'Visible'#9#0#5'TMemo'#5'Memo1'#4'Left'
+  +'A'#10'LCLVersion'#6#11'0.9.30.2RC2'#7'Visible'#9#0#5'TMemo'#5'Memo1'#4'Left'
   +#2#16#6'Height'#3#128#0#3'Top'#2#16#5'Width'#3'/'#1#7'Anchors'#11#5'akTop'#6
   +'akLeft'#7'akRight'#8'akBottom'#0#13'Lines.Strings'#1#6#17'Predicted values:'
   +#0#8'ReadOnly'#9#10'ScrollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#0#0#0#0

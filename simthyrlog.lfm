@@ -306,12 +306,12 @@ object SimThyrLogWindow: TSimThyrLogWindow
     AC41E33FAC41C10FAC41C00FAC41C007AC418007AC418007AC418487AC418C87
     AC418CC3AC418CC3AC41CCE3AC41CDF3AC41EFFFAC41FFFFAC41
   }
-  LCLVersion = '0.9.30.2RC1'
+  LCLVersion = '0.9.30.2RC2'
   Visible = True
   object ValuesGrid: TStringGrid
     Cursor = crIBeam
     Left = 0
-    Height = 249
+    Height = 257
     Top = 0
     Width = 696
     Align = alClient
@@ -361,9 +361,9 @@ object SimThyrLogWindow: TSimThyrLogWindow
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
+    Height = 15
     Hint = 'Number of iterations'
-    Top = 249
+    Top = 257
     Width = 696
     Panels = <    
       item
@@ -391,4 +391,4 @@ object SimThyrLogWindow: TSimThyrLogWindow
     Anchors = [akLeft, akRight, akBottom]
     TabOrder = 2
   end
-end
+end

@@ -6,6 +6,8 @@ unit Splash;
 
 { This unit implements a splash screen, while other windows are loaded }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}
 
 interface

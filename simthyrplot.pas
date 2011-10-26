@@ -6,6 +6,8 @@ unit SimThyrPlot;
 
 { This unit plots values }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}{$H+}{$R+}
 
 interface

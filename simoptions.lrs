@@ -6,20 +6,20 @@ LazarusResources.Add('TSimOptionsDlg','FORMDATA',[
   +'BorderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderStyle'#7#8'bsDia'
   +'log'#7'Caption'#6#29'Additional Simulation Options'#12'ClientHeight'#3#131#0
   +#11'ClientWidth'#3#143#1#5'Color'#7#7'clWhite'#6'OnShow'#7#8'FormShow'#10'LC'
-  +'LVersion'#6#6'0.9.30'#7'Visible'#9#0#9'TCheckBox'#13'NoiseCheckBox'#4'Left'
-  +#2'('#6'Height'#2#17#4'Hint'#6'&Use noise at the level of hypothalamus'#3'To'
-  +'p'#2#24#5'Width'#2'k'#7'Caption'#6#17'Superimpose noise'#7'Checked'#9#8'OnC'
-  +'hange'#7#19'NoiseCheckBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#5'State'
-  +#7#9'cbChecked'#8'TabOrder'#2#0#0#0#9'TCheckBox'#15'PreviewCheckBox'#4'Left'
-  +#2'('#6'Height'#2#17#4'Hint'#6'_Use the calculated equilibrium values as sho'
-  +'wn in the preview palette as initial hormone levels'#3'Top'#2'0'#5'Width'#3
-  +#248#0#7'Caption'#6'1Use calculated equilibrium values as start values'#7'Ch'
-  +'ecked'#9#8'OnChange'#7#21'PreviewCheckBoxChange'#14'ParentShowHint'#8#8'Sho'
-  +'wHint'#9#5'State'#7#9'cbChecked'#8'TabOrder'#2#1#0#0#7'TButton'#8'OKButton'
-  +#4'Left'#3'2'#1#6'Height'#2#25#3'Top'#2'Y'#5'Width'#2'K'#7'Anchors'#11#7'akR'
-  +'ight'#8'akBottom'#0#7'Caption'#6#2'OK'#7'Default'#9#7'OnClick'#7#13'OKButto'
-  +'nClick'#8'TabOrder'#2#2#0#0#7'TButton'#12'CancelButton'#4'Left'#3#218#0#6'H'
-  +'eight'#2#25#3'Top'#2'Y'#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0
-  +#6'Cancel'#9#7'Caption'#6#6'Cancel'#7'OnClick'#7#17'CancelButtonClick'#8'Tab'
-  +'Order'#2#3#0#0#0
-]);
+  +'LVersion'#6#11'0.9.30.2RC2'#7'Visible'#9#0#9'TCheckBox'#13'NoiseCheckBox'#4
+  +'Left'#2'('#6'Height'#2#18#4'Hint'#6'&Use noise at the level of hypothalamus'
+  +#3'Top'#2#24#5'Width'#3#140#0#7'Caption'#6#17'Superimpose noise'#7'Checked'#9
+  +#8'OnChange'#7#19'NoiseCheckBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#5
+  +'State'#7#9'cbChecked'#8'TabOrder'#2#0#0#0#9'TCheckBox'#15'PreviewCheckBox'#4
+  +'Left'#2'('#6'Height'#2#18#4'Hint'#6'_Use the calculated equilibrium values '
+  +'as shown in the preview palette as initial hormone levels'#3'Top'#2'0'#5'Wi'
+  +'dth'#3'F'#1#7'Caption'#6'1Use calculated equilibrium values as start values'
+  +#7'Checked'#9#8'OnChange'#7#21'PreviewCheckBoxChange'#14'ParentShowHint'#8#8
+  +'ShowHint'#9#5'State'#7#9'cbChecked'#8'TabOrder'#2#1#0#0#7'TButton'#8'OKButt'
+  +'on'#4'Left'#3'2'#1#6'Height'#2#25#3'Top'#2'Y'#5'Width'#2'K'#7'Anchors'#11#7
+  +'akRight'#8'akBottom'#0#7'Caption'#6#2'OK'#7'Default'#9#7'OnClick'#7#13'OKBu'
+  +'ttonClick'#8'TabOrder'#2#2#0#0#7'TButton'#12'CancelButton'#4'Left'#3#218#0#6
+  +'Height'#2#25#3'Top'#2'Y'#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'
+  +#0#6'Cancel'#9#7'Caption'#6#6'Cancel'#7'OnClick'#7#17'CancelButtonClick'#8'T'
+  +'abOrder'#2#3#0#0#0
+]);
