@@ -11,7 +11,7 @@ object PreferencesDialog: TPreferencesDialog
   ClientHeight = 275
   ClientWidth = 522
   OnShow = FormShow
-  LCLVersion = '0.9.30.2RC1'
+  LCLVersion = '0.9.30.2RC2'
   Visible = True
   object OKButton: TButton
     Left = 425

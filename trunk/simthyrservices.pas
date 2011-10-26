@@ -7,6 +7,8 @@ unit SimThyrServices;
 
 { This unit provides some global functions }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}{$R+}
 
 interface

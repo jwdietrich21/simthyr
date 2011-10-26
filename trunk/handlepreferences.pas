@@ -6,6 +6,8 @@ unit HandlePreferences;
 
 { This unit handles global application preferences }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}
 
 interface

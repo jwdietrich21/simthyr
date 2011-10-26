@@ -337,7 +337,7 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +#172'A'#192#15#172'A'#192#7#172'A'#128#7#172'A'#128#7#172'A'#132#135#172'A'
   +#140#135#172'A'#140#195#172'A'#140#195#172'A'#204#227#172'A'#205#243#172'A'
   +#239#255#172'A'#255#255#172'A'#8'OnCreate'#7#10'FormCreate'#10'LCLVersion'#6
-  +#11'0.9.30.2RC1'#7'Visible'#9#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3
+  +#11'0.9.30.2RC2'#7'Visible'#9#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3
   +#190#0#3'Top'#2'('#5'Width'#3#10#3#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRigh'
   +'t'#0#12'ClientHeight'#3#190#0#11'ClientWidth'#3#10#3#8'TabOrder'#2#0#7'OnCl'
   +'ick'#7#11'Panel1Click'#0#9'TComboBox'#9'ComboBox1'#4'Left'#3'b'#2#6'Height'

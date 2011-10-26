@@ -6,6 +6,8 @@ unit AboutDialog;
 
 { This unit implements an about-box }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}
 
 interface

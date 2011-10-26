@@ -6,6 +6,8 @@ unit SimThyrTypes;
 
 { This unit provides types and global variables for other SimThyr units }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}
 
 interface

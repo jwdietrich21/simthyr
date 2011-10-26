@@ -6,6 +6,8 @@ unit SimThyrMain;
 
 { This unit provides global GUI functions, toolbar and menubar handling }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}{$H+}{$R+}
 
 interface

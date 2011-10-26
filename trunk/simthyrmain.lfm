@@ -315,7 +315,7 @@ object SimThyrToolbar: TSimThyrToolbar
   OnCreate = FormCreate
   OnShow = FormShow
   ShowInTaskBar = stAlways
-  LCLVersion = '0.9.30.2RC1'
+  LCLVersion = '0.9.30.2RC2'
   WindowState = wsMaximized
   object ToolBar1: TToolBar
     Left = 0

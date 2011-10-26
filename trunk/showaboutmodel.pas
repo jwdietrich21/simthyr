@@ -6,6 +6,8 @@ unit ShowAboutModel;
 
 { This unit draws a window with additional information and references }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}
 
 interface

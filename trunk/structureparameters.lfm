@@ -1,7 +1,7 @@
 object StructureParameters: TStructureParameters
-  Left = 430
+  Left = 339
   Height = 669
-  Top = 169
+  Top = 177
   Width = 601
   AlphaBlend = True
   AlphaBlendValue = 0
@@ -13,7 +13,7 @@ object StructureParameters: TStructureParameters
   Color = clWhite
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '0.9.30.2RC1'
+  LCLVersion = '0.9.30.2RC2'
   Visible = True
   object Label1: TLabel
     Left = 24

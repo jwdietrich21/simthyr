@@ -12,14 +12,14 @@ object SimOptionsDlg: TSimOptionsDlg
   ClientWidth = 399
   Color = clWhite
   OnShow = FormShow
-  LCLVersion = '0.9.30'
+  LCLVersion = '0.9.30.2RC2'
   Visible = True
   object NoiseCheckBox: TCheckBox
     Left = 40
-    Height = 17
+    Height = 18
     Hint = 'Use noise at the level of hypothalamus'
     Top = 24
-    Width = 107
+    Width = 140
     Caption = 'Superimpose noise'
     Checked = True
     OnChange = NoiseCheckBoxChange
@@ -30,10 +30,10 @@ object SimOptionsDlg: TSimOptionsDlg
   end
   object PreviewCheckBox: TCheckBox
     Left = 40
-    Height = 17
+    Height = 18
     Hint = 'Use the calculated equilibrium values as shown in the preview palette as initial hormone levels'
     Top = 48
-    Width = 248
+    Width = 326
     Caption = 'Use calculated equilibrium values as start values'
     Checked = True
     OnChange = PreviewCheckBoxChange
@@ -64,4 +64,4 @@ object SimOptionsDlg: TSimOptionsDlg
     OnClick = CancelButtonClick
     TabOrder = 3
   end
-end
+end

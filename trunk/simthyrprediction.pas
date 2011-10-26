@@ -6,6 +6,8 @@ unit SimThyrPrediction;
 
 { This unit implements a window showing predicted equilibrium values }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}
 
 interface

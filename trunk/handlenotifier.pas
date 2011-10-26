@@ -6,6 +6,8 @@ unit HandleNotifier;
 
 { This unit draws a small notifier window that informs about simulation running }
 
+{ Source code released under the BSD License }
+
 {$mode objfpc}
 
 interface
