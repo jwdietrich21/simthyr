@@ -476,13 +476,13 @@ end;
 
 initialization
   {$I simthyrmain.lrs}
-  gParameterLabels[0] := 'Portal TRH';
-  gParameterLabels[1] := 'Pituitary TSH';
-  gParameterLabels[2] := 'Serum TSH';
-  gParameterLabels[3] := 'Serum total T4';
-  gParameterLabels[4] := 'Serum free T4';
-  gParameterLabels[5] := 'Serum total T3';
-  gParameterLabels[6] := 'Serum free T3';
-  gParameterLabels[7] := 'Central T3';
+  gParameterLabel[0] := 'Portal TRH';
+  gParameterLabel[1] := 'Pituitary TSH';
+  gParameterLabel[2] := 'Serum TSH';
+  gParameterLabel[3] := 'Serum total T4';
+  gParameterLabel[4] := 'Serum free T4';
+  gParameterLabel[5] := 'Serum total T3';
+  gParameterLabel[6] := 'Serum free T3';
+  gParameterLabel[7] := 'Central T3';
 end.
 

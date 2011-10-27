@@ -183,7 +183,7 @@ end;
 
 procedure TValuesPlot.ComboBox1Change(Sender: TObject);
 begin
- ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabels[ComboBox1.ItemIndex];
+ ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabel[ComboBox1.ItemIndex] + ': ' + gParameterUnit[ComboBox1.ItemIndex];
  ColorListBox1.Selected := gDefaultColors[ComboBox1.ItemIndex];
  DrawPlot(not graphready);
 end;
@@ -258,7 +258,7 @@ end;
 
 procedure TValuesPlot.ComboBox2Change(Sender: TObject);
 begin
-  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabels[ComboBox2.ItemIndex];
+  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex] + ': ' + gParameterUnit[ComboBox2.ItemIndex];
   ColorListBox2.Selected := gDefaultColors[ComboBox2.ItemIndex];
   DrawPlot(not graphready);
 end;
@@ -271,8 +271,8 @@ begin
   ColorListBox2.Selected := clBlue;
   ValuesPlot.Chart1.Title.Visible := false;
   ValuesPlot.Chart2.Title.Visible := false;
-  ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabels[ComboBox1.ItemIndex];
-  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabels[ComboBox2.ItemIndex];
+  ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabel[ComboBox1.ItemIndex] + ': ' + gParameterUnit[ComboBox1.ItemIndex];
+  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex] + ': ' + gParameterUnit[ComboBox2.ItemIndex];
   DrawPlot(true);
   gSelectedChart := nil;
   gDefaultColors[0] := clTeal;
