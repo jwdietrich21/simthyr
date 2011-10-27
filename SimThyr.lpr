@@ -72,6 +72,10 @@ begin
   Application.CreateForm(TAboutModelForm, AboutModelForm);
   AboutModelForm.Hide;
   AboutModelForm.AlphaBlend := false;
+  Application.CreateForm(TPreferencesDialog, PreferencesDialog);
+  PreferencesDialog.Hide;
+  PreferencesDialog.AlphaBlend := false;
+  SetUnits;
   Application.CreateForm(TIPSForm, IPSForm);
   with IPSForm do
   begin
@@ -107,9 +111,6 @@ begin
   Application.CreateForm(TSimOptionsDlg, SimOptionsDlg);
   SimOptionsDlg.Hide;
   SimOptionsDlg.AlphaBlend := false;
-  Application.CreateForm(TPreferencesDialog, PreferencesDialog);
-  PreferencesDialog.Hide;
-  PreferencesDialog.AlphaBlend := false;
   Notice := TNotice.Create(SimThyrLogWindow);
   Notice.Hide;
   Notice.Label1.Caption := WAIT_TITLE;

@@ -1,6 +1,6 @@
 object PreferencesDialog: TPreferencesDialog
   Left = 442
-  Height = 275
+  Height = 284
   Top = 568
   Width = 522
   AlphaBlend = True
@@ -8,7 +8,7 @@ object PreferencesDialog: TPreferencesDialog
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   Caption = 'SimThyr Preferences'
-  ClientHeight = 275
+  ClientHeight = 284
   ClientWidth = 522
   OnShow = FormShow
   LCLVersion = '0.9.30.2RC2'
@@ -16,7 +16,7 @@ object PreferencesDialog: TPreferencesDialog
   object OKButton: TButton
     Left = 425
     Height = 25
-    Top = 228
+    Top = 237
     Width = 75
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 13
@@ -30,7 +30,7 @@ object PreferencesDialog: TPreferencesDialog
     AnchorSideRight.Control = OKButton
     Left = 337
     Height = 25
-    Top = 228
+    Top = 237
     Width = 75
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 13
@@ -42,13 +42,13 @@ object PreferencesDialog: TPreferencesDialog
   end
   object GroupBox1: TGroupBox
     Left = 24
-    Height = 185
+    Height = 200
     Top = 24
     Width = 476
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Right = 13
     Caption = 'Measurement Units:'
-    ClientHeight = 163
+    ClientHeight = 178
     ClientWidth = 468
     TabOrder = 2
     object TSHMassPrefixCombo: TComboBox
@@ -112,5 +112,69 @@ object PreferencesDialog: TPreferencesDialog
       Caption = 'Example: '
       ParentColor = False
     end
+    object Label2: TLabel
+      Left = 12
+      Height = 17
+      Top = 46
+      Width = 26
+      Caption = 'TT4'
+      ParentColor = False
+    end
+    object TT4ExampleLabel1: TLabel
+      Left = 244
+      Height = 17
+      Top = 46
+      Width = 63
+      Caption = 'Example: '
+      ParentColor = False
+    end
+  end
+  object Label3: TLabel
+    Left = 40
+    Height = 17
+    Top = 120
+    Width = 24
+    Caption = 'FT4'
+    ParentColor = False
+  end
+  object FT4ExampleLabel2: TLabel
+    Left = 272
+    Height = 17
+    Top = 120
+    Width = 63
+    Caption = 'Example: '
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 40
+    Height = 17
+    Top = 152
+    Width = 26
+    Caption = 'TT3'
+    ParentColor = False
+  end
+  object TT3ExampleLabel3: TLabel
+    Left = 272
+    Height = 17
+    Top = 152
+    Width = 63
+    Caption = 'Example: '
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 40
+    Height = 17
+    Top = 184
+    Width = 24
+    Caption = 'FT3'
+    ParentColor = False
+  end
+  object FT3ExampleLabel4: TLabel
+    Left = 272
+    Height = 17
+    Top = 184
+    Width = 63
+    Caption = 'Example: '
+    ParentColor = False
   end
 end

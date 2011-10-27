@@ -98,11 +98,12 @@ var
  phi, chi, omega, f, dTSH3: real;
  k6, k11, k8, k9, k61: real;
  gResultMatrix: tResultMatrix;
- gParameterLabels: array[0..RES_MAX_COLS - 1] of Str255;
+ gParameterLabel: array[0..RES_MAX_COLS - 1] of Str255;
+ gParameterUnit: array[0..RES_MAX_COLS -1] of String;
+ gParameterFactor: array[0..RES_MAX_COLS -1] of real;
  gDefaultColors: array[0..RES_MAX_COLS -1] of TColor;
  gSelectedChart: tChart;
  tmax_text, tmax_unit, i1_text, i1_unit: str255;
-
 
 
 implementation

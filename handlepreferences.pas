@@ -14,16 +14,24 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, SimThyrTypes;
+  StdCtrls, SimThyrTypes, SimThyrPlot;
 
 type
 
   { TPreferencesDialog }
 
   TPreferencesDialog = class(TForm)
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
     TSHExampleLabel: TLabel;
     OKButton: TButton;
     CancelButton: TButton;
+    TT4ExampleLabel1: TLabel;
+    FT4ExampleLabel2: TLabel;
+    TT3ExampleLabel3: TLabel;
+    FT3ExampleLabel4: TLabel;
     TSHMassPrefixCombo: TComboBox;
     TSHVolumePrefixCombo: TComboBox;
     GroupBox1: TGroupBox;
@@ -48,17 +56,13 @@ var
   PreferencesDialog: TPreferencesDialog;
 
 procedure InitConversionFactors;
+procedure SetUnits;
 
 implementation
 
 { TPreferencesDialog }
 
-procedure TPreferencesDialog.OKButtonClick(Sender: TObject);
-begin
-  PreferencesDialog.Close;
-end;
-
-function TSHUnit:String;
+function InterimTSHUnit:String;
 begin
   with PreferencesDialog do
     result := TSHMassPrefixCombo.Caption + TSHMassUnitLabel.Caption + TSHVolumePrefixCombo.Caption + TSHVolumeUnitLabel.Caption;
@@ -80,9 +84,21 @@ begin
   PrefixFactors[5] := 1e-15;
 end;
 
+procedure SetUnits;
+begin
+  gParameterUnit[0] := 'ng/l';
+  gParameterUnit[1] := InterimTSHUnit;
+  gParameterUnit[2] := InterimTSHUnit;
+  gParameterUnit[3] := '';
+  gParameterUnit[4] := '';
+  gParameterUnit[5] := '';
+  gParameterUnit[6] := '';
+  gParameterUnit[7] := '';
+end;
+
 procedure TPreferencesDialog.DisplayExamples;
 begin
-  TSHExampleLabel.Caption := EXAMPLE_STRING + FloatToStr(1) + ' ' + TSHUnit;
+  TSHExampleLabel.Caption := EXAMPLE_STRING + FloatToStr(1) + ' ' + InterimTSHUnit;
 end;
 
 procedure TPreferencesDialog.TSHVolumePrefixComboChange(Sender: TObject);
@@ -97,6 +113,14 @@ end;
 
 procedure TPreferencesDialog.CancelButtonClick(Sender: TObject);
 begin
+  PreferencesDialog.Close;
+end;
+
+procedure TPreferencesDialog.OKButtonClick(Sender: TObject);
+begin
+  SetUnits;
+  ValuesPlot.ComboBox1Change(Sender);
+  ValuesPlot.ComboBox2Change(Sender);
   PreferencesDialog.Close;
 end;
 
