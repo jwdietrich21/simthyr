@@ -14,16 +14,24 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, clipbrd, SimThyrServices;
+  ExtCtrls, clipbrd, Menus, SimThyrServices;
 
 type
 
   { TIPSForm }
 
   TIPSForm = class(TForm)
+    CopyItem: TMenuItem;
+    CutItem: TMenuItem;
+    DeleteItem: TMenuItem;
+    Divider1: TMenuItem;
     Image1: TImage;
+    PasteItem: TMenuItem;
+    PopupMenu1: TPopupMenu;
+    UndoItem: TMenuItem;
     procedure CopyImage;
-  private
+    procedure CopyItemClick(Sender: TObject);
+    private
     { private declarations }
   public
     { public declarations }
@@ -37,6 +45,11 @@ implementation
 procedure TIPSForm.CopyImage;
 begin
   clipboard.Assign(IPSForm.Image1.Picture);
+end;
+
+procedure TIPSForm.CopyItemClick(Sender: TObject);
+begin
+  CopyImage;
 end;
 
 initialization

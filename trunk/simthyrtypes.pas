@@ -44,11 +44,23 @@ const
  ON = 1;
  OFF = 0;
 
+ i_pos = 0;
+ t_pos = 1;
+ TRH_pos = 2;
+ pTSH_pos = 3;
+ TSH_pos = 4;
+ TT4_pos = 5;
+ FT4_pos = 6;
+ TT3_pos = 7;
+ FT3_pos = 8;
+ cT3_pos = 9;
+
  UFT4 = 1.28E-11; {Conversion factor ng/dl -> mol/l (T4)}
  UFT3 = 1.54E-12; {Conversion factor pg/ml -> mol/l (T3)}
  UTRH = 2.76E-12; {Conversion factor ng/l -> mol/l (TRH; MW=362) [Jackson 1987]}
+ UTSH = 1e-3; {Dummy conversion factor for TSH}
 
- MAXFACTORS = 6;
+ MAXFACTORS = 10;
 
  BASE_URL = 'http://simthyr.medical-cybernetics.de';
 
@@ -64,7 +76,7 @@ const
 
 type
  TableCell = TPoint;
- Str2 = string[2];
+ Str3 = string[3];
  Str255 = string[255];
  tResultMatrix = array of array of real;
  tResultContent = array[0..RES_MAX_COLS-1] of Str255;
@@ -74,8 +86,8 @@ type
 var
  nmax, nmax_old, tmax, tt, gridrows: integer;
  Werte: array[1..MAX_VARS, 1..MAX_N] of real;
- PrefixLables: array[0..MAXFACTORS-1] of Str2;
- PrefixFactors: array[0..MAXFACTORS-1] of real;
+ PrefixLabel, T4UnitLabel: array[0..MAXFACTORS - 1] of Str3;
+ PrefixFactor, T4UnitFactor: array[0..MAXFACTORS - 1] of real;
  gLabel: array[1..3] of Str255;
  gMessage: array[1..3] of Str255;
  gSelectedxVariable, gSelectedyVariable: tVariable;

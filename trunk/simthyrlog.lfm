@@ -315,6 +315,7 @@ object SimThyrLogWindow: TSimThyrLogWindow
     Top = 0
     Width = 696
     Align = alClient
+    AutoFillColumns = True
     BorderStyle = bsNone
     Color = clWhite
     ColCount = 10
@@ -322,9 +323,22 @@ object SimThyrLogWindow: TSimThyrLogWindow
     HeaderPushZones = []
     MouseWheelOption = mwGrid
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goColMoving, goTabs, goDblClickAutoSize, goSmoothScroll]
+    PopupMenu = PopupMenu1
     RowCount = 1
     TabOrder = 0
     TitleFont.Pitch = fpVariable
+    ColWidths = (
+      64
+      70
+      70
+      70
+      70
+      70
+      70
+      70
+      70
+      72
+    )
     Cells = (
       10
       0
@@ -390,5 +404,32 @@ object SimThyrLogWindow: TSimThyrLogWindow
     Width = 413
     Anchors = [akLeft, akRight, akBottom]
     TabOrder = 2
+  end
+  object PopupMenu1: TPopupMenu
+    OnPopup = PopupMenu1Popup
+    left = 608
+    top = 48
+    object UndoItem: TMenuItem
+      Caption = 'Undo'
+      Enabled = False
+    end
+    object Divider1: TMenuItem
+      Caption = '-'
+    end
+    object CutItem: TMenuItem
+      Caption = 'Cut'
+      Enabled = False
+    end
+    object CopyItem: TMenuItem
+      Caption = 'Copy'
+    end
+    object PasteItem: TMenuItem
+      Caption = 'Paste'
+      Enabled = False
+    end
+    object DeleteItem: TMenuItem
+      Caption = 'Delete'
+      Enabled = False
+    end
   end
 end

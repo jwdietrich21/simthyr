@@ -1,13 +1,13 @@
 object ValuesPlot: TValuesPlot
-  Left = 340
-  Height = 446
-  Top = 447
-  Width = 779
+  Left = 290
+  Height = 442
+  Top = 366
+  Width = 824
   AlphaBlend = True
   AlphaBlendValue = 0
   Caption = 'Chart View'
-  ClientHeight = 446
-  ClientWidth = 779
+  ClientHeight = 442
+  ClientWidth = 824
   Color = clWhite
   Constraints.MinHeight = 420
   Constraints.MinWidth = 500
@@ -315,14 +315,14 @@ object ValuesPlot: TValuesPlot
     Left = 0
     Height = 190
     Top = 40
-    Width = 778
+    Width = 823
     Anchors = [akTop, akLeft, akRight]
     ClientHeight = 190
-    ClientWidth = 778
+    ClientWidth = 823
     TabOrder = 0
     OnClick = Panel1Click
     object ComboBox1: TComboBox
-      Left = 610
+      Left = 655
       Height = 21
       Hint = 'Select a parameter to show in the plot on the left.'
       Top = 14
@@ -350,11 +350,11 @@ object ValuesPlot: TValuesPlot
       Left = 49
       Height = 179
       Top = 13
-      Width = 546
+      Width = 591
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
       ClientHeight = 179
-      ClientWidth = 546
+      ClientWidth = 591
       Color = clWhite
       ParentColor = False
       TabOrder = 1
@@ -363,7 +363,7 @@ object ValuesPlot: TValuesPlot
         Height = 164
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 541
+        Width = 586
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -396,12 +396,13 @@ object ValuesPlot: TValuesPlot
         Color = clWhite
         ParentColor = False
         ParentShowHint = False
+        PopupMenu = PopupMenu1
         ShowHint = True
         OnClick = Chart1Click
       end
     end
     object ColorListBox1: TColorListBox
-      Left = 610
+      Left = 655
       Height = 91
       Top = 53
       Width = 146
@@ -459,7 +460,7 @@ object ValuesPlot: TValuesPlot
     end
   end
   object Button1: TButton
-    Left = 523
+    Left = 568
     Height = 25
     Top = 10
     Width = 72
@@ -473,10 +474,10 @@ object ValuesPlot: TValuesPlot
     Left = 1
     Height = 190
     Top = 232
-    Width = 778
+    Width = 823
     Anchors = [akTop, akLeft, akRight]
     ClientHeight = 190
-    ClientWidth = 778
+    ClientWidth = 823
     TabOrder = 2
     OnClick = Panel2Click
     object PlotPanel2: TPanel
@@ -484,11 +485,11 @@ object ValuesPlot: TValuesPlot
       Left = 49
       Height = 179
       Top = 13
-      Width = 546
+      Width = 591
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
       ClientHeight = 179
-      ClientWidth = 546
+      ClientWidth = 591
       Color = clWhite
       ParentColor = False
       TabOrder = 0
@@ -498,7 +499,7 @@ object ValuesPlot: TValuesPlot
         Height = 164
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 541
+        Width = 586
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -531,12 +532,13 @@ object ValuesPlot: TValuesPlot
         Color = clWhite
         ParentColor = False
         ParentShowHint = False
+        PopupMenu = PopupMenu1
         ShowHint = True
         OnClick = Chart2Click
       end
     end
     object ComboBox2: TComboBox
-      Left = 611
+      Left = 656
       Height = 21
       Hint = 'Select a parameter to show in the plot on the left.'
       Top = 14
@@ -560,7 +562,7 @@ object ValuesPlot: TValuesPlot
       Text = 'Unit 2'
     end
     object ColorListBox2: TColorListBox
-      Left = 611
+      Left = 656
       Height = 91
       Top = 53
       Width = 146
@@ -620,12 +622,12 @@ object ValuesPlot: TValuesPlot
   object StatusBar1: TStatusBar
     Left = 0
     Height = 15
-    Top = 431
-    Width = 779
+    Top = 427
+    Width = 824
     Panels = <>
   end
   object ColorButton1: TColorButton
-    Left = 467
+    Left = 512
     Height = 25
     Top = 10
     Width = 48
@@ -639,7 +641,7 @@ object ValuesPlot: TValuesPlot
     Left = 48
     Height = 22
     Top = 10
-    Width = 403
+    Width = 448
     Anchors = [akTop, akLeft, akRight]
     TabOrder = 4
     Text = 'Title'
@@ -648,5 +650,32 @@ object ValuesPlot: TValuesPlot
     Steps = [dtsWeek, dtsDay, dtsHour]
     left = 704
     top = 8
+  end
+  object PopupMenu1: TPopupMenu
+    left = 752
+    top = 8
+    object UndoItem: TMenuItem
+      Caption = 'Undo'
+      Enabled = False
+    end
+    object Divider1: TMenuItem
+      Caption = '-'
+    end
+    object CutItem: TMenuItem
+      Caption = 'Cut'
+      Enabled = False
+    end
+    object CopyItem: TMenuItem
+      Caption = 'Copy'
+      OnClick = CopyItemClick
+    end
+    object PasteItem: TMenuItem
+      Caption = 'Paste'
+      Enabled = False
+    end
+    object DeleteItem: TMenuItem
+      Caption = 'Delete'
+      Enabled = False
+    end
   end
 end

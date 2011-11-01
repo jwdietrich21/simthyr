@@ -285,25 +285,26 @@ begin
       iString := IntToStr(i);
       if not haltsim then
        begin
-         gResultMatrix[i-1, 0] := t;
-         gResultMatrix[i-1, 1] := TRH / UTRH;
-         gResultMatrix[i-1, 2] := TSHz;
-         gResultMatrix[i-1, 3] := TSH;
-         gResultMatrix[i-1, 4] := T4 / UFT4;
-         gResultMatrix[i-1, 5] := FT4 / UFT4;
-         gResultMatrix[i-1, 6] := T3p / UFT3;
-         gResultMatrix[i-1, 7] := FT3 / UFT3;
-         gResultMatrix[i-1, 8] := T3z / UFT3;
-         theContents[0] := iString;
-         theContents[1] := stunden(t);
-         theContents[2] := FloatToStr(gResultMatrix[i-1, 1]); {TRH}
-         theContents[3] := FloatToStr(TSHz);
-         theContents[4] := FloatToStr(TSH);
-         theContents[5] := FloatToStr(gResultMatrix[i-1, 4]); {T4}
-         theContents[6] := FloatToStr(gResultMatrix[i-1, 5]); {FT4}
-         theContents[7] := FloatToStr(gResultMatrix[i-1, 6]); {T3p}
-         theContents[8] := FloatToStr(gResultMatrix[i-1, 7]); {FT3}
-         theContents[9] := FloatToStr(gResultMatrix[i-1, 8]); {T3z}
+         gResultMatrix[i-1, i_pos] := i;
+         gResultMatrix[i-1, t_pos] := t;
+         gResultMatrix[i-1, TRH_pos] := TRH / UTRH;
+         gResultMatrix[i-1, pTSH_pos] := TSHz;
+         gResultMatrix[i-1, TSH_pos] := TSH;
+         gResultMatrix[i-1, TT4_pos] := T4 / UFT4;
+         gResultMatrix[i-1, FT4_pos] := FT4 / UFT4;
+         gResultMatrix[i-1, TT3_pos] := T3p / UFT3;
+         gResultMatrix[i-1, FT3_pos] := FT3 / UFT3;
+         gResultMatrix[i-1, cT3_pos] := T3z / UFT3;
+         theContents[i_pos] := iString;
+         theContents[t_pos] := stunden(t);
+         theContents[TRH_pos] := FloatToStr(gResultMatrix[i-1, TRH_pos]); {TRH}
+         theContents[pTSH_pos] := FloatToStr(gResultMatrix[i-1, pTSH_pos] * gParameterFactor[pTSH_pos]); {portal TSH}
+         theContents[TSH_pos] := FloatToStr(gResultMatrix[i-1, TSH_pos] * gParameterFactor[TSH_pos]); {serum TSH}
+         theContents[TT4_pos] := FloatToStr(gResultMatrix[i-1, TT4_pos]); {T4}
+         theContents[FT4_pos] := FloatToStr(gResultMatrix[i-1, FT4_pos]); {FT4}
+         theContents[TT3_pos] := FloatToStr(gResultMatrix[i-1, TT3_pos]); {T3p}
+         theContents[FT3_pos] := FloatToStr(gResultMatrix[i-1, FT3_pos]); {FT3}
+         theContents[cT3_pos] := FloatToStr(gResultMatrix[i-1, cT3_pos]); {T3z}
          SimCS.Enter;
          try
            if (i - nmax_old > RES_BLANK_ROWS) and not LargeGrid then
@@ -393,7 +394,7 @@ begin
   graphready := false;
   ValuesPlot.Caption := WAIT_TITLE;
   SimThyrLogWindow.Caption := WAIT_TITLE;
-  SetLength(gResultMatrix, nmax, 9);
+  SetLength(gResultMatrix, nmax, RES_MAX_COLS);
   Notice.ShowOnTop;
   haltsim := false;
   SimCS := TCriticalSection.Create;

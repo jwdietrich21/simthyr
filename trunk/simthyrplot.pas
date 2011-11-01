@@ -14,7 +14,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Arrow, Buttons, TAGraph,
+  ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Arrow, Buttons, Menus, TAGraph,
   TASources, TATools, TASeries, TATransformations, TAStyles, TALegendPanel,
   DateUtils, SimThyrTypes, SimThyrServices, HandleNotifier;
 
@@ -33,6 +33,13 @@ type
     ComboBox2: TComboBox;
     DateTimeIntervalChartSource1: TDateTimeIntervalChartSource;
     FullScaleButton2: TSpeedButton;
+    Divider1: TMenuItem;
+    CutItem: TMenuItem;
+    CopyItem: TMenuItem;
+    DeleteItem: TMenuItem;
+    PasteItem: TMenuItem;
+    UndoItem: TMenuItem;
+    PopupMenu1: TPopupMenu;
     TitleEdit: TEdit;
     Panel1: TPanel;
     Panel2: TPanel;
@@ -51,6 +58,7 @@ type
     procedure ColorListBox2Click(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
+    procedure CopyItemClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
     procedure Panel2Click(Sender: TObject);
@@ -151,10 +159,10 @@ begin
     ValuesPlot.Chart1.AddSeries(ValuesPlot.Fline1);
     for j := 0 to length(gResultMatrix) - 1 do
     begin
-      theSecond := trunc(gResultMatrix[j, 0]);
+      theSecond := trunc(gResultMatrix[j, 1]);
       {theTime := EncodeDateTime(2000, 1, 1, 0, 0, theSecond, 0);
-      AddXY(theTime, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 1], '', SeriesColor);}
-      AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 1], '', SeriesColor);
+      AddXY(theTime, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2], '', SeriesColor);}
+      AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2] * gParameterFactor[ValuesPlot.ComboBox1.ItemIndex + 2], '', SeriesColor);
     end;
   end;
   with ValuesPlot.Fline2 do
@@ -166,7 +174,7 @@ begin
     ValuesPlot.Chart2.AddSeries(ValuesPlot.Fline2);
     for j := 0 to length(gResultMatrix) - 1 do
     begin
-      AddXY(gResultMatrix[j, 0], gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 1], '', SeriesColor);
+      AddXY(gResultMatrix[j, 0], gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] * gParameterFactor[ValuesPlot.ComboBox2.ItemIndex + 2], '', SeriesColor);
     end;
   end;
   graphready := true;
@@ -183,8 +191,8 @@ end;
 
 procedure TValuesPlot.ComboBox1Change(Sender: TObject);
 begin
- ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabel[ComboBox1.ItemIndex] + ': ' + gParameterUnit[ComboBox1.ItemIndex];
- ColorListBox1.Selected := gDefaultColors[ComboBox1.ItemIndex];
+ ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox1.ItemIndex + 2];
+ ColorListBox1.Selected := gDefaultColors[ComboBox1.ItemIndex + 2];
  DrawPlot(not graphready);
 end;
 
@@ -258,8 +266,8 @@ end;
 
 procedure TValuesPlot.ComboBox2Change(Sender: TObject);
 begin
-  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex] + ': ' + gParameterUnit[ComboBox2.ItemIndex];
-  ColorListBox2.Selected := gDefaultColors[ComboBox2.ItemIndex];
+  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox2.ItemIndex + 2];
+  ColorListBox2.Selected := gDefaultColors[ComboBox2.ItemIndex + 2];
   DrawPlot(not graphready);
 end;
 
@@ -271,18 +279,20 @@ begin
   ColorListBox2.Selected := clBlue;
   ValuesPlot.Chart1.Title.Visible := false;
   ValuesPlot.Chart2.Title.Visible := false;
-  ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabel[ComboBox1.ItemIndex] + ': ' + gParameterUnit[ComboBox1.ItemIndex];
-  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex] + ': ' + gParameterUnit[ComboBox2.ItemIndex];
+  ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox1.ItemIndex + 2];
+  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox2.ItemIndex + 2];
   DrawPlot(true);
   gSelectedChart := nil;
-  gDefaultColors[0] := clTeal;
-  gDefaultColors[1] := clPurple;
-  gDefaultColors[2] := clRed;
-  gDefaultColors[3] := clNavy;
-  gDefaultColors[4] := clBlue;
-  gDefaultColors[5] := clOlive;
-  gDefaultColors[6] := clGreen;
-  gDefaultColors[7] := clMaroon;
+  gDefaultColors[0] := clBlack;
+  gDefaultColors[1] := clBlack;
+  gDefaultColors[2] := clTeal;
+  gDefaultColors[3] := clPurple;
+  gDefaultColors[4] := clRed;
+  gDefaultColors[5] := clNavy;
+  gDefaultColors[6] := clBlue;
+  gDefaultColors[7] := clOlive;
+  gDefaultColors[8] := clGreen;
+  gDefaultColors[9] := clMaroon;
 end;
 
 procedure TValuesPlot.Panel1Click(Sender: TObject);
@@ -305,6 +315,11 @@ begin
     bell
   else
     gSelectedChart.CopyToClipboardBitmap;
+end;
+
+procedure TValuesPlot.CopyItemClick(Sender: TObject);
+begin
+  CopyChart(Sender);
 end;
 
 procedure TValuesPlot.PrintChart(Sender: TObject);
