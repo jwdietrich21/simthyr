@@ -10,7 +10,7 @@ object IPSForm: TIPSForm
   ClientHeight = 574
   ClientWidth = 469
   Color = clWhite
-  LCLVersion = '0.9.30.2RC2'
+  LCLVersion = '0.9.30.2RC1'
   Visible = True
   object Image1: TImage
     Left = 16
@@ -3280,7 +3280,35 @@ object IPSForm: TIPSForm
       0088456D000000B1A80D00002016B5010000C4A23600008058D4060000108BDA
       00000062FD050000FFFF0300AABFF0E282DFE0DD0000000049454E44AE426082
     }
+    PopupMenu = PopupMenu1
     Proportional = True
     ShowHint = True
+  end
+  object PopupMenu1: TPopupMenu
+    left = 424
+    top = 24
+    object UndoItem: TMenuItem
+      Caption = 'Undo'
+      Enabled = False
+    end
+    object Divider1: TMenuItem
+      Caption = '-'
+    end
+    object CutItem: TMenuItem
+      Caption = 'Cut'
+      Enabled = False
+    end
+    object CopyItem: TMenuItem
+      Caption = 'Copy'
+      OnClick = CopyItemClick
+    end
+    object PasteItem: TMenuItem
+      Caption = 'Paste'
+      Enabled = False
+    end
+    object DeleteItem: TMenuItem
+      Caption = 'Delete'
+      Enabled = False
+    end
   end
 end

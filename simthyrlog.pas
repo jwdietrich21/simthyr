@@ -14,19 +14,27 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  Grids, clipbrd, ComCtrls, StdCtrls, ExtCtrls, PopupNotifier, SimThyrTypes,
-  SimThyrServices;
+  Grids, clipbrd, ComCtrls, StdCtrls, ExtCtrls, PopupNotifier, Menus,
+  SimThyrTypes, SimThyrServices;
 
 type
 
   { TSimThyrLogWindow }
 
   TSimThyrLogWindow = class(TForm)
+    CopyItem: TMenuItem;
+    CutItem: TMenuItem;
+    DeleteItem: TMenuItem;
+    Divider1: TMenuItem;
+    PasteItem: TMenuItem;
+    PopupMenu1: TPopupMenu;
     ProgressBar1: TProgressBar;
     StatusBar1: TStatusBar;
+    UndoItem: TMenuItem;
     ValuesGrid: TStringGrid;
     procedure CopyCells;
     procedure InitGrid;
+    procedure PopupMenu1Popup(Sender: TObject);
     procedure SaveGrid(theFileName: String; theDelimiter: Char);
   private
     { private declarations }
@@ -78,6 +86,11 @@ begin
   ValuesGrid.Tag := 0;
 end;
 
+procedure TSimThyrLogWindow.PopupMenu1Popup(Sender: TObject);
+begin
+  CopyCells;
+end;
+
 procedure TSimThyrLogWindow.SaveGrid(theFileName: String; theDelimiter: Char);
 var
   theFile: File of Byte;
@@ -125,4 +138,4 @@ initialization
   {$I simthyrlog.lrs}
 
 end.
-
+

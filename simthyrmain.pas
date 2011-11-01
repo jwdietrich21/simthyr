@@ -142,6 +142,7 @@ type
 var
   SimThyrToolbar: TSimThyrToolbar;
   gInterfaceLanguage: tInterfaceLanguage;
+  j: integer;
 
 implementation
 
@@ -476,13 +477,16 @@ end;
 
 initialization
   {$I simthyrmain.lrs}
-  gParameterLabel[0] := 'Portal TRH';
-  gParameterLabel[1] := 'Pituitary TSH';
-  gParameterLabel[2] := 'Serum TSH';
-  gParameterLabel[3] := 'Serum total T4';
-  gParameterLabel[4] := 'Serum free T4';
-  gParameterLabel[5] := 'Serum total T3';
-  gParameterLabel[6] := 'Serum free T3';
-  gParameterLabel[7] := 'Central T3';
+  gParameterLabel[i_pos] := 'i';
+  gParameterLabel[t_pos] := 'Time';
+  gParameterLabel[TSH_pos] := 'Portal TRH';
+  gParameterLabel[pTSH_pos] := 'Pituitary TSH';
+  gParameterLabel[TSH_pos] := 'Serum TSH';
+  gParameterLabel[TT4_pos] := 'Serum total T4';
+  gParameterLabel[FT4_pos] := 'Serum free T4';
+  gParameterLabel[TT3_pos] := 'Serum total T3';
+  gParameterLabel[FT3_pos] := 'Serum free T3';
+  gParameterLabel[cT3_pos] := 'Central T3';
+  for j := i_pos to cT3_pos do gParameterFactor[j] := 1;
 end.
 
