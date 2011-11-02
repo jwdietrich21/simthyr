@@ -362,7 +362,8 @@ end;
 
 procedure TPreferencesDialog.FormShow(Sender: TObject);
 begin
-  DisplayExamples;
+  if not gStartup then
+    DisplayExamples;
 end;
 
 procedure TPreferencesDialog.CancelButtonClick(Sender: TObject);

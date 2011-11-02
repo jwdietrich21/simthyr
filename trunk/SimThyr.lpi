@@ -46,8 +46,8 @@
         <UnitName Value="SimThyr"/>
         <EditorIndex Value="18"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="54"/>
-        <CursorPos X="41" Y="77"/>
+        <TopLine Value="21"/>
+        <CursorPos X="42" Y="42"/>
         <UsageCount Value="196"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -58,11 +58,10 @@
         <ComponentName Value="SimThyrToolbar"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="17"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="459"/>
-        <CursorPos X="81" Y="482"/>
+        <TopLine Value="228"/>
+        <CursorPos X="23" Y="243"/>
         <UsageCount Value="196"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -700,10 +699,11 @@
         <ComponentName Value="PreferencesDialog"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HandlePreferences"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="175"/>
-        <CursorPos X="49" Y="197"/>
+        <TopLine Value="148"/>
+        <CursorPos X="21" Y="366"/>
         <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -770,123 +770,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="267" Column="35" TopLine="249"/>
+        <Caret Line="357" Column="19" TopLine="355"/>
       </Position1>
       <Position2>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="183" Column="22" TopLine="167"/>
+        <Caret Line="363" Column="19" TopLine="361"/>
       </Position2>
       <Position3>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="81" Column="58" TopLine="64"/>
+        <Caret Line="127" Column="99" TopLine="109"/>
       </Position3>
       <Position4>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="117" Column="102" TopLine="89"/>
+        <Caret Line="386" Column="83" TopLine="365"/>
       </Position4>
       <Position5>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="123" Column="102" TopLine="95"/>
+        <Caret Line="192" Column="3" TopLine="175"/>
       </Position5>
       <Position6>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="181" Column="73" TopLine="232"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="482" Column="81" TopLine="455"/>
       </Position6>
       <Position7>
-        <Filename Value="simthyrtypes.pas"/>
-        <Caret Line="1" Column="5" TopLine="1"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="131" Column="26" TopLine="118"/>
       </Position7>
       <Position8>
-        <Filename Value="simthyrtypes.pas"/>
-        <Caret Line="7" Column="71" TopLine="1"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="356" Column="74" TopLine="325"/>
       </Position8>
       <Position9>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="148" Column="15" TopLine="63"/>
+        <Caret Line="354" Column="45" TopLine="340"/>
       </Position9>
       <Position10>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="372" Column="32" TopLine="351"/>
+        <Caret Line="70" Column="30" TopLine="51"/>
       </Position10>
       <Position11>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="348" Column="19" TopLine="346"/>
+        <Caret Line="354" Column="45" TopLine="323"/>
       </Position11>
       <Position12>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="354" Column="19" TopLine="352"/>
+        <Caret Line="365" Column="18" TopLine="334"/>
       </Position12>
       <Position13>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="299" Column="99" TopLine="273"/>
+        <Caret Line="405" Column="18" TopLine="374"/>
       </Position13>
       <Position14>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="114" Column="111" TopLine="98"/>
+        <Caret Line="410" Column="18" TopLine="379"/>
       </Position14>
       <Position15>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="116" Column="49" TopLine="97"/>
+        <Caret Line="415" Column="18" TopLine="384"/>
       </Position15>
       <Position16>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="305" Column="69" TopLine="285"/>
+        <Caret Line="420" Column="18" TopLine="389"/>
       </Position16>
       <Position17>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="15" Column="60" TopLine="1"/>
+        <Caret Line="425" Column="18" TopLine="394"/>
       </Position17>
       <Position18>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="302" Column="74" TopLine="274"/>
+        <Caret Line="430" Column="18" TopLine="399"/>
       </Position18>
       <Position19>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="132" Column="87" TopLine="115"/>
+        <Caret Line="435" Column="18" TopLine="404"/>
       </Position19>
       <Position20>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="280" Column="81" TopLine="273"/>
+        <Caret Line="440" Column="18" TopLine="409"/>
       </Position20>
       <Position21>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="281" Column="81" TopLine="274"/>
+        <Caret Line="445" Column="18" TopLine="414"/>
       </Position21>
       <Position22>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="282" Column="81" TopLine="275"/>
+        <Caret Line="450" Column="18" TopLine="419"/>
       </Position22>
       <Position23>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="283" Column="81" TopLine="276"/>
+        <Caret Line="455" Column="18" TopLine="424"/>
       </Position23>
       <Position24>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="284" Column="81" TopLine="277"/>
+        <Caret Line="460" Column="18" TopLine="429"/>
       </Position24>
       <Position25>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="435" Column="21" TopLine="411"/>
+        <Caret Line="465" Column="18" TopLine="434"/>
       </Position25>
       <Position26>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="357" Column="19" TopLine="355"/>
+        <Caret Line="460" Column="1" TopLine="439"/>
       </Position26>
       <Position27>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="363" Column="19" TopLine="361"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
       </Position27>
       <Position28>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="127" Column="99" TopLine="109"/>
+        <Caret Line="70" Column="30" TopLine="39"/>
       </Position28>
       <Position29>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="386" Column="83" TopLine="365"/>
+        <Caret Line="354" Column="45" TopLine="323"/>
       </Position29>
       <Position30>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="192" Column="3" TopLine="175"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="482" Column="81" TopLine="455"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

@@ -248,8 +248,9 @@ begin
   begin
     SimulationSettings.ShowOnTop;
     SimulationSettings.SetFocus;
-    gStartup := false;
   end;
+  if gStartup then
+    gStartup := false;
 end;
 
 procedure TSimThyrToolbar.CloseMenuItemClick(Sender: TObject);

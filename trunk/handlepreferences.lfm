@@ -11,7 +11,7 @@ object PreferencesDialog: TPreferencesDialog
   ClientHeight = 284
   ClientWidth = 522
   OnShow = FormShow
-  LCLVersion = '0.9.30.2RC2'
+  LCLVersion = '0.9.30.2RC1'
   Visible = True
   object OKButton: TButton
     Left = 425
@@ -48,15 +48,15 @@ object PreferencesDialog: TPreferencesDialog
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Right = 13
     Caption = 'Measurement Units:'
-    ClientHeight = 178
-    ClientWidth = 468
+    ClientHeight = 182
+    ClientWidth = 472
     TabOrder = 2
     object TSHMassPrefixCombo: TComboBox
       Left = 76
       Height = 21
       Top = 14
       Width = 40
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         ''
@@ -66,17 +66,17 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label1: TLabel
       Left = 12
-      Height = 17
+      Height = 14
       Top = 18
-      Width = 26
+      Width = 20
       Caption = 'TSH'
       ParentColor = False
     end
     object TSHMassUnitLabel: TLabel
       Left = 148
-      Height = 17
+      Height = 14
       Top = 18
-      Width = 17
+      Width = 12
       Caption = 'U/'
       ParentColor = False
     end
@@ -85,7 +85,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 14
       Width = 40
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         ''
@@ -95,33 +95,33 @@ object PreferencesDialog: TPreferencesDialog
     end
     object TSHVolumeUnitLabel: TLabel
       Left = 252
-      Height = 17
+      Height = 14
       Top = 18
-      Width = 5
+      Width = 3
       Caption = 'l'
       ParentColor = False
     end
     object TSHExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 14
       Top = 18
-      Width = 63
+      Width = 48
       Caption = 'Example: '
       ParentColor = False
     end
     object Label2: TLabel
       Left = 12
-      Height = 17
+      Height = 14
       Top = 46
-      Width = 26
+      Width = 19
       Caption = 'TT4'
       ParentColor = False
     end
     object TT4ExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 14
       Top = 46
-      Width = 63
+      Width = 48
       Caption = 'Example: '
       ParentColor = False
     end
@@ -130,7 +130,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 42
       Width = 40
-      ItemHeight = 0
+      ItemHeight = 13
       OnChange = TT4MassPrefixComboChange
       TabOrder = 2
     end
@@ -139,7 +139,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 42
       Width = 56
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         'g'
@@ -151,49 +151,49 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label3: TLabel
       Left = 12
-      Height = 17
+      Height = 14
       Top = 78
-      Width = 24
+      Width = 19
       Caption = 'FT4'
       ParentColor = False
     end
     object FT4ExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 14
       Top = 78
-      Width = 63
+      Width = 48
       Caption = 'Example: '
       ParentColor = False
     end
     object Label4: TLabel
       Left = 12
-      Height = 17
+      Height = 14
       Top = 110
-      Width = 26
+      Width = 19
       Caption = 'TT3'
       ParentColor = False
     end
     object TT3ExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 14
       Top = 110
-      Width = 63
+      Width = 48
       Caption = 'Example: '
       ParentColor = False
     end
     object Label5: TLabel
       Left = 12
-      Height = 17
+      Height = 14
       Top = 142
-      Width = 24
+      Width = 19
       Caption = 'FT3'
       ParentColor = False
     end
     object FT3ExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 14
       Top = 142
-      Width = 63
+      Width = 48
       Caption = 'Example: '
       ParentColor = False
     end
@@ -202,23 +202,23 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 42
       Width = 40
-      ItemHeight = 0
+      ItemHeight = 13
       OnChange = TT4VolumePrefixComboChange
       TabOrder = 4
     end
     object TT4VolumeUnitLabel: TLabel
       Left = 252
-      Height = 17
+      Height = 14
       Top = 46
-      Width = 5
+      Width = 3
       Caption = 'l'
       ParentColor = False
     end
     object Label6: TLabel
       Left = 188
-      Height = 17
+      Height = 14
       Top = 46
-      Width = 8
+      Width = 5
       Caption = '/'
       ParentColor = False
     end
@@ -227,7 +227,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 74
       Width = 40
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         ''
@@ -240,7 +240,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 74
       Width = 56
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         'g'
@@ -252,9 +252,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label7: TLabel
       Left = 188
-      Height = 17
+      Height = 14
       Top = 78
-      Width = 8
+      Width = 5
       Caption = '/'
       ParentColor = False
     end
@@ -263,7 +263,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 74
       Width = 40
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         ''
@@ -273,9 +273,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object FT4VolumeUnitLabel: TLabel
       Left = 252
-      Height = 17
+      Height = 14
       Top = 78
-      Width = 5
+      Width = 3
       Caption = 'l'
       ParentColor = False
     end
@@ -284,7 +284,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 106
       Width = 40
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         ''
@@ -297,7 +297,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 106
       Width = 56
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         'g'
@@ -309,9 +309,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label8: TLabel
       Left = 188
-      Height = 17
+      Height = 14
       Top = 110
-      Width = 8
+      Width = 5
       Caption = '/'
       ParentColor = False
     end
@@ -320,7 +320,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 106
       Width = 40
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         ''
@@ -330,9 +330,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object TT3VolumeUnitLabel: TLabel
       Left = 252
-      Height = 17
+      Height = 14
       Top = 110
-      Width = 5
+      Width = 3
       Caption = 'l'
       ParentColor = False
     end
@@ -341,7 +341,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 138
       Width = 40
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         ''
@@ -354,7 +354,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 138
       Width = 56
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         'g'
@@ -366,9 +366,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label10: TLabel
       Left = 188
-      Height = 17
+      Height = 14
       Top = 142
-      Width = 8
+      Width = 5
       Caption = '/'
       ParentColor = False
     end
@@ -377,7 +377,7 @@ object PreferencesDialog: TPreferencesDialog
       Height = 21
       Top = 138
       Width = 40
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         ''
@@ -387,18 +387,18 @@ object PreferencesDialog: TPreferencesDialog
     end
     object FT3VolumeUnitLabel: TLabel
       Left = 252
-      Height = 17
+      Height = 14
       Top = 142
-      Width = 5
+      Width = 3
       Caption = 'l'
       ParentColor = False
     end
   end
   object Label9: TLabel
     Left = 40
-    Height = 17
+    Height = 14
     Top = 240
-    Width = 270
+    Width = 211
     Caption = 'Please not that preferences are not stored.'
     ParentColor = False
   end
