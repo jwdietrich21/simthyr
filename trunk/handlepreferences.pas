@@ -14,7 +14,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, SimThyrTypes, SimThyrLog, SimThyrPlot;
+  StdCtrls, SimThyrTypes, SimThyrLog, SimThyrPlot, SimThyrPrediction;
 
 type
 
@@ -393,6 +393,7 @@ begin
   RescaleParameters;
   ValuesPlot.ComboBox1Change(Sender);
   ValuesPlot.ComboBox2Change(Sender);
+  ShowPredictedValues;
   PreferencesDialog.Close;
 end;
 
