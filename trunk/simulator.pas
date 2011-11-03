@@ -21,7 +21,7 @@ uses
   SimThyrPlot, SimThyrPrediction, HandleNotifier;
 
 type
-  Tbereich_xt = array[0..300] of real;
+  TQueue_xt = array[0..300] of real;
   TSimulationThread = class(TThread)
   public
     procedure Pause;
@@ -30,7 +30,7 @@ type
   end;
 
 var
-  xt1, xt2, xt22, xt3, xt4: Tbereich_xt;
+  xt1, xt2, xt22, xt3, xt4: TQueue_xt;
   i, nt1, nt2, nt22, nt3, nt4: integer;
   i2, rastergap_text, rastergap_werte: integer;
   SimCS: TCriticalSection;
@@ -56,7 +56,7 @@ implementation
  end;
 
 
- function pt0 (var xt: Tbereich_xt; nt: integer; xe: real): real;
+ function pt0 (var xt: TQueue_xt; nt: integer; xe: real): real;
  {dead-time element, according to Neuber, improved}
   var
    i: integer;
@@ -76,7 +76,7 @@ implementation
 
 {-----------------> Help routines <--}
 
- function InitialValues (var xt: Tbereich_xt; nt: integer; xe: real): Tbereich_xt;
+ function InitialValues (var xt: TQueue_xt; nt: integer; xe: real): TQueue_xt;
  {fills virtual signal memory ("anfangswert" in old SimThyr versions)}
   var
    i: integer;
@@ -142,30 +142,30 @@ implementation
   i := 1;
   t := 0;
   delt := 100;                 {calculation steps in seconds; e.g. 1/3 of smallest Halflife}
-  signalflag := false;         {Liegt Testsignal an?}
+  signalflag := false;         {Is test signal set?}
   i0 := 0;
-  dTSH := 0.001;               {mU/s		Gebremste Produktionsrate[errechnet nach D'Angelo 1976, Okuno 1979 und Greenspan 1997]}
+  dTSH := 0.001;               {mU/s		Inhibited production rate [calculated according to D'Angelo 1976, Okuno 1979 and Greenspan 1997]}
 {InitialValues:}
-  TRHe := 0;                   {mol/l		exogen zugeführtes TRH}
-  TRHi := 2500;                {ng/l		endogenes TRH, nach Rondeel et al. 1988}
+  TRHe := 0;                   {mol/l		exogeniously applied TRH}
+  TRHi := 2500;                {ng/l		endogenious TRH, according to Rondeel et al. 1988}
   TRHi := TRHi * UTRH;         {mol/l}
-  TRH0 := TRHi + TRHe;         {mol/l		portale Gesamtkonzentration}
+  TRH0 := TRHi + TRHe;         {mol/l		portal total TRH concentration}
   TRH := TRH0;
-  TSH := 2;                    {mU/l		aus Referenzwert}
+  TSH := 2;                    {mU/l		from reference value}
   TSHz := 4;                   {Mittlerer Wert}
-  T4 := 7;                     {µg/dl		aus Referenzwert}
+  T4 := 7;                     {µg/dl		from reference value}
   T4 := T4 * 1000 * UFT4;      {mol/l}
-  FT4 := 1.3;                  {ng/dl		aus Referenzwert}
+  FT4 := 1.3;                  {ng/dl		from reference value}
   FT4 := FT4 * UFT4;           {mol/l}
-  T3p := 130;                  {ng/dl		aus Referenzwert}
+  T3p := 130;                  {ng/dl		from reference value}
   T3p := T3p * 10 * UFT3;      {mol/l}
-  FT3 := 3.2;                  {pg/ml	aus Referenzwert}
+  FT3 := 3.2;                  {pg/ml	        from reference value}
   FT3 := FT3 * UFT3;           {mol/l}
   T3z := 8200;                 {pg/ml}
   T3z := T3z * UFT3;           {mol/l}
-  TBG := 3e-7;                 {mol/l		aus Referenzwert}
-  TBPA := 4.5e-6;              {mol/l		aus Referenzwert}
-  IBS := 8e-6;                 {mol/l		geschätzt aus TBG-Spiegel, korrigiert auf intrazelluläre Akkumulation [Hays et al. 1988]}
+  TBG := 3e-7;                 {mol/l		from reference value}
+  TBPA := 4.5e-6;              {mol/l		from reference value}
+  IBS := 8e-6;                 {mol/l		estimated from TBG level, corrected for intracellular accumulation [Hays et al. 1988]}
  end;
 
  procedure SetDerivedVariables;
@@ -254,8 +254,6 @@ implementation
   nt3 := trunc(Tt3 / delt);
   nt4 := trunc(Tt4 / delt);
 
-  gSelectedxVariable := vart;
-  gSelectedyVariable := varTSH;
  end;
 
 procedure TSimulationThread.Pause;
@@ -270,12 +268,11 @@ begin
  haltsim := false;
 end;
 
-procedure TSimulationThread.Execute;
+procedure TSimulationThread.Execute; {Main simulation thread}
 var
   theContents: tResultContent;
   j: integer;
   circadianControl: real;
-  LargeGrid: boolean = false;
   nmaxString, iString: string;
 begin
   simready := false;
@@ -307,11 +304,6 @@ begin
          theContents[cT3_pos] := FloatToStr(gResultMatrix[i-1, cT3_pos] * gParameterFactor[cT3_pos]); {T3z}
          SimCS.Enter;
          try
-           if (i - nmax_old > RES_BLANK_ROWS) and not LargeGrid then
-            begin                  {prevents flickering table under Windows}
-              LargeGrid := true;
-              //SimThyrLogWindow.ValuesGrid.BeginUpdate;
-            end;
            writeTableCells(SimThyrLogWindow.ValuesGrid, theContents);
            if i mod 30 = 0 then
              SetStatusBarPanel0(iString, nmaxString);
@@ -379,7 +371,6 @@ begin
       end;
     end;
   simready := true;
-  //if LargeGrid then SimThyrLogWindow.ValuesGrid.EndUpdate(true);
   DrawPlot(false);
   SimThyrLogWindow.Caption := LOG_TITLE;
   SetStatusBarPanel0(iString, nmaxString);
@@ -399,24 +390,10 @@ begin
   haltsim := false;
   SimCS := TCriticalSection.Create;
   SimThread := TSimulationThread.Create(false);
-  //SimThyrLogWindow.ValuesGrid.Invalidate;
-  //SimThyrLogWindow.Update;
-  //application.ProcessMessages;
 end;
 
 procedure InitSimulation;  {sets initial conditions and calculates fixpoints}
 begin
-  if i <= 1 then
-  begin
-    xt2 := InitialValues(xt2, nt2 + 1, TSH); {prpares dead-time elements}
-    {xt2[nt2] := 0;}
-    xt22 := InitialValues(xt22, nt22 + 1, TSHz);
-    xt3 := InitialValues(xt3, nt3 + 1, T4);
-    {xt3[nt3] := 0;}
-    xt4 := InitialValues(xt4, nt4 + 1, T3z);
-    {xt4[nt4] := 0;}
-  end;
-
   i2 := 1;
 
 {predicted values:}
@@ -480,7 +457,7 @@ begin
   FT32 := k51 * FT42 / (kM1 + FT42);
   FT33 := k51 * FT43 / (kM1 + FT43);
   if previewflag and (i <= 1) then
-   begin
+   begin                                     {use calculated equilibrium values}
     TSH := TSH1;
     FT4 := FT41;
     T4 := FT4 * (1 + k41 * TBG + k42 * TBPA);
@@ -488,7 +465,18 @@ begin
     T3p := FT3 * (1 + k30 * TBG);
     T3z := T3z1;
     T3R := T3R1;
+    x2 := TSH;
+    x3 := T4;
+    x4 := T3z;
+    x5 := T3p;
    end;
+  if i <= 1 then
+   begin
+    xt2 := InitialValues(xt2, nt2 + 1, TSH); {prepares dead-time elements}
+    xt22 := InitialValues(xt22, nt22 + 1, TSHz);
+    xt3 := InitialValues(xt3, nt3 + 1, T4);
+    xt4 := InitialValues(xt4, nt4 + 1, T3z);
+  end;
 
   ShowPredictedValues;
   GridRows := nmax + 1;

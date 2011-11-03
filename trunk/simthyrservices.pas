@@ -16,7 +16,7 @@ interface
 uses
   Classes, SysUtils, Grids, StdCtrls, Dialogs, Forms, SimThyrTypes
       {$IFDEF win32}
-  , Windows
+  , Windows, Win32Proc
   {$ELSE}
     {$IFDEF LCLCarbon}
       , MacOSAll
@@ -39,10 +39,8 @@ type
 var
  gSaveMode: tSaveMode;
 
-procedure GetOSVersion;
+function OSVersion: Str255;
 procedure bell;
-function StandardForm (theString: Str255): extended;
-function ExtendedForm (theString: Str255): extended;
 procedure ClearResultContents (var theContents: tResultContent);
 procedure writeaTableCell (theTable: TStringGrid; theCell: TableCell; theString: Str255);
 procedure writeTableCells (theTable: TStringGrid; theContents: tResultContent);
@@ -57,16 +55,35 @@ implementation
 
 uses SimThyrLog;
 
-procedure GetOSVersion;
+function OSVersion: Str255;
  var
   osErr: integer;
   response: longint;
 begin
- {osErr := Gestalt(gestaltSystemVersion, response);
- if (osErr = noErr) then
-  gMacOSVersion := response
- else
-  gMacOSVersion := 4;    }
+  {$IFDEF LCLcarbon}
+  OSVersion := 'Mac OS X 10.';
+  {$ELSE}
+  {$IFDEF Linux}
+  OSVersion := 'Linux Kernel ';
+  {$ELSE}
+  {$IFDEF UNIX}
+  OSVersion := 'Unix ';
+  {$ELSE}
+  {$IFDEF WINDOWS}
+  if WindowsVersion = wv95 then OSVersion := 'Windows 95 '
+   else if WindowsVersion = wvNT4 then OSVersion := 'Windows NT v.4 '
+   else if WindowsVersion = wv98 then OSVersion := 'Windows 98 '
+   else if WindowsVersion = wvMe then OSVersion := 'Windows ME '
+   else if WindowsVersion = wv2000 then OSVersion := 'Windows 2000 '
+   else if WindowsVersion = wvXP then OSVersion := 'Windows XP '
+   else if WindowsVersion = wvServer2003 then OSVersion := 'Windows Server 2003 '
+   else if WindowsVersion = wvVista then OSVersion := 'Windows Vista '
+   else if WindowsVersion = wv7 then OSVersion := 'Windows 7 '
+   else OSVersion:= 'Windows ';
+  {$ENDIF}
+  {$ENDIF}
+  {$ENDIF}
+  {$ENDIF}
 end;
 
 procedure bell;
@@ -80,54 +97,6 @@ begin
       beep;
     {$ENDIF}
   {$ENDIF}
-end;
-
-
-function NumberForm (compos: integer; theString: Str255): extended;
-       {Wandelt String in Fließkommazahl um}
- var
-  num, wholeS, remainderS: Str255;
-  whole, remainder: longint;
-begin
- wholeS := copy(theString, 0, compos);
- whole := StrToInt(wholeS);
- remainderS := copy(theString, compos + 1, (length(theString) - compos));
- remainder := StrToInt(remainderS);
- NumberForm := whole + remainder / exp(ln(10) * length(remainderS));
-end;
-
-function StandardForm (theString: Str255): extended;
- var
-  compos: integer;
-  num, wholeS, remainderS: Str255;
-  whole, remainder: longint;
-begin
- compos := pos(DEC_COMMA, theString);
- if compos > 0 then
-  StandardForm := NumberForm(compos, theString)
- else
-  begin
-   compos := pos(DEC_POINT, theString);
-   if compos > 0 then
-    StandardForm := NumberForm(compos, theString)
-   else
-    begin
-     whole := StrToInt(theString);
-     StandardForm := whole;
-    end;
-  end;
-end;
-
-function ExtendedForm (theString: Str255): extended;
- var
-  theNumber: extended;
-  formatString: str255;
-  smResult, dec_places: integer;
-  offset, length: longint;
-  Decimal, Thousands: Char;
-begin
- theNumber := StrToFloat(theString);
- ExtendedForm := theNumber;
 end;
 
 procedure ClearResultContents (var theContents: tResultContent);
@@ -146,6 +115,7 @@ end;
 
 
 procedure writeTableCells (theTable: TStringGrid; theContents: tResultContent);
+{writes a vector of values to the last line of a StringGrid}
  var
   j, ignored: integer;
   cSize: TPoint;

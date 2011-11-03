@@ -15,11 +15,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, Buttons, StdCtrls, types, LCLIntf, ComCtrls, SimThyrTypes,
-  VersionSupport, DOS
-  {$IFDEF WIN32}
-  , Win32Proc
-  {$ENDIF}
-  ;
+  SimThyrServices, VersionSupport, DOS;
 
 type
 
@@ -100,30 +96,7 @@ procedure TAboutWindow.ShowAbout;
 var
   SystemStem, MajVer, MinVer: Str255;
 begin
-  {$IFDEF LCLcarbon}
-  SystemStem := 'Mac OS X 10.';
-  {$ELSE}
-  {$IFDEF Linux}
-  SystemStem := 'Linux Kernel ';
-  {$ELSE}
-  {$IFDEF UNIX}
-  SystemStem := 'Unix ';
-  {$ELSE}
-  {$IFDEF WINDOWS}
-  if WindowsVersion = wv95 then SystemStem := 'Windows 95 '
-   else if WindowsVersion = wvNT4 then SystemStem := 'Windows NT v.4 '
-   else if WindowsVersion = wv98 then SystemStem := 'Windows 98 '
-   else if WindowsVersion = wvMe then SystemStem := 'Windows ME '
-   else if WindowsVersion = wv2000 then SystemStem := 'Windows 2000 '
-   else if WindowsVersion = wvXP then SystemStem := 'Windows XP '
-   else if WindowsVersion = wvServer2003 then SystemStem := 'Windows Server 2003 '
-   else if WindowsVersion = wvVista then SystemStem := 'Windows Vista '
-   else if WindowsVersion = wv7 then SystemStem := 'Windows 7 '
-   else SystemStem:= 'Windows ';
-  {$ENDIF}
-  {$ENDIF}
-  {$ENDIF}
-  {$ENDIF}
+  SystemStem := OSVersion;
   AboutWindow.FormStyle := fsStayOnTop;
   AboutWindow.AlphaBlend := false;
   AboutWindow.Memo1.Lines.Clear;
