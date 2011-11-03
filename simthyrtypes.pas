@@ -68,11 +68,12 @@ const
  PLOT_TITLE = 'Plots of simulated parameters';
  WAIT_TITLE = 'Simulation running...';
 
- IMPLEMENTATION_MESSAGE = 'This function is not implemented in this alpha version of SimThyr.';
+ IMPLEMENTATION_MESSAGE = 'This function is not implemented in this version of SimThyr.';
  FORMAT_MESSAGE = 'Please check your input.';
  SAVE_ERROR_MESSAGE = 'Error saving the file';
 
  EXAMPLE_STRING = 'Example: ';
+ DEVIATION_STRING = 'Small deviations may result from transition effects and rounding.';
 
 type
  TableCell = TPoint;
@@ -81,7 +82,6 @@ type
  tResultMatrix = array of array of real;
  tResultContent = array[0..RES_MAX_COLS-1] of Str255;
  tmode = (integerMode, realMode);
- tVariable = (vart, varTSH, varFT4, varFT3);
 
 var
  nmax, nmax_old, tmax, tt, gridrows: integer;
@@ -90,7 +90,6 @@ var
  PrefixFactor, T4UnitFactor, T3UnitFactor: array[0..MAXFACTORS - 1] of real;
  gLabel: array[1..3] of Str255;
  gMessage: array[1..3] of Str255;
- gSelectedxVariable, gSelectedyVariable: tVariable;
  gStartup: boolean;
  delt: real;
  testflag, tbgflag, signalflag, previewflag, noiseflag: boolean;

@@ -17,7 +17,7 @@ object AboutWindow: TAboutWindow
   Font.Pitch = fpVariable
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '0.9.30.2RC2'
+  LCLVersion = '0.9.30.2RC1'
   Visible = True
   object OKButton: TButton
     Left = 227
@@ -40,8 +40,8 @@ object AboutWindow: TAboutWindow
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Version'
-      ClientHeight = 289
-      ClientWidth = 418
+      ClientHeight = 302
+      ClientWidth = 416
       object Image1: TImage
         Cursor = crHandPoint
         Left = 5
