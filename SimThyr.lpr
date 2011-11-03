@@ -125,7 +125,7 @@ begin
   begin
     SimulationSettings.ShowOnTop;
     SimulationSettings.SetFocus;
-    SimulationSettings.FormStyle := fsStayOnTop;
+    {SimulationSettings.FormStyle := fsStayOnTop;}
   end
   else SimulationSettings.hide;
   Application.Run;

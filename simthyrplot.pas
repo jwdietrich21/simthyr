@@ -87,7 +87,7 @@ procedure DrawPlot(empty: boolean);
 
 implementation
 
-function stunden (x: real): Str255;   {Rechnet Sekunden-Werte in hms-Dastellung um}
+function stunden (x: real): Str255;   {Converts second values to hms format}
  var
   d, h, m, s, r: longint;
   theTime: TDateTime;
