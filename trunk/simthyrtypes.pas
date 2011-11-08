@@ -115,6 +115,7 @@ var
  gDefaultColors: array[0..RES_MAX_COLS -1] of TColor;
  gSelectedChart: tChart;
  tmax_text, tmax_unit, i1_text, i1_unit: str255;
+ gNumberFormat: String;
 
 
 implementation

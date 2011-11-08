@@ -21,10 +21,14 @@ type
   { TPreferencesDialog }
 
   TPreferencesDialog = class(TForm)
+    NumberFormatEdit: TEdit;
     FT3MassPrefixCombo: TComboBox;
     FT3MassUnitCombo: TComboBox;
     FT3VolumePrefixCombo: TComboBox;
+    GroupBox2: TGroupBox;
     Label10: TLabel;
+    Label11: TLabel;
+    NumberFormatExampleLabel: TLabel;
     Label9: TLabel;
     TT3MassPrefixCombo: TComboBox;
     TT3MassUnitCombo: TComboBox;
@@ -59,6 +63,7 @@ type
     TSHMassUnitLabel: TLabel;
     TSHVolumeUnitLabel: TLabel;
     FT4VolumeUnitLabel: TLabel;
+    procedure NumberFormatEditChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FT3MassPrefixComboChange(Sender: TObject);
     procedure FT3MassUnitComboChange(Sender: TObject);
@@ -358,16 +363,24 @@ begin
   FT4ExampleLabel.Caption := EXAMPLE_STRING + FloatToStr(InterimFT4Factor * 1) + ' ' + InterimFT4Unit;
   TT3ExampleLabel.Caption := EXAMPLE_STRING + FloatToStr(InterimTT3Factor * 1e3) + ' ' + InterimTT3Unit;
   FT3ExampleLabel.Caption := EXAMPLE_STRING + FloatToStr(InterimFT3Factor * 3) + ' ' + InterimFT3Unit;
+  NumberFormatExampleLabel.Caption := FormatFloat(NumberFormatEdit.Text, 123456.789);
 end;
 
 procedure TPreferencesDialog.FormShow(Sender: TObject);
 begin
   if not gStartup then
     DisplayExamples;
+  gNumberFormat := NumberFormatEdit.Text;
+end;
+
+procedure TPreferencesDialog.NumberFormatEditChange(Sender: TObject);
+begin
+  DisplayExamples;
 end;
 
 procedure TPreferencesDialog.CancelButtonClick(Sender: TObject);
 begin
+  NumberFormatEdit.Text := gNumberFormat;
   PreferencesDialog.Close;
 end;
 
@@ -377,7 +390,7 @@ begin
   for j := 1 to length(gResultMatrix) do
     for k := TRH_pos to cT3_pos do
     begin
-      SimThyrLogWindow.ValuesGrid.Cells[k, j] := FloatToStr(gResultMatrix[j-1, k] * gParameterFactor[k]);
+      SimThyrLogWindow.ValuesGrid.Cells[k, j] := FormatFloat(gNumberFormat, gResultMatrix[j-1, k] * gParameterFactor[k]);
     end;
 end;
 
@@ -390,6 +403,7 @@ begin
   gParameterFactor[FT4_pos] := InterimFT4Factor;
   gParameterFactor[TT3_pos] := InterimTT3Factor;
   gParameterFactor[FT3_pos] := InterimFT3Factor;
+  gNumberFormat := NumberFormatEdit.Text;
   RescaleParameters;
   ValuesPlot.ComboBox1Change(Sender);
   ValuesPlot.ComboBox2Change(Sender);
