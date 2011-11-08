@@ -294,14 +294,14 @@ begin
          gResultMatrix[i-1, cT3_pos] := T3z / UFT3;
          theContents[i_pos] := iString;
          theContents[t_pos] := stunden(t);
-         theContents[TRH_pos] := FloatToStr(gResultMatrix[i-1, TRH_pos]* gParameterFactor[TRH_pos]); {TRH}
-         theContents[pTSH_pos] := FloatToStr(gResultMatrix[i-1, pTSH_pos] * gParameterFactor[pTSH_pos]); {portal TSH}
-         theContents[TSH_pos] := FloatToStr(gResultMatrix[i-1, TSH_pos] * gParameterFactor[TSH_pos]); {serum TSH}
-         theContents[TT4_pos] := FloatToStr(gResultMatrix[i-1, TT4_pos] * gParameterFactor[TT4_pos]); {T4}
-         theContents[FT4_pos] := FloatToStr(gResultMatrix[i-1, FT4_pos] * gParameterFactor[FT4_pos]); {FT4}
-         theContents[TT3_pos] := FloatToStr(gResultMatrix[i-1, TT3_pos] * gParameterFactor[TT3_pos]); {T3p}
-         theContents[FT3_pos] := FloatToStr(gResultMatrix[i-1, FT3_pos] * gParameterFactor[FT3_pos]); {FT3}
-         theContents[cT3_pos] := FloatToStr(gResultMatrix[i-1, cT3_pos] * gParameterFactor[cT3_pos]); {T3z}
+         theContents[TRH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TRH_pos]* gParameterFactor[TRH_pos]); {TRH}
+         theContents[pTSH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, pTSH_pos] * gParameterFactor[pTSH_pos]); {portal TSH}
+         theContents[TSH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TSH_pos] * gParameterFactor[TSH_pos]); {serum TSH}
+         theContents[TT4_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TT4_pos] * gParameterFactor[TT4_pos]); {T4}
+         theContents[FT4_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, FT4_pos] * gParameterFactor[FT4_pos]); {FT4}
+         theContents[TT3_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TT3_pos] * gParameterFactor[TT3_pos]); {T3p}
+         theContents[FT3_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, FT3_pos] * gParameterFactor[FT3_pos]); {FT3}
+         theContents[cT3_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, cT3_pos] * gParameterFactor[cT3_pos]); {T3z}
          SimCS.Enter;
          try
            writeTableCells(SimThyrLogWindow.ValuesGrid, theContents);
