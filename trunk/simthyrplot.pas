@@ -174,7 +174,8 @@ begin
     ValuesPlot.Chart2.AddSeries(ValuesPlot.Fline2);
     for j := 0 to length(gResultMatrix) - 1 do
     begin
-      AddXY(gResultMatrix[j, 0], gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] * gParameterFactor[ValuesPlot.ComboBox2.ItemIndex + 2], '', SeriesColor);
+      theSecond := trunc(gResultMatrix[j, 1]);
+      AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] * gParameterFactor[ValuesPlot.ComboBox2.ItemIndex + 2], '', SeriesColor);
     end;
   end;
   graphready := true;
