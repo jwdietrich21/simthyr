@@ -121,7 +121,7 @@ end;
 
 function FormattedTime (x: real): Str255;   {Converts second values to a formatted time}
 begin
-  FormattedTime := FormatDateTime('"d"D hh:nn:ss', AsTime(x));
+  FormattedTime := FormatDateTime(gDateTimeFormat, AsTime(x));
 end;
 
 { TValuesPlot }
