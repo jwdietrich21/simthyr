@@ -1,6 +1,6 @@
 object PreferencesDialog: TPreferencesDialog
   Left = 610
-  Height = 358
+  Height = 389
   Top = 444
   Width = 523
   AlphaBlend = True
@@ -8,7 +8,7 @@ object PreferencesDialog: TPreferencesDialog
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   Caption = 'SimThyr Preferences'
-  ClientHeight = 358
+  ClientHeight = 389
   ClientWidth = 523
   Constraints.MinHeight = 350
   OnShow = FormShow
@@ -17,7 +17,7 @@ object PreferencesDialog: TPreferencesDialog
   object OKButton: TButton
     Left = 426
     Height = 25
-    Top = 311
+    Top = 342
     Width = 75
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 13
@@ -31,7 +31,7 @@ object PreferencesDialog: TPreferencesDialog
     AnchorSideRight.Control = OKButton
     Left = 338
     Height = 25
-    Top = 311
+    Top = 342
     Width = 75
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 13
@@ -398,7 +398,7 @@ object PreferencesDialog: TPreferencesDialog
   object Label9: TLabel
     Left = 40
     Height = 17
-    Top = 311
+    Top = 342
     Width = 277
     Anchors = [akLeft, akBottom]
     Caption = 'Please note that preferences are not stored.'
@@ -406,11 +406,11 @@ object PreferencesDialog: TPreferencesDialog
   end
   object GroupBox2: TGroupBox
     Left = 24
-    Height = 64
+    Height = 96
     Top = 232
     Width = 477
     Caption = 'Formats:'
-    ClientHeight = 42
+    ClientHeight = 74
     ClientWidth = 469
     TabOrder = 3
     object NumberFormatEdit: TEdit
@@ -439,6 +439,25 @@ object PreferencesDialog: TPreferencesDialog
       Top = 13
       Width = 63
       Caption = 'Example: '
+      ParentColor = False
+    end
+    object DateTimeFormatEdit: TEdit
+      Left = 76
+      Height = 22
+      Hint = 'D: day; dd: day with leading zero; h: hour; n: minute; s: second'
+      Top = 38
+      Width = 168
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      Text = '"d"D hh:nn:ss'
+    end
+    object Label12: TLabel
+      Left = 12
+      Height = 17
+      Top = 43
+      Width = 32
+      Caption = 'Time'
       ParentColor = False
     end
   end

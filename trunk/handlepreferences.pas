@@ -21,6 +21,8 @@ type
   { TPreferencesDialog }
 
   TPreferencesDialog = class(TForm)
+    DateTimeFormatEdit: TEdit;
+    Label12: TLabel;
     NumberFormatEdit: TEdit;
     FT3MassPrefixCombo: TComboBox;
     FT3MassUnitCombo: TComboBox;
@@ -371,6 +373,7 @@ begin
   if not gStartup then
     DisplayExamples;
   gNumberFormat := NumberFormatEdit.Text;
+  gDateTimeFormat := DateTimeFormatEdit.Text;
 end;
 
 procedure TPreferencesDialog.NumberFormatEditChange(Sender: TObject);
@@ -381,6 +384,7 @@ end;
 procedure TPreferencesDialog.CancelButtonClick(Sender: TObject);
 begin
   NumberFormatEdit.Text := gNumberFormat;
+  DateTimeFormatEdit.Text := gDateTimeFormat;
   PreferencesDialog.Close;
 end;
 
@@ -404,7 +408,9 @@ begin
   gParameterFactor[TT3_pos] := InterimTT3Factor;
   gParameterFactor[FT3_pos] := InterimFT3Factor;
   gNumberFormat := NumberFormatEdit.Text;
+  gDateTimeFormat := DateTimeFormatEdit.Text;
   RescaleParameters;
+  ValuesPlot.UpdateTimeAxes;
   ValuesPlot.ComboBox1Change(Sender);
   ValuesPlot.ComboBox2Change(Sender);
   ShowPredictedValues;

@@ -283,7 +283,7 @@ begin
       if not haltsim then
        begin
          gResultMatrix[i-1, i_pos] := i;
-         gResultMatrix[i-1, t_pos] := t;
+         gResultMatrix[i-1, t_pos] := AsTime(t);
          gResultMatrix[i-1, TRH_pos] := TRH / UTRH;
          gResultMatrix[i-1, pTSH_pos] := TSHz;
          gResultMatrix[i-1, TSH_pos] := TSH;
@@ -293,7 +293,7 @@ begin
          gResultMatrix[i-1, FT3_pos] := FT3 / UFT3;
          gResultMatrix[i-1, cT3_pos] := T3z / UFT3;
          theContents[i_pos] := iString;
-         theContents[t_pos] := stunden(t);
+         theContents[t_pos] := FormattedTime(t);
          theContents[TRH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TRH_pos]* gParameterFactor[TRH_pos]); {TRH}
          theContents[pTSH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, pTSH_pos] * gParameterFactor[pTSH_pos]); {portal TSH}
          theContents[TSH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TSH_pos] * gParameterFactor[TSH_pos]); {serum TSH}

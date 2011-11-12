@@ -60,6 +60,8 @@ type
     procedure ComboBox2Change(Sender: TObject);
     procedure CopyItemClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure UpdateTimeAxes;
+    procedure FormShow(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
     procedure Panel2Click(Sender: TObject);
     procedure PlotPanel2Click(Sender: TObject);
@@ -81,32 +83,45 @@ var
   ValuesPlot: TValuesPlot;
   gr_nummer, antwort, antwort_p: string[4];
 
-function stunden (x: real): Str255;
+function AsTime (x: real): TDateTime;
+function FormattedTime (x: real): Str255;
 
 procedure DrawPlot(empty: boolean);
 
 implementation
 
-function stunden (x: real): Str255;   {Converts second values to hms format}
- var
-  d, h, m, s, r: longint;
-  theTime: TDateTime;
+function AsTime (x: real): TDateTime;  {Converts second values to TDateTime representation}
+var
+  r: longint;
+  y, m, d, h, n, s, ms, dy: word;
+  theTime, theDate: TDateTime;
 begin
+ y := 1900;                            {Take 1900 as standard year}
  r := trunc(x);
- d := r div 86400;
+ dy := word(r div 86400);              {day of year}
+ if not TryEncodeDateDay(y, dy+1, theDate) then {error in encoding?}
+   begin
+     theDate := 0;
+     bell;
+   end;
+ DecodeDateTime(theDate, y, m, d, h, n, s, ms);
  r := r mod 86400;
- h := r div 3600;
+ h := word(r div 3600);
  r := r mod 3600;
- m := r div 60;
+ n := word(r div 60);
  r := r mod 60;
- s := r;
- {theTime := EncodeTime(h, m, s, 0);}
- if d = 0 then
-  {stunden := '    ' + TimeToStr(theTime)}
-  stunden := IntToStr(h) + ':' + IntToStr(m) + ':' + IntToStr(s)
- else
-  {stunden := IntToStr(d) + ':' + FormatDateTime('hh:mm:ss', theTime);}
-  stunden := IntToStr(d) + ':' + IntToStr(h) + ':' + IntToStr(m) + ':' + IntToStr(s);
+ s := word(r);
+ if not TryEncodeDateTime(y, m, d, h, n, s, 0, theTime) then {error in encoding?}
+   begin
+     theTime := 0;
+     bell;
+   end;
+  AsTime := theTime;
+end;
+
+function FormattedTime (x: real): Str255;   {Converts second values to a formatted time}
+begin
+  FormattedTime := FormatDateTime('"d"D hh:nn:ss', AsTime(x));
 end;
 
 { TValuesPlot }
@@ -140,7 +155,7 @@ procedure DrawPlot(empty: boolean);
 var
  j: integer;
  theTime: TDateTime;
- theSecond: Longint;
+ theSecond: real;
 begin
  if ValuesPlot.Fline1 <> nil then ValuesPlot.Chart1.ClearSeries;
  if ValuesPlot.Fline2 <> nil then ValuesPlot.Chart2.ClearSeries;
@@ -159,9 +174,7 @@ begin
     ValuesPlot.Chart1.AddSeries(ValuesPlot.Fline1);
     for j := 0 to length(gResultMatrix) - 1 do
     begin
-      theSecond := trunc(gResultMatrix[j, 1]);
-      {theTime := EncodeDateTime(2000, 1, 1, 0, 0, theSecond, 0);
-      AddXY(theTime, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2], '', SeriesColor);}
+      theSecond := gResultMatrix[j, t_pos];
       AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2] * gParameterFactor[ValuesPlot.ComboBox1.ItemIndex + 2], '', SeriesColor);
     end;
   end;
@@ -174,7 +187,7 @@ begin
     ValuesPlot.Chart2.AddSeries(ValuesPlot.Fline2);
     for j := 0 to length(gResultMatrix) - 1 do
     begin
-      theSecond := trunc(gResultMatrix[j, 1]);
+      theSecond := gResultMatrix[j, t_pos];
       AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] * gParameterFactor[ValuesPlot.ComboBox2.ItemIndex + 2], '', SeriesColor);
     end;
   end;
@@ -294,6 +307,16 @@ begin
   gDefaultColors[7] := clOlive;
   gDefaultColors[8] := clGreen;
   gDefaultColors[9] := clMaroon;
+end;
+
+procedure TValuesPlot.UpdateTimeAxes;
+begin
+  DateTimeIntervalChartSource1.DateTimeFormat := String(gDateTimeFormat);
+end;
+
+procedure TValuesPlot.FormShow(Sender: TObject);
+begin
+  UpdateTimeAxes;
 end;
 
 procedure TValuesPlot.Panel1Click(Sender: TObject);
