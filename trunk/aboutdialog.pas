@@ -121,6 +121,8 @@ begin
   MinVer := IntToStr(Hi(DosVersion));
   {$ENDIF}
   AboutWindow.Memo1.Lines.Add('Operating system: ' + GetOS + ' (' + SystemStem + MajVer + '.' + MinVer + ')');
+  AboutWindow.Memo1.Lines.Add('');
+  AboutWindow.Memo1.Lines.Add('Preferences file: ' + gPreferencesFile);
   AboutWindow.ShowModal;
 end;
 

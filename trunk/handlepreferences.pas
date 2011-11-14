@@ -14,7 +14,15 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, SimThyrTypes, SimThyrLog, SimThyrPlot, SimThyrPrediction;
+  StdCtrls, SimThyrTypes, SimThyrLog, SimThyrPlot, SimThyrPrediction,
+  SimThyrServices
+  {$IFDEF win32}
+  , Windows
+  {$ELSE}
+    {$IFDEF LCLCarbon}
+      , MacOSAll
+    {$ENDIF}
+  {$ENDIF};
 
 type
 
@@ -493,8 +501,51 @@ begin
   DisplayExamples;
 end;
 
+procedure GetPreferencesFolder;
+const
+  kMaxPath = 1024;
+var
+  {$IFDEF LCLCarbon}
+  theError: OSErr;
+  theRef: FSRef;
+  {$ENDIF}
+  pathBuffer: PChar;
+begin
+  {$IFDEF LCLCarbon}
+    try
+      pathBuffer := Allocmem(kMaxPath);
+    except on exception do exit;
+    end;
+    try
+      Fillchar(pathBuffer^, kMaxPath, #0);
+      Fillchar(theRef, Sizeof(theRef), #0);
+      theError := FSFindFolder(kOnAppropriateDisk, kPreferencesFolderType, kDontCreateFolder, theRef);
+      if (pathBuffer <> nil) and (theError = noErr) then
+      begin
+        theError := FSRefMakePath(theRef, pathBuffer, kMaxPath);
+        if theError = noErr then gPreferencesFolder := UTF8ToAnsi(StrPas(pathBuffer)) + '/';
+      end;
+    finally
+      Freemem(pathBuffer);
+    end
+  {$ELSE}
+    gPreferencesFolder := GetAppConfigDir(false);
+  {$ENDIF}
+end;
+
+procedure GetPreferencesFile;
+begin
+  {$IFDEF LCLCarbon}
+    GetPreferencesFolder;
+    gPreferencesFile := gPreferencesFolder + GLOBAL_ID + '.plist';
+  {$ELSE}
+    gPreferencesFile := GetAppConfigFile(false);
+  {$ENDIF}
+end;
+
 initialization
   {$I handlepreferences.lrs}
+  GetPreferencesFile;
 
 end.
 
