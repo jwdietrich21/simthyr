@@ -20,28 +20,6 @@ procedure SaveScenario(theFileName: String);
 
 implementation
 
-function NodeContent(theRoot: TDOMNode; name: String): String;
-var
-  theNode: TDOMNode;
-begin
-  if assigned(theRoot) then
-    theNode := theRoot.FindNode(name);
-  if assigned(theNode) then
-  begin
-    Result := theNode.FirstChild.NodeValue;
-  end
-  else
-    Result := 'NA';
-end;
-
-procedure VarFromNode(theRoot: TDOMNode; name: String; var theVar: real);
-var theString: String;
-begin
-  theString := NodeContent(theRoot, name);
-  if theString <> 'NA' then
-    theVar := StrToFloat(theString);
-end;
-
 procedure ReadScenario(theFileName: String);
 var
   Doc: TXMLDocument;
@@ -92,16 +70,6 @@ begin
       Doc.Free;
     end;
   end;
-end;
-
-function SimpleNode(Doc: TXMLDocument; name, value: String): TDOMNode;
-var
-  ItemNode,TextNode: TDOMNode;
-begin
-  ItemNode:=Doc.CreateElement(name);
-  TextNode:=Doc.CreateTextNode(value);
-  ItemNode.AppendChild(TextNode);
-  Result := ItemNode;
 end;
 
 procedure SaveScenario(theFileName: String);

@@ -15,7 +15,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, SimThyrTypes, SimThyrLog, SimThyrPlot, SimThyrPrediction,
-  SimThyrServices
+  SimThyrServices, DOM, XMLRead, XMLWrite
   {$IFDEF win32}
   , Windows
   {$ELSE}
@@ -108,10 +108,52 @@ var
 
 procedure InitConversionFactors;
 procedure SetUnits;
+function GetPreferencesFolder: String;
+function GetPreferencesFile: String;
+procedure ReadPreferences;
 
 implementation
 
-{ TPreferencesDialog }
+function GetPreferencesFolder: String;
+const
+  kMaxPath = 1024;
+var
+  {$IFDEF LCLCarbon}
+  theError: OSErr;
+  theRef: FSRef;
+  {$ENDIF}
+  pathBuffer: PChar;
+begin
+  {$IFDEF LCLCarbon}
+    try
+      pathBuffer := Allocmem(kMaxPath);
+    except on exception do exit;
+    end;
+    try
+      Fillchar(pathBuffer^, kMaxPath, #0);
+      Fillchar(theRef, Sizeof(theRef), #0);
+      theError := FSFindFolder(kOnAppropriateDisk, kPreferencesFolderType, kDontCreateFolder, theRef);
+      if (pathBuffer <> nil) and (theError = noErr) then
+      begin
+        theError := FSRefMakePath(theRef, pathBuffer, kMaxPath);
+        if theError = noErr then GetPreferencesFolder := UTF8ToAnsi(StrPas(pathBuffer)) + '/';
+      end;
+    finally
+      Freemem(pathBuffer);
+    end
+  {$ELSE}
+    GetPreferencesFolder := GetAppConfigDir(false);
+  {$ENDIF}
+end;
+
+function GetPreferencesFile: String;
+begin
+  {$IFDEF LCLCarbon}
+    GetPreferencesFile := GetPreferencesFolder + SIMTHYR_GLOBAL_ID + '.plist';
+  {$ELSE}
+    GetPreferencesFile := GetAppConfigFile(false);
+  {$ENDIF}
+end;
 
 function InterimTSHUnit:String;
 begin
@@ -213,6 +255,12 @@ begin
   gParameterFactor[TRH_pos] := 1;
   gParameterFactor[pTSH_pos] := 1;
   gParameterFactor[TSH_pos] := gParameterFactor[pTSH_pos];
+  gParameterFactor[pTSH_pos] := InterimTSHFactor;
+  gParameterFactor[TSH_pos] := gParameterFactor[pTSH_pos];
+  gParameterFactor[TT4_pos] := InterimTT4Factor;
+  gParameterFactor[FT4_pos] := InterimFT4Factor;
+  gParameterFactor[TT3_pos] := InterimTT3Factor;
+  gParameterFactor[FT3_pos] := InterimFT3Factor;
 end;
 
 procedure SetMassItemAndFactor(par1, par2: integer; theComboBox: TComboBox; position, theItem: integer);
@@ -246,6 +294,8 @@ begin
   if par2 >= 0 then
     VolumePrefixFactors[par2, position] := PrefixFactor[theItem];
 end;
+
+{ TPreferencesDialog }
 
 procedure TPreferencesDialog.InitMenuItems;
 begin
@@ -380,8 +430,6 @@ procedure TPreferencesDialog.FormShow(Sender: TObject);
 begin
   if not gStartup then
     DisplayExamples;
-  gNumberFormat := NumberFormatEdit.Text;
-  gDateTimeFormat := DateTimeFormatEdit.Text;
 end;
 
 procedure TPreferencesDialog.NumberFormatEditChange(Sender: TObject);
@@ -400,22 +448,82 @@ procedure RescaleParameters;
 var j, k: integer;
 begin
   for j := 1 to length(gResultMatrix) do
-    SimThyrLogWindow.ValuesGrid.Cells[t_pos, j] := FormattedTime(gResultMatrix[j-1, t_pos]);
-    for k := TRH_pos to cT3_pos do
     begin
-      SimThyrLogWindow.ValuesGrid.Cells[k, j] := FormatFloat(gNumberFormat, gResultMatrix[j-1, k] * gParameterFactor[k]);
+      SimThyrLogWindow.ValuesGrid.Cells[t_pos, j] := FormattedTime(gResultMatrix[j-1, t_pos]);
+      for k := TRH_pos to cT3_pos do
+      begin
+        SimThyrLogWindow.ValuesGrid.Cells[k, j] := FormatFloat(gNumberFormat, gResultMatrix[j-1, k] * gParameterFactor[k]);
+      end;
     end;
+end;
+
+procedure ReadPreferences; {may not be called before PreferencesDialog has been created}
+var
+  Doc: TXMLDocument;
+  RootNode, theNode: TDOMNode;
+  theFileName, theString: String;
+begin
+  theFileName := GetPreferencesFile;
+  if FileExists(theFileName) then
+  try
+    Doc := TXMLDocument.Create();
+    ReadXMLFile(Doc, theFileName);
+    RootNode := Doc.DocumentElement.FindNode('formats');
+    gNumberFormat := NodeContent(RootNode, 'numbers');
+    gDateTimeFormat := NodeContent(RootNode, 'time');
+  finally
+    Doc.Free;
+  end
+  else  {Standards from dialog, if preference file does not exist}
+  if PreferencesDialog <> nil then begin
+    gNumberFormat := PreferencesDialog.NumberFormatEdit.Text;
+    gDateTimeFormat := PreferencesDialog.DateTimeFormatEdit.Text;
+  end
+  else
+  begin  {fall-back solution, if neither file nor dialog exist}
+    gNumberFormat := '###,###.00##';
+    gDateTimeFormat := '"d"D hh:nn:ss';
+  end;
+end;
+
+procedure SavePreferences;
+var
+  theFileName: String;
+  Doc: TXMLDocument;
+  StartComment: TDOMComment;
+  RootNode, ElementNode, ItemNode, TextNode: TDOMNode;
+begin
+  theFileName := GetPreferencesFile;
+  try
+    Doc := TXMLDocument.Create;
+
+    {StartComment := Doc.CreateComment('SimThyr Preferences');
+    RootNode.AppendChild(StartComment);}
+
+    RootNode := Doc.CreateElement('preferences');
+    Doc.Appendchild(RootNode);
+    RootNode:= Doc.DocumentElement;
+
+    ElementNode:=Doc.CreateElement('units');
+
+    RootNode.AppendChild(ElementNode);
+
+    ElementNode:=Doc.CreateElement('formats');
+
+    ElementNode.AppendChild(SimpleNode(Doc, 'numbers', gNumberFormat));
+    ElementNode.AppendChild(SimpleNode(Doc, 'time', gDateTimeFormat));
+
+    RootNode.AppendChild(ElementNode);
+
+    WriteXMLFile(Doc,theFileName);
+  finally
+    Doc.Free;
+  end;
 end;
 
 procedure TPreferencesDialog.OKButtonClick(Sender: TObject);
 begin
   SetUnits;
-  gParameterFactor[pTSH_pos] := InterimTSHFactor;
-  gParameterFactor[TSH_pos] := gParameterFactor[pTSH_pos];
-  gParameterFactor[TT4_pos] := InterimTT4Factor;
-  gParameterFactor[FT4_pos] := InterimFT4Factor;
-  gParameterFactor[TT3_pos] := InterimTT3Factor;
-  gParameterFactor[FT3_pos] := InterimFT3Factor;
   gNumberFormat := NumberFormatEdit.Text;
   gDateTimeFormat := DateTimeFormatEdit.Text;
   RescaleParameters;
@@ -423,6 +531,7 @@ begin
   ValuesPlot.ComboBox1Change(Sender);
   ValuesPlot.ComboBox2Change(Sender);
   ShowPredictedValues;
+  SavePreferences;
   PreferencesDialog.Close;
 end;
 
@@ -501,51 +610,8 @@ begin
   DisplayExamples;
 end;
 
-procedure GetPreferencesFolder;
-const
-  kMaxPath = 1024;
-var
-  {$IFDEF LCLCarbon}
-  theError: OSErr;
-  theRef: FSRef;
-  {$ENDIF}
-  pathBuffer: PChar;
-begin
-  {$IFDEF LCLCarbon}
-    try
-      pathBuffer := Allocmem(kMaxPath);
-    except on exception do exit;
-    end;
-    try
-      Fillchar(pathBuffer^, kMaxPath, #0);
-      Fillchar(theRef, Sizeof(theRef), #0);
-      theError := FSFindFolder(kOnAppropriateDisk, kPreferencesFolderType, kDontCreateFolder, theRef);
-      if (pathBuffer <> nil) and (theError = noErr) then
-      begin
-        theError := FSRefMakePath(theRef, pathBuffer, kMaxPath);
-        if theError = noErr then gPreferencesFolder := UTF8ToAnsi(StrPas(pathBuffer)) + '/';
-      end;
-    finally
-      Freemem(pathBuffer);
-    end
-  {$ELSE}
-    gPreferencesFolder := GetAppConfigDir(false);
-  {$ENDIF}
-end;
-
-procedure GetPreferencesFile;
-begin
-  {$IFDEF LCLCarbon}
-    GetPreferencesFolder;
-    gPreferencesFile := gPreferencesFolder + GLOBAL_ID + '.plist';
-  {$ELSE}
-    gPreferencesFile := GetAppConfigFile(false);
-  {$ENDIF}
-end;
-
 initialization
   {$I handlepreferences.lrs}
-  GetPreferencesFile;
 
 end.
 

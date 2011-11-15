@@ -14,7 +14,8 @@ unit SimThyrServices;
 interface
 
 uses
-  Classes, SysUtils, Grids, StdCtrls, Dialogs, Forms, SimThyrTypes
+  Classes, SysUtils, Grids, StdCtrls, Dialogs, Forms, SimThyrTypes,
+  DOM, XMLRead, XMLWrite
       {$IFDEF win32}
   , Windows, Win32Proc
   {$ELSE}
@@ -41,6 +42,9 @@ var
 
 function OSVersion: Str255;
 procedure bell;
+function NodeContent(theRoot: TDOMNode; name: String): String;
+procedure VarFromNode(theRoot: TDOMNode; name: String; var theVar: real);
+function SimpleNode(Doc: TXMLDocument; name, value: String): TDOMNode;
 procedure ClearResultContents (var theContents: tResultContent);
 procedure writeaTableCell (theTable: TStringGrid; theCell: TableCell; theString: Str255);
 procedure writeTableCells (theTable: TStringGrid; theContents: tResultContent);
@@ -97,6 +101,38 @@ begin
       beep;
     {$ENDIF}
   {$ENDIF}
+end;
+
+function NodeContent(theRoot: TDOMNode; name: String): String;
+var
+  theNode: TDOMNode;
+begin
+  if assigned(theRoot) then
+    theNode := theRoot.FindNode(name);
+  if assigned(theNode) then
+  begin
+    Result := theNode.FirstChild.NodeValue;
+  end
+  else
+    Result := 'NA';
+end;
+
+procedure VarFromNode(theRoot: TDOMNode; name: String; var theVar: real);
+var theString: String;
+begin
+  theString := NodeContent(theRoot, name);
+  if theString <> 'NA' then
+    theVar := StrToFloat(theString);
+end;
+
+function SimpleNode(Doc: TXMLDocument; name, value: String): TDOMNode;
+var
+  ItemNode,TextNode: TDOMNode;
+begin
+  ItemNode:=Doc.CreateElement(name);
+  TextNode:=Doc.CreateTextNode(value);
+  ItemNode.AppendChild(TextNode);
+  Result := ItemNode;
 end;
 
 procedure ClearResultContents (var theContents: tResultContent);

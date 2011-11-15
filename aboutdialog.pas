@@ -15,7 +15,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, Buttons, StdCtrls, types, LCLIntf, ComCtrls, SimThyrTypes,
-  SimThyrServices, VersionSupport, DOS;
+  SimThyrServices, VersionSupport, DOS, HandlePreferences;
 
 type
 
@@ -122,7 +122,7 @@ begin
   {$ENDIF}
   AboutWindow.Memo1.Lines.Add('Operating system: ' + GetOS + ' (' + SystemStem + MajVer + '.' + MinVer + ')');
   AboutWindow.Memo1.Lines.Add('');
-  AboutWindow.Memo1.Lines.Add('Preferences file: ' + gPreferencesFile);
+  AboutWindow.Memo1.Lines.Add('Preferences file: ' + GetPreferencesFile);
   AboutWindow.ShowModal;
 end;
 

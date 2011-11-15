@@ -75,6 +75,7 @@ begin
   Application.CreateForm(TPreferencesDialog, PreferencesDialog);
   PreferencesDialog.Hide;
   PreferencesDialog.AlphaBlend := false;
+  ReadPreferences;
   PreferencesDialog.InitMenuItems;
   SetUnits;
   Application.CreateForm(TIPSForm, IPSForm);
