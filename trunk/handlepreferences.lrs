@@ -102,7 +102,7 @@ LazarusResources.Add('TPreferencesDialog','FORMDATA',[
   +'tor; ,: Location of thousands separator e+ and e-: Scientific notation; ; S'
   +'eparates positive, negative and zero numbers, respectively.'#3'Top'#2#8#5'W'
   +'idth'#3#168#0#8'OnChange'#7#22'NumberFormatEditChange'#14'ParentShowHint'#8
-  +#8'ShowHint'#9#8'TabOrder'#2#0#4'Text'#6#12'###,###.####'#0#0#6'TLabel'#7'La'
+  +#8'ShowHint'#9#8'TabOrder'#2#0#4'Text'#6#12'###,###.00##'#0#0#6'TLabel'#7'La'
   +'bel11'#4'Left'#2#12#6'Height'#2#17#3'Top'#2#13#5'Width'#2':'#7'Caption'#6#7
   +'Numbers'#11'ParentColor'#8#0#0#6'TLabel'#24'NumberFormatExampleLabel'#4'Lef'
   +'t'#3#22#1#6'Height'#2#17#3'Top'#2#13#5'Width'#2'?'#7'Caption'#6#9'Example: '

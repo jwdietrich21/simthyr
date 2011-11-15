@@ -63,7 +63,7 @@ const
  MAXFACTORS = 10;
 
  BASE_URL = 'http://simthyr.medical-cybernetics.de';
- GLOBAL_ID = 'org.sf.simthyr';
+ SIMTHYR_GLOBAL_ID = 'net.sf.simthyr';
 
  LOG_TITLE = 'Log Window';
  PLOT_TITLE = 'Plots of simulated parameters';
@@ -116,7 +116,7 @@ var
  gDefaultColors: array[0..RES_MAX_COLS -1] of TColor;
  gSelectedChart: tChart;
  tmax_text, tmax_unit, i1_text, i1_unit: str255;
- gNumberFormat, gDateTimeFormat, gPreferencesFolder, gPreferencesFile: String;
+ gNumberFormat, gDateTimeFormat: String;
 
 
 implementation

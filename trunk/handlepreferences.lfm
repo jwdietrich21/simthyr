@@ -423,7 +423,7 @@ object PreferencesDialog: TPreferencesDialog
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
-      Text = '###,###.####'
+      Text = '###,###.00##'
     end
     object Label11: TLabel
       Left = 12
