@@ -72,6 +72,7 @@ const
  IMPLEMENTATION_MESSAGE = 'This function is not implemented in this version of SimThyr.';
  FORMAT_MESSAGE = 'Please check your input.';
  SAVE_ERROR_MESSAGE = 'Error saving the file';
+ PREFERENCES_SAVE_ERROR_MESSAGE = 'The preferences could not be saved permanently, however, they are valid for this session';
 
  EXAMPLE_STRING = 'Example: ';
  DEVIATION_STRING = 'Small deviations may result from transition effects and rounding.';
