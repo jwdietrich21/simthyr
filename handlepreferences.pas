@@ -429,7 +429,11 @@ end;
 procedure TPreferencesDialog.FormShow(Sender: TObject);
 begin
   if not gStartup then
-    DisplayExamples;
+    begin
+      DisplayExamples;
+      NumberFormatEdit.Text := gNumberFormat;
+      DateTimeFormatEdit.Text := gDateTimeFormat;
+    end;
 end;
 
 procedure TPreferencesDialog.NumberFormatEditChange(Sender: TObject);
@@ -488,12 +492,13 @@ end;
 
 procedure SavePreferences;
 var
-  theFileName: String;
+  theFileName, PreferencesFolder: String;
   Doc: TXMLDocument;
   StartComment: TDOMComment;
   RootNode, ElementNode, ItemNode, TextNode: TDOMNode;
 begin
   theFileName := GetPreferencesFile;
+  PreferencesFolder := GetPreferencesFolder;
   try
     Doc := TXMLDocument.Create;
 
@@ -515,7 +520,15 @@ begin
 
     RootNode.AppendChild(ElementNode);
 
-    WriteXMLFile(Doc,theFileName);
+    if not DirectoryExists(PreferencesFolder) then
+      if not CreateDir(PreferencesFolder) then
+        ShowMessage(PREFERENCES_SAVE_ERROR_MESSAGE);
+    if DirectoryExists(PreferencesFolder) then
+        begin
+          if FileExists(theFileName) then
+            SysUtils.DeleteFile(theFileName);
+          WriteXMLFile(Doc,theFileName);
+        end;
   finally
     Doc.Free;
   end;

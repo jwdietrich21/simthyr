@@ -178,7 +178,7 @@ begin
   SimThyrToolbar.CutMenuItem.ShortCut:=ShortCut(VK_X, modifierKey);
   SimThyrToolbar.CopyMenuItem.ShortCut:=ShortCut(VK_C, modifierKey);
   SimThyrToolbar.PasteMenuItem.ShortCut:=ShortCut(VK_V, modifierKey);
-   SimThyrToolbar.RunItem.ShortCut:=ShortCut(VK_R, modifierKey);
+  SimThyrToolbar.RunItem.ShortCut:=ShortCut(VK_R, modifierKey);
 end;
 
 procedure AdaptLanguages;
