@@ -149,7 +149,7 @@ end;
 function GetPreferencesFile: String;
 begin
   {$IFDEF LCLCarbon}
-    GetPreferencesFile := GetPreferencesFolder + SIMTHYR_GLOBAL_ID + '.plist';
+    GetPreferencesFile := GetPreferencesFolder + SIMTHYR_GLOBAL_ID + '.xml';
   {$ELSE}
     GetPreferencesFile := GetAppConfigFile(false);
   {$ENDIF}
@@ -510,6 +510,12 @@ begin
     RootNode:= Doc.DocumentElement;
 
     ElementNode:=Doc.CreateElement('units');
+
+    ElementNode.AppendChild(SimpleNode(Doc, 'TSH', gParameterUnit[pTSH_pos]));
+    ElementNode.AppendChild(SimpleNode(Doc, 'TT4', gParameterUnit[TT4_pos]));
+    ElementNode.AppendChild(SimpleNode(Doc, 'FT4', gParameterUnit[FT4_pos]));
+    ElementNode.AppendChild(SimpleNode(Doc, 'TT3', gParameterUnit[TT3_pos]));
+    ElementNode.AppendChild(SimpleNode(Doc, 'FT3', gParameterUnit[FT3_pos]));
 
     RootNode.AppendChild(ElementNode);
 
