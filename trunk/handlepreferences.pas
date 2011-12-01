@@ -471,10 +471,11 @@ var
 begin
   with theElements do
   begin
-    MassPrefix := '';
-    MassUnit := '';
-    VolumePrefix := '';
+    MassPrefix := copy(theString, 1, 1);
+    MassUnit := copy(theString, 2, pos('/', theString) - 2);
+    VolumePrefix := copy(theString, pos('/', theString) + 1, 1);
     VolumeUnit := 'l';
+    if VolumePrefix = VolumeUnit then VolumePrefix := '';  {no prefix set}
   end;
   ParsedUnitString := theElements;
 end;
@@ -502,10 +503,13 @@ begin
       RootNode := Doc.DocumentElement.FindNode('units');
       gParameterUnit[pTSH_pos] := NodeContent(RootNode, 'TSH');
       gParameterUnit[TT4_pos] := NodeContent(RootNode, 'TT4');
-      SetCombo(FT4MassPrefixCombo, FT4MassUnitCombo, FT4VolumePrefixCombo, gParameterUnit[TT4_pos]);
+      SetCombo(TT4MassPrefixCombo, TT4MassUnitCombo, TT4VolumePrefixCombo, gParameterUnit[TT4_pos]);
       gParameterUnit[FT4_pos] := NodeContent(RootNode, 'FT4');
+      SetCombo(FT4MassPrefixCombo, FT4MassUnitCombo, FT4VolumePrefixCombo, gParameterUnit[FT4_pos]);
       gParameterUnit[TT3_pos] := NodeContent(RootNode, 'TT3');
+      SetCombo(TT3MassPrefixCombo, TT3MassUnitCombo, TT3VolumePrefixCombo, gParameterUnit[TT3_pos]);
       gParameterUnit[FT3_pos] := NodeContent(RootNode, 'FT3');
+      SetCombo(FT3MassPrefixCombo, FT3MassUnitCombo, FT3VolumePrefixCombo, gParameterUnit[FT3_pos]);
     end;
     RootNode := Doc.DocumentElement.FindNode('formats');
     gNumberFormat := NodeContent(RootNode, 'numbers');
