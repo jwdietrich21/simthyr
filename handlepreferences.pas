@@ -100,6 +100,10 @@ type
     { public declarations }
   end;
 
+  TUnitElements = record
+    MassPrefix, MassUnit, VolumePrefix, VolumeUnit: String;
+  end;
+
 
 var
   PreferencesDialog: TPreferencesDialog;
@@ -461,6 +465,27 @@ begin
     end;
 end;
 
+function ParsedUnitString(theString: String): TUnitElements;
+var
+  theElements: TUnitElements;
+begin
+  with theElements do
+  begin
+    MassPrefix := '';
+    MassUnit := '';
+    VolumePrefix := '';
+    VolumeUnit := 'l';
+  end;
+  ParsedUnitString := theElements;
+end;
+
+procedure SetCombo(MassPrefixCombo, MassUnitCombo, VolumePrefixCombo: TComboBox; UnitString: String);
+var
+  theElements: TUnitElements;
+begin
+  theElements := ParsedUnitString(UnitString);
+end;
+
 procedure ReadPreferences; {may not be called before PreferencesDialog has been created}
 var
   Doc: TXMLDocument;
@@ -472,6 +497,16 @@ begin
   try
     Doc := TXMLDocument.Create();
     ReadXMLFile(Doc, theFileName);
+    with PreferencesDialog do
+    begin
+      RootNode := Doc.DocumentElement.FindNode('units');
+      gParameterUnit[pTSH_pos] := NodeContent(RootNode, 'TSH');
+      gParameterUnit[TT4_pos] := NodeContent(RootNode, 'TT4');
+      SetCombo(FT4MassPrefixCombo, FT4MassUnitCombo, FT4VolumePrefixCombo, gParameterUnit[TT4_pos]);
+      gParameterUnit[FT4_pos] := NodeContent(RootNode, 'FT4');
+      gParameterUnit[TT3_pos] := NodeContent(RootNode, 'TT3');
+      gParameterUnit[FT3_pos] := NodeContent(RootNode, 'FT3');
+    end;
     RootNode := Doc.DocumentElement.FindNode('formats');
     gNumberFormat := NodeContent(RootNode, 'numbers');
     gDateTimeFormat := NodeContent(RootNode, 'time');
