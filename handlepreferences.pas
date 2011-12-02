@@ -469,13 +469,26 @@ function ParsedUnitString(theString: String): TUnitElements;
 var
   theElements: TUnitElements;
 begin
-  with theElements do
+  if theString <> 'NA' then
+    begin
+      with theElements do
+      begin
+        MassPrefix := copy(theString, 1, 1);
+        MassUnit := copy(theString, 2, pos('/', theString) - 2);
+        VolumePrefix := copy(theString, pos('/', theString) + 1, 1);
+        VolumeUnit := 'l';
+        if VolumePrefix = VolumeUnit then VolumePrefix := '';  {no prefix set}
+      end;
+    end
+  else
   begin
-    MassPrefix := copy(theString, 1, 1);
-    MassUnit := copy(theString, 2, pos('/', theString) - 2);
-    VolumePrefix := copy(theString, pos('/', theString) + 1, 1);
-    VolumeUnit := 'l';
-    if VolumePrefix = VolumeUnit then VolumePrefix := '';  {no prefix set}
+    with theElements do
+    begin
+      MassPrefix := 'NA';
+      MassUnit := 'NA';
+      VolumePrefix := 'NA';
+      VolumeUnit := 'NA';
+    end;
   end;
   ParsedUnitString := theElements;
 end;
