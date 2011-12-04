@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="3"/>
-      <BuildNr Value="39"/>
+      <BuildNr Value="41"/>
       <StringTable CompanyName="SPINA Project" FileDescription="Beta version of SimThyr 3.0" InternalName="SimThyr 3.0 Beta" LegalCopyright="1994-2011 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.0.0 Beta"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -45,11 +45,10 @@
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyr"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="18"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="53"/>
-        <CursorPos X="81" Y="65"/>
+        <TopLine Value="103"/>
+        <CursorPos X="37" Y="131"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -120,7 +119,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="35"/>
         <CursorPos X="71" Y="51"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="79"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit6>
@@ -130,10 +129,11 @@
         <ComponentName Value="SimulationSettings"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="LaunchDialog"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="284"/>
-        <CursorPos X="47" Y="10"/>
+        <TopLine Value="168"/>
+        <CursorPos X="16" Y="191"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -141,8 +141,8 @@
       <Unit8>
         <Filename Value="/Developer/lazarus/lcl/include/customform.inc"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1346"/>
-        <CursorPos X="1" Y="1363"/>
+        <TopLine Value="355"/>
+        <CursorPos X="1" Y="372"/>
         <UsageCount Value="10"/>
       </Unit8>
       <Unit9>
@@ -360,8 +360,8 @@
         <EditorIndex Value="15"/>
         <WindowIndex Value="0"/>
         <TopLine Value="100"/>
-        <CursorPos X="72" Y="125"/>
-        <UsageCount Value="171"/>
+        <CursorPos X="13" Y="127"/>
+        <UsageCount Value="172"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit33>
@@ -375,7 +375,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="47" Y="10"/>
-        <UsageCount Value="168"/>
+        <UsageCount Value="169"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit34>
@@ -413,7 +413,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="47" Y="10"/>
-        <UsageCount Value="166"/>
+        <UsageCount Value="167"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit38>
@@ -567,7 +567,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="153"/>
         <CursorPos X="1" Y="170"/>
-        <UsageCount Value="120"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit57>
@@ -669,7 +669,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="47" Y="10"/>
-        <UsageCount Value="99"/>
+        <UsageCount Value="100"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit70>
@@ -681,7 +681,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="55" Y="5"/>
-        <UsageCount Value="93"/>
+        <UsageCount Value="94"/>
         <Loaded Value="True"/>
       </Unit71>
       <Unit72>
@@ -692,7 +692,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="36" Y="72"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="88"/>
         <Loaded Value="True"/>
       </Unit72>
       <Unit73>
@@ -703,11 +703,11 @@
         <UnitName Value="HandlePreferences"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="525"/>
-        <CursorPos X="43" Y="304"/>
-        <UsageCount Value="83"/>
+        <TopLine Value="530"/>
+        <CursorPos X="102" Y="539"/>
+        <UsageCount Value="84"/>
         <Bookmarks Count="1">
-          <Item0 X="1" Y="476" ID="8"/>
+          <Item0 X="1" Y="475" ID="8"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -737,7 +737,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="3"/>
         <CursorPos X="47" Y="10"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="79"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit76>
@@ -843,123 +843,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="505" Column="1" TopLine="499"/>
+        <Caret Line="304" Column="43" TopLine="290"/>
       </Position1>
       <Position2>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="506" Column="1" TopLine="499"/>
+        <Caret Line="84" Column="28" TopLine="67"/>
       </Position2>
       <Position3>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="510" Column="1" TopLine="499"/>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="80" Column="1" TopLine="53"/>
       </Position3>
       <Position4>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="511" Column="1" TopLine="499"/>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="79" Column="21" TopLine="53"/>
       </Position4>
       <Position5>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="512" Column="1" TopLine="499"/>
+        <Caret Line="502" Column="1" TopLine="485"/>
       </Position5>
       <Position6>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="515" Column="1" TopLine="499"/>
+        <Caret Line="505" Column="35" TopLine="485"/>
       </Position6>
       <Position7>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="516" Column="1" TopLine="499"/>
+        <Caret Line="494" Column="51" TopLine="485"/>
       </Position7>
       <Position8>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="517" Column="1" TopLine="499"/>
+        <Caret Line="505" Column="1" TopLine="485"/>
       </Position8>
       <Position9>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="504" Column="46" TopLine="499"/>
+        <Caret Line="506" Column="37" TopLine="487"/>
       </Position9>
       <Position10>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="490" Column="26" TopLine="460"/>
+        <Caret Line="493" Column="50" TopLine="487"/>
       </Position10>
       <Position11>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="472" Column="1" TopLine="460"/>
+        <Caret Line="505" Column="1" TopLine="487"/>
       </Position11>
       <Position12>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="487" Column="1" TopLine="460"/>
+        <Caret Line="506" Column="1" TopLine="487"/>
       </Position12>
       <Position13>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="488" Column="1" TopLine="460"/>
+        <Caret Line="511" Column="53" TopLine="490"/>
       </Position13>
       <Position14>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="489" Column="1" TopLine="461"/>
+        <Caret Line="504" Column="1" TopLine="490"/>
       </Position14>
       <Position15>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="490" Column="1" TopLine="462"/>
+        <Caret Line="9" Column="61" TopLine="1"/>
       </Position15>
       <Position16>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="493" Column="1" TopLine="465"/>
+        <Caret Line="253" Column="26" TopLine="225"/>
       </Position16>
       <Position17>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="501" Column="1" TopLine="484"/>
+        <Caret Line="254" Column="53" TopLine="226"/>
       </Position17>
       <Position18>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="514" Column="66" TopLine="470"/>
+        <Caret Line="260" Column="28" TopLine="232"/>
       </Position18>
       <Position19>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="472" Column="1" TopLine="466"/>
+        <Caret Line="261" Column="57" TopLine="233"/>
       </Position19>
       <Position20>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="476" Column="1" TopLine="466"/>
+        <Caret Line="262" Column="28" TopLine="234"/>
       </Position20>
       <Position21>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="477" Column="1" TopLine="466"/>
+        <Caret Line="263" Column="57" TopLine="235"/>
       </Position21>
       <Position22>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="478" Column="1" TopLine="466"/>
+        <Caret Line="309" Column="34" TopLine="281"/>
       </Position22>
       <Position23>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="479" Column="1" TopLine="466"/>
+        <Caret Line="310" Column="34" TopLine="282"/>
       </Position23>
       <Position24>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="480" Column="1" TopLine="466"/>
+        <Caret Line="317" Column="36" TopLine="289"/>
       </Position24>
       <Position25>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="493" Column="1" TopLine="466"/>
+        <Caret Line="318" Column="36" TopLine="290"/>
       </Position25>
       <Position26>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="688" Column="37" TopLine="655"/>
+        <Caret Line="554" Column="45" TopLine="531"/>
       </Position26>
       <Position27>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="304" Column="43" TopLine="290"/>
+        <Caret Line="553" Column="45" TopLine="530"/>
       </Position27>
       <Position28>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="84" Column="28" TopLine="67"/>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="69" Column="41" TopLine="46"/>
       </Position28>
       <Position29>
         <Filename Value="SimThyr.lpr"/>
-        <Caret Line="80" Column="1" TopLine="53"/>
+        <Caret Line="70" Column="24" TopLine="64"/>
       </Position29>
       <Position30>
-        <Filename Value="SimThyr.lpr"/>
-        <Caret Line="79" Column="21" TopLine="53"/>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="192" Column="12" TopLine="168"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

@@ -23,7 +23,7 @@ object SimulationSettings: TSimulationSettings
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '0.9.30.2RC2'
+  LCLVersion = '0.9.30.2'
   Visible = True
   object Label1: TLabel
     Left = 96

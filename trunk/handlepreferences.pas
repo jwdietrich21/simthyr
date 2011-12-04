@@ -39,7 +39,6 @@ type
     Label10: TLabel;
     Label11: TLabel;
     NumberFormatExampleLabel: TLabel;
-    Label9: TLabel;
     TT3MassPrefixCombo: TComboBox;
     TT3MassUnitCombo: TComboBox;
     TT3VolumePrefixCombo: TComboBox;
@@ -493,14 +492,56 @@ begin
   ParsedUnitString := theElements;
 end;
 
+procedure SetTSHUnitCombo;
+var
+  theElements: TUnitElements;
+  i, max: integer;
+begin
+  theElements := ParsedUnitString(gParameterUnit[pTSH_pos]);
+  with PreferencesDialog do
+    begin
+    max := TSHMassPrefixCombo.Items.Count;
+    for i := 0 to max -1 do
+    begin
+      if TSHMassPrefixCombo.Items[i] = theElements.MassPrefix then
+        TSHMassPrefixCombo.ItemIndex := i;
+    end;
+    max := TSHVolumePrefixCombo.Items.Count;
+    for i := 0 to max -1 do
+    begin
+      if TSHVolumePrefixCombo.Items[i] = theElements.VolumePrefix then
+        TSHVolumePrefixCombo.ItemIndex := i;
+    end;
+  end;
+end;
+
 procedure SetCombo(MassPrefixCombo, MassUnitCombo, VolumePrefixCombo: TComboBox; UnitString: String);
 var
   theElements: TUnitElements;
+  i, max: integer;
 begin
   theElements := ParsedUnitString(UnitString);
+  max := MassPrefixCombo.Items.Count;
+  for i := 0 to max -1 do
+  begin
+    if MassPrefixCombo.Items[i] = theElements.MassPrefix then
+      MassPrefixCombo.ItemIndex := i;
+  end;
+  max := MassUnitCombo.Items.Count;
+  for i := 0 to max -1 do
+  begin
+    if MassUnitCombo.Items[i] = theElements.MassUnit then
+      MassUnitCombo.ItemIndex := i;
+  end;
+  max := VolumePrefixCombo.Items.Count;
+  for i := 0 to max -1 do
+  begin
+    if VolumePrefixCombo.Items[i] = theElements.VolumePrefix then
+      VolumePrefixCombo.ItemIndex := i;
+  end;
 end;
 
-procedure ReadPreferences; {may not be called before PreferencesDialog has been created}
+procedure ReadPreferences; {should not be called before PreferencesDialog has been created}
 var
   Doc: TXMLDocument;
   RootNode, theNode: TDOMNode;
@@ -515,6 +556,8 @@ begin
     begin
       RootNode := Doc.DocumentElement.FindNode('units');
       gParameterUnit[pTSH_pos] := NodeContent(RootNode, 'TSH');
+      gParameterUnit[TSH_pos] := gParameterUnit[pTSH_pos];
+      SetTSHUnitCombo;
       gParameterUnit[TT4_pos] := NodeContent(RootNode, 'TT4');
       SetCombo(TT4MassPrefixCombo, TT4MassUnitCombo, TT4VolumePrefixCombo, gParameterUnit[TT4_pos]);
       gParameterUnit[FT4_pos] := NodeContent(RootNode, 'FT4');

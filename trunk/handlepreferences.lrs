@@ -91,25 +91,22 @@ LazarusResources.Add('TPreferencesDialog','FORMDATA',[
   +'eight'#2#0#9'ItemIndex'#2#0#13'Items.Strings'#1#6#0#0#8'OnChange'#7#26'FT3V'
   +'olumePrefixComboChange'#8'TabOrder'#2#13#0#0#6'TLabel'#18'FT3VolumeUnitLabe'
   +'l'#4'Left'#3#252#0#6'Height'#2#17#3'Top'#3#142#0#5'Width'#2#5#7'Caption'#6#1
-  +'l'#11'ParentColor'#8#0#0#0#6'TLabel'#6'Label9'#4'Left'#2'('#6'Height'#2#17#3
-  +'Top'#3'V'#1#5'Width'#3#193#0#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Captio'
-  +'n'#6#31'Not all preferences are stored.'#11'ParentColor'#8#0#0#9'TGroupBox'
-  +#9'GroupBox2'#4'Left'#2#24#6'Height'#2'`'#3'Top'#3#232#0#5'Width'#3#221#1#7
-  +'Caption'#6#8'Formats:'#12'ClientHeight'#2'J'#11'ClientWidth'#3#213#1#8'TabO'
-  +'rder'#2#3#0#5'TEdit'#16'NumberFormatEdit'#4'Left'#2'L'#6'Height'#2#22#4'Hin'
-  +'t'#12#9#1#0#0'0: Digit place holder (replaces/fills with 0); 1: Digit place'
-  +' holder (digit in the value replaces #); .: Location of decimal separator; '
-  +',: Location of thousands separator e+ and e-: Scientific notation; ; Separa'
-  +'tes positive, negative and zero numbers, respectively.'#3'Top'#2#8#5'Width'
-  +#3#168#0#8'OnChange'#7#22'NumberFormatEditChange'#14'ParentShowHint'#8#8'Sho'
-  +'wHint'#9#8'TabOrder'#2#0#4'Text'#6#12'###,###.00##'#0#0#6'TLabel'#7'Label11'
-  +#4'Left'#2#12#6'Height'#2#17#3'Top'#2#13#5'Width'#2':'#7'Caption'#6#7'Number'
-  +'s'#11'ParentColor'#8#0#0#6'TLabel'#24'NumberFormatExampleLabel'#4'Left'#3#22
-  +#1#6'Height'#2#17#3'Top'#2#13#5'Width'#2'?'#7'Caption'#6#9'Example: '#11'Par'
-  +'entColor'#8#0#0#5'TEdit'#18'DateTimeFormatEdit'#4'Left'#2'L'#6'Height'#2#22
-  +#4'Hint'#6'@D: day; dd: day with leading zero; h: hour; n: minute; s: second'
-  +#3'Top'#2'&'#5'Width'#3#168#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'
-  +#2#1#4'Text'#6#13'"d"D hh:nn:ss'#0#0#6'TLabel'#7'Label12'#4'Left'#2#12#6'Hei'
-  +'ght'#2#17#3'Top'#2'+'#5'Width'#2' '#7'Caption'#6#4'Time'#11'ParentColor'#8#0
-  +#0#0#0
+  +'l'#11'ParentColor'#8#0#0#0#9'TGroupBox'#9'GroupBox2'#4'Left'#2#24#6'Height'
+  +#2'`'#3'Top'#3#232#0#5'Width'#3#221#1#7'Caption'#6#8'Formats:'#12'ClientHeig'
+  +'ht'#2'J'#11'ClientWidth'#3#213#1#8'TabOrder'#2#3#0#5'TEdit'#16'NumberFormat'
+  +'Edit'#4'Left'#2'L'#6'Height'#2#22#4'Hint'#12#9#1#0#0'0: Digit place holder '
+  +'(replaces/fills with 0); 1: Digit place holder (digit in the value replaces'
+  +' #); .: Location of decimal separator; ,: Location of thousands separator e'
+  +'+ and e-: Scientific notation; ; Separates positive, negative and zero numb'
+  +'ers, respectively.'#3'Top'#2#8#5'Width'#3#168#0#8'OnChange'#7#22'NumberForm'
+  +'atEditChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#4'Text'#6
+  +#12'###,###.00##'#0#0#6'TLabel'#7'Label11'#4'Left'#2#12#6'Height'#2#17#3'Top'
+  +#2#13#5'Width'#2':'#7'Caption'#6#7'Numbers'#11'ParentColor'#8#0#0#6'TLabel'
+  +#24'NumberFormatExampleLabel'#4'Left'#3#22#1#6'Height'#2#17#3'Top'#2#13#5'Wi'
+  +'dth'#2'?'#7'Caption'#6#9'Example: '#11'ParentColor'#8#0#0#5'TEdit'#18'DateT'
+  +'imeFormatEdit'#4'Left'#2'L'#6'Height'#2#22#4'Hint'#6'@D: day; dd: day with '
+  +'leading zero; h: hour; n: minute; s: second'#3'Top'#2'&'#5'Width'#3#168#0#14
+  +'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#4'Text'#6#13'"d"D hh:nn:ss'
+  +#0#0#6'TLabel'#7'Label12'#4'Left'#2#12#6'Height'#2#17#3'Top'#2'+'#5'Width'#2
+  +' '#7'Caption'#6#4'Time'#11'ParentColor'#8#0#0#0#0
 ]);

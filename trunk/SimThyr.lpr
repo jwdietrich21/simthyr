@@ -66,6 +66,8 @@ begin
     AlphaBlend := false;
   end;
   if splashflag then SplashScreen.Update;
+  {Application.MainFormOnTaskbar := True;}
+  Application.BringToFront;
   Application.CreateForm(TAboutWindow, AboutWindow);
   AboutWindow.Hide;
   AboutWindow.AlphaBlend := false;
@@ -126,6 +128,7 @@ begin
   begin
     SimulationSettings.ShowOnTop;
     SimulationSettings.SetFocus;
+    SimulationSettings.BringToFront;
     {SimulationSettings.FormStyle := fsStayOnTop;}
   end
   else SimulationSettings.hide;
