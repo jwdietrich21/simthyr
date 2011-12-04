@@ -142,7 +142,7 @@ type
 var
   SimThyrToolbar: TSimThyrToolbar;
   gInterfaceLanguage: tInterfaceLanguage;
-  j: integer;
+  j, gIdleCounter: integer;
 
 implementation
 
@@ -197,8 +197,7 @@ end;
 procedure TSimThyrToolbar.FormCreate(Sender: TObject);
 begin
   AdaptLanguages;
-  {GetPreferences;
-  Startup:=true;  }
+  gIdleCounter := 0;
 end;
 
 procedure TSimThyrToolbar.FormShow(Sender: TObject);
@@ -218,8 +217,14 @@ begin
     SimThyrLogWindow.ValuesGrid.BeginUpdate;
     SimThyrLogWindow.ValuesGrid.EndUpdate(true);
   {$ENDIF}
-    application.ProcessMessages;
-    //Notice.Hide;
+    if gIdleCounter < 2 then
+    begin
+     SimThyrToolbar.SendToBack;
+     SimulationSettings.ShowOnTop;
+     SimulationSettings.SetFocus;
+     gIdleCounter := gIdleCounter + 1;
+    end;
+  application.ProcessMessages;
   end
   else;
 end;

@@ -126,10 +126,10 @@ begin
   Prediction.Show;
   if showSettingsAtStartup then
   begin
+    SimThyrToolbar.SendToBack;
     SimulationSettings.ShowOnTop;
     SimulationSettings.SetFocus;
-    SimulationSettings.BringToFront;
-    {SimulationSettings.FormStyle := fsStayOnTop;}
+    {SimulationSettings.FormStyle := fsSystemStayOnTop;}
   end
   else SimulationSettings.hide;
   Application.Run;
