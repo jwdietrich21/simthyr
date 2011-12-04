@@ -395,15 +395,6 @@ object PreferencesDialog: TPreferencesDialog
       ParentColor = False
     end
   end
-  object Label9: TLabel
-    Left = 40
-    Height = 17
-    Top = 342
-    Width = 193
-    Anchors = [akLeft, akBottom]
-    Caption = 'Not all preferences are stored.'
-    ParentColor = False
-  end
   object GroupBox2: TGroupBox
     Left = 24
     Height = 96
