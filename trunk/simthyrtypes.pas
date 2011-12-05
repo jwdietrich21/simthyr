@@ -41,9 +41,6 @@ const
  DEC_POINT = '.';
  DEC_COMMA = ',';
 
- ON = 1;
- OFF = 0;
-
  i_pos = 0;
  t_pos = 1;
  TRH_pos = 2;
@@ -64,6 +61,7 @@ const
 
  BASE_URL = 'http://simthyr.medical-cybernetics.de';
  SIMTHYR_GLOBAL_ID = 'net.sf.simthyr';
+ HELP_URL = 'http://tfc.medizinische-kybernetik.de/';
 
  LOG_TITLE = 'Log Window';
  PLOT_TITLE = 'Plots of simulated parameters';
