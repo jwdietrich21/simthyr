@@ -18,7 +18,7 @@ uses
   SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers, ComCtrls,
   LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog, ShowAboutModel,
   StructureParameters, SimThyrPrediction, ScenarioHandler, HandlePreferences,
-  HandleNotifier;
+  HandleNotifier, LCLProc, LazHelpHTML;
 
 type
 
@@ -231,7 +231,7 @@ end;
 
 procedure TSimThyrToolbar.HelpItemClick(Sender: TObject);
 begin
-  ShowImplementationMessage
+  OpenURL(HELP_URL);
 end;
 
 procedure TSimThyrToolbar.IdleTimer1Timer(Sender: TObject);
