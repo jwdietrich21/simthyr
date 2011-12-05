@@ -61,7 +61,7 @@ const
 
  BASE_URL = 'http://simthyr.medical-cybernetics.de';
  SIMTHYR_GLOBAL_ID = 'net.sf.simthyr';
- HELP_URL = 'http://tfc.medizinische-kybernetik.de/';
+ HELP_URL = 'http://simthyr.sourceforge.net/manual.html';
 
  LOG_TITLE = 'Log Window';
  PLOT_TITLE = 'Plots of simulated parameters';

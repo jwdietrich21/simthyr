@@ -162,6 +162,7 @@ begin
 end;
 
 function TStructureParameters.ParametersCorrect: boolean;
+  {reads structure parameters and checks for syntactical correctness}
 var
   wellFormated: boolean;
 begin

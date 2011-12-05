@@ -53,11 +53,11 @@ begin
   Prediction.Show;
   FF := ffFixed;
   writeaMemoLine(Prediction.Memo1, '');
-  writeaMemoLine(Prediction.Memo1, 'TRH: ' + FloatToStrF(TRH1 / UTRH, FF, 0, 4));
-  writeaMemoLine(Prediction.Memo1, 'TSH: ' + FloatToStrF(TSH1 * gParameterFactor[pTSH_pos], FF, 0, 4) + ', ' + FloatToStrF(TSH2 * gParameterFactor[pTSH_pos], FF, 0, 4) + ' and ' + FloatToStrF(TSH3 * gParameterFactor[pTSH_pos], FF, 0, 4));
-  writeaMemoLine(Prediction.Memo1, 'FT4: ' + FloatToStrF(FT41 / UFT4 * gParameterFactor[FT4_pos], FF, 0, 4) + ', ' + FloatToStrF(FT42 / UFT4 * gParameterFactor[FT4_pos], FF, 0, 4) + ' and ' + FloatToStrF(FT43 / UFT4 * gParameterFactor[FT4_pos], FF, 0, 4));
-  writeaMemoLine(Prediction.Memo1, 'FT3: ' + FloatToStrF(FT31 / UFT3 * gParameterFactor[FT3_pos], FF, 0, 4) + ', ' + FloatToStrF(FT32 / UFT3 * gParameterFactor[FT3_pos], FF, 0, 4) + ' and ' + FloatToStrF(FT33 / UFT3 * gParameterFactor[FT3_pos], FF, 0, 4));
-  writeaMemoLine(Prediction.Memo1, 'cT3: ' + FloatToStrF(T3z1 / UFT3, FF, 0, 4) + ', ' + FloatToStrF(T3z2 / UFT3, FF, 0, 4) + ' and ' + FloatToStrF(T3z2 / UFT3, FF, 0, 4));
+  writeaMemoLine(Prediction.Memo1, 'TRH: ' + FloatToStrF(TRH1 / UTRH, FF, 0, 4) + ' ' + gParameterUnit[TRH_pos]);
+  writeaMemoLine(Prediction.Memo1, 'TSH: ' + FloatToStrF(TSH1 * gParameterFactor[pTSH_pos], FF, 0, 4) + ', ' + FloatToStrF(TSH2 * gParameterFactor[pTSH_pos], FF, 0, 4) + ' and ' + FloatToStrF(TSH3 * gParameterFactor[pTSH_pos], FF, 0, 4) + ' ' + gParameterUnit[TSH_pos]);
+  writeaMemoLine(Prediction.Memo1, 'FT4: ' + FloatToStrF(FT41 / UFT4 * gParameterFactor[FT4_pos], FF, 0, 4) + ', ' + FloatToStrF(FT42 / UFT4 * gParameterFactor[FT4_pos], FF, 0, 4) + ' and ' + FloatToStrF(FT43 / UFT4 * gParameterFactor[FT4_pos], FF, 0, 4) + ' ' + gParameterUnit[FT4_pos]);
+  writeaMemoLine(Prediction.Memo1, 'FT3: ' + FloatToStrF(FT31 / UFT3 * gParameterFactor[FT3_pos], FF, 0, 4) + ', ' + FloatToStrF(FT32 / UFT3 * gParameterFactor[FT3_pos], FF, 0, 4) + ' and ' + FloatToStrF(FT33 / UFT3 * gParameterFactor[FT3_pos], FF, 0, 4) + ' ' + gParameterUnit[FT3_pos]);
+  writeaMemoLine(Prediction.Memo1, 'cT3: ' + FloatToStrF(T3z1 / UFT3, FF, 0, 4) + ', ' + FloatToStrF(T3z2 / UFT3, FF, 0, 4) + ' and ' + FloatToStrF(T3z2 / UFT3, FF, 0, 4) + ' ' + gParameterUnit[FT3_pos]);
   writeaMemoLine(Prediction.Memo1, '');
   writeaMemoLine(Prediction.Memo1, DEVIATION_STRING);
 end;

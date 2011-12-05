@@ -1,25 +1,25 @@
 object SimOptionsDlg: TSimOptionsDlg
   Left = 438
-  Height = 127
+  Height = 131
   Top = 449
-  Width = 341
+  Width = 399
   AlphaBlend = True
   AlphaBlendValue = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   Caption = 'Additional Simulation Options'
-  ClientHeight = 127
-  ClientWidth = 341
+  ClientHeight = 131
+  ClientWidth = 399
   Color = clWhite
   OnShow = FormShow
-  LCLVersion = '0.9.30.2RC1'
+  LCLVersion = '0.9.30.2'
   Visible = True
   object NoiseCheckBox: TCheckBox
     Left = 40
-    Height = 17
+    Height = 18
     Hint = 'Use noise at the level of hypothalamus'
     Top = 24
-    Width = 107
+    Width = 140
     Caption = 'Superimpose noise'
     Checked = True
     OnChange = NoiseCheckBoxChange
@@ -30,10 +30,10 @@ object SimOptionsDlg: TSimOptionsDlg
   end
   object PreviewCheckBox: TCheckBox
     Left = 40
-    Height = 17
+    Height = 18
     Hint = 'Use the calculated equilibrium values as shown in the preview palette as initial hormone levels'
     Top = 48
-    Width = 248
+    Width = 326
     Caption = 'Use calculated equilibrium values as start values'
     Checked = True
     OnChange = PreviewCheckBoxChange
@@ -43,9 +43,9 @@ object SimOptionsDlg: TSimOptionsDlg
     TabOrder = 1
   end
   object OKButton: TButton
-    Left = 248
+    Left = 306
     Height = 25
-    Top = 85
+    Top = 89
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'OK'
@@ -54,9 +54,9 @@ object SimOptionsDlg: TSimOptionsDlg
     TabOrder = 2
   end
   object CancelButton: TButton
-    Left = 160
+    Left = 218
     Height = 25
-    Top = 85
+    Top = 89
     Width = 75
     Anchors = [akRight, akBottom]
     Cancel = True
@@ -64,4 +64,4 @@ object SimOptionsDlg: TSimOptionsDlg
     OnClick = CancelButtonClick
     TabOrder = 3
   end
-end
+end

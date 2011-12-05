@@ -20,7 +20,7 @@ procedure SaveScenario(theFileName: String);
 
 implementation
 
-procedure ReadScenario(theFileName: String);
+procedure ReadScenario(theFileName: String); {reads a simulation scenario}
 var
   Doc: TXMLDocument;
   RootNode, theNode: TDOMNode;
@@ -72,7 +72,7 @@ begin
   end;
 end;
 
-procedure SaveScenario(theFileName: String);
+procedure SaveScenario(theFileName: String); {saves scenario as XML file}
 var
   Doc: TXMLDocument;
   RootNode, ElementNode, ItemNode, TextNode: TDOMNode;
