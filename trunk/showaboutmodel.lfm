@@ -1,8 +1,8 @@
 object AboutModelForm: TAboutModelForm
   Left = 498
-  Height = 700
+  Height = 730
   Top = 180
-  Width = 557
+  Width = 577
   HorzScrollBar.Page = 509
   HorzScrollBar.Range = 509
   HorzScrollBar.Visible = False
@@ -13,16 +13,16 @@ object AboutModelForm: TAboutModelForm
   Anchors = []
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'About the model'
-  ClientHeight = 700
-  ClientWidth = 557
+  ClientHeight = 730
+  ClientWidth = 577
   Color = clWhite
-  LCLVersion = '0.9.30.2RC1'
+  LCLVersion = '0.9.30.2'
   Visible = True
   object Label1: TLabel
     Left = 56
-    Height = 14
+    Height = 17
     Top = 96
-    Width = 68
+    Width = 78
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -33,7 +33,7 @@ object AboutModelForm: TAboutModelForm
     Left = 56
     Height = 48
     Top = 16
-    Width = 444
+    Width = 464
     Anchors = [akTop, akLeft, akRight]
     Caption = 'This simulation is based on version 10 of the MiMe-NoCoDI model of thyrotropic feedback control proposed by Dietrich et al. 1997 and subsequently.'
     Font.Quality = fqAntialiased
@@ -42,10 +42,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 340
-    Height = 14
+    Left = 307
+    Height = 17
     Top = 64
-    Width = 160
+    Width = 213
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -59,9 +59,9 @@ object AboutModelForm: TAboutModelForm
   end
   object Memo1: TMemo
     Left = 56
-    Height = 522
+    Height = 552
     Top = 120
-    Width = 444
+    Width = 464
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.InnerBorder = 5
     Lines.Strings = (
@@ -111,4 +111,4 @@ object AboutModelForm: TAboutModelForm
     ScrollBars = ssAutoBoth
     TabOrder = 1
   end
-end
+end

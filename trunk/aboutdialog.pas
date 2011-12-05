@@ -22,6 +22,15 @@ type
   { TAboutWindow }
 
   TAboutWindow = class(TForm)
+    Image10: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    Image5: TImage;
+    Image6: TImage;
+    Image7: TImage;
+    Image8: TImage;
+    Image9: TImage;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -32,11 +41,23 @@ type
     Memo1: TMemo;
     OKButton: TButton;
     Image1: TImage;
-    PageControl1: TPageControl;
+    StaticText1: TStaticText;
+    StaticText2: TStaticText;
+    Tabs: TPageControl;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
+    procedure Image10Click(Sender: TObject);
     procedure Image1Click(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
+    procedure Image3Click(Sender: TObject);
+    procedure Image4Click(Sender: TObject);
+    procedure Image5Click(Sender: TObject);
+    procedure Image6Click(Sender: TObject);
+    procedure Image7Click(Sender: TObject);
+    procedure Image8Click(Sender: TObject);
+    procedure Image9Click(Sender: TObject);
     procedure Label2Click(Sender: TObject);
     procedure Label5Click(Sender: TObject);
     procedure Label7Click(Sender: TObject);
@@ -90,6 +111,51 @@ end;
 procedure TAboutWindow.Image1Click(Sender: TObject);
 begin
   OpenURL(BASE_URL);
+end;
+
+procedure TAboutWindow.Image10Click(Sender: TObject);
+begin
+  OpenURL('http://versionsapp.com/');
+end;
+
+procedure TAboutWindow.Image2Click(Sender: TObject);
+begin
+  OpenURL('http://link.medinn.med.uni-muenchen.de');
+end;
+
+procedure TAboutWindow.Image3Click(Sender: TObject);
+begin
+  OpenURL('http://www.uniklinik-ulm.de');
+end;
+
+procedure TAboutWindow.Image4Click(Sender: TObject);
+begin
+  OpenURL('http://www.ruhr-uni-bochum.de');
+end;
+
+procedure TAboutWindow.Image5Click(Sender: TObject);
+begin
+  OpenURL('http://www.bergmannsheil.de');
+end;
+
+procedure TAboutWindow.Image6Click(Sender: TObject);
+begin
+  OpenURL('http://www.instruct.de');
+end;
+
+procedure TAboutWindow.Image7Click(Sender: TObject);
+begin
+  OpenURL('http://www.freepascal.org');
+end;
+
+procedure TAboutWindow.Image8Click(Sender: TObject);
+begin
+  OpenURL('http://lazarus.freepascal.org');
+end;
+
+procedure TAboutWindow.Image9Click(Sender: TObject);
+begin
+  OpenURL('http://www.barebones.com/products/textwrangler/');
 end;
 
 procedure TAboutWindow.ShowAbout;
