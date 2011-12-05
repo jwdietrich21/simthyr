@@ -90,7 +90,7 @@ begin
   {$ENDIF}
 end;
 
-procedure bell;
+procedure bell; {platform-independent implementation of acustical warning}
 begin
   {$IFDEF win32}
     MessageBeep(0);
@@ -103,7 +103,7 @@ begin
   {$ENDIF}
 end;
 
-function NodeContent(theRoot: TDOMNode; name: String): String;
+function NodeContent(theRoot: TDOMNode; name: String): String; {supports XML routines}
 var
   theNode: TDOMNode;
 begin
@@ -117,7 +117,7 @@ begin
     Result := 'NA';
 end;
 
-procedure VarFromNode(theRoot: TDOMNode; name: String; var theVar: real);
+procedure VarFromNode(theRoot: TDOMNode; name: String; var theVar: real); {supports XML routines}
 var theString: String;
 begin
   theString := NodeContent(theRoot, name);
@@ -125,7 +125,7 @@ begin
     theVar := StrToFloat(theString);
 end;
 
-function SimpleNode(Doc: TXMLDocument; name, value: String): TDOMNode;
+function SimpleNode(Doc: TXMLDocument; name, value: String): TDOMNode; {supports XML routines}
 var
   ItemNode,TextNode: TDOMNode;
 begin

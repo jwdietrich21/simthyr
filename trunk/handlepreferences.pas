@@ -118,6 +118,7 @@ procedure ReadPreferences;
 implementation
 
 function GetPreferencesFolder: String;
+  { platform-independend method to search for the location of preferences folder}
 const
   kMaxPath = 1024;
 var
@@ -465,6 +466,7 @@ begin
 end;
 
 function ParsedUnitString(theString: String): TUnitElements;
+  { parses a string for measurement unit and breaks it up in single parts }
 var
   theElements: TUnitElements;
 begin
