@@ -256,13 +256,13 @@ implementation
 
  end;
 
-procedure TSimulationThread.Pause;
+procedure TSimulationThread.Pause; {Implements a suspend function even on Unix systems}
 begin
  Notice.Hide;
  haltsim := true;
 end;
 
-procedure TSimulationThread.Restart;
+procedure TSimulationThread.Restart; {implements a resume function even on Unix systems}
 begin
  if not simready then Notice.ShowOnTop;
  haltsim := false;

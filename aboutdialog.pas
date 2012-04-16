@@ -166,7 +166,7 @@ begin
   AboutWindow.FormStyle := fsStayOnTop;
   AboutWindow.AlphaBlend := false;
   AboutWindow.Memo1.Lines.Clear;
-  AboutWindow.Memo1.Lines.Add('SimThyr 3.0');
+  AboutWindow.Memo1.Lines.Add('SimThyr 3.1.0');
   AboutWindow.Memo1.Lines.Add('');
   AboutWindow.Memo1.Lines.Add('Licence: BSD');
   AboutWindow.Memo1.Lines.Add('');

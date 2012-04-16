@@ -256,6 +256,7 @@ begin
   gParameterUnit[FT4_pos] := InterimFT4Unit;
   gParameterUnit[TT3_pos] := InterimTT3Unit;
   gParameterUnit[FT3_pos] := InterimFT3Unit;
+  gParameterUnit[cT3_pos] := InterimFT3Unit;
   gParameterFactor[TRH_pos] := 1;
   gParameterFactor[pTSH_pos] := 1;
   gParameterFactor[TSH_pos] := gParameterFactor[pTSH_pos];
@@ -265,6 +266,7 @@ begin
   gParameterFactor[FT4_pos] := InterimFT4Factor;
   gParameterFactor[TT3_pos] := InterimTT3Factor;
   gParameterFactor[FT3_pos] := InterimFT3Factor;
+  gParameterFactor[cT3_pos] := InterimFT3Factor;
 end;
 
 procedure SetMassItemAndFactor(par1, par2: integer; theComboBox: TComboBox; position, theItem: integer);
@@ -568,6 +570,7 @@ begin
       SetCombo(TT3MassPrefixCombo, TT3MassUnitCombo, TT3VolumePrefixCombo, gParameterUnit[TT3_pos]);
       gParameterUnit[FT3_pos] := NodeContent(RootNode, 'FT3');
       SetCombo(FT3MassPrefixCombo, FT3MassUnitCombo, FT3VolumePrefixCombo, gParameterUnit[FT3_pos]);
+      gParameterUnit[cT3_pos] := gParameterUnit[FT3_pos];
     end;
     RootNode := Doc.DocumentElement.FindNode('formats');
     gNumberFormat := NodeContent(RootNode, 'numbers');
