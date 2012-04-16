@@ -220,6 +220,7 @@ begin
 end;
 
 procedure InitConversionFactors;
+{sets labels and factors for the elements of measurement units}
 begin
   PrefixLabel[0] := '';
   PrefixLabel[1] := 'd';
@@ -248,6 +249,7 @@ begin
 end;
 
 procedure SetUnits;
+{sets definitive units to the values of the interim units}
 begin
   gParameterUnit[TRH_pos] := 'ng/l';
   gParameterUnit[pTSH_pos] := InterimTSHUnit;
@@ -423,8 +425,11 @@ begin
 end;
 
 procedure TPreferencesDialog.DisplayExamples;
+{Shows an example text in the preferences window}
+var theString: String;
 begin
-  TSHExampleLabel.Caption := EXAMPLE_STRING + FloatToStr(InterimTSHFactor) + ' ' + InterimTSHUnit;
+  theString := EXAMPLE_STRING + FloatToStr(InterimTSHFactor) + ' ' + InterimTSHUnit;
+  TSHExampleLabel.Caption := theString;
   TT4ExampleLabel.Caption := EXAMPLE_STRING + FloatToStr(InterimTT4Factor * 1e4) + ' ' + InterimTT4Unit;
   FT4ExampleLabel.Caption := EXAMPLE_STRING + FloatToStr(InterimFT4Factor * 1) + ' ' + InterimFT4Unit;
   TT3ExampleLabel.Caption := EXAMPLE_STRING + FloatToStr(InterimTT3Factor * 1e3) + ' ' + InterimTT3Unit;
@@ -476,7 +481,13 @@ begin
     begin
       with theElements do
       begin
-        MassPrefix := copy(theString, 1, 1);
+        if copy(theString, 1, 1) = 'm' then
+          begin
+            if copy(theString, 2, 1) = 'c' then
+              MassPrefix := PrefixLabel[4]; {mc -> µ}
+            end
+          else
+            MassPrefix := copy(theString, 1, 1);
         MassUnit := copy(theString, 2, pos('/', theString) - 2);
         VolumePrefix := copy(theString, pos('/', theString) + 1, 1);
         VolumeUnit := 'l';
@@ -611,11 +622,11 @@ begin
 
     ElementNode:=Doc.CreateElement('units');
 
-    ElementNode.AppendChild(SimpleNode(Doc, 'TSH', gParameterUnit[pTSH_pos]));
-    ElementNode.AppendChild(SimpleNode(Doc, 'TT4', gParameterUnit[TT4_pos]));
-    ElementNode.AppendChild(SimpleNode(Doc, 'FT4', gParameterUnit[FT4_pos]));
-    ElementNode.AppendChild(SimpleNode(Doc, 'TT3', gParameterUnit[TT3_pos]));
-    ElementNode.AppendChild(SimpleNode(Doc, 'FT3', gParameterUnit[FT3_pos]));
+    ElementNode.AppendChild(SimpleNode(Doc, 'TSH', EncodeGreek(gParameterUnit[pTSH_pos])));
+    ElementNode.AppendChild(SimpleNode(Doc, 'TT4', EncodeGreek(gParameterUnit[TT4_pos])));
+    ElementNode.AppendChild(SimpleNode(Doc, 'FT4', EncodeGreek(gParameterUnit[FT4_pos])));
+    ElementNode.AppendChild(SimpleNode(Doc, 'TT3', EncodeGreek(gParameterUnit[TT3_pos])));
+    ElementNode.AppendChild(SimpleNode(Doc, 'FT3', EncodeGreek(gParameterUnit[FT3_pos])));
 
     RootNode.AppendChild(ElementNode);
 
