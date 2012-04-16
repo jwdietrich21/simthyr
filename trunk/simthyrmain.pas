@@ -485,7 +485,7 @@ initialization
   {$I simthyrmain.lrs}
   gParameterLabel[i_pos] := 'i';
   gParameterLabel[t_pos] := 'Time';
-  gParameterLabel[TSH_pos] := 'Portal TRH';
+  gParameterLabel[TRH_pos] := 'Portal TRH';
   gParameterLabel[pTSH_pos] := 'Pituitary TSH';
   gParameterLabel[TSH_pos] := 'Serum TSH';
   gParameterLabel[TT4_pos] := 'Serum total T4';
