@@ -310,7 +310,7 @@ object ValuesPlot: TValuesPlot
   }
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '0.9.30.2'
+  LCLVersion = '0.9.30.4'
   Visible = True
   object Panel1: TPanel
     Left = 0
