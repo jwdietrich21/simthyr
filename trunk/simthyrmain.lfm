@@ -1,9 +1,9 @@
 object SimThyrToolbar: TSimThyrToolbar
-  Left = 236
-  Height = 73
+  Left = 237
+  Height = 49
   Hint = 'Please use the icons to load or save settings and to start or stop the simulation.'
-  Top = 132
-  Width = 687
+  Top = 122
+  Width = 691
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   Align = alTop
@@ -11,8 +11,8 @@ object SimThyrToolbar: TSimThyrToolbar
   AlphaBlendValue = 0
   AutoSize = True
   Caption = 'SimThyr'
-  ClientHeight = 73
-  ClientWidth = 687
+  ClientHeight = 49
+  ClientWidth = 691
   DefaultMonitor = dmMainForm
   DockSite = True
   Icon.Data = {
@@ -316,12 +316,13 @@ object SimThyrToolbar: TSimThyrToolbar
   OnShow = FormShow
   ShowInTaskBar = stAlways
   LCLVersion = '0.9.30.4'
+  Visible = True
   WindowState = wsMaximized
   object ToolBar1: TToolBar
     Left = 0
     Height = 26
     Top = 0
-    Width = 687
+    Width = 691
     Caption = 'ToolBar1'
     Images = ImageList1
     TabOrder = 0
