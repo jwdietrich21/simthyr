@@ -1,0 +1,43 @@
+object SensitivityAnalysisForm: TSensitivityAnalysisForm
+  Left = 305
+  Height = 501
+  Top = 243
+  Width = 660
+  AlphaBlend = True
+  AlphaBlendValue = 0
+  Caption = 'Sensitivity Anaysis'
+  ClientHeight = 501
+  ClientWidth = 660
+  LCLVersion = '0.9.30.4'
+  Visible = True
+  object Chart1: TChart
+    Cursor = crCross
+    Left = 32
+    Height = 430
+    Top = 32
+    Width = 591
+    AxisList = <    
+      item
+        Grid.Color = clSilver
+        Grid.Style = psDash
+        Title.LabelFont.Orientation = 900
+      end    
+      item
+        Alignment = calBottom
+        Grid.Style = psClear
+      end>
+    BackColor = clWhite
+    Extent.XMax = 100
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Color = clWhite
+    ParentColor = False
+    ParentShowHint = False
+  end
+end

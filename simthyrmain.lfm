@@ -507,6 +507,7 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object MainMenu1: TMainMenu
+    Images = ImageList1
     left = 8
     top = 616
     object AppleMenu: TMenuItem
@@ -521,6 +522,7 @@ object SimThyrToolbar: TSimThyrToolbar
       object MacPreferencesItem: TMenuItem
         Caption = 'Preferences…'
         Hint = 'Global preferences (independent from scenario)...'
+        ImageIndex = 13
         ShortCut = 4284
         OnClick = PrefsToolButtonClick
       end
@@ -533,11 +535,13 @@ object SimThyrToolbar: TSimThyrToolbar
       object NewMenuItem: TMenuItem
         Caption = 'New Scenario'
         Hint = 'Create a new table'
+        ImageIndex = 0
         ShortCut = 4174
         OnClick = NewToolButtonClick
       end
       object OpenMenuItem: TMenuItem
         Caption = 'Open Scenario...'
+        ImageIndex = 1
         ShortCut = 4175
         OnClick = OpenToolButtonClick
       end
@@ -551,12 +555,14 @@ object SimThyrToolbar: TSimThyrToolbar
       end
       object SaveItem: TMenuItem
         Caption = 'Save'
+        ImageIndex = 2
         ShortCut = 4179
         OnClick = SaveToolButtonClick
       end
       object SaveAsItem: TMenuItem
         Caption = 'Save as...'
         Enabled = False
+        ImageIndex = 3
         OnClick = SaveAsToolButtonClick
       end
       object Divider_1_2: TMenuItem
@@ -570,6 +576,7 @@ object SimThyrToolbar: TSimThyrToolbar
       object PrintItem: TMenuItem
         Caption = 'Print'
         Enabled = False
+        ImageIndex = 4
         OnClick = PrintToolButtonClick
       end
       object Divider_1_3: TMenuItem
@@ -623,16 +630,19 @@ object SimThyrToolbar: TSimThyrToolbar
       Caption = 'Simulation'
       object RunItem: TMenuItem
         Caption = 'Run'
+        ImageIndex = 10
         ShortCut = 4178
         OnClick = RunItemClick
       end
       object PauseItem: TMenuItem
         Caption = 'Pause'
+        ImageIndex = 11
         ShortCut = 32
         OnClick = PauseToolButtonClick
       end
       object StopItem: TMenuItem
         Caption = 'Stop and Reset'
+        ImageIndex = 12
         ShortCut = 190
         OnClick = StopToolButtonClick
       end
@@ -641,6 +651,7 @@ object SimThyrToolbar: TSimThyrToolbar
       end
       object ChangeParItem: TMenuItem
         Caption = 'Change Parameters...'
+        ImageIndex = 14
         OnClick = ParametersToolButtonClick
       end
       object Divider_3_2: TMenuItem
@@ -653,6 +664,7 @@ object SimThyrToolbar: TSimThyrToolbar
       object IPSItem: TMenuItem
         Caption = 'IPS'
         Hint = 'Information Processing Structure'
+        ImageIndex = 15
         OnClick = IPSItemClick
       end
     end
@@ -669,6 +681,10 @@ object SimThyrToolbar: TSimThyrToolbar
       object PredictionItem: TMenuItem
         Caption = 'Prediction'
         OnClick = PredictionItemClick
+      end
+      object SensitivityAnalysisItem: TMenuItem
+        Caption = 'Sensitivity Analysis'
+        OnClick = SensitivityAnalysisItemClick
       end
       object IPSItem2: TMenuItem
         Caption = 'IPS'

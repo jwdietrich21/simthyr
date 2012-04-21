@@ -17,7 +17,7 @@ uses
   Grids, ExtCtrls, StdActns, StdCtrls, LCLType, Menus, ActnList, SimThyrTypes,
   SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers, ComCtrls,
   LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog, ShowAboutModel,
-  StructureParameters, SimThyrPrediction, ScenarioHandler, HandlePreferences,
+  StructureParameters, SimThyrPrediction, Sensitivityanalysis, ScenarioHandler, HandlePreferences,
   HandleNotifier, LCLProc, LazHelpHTML;
 
 type
@@ -56,6 +56,7 @@ type
     IPSItem: TMenuItem;
     LogItem: TMenuItem;
     IPSItem2: TMenuItem;
+    SensitivityAnalysisItem: TMenuItem;
     SavePictureDialog1: TSavePictureDialog;
     WinPreferencesItem: TMenuItem;
     Divider_2_2: TMenuItem;
@@ -125,6 +126,7 @@ type
     procedure RunItemClick(Sender: TObject);
     procedure SaveAsToolButtonClick(Sender: TObject);
     procedure SaveToolButtonClick(Sender: TObject);
+    procedure SensitivityAnalysisItemClick(Sender: TObject);
     procedure StopToolButtonClick(Sender: TObject);
     procedure ToolBar1Click(Sender: TObject);
     procedure NewToolButtonClick(Sender: TObject);
@@ -427,6 +429,11 @@ begin
         end;
       end;
     end;
+end;
+
+procedure TSimThyrToolbar.SensitivityAnalysisItemClick(Sender: TObject);
+begin
+  SensitivityAnalysisForm.Show;
 end;
 
 procedure TSimThyrToolbar.StopToolButtonClick(Sender: TObject);
