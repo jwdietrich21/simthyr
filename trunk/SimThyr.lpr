@@ -20,7 +20,7 @@ uses
   TAChartLazarusPkg, SimThyrPlot, LaunchDialog, simthyrlog, SimThyrTypes,
   SimThyrServices, ShowIPS, Simulator, Splash, AboutDialog, ShowAboutModel,
   SimThyrPrediction, StructureParameters, SimOptions, VersionSupport,
-  ScenarioHandler, HandlePreferences, HandleNotifier;
+  ScenarioHandler, HandlePreferences, HandleNotifier, Sensitivityanalysis;
 
 {{$IFDEF WINDOWS}{$R SimThyr.rc}{$ENDIF}}
 
@@ -124,6 +124,9 @@ begin
   SimThyrLogWindow.show;
   Prediction.MakeFullyVisible();
   Prediction.Show;
+  Application.CreateForm(TSensitivityAnalysisForm, SensitivityAnalysisForm);
+  SensitivityAnalysisForm.Hide;
+  SensitivityAnalysisForm.AlphaBlend := false;
   if showSettingsAtStartup then
   begin
     SimThyrToolbar.SendToBack;
