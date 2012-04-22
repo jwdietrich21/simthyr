@@ -14,7 +14,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  TAGraph, SimThyrTypes, SimThyrServices, SimThyrPrediction;
+  StdCtrls, Spin, Buttons, ExtCtrls, ColorBox, TAGraph, SimThyrTypes,
+  SimThyrServices, SimThyrPrediction;
 
 type
 
@@ -22,6 +23,16 @@ type
 
   TSensitivityAnalysisForm = class(TForm)
     Chart1: TChart;
+    CheckGroup1: TCheckGroup;
+    ColorListBox1: TColorListBox;
+    FullScaleButton1: TSpeedButton;
+    MinSpinEdit: TFloatSpinEdit;
+    MaxSpinEdit: TFloatSpinEdit;
+    Panel1: TPanel;
+    StrucParCombo: TComboBox;
+    procedure FullScaleButton1Click(Sender: TObject);
+    procedure MaxSpinEditChange(Sender: TObject);
+    procedure MinSpinEditChange(Sender: TObject);
   private
     { private declarations }
   public
@@ -32,6 +43,35 @@ var
   SensitivityAnalysisForm: TSensitivityAnalysisForm;
 
 implementation
+
+{ TSensitivityAnalysisForm }
+
+procedure TSensitivityAnalysisForm.FullScaleButton1Click(Sender: TObject);
+{Zooms sensitivity chart to full size}
+begin
+  SensitivityAnalysisForm.Chart1.Extent.UseYMax := false;
+  SensitivityAnalysisForm.Chart1.ZoomFull;
+end;
+
+procedure TSensitivityAnalysisForm.MaxSpinEditChange(Sender: TObject);
+begin
+  if SensitivityAnalysisForm.MaxSpinEdit.Value < SensitivityAnalysisForm.MinSpinEdit.Value then
+    {adapts boundaries to avoid negative intervals}
+    begin
+      bell;
+      SensitivityAnalysisForm.MinSpinEdit.Value := SensitivityAnalysisForm.MaxSpinEdit.Value;
+    end;
+end;
+
+procedure TSensitivityAnalysisForm.MinSpinEditChange(Sender: TObject);
+begin
+  if SensitivityAnalysisForm.MaxSpinEdit.Value < SensitivityAnalysisForm.MinSpinEdit.Value then
+    {adapts boundaries to avoid negative intervals}
+    begin
+      bell;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := SensitivityAnalysisForm.MinSpinEdit.Value;
+    end;
+end;
 
 initialization
   {$I sensitivityanalysis.lrs}

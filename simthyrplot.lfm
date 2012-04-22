@@ -464,6 +464,7 @@ object ValuesPlot: TValuesPlot
         88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A8899
       }
       NumGlyphs = 0
+      OnClick = FullScaleButton1Click
       ShowHint = True
       ParentShowHint = False
     end
