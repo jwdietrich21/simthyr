@@ -1,14 +1,14 @@
 object SimThyrLogWindow: TSimThyrLogWindow
-  Left = 184
-  Height = 294
-  Top = 232
-  Width = 688
+  Left = 157
+  Height = 272
+  Top = 144
+  Width = 696
   Align = alRight
   AlphaBlend = True
   AlphaBlendValue = 0
   Caption = 'Log Window'
-  ClientHeight = 294
-  ClientWidth = 688
+  ClientHeight = 272
+  ClientWidth = 696
   DockSite = True
   Font.Pitch = fpVariable
   Icon.Data = {
@@ -306,14 +306,14 @@ object SimThyrLogWindow: TSimThyrLogWindow
     AC41E33FAC41C10FAC41C00FAC41C007AC418007AC418007AC418487AC418C87
     AC418CC3AC418CC3AC41CCE3AC41CDF3AC41EFFFAC41FFFFAC41
   }
-  LCLVersion = '0.9.30.2RC1'
+  LCLVersion = '0.9.30.4'
   Visible = True
   object ValuesGrid: TStringGrid
     Cursor = crIBeam
     Left = 0
-    Height = 271
+    Height = 257
     Top = 0
-    Width = 688
+    Width = 696
     Align = alClient
     AutoFillColumns = True
     BorderStyle = bsNone
@@ -329,14 +329,14 @@ object SimThyrLogWindow: TSimThyrLogWindow
     TitleFont.Pitch = fpVariable
     ColWidths = (
       64
-      69
-      69
-      69
-      69
-      69
-      69
-      69
-      69
+      70
+      70
+      70
+      70
+      70
+      70
+      70
+      70
       72
     )
     Cells = (
@@ -375,10 +375,10 @@ object SimThyrLogWindow: TSimThyrLogWindow
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
+    Height = 15
     Hint = 'Number of iterations'
-    Top = 271
-    Width = 688
+    Top = 257
+    Width = 696
     Panels = <    
       item
         Bevel = pbRaised
@@ -400,8 +400,8 @@ object SimThyrLogWindow: TSimThyrLogWindow
   object ProgressBar1: TProgressBar
     Left = 264
     Height = 10
-    Top = 280
-    Width = 405
+    Top = 258
+    Width = 413
     Anchors = [akLeft, akRight, akBottom]
     TabOrder = 2
   end
@@ -432,4 +432,4 @@ object SimThyrLogWindow: TSimThyrLogWindow
       Enabled = False
     end
   end
-end
+end
