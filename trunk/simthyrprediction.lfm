@@ -1,15 +1,15 @@
 object Prediction: TPrediction
-  Left = 849
-  Height = 172
-  Top = 146
-  Width = 417
+  Left = 922
+  Height = 157
+  Top = 145
+  Width = 335
   AlphaBlend = True
   AlphaBlendValue = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSizeToolWin
   Caption = ' Prediction'
-  ClientHeight = 172
-  ClientWidth = 417
+  ClientHeight = 157
+  ClientWidth = 335
   Color = clWhite
   Icon.Data = {
     9624000000000100080020200200010001003001000086000000101002000100
@@ -306,13 +306,13 @@ object Prediction: TPrediction
     AC41E33FAC41C10FAC41C00FAC41C007AC418007AC418007AC418487AC418C87
     AC418CC3AC418CC3AC41CCE3AC41CDF3AC41EFFFAC41FFFFAC41
   }
-  LCLVersion = '0.9.30.4'
+  LCLVersion = '0.9.30.4RC3'
   Visible = True
   object Memo1: TMemo
     Left = 16
-    Height = 143
+    Height = 128
     Top = 16
-    Width = 385
+    Width = 303
     Anchors = [akTop, akLeft, akRight, akBottom]
     Lines.Strings = (
       'Predicted values:'

@@ -28,7 +28,7 @@ uses
 
 begin
   Application.Initialize;
-  splashflag := true;
+  splashflag := false; {for debugging}
   showSettingsAtStartup := true;
   if splashflag then begin
     SplashScreen := TSplashScreen.Create(nil);
@@ -135,6 +135,7 @@ begin
     {SimulationSettings.FormStyle := fsSystemStayOnTop;}
   end
   else SimulationSettings.hide;
+  gStartup := false;
   Application.Run;
 end.
 

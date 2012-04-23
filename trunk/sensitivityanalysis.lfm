@@ -9,9 +9,10 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   Caption = 'Sensitivity Anaysis'
   ClientHeight = 406
   ClientWidth = 621
+  Color = clWhite
   Constraints.MinHeight = 300
   Constraints.MinWidth = 500
-  LCLVersion = '0.9.30.4'
+  LCLVersion = '0.9.30.4RC3'
   Visible = True
   object StrucParCombo: TComboBox
     Left = 144
@@ -20,7 +21,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Top = 363
     Width = 136
     Anchors = [akLeft, akBottom]
-    ItemHeight = 0
+    ItemHeight = 13
     ItemIndex = 0
     Items.Strings = (
       'GD'
@@ -33,9 +34,9 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object MinSpinEdit: TFloatSpinEdit
     Left = 50
-    Height = 16
+    Height = 21
     Hint = 'Minimum of selected structure parameter'
-    Top = 366
+    Top = 361
     Width = 72
     Anchors = [akLeft, akBottom]
     Increment = 1
@@ -96,9 +97,9 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object MaxSpinEdit: TFloatSpinEdit
     Left = 349
-    Height = 16
+    Height = 21
     Hint = 'Maximum of selected structure parameter'
-    Top = 366
+    Top = 361
     Width = 72
     Anchors = [akRight, akBottom]
     Increment = 1
