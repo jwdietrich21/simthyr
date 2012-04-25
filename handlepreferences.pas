@@ -122,13 +122,13 @@ function GetPreferencesFolder: String;
 const
   kMaxPath = 1024;
 var
-  {$IFDEF LCLCarbon}
+  {$IFDEF DARWIN}
   theError: OSErr;
   theRef: FSRef;
   {$ENDIF}
   pathBuffer: PChar;
 begin
-  {$IFDEF LCLCarbon}
+  {$IFDEF DARWIN}
     try
       pathBuffer := Allocmem(kMaxPath);
     except on exception do exit;

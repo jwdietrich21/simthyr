@@ -28,7 +28,7 @@ uses
 
 begin
   Application.Initialize;
-  splashflag := false; {for debugging}
+  splashflag := true; {for debugging}
   showSettingsAtStartup := true;
   if splashflag then begin
     SplashScreen := TSplashScreen.Create(nil);

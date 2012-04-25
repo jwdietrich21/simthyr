@@ -5,7 +5,7 @@ LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   +'Hint'#6'RPlease use the icons to load or save settings and to start or stop'
   +' the simulation.'#3'Top'#3#132#0#5'Width'#3#175#2#21'HorzScrollBar.Visible'
   +#8#21'VertScrollBar.Visible'#8#5'Align'#7#5'alTop'#10'AlphaBlend'#9#15'Alpha'
-  +'BlendValue'#2#0#8'AutoSize'#9#7'Caption'#6#7'SimThyr'#12'ClientHeight'#2'5'
+  +'BlendValue'#2#0#8'AutoSize'#9#7'Caption'#6#7'SimThyr'#12'ClientHeight'#2'I'
   +#11'ClientWidth'#3#175#2#14'DefaultMonitor'#7#10'dmMainForm'#8'DockSite'#9#9
   +'Icon.Data'#10#154'$'#0#0#150'$'#0#0#0#0#1#0#8#0'  '#2#0#1#0#1#0'0'#1#0#0#134
   +#0#0#0#16#16#2#0#1#0#1#0#176#0#0#0#182#1#0#0'  '#16#0#1#0#4#0#232#2#0#0'f'#2
@@ -340,17 +340,17 @@ LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   +'A'#140#195#172'A'#204#227#172'A'#205#243#172'A'#239#255#172'A'#255#255#172
   +'A'#4'Menu'#7#9'MainMenu1'#10'OnActivate'#7#12'FormActivate'#8'OnCreate'#7#10
   +'FormCreate'#6'OnShow'#7#8'FormShow'#13'ShowInTaskBar'#7#8'stAlways'#10'LCLV'
-  +'ersion'#6#11'0.9.30.4RC3'#7'Visible'#9#11'WindowState'#7#11'wsMaximized'#0#8
-  +'TToolBar'#8'ToolBar1'#4'Left'#2#0#6'Height'#2#26#3'Top'#2#0#5'Width'#3#175#2
-  +#7'Caption'#6#8'ToolBar1'#6'Images'#7#10'ImageList1'#8'TabOrder'#2#0#7'OnCli'
-  +'ck'#7#13'ToolBar1Click'#0#11'TToolButton'#13'NewToolButton'#4'Left'#2#1#4'H'
-  +'int'#6#23'New simulation scenario'#3'Top'#2#2#7'Caption'#6#13'NewToolButton'
-  +#10'ImageIndex'#2#0#7'OnClick'#7#18'NewToolButtonClick'#14'ParentShowHint'#8
-  +#8'ShowHint'#9#0#0#11'TToolButton'#14'OpenToolButton'#4'Left'#2#24#4'Hint'#6
-  +#27'Open an existing simulation'#3'Top'#2#2#7'Caption'#6#14'OpenToolButton'
-  +#10'ImageIndex'#2#1#7'OnClick'#7#19'OpenToolButtonClick'#14'ParentShowHint'#8
-  +#8'ShowHint'#9#0#0#11'TToolButton'#14'SaveToolButton'#4'Left'#2'/'#4'Hint'#6
-  +'/Save parameters of this simulation as scenario.'#3'Top'#2#2#7'Caption'#6#14
+  +'ersion'#6#8'0.9.30.4'#7'Visible'#9#11'WindowState'#7#11'wsMaximized'#0#8'TT'
+  +'oolBar'#8'ToolBar1'#4'Left'#2#0#6'Height'#2#26#3'Top'#2#0#5'Width'#3#175#2#7
+  +'Caption'#6#8'ToolBar1'#6'Images'#7#10'ImageList1'#8'TabOrder'#2#0#7'OnClick'
+  +#7#13'ToolBar1Click'#0#11'TToolButton'#13'NewToolButton'#4'Left'#2#1#4'Hint'
+  +#6#23'New simulation scenario'#3'Top'#2#2#7'Caption'#6#13'NewToolButton'#10
+  +'ImageIndex'#2#0#7'OnClick'#7#18'NewToolButtonClick'#14'ParentShowHint'#8#8
+  +'ShowHint'#9#0#0#11'TToolButton'#14'OpenToolButton'#4'Left'#2#24#4'Hint'#6#27
+  +'Open an existing simulation'#3'Top'#2#2#7'Caption'#6#14'OpenToolButton'#10
+  +'ImageIndex'#2#1#7'OnClick'#7#19'OpenToolButtonClick'#14'ParentShowHint'#8#8
+  +'ShowHint'#9#0#0#11'TToolButton'#14'SaveToolButton'#4'Left'#2'/'#4'Hint'#6'/'
+  +'Save parameters of this simulation as scenario.'#3'Top'#2#2#7'Caption'#6#14
   +'SaveToolButton'#10'ImageIndex'#2#2#7'OnClick'#7#19'SaveToolButtonClick'#14
   +'ParentShowHint'#8#8'ShowHint'#9#0#0#11'TToolButton'#16'SaveAsToolButton'#4
   +'Left'#2'F'#4'Hint'#6#19'Save scenario as...'#3'Top'#2#2#7'Caption'#6#16'Sav'

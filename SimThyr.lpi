@@ -46,11 +46,10 @@
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyr"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="19"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="103"/>
-        <CursorPos X="100" Y="120"/>
+        <TopLine Value="22"/>
+        <CursorPos X="21" Y="31"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -61,9 +60,9 @@
         <ComponentName Value="SimThyrToolbar"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="18"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="235"/>
+        <TopLine Value="231"/>
         <CursorPos X="1" Y="259"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -358,7 +357,7 @@
         <ComponentName Value="AboutWindow"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AboutDialog"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="16"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="70" Y="10"/>
@@ -410,7 +409,7 @@
         <ComponentName Value="AboutModelForm"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ShowAboutModel"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="17"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="47" Y="10"/>
@@ -702,10 +701,11 @@
         <ComponentName Value="PreferencesDialog"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HandlePreferences"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="546"/>
-        <CursorPos X="1" Y="565"/>
+        <TopLine Value="120"/>
+        <CursorPos X="63" Y="134"/>
         <UsageCount Value="100"/>
         <Bookmarks Count="1">
           <Item0 X="1" Y="484" ID="8"/>
@@ -887,12 +887,10 @@
       <Unit95>
         <Filename Value="../../../../../../../../lazarus/components/tachart/tagraph.pas"/>
         <UnitName Value="TAGraph"/>
-        <EditorIndex Value="16"/>
         <WindowIndex Value="0"/>
         <TopLine Value="12"/>
         <CursorPos X="3" Y="31"/>
         <UsageCount Value="11"/>
-        <Loaded Value="True"/>
       </Unit95>
       <Unit96>
         <Filename Value="../../../../../../../../lazarus/lcl/include/application.inc"/>
