@@ -286,6 +286,7 @@ begin
 end;
 
 procedure TValuesPlot.FormCreate(Sender: TObject);
+{sets default values}
 begin
   ComboBox1.ItemIndex := 2;
   ComboBox2.ItemIndex := 4;

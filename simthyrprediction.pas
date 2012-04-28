@@ -117,6 +117,7 @@ begin
 end;
 
 procedure ClearPrediction;
+{clears the contents of the prediction window}
 var
   theCaption: String;
 begin
@@ -126,6 +127,7 @@ begin
 end;
 
 procedure ShowPredictedValues;
+{writes predicted values into the memo field of the prediction window}
 var
   FF: TFloatFormat;
 begin
