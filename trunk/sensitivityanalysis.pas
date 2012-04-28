@@ -1,4 +1,5 @@
 unit Sensitivityanalysis;
+
 { SimThyr Project }
 { (c) J. W. Dietrich, 1994 - 2012 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -40,10 +41,12 @@ type
     Panel1: TPanel;
     StatusBar1: TStatusBar;
     StrucParCombo: TComboBox;
+    procedure CheckGroup1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FullScaleButton1Click(Sender: TObject);
     procedure MaxSpinEditChange(Sender: TObject);
     procedure MinSpinEditChange(Sender: TObject);
+    procedure StrucParComboChange(Sender: TObject);
   private
     { private declarations }
     FLine1, Fline2: TLineSeries;
@@ -56,11 +59,12 @@ type
   end;
 
 var
+  OWSensPlotReady: boolean;
   SensitivityAnalysisForm: TSensitivityAnalysisForm;
   StoredParameters: TStoredParameters;
 
 
-procedure DrawSensitivityPlot(empty: boolean);
+procedure DrawOWSensitivityPlot(empty: boolean);
 
 implementation
 
@@ -69,36 +73,67 @@ procedure DrawDummySensitivityPlot;
 begin
   with SensitivityAnalysisForm.Fline1 do
   begin
-   ShowLines := true;
-   ShowPoints := false;
-   Pointer.Brush.Color := SensitivityAnalysisForm.ColorBox1.Selected;
-   SeriesColor := SensitivityAnalysisForm.ColorBox1.Selected;
-   SensitivityAnalysisForm.Chart1.AddSeries(SensitivityAnalysisForm.Fline1);
-   AddXY(0, 0, '', SeriesColor);
-   AddXY(100, 0, '', SeriesColor);
+    ShowLines := True;
+    ShowPoints := False;
+    Pointer.Brush.Color := SensitivityAnalysisForm.ColorBox1.Selected;
+    SeriesColor := SensitivityAnalysisForm.ColorBox1.Selected;
+    SensitivityAnalysisForm.Chart1.AddSeries(SensitivityAnalysisForm.Fline1);
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameter';
+    SensitivityAnalysisForm.Chart1.BottomAxis.Title.Caption := SensitivityAnalysisForm.StrucParCombo.Text;
+    AddXY(0, 0, '', SeriesColor);
+    AddXY(100, 0, '', SeriesColor);
   end;
 end;
 
-procedure DrawSensitivityPlot(empty: boolean);
+procedure DrawOWSensitivityPlot(empty: boolean);
 {Plots sensitivity analysis results}
+const
+  max_i = 10;
+var
+  i: integer;
+  interval: real;
 begin
- if SensitivityAnalysisForm.Fline1 <> nil then SensitivityAnalysisForm.Chart1.ClearSeries;
- SensitivityAnalysisForm.Fline1 := TLineSeries.Create(SensitivityAnalysisForm.Chart1);
- SensitivityAnalysisForm.Fline1.BeginUpdate;
-  if empty then DrawDummySensitivityPlot
+  if SensitivityAnalysisForm.Fline1 <> nil then
+    SensitivityAnalysisForm.Chart1.ClearSeries;
+  SensitivityAnalysisForm.Fline1 := TLineSeries.Create(SensitivityAnalysisForm.Chart1);
+  SensitivityAnalysisForm.Fline1.BeginUpdate;
+  if empty then
+    DrawDummySensitivityPlot
   else
   begin
     StoredParameters.GD1 := GD1;
     StoredParameters.GD2 := GD2;
     StoredParameters.GT := GT;
 
-    bell;
+    interval := (SensitivityAnalysisForm.MaxSpinEdit.Value -
+      SensitivityAnalysisForm.MinSpinEdit.Value) / max_i;
+
+    with SensitivityAnalysisForm.Fline1 do
+    begin
+      ShowLines := True;
+      ShowPoints := False;
+      Pointer.Brush.Color := SensitivityAnalysisForm.ColorBox1.Selected;
+      SeriesColor := SensitivityAnalysisForm.ColorBox1.Selected;
+      SensitivityAnalysisForm.Chart1.AddSeries(SensitivityAnalysisForm.Fline1);
+    end;
+
+    for i := 0 to max_i do
+    begin
+      GD1 := SensitivityAnalysisForm.MinSpinEdit.Value + i * interval;
+      PredictEquilibrium;
+      with SensitivityAnalysisForm.Fline1 do
+        AddXY(GD1, FT31, '', SeriesColor);
+    end;
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameter';
+    SensitivityAnalysisForm.Chart1.BottomAxis.Title.Caption := SensitivityAnalysisForm.StrucParCombo.Text;
 
     GD1 := StoredParameters.GD1;
     GD2 := StoredParameters.GD2;
     GT := StoredParameters.GT;
+    OWSensPlotReady := True;
     PredictEquilibrium;
   end;
+  SensitivityAnalysisForm.Fline1.EndUpdate;
 end;
 
 { TSensitivityAnalysisForm }
@@ -106,13 +141,14 @@ end;
 procedure TSensitivityAnalysisForm.FullScaleButton1Click(Sender: TObject);
 {Zooms sensitivity chart to full size}
 begin
-  SensitivityAnalysisForm.Chart1.Extent.UseYMax := false;
+  SensitivityAnalysisForm.Chart1.Extent.UseYMax := False;
   SensitivityAnalysisForm.Chart1.ZoomFull;
 end;
 
 procedure TSensitivityAnalysisForm.FormCreate(Sender: TObject);
-{sets default values for color comboboxes}
+{sets default values for UI elements}
 begin
+  OWSensPlotReady := False;
   SensitivityAnalysisForm.ColorBox1.Selected := gDefaultColors[2];
   SensitivityAnalysisForm.ColorBox2.Selected := gDefaultColors[3];
   SensitivityAnalysisForm.ColorBox3.Selected := gDefaultColors[4];
@@ -121,29 +157,46 @@ begin
   SensitivityAnalysisForm.ColorBox6.Selected := gDefaultColors[7];
   SensitivityAnalysisForm.ColorBox7.Selected := gDefaultColors[8];
   SensitivityAnalysisForm.ColorBox8.Selected := gDefaultColors[9];
-  DrawSensitivityPlot(true);
+  SensitivityAnalysisForm.MinSpinEdit.Value := 0;
+  SensitivityAnalysisForm.MaxSpinEdit.Value := 100;
+  DrawOWSensitivityPlot(True);
+end;
+
+procedure TSensitivityAnalysisForm.CheckGroup1Click(Sender: TObject);
+begin
+  DrawOWSensitivityPlot(False);
 end;
 
 procedure TSensitivityAnalysisForm.MaxSpinEditChange(Sender: TObject);
 begin
-  if SensitivityAnalysisForm.MaxSpinEdit.Value < SensitivityAnalysisForm.MinSpinEdit.Value then
+  if SensitivityAnalysisForm.MaxSpinEdit.Value <
+    SensitivityAnalysisForm.MinSpinEdit.Value then
     {adapts boundaries to avoid negative intervals}
-    begin
-      bell;
-      SensitivityAnalysisForm.MinSpinEdit.Value := SensitivityAnalysisForm.MaxSpinEdit.Value;
-    end;
-  DrawSensitivityPlot(true);
+  begin
+    bell;
+    SensitivityAnalysisForm.MinSpinEdit.Value :=
+      SensitivityAnalysisForm.MaxSpinEdit.Value;
+  end;
+  DrawOWSensitivityPlot(False);
 end;
 
 procedure TSensitivityAnalysisForm.MinSpinEditChange(Sender: TObject);
 begin
-  if SensitivityAnalysisForm.MaxSpinEdit.Value < SensitivityAnalysisForm.MinSpinEdit.Value then
+  if SensitivityAnalysisForm.MaxSpinEdit.Value <
+    SensitivityAnalysisForm.MinSpinEdit.Value then
     {adapts boundaries to avoid negative intervals}
-    begin
-      bell;
-      SensitivityAnalysisForm.MaxSpinEdit.Value := SensitivityAnalysisForm.MinSpinEdit.Value;
-    end;
-  DrawSensitivityPlot(true);
+  begin
+    bell;
+    SensitivityAnalysisForm.MaxSpinEdit.Value :=
+      SensitivityAnalysisForm.MinSpinEdit.Value;
+  end;
+  DrawOWSensitivityPlot(False);
+end;
+
+procedure TSensitivityAnalysisForm.StrucParComboChange(Sender: TObject);
+begin
+  SensitivityAnalysisForm.Chart1.BottomAxis.Title.Caption := SensitivityAnalysisForm.StrucParCombo.Text;
+  DrawOWSensitivityPlot(False);
 end;
 
 initialization

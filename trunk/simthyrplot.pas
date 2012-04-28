@@ -298,6 +298,8 @@ begin
   ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox2.ItemIndex + 2];
   DrawPlot(true);
   gSelectedChart := nil;
+  PlotPanel1.Color := clWhite;
+  PlotPanel2.Color := clWhite;
   gDefaultColors[0] := clBlack;
   gDefaultColors[1] := clBlack;
   gDefaultColors[2] := clTeal;

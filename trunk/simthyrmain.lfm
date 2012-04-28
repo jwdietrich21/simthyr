@@ -1197,6 +1197,18 @@ object SimThyrToolbar: TSimThyrToolbar
       object Divider_3_2: TMenuItem
         Caption = '-'
       end
+      object OWSensitivityAnalysisItem: TMenuItem
+        Caption = 'One-Way Sensitivity Analysis'
+        OnClick = OWSensitivityAnalysisItemClick
+      end
+      object TornadoPlotItem: TMenuItem
+        Caption = 'Tornado Plot'
+        Enabled = False
+        OnClick = TornadoPlotItemClick
+      end
+      object Divider_3_3: TMenuItem
+        Caption = '-'
+      end
       object AboutModelItem: TMenuItem
         Caption = 'About the model'
         OnClick = AboutModelItemClick
@@ -1258,9 +1270,13 @@ object SimThyrToolbar: TSimThyrToolbar
         Caption = 'Prediction'
         OnClick = PredictionItemClick
       end
-      object SensitivityAnalysisItem: TMenuItem
-        Caption = 'Sensitivity Analysis'
-        OnClick = SensitivityAnalysisItemClick
+      object OWSensitivityAnalysisItem2: TMenuItem
+        Caption = 'One-Way Sensitivity Analysis'
+        OnClick = OWSensitivityAnalysisItemClick
+      end
+      object TornadoPlotItem2: TMenuItem
+        Caption = 'Tornado Plot'
+        Enabled = False
       end
       object IPSItem2: TMenuItem
         Caption = 'IPS'
