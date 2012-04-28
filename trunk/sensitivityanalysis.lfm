@@ -1,52 +1,230 @@
 object SensitivityAnalysisForm: TSensitivityAnalysisForm
-  Left = 341
-  Height = 406
-  Top = 201
-  Width = 621
+  Left = 340
+  Height = 441
+  Top = 203
+  Width = 721
   AlphaBlend = True
   AlphaBlendValue = 0
   Anchors = [akTop, akLeft, akBottom]
-  Caption = 'Sensitivity Anaysis'
-  ClientHeight = 406
-  ClientWidth = 621
+  Caption = 'Sensitivity Analysis'
+  ClientHeight = 441
+  ClientWidth = 721
   Color = clWhite
-  Constraints.MinHeight = 300
-  Constraints.MinWidth = 500
-  LCLVersion = '0.9.30.4RC3'
+  Constraints.MinHeight = 400
+  Constraints.MinWidth = 600
+  OnCreate = FormCreate
+  LCLVersion = '0.9.30.4'
   Visible = True
-  object StrucParCombo: TComboBox
-    Left = 144
-    Height = 21
-    Hint = 'Select the structure parameter that servers as independent variable here.'
-    Top = 363
-    Width = 136
-    Anchors = [akLeft, akBottom]
-    ItemHeight = 13
-    ItemIndex = 0
+  object Panel1: TPanel
+    Left = 48
+    Height = 322
+    Top = 32
+    Width = 425
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Caption = 'Panel1'
+    ClientHeight = 322
+    ClientWidth = 425
+    TabOrder = 0
+    object Chart1: TChart
+      Cursor = crCross
+      Left = 8
+      Height = 298
+      Top = 10
+      Width = 401
+      AxisList = <      
+        item
+          Grid.Color = clSilver
+          Grid.Style = psDash
+          Title.LabelFont.Orientation = 900
+        end      
+        item
+          Alignment = calBottom
+          Grid.Style = psClear
+        end>
+      BackColor = clWhite
+      Extent.XMax = 100
+      Foot.Brush.Color = clBtnFace
+      Foot.Font.Color = clBlue
+      Title.Brush.Color = clBtnFace
+      Title.Font.Color = clBlue
+      Title.Text.Strings = (
+        'TAChart'
+      )
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      Color = clWhite
+      ParentColor = False
+      ParentShowHint = False
+    end
+  end
+  object CheckGroup1: TCheckGroup
+    AnchorSideTop.Side = asrBottom
+    Left = 489
+    Height = 325
+    Hint = 'Select the behavioural parameter that servers as dependent variable here.'
+    Top = 32
+    Width = 203
+    Anchors = [akTop, akRight]
+    AutoFill = True
+    Caption = 'Dependent parameter'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
     Items.Strings = (
-      'GD'
-      'GT'
+      'TRH'
+      'pTSH'
+      'TSH'
+      'TT4'
+      'FT4'
+      'TT3'
+      'FT3'
+      'cT3'
     )
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
-    Text = 'GD'
+    Data = {
+      080000000202020202020202
+    }
   end
-  object MinSpinEdit: TFloatSpinEdit
-    Left = 50
-    Height = 21
-    Hint = 'Minimum of selected structure parameter'
-    Top = 361
-    Width = 72
-    Anchors = [akLeft, akBottom]
-    Increment = 1
-    MaxValue = 100
-    MinValue = 0
-    OnChange = MinSpinEditChange
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 0
-    Value = 0
+  object ColorBox1: TColorBox
+    Left = 568
+    Height = 20
+    Top = 64
+    Width = 113
+    Anchors = [akTop, akRight]
+    ItemHeight = 0
+    TabOrder = 2
+  end
+  object ColorBox2: TColorBox
+    Left = 568
+    Height = 20
+    Top = 100
+    Width = 113
+    Anchors = [akTop, akRight]
+    ItemHeight = 0
+    TabOrder = 3
+  end
+  object ColorBox3: TColorBox
+    Left = 568
+    Height = 20
+    Top = 137
+    Width = 113
+    Anchors = [akTop, akRight]
+    ItemHeight = 0
+    TabOrder = 4
+  end
+  object ColorBox4: TColorBox
+    Left = 568
+    Height = 20
+    Top = 174
+    Width = 113
+    Anchors = [akTop, akRight]
+    ItemHeight = 0
+    TabOrder = 5
+  end
+  object ColorBox5: TColorBox
+    Left = 568
+    Height = 20
+    Top = 211
+    Width = 113
+    Anchors = [akTop, akRight]
+    ItemHeight = 0
+    TabOrder = 6
+  end
+  object ColorBox6: TColorBox
+    Left = 568
+    Height = 20
+    Top = 248
+    Width = 113
+    Anchors = [akTop, akRight]
+    ItemHeight = 0
+    TabOrder = 7
+  end
+  object ColorBox7: TColorBox
+    Left = 568
+    Height = 20
+    Top = 285
+    Width = 113
+    Anchors = [akTop, akRight]
+    ItemHeight = 0
+    TabOrder = 8
+  end
+  object ColorBox8: TColorBox
+    Left = 568
+    Height = 20
+    Top = 322
+    Width = 113
+    Anchors = [akTop, akRight]
+    ItemHeight = 0
+    TabOrder = 9
+  end
+  object GroupBox1: TGroupBox
+    Left = 48
+    Height = 50
+    Top = 362
+    Width = 418
+    Anchors = [akLeft, akRight, akBottom]
+    Caption = 'Independent parameter'
+    ClientHeight = 28
+    ClientWidth = 410
+    TabOrder = 10
+    object MinSpinEdit: TFloatSpinEdit
+      Left = 12
+      Height = 16
+      Hint = 'Minimum of selected structure parameter'
+      Top = 3
+      Width = 72
+      Anchors = [akLeft, akBottom]
+      Increment = 1
+      MaxValue = 100
+      MinValue = 0
+      OnChange = MinSpinEditChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Value = 0
+    end
+    object MaxSpinEdit: TFloatSpinEdit
+      Left = 326
+      Height = 16
+      Hint = 'Maximum of selected structure parameter'
+      Top = 3
+      Width = 72
+      Anchors = [akRight, akBottom]
+      Increment = 1
+      MaxValue = 100
+      MinValue = 0
+      OnChange = MaxSpinEditChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      Value = 0
+    end
+    object StrucParCombo: TComboBox
+      Left = 100
+      Height = 21
+      Hint = 'Select the structure parameter that servers as independent variable here.'
+      Top = 3
+      Width = 204
+      Anchors = [akLeft, akRight, akBottom]
+      DragMode = dmAutomatic
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        'GD1'
+        'GD2'
+        'GT'
+      )
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      Text = 'GD'
+    end
   end
   object FullScaleButton1: TSpeedButton
     Left = 16
@@ -95,109 +273,11 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ShowHint = True
     ParentShowHint = False
   end
-  object MaxSpinEdit: TFloatSpinEdit
-    Left = 349
-    Height = 21
-    Hint = 'Maximum of selected structure parameter'
-    Top = 361
-    Width = 72
-    Anchors = [akRight, akBottom]
-    Increment = 1
-    MaxValue = 100
-    MinValue = 0
-    OnChange = MaxSpinEditChange
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 2
-    Value = 0
-  end
-  object Panel1: TPanel
-    Left = 48
-    Height = 313
-    Top = 32
-    Width = 382
-    Anchors = [akTop, akLeft, akRight, akBottom]
-    Caption = 'Panel1'
-    ClientHeight = 313
-    ClientWidth = 382
-    TabOrder = 3
-    object Chart1: TChart
-      Cursor = crCross
-      Left = 8
-      Height = 297
-      Top = 8
-      Width = 363
-      AxisList = <      
-        item
-          Grid.Color = clSilver
-          Grid.Style = psDash
-          Title.LabelFont.Orientation = 900
-        end      
-        item
-          Alignment = calBottom
-          Grid.Style = psClear
-        end>
-      BackColor = clWhite
-      Extent.XMax = 100
-      Foot.Brush.Color = clBtnFace
-      Foot.Font.Color = clBlue
-      Title.Brush.Color = clBtnFace
-      Title.Font.Color = clBlue
-      Title.Text.Strings = (
-        'TAChart'
-      )
-      Anchors = [akTop, akLeft, akRight, akBottom]
-      Color = clWhite
-      ParentColor = False
-      ParentShowHint = False
-    end
-  end
-  object ColorListBox1: TColorListBox
-    AnchorSideTop.Control = CheckGroup1
-    AnchorSideTop.Side = asrBottom
-    Left = 446
-    Height = 139
-    Top = 206
-    Width = 146
-    Anchors = [akTop, akRight, akBottom]
-    BorderSpacing.Top = 13
-    ItemHeight = 0
-    TabOrder = 4
-  end
-  object CheckGroup1: TCheckGroup
-    AnchorSideTop.Side = asrBottom
-    Left = 448
-    Height = 161
-    Hint = 'Select the behavioural parameter that servers as dependent variable here.'
-    Top = 32
-    Width = 139
-    Anchors = [akTop, akRight]
-    AutoFill = True
-    Caption = 'Dependent parameter'
-    ChildSizing.LeftRightSpacing = 6
-    ChildSizing.TopBottomSpacing = 6
-    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
-    ChildSizing.EnlargeVertical = crsHomogenousChildResize
-    ChildSizing.ShrinkHorizontal = crsScaleChilds
-    ChildSizing.ShrinkVertical = crsScaleChilds
-    ChildSizing.Layout = cclLeftToRightThenTopToBottom
-    ChildSizing.ControlsPerLine = 2
-    Columns = 2
-    Items.Strings = (
-      'TRH'
-      'pTSH'
-      'TSH'
-      'TT4'
-      'FT4'
-      'TT3'
-      'FT3'
-      'cT3'
-    )
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 5
-    Data = {
-      080000000202020202020202
-    }
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 15
+    Top = 426
+    Width = 721
+    Panels = <>
   end
 end
