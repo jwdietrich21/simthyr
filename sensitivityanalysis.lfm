@@ -1,12 +1,12 @@
 object SensitivityAnalysisForm: TSensitivityAnalysisForm
-  Left = 340
+  Left = 343
   Height = 441
-  Top = 203
+  Top = 215
   Width = 721
   AlphaBlend = True
   AlphaBlendValue = 0
   Anchors = [akTop, akLeft, akBottom]
-  Caption = 'Sensitivity Analysis'
+  Caption = 'One Way Sensitivity Analysis'
   ClientHeight = 441
   ClientWidth = 721
   Color = clWhite
@@ -35,11 +35,17 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
         item
           Grid.Color = clSilver
           Grid.Style = psDash
+          Marks.LabelFont.Height = -11
+          Title.LabelFont.Height = -11
           Title.LabelFont.Orientation = 900
+          Title.Visible = True
         end      
         item
           Alignment = calBottom
           Grid.Style = psClear
+          Marks.LabelFont.Height = -11
+          Title.LabelFont.Height = -11
+          Title.Visible = True
         end>
       BackColor = clWhite
       Extent.XMax = 100
@@ -84,6 +90,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       'FT3'
       'cT3'
     )
+    OnClick = CheckGroup1Click
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
@@ -94,73 +101,73 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object ColorBox1: TColorBox
     Left = 568
     Height = 20
-    Top = 64
+    Top = 61
     Width = 113
     Anchors = [akTop, akRight]
-    ItemHeight = 0
+    ItemHeight = 16
     TabOrder = 2
   end
   object ColorBox2: TColorBox
     Left = 568
     Height = 20
-    Top = 100
+    Top = 99
     Width = 113
     Anchors = [akTop, akRight]
-    ItemHeight = 0
+    ItemHeight = 16
     TabOrder = 3
   end
   object ColorBox3: TColorBox
     Left = 568
     Height = 20
-    Top = 137
+    Top = 136
     Width = 113
     Anchors = [akTop, akRight]
-    ItemHeight = 0
+    ItemHeight = 16
     TabOrder = 4
   end
   object ColorBox4: TColorBox
     Left = 568
     Height = 20
-    Top = 174
+    Top = 173
     Width = 113
     Anchors = [akTop, akRight]
-    ItemHeight = 0
+    ItemHeight = 16
     TabOrder = 5
   end
   object ColorBox5: TColorBox
     Left = 568
     Height = 20
-    Top = 211
+    Top = 210
     Width = 113
     Anchors = [akTop, akRight]
-    ItemHeight = 0
+    ItemHeight = 16
     TabOrder = 6
   end
   object ColorBox6: TColorBox
     Left = 568
     Height = 20
-    Top = 248
+    Top = 247
     Width = 113
     Anchors = [akTop, akRight]
-    ItemHeight = 0
+    ItemHeight = 16
     TabOrder = 7
   end
   object ColorBox7: TColorBox
     Left = 568
     Height = 20
-    Top = 285
+    Top = 284
     Width = 113
     Anchors = [akTop, akRight]
-    ItemHeight = 0
+    ItemHeight = 16
     TabOrder = 8
   end
   object ColorBox8: TColorBox
     Left = 568
     Height = 20
-    Top = 322
+    Top = 321
     Width = 113
     Anchors = [akTop, akRight]
-    ItemHeight = 0
+    ItemHeight = 16
     TabOrder = 9
   end
   object GroupBox1: TGroupBox
@@ -197,7 +204,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Width = 72
       Anchors = [akRight, akBottom]
       Increment = 1
-      MaxValue = 100
+      MaxValue = 1000
       MinValue = 0
       OnChange = MaxSpinEditChange
       ParentShowHint = False
@@ -220,10 +227,11 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
         'GD2'
         'GT'
       )
+      OnChange = StrucParComboChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
-      Text = 'GD'
+      Text = 'GD1'
     end
   end
   object FullScaleButton1: TSpeedButton

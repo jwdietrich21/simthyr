@@ -51,12 +51,16 @@ type
     Divider_1_3: TMenuItem;
     Divider_1_2: TMenuItem;
     AboutModelItem: TMenuItem;
-    Divider_3_2: TMenuItem;
+    Divider_3_3: TMenuItem;
     ChangeParItem: TMenuItem;
     IPSItem: TMenuItem;
     LogItem: TMenuItem;
     IPSItem2: TMenuItem;
-    SensitivityAnalysisItem: TMenuItem;
+    Divider_3_2: TMenuItem;
+    OWSensitivityAnalysisItem: TMenuItem;
+    TornadoPlotItem: TMenuItem;
+    TornadoPlotItem2: TMenuItem;
+    OWSensitivityAnalysisItem2: TMenuItem;
     SavePictureDialog1: TSavePictureDialog;
     WinPreferencesItem: TMenuItem;
     Divider_2_2: TMenuItem;
@@ -117,6 +121,7 @@ type
     procedure LogItemClick(Sender: TObject);
     procedure OnlineInfoClick(Sender: TObject);
     procedure OpenToolButtonClick(Sender: TObject);
+    procedure OWSensitivityAnalysisItem2Click(Sender: TObject);
     procedure PageSetupItemClick(Sender: TObject);
     procedure ParametersToolButtonClick(Sender: TObject);
     procedure PauseToolButtonClick(Sender: TObject);
@@ -126,12 +131,13 @@ type
     procedure RunItemClick(Sender: TObject);
     procedure SaveAsToolButtonClick(Sender: TObject);
     procedure SaveToolButtonClick(Sender: TObject);
-    procedure SensitivityAnalysisItemClick(Sender: TObject);
+    procedure OWSensitivityAnalysisItemClick(Sender: TObject);
     procedure StopToolButtonClick(Sender: TObject);
     procedure ToolBar1Click(Sender: TObject);
     procedure NewToolButtonClick(Sender: TObject);
     procedure PrefsToolButtonClick(Sender: TObject);
     procedure PrintToolButtonClick(Sender: TObject);
+    procedure TornadoPlotItemClick(Sender: TObject);
     procedure UndoMenuItemClick(Sender: TObject);
     procedure AboutItemClick(Sender: TObject);
   private
@@ -336,6 +342,11 @@ begin
   end;
 end;
 
+procedure TSimThyrToolbar.OWSensitivityAnalysisItem2Click(Sender: TObject);
+begin
+  SensitivityAnalysisForm.Show;
+end;
+
 procedure TSimThyrToolbar.PageSetupItemClick(Sender: TObject);
 begin
   ShowImplementationMessage;
@@ -429,7 +440,7 @@ begin
     end;
 end;
 
-procedure TSimThyrToolbar.SensitivityAnalysisItemClick(Sender: TObject);
+procedure TSimThyrToolbar.OWSensitivityAnalysisItemClick(Sender: TObject);
 begin
   SensitivityAnalysisForm.Show;
 end;
@@ -474,6 +485,11 @@ begin
     ValuesPlot.PrintChart(Sender)
   else
     ShowImplementationMessage;
+end;
+
+procedure TSimThyrToolbar.TornadoPlotItemClick(Sender: TObject);
+begin
+  bell;
 end;
 
 procedure TSimThyrToolbar.UndoMenuItemClick(Sender: TObject);
