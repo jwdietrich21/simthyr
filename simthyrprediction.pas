@@ -61,7 +61,7 @@ begin
   k2 := GT * alphaT / betaT;
   k21 := k2;
   k22 := k21 / (1 + k41 * TBG + k42 * TBPA);
-    		{k3 := GD2 * alpha32 / beta32;}
+  k3 := GD2 * alpha32 / (beta32 * (1 + k31 * IBS));
   k5 := GD1 * alpha31 / beta31;
   k51 := k5 / (1 + k30 * TBG);
   k6 := 1 / (2 * (1 + SS) * alphaS2);
@@ -69,7 +69,7 @@ begin
   k7 := dH + TRH1;
   k8 := alphaS2 * gH * TRH1 / (dH + TRH1);
   k9 := DS * betaS2;
-    		{G3 := k3 * GR / (k3 + dR);}
+  G3 := k3 * GR / (k3 + dR);
   D3 := kM2 * dR / (k3 + dR);
   a1 := (D3 + k22 + LS * G3 * k22) / k61;
   b1 := D3 * dT / k61 + 2 * D3 * k9 + 2 * k9 * k22 + 2 * LS * G3 * k9 * k22 - 2 * D3 * k8 - 2 * k8 * k22;
