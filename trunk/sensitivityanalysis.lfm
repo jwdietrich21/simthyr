@@ -1,9 +1,8 @@
 object SensitivityAnalysisForm: TSensitivityAnalysisForm
-  Left = 285
+  Left = 294
   Height = 441
-  Top = 193
+  Top = 179
   Width = 721
-  AlphaBlend = True
   AlphaBlendValue = 0
   Anchors = [akTop, akLeft, akBottom]
   Caption = 'One Way Sensitivity Analysis'
@@ -13,7 +12,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   Constraints.MinHeight = 400
   Constraints.MinWidth = 600
   OnCreate = FormCreate
-  LCLVersion = '0.9.30.4'
+  LCLVersion = '0.9.30.4RC3'
   Visible = True
   object Panel1: TPanel
     Left = 48
@@ -21,16 +20,18 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Top = 32
     Width = 425
     Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Top = 20
+    BorderStyle = bsSingle
     Caption = 'Panel1'
-    ClientHeight = 322
-    ClientWidth = 425
+    ClientHeight = 318
+    ClientWidth = 421
     TabOrder = 0
     object Chart1: TChart
       Cursor = crCross
       Left = 8
-      Height = 298
+      Height = 300
       Top = 10
-      Width = 401
+      Width = 405
       AxisList = <      
         item
           Grid.Color = clSilver
@@ -39,6 +40,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
           Title.LabelFont.Height = -11
           Title.LabelFont.Orientation = 900
           Title.Visible = True
+          Title.Caption = 'Dependent variable(s)'
         end      
         item
           Alignment = calBottom
@@ -46,6 +48,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
           Marks.LabelFont.Height = -11
           Title.LabelFont.Height = -11
           Title.Visible = True
+          Title.Caption = 'Structure Parameter'
         end>
       BackColor = clWhite
       Extent.XMax = 100
@@ -72,6 +75,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Width = 203
     Anchors = [akTop, akRight]
     AutoFill = True
+    BorderSpacing.Top = 20
     Caption = 'Dependent parameters'
     ChildSizing.LeftRightSpacing = 6
     ChildSizing.TopBottomSpacing = 6
@@ -98,55 +102,59 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object TSHColorBox: TColorBox
     Left = 567
-    Height = 20
+    Height = 22
     Top = 64
     Width = 113
     Anchors = [akTop, akRight]
     ItemHeight = 16
+    OnChange = TSHColorBoxChange
     TabOrder = 2
   end
   object FT4ColorBox: TColorBox
     Left = 567
-    Height = 20
+    Height = 22
     Top = 106
     Width = 113
     Anchors = [akTop, akRight]
     ItemHeight = 16
+    OnChange = FT4ColorBoxChange
     TabOrder = 3
   end
   object FT3ColorBox: TColorBox
     Left = 567
-    Height = 20
+    Height = 22
     Top = 150
     Width = 113
     Anchors = [akTop, akRight]
     ItemHeight = 16
+    OnChange = FT3ColorBoxChange
     TabOrder = 4
   end
   object cT3ColorBox: TColorBox
     Left = 567
-    Height = 20
+    Height = 22
     Top = 192
     Width = 113
     Anchors = [akTop, akRight]
     ItemHeight = 16
+    OnChange = cT3ColorBoxChange
     TabOrder = 5
   end
   object GroupBox1: TGroupBox
     Left = 48
     Height = 50
     Top = 362
-    Width = 418
+    Width = 426
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Independent parameter'
-    ClientHeight = 28
-    ClientWidth = 410
+    ClientHeight = 32
+    ClientWidth = 422
     TabOrder = 6
     object MinSpinEdit: TFloatSpinEdit
       Left = 12
-      Height = 16
+      Height = 21
       Hint = 'Minimum of selected structure parameter'
-      Top = 3
+      Top = 2
       Width = 72
       Anchors = [akLeft, akBottom]
       Increment = 1
@@ -159,10 +167,10 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Value = 0
     end
     object MaxSpinEdit: TFloatSpinEdit
-      Left = 326
-      Height = 16
+      Left = 338
+      Height = 21
       Hint = 'Maximum of selected structure parameter'
-      Top = 3
+      Top = 2
       Width = 72
       Anchors = [akRight, akBottom]
       Increment = 1
@@ -178,11 +186,10 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 3
-      Width = 204
+      Top = 5
+      Width = 216
       Anchors = [akLeft, akRight, akBottom]
-      DragMode = dmAutomatic
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         'GD1'
@@ -196,12 +203,20 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Text = 'GD1'
     end
   end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 418
+    Width = 721
+    Panels = <>
+  end
   object FullScaleButton1: TSpeedButton
     Left = 16
     Height = 22
     Hint = 'Full scale plot (drag with mouse over plot to zoom)'
     Top = 32
     Width = 23
+    BorderSpacing.Top = 20
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
       20000000000000040000640000006400000000000000000000008186849D858A
@@ -242,12 +257,5 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     OnClick = FullScaleButton1Click
     ShowHint = True
     ParentShowHint = False
-  end
-  object StatusBar1: TStatusBar
-    Left = 0
-    Height = 15
-    Top = 426
-    Width = 721
-    Panels = <>
   end
 end

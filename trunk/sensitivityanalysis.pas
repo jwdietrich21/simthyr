@@ -1,9 +1,9 @@
 unit Sensitivityanalysis;
 
-{ SimThyr Project }
-{ (c) J. W. Dietrich, 1994 - 2012 }
-{ (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2012 }
+ { SimThyr Project }
+ { (c) J. W. Dietrich, 1994 - 2012 }
+ { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
+ { (c) Ruhr University of Bochum 2005 - 2012 }
 
 { This unit implements sensitivity analysis }
 
@@ -27,26 +27,30 @@ type
   { TSensitivityAnalysisForm }
 
   TSensitivityAnalysisForm = class(TForm)
-    Chart1: TChart;
+    Chart1:      TChart;
     CheckGroup1: TCheckGroup;
     TSHColorBox: TColorBox;
     FT4ColorBox: TColorBox;
     FT3ColorBox: TColorBox;
     cT3ColorBox: TColorBox;
     FullScaleButton1: TSpeedButton;
-    GroupBox1: TGroupBox;
+    GroupBox1:   TGroupBox;
     MinSpinEdit: TFloatSpinEdit;
     MaxSpinEdit: TFloatSpinEdit;
-    Panel1: TPanel;
-    StatusBar1: TStatusBar;
+    Panel1:      TPanel;
+    StatusBar1:  TStatusBar;
     StrucParCombo: TComboBox;
     procedure CheckGroup1Click(Sender: TObject);
     procedure CheckGroup1ItemClick(Sender: TObject; Index: integer);
+    procedure cT3ColorBoxChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FT3ColorBoxChange(Sender: TObject);
+    procedure FT4ColorBoxChange(Sender: TObject);
     procedure FullScaleButton1Click(Sender: TObject);
     procedure MaxSpinEditChange(Sender: TObject);
     procedure MinSpinEditChange(Sender: TObject);
     procedure StrucParComboChange(Sender: TObject);
+    procedure TSHColorBoxChange(Sender: TObject);
   private
     { private declarations }
   public
@@ -71,13 +75,13 @@ implementation
 procedure DrawDummySensitivityPlot;
 {Draws an empty plot}
 begin
-  SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameter';
+  SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption   := 'Dependent Parameter';
   SensitivityAnalysisForm.Chart1.BottomAxis.Title.Caption :=
     SensitivityAnalysisForm.StrucParCombo.Text;
   with FLine[1] do
   begin
-    AddXY(0, 0, '', SeriesColor);
-    AddXY(100, 0, '', SeriesColor);
+    AddXY(0, 0, '', clBlack);
+    AddXY(100, 0, '', clBlack);
   end;
 end;
 
@@ -86,20 +90,32 @@ procedure DrawCurves(xPar: real);
 begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[0] then
   begin
+    {TSH}
     FLine[1].AddXY(xPar, TSH1, '',
       SensitivityAnalysisForm.TSHColorBox.Selected);
-    FLine[1].Pointer.Brush.Color := SensitivityAnalysisForm.TSHColorBox.Selected;
     FLine[1].SeriesColor := SensitivityAnalysisForm.TSHColorBox.Selected;
   end;
   if SensitivityAnalysisForm.CheckGroup1.Checked[1] then
+  begin
+    {FT3}
     FLine[2].AddXY(xPar, FT41, '',
-      clRed);
+      SensitivityAnalysisForm.FT4ColorBox.Selected);
+    FLine[2].SeriesColor := SensitivityAnalysisForm.FT4ColorBox.Selected;
+  end;
   if SensitivityAnalysisForm.CheckGroup1.Checked[2] then
+  begin
+    {FT3}
     FLine[3].AddXY(xPar, FT31, '',
-      clRed);
+      SensitivityAnalysisForm.FT3ColorBox.Selected);
+    FLine[3].SeriesColor := SensitivityAnalysisForm.FT3ColorBox.Selected;
+  end;
   if SensitivityAnalysisForm.CheckGroup1.Checked[3] then
+  begin
+    {cT3}
     FLine[4].AddXY(xPar, T3z1, '',
-      clRed);
+      SensitivityAnalysisForm.cT3ColorBox.Selected);
+    FLine[4].SeriesColor := SensitivityAnalysisForm.cT3ColorBox.Selected;
+  end;
 end;
 
 procedure DrawOWSensitivityPlot(empty: boolean);
@@ -107,7 +123,7 @@ procedure DrawOWSensitivityPlot(empty: boolean);
 const
   max_i = 100;
 var
-  i, j, k: integer;
+  i, j, k:  integer;
   interval: real;
 begin
   if FLine[1] <> nil then
@@ -117,8 +133,8 @@ begin
     FLine[i] := TLineSeries.Create(SensitivityAnalysisForm.Chart1);
     with FLine[i] do
     begin
-      ShowLines := True;
-      ShowPoints := False;
+      ShowLines   := True;
+      ShowPoints  := False;
       Pointer.Brush.Color := clRed;
       SeriesColor := clRed;
     end;
@@ -164,7 +180,7 @@ begin
     {restore saved structure parameters:}
     GD1 := StoredParameters.GD1;
     GD2 := StoredParameters.GD2;
-    GT := StoredParameters.GT;
+    GT  := StoredParameters.GT;
     OWSensPlotReady := True;
     PredictEquilibrium;
   end;
@@ -194,6 +210,16 @@ begin
   DrawOWSensitivityPlot(True);
 end;
 
+procedure TSensitivityAnalysisForm.FT3ColorBoxChange(Sender: TObject);
+begin
+  DrawOWSensitivityPlot(False);
+end;
+
+procedure TSensitivityAnalysisForm.FT4ColorBoxChange(Sender: TObject);
+begin
+  DrawOWSensitivityPlot(False);
+end;
+
 procedure TSensitivityAnalysisForm.CheckGroup1Click(Sender: TObject);
 begin
   DrawOWSensitivityPlot(False);
@@ -201,6 +227,11 @@ end;
 
 procedure TSensitivityAnalysisForm.CheckGroup1ItemClick(Sender: TObject;
   Index: integer);
+begin
+  DrawOWSensitivityPlot(False);
+end;
+
+procedure TSensitivityAnalysisForm.cT3ColorBoxChange(Sender: TObject);
 begin
   DrawOWSensitivityPlot(False);
 end;
@@ -236,6 +267,11 @@ begin
   SensitivityAnalysisForm.Chart1.BottomAxis.Title.Caption :=
     SensitivityAnalysisForm.StrucParCombo.Text;
   {ItemIndex is evaluated in the plot routine}
+  DrawOWSensitivityPlot(False);
+end;
+
+procedure TSensitivityAnalysisForm.TSHColorBoxChange(Sender: TObject);
+begin
   DrawOWSensitivityPlot(False);
 end;
 
