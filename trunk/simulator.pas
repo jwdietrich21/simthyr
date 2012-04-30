@@ -279,7 +279,7 @@ begin
          gResultMatrix[i-1, cT3_pos] := T3z / UFT3;
          theContents[i_pos] := iString;
          theContents[t_pos] := FormattedTime(t);
-         theContents[TRH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TRH_pos]* gParameterFactor[TRH_pos]); {TRH}
+         theContents[TRH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TRH_pos] * gParameterFactor[TRH_pos]); {TRH}
          theContents[pTSH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, pTSH_pos] * gParameterFactor[pTSH_pos]); {portal TSH}
          theContents[TSH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TSH_pos] * gParameterFactor[TSH_pos]); {serum TSH}
          theContents[TT4_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TT4_pos] * gParameterFactor[TT4_pos]); {T4}
