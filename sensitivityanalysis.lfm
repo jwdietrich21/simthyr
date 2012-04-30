@@ -49,6 +49,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
           Title.LabelFont.Height = -11
           Title.Visible = True
           Title.Caption = 'Structure Parameter'
+          Transformations = ChartAxisTransformations1
         end>
       BackColor = clWhite
       Extent.XMax = 100
@@ -157,6 +158,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Top = 3
       Width = 72
       Anchors = [akLeft, akBottom]
+      Enabled = False
       Increment = 1
       MaxValue = 100
       MinValue = 0
@@ -173,6 +175,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Top = 3
       Width = 72
       Anchors = [akRight, akBottom]
+      Enabled = False
       Increment = 1
       MaxValue = 1000
       MinValue = 0
@@ -257,5 +260,12 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     OnClick = FullScaleButton1Click
     ShowHint = True
     ParentShowHint = False
+  end
+  object ChartAxisTransformations1: TChartAxisTransformations
+    left = 376
+    top = 664
+    object ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform
+      Scale = 1E-12
+    end
   end
 end
