@@ -12,7 +12,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   Constraints.MinHeight = 400
   Constraints.MinWidth = 600
   OnCreate = FormCreate
-  LCLVersion = '0.9.30.4'
+  LCLVersion = '0.9.30.4RC2'
   Visible = True
   object Panel1: TPanel
     Left = 48
@@ -23,15 +23,15 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     BorderSpacing.Top = 20
     BorderStyle = bsSingle
     Caption = 'Panel1'
-    ClientHeight = 322
-    ClientWidth = 425
+    ClientHeight = 318
+    ClientWidth = 421
     TabOrder = 0
     object Chart1: TChart
       Cursor = crCross
       Left = 8
-      Height = 304
+      Height = 300
       Top = 10
-      Width = 409
+      Width = 405
       AxisList = <      
         item
           Grid.Color = clSilver
@@ -103,7 +103,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object TSHColorBox: TColorBox
     Left = 567
-    Height = 20
+    Height = 22
     Top = 64
     Width = 113
     Anchors = [akTop, akRight]
@@ -113,7 +113,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object FT4ColorBox: TColorBox
     Left = 567
-    Height = 20
+    Height = 22
     Top = 106
     Width = 113
     Anchors = [akTop, akRight]
@@ -123,7 +123,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object FT3ColorBox: TColorBox
     Left = 567
-    Height = 20
+    Height = 22
     Top = 150
     Width = 113
     Anchors = [akTop, akRight]
@@ -133,7 +133,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object cT3ColorBox: TColorBox
     Left = 567
-    Height = 20
+    Height = 22
     Top = 192
     Width = 113
     Anchors = [akTop, akRight]
@@ -148,14 +148,14 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Width = 426
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Independent parameter'
-    ClientHeight = 28
-    ClientWidth = 418
+    ClientHeight = 32
+    ClientWidth = 422
     TabOrder = 6
     object MinSpinEdit: TFloatSpinEdit
       Left = 12
-      Height = 16
+      Height = 21
       Hint = 'Minimum of selected structure parameter'
-      Top = 3
+      Top = 2
       Width = 72
       Anchors = [akLeft, akBottom]
       Enabled = False
@@ -169,10 +169,10 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Value = 0
     end
     object MaxSpinEdit: TFloatSpinEdit
-      Left = 334
-      Height = 16
+      Left = 338
+      Height = 21
       Hint = 'Maximum of selected structure parameter'
-      Top = 3
+      Top = 2
       Width = 72
       Anchors = [akRight, akBottom]
       Enabled = False
@@ -189,10 +189,10 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 1
-      Width = 212
+      Top = 5
+      Width = 216
       Anchors = [akLeft, akRight, akBottom]
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         'GD1'
@@ -208,8 +208,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
-    Top = 426
+    Height = 20
+    Top = 421
     Width = 721
     Panels = <>
   end

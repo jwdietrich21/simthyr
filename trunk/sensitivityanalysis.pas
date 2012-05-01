@@ -69,6 +69,7 @@ var
   StoredParameters: TStoredParameters;
   FLine: array[0..MAX_SERIES] of TLineSeries;
   SeriesCount: integer;
+  gMinXPar, gMaxXPar: real;
 
 procedure DrawOWSensitivityPlot(empty: boolean);
 
@@ -76,24 +77,44 @@ implementation
 
 procedure SetStrucParBoundaries;
 {sets the initial boundaries to useful values}
+var
+  tempMinX, tempMaxX: real; {necessary to hinder Windows from altering the globals}
 begin
   case SensitivityAnalysisForm.StrucParCombo.ItemIndex of
     0:
     begin {GD1}
-      SensitivityAnalysisForm.MinSpinEdit.Value := GD1 / 3;
-      SensitivityAnalysisForm.MaxSpinEdit.Value := GD1 * 3;
+      gMinXPar := GD1 / 3;
+      gMaxXPar := GD1 * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale := 1e-9;
     end;
     1:
     begin {GD2}
-      SensitivityAnalysisForm.MinSpinEdit.Value := GD2 / 3;
-      SensitivityAnalysisForm.MaxSpinEdit.Value := GD2 * 3;
+      gMinXPar := GD2 / 3;
+      gMaxXPar := GD2 * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale := 1e-15;
     end;
     2:
     begin {GT}
-      SensitivityAnalysisForm.MinSpinEdit.Value := GT / 3;
-      SensitivityAnalysisForm.MaxSpinEdit.Value := GT * 3;
+      gMinXPar := GT / 3;
+      gMaxXPar := GT * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale := 1e-12;
     end
   end;
@@ -197,26 +218,26 @@ begin
     StoredParameters.GD1 := GD1;
     StoredParameters.GD2 := GD2;
     StoredParameters.GT := GT;
-    interval := (SensitivityAnalysisForm.MaxSpinEdit.Value -
-      SensitivityAnalysisForm.MinSpinEdit.Value) / max_i;
+    interval := (gMaxXPar -
+      gMinXPar) / max_i;
     for i := 0 to max_i do
     begin
       case SensitivityAnalysisForm.StrucParCombo.ItemIndex of
         0:
         begin
-          GD1 := SensitivityAnalysisForm.MinSpinEdit.Value + i * interval;
+          GD1 := gMinXPar + i * interval;
           PredictEquilibrium;
           DrawCurves(GD1);
         end;
         1:
         begin
-          GD2 := SensitivityAnalysisForm.MinSpinEdit.Value + i * interval;
+          GD2 := gMinXPar + i * interval;
           PredictEquilibrium;
           DrawCurves(GD2);
         end;
         2:
         begin
-          GT := SensitivityAnalysisForm.MinSpinEdit.Value + i * interval;
+          GT := gMinXPar + i * interval;
           PredictEquilibrium;
           DrawCurves(GT);
         end
@@ -291,6 +312,7 @@ begin
     SensitivityAnalysisForm.MinSpinEdit.Value :=
       SensitivityAnalysisForm.MaxSpinEdit.Value;
   end;
+  gMaxXPar := SensitivityAnalysisForm.MaxSpinEdit.Value;
   DrawOWSensitivityPlot(False);
 end;
 
@@ -304,6 +326,7 @@ begin
     SensitivityAnalysisForm.MaxSpinEdit.Value :=
       SensitivityAnalysisForm.MinSpinEdit.Value;
   end;
+  gMinXPar := SensitivityAnalysisForm.MaxSpinEdit.Value;
   DrawOWSensitivityPlot(False);
 end;
 
