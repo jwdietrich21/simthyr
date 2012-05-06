@@ -17,7 +17,7 @@ uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, Spin, Buttons, ExtCtrls, ColorBox, ComCtrls, TAGraph, TASources,
   TATools, TASeries, TATransformations, TAStyles, TALegendPanel, SimThyrTypes,
-  SimThyrServices, SimThyrPrediction;
+  SimThyrServices, SimThyrPrediction, Clipbrd, Menus;
 
 const
   MAX_SERIES = 8;
@@ -34,6 +34,12 @@ type
     ChartAxisTransformations1: TChartAxisTransformations;
     ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform;
     CheckGroup1: TCheckGroup;
+    Divider1: TMenuItem;
+    CutItem: TMenuItem;
+    CopyItem: TMenuItem;
+    PasteItem: TMenuItem;
+    UndoItem: TMenuItem;
+    PopupMenu1: TPopupMenu;
     TSHColorBox: TColorBox;
     FT4ColorBox: TColorBox;
     FT3ColorBox: TColorBox;
@@ -47,6 +53,7 @@ type
     StrucParCombo: TComboBox;
     procedure CheckGroup1Click(Sender: TObject);
     procedure CheckGroup1ItemClick(Sender: TObject; Index: integer);
+    procedure CopyItemClick(Sender: TObject);
     procedure cT3ColorBoxChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FT3ColorBoxChange(Sender: TObject);
@@ -56,6 +63,7 @@ type
     procedure MinSpinEditChange(Sender: TObject);
     procedure StrucParComboChange(Sender: TObject);
     procedure TSHColorBoxChange(Sender: TObject);
+    procedure CopyChart(Sender: TObject);
   private
     { private declarations }
   public
@@ -350,6 +358,40 @@ procedure TSensitivityAnalysisForm.TSHColorBoxChange(Sender: TObject);
 begin
   DrawOWSensitivityPlot(False);
 end;
+
+procedure TSensitivityAnalysisForm.CopyChart(Sender: TObject);
+var
+  {$IFDEF UNIX}
+  theImage: TPortableNetworkGraphic;
+  {$ELSE}
+  theImage:TBitMap;
+  {$ENDIF}
+begin
+  if Chart1 = nil then
+    bell
+  else
+    {gSelectedChart.CopyToClipboardBitmap doesn't work on Mac OS X}
+    {$IFDEF UNIX}
+    theImage := TPortableNetworkGraphic.Create;
+    {$ELSE}
+    {theImage :=TBitmap.Create;}
+    Chart1.CopyToClipboardBitmap;
+    {$ENDIF}
+  try
+    theImage.Width := 900;
+    theImage.Height := 250;
+    Chart1.DrawOnCanvas(rect(0,0,theImage.Width,theImage.Height), theImage.canvas);
+    Clipboard.assign(theImage);
+  finally
+    theImage.Free;
+  end;
+end;
+
+procedure TSensitivityAnalysisForm.CopyItemClick(Sender: TObject);
+begin
+  CopyChart(Sender);
+end;
+
 
 initialization
   {$I sensitivityanalysis.lrs}

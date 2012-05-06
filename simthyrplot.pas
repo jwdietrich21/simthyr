@@ -16,7 +16,7 @@ uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Arrow, Buttons, Menus, TAGraph,
   TASources, TATools, TASeries, TATransformations, TAStyles, TALegendPanel,
-  DateUtils, SimThyrTypes, SimThyrServices, HandleNotifier;
+  DateUtils, SimThyrTypes, SimThyrServices, HandleNotifier, Clipbrd;
 
 type
 
@@ -338,11 +338,31 @@ begin
 end;
 
 procedure TValuesPlot.CopyChart(Sender: TObject);
+var
+  {$IFDEF UNIX}
+  theImage: TPortableNetworkGraphic;
+  {$ELSE}
+  theImage:TBitMap;
+  {$ENDIF}
 begin
   if gSelectedChart = nil then
     bell
   else
+    {gSelectedChart.CopyToClipboardBitmap doesn't work on Mac OS X}
+    {$IFDEF UNIX}
+    theImage := TPortableNetworkGraphic.Create;
+    {$ELSE}
+    {theImage :=TBitmap.Create;}
     gSelectedChart.CopyToClipboardBitmap;
+    {$ENDIF}
+  try
+    theImage.Width := 900;
+    theImage.Height := 250;
+    gSelectedChart.DrawOnCanvas(rect(0,0,theImage.Width,theImage.Height), theImage.canvas);
+    Clipboard.assign(theImage);
+  finally
+    theImage.Free;
+  end;
 end;
 
 procedure TValuesPlot.CopyItemClick(Sender: TObject);
