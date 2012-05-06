@@ -1105,7 +1105,6 @@ object SimThyrToolbar: TSimThyrToolbar
           454AFF974535FF97451AFFFFFF00FFFFFF00FFFFFF00FFFFFF00
         }
         ImageIndex = 11
-        ShortCut = 32
         OnClick = PauseToolButtonClick
       end
       object StopItem: TMenuItem
@@ -1147,7 +1146,6 @@ object SimThyrToolbar: TSimThyrToolbar
           454AFF974535FF97451AFFFFFF00FFFFFF00FFFFFF00FFFFFF00
         }
         ImageIndex = 12
-        ShortCut = 190
         OnClick = StopToolButtonClick
       end
       object Divider_3_1: TMenuItem
