@@ -65,6 +65,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Color = clWhite
       ParentColor = False
       ParentShowHint = False
+      PopupMenu = PopupMenu1
     end
   end
   object CheckGroup1: TCheckGroup
@@ -264,6 +265,29 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     top = 664
     object ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform
       Scale = 1E-12
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    left = 376
+    top = 536
+    object UndoItem: TMenuItem
+      Caption = 'Undo'
+      Enabled = False
+    end
+    object Divider1: TMenuItem
+      Caption = '-'
+    end
+    object CutItem: TMenuItem
+      Caption = 'Cut'
+      Enabled = False
+    end
+    object CopyItem: TMenuItem
+      Caption = 'Copy'
+      OnClick = CopyItemClick
+    end
+    object PasteItem: TMenuItem
+      Caption = 'Paste'
+      Enabled = False
     end
   end
 end
