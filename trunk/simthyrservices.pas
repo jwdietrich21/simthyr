@@ -22,6 +22,7 @@ uses
     {$IFDEF LCLCarbon}
   , MacOSAll
     {$ENDIF}
+  , Unix
   {$ENDIF}  ;
 
 const
@@ -102,6 +103,7 @@ begin
 end;
 
 procedure bell; {platform-independent implementation of acustical warning}
+var s:longint;
 begin
   {$IFDEF win32}
   MessageBeep(0);
@@ -109,7 +111,10 @@ begin
     {$IFDEF LCLCarbon}
   SysBeep(30);
     {$ELSE}
-  beep;
+  s := Shell('echo -ne ''\007''');
+  {s := fpSystem('echo -ne "\a"');}
+  {s := fpSystem('tput bel');}
+  {beep;}
     {$ENDIF}
   {$ENDIF}
 end;
