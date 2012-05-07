@@ -417,6 +417,7 @@ object ValuesPlot: TValuesPlot
     object ColorListBox1: TColorListBox
       Left = 621
       Height = 91
+      Hint = 'Select plot color here.'
       Top = 58
       Width = 146
       Anchors = [akRight]
@@ -586,6 +587,7 @@ object ValuesPlot: TValuesPlot
     object ColorListBox2: TColorListBox
       Left = 622
       Height = 91
+      Hint = 'Select plot color here.'
       Top = 58
       Width = 146
       Anchors = [akRight]
