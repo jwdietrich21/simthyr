@@ -31,6 +31,7 @@ type
 
   TSensitivityAnalysisForm = class(TForm)
     Chart1: TChart;
+    Chart1LineSeries1: TLineSeries;
     ChartAxisTransformations1: TChartAxisTransformations;
     ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform;
     CheckGroup1: TCheckGroup;
@@ -151,7 +152,7 @@ procedure DrawDummySensitivityPlot;
 begin
   SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameter';
   SetBottomAxisCaption;
-  with FLine[1] do
+  with FLine[0] do
   begin
     AddXY(0, 0, '', clBlack);
     AddXY(100, 0, '', clBlack);
@@ -218,8 +219,8 @@ begin
     begin
       ShowLines := True;
       ShowPoints := False;
-      Pointer.Brush.Color := clRed;
-      SeriesColor := clRed;
+      Pointer.Brush.Color := clBlack;
+      SeriesColor := clBlack;
     end;
     SensitivityAnalysisForm.Chart1.AddSeries(FLine[i]);
     FLine[i].BeginUpdate;
@@ -232,8 +233,7 @@ begin
     StoredParameters.GD1 := GD1;
     StoredParameters.GD2 := GD2;
     StoredParameters.GT := GT;
-    interval := (gMaxXPar -
-      gMinXPar) / max_i;
+    interval := (gMaxXPar - gMinXPar) / max_i;
     for i := 0 to max_i do
     begin
       case SensitivityAnalysisForm.StrucParCombo.ItemIndex of
