@@ -23,7 +23,10 @@ const
   MAX_SERIES = 8;
   GD1_FACTOR = 1e9;
   GD2_FACTOR = 1e15;
-  GT_FACTOR = 1E12;
+  GT_FACTOR = 1e12;
+  KM1_FACTOR = 1e9;
+  KM2_FACTOR = 1e9;
+  DT_FACTOR = 1;
 
 type
 
@@ -72,7 +75,7 @@ type
   end;
 
   TStoredParameters = record
-    GT, GD1, GD2: real
+    GT, GD1, GD2, kM1, kM2, dT: real
   end;
 
 var
@@ -104,7 +107,8 @@ begin
       SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
       gMinXPar := tempMinX;
       gMaxXPar := tempMaxX;
-      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale := 1e-9;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / GD1_FACTOR;
     end;
     2:
     begin {GD2}
@@ -117,7 +121,8 @@ begin
       SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
       gMinXPar := tempMinX;
       gMaxXPar := tempMaxX;
-      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale := 1e-15;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / GD2_FACTOR;
     end;
     3:
     begin {GT}
@@ -130,19 +135,65 @@ begin
       SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
       gMinXPar := tempMinX;
       gMaxXPar := tempMaxX;
-      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale := 1e-12;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / GT_FACTOR;
+    end;
+    4:
+    begin {kM1}
+      gSpinFactor := KM1_FACTOR;
+      gMinXPar := kM1 / 3;
+      gMaxXPar := kM1 * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / KM1_FACTOR;
+    end;
+    5:
+    begin {kM2}
+      gSpinFactor := KM2_FACTOR;
+      gMinXPar := kM2 / 3;
+      gMaxXPar := kM2 * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / KM2_FACTOR;
+    end;
+    6:
+    begin {DT}
+      gSpinFactor := DT_FACTOR;
+      gMinXPar := DT / 3;
+      gMaxXPar := DT * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DT_FACTOR;
     end
   end;
 end;
 
 procedure SetBottomAxisCaption;
 var
-  theCaption: String;
+  theCaption: string;
 begin
   theCaption := SensitivityAnalysisForm.StrucParCombo.Text;
-  if theCaption = 'GD1' then theCaption := theCaption + ' (nmol/s)'
-  else if theCaption = 'GD2' then theCaption := theCaption + ' (fmol/s)'
-  else if theCaption = 'GT' then theCaption := theCaption + ' (pmol/s)';
+  if theCaption = 'GD1' then
+    theCaption := theCaption + ' (nmol/s)'
+  else if theCaption = 'GD2' then
+    theCaption := theCaption + ' (fmol/s)'
+  else if theCaption = 'GT' then
+    theCaption := theCaption + ' (pmol/s)';
   SensitivityAnalysisForm.Chart1.BottomAxis.Title.Caption :=
     theCaption;
 end;
@@ -168,8 +219,9 @@ begin
     {TSH}
     FLine[1].AddXY(xPar, TSH1 * gParameterFactor[TSH_pos], '',
       SensitivityAnalysisForm.TSHColorBox.Selected);
-    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'TSH' + ': ' + gParameterUnit[TSH_pos];
-    inc(SeriesCount);
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
+      'TSH' + ': ' + gParameterUnit[TSH_pos];
+    Inc(SeriesCount);
     FLine[1].SeriesColor := SensitivityAnalysisForm.TSHColorBox.Selected;
   end;
   if SensitivityAnalysisForm.CheckGroup1.Checked[1] then
@@ -177,8 +229,9 @@ begin
     {FT3}
     FLine[2].AddXY(xPar, FT41 / UFT4 * gParameterFactor[FT4_pos], '',
       SensitivityAnalysisForm.FT4ColorBox.Selected);
-    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'FT4' + ': ' + gParameterUnit[FT4_pos];
-    inc(SeriesCount);
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
+      'FT4' + ': ' + gParameterUnit[FT4_pos];
+    Inc(SeriesCount);
     FLine[2].SeriesColor := SensitivityAnalysisForm.FT4ColorBox.Selected;
   end;
   if SensitivityAnalysisForm.CheckGroup1.Checked[2] then
@@ -186,8 +239,9 @@ begin
     {FT3}
     FLine[3].AddXY(xPar, FT31 / UFT3 * gParameterFactor[FT3_pos], '',
       SensitivityAnalysisForm.FT3ColorBox.Selected);
-    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'FT3' + ': ' + gParameterUnit[FT3_pos];
-    inc(SeriesCount);
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
+      'FT3' + ': ' + gParameterUnit[FT3_pos];
+    Inc(SeriesCount);
     FLine[3].SeriesColor := SensitivityAnalysisForm.FT3ColorBox.Selected;
   end;
   if SensitivityAnalysisForm.CheckGroup1.Checked[3] then
@@ -195,11 +249,13 @@ begin
     {cT3}
     FLine[4].AddXY(xPar, T3z1 / UFT3 * gParameterFactor[cT3_pos], '',
       SensitivityAnalysisForm.cT3ColorBox.Selected);
-    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'cT3' + ': ' + gParameterUnit[cT3_pos];
-    inc(SeriesCount);
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
+      'cT3' + ': ' + gParameterUnit[cT3_pos];
+    Inc(SeriesCount);
     FLine[4].SeriesColor := SensitivityAnalysisForm.cT3ColorBox.Selected;
   end;
-  if SeriesCount > 1 then SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameters';
+  if SeriesCount > 1 then
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameters';
 end;
 
 procedure DrawOWSensitivityPlot(empty: boolean);
@@ -233,6 +289,9 @@ begin
     StoredParameters.GD1 := GD1;
     StoredParameters.GD2 := GD2;
     StoredParameters.GT := GT;
+    StoredParameters.kM1 := kM1;
+    StoredParameters.kM2 := kM2;
+    StoredParameters.dT := dT;
     interval := (gMaxXPar - gMinXPar) / max_i;
     for i := 0 to max_i do
     begin
@@ -254,6 +313,24 @@ begin
           GT := gMinXPar + i * interval;
           PredictEquilibrium;
           DrawCurves(GT);
+        end;
+        4:
+        begin
+          kM1 := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(kM1);
+        end;
+        5:
+        begin
+          kM2 := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(kM2);
+        end;
+        6:
+        begin
+          dT := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(dT);
         end
       end;
     end;
@@ -262,6 +339,9 @@ begin
     GD1 := StoredParameters.GD1;
     GD2 := StoredParameters.GD2;
     GT := StoredParameters.GT;
+    kM1 := StoredParameters.kM1;
+    kM2 := StoredParameters.kM2;
+    dT := StoredParameters.dT;
     OWSensPlotReady := True;
     PredictEquilibrium;
   end;
@@ -367,7 +447,7 @@ var
   {$IFDEF UNIX}
   theImage: TPortableNetworkGraphic;
   {$ELSE}
-  theImage:TBitMap;
+  theImage: TBitMap;
   {$ENDIF}
 begin
   if Chart1 = nil then
@@ -377,14 +457,14 @@ begin
     {$IFDEF UNIX}
     theImage := TPortableNetworkGraphic.Create;
     {$ELSE}
-    {theImage :=TBitmap.Create;}
-    Chart1.CopyToClipboardBitmap;
+  {theImage :=TBitmap.Create;}
+  Chart1.CopyToClipboardBitmap;
     {$ENDIF}
   try
     theImage.Width := 900;
     theImage.Height := 250;
-    Chart1.DrawOnCanvas(rect(0,0,theImage.Width,theImage.Height), theImage.canvas);
-    Clipboard.assign(theImage);
+    Chart1.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas);
+    Clipboard.Assign(theImage);
   finally
     theImage.Free;
   end;
