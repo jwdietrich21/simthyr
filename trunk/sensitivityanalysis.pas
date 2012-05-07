@@ -93,7 +93,7 @@ var
   tempMinX, tempMaxX: real; {necessary to hinder Windows from altering the globals}
 begin
   case SensitivityAnalysisForm.StrucParCombo.ItemIndex of
-    0:
+    1:
     begin {GD1}
       gSpinFactor := GD1_FACTOR;
       gMinXPar := GD1 / 3;
@@ -106,7 +106,7 @@ begin
       gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale := 1e-9;
     end;
-    1:
+    2:
     begin {GD2}
       gSpinFactor := GD2_FACTOR;
       gMinXPar := GD2 / 3;
@@ -119,7 +119,7 @@ begin
       gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale := 1e-15;
     end;
-    2:
+    3:
     begin {GT}
       gSpinFactor := GT_FACTOR;
       gMinXPar := GT / 3;
@@ -237,19 +237,19 @@ begin
     for i := 0 to max_i do
     begin
       case SensitivityAnalysisForm.StrucParCombo.ItemIndex of
-        0:
+        1:
         begin
           GD1 := gMinXPar + i * interval;
           PredictEquilibrium;
           DrawCurves(GD1);
         end;
-        1:
+        2:
         begin
           GD2 := gMinXPar + i * interval;
           PredictEquilibrium;
           DrawCurves(GD2);
         end;
-        2:
+        3:
         begin
           GT := gMinXPar + i * interval;
           PredictEquilibrium;
@@ -308,6 +308,9 @@ end;
 procedure TSensitivityAnalysisForm.CheckGroup1ItemClick(Sender: TObject;
   Index: integer);
 begin
+  SetBottomAxisCaption;
+  {ItemIndex is evaluated in the SetStrucParBoundaries and plot routine}
+  SetStrucParBoundaries;
   DrawOWSensitivityPlot(False);
 end;
 
