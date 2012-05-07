@@ -289,18 +289,6 @@ end;
 procedure TValuesPlot.FormCreate(Sender: TObject);
 {sets default values}
 begin
-  ComboBox1.ItemIndex := 2;
-  ComboBox2.ItemIndex := 4;
-  ColorListBox1.Selected := clRed;
-  ColorListBox2.Selected := clBlue;
-  ValuesPlot.Chart1.Title.Visible := false;
-  ValuesPlot.Chart2.Title.Visible := false;
-  ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox1.ItemIndex + 2];
-  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox2.ItemIndex + 2];
-  DrawPlot(true);
-  gSelectedChart := nil;
-  PlotPanel1.Color := clWhite;
-  PlotPanel2.Color := clWhite;
   gDefaultColors[0] := clBlack;
   gDefaultColors[1] := clBlack;
   gDefaultColors[2] := clTeal;
@@ -311,6 +299,18 @@ begin
   gDefaultColors[7] := clOlive;
   gDefaultColors[8] := clGreen;
   gDefaultColors[9] := clMaroon;
+  ComboBox1.ItemIndex := 2;
+  ComboBox2.ItemIndex := 4;
+  ColorListBox1.Selected := gDefaultColors[4];
+  ColorListBox2.Selected := gDefaultColors[6];
+  ValuesPlot.Chart1.Title.Visible := false;
+  ValuesPlot.Chart2.Title.Visible := false;
+  ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox1.ItemIndex + 2];
+  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox2.ItemIndex + 2];
+  DrawPlot(true);
+  gSelectedChart := nil;
+  PlotPanel1.Color := clWhite;
+  PlotPanel2.Color := clWhite;
 end;
 
 procedure TValuesPlot.UpdateTimeAxes;

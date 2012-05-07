@@ -30,6 +30,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Cursor = crCross
       Left = 8
       Height = 304
+      Hint = 'Drag with mouse to zoom'
       Top = 10
       Width = 409
       AxisList = <      
@@ -66,6 +67,10 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       ParentColor = False
       ParentShowHint = False
       PopupMenu = PopupMenu1
+      ShowHint = True
+      object Chart1LineSeries1: TLineSeries
+        LinePen.Color = clRed
+      end
     end
   end
   object CheckGroup1: TCheckGroup
@@ -107,6 +112,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Height = 20
     Top = 64
     Width = 113
+    DefaultColorColor = clRed
+    Selected = clRed
     Anchors = [akTop, akRight]
     ItemHeight = 16
     OnChange = TSHColorBoxChange
@@ -117,6 +124,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Height = 20
     Top = 106
     Width = 113
+    DefaultColorColor = clBlue
+    Selected = clBlue
     Anchors = [akTop, akRight]
     ItemHeight = 16
     OnChange = FT4ColorBoxChange
@@ -127,6 +136,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Height = 20
     Top = 150
     Width = 113
+    DefaultColorColor = clGreen
+    Selected = clGreen
     Anchors = [akTop, akRight]
     ItemHeight = 16
     OnChange = FT3ColorBoxChange
@@ -137,6 +148,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Height = 20
     Top = 192
     Width = 113
+    DefaultColorColor = clMaroon
+    Selected = clMaroon
     Anchors = [akTop, akRight]
     ItemHeight = 16
     OnChange = cT3ColorBoxChange
@@ -194,9 +207,9 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
-        'GD1'
-        'GD2'
-        'GT'
+        'GD1 (nmol/s)'
+        'GD2 (fmol/s)'
+        'GT (pmol/s)'
       )
       OnChange = StrucParComboChange
       ParentShowHint = False
