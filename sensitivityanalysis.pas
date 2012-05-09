@@ -27,6 +27,7 @@ const
   KM1_FACTOR = 1e9;
   KM2_FACTOR = 1e9;
   DT_FACTOR = 1;
+  LS_FACTOR = 1e-6;
 
 type
 
@@ -75,7 +76,7 @@ type
   end;
 
   TStoredParameters = record
-    GT, GD1, GD2, kM1, kM2, dT: real
+    GT, GD1, GD2, kM1, kM2, dT, LS: real
   end;
 
 var
@@ -179,7 +180,22 @@ begin
       gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
+    end;
+    7:
+    begin {LS}
+      gSpinFactor := LS_FACTOR;
+      gMinXPar := LS / 3;
+      gMaxXPar := LS * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / LS_FACTOR;
     end
+
   end;
 end;
 
@@ -292,6 +308,7 @@ begin
     StoredParameters.kM1 := kM1;
     StoredParameters.kM2 := kM2;
     StoredParameters.dT := dT;
+    StoredParameters.LS := LS;;
     interval := (gMaxXPar - gMinXPar) / max_i;
     for i := 0 to max_i do
     begin
@@ -331,6 +348,12 @@ begin
           dT := gMinXPar + i * interval;
           PredictEquilibrium;
           DrawCurves(dT);
+        end;
+        7:
+        begin
+          LS := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(LS);
         end
       end;
     end;
@@ -342,6 +365,7 @@ begin
     kM1 := StoredParameters.kM1;
     kM2 := StoredParameters.kM2;
     dT := StoredParameters.dT;
+    LS := StoredParameters.LS;
     OWSensPlotReady := True;
     PredictEquilibrium;
   end;
@@ -449,24 +473,28 @@ var
   {$ELSE}
   theImage: TBitMap;
   {$ENDIF}
+  theWidth, theHeight: integer;
 begin
   if Chart1 = nil then
     bell
   else
+  begin
     {gSelectedChart.CopyToClipboardBitmap doesn't work on Mac OS X}
     {$IFDEF UNIX}
     theImage := TPortableNetworkGraphic.Create;
     {$ELSE}
-  {theImage :=TBitmap.Create;}
-  Chart1.CopyToClipboardBitmap;
+    Chart1.CopyToClipboardBitmap;
     {$ENDIF}
-  try
-    theImage.Width := 900;
-    theImage.Height := 250;
-    Chart1.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas);
-    Clipboard.Assign(theImage);
-  finally
-    theImage.Free;
+    try
+      theWidth := Chart1.Width;
+      theHeight := Chart1.Height;
+      theImage.Width := theWidth;
+      theImage.Height := theHeight;
+      Chart1.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas);
+      Clipboard.Assign(theImage);
+    finally
+      theImage.Free;
+    end;
   end;
 end;
 
