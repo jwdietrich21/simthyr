@@ -310,7 +310,7 @@ object ValuesPlot: TValuesPlot
   }
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '0.9.30.4'
+  LCLVersion = '0.9.30.4RC2'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -332,7 +332,7 @@ object ValuesPlot: TValuesPlot
       Top = 15
       Width = 146
       Anchors = [akRight]
-      ItemHeight = 0
+      ItemHeight = 13
       Items.Strings = (
         'Portal TRH'
         'Pituitary TSH'
@@ -357,8 +357,8 @@ object ValuesPlot: TValuesPlot
       Width = 557
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
-      ClientHeight = 189
-      ClientWidth = 557
+      ClientHeight = 185
+      ClientWidth = 553
       Color = clWhite
       ParentColor = False
       TabOrder = 1
@@ -367,7 +367,7 @@ object ValuesPlot: TValuesPlot
         Height = 170
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 552
+        Width = 548
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -505,8 +505,8 @@ object ValuesPlot: TValuesPlot
       Width = 557
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
-      ClientHeight = 190
-      ClientWidth = 557
+      ClientHeight = 186
+      ClientWidth = 553
       Color = clWhite
       ParentColor = False
       TabOrder = 0
@@ -515,7 +515,7 @@ object ValuesPlot: TValuesPlot
         Height = 170
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 552
+        Width = 548
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -567,7 +567,7 @@ object ValuesPlot: TValuesPlot
       Top = 15
       Width = 146
       Anchors = [akRight]
-      ItemHeight = 0
+      ItemHeight = 13
       Items.Strings = (
         'Portal TRH'
         'Pituitary TSH'
@@ -644,8 +644,8 @@ object ValuesPlot: TValuesPlot
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
-    Top = 450
+    Height = 20
+    Top = 445
     Width = 790
     Panels = <>
   end
@@ -665,7 +665,7 @@ object ValuesPlot: TValuesPlot
   end
   object TitleEdit: TEdit
     Left = 48
-    Height = 22
+    Height = 21
     Hint = 'You may enter a title that is shown on the top of every chart here.'
     Top = 10
     Width = 414
