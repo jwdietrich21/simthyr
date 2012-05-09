@@ -482,9 +482,6 @@ begin
     {gSelectedChart.CopyToClipboardBitmap doesn't work on Mac OS X}
     {$IFDEF UNIX}
     theImage := TPortableNetworkGraphic.Create;
-    {$ELSE}
-    Chart1.CopyToClipboardBitmap;
-    {$ENDIF}
     try
       theWidth := Chart1.Width;
       theHeight := Chart1.Height;
@@ -495,6 +492,9 @@ begin
     finally
       theImage.Free;
     end;
+    {$ELSE}
+    Chart1.CopyToClipboardBitmap;
+    {$ENDIF}
   end;
 end;
 
