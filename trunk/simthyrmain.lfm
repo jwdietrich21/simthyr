@@ -1197,11 +1197,13 @@ object SimThyrToolbar: TSimThyrToolbar
       end
       object OWSensitivityAnalysisItem: TMenuItem
         Caption = 'One-Way Sensitivity Analysis'
+        ShortCut = 4165
         OnClick = OWSensitivityAnalysisItemClick
       end
       object TornadoPlotItem: TMenuItem
         Caption = 'Tornado Plot'
         Enabled = False
+        ShortCut = 4180
         OnClick = TornadoPlotItemClick
       end
       object Divider_3_3: TMenuItem

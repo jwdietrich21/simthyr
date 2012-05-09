@@ -1,4 +1,5 @@
 unit SimThyrPlot;
+
 { SimThyr Project }
 { (c) J. W. Dietrich, 1994 - 2012 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -76,7 +77,7 @@ type
     FLine1, Fline2: TLineSeries;
   public
     { public declarations }
-  end; 
+  end;
 
 var
   factor, i0, i1: longint;
@@ -84,43 +85,44 @@ var
   ValuesPlot: TValuesPlot;
   gr_nummer, antwort, antwort_p: string[4];
 
-function AsTime (x: real): TDateTime;
-function FormattedTime (x: real): Str255;
+function AsTime(x: real): TDateTime;
+function FormattedTime(x: real): Str255;
 
 procedure DrawPlot(empty: boolean);
 
 implementation
 
-function AsTime (x: real): TDateTime;  {Converts second values to TDateTime representation}
+function AsTime(x: real): TDateTime;
+  {Converts second values to TDateTime representation}
 var
   r: longint;
   y, m, d, h, n, s, ms, dy: word;
   theTime, theDate: TDateTime;
 begin
- y := 1900;                            {Take 1900 as standard year}
- r := trunc(x);
- dy := word(r div 86400);              {day of year}
- if not TryEncodeDateDay(y, dy+1, theDate) then {error in encoding?}
-   begin
-     theDate := 0;
-     bell;
-   end;
- DecodeDateTime(theDate, y, m, d, h, n, s, ms);
- r := r mod 86400;
- h := word(r div 3600);
- r := r mod 3600;
- n := word(r div 60);
- r := r mod 60;
- s := word(r);
- if not TryEncodeDateTime(y, m, d, h, n, s, 0, theTime) then {error in encoding?}
-   begin
-     theTime := 0;
-     bell;
-   end;
+  y := 1900;                            {Take 1900 as standard year}
+  r := trunc(x);
+  dy := word(r div 86400);              {day of year}
+  if not TryEncodeDateDay(y, dy + 1, theDate) then {error in encoding?}
+  begin
+    theDate := 0;
+    bell;
+  end;
+  DecodeDateTime(theDate, y, m, d, h, n, s, ms);
+  r := r mod 86400;
+  h := word(r div 3600);
+  r := r mod 3600;
+  n := word(r div 60);
+  r := r mod 60;
+  s := word(r);
+  if not TryEncodeDateTime(y, m, d, h, n, s, 0, theTime) then {error in encoding?}
+  begin
+    theTime := 0;
+    bell;
+  end;
   AsTime := theTime;
 end;
 
-function FormattedTime (x: real): Str255;   {Converts second values to a formatted time}
+function FormattedTime(x: real): Str255;   {Converts second values to a formatted time}
 begin
   FormattedTime := FormatDateTime(gDateTimeFormat, AsTime(x));
 end;
@@ -131,72 +133,78 @@ procedure DrawDummyPlots;
 begin
   with ValuesPlot.Fline1 do
   begin
-   ShowLines := true;
-   ShowPoints := false;
-   Pointer.Brush.Color := ValuesPlot.ColorListBox1.Selected;
-   SeriesColor := ValuesPlot.ColorListBox1.Selected;
-   ValuesPlot.Chart1.AddSeries(ValuesPlot.Fline1);
-   AddXY(0, 0, '', SeriesColor);
-   AddXY(10, 0, '', SeriesColor);
+    ShowLines := True;
+    ShowPoints := False;
+    Pointer.Brush.Color := ValuesPlot.ColorListBox1.Selected;
+    SeriesColor := ValuesPlot.ColorListBox1.Selected;
+    ValuesPlot.Chart1.AddSeries(ValuesPlot.Fline1);
+    AddXY(0, 0, '', SeriesColor);
+    AddXY(10, 0, '', SeriesColor);
   end;
   with ValuesPlot.Fline2 do
   begin
-   ShowLines := true;
-   ShowPoints := false;
-   Pointer.Brush.Color := ValuesPlot.ColorListBox2.Selected;
-   SeriesColor := ValuesPlot.ColorListBox2.Selected;
-   ValuesPlot.Chart2.AddSeries(ValuesPlot.Fline2);
-   AddXY(0, 0, '', SeriesColor);
-   AddXY(10, 0, '', SeriesColor);
- end;
- ValuesPlot.Caption := 'Chart View';
+    ShowLines := True;
+    ShowPoints := False;
+    Pointer.Brush.Color := ValuesPlot.ColorListBox2.Selected;
+    SeriesColor := ValuesPlot.ColorListBox2.Selected;
+    ValuesPlot.Chart2.AddSeries(ValuesPlot.Fline2);
+    AddXY(0, 0, '', SeriesColor);
+    AddXY(10, 0, '', SeriesColor);
+  end;
+  ValuesPlot.Caption := 'Chart View';
 end;
 
 procedure DrawPlot(empty: boolean);
 var
- j: integer;
- theTime: TDateTime;
- theSecond: real;
+  j: integer;
+  theTime: TDateTime;
+  theSecond: real;
 begin
- if ValuesPlot.Fline1 <> nil then ValuesPlot.Chart1.ClearSeries;
- if ValuesPlot.Fline2 <> nil then ValuesPlot.Chart2.ClearSeries;
- ValuesPlot.Fline1 := TLineSeries.Create(ValuesPlot.Chart1);
- ValuesPlot.Fline2 := TLineSeries.Create(ValuesPlot.Chart2);
- ValuesPlot.Fline1.BeginUpdate;
- ValuesPlot.Fline2.BeginUpdate;
- if empty then DrawDummyPlots else
+  if ValuesPlot.Fline1 <> nil then
+    ValuesPlot.Chart1.ClearSeries;
+  if ValuesPlot.Fline2 <> nil then
+    ValuesPlot.Chart2.ClearSeries;
+  ValuesPlot.Fline1 := TLineSeries.Create(ValuesPlot.Chart1);
+  ValuesPlot.Fline2 := TLineSeries.Create(ValuesPlot.Chart2);
+  ValuesPlot.Fline1.BeginUpdate;
+  ValuesPlot.Fline2.BeginUpdate;
+  if empty then
+    DrawDummyPlots
+  else
   begin
-   with ValuesPlot.Fline1 do
-   begin
-    ShowLines := true;
-    ShowPoints := false;
-    Pointer.Brush.Color := ValuesPlot.ColorListBox1.Selected;
-    SeriesColor := ValuesPlot.ColorListBox1.Selected;
-    ValuesPlot.Chart1.AddSeries(ValuesPlot.Fline1);
-    for j := 0 to length(gResultMatrix) - 1 do
+    with ValuesPlot.Fline1 do
     begin
-      theSecond := gResultMatrix[j, t_pos];
-      AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2] * gParameterFactor[ValuesPlot.ComboBox1.ItemIndex + 2], '', SeriesColor);
+      ShowLines := True;
+      ShowPoints := False;
+      Pointer.Brush.Color := ValuesPlot.ColorListBox1.Selected;
+      SeriesColor := ValuesPlot.ColorListBox1.Selected;
+      ValuesPlot.Chart1.AddSeries(ValuesPlot.Fline1);
+      for j := 0 to length(gResultMatrix) - 1 do
+      begin
+        theSecond := gResultMatrix[j, t_pos];
+        AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2] *
+          gParameterFactor[ValuesPlot.ComboBox1.ItemIndex + 2], '', SeriesColor);
+      end;
     end;
-  end;
-  with ValuesPlot.Fline2 do
-  begin
-    ShowLines := true;
-    ShowPoints := false;
-    Pointer.Brush.Color := ValuesPlot.ColorListBox2.Selected;
-    SeriesColor := ValuesPlot.ColorListBox2.Selected;
-    ValuesPlot.Chart2.AddSeries(ValuesPlot.Fline2);
-    for j := 0 to length(gResultMatrix) - 1 do
+    with ValuesPlot.Fline2 do
     begin
-      theSecond := gResultMatrix[j, t_pos];
-      AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] * gParameterFactor[ValuesPlot.ComboBox2.ItemIndex + 2], '', SeriesColor);
+      ShowLines := True;
+      ShowPoints := False;
+      Pointer.Brush.Color := ValuesPlot.ColorListBox2.Selected;
+      SeriesColor := ValuesPlot.ColorListBox2.Selected;
+      ValuesPlot.Chart2.AddSeries(ValuesPlot.Fline2);
+      for j := 0 to length(gResultMatrix) - 1 do
+      begin
+        theSecond := gResultMatrix[j, t_pos];
+        AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] *
+          gParameterFactor[ValuesPlot.ComboBox2.ItemIndex + 2], '', SeriesColor);
+      end;
     end;
+    graphready := True;
+    ValuesPlot.Caption := PLOT_TITLE;
   end;
-  graphready := true;
-  ValuesPlot.Caption := PLOT_TITLE;
- end;
- ValuesPlot.Fline1.EndUpdate;
- ValuesPlot.Fline2.EndUpdate;
+  ValuesPlot.Fline1.EndUpdate;
+  ValuesPlot.Fline2.EndUpdate;
 end;
 
 procedure TValuesPlot.PlotPanel2Click(Sender: TObject);
@@ -206,34 +214,36 @@ end;
 
 procedure TValuesPlot.ComboBox1Change(Sender: TObject);
 begin
- ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox1.ItemIndex + 2];
- ColorListBox1.Selected := gDefaultColors[ComboBox1.ItemIndex + 2];
- DrawPlot(not graphready);
+  ValuesPlot.Chart1.LeftAxis.Title.Caption :=
+    gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' +
+    gParameterUnit[ComboBox1.ItemIndex + 2];
+  ColorListBox1.Selected := gDefaultColors[ComboBox1.ItemIndex + 2];
+  DrawPlot(not graphready);
 end;
 
 procedure TValuesPlot.ColorBox1Change(Sender: TObject);
 begin
- DrawPlot(not graphready);
+  DrawPlot(not graphready);
 end;
 
 procedure TValuesPlot.Button1Click(Sender: TObject);
 begin
   ValuesPlot.Chart1.Title.Text.SetText(PChar(ValuesPlot.TitleEdit.Text));
-  ValuesPlot.Chart1.Title.visible := not(ValuesPlot.Chart1.Title.visible);
+  ValuesPlot.Chart1.Title.Visible := not (ValuesPlot.Chart1.Title.Visible);
   ValuesPlot.Chart1.Title.Font.Color := ValuesPlot.ColorButton1.ButtonColor;
   ValuesPlot.Chart2.Title.Text.SetText(PChar(ValuesPlot.TitleEdit.Text));
-  ValuesPlot.Chart2.Title.visible := not(ValuesPlot.Chart2.Title.visible);
+  ValuesPlot.Chart2.Title.Visible := not (ValuesPlot.Chart2.Title.Visible);
   ValuesPlot.Chart2.Title.Font.Color := ValuesPlot.ColorButton1.ButtonColor;
-  if ValuesPlot.Chart1.Title.visible then
-    begin
-      ValuesPlot.Button1.Caption := 'Remove';
-      ValuesPlot.TitleEdit.Enabled := false;
-    end
+  if ValuesPlot.Chart1.Title.Visible then
+  begin
+    ValuesPlot.Button1.Caption := 'Remove';
+    ValuesPlot.TitleEdit.Enabled := False;
+  end
   else
-    begin
-      ValuesPlot.Button1.Caption := 'Add';
-      ValuesPlot.TitleEdit.Enabled := true;
-    end;
+  begin
+    ValuesPlot.Button1.Caption := 'Add';
+    ValuesPlot.TitleEdit.Enabled := True;
+  end;
 end;
 
 procedure TValuesPlot.Chart1Click(Sender: TObject);
@@ -254,7 +264,7 @@ end;
 
 procedure TValuesPlot.ColorBox2Change(Sender: TObject);
 begin
- DrawPlot(not graphready);
+  DrawPlot(not graphready);
 end;
 
 procedure TValuesPlot.ColorButton1Click(Sender: TObject);
@@ -271,17 +281,19 @@ end;
 
 procedure TValuesPlot.ColorListBox1Click(Sender: TObject);
 begin
- DrawPlot(not graphready);
+  DrawPlot(not graphready);
 end;
 
 procedure TValuesPlot.ColorListBox2Click(Sender: TObject);
 begin
- DrawPlot(not graphready);
+  DrawPlot(not graphready);
 end;
 
 procedure TValuesPlot.ComboBox2Change(Sender: TObject);
 begin
-  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox2.ItemIndex + 2];
+  ValuesPlot.Chart2.LeftAxis.Title.Caption :=
+    gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' +
+    gParameterUnit[ComboBox2.ItemIndex + 2];
   ColorListBox2.Selected := gDefaultColors[ComboBox2.ItemIndex + 2];
   DrawPlot(not graphready);
 end;
@@ -303,11 +315,15 @@ begin
   ComboBox2.ItemIndex := 4;
   ColorListBox1.Selected := gDefaultColors[4];
   ColorListBox2.Selected := gDefaultColors[6];
-  ValuesPlot.Chart1.Title.Visible := false;
-  ValuesPlot.Chart2.Title.Visible := false;
-  ValuesPlot.Chart1.LeftAxis.Title.Caption := gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox1.ItemIndex + 2];
-  ValuesPlot.Chart2.LeftAxis.Title.Caption := gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' + gParameterUnit[ComboBox2.ItemIndex + 2];
-  DrawPlot(true);
+  ValuesPlot.Chart1.Title.Visible := False;
+  ValuesPlot.Chart2.Title.Visible := False;
+  ValuesPlot.Chart1.LeftAxis.Title.Caption :=
+    gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' +
+    gParameterUnit[ComboBox1.ItemIndex + 2];
+  ValuesPlot.Chart2.LeftAxis.Title.Caption :=
+    gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' +
+    gParameterUnit[ComboBox2.ItemIndex + 2];
+  DrawPlot(True);
   gSelectedChart := nil;
   PlotPanel1.Color := clWhite;
   PlotPanel2.Color := clWhite;
@@ -315,7 +331,7 @@ end;
 
 procedure TValuesPlot.UpdateTimeAxes;
 begin
-  DateTimeIntervalChartSource1.DateTimeFormat := String(gDateTimeFormat);
+  DateTimeIntervalChartSource1.DateTimeFormat := string(gDateTimeFormat);
 end;
 
 procedure TValuesPlot.FormShow(Sender: TObject);
@@ -342,26 +358,31 @@ var
   {$IFDEF UNIX}
   theImage: TPortableNetworkGraphic;
   {$ELSE}
-  theImage:TBitMap;
+  theImage: TBitMap;
   {$ENDIF}
+  theWidth, theHeight: integer;
 begin
   if gSelectedChart = nil then
     bell
   else
+  begin
     {gSelectedChart.CopyToClipboardBitmap doesn't work on Mac OS X}
     {$IFDEF UNIX}
     theImage := TPortableNetworkGraphic.Create;
     {$ELSE}
-    {theImage :=TBitmap.Create;}
     gSelectedChart.CopyToClipboardBitmap;
     {$ENDIF}
-  try
-    theImage.Width := 900;
-    theImage.Height := 250;
-    gSelectedChart.DrawOnCanvas(rect(0,0,theImage.Width,theImage.Height), theImage.canvas);
-    Clipboard.assign(theImage);
-  finally
-    theImage.Free;
+    try
+      theWidth := gSelectedChart.Width;
+      theHeight := gSelectedChart.Height;
+      theImage.Width := theWidth;
+      theImage.Height := theHeight;
+      gSelectedChart.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height),
+        theImage.canvas);
+      Clipboard.Assign(theImage);
+    finally
+      theImage.Free;
+    end;
   end;
 end;
 
@@ -380,13 +401,13 @@ end;
 
 procedure TValuesPlot.FullScaleButton2Click(Sender: TObject);
 begin
-  ValuesPlot.Chart2.Extent.UseYMax := false;
+  ValuesPlot.Chart2.Extent.UseYMax := False;
   ValuesPlot.Chart2.ZoomFull;
 end;
 
 procedure TValuesPlot.FullScaleButton1Click(Sender: TObject);
 begin
-  ValuesPlot.Chart1.Extent.UseYMax := false;
+  ValuesPlot.Chart1.Extent.UseYMax := False;
   ValuesPlot.Chart1.ZoomFull;
 end;
 

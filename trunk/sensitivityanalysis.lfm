@@ -213,7 +213,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
         'GT (pmol/s)'
         'KM1 (nmol/l)'
         'KM2 (nmol/l)'
-        'DT mU/l'
+        'DT (mU/l)'
+        'LS (l/µmol)'
       )
       OnChange = StrucParComboChange
       ParentShowHint = False

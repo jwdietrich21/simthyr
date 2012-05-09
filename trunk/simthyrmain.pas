@@ -157,6 +157,8 @@ implementation
 { TSimThyrToolbar }
 
 procedure AdaptMenus;
+{ Adapts Menus and Shortcuts to the interface style guidelines
+  of the respective operating system }
 var
   modifierKey: TShiftState;
 begin
@@ -187,9 +189,12 @@ begin
   SimThyrToolbar.CopyMenuItem.ShortCut:=ShortCut(VK_C, modifierKey);
   SimThyrToolbar.PasteMenuItem.ShortCut:=ShortCut(VK_V, modifierKey);
   SimThyrToolbar.RunItem.ShortCut:=ShortCut(VK_R, modifierKey);
+  SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut:=ShortCut(VK_E, modifierKey);
+  SimThyrToolbar.TornadoPlotItem.ShortCut:=ShortCut(VK_T, modifierKey);
 end;
 
 procedure AdaptLanguages;
+{ Scaffold for future extension supporting language switching }
 begin
    if gInterfaceLanguage = English then
    begin
@@ -319,27 +324,6 @@ begin
       1: bell;
       2: ReadScenario(theFileName);
       end;
-    {AssignFile(theFile, theFileName);
-    FileMode := 0;
-    {$i-}
-    Reset(theFile);
-    {$i+}
-    if IOResult <> 0 then
-      begin
-        bell;
-        exit ;
-      end
-    else
-      begin }
-        {StatusBar1.SimpleText := StatusStringReading;
-        theSize := FileSize(theFileName);
-        SetLength(fileData, theSize) ;
-        BlockRead(theFile, fileData[0], theSize) ;}
-        {CloseFile(theFile) ;}
-        {FileContent := AnsiString(fileData);
-        PreviewPanel.text := FileContent;
-        StatusBar1.SimpleText := StatusStringDataRead;    }
-      {end;}
   end;
 end;
 
