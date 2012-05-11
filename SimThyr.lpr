@@ -16,11 +16,11 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, SimThyrMain, Controls,
-  TAChartLazarusPkg, SimThyrPlot, LaunchDialog, simthyrlog, SimThyrTypes,
-  SimThyrServices, ShowIPS, Simulator, Splash, AboutDialog, ShowAboutModel,
-  SimThyrPrediction, StructureParameters, SimOptions, VersionSupport,
-  ScenarioHandler, HandlePreferences, HandleNotifier, Sensitivityanalysis;
+  Forms, SimThyrMain, Controls, TAChartLazarusPkg, SimThyrPlot, LaunchDialog,
+  simthyrlog, SimThyrTypes, SimThyrServices, ShowIPS, Simulator, Splash,
+  AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
+  SimOptions, VersionSupport, ScenarioHandler, HandlePreferences,
+  HandleNotifier, Sensitivityanalysis, tornado;
 
 {{$IFDEF WINDOWS}{$R SimThyr.rc}{$ENDIF}}
 
@@ -127,6 +127,9 @@ begin
   Application.CreateForm(TSensitivityAnalysisForm, SensitivityAnalysisForm);
   SensitivityAnalysisForm.Hide;
   SensitivityAnalysisForm.AlphaBlend := false;
+  Application.CreateForm(TTornadoPlotForm, TornadoPlotForm);
+  TornadoPlotForm.Hide;
+  TornadoPlotForm.AlphaBlend := false;
   if showSettingsAtStartup then
   begin
     SimThyrToolbar.SendToBack;

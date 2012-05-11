@@ -17,8 +17,8 @@ uses
   Grids, ExtCtrls, StdActns, StdCtrls, LCLType, Menus, ActnList, SimThyrTypes,
   SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers, ComCtrls,
   LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog, ShowAboutModel,
-  StructureParameters, SimThyrPrediction, Sensitivityanalysis, ScenarioHandler, HandlePreferences,
-  HandleNotifier, LCLProc, LazHelpHTML;
+  StructureParameters, SimThyrPrediction, Sensitivityanalysis, tornado,
+  ScenarioHandler, HandlePreferences, HandleNotifier, LCLProc, LazHelpHTML;
 
 type
 
@@ -137,6 +137,7 @@ type
     procedure NewToolButtonClick(Sender: TObject);
     procedure PrefsToolButtonClick(Sender: TObject);
     procedure PrintToolButtonClick(Sender: TObject);
+    procedure TornadoPlotItem2Click(Sender: TObject);
     procedure TornadoPlotItemClick(Sender: TObject);
     procedure UndoMenuItemClick(Sender: TObject);
     procedure AboutItemClick(Sender: TObject);
@@ -472,9 +473,14 @@ begin
     ShowImplementationMessage;
 end;
 
+procedure TSimThyrToolbar.TornadoPlotItem2Click(Sender: TObject);
+begin
+  TornadoPlotForm.Show;
+end;
+
 procedure TSimThyrToolbar.TornadoPlotItemClick(Sender: TObject);
 begin
-  bell;
+  TornadoPlotForm.Show;;
 end;
 
 procedure TSimThyrToolbar.UndoMenuItemClick(Sender: TObject);

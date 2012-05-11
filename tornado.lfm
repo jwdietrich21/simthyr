@@ -1,0 +1,41 @@
+object TornadoPlotForm: TTornadoPlotForm
+  Left = 324
+  Height = 422
+  Top = 205
+  Width = 578
+  AlphaBlendValue = 0
+  Caption = 'Tornado Plot'
+  ClientHeight = 422
+  ClientWidth = 578
+  LCLVersion = '0.9.30.4'
+  Visible = True
+  object Chart1: TChart
+    Left = 48
+    Height = 200
+    Top = 72
+    Width = 300
+    AllowZoom = False
+    AxisList = <    
+      item
+        Title.LabelFont.Orientation = 900
+      end    
+      item
+        Alignment = calBottom
+      end>
+    BackColor = clWhite
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    Color = clWhite
+    ParentColor = False
+  end
+  object ChartStyles1: TChartStyles
+    Styles = <>
+    left = 216
+    top = 416
+  end
+end
