@@ -1202,7 +1202,6 @@ object SimThyrToolbar: TSimThyrToolbar
       end
       object TornadoPlotItem: TMenuItem
         Caption = 'Tornado Plot'
-        Enabled = False
         ShortCut = 4180
         OnClick = TornadoPlotItemClick
       end
@@ -1276,7 +1275,7 @@ object SimThyrToolbar: TSimThyrToolbar
       end
       object TornadoPlotItem2: TMenuItem
         Caption = 'Tornado Plot'
-        Enabled = False
+        OnClick = TornadoPlotItem2Click
       end
       object IPSItem2: TMenuItem
         Caption = 'IPS'

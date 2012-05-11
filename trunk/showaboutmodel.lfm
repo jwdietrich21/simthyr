@@ -1,7 +1,7 @@
 object AboutModelForm: TAboutModelForm
   Left = 498
   Height = 730
-  Top = 180
+  Top = 22
   Width = 577
   HorzScrollBar.Page = 509
   HorzScrollBar.Range = 509
@@ -16,7 +16,7 @@ object AboutModelForm: TAboutModelForm
   ClientHeight = 730
   ClientWidth = 577
   Color = clWhite
-  LCLVersion = '0.9.30.2'
+  LCLVersion = '0.9.30.4'
   Visible = True
   object Label1: TLabel
     Left = 56
