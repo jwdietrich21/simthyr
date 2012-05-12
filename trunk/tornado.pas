@@ -15,8 +15,9 @@ interface
 
 uses
   SimThyrTypes, Classes, SysUtils, FileUtil, LResources, Forms, Controls,
-  Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, TAGraph, TAStyles,
-  TASeries, TASources, TATools, SimThyrServices, Sensitivityanalysis;
+  Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, TAGraph, TAStyles, TASeries,
+  TASources, TATools, TATransformations, SimThyrServices, Sensitivityanalysis,
+  SimThyrPrediction;
 
 type
 
@@ -36,13 +37,13 @@ type
     { public declarations }
   end;
 
-  TNumberPair = record
-    l, u: real;
+  TNumberTriplet = record
+    l, o, u: real;
   end;
 
 var
   TornadoPlotForm: TTornadoPlotForm;
-  gStrucPar, gDepPar: TNumberPair;
+  gStrucPar, gDepPar: TNumberTriplet;
 
 implementation
 
@@ -63,14 +64,15 @@ begin
   end;
 end;
 
-function TestPair(thePar, amount: real): TNumberPair;
+function TestRecord(thePar, amount: real): TNumberTriplet;
 {creates a pair of test values from the given structure parameter and amount}
 var
-  tempResult: TNumberPair;
+  tempResult: TNumberTriplet;
 begin
+  tempResult.o := thePar;
   tempResult.l := (1 - amount) * thePar;
   tempResult.u := (1 + amount) * thePar;
-  TestPair := tempResult;
+  TestRecord := tempResult;
 end;
 
 procedure DrawTornadoPlot;
@@ -90,16 +92,29 @@ begin
   end;
   Rotate(TornadoPlotForm.FBar);
   SaveStrucPars;
-  gstrucPar := TestPair(GD1, 0.2);
-  gDepPar.l := -30;
-  gDepPar.u := +30;
-  TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-  TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
-  gDepPar.l := -50;
-  gDepPar.u := +100;
+  gstrucPar := TestRecord(GD1, 0.2);
+  gDepPar.o := TSH1;
+  GD1 := gStrucPar.l;
+  PredictEquilibrium;
+  gDepPar.l := (TSH1 - gDepPar.o) / gDepPar.o;
+  GD1 := gStrucPar.u;
+  PredictEquilibrium;
+  gDepPar.u := (TSH1 - gDepPar.o) / gDepPar.o;
   TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
   TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
   RestoreStrucPars;
+  gstrucPar := TestRecord(GD2, 0.2);
+  gDepPar.o := TSH1;
+  GD2 := gStrucPar.l;
+  PredictEquilibrium;
+  gDepPar.l := (TSH1 - gDepPar.o) / gDepPar.o;
+  GD2 := gStrucPar.u;
+  PredictEquilibrium;
+  gDepPar.u := (TSH1 - gDepPar.o) / gDepPar.o;
+  TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
+  TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+  RestoreStrucPars;
+  PredictEquilibrium;
 end;
 
 procedure TTornadoPlotForm.FormCreate(Sender: TObject);
