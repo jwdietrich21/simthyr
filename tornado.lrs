@@ -1,15 +1,35 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TTornadoPlotForm','FORMDATA',[
-  'TPF0'#16'TTornadoPlotForm'#15'TornadoPlotForm'#4'Left'#3'D'#1#6'Height'#3#166
-  +#1#3'Top'#3#205#0#5'Width'#3'B'#2#15'AlphaBlendValue'#2#0#7'Caption'#6#12'To'
-  +'rnado Plot'#12'ClientHeight'#3#166#1#11'ClientWidth'#3'B'#2#10'LCLVersion'#6
-  +#8'0.9.30.4'#7'Visible'#9#0#6'TChart'#6'Chart1'#4'Left'#2'0'#6'Height'#3#200
-  +#0#3'Top'#2'H'#5'Width'#3','#1#9'AllowZoom'#8#8'AxisList'#14#1#27'Title.Labe'
-  +'lFont.Orientation'#3#132#3#0#1#9'Alignment'#7#9'calBottom'#0#0#9'BackColor'
-  +#7#7'clWhite'#16'Foot.Brush.Color'#7#9'clBtnFace'#15'Foot.Font.Color'#7#6'cl'
-  +'Blue'#17'Title.Brush.Color'#7#9'clBtnFace'#16'Title.Font.Color'#7#6'clBlue'
-  +#18'Title.Text.Strings'#1#6#7'TAChart'#0#5'Color'#7#7'clWhite'#11'ParentColo'
-  +'r'#8#0#0#12'TChartStyles'#12'ChartStyles1'#6'Styles'#14#0#4'left'#3#216#0#3
-  +'top'#3#160#1#0#0#0
+  'TPF0'#16'TTornadoPlotForm'#15'TornadoPlotForm'#4'Left'#3'M'#1#6'Height'#3#195
+  +#1#3'Top'#3#231#0#5'Width'#3#193#2#15'AlphaBlendValue'#2#0#7'Caption'#6#12'T'
+  +'ornado Plot'#12'ClientHeight'#3#195#1#11'ClientWidth'#3#193#2#8'OnCreate'#7
+  +#10'FormCreate'#6'OnShow'#7#8'FormShow'#10'LCLVersion'#6#8'0.9.30.4'#7'Visib'
+  +'le'#9#0#6'TChart'#6'Chart1'#4'Left'#2#0#6'Height'#3'Z'#1#3'Top'#2#16#5'Widt'
+  +'h'#3#224#1#8'AxisList'#14#1#12'Grid.Visible'#8#8'Inverted'#9#14'Marks.Dista'
+  +'nce'#2#7#12'Marks.Format'#6#4'%2:s'#11'Marks.Style'#7#8'smsLabel'#27'Title.'
+  +'LabelFont.Orientation'#3#132#3#0#1#9'Alignment'#7#9'calBottom'#12'Grid.Visi'
+  +'ble'#8#22'Title.LabelFont.Height'#2#247#13'Title.Visible'#9#13'Title.Captio'
+  +'n'#6' Change in dependent variable (%)'#0#0#9'BackColor'#7#7'clWhite'#16'Fo'
+  +'ot.Brush.Color'#7#9'clBtnFace'#15'Foot.Font.Color'#7#6'clBlue'#17'Title.Bru'
+  +'sh.Color'#7#9'clBtnFace'#16'Title.Font.Color'#7#6'clBlue'#18'Title.Text.Str'
+  +'ings'#1#6#7'TAChart'#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBott'
+  +'om'#0#5'Color'#7#7'clWhite'#11'ParentColor'#8#0#10'TBarSeries'#4'FBar'#10'A'
+  +'xisIndexX'#2#1#10'AxisIndexY'#2#0#14'BarBrush.Color'#7#5'clRed'#0#0#0#11'TC'
+  +'heckGroup'#11'CheckGroup1'#4'Left'#3#249#1#6'Height'#3#209#0#3'Top'#2#16#5
+  +'Width'#3#185#0#7'Anchors'#11#5'akTop'#7'akRight'#0#8'AutoFill'#9#7'Caption'
+  +#6#20'Structure parameters'#28'ChildSizing.LeftRightSpacing'#2#6#28'ChildSiz'
+  +'ing.TopBottomSpacing'#2#6#29'ChildSizing.EnlargeHorizontal'#7#24'crsHomogen'
+  +'ousChildResize'#27'ChildSizing.EnlargeVertical'#7#24'crsHomogenousChildResi'
+  +'ze'#28'ChildSizing.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildSizing.Sh'
+  +'rinkVertical'#7#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclLeftToRig'
+  +'htThenTopToBottom'#27'ChildSizing.ControlsPerLine'#2#1#13'Items.Strings'#1#6
+  +#3'GD1'#6#3'GD2'#6#2'GT'#6#3'KM1'#6#3'KM2'#6#2'DT'#6#2'LS'#0#8'TabOrder'#2#1
+  +#4'Data'#10#11#0#0#0#7#0#0#0#2#2#2#2#2#2#2#0#0#9'TComboBox'#9'ComboBox1'#4'L'
+  +'eft'#3#208#0#6'Height'#2#21#3'Top'#3#127#1#5'Width'#3#16#1#7'Anchors'#11#7
+  +'akRight'#8'akBottom'#0#10'ItemHeight'#2#0#9'ItemIndex'#2#0#13'Items.Strings'
+  +#1#6#29'Select dependent parameter...'#6#3'TSH'#6#3'FT4'#6#3'FT3'#6#3'cT3'#0
+  +#8'TabOrder'#2#2#4'Text'#6#29'Select dependent parameter...'#0#0#10'TStatusB'
+  +'ar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#15#3'Top'#3#180#1#5'Width'#3#193
+  +#2#6'Panels'#14#0#0#0#0
 ]);

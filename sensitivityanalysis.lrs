@@ -1,81 +1,81 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
-  'TPF0'#24'TSensitivityAnalysisForm'#23'SensitivityAnalysisForm'#4'Left'#3'&'#1
-  +#6'Height'#3#185#1#3'Top'#3#179#0#5'Width'#3#209#2#15'AlphaBlendValue'#2#0#7
-  +'Anchors'#11#5'akTop'#6'akLeft'#8'akBottom'#0#7'Caption'#6#28'One Way Sensit'
-  +'ivity Analysis'#12'ClientHeight'#3#185#1#11'ClientWidth'#3#209#2#5'Color'#7
-  +#7'clWhite'#21'Constraints.MinHeight'#3#144#1#20'Constraints.MinWidth'#3'X'#2
-  +#8'OnCreate'#7#10'FormCreate'#10'LCLVersion'#6#11'0.9.30.4RC2'#7'Visible'#9#0
-  +#6'TPanel'#6'Panel1'#4'Left'#2'0'#6'Height'#3'B'#1#3'Top'#2' '#5'Width'#3#169
-  +#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#17'BorderSpacin'
-  +'g.Top'#2#20#11'BorderStyle'#7#8'bsSingle'#7'Caption'#6#6'Panel1'#12'ClientH'
-  +'eight'#3'>'#1#11'ClientWidth'#3#165#1#8'TabOrder'#2#0#0#6'TChart'#6'Chart1'
-  +#6'Cursor'#7#7'crCross'#4'Left'#2#8#6'Height'#3','#1#4'Hint'#6#23'Drag with '
-  +'mouse to zoom'#3'Top'#2#10#5'Width'#3#149#1#8'AxisList'#14#1#10'Grid.Color'
-  +#7#8'clSilver'#10'Grid.Style'#7#6'psDash'#22'Marks.LabelFont.Height'#2#245#22
-  +'Title.LabelFont.Height'#2#245#27'Title.LabelFont.Orientation'#3#132#3#13'Ti'
-  +'tle.Visible'#9#13'Title.Caption'#6#21'Dependent variable(s)'#0#1#9'Alignmen'
-  +'t'#7#9'calBottom'#10'Grid.Style'#7#7'psClear'#22'Marks.LabelFont.Height'#2
-  +#245#22'Title.LabelFont.Height'#2#245#13'Title.Visible'#9#13'Title.Caption'#6
-  +#19'Structure Parameter'#15'Transformations'#7#25'ChartAxisTransformations1'
-  +#0#0#9'BackColor'#7#7'clWhite'#11'Extent.XMax'#5#0#0#0#0#0#0#0#200#5'@'#16'F'
-  +'oot.Brush.Color'#7#9'clBtnFace'#15'Foot.Font.Color'#7#6'clBlue'#17'Legend.U'
-  +'seSidebar'#8#17'Title.Brush.Color'#7#9'clBtnFace'#16'Title.Font.Color'#7#6
-  +'clBlue'#18'Title.Text.Strings'#1#6#7'TAChart'#0#7'Anchors'#11#5'akTop'#6'ak'
-  +'Left'#7'akRight'#8'akBottom'#0#5'Color'#7#7'clWhite'#11'ParentColor'#8#14'P'
-  +'arentShowHint'#8#9'PopupMenu'#7#10'PopupMenu1'#8'ShowHint'#9#0#11'TLineSeri'
-  +'es'#17'Chart1LineSeries1'#13'LinePen.Color'#7#5'clRed'#0#0#0#0#11'TCheckGro'
-  +'up'#11'CheckGroup1'#18'AnchorSideTop.Side'#7#9'asrBottom'#4'Left'#3#232#1#6
-  +'Height'#3#200#0#4'Hint'#6'ISelect the behavioural parameter that servers as'
-  +' dependent variable here.'#3'Top'#2' '#5'Width'#3#203#0#7'Anchors'#11#5'akT'
-  +'op'#7'akRight'#0#8'AutoFill'#9#17'BorderSpacing.Top'#2#20#7'Caption'#6#20'D'
-  +'ependent parameters'#28'ChildSizing.LeftRightSpacing'#2#6#28'ChildSizing.To'
-  +'pBottomSpacing'#2#6#29'ChildSizing.EnlargeHorizontal'#7#24'crsHomogenousChi'
-  +'ldResize'#27'ChildSizing.EnlargeVertical'#7#24'crsHomogenousChildResize'#28
-  +'ChildSizing.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildSizing.ShrinkVer'
-  +'tical'#7#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclLeftToRightThenT'
-  +'opToBottom'#27'ChildSizing.ControlsPerLine'#2#1#13'Items.Strings'#1#6#3'TSH'
-  +#6#3'FT4'#6#3'FT3'#6#3'cT3'#0#7'OnClick'#7#16'CheckGroup1Click'#11'OnItemCli'
-  +'ck'#7#20'CheckGroup1ItemClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrde'
-  +'r'#2#1#4'Data'#10#8#0#0#0#4#0#0#0#2#2#2#2#0#0#9'TColorBox'#11'TSHColorBox'#4
-  +'Left'#3'7'#2#6'Height'#2#22#3'Top'#2'@'#5'Width'#2'q'#17'DefaultColorColor'
-  +#7#5'clRed'#8'Selected'#7#5'clRed'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'It'
-  +'emHeight'#2#16#8'OnChange'#7#17'TSHColorBoxChange'#8'TabOrder'#2#2#0#0#9'TC'
-  +'olorBox'#11'FT4ColorBox'#4'Left'#3'7'#2#6'Height'#2#22#3'Top'#2'j'#5'Width'
-  +#2'q'#17'DefaultColorColor'#7#6'clBlue'#8'Selected'#7#6'clBlue'#7'Anchors'#11
-  +#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#17'FT4ColorBoxChang'
-  +'e'#8'TabOrder'#2#3#0#0#9'TColorBox'#11'FT3ColorBox'#4'Left'#3'7'#2#6'Height'
-  +#2#22#3'Top'#3#150#0#5'Width'#2'q'#17'DefaultColorColor'#7#7'clGreen'#8'Sele'
-  +'cted'#7#7'clGreen'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8
-  +'OnChange'#7#17'FT3ColorBoxChange'#8'TabOrder'#2#4#0#0#9'TColorBox'#11'cT3Co'
-  +'lorBox'#4'Left'#3'7'#2#6'Height'#2#22#3'Top'#3#192#0#5'Width'#2'q'#17'Defau'
-  +'ltColorColor'#7#8'clMaroon'#8'Selected'#7#8'clMaroon'#7'Anchors'#11#5'akTop'
-  +#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#17'cT3ColorBoxChange'#8'TabO'
-  +'rder'#2#5#0#0#9'TGroupBox'#9'GroupBox1'#4'Left'#2'0'#6'Height'#2'2'#3'Top'#3
+  'TPF0'#24'TSensitivityAnalysisForm'#23'SensitivityAnalysisForm'#4'Left'#3'P'#1
+  +#6'Height'#3#185#1#3'Top'#3#8#1#5'Width'#3#209#2#15'AlphaBlendValue'#2#0#7'A'
+  +'nchors'#11#5'akTop'#6'akLeft'#8'akBottom'#0#7'Caption'#6#28'One Way Sensiti'
+  +'vity Analysis'#12'ClientHeight'#3#185#1#11'ClientWidth'#3#209#2#5'Color'#7#7
+  +'clWhite'#21'Constraints.MinHeight'#3#144#1#20'Constraints.MinWidth'#3'X'#2#8
+  +'OnCreate'#7#10'FormCreate'#10'LCLVersion'#6#8'0.9.30.4'#7'Visible'#9#0#6'TP'
+  +'anel'#6'Panel1'#4'Left'#2'0'#6'Height'#3'B'#1#3'Top'#2' '#5'Width'#3#169#1#7
+  +'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#17'BorderSpacing.To'
+  +'p'#2#20#11'BorderStyle'#7#8'bsSingle'#7'Caption'#6#6'Panel1'#12'ClientHeigh'
+  +'t'#3'B'#1#11'ClientWidth'#3#169#1#8'TabOrder'#2#0#0#6'TChart'#6'Chart1'#6'C'
+  +'ursor'#7#7'crCross'#4'Left'#2#8#6'Height'#3'0'#1#4'Hint'#6#23'Drag with mou'
+  +'se to zoom'#3'Top'#2#10#5'Width'#3#153#1#8'AxisList'#14#1#10'Grid.Color'#7#8
+  +'clSilver'#10'Grid.Style'#7#6'psDash'#22'Marks.LabelFont.Height'#2#245#22'Ti'
+  +'tle.LabelFont.Height'#2#245#27'Title.LabelFont.Orientation'#3#132#3#13'Titl'
+  +'e.Visible'#9#13'Title.Caption'#6#21'Dependent variable(s)'#0#1#9'Alignment'
+  +#7#9'calBottom'#10'Grid.Style'#7#7'psClear'#22'Marks.LabelFont.Height'#2#245
+  +#22'Title.LabelFont.Height'#2#245#13'Title.Visible'#9#13'Title.Caption'#6#19
+  +'Structure Parameter'#15'Transformations'#7#25'ChartAxisTransformations1'#0#0
+  +#9'BackColor'#7#7'clWhite'#11'Extent.XMax'#5#0#0#0#0#0#0#0#200#5'@'#16'Foot.'
+  +'Brush.Color'#7#9'clBtnFace'#15'Foot.Font.Color'#7#6'clBlue'#17'Legend.UseSi'
+  +'debar'#8#17'Title.Brush.Color'#7#9'clBtnFace'#16'Title.Font.Color'#7#6'clBl'
+  +'ue'#18'Title.Text.Strings'#1#6#7'TAChart'#0#7'Anchors'#11#5'akTop'#6'akLeft'
+  +#7'akRight'#8'akBottom'#0#5'Color'#7#7'clWhite'#11'ParentColor'#8#14'ParentS'
+  +'howHint'#8#9'PopupMenu'#7#10'PopupMenu1'#8'ShowHint'#9#0#11'TLineSeries'#17
+  +'Chart1LineSeries1'#13'LinePen.Color'#7#5'clRed'#0#0#0#0#11'TCheckGroup'#11
+  +'CheckGroup1'#18'AnchorSideTop.Side'#7#9'asrBottom'#4'Left'#3#232#1#6'Height'
+  +#3#200#0#4'Hint'#6'ISelect the behavioural parameter that servers as depende'
+  +'nt variable here.'#3'Top'#2' '#5'Width'#3#203#0#7'Anchors'#11#5'akTop'#7'ak'
+  +'Right'#0#8'AutoFill'#9#17'BorderSpacing.Top'#2#20#7'Caption'#6#20'Dependent'
+  +' parameters'#28'ChildSizing.LeftRightSpacing'#2#6#28'ChildSizing.TopBottomS'
+  +'pacing'#2#6#29'ChildSizing.EnlargeHorizontal'#7#24'crsHomogenousChildResize'
+  +#27'ChildSizing.EnlargeVertical'#7#24'crsHomogenousChildResize'#28'ChildSizi'
+  +'ng.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildSizing.ShrinkVertical'#7
+  +#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclLeftToRightThenTopToBotto'
+  +'m'#27'ChildSizing.ControlsPerLine'#2#1#13'Items.Strings'#1#6#3'TSH'#6#3'FT4'
+  +#6#3'FT3'#6#3'cT3'#0#7'OnClick'#7#16'CheckGroup1Click'#11'OnItemClick'#7#20
+  +'CheckGroup1ItemClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#4
+  +'Data'#10#8#0#0#0#4#0#0#0#2#2#2#2#0#0#9'TColorBox'#11'TSHColorBox'#4'Left'#3
+  +'7'#2#6'Height'#2#20#3'Top'#2'@'#5'Width'#2'q'#17'DefaultColorColor'#7#5'clR'
+  +'ed'#8'Selected'#7#5'clRed'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeigh'
+  +'t'#2#16#8'OnChange'#7#17'TSHColorBoxChange'#8'TabOrder'#2#2#0#0#9'TColorBox'
+  +#11'FT4ColorBox'#4'Left'#3'7'#2#6'Height'#2#20#3'Top'#2'j'#5'Width'#2'q'#17
+  +'DefaultColorColor'#7#6'clBlue'#8'Selected'#7#6'clBlue'#7'Anchors'#11#5'akTo'
+  +'p'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#17'FT4ColorBoxChange'#8'T'
+  +'abOrder'#2#3#0#0#9'TColorBox'#11'FT3ColorBox'#4'Left'#3'7'#2#6'Height'#2#20
+  +#3'Top'#3#150#0#5'Width'#2'q'#17'DefaultColorColor'#7#7'clGreen'#8'Selected'
+  +#7#7'clGreen'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'OnCh'
+  +'ange'#7#17'FT3ColorBoxChange'#8'TabOrder'#2#4#0#0#9'TColorBox'#11'cT3ColorB'
+  +'ox'#4'Left'#3'7'#2#6'Height'#2#20#3'Top'#3#192#0#5'Width'#2'q'#17'DefaultCo'
+  +'lorColor'#7#8'clMaroon'#8'Selected'#7#8'clMaroon'#7'Anchors'#11#5'akTop'#7
+  +'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#17'cT3ColorBoxChange'#8'TabOrd'
+  +'er'#2#5#0#0#9'TGroupBox'#9'GroupBox1'#4'Left'#2'0'#6'Height'#2'2'#3'Top'#3
   +'j'#1#5'Width'#3#170#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#7'Ca'
-  +'ption'#6#21'Independent parameter'#12'ClientHeight'#2' '#11'ClientWidth'#3
-  +#166#1#8'TabOrder'#2#6#0#14'TFloatSpinEdit'#11'MinSpinEdit'#4'Left'#2#12#6'H'
-  +'eight'#2#21#4'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2#2
+  +'ption'#6#21'Independent parameter'#12'ClientHeight'#2#28#11'ClientWidth'#3
+  +#162#1#8'TabOrder'#2#6#0#14'TFloatSpinEdit'#11'MinSpinEdit'#4'Left'#2#12#6'H'
+  +'eight'#2#16#4'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2#3
   +#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#9'Increment'#5#0#0#0#0#0
   +#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0#0#0
   +#0#0#0#0#0#8'OnChange'#7#17'MinSpinEditChange'#14'ParentShowHint'#8#8'ShowHi'
   +'nt'#9#8'TabOrder'#2#0#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#14'TFloatSpinEdit'
-  +#11'MaxSpinEdit'#4'Left'#3'R'#1#6'Height'#2#21#4'Hint'#6'''Maximum of select'
-  +'ed structure parameter'#3'Top'#2#2#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8
+  +#11'MaxSpinEdit'#4'Left'#3'N'#1#6'Height'#2#16#4'Hint'#6'''Maximum of select'
+  +'ed structure parameter'#3'Top'#2#3#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8
   +'akBottom'#0#9'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0
   +#0#0#250#8'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#17'MaxSpinEdit'
   ,'Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#5'Value'#5#0#0#0
   +#0#0#0#0#0#0#0#0#0#9'TComboBox'#13'StrucParCombo'#4'Left'#2'd'#6'Height'#2#21
   +#4'Hint'#6'ISelect the structure parameter that servers as independent varia'
-  +'ble here.'#3'Top'#2#5#5'Width'#3#216#0#7'Anchors'#11#6'akLeft'#7'akRight'#8
-  +'akBottom'#0#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6#31'S'
-  +'elect independent parameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#11
-  +'GT (pmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#9'DT (mU/l)'#6#12'LS ('
-  +'l/'#194#181'mol)'#0#8'OnChange'#7#19'StrucParComboChange'#14'ParentShowHint'
+  +'ble here.'#3'Top'#2#1#5'Width'#3#212#0#7'Anchors'#11#6'akLeft'#7'akRight'#8
+  +'akBottom'#0#10'ItemHeight'#2#0#9'ItemIndex'#2#0#13'Items.Strings'#1#6#31'Se'
+  +'lect independent parameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#11'G'
+  +'T (pmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#9'DT (mU/l)'#6#12'LS (l'
+  +'/'#194#181'mol)'#0#8'OnChange'#7#19'StrucParComboChange'#14'ParentShowHint'
   +#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6#31'Select independent parameter..'
-  +'.'#0#0#0#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#20#3'Top'#3
-  +#165#1#5'Width'#3#209#2#6'Panels'#14#0#0#0#12'TSpeedButton'#16'FullScaleButt'
+  +'.'#0#0#0#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#15#3'Top'#3
+  +#170#1#5'Width'#3#209#2#6'Panels'#14#0#0#0#12'TSpeedButton'#16'FullScaleButt'
   +'on1'#4'Left'#2#16#6'Height'#2#22#4'Hint'#6'3Full scale plot (drag with mous'
   +'e over plot to zoom)'#3'Top'#2' '#5'Width'#2#23#17'BorderSpacing.Top'#2#20
   +#10'Glyph.Data'#10':'#4#0#0'6'#4#0#0'BM6'#4#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#16
