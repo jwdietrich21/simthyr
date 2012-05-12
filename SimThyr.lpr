@@ -121,7 +121,8 @@ begin
   Application.CreateForm(TSimulationSettings, SimulationSettings);
   SimThyrToolbar.Show;
   ValuesPlot.show;
-  ValuesPlot.Left := Screen.Width - ValuesPLot.Width - 26;
+  if ValuesPlot.Left + ValuesPLot.Width >= Screen.Width then
+    ValuesPlot.Left := Screen.Width - ValuesPLot.Width - 26;
   SimThyrLogWindow.show;
   Prediction.MakeFullyVisible();
   Prediction.Show;

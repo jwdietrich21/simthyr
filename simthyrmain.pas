@@ -291,6 +291,7 @@ begin
   else if theForm = IPSForm then IPSForm.CopyImage
   else if theForm = ValuesPlot then ValuesPlot.CopyChart(Sender)
   else if theForm = SensitivityAnalysisForm then SensitivityAnalysisForm.CopyChart(Sender)
+  else if theForm = TornadoPlotForm then TornadoPlotForm.CopyTornado(Sender)
   else ActionList1.Actions[2].Execute;
 end;
 
