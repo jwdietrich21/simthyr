@@ -87,11 +87,13 @@ var
   SeriesCount: integer;
   gMinXPar, gMaxXPar, gSpinFactor: real;
 
+procedure SaveStrucPars;
+procedure RestoreStrucPars;
 procedure DrawOWSensitivityPlot(empty: boolean);
 
 implementation
 
-procedure SetStrucParBoundaries;
+procedure SetStandardStrucParBoundaries(factor1, factor2: real);
 {sets the initial boundaries to useful values}
 var
   tempMinX, tempMaxX: real; {necessary to hinder Windows from altering the globals}
@@ -195,8 +197,31 @@ begin
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / LS_FACTOR;
     end
-
   end;
+end;
+
+procedure SaveStrucPars;
+{save old structure parameters before systematically modifying them:}
+begin
+  StoredParameters.GD1 := GD1;
+  StoredParameters.GD2 := GD2;
+  StoredParameters.GT := GT;
+  StoredParameters.kM1 := kM1;
+  StoredParameters.kM2 := kM2;
+  StoredParameters.dT := dT;
+  StoredParameters.LS := LS;
+end;
+
+procedure RestoreStrucPars;
+{restore saved structure parameters:}
+begin
+  GD1 := StoredParameters.GD1;
+  GD2 := StoredParameters.GD2;
+  GT := StoredParameters.GT;
+  kM1 := StoredParameters.kM1;
+  kM2 := StoredParameters.kM2;
+  dT := StoredParameters.dT;
+  LS := StoredParameters.LS;
 end;
 
 procedure SetBottomAxisCaption;
@@ -282,6 +307,7 @@ var
   i, j, k: integer;
   interval: real;
 begin
+  {If line series exists it is cleared and recreated to support foundations of redrawing}
   if FLine[1] <> nil then
     SensitivityAnalysisForm.Chart1.ClearSeries;
   for i := 0 to MAX_SERIES do
@@ -301,14 +327,7 @@ begin
     DrawDummySensitivityPlot
   else
   begin
-    {save old structure parameters before systematically modifying them:}
-    StoredParameters.GD1 := GD1;
-    StoredParameters.GD2 := GD2;
-    StoredParameters.GT := GT;
-    StoredParameters.kM1 := kM1;
-    StoredParameters.kM2 := kM2;
-    StoredParameters.dT := dT;
-    StoredParameters.LS := LS;;
+    SaveStrucPars;
     interval := (gMaxXPar - gMinXPar) / max_i;
     for i := 0 to max_i do
     begin
@@ -358,14 +377,7 @@ begin
       end;
     end;
     SetBottomAxisCaption;
-    {restore saved structure parameters:}
-    GD1 := StoredParameters.GD1;
-    GD2 := StoredParameters.GD2;
-    GT := StoredParameters.GT;
-    kM1 := StoredParameters.kM1;
-    kM2 := StoredParameters.kM2;
-    dT := StoredParameters.dT;
-    LS := StoredParameters.LS;
+    RestoreStrucPars;
     OWSensPlotReady := True;
     PredictEquilibrium;
   end;
@@ -390,7 +402,7 @@ begin
   SensitivityAnalysisForm.FT4ColorBox.Selected := gDefaultColors[6];
   SensitivityAnalysisForm.FT3ColorBox.Selected := gDefaultColors[8];
   SensitivityAnalysisForm.cT3ColorBox.Selected := gDefaultColors[9];
-  SetStrucParBoundaries;
+  SetStandardStrucParBoundaries(1 / 3, 3);
   DrawOWSensitivityPlot(True);
 end;
 
@@ -413,8 +425,8 @@ procedure TSensitivityAnalysisForm.CheckGroup1ItemClick(Sender: TObject;
   Index: integer);
 begin
   SetBottomAxisCaption;
-  {ItemIndex is evaluated in the SetStrucParBoundaries and plot routine}
-  SetStrucParBoundaries;
+  {ItemIndex is evaluated in the SetStandardStrucParBoundaries and plot routine}
+  SetStandardStrucParBoundaries(1 / 3, 3);
   DrawOWSensitivityPlot(False);
 end;
 
@@ -456,8 +468,8 @@ end;
 procedure TSensitivityAnalysisForm.StrucParComboChange(Sender: TObject);
 begin
   SetBottomAxisCaption;
-  {ItemIndex is evaluated in the SetStrucParBoundaries and plot routine}
-  SetStrucParBoundaries;
+  {ItemIndex is evaluated in the SetStandardStrucParBoundaries and plot routine}
+  SetStandardStrucParBoundaries(1 / 3, 3);
   DrawOWSensitivityPlot(False);
 end;
 
