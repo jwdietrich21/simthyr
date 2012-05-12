@@ -75,6 +75,11 @@ const
  EXAMPLE_STRING = 'Example: ';
  DEVIATION_STRING = 'Small deviations may result from transition effects and rounding.';
 
+ CHANGE_IN_STRING = 'Change in ';
+ DEPENDEND_VAR_STRING = 'dependent variable';
+ DECREASE_STRING = 'decrease';
+ INCREASE_STRING = 'increase';
+
 type
  TableCell = TPoint;
  Str3 = string[3];

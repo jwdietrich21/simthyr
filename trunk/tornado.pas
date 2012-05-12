@@ -15,9 +15,9 @@ interface
 
 uses
   SimThyrTypes, Classes, SysUtils, FileUtil, LResources, Forms, Controls,
-  Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, TAGraph, TAStyles, TASeries,
-  TASources, TATools, TATransformations, TALegendPanel, SimThyrServices,
-  Sensitivityanalysis, SimThyrPrediction;
+  Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, Menus, TAGraph, TAStyles,
+  TASeries, TASources, TATools, TATransformations, TALegendPanel,
+  SimThyrServices, Sensitivityanalysis, SimThyrPrediction, Clipbrd;
 
 type
 
@@ -25,16 +25,28 @@ type
 
   TTornadoPlotForm = class(TForm)
     Chart1: TChart;
+    DummySeries: TBarSeries;
     CheckGroup1: TCheckGroup;
     ComboBox1: TComboBox;
+    CopyItem: TMenuItem;
+    CutItem: TMenuItem;
+    Divider1: TMenuItem;
     FBar: TBarSeries;
     ListChartSource1: TListChartSource;
+    Panel1: TPanel;
+    PasteItem: TMenuItem;
+    PopupMenu1: TPopupMenu;
+    RadioGroup1: TRadioGroup;
     StatusBar1: TStatusBar;
+    UndoItem: TMenuItem;
     procedure CheckGroup1Click(Sender: TObject);
     procedure CheckGroup1ItemClick(Sender: TObject; Index: integer);
     procedure ComboBox1Change(Sender: TObject);
+    procedure CopyItemClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure CopyTornado(Sender: TObject);
+    procedure RadioGroup1Click(Sender: TObject);
   private
     { private declarations }
   public
@@ -48,6 +60,8 @@ type
 var
   TornadoPlotForm: TTornadoPlotForm;
   gStrucPar, gDepPar: TNumberTriplet;
+  gFracFactor: real;
+  gDecreaseTitle, gIncreaseTitle: String;
 
 implementation
 
@@ -81,18 +95,44 @@ end;
 
 function ResponseVariable: real;
   {delivers the variable that has been selected in the combo box}
+var
+  scaleIndicator: string;
 begin
+  if gFracFactor = 100 then
+    scaleIndicator := ' (%)'
+  else
+    scaleIndicator := '';
   case TornadoPlotForm.ComboBox1.ItemIndex of
     0:
+    begin
+      TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
+        CHANGE_IN_STRING + DEPENDEND_VAR_STRING + scaleIndicator;
       ResponseVariable := 1;
+    end;
     1:
+    begin
+      TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
+        CHANGE_IN_STRING + 'TSH' + scaleIndicator;
       ResponseVariable := TSH1;
+    end;
     2:
+    begin
+      TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
+        CHANGE_IN_STRING + 'FT4' + scaleIndicator;
       ResponseVariable := FT41;
+    end;
     3:
+    begin
+      TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
+        CHANGE_IN_STRING + 'FT3' + scaleIndicator;
       ResponseVariable := FT31;
+    end;
     4:
+    begin
+      TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
+        CHANGE_IN_STRING + 'cT3' + scaleIndicator;
       ResponseVariable := T3z1; {cT3}
+    end;
   end;
 end;
 
@@ -110,10 +150,29 @@ begin
     AxisIndexX := 1;
     AxisIndexY := 0;
     BarWidthPercent := 70;
+    SeriesColor := clGray;
+    Title := gDecreaseTitle;
   end;
   Rotate(TornadoPlotForm.FBar);
+  TornadoPlotForm.DummySeries := TBarSeries.Create(TornadoPlotForm.Chart1);
+  TornadoPlotForm.Chart1.AddSeries(TornadoPlotForm.DummySeries);
+  with TornadoPlotForm.DummySeries do
+  begin
+    AxisIndexX := 1;
+    AxisIndexY := 0;
+    BarWidthPercent := 70;
+    SeriesColor := clBlack;
+    Title := gIncreaseTitle;
+  end;
+
   SaveStrucPars;
-  i := 0;
+  i := 1;
+  TornadoPlotForm.ListChartSource1.DataPoints.Clear;
+
+  if TornadoPlotForm.RadioGroup1.ItemIndex = 0 then
+    gFracFactor := 1
+  else
+    gFracFactor := 100;
 
   if TornadoPlotForm.CheckGroup1.Checked[0] then
   begin
@@ -122,15 +181,17 @@ begin
     gDepPar.o := ResponseVariable;
     GD1 := gStrucPar.l;
     PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     GD1 := gStrucPar.u;
     PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
-    {TornadoPlotForm.ListChartSource1.DataPoints.Add('GD1');}
+    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+      '|' + IntToStr(i) + '|?|' + 'GD1');
+    i := i + 3;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[1] then
@@ -140,14 +201,17 @@ begin
     gDepPar.o := ResponseVariable;
     GD2 := gStrucPar.l;
     PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     GD2 := gStrucPar.u;
     PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+      '|' + IntToStr(i) + '|?|' + 'GD2');
+    i := i + 3;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[2] then
@@ -157,14 +221,17 @@ begin
     gDepPar.o := ResponseVariable;
     GT := gStrucPar.l;
     PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     GT := gStrucPar.u;
     PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+      '|' + IntToStr(i) + '|?|' + 'GT');
+    i := i + 3;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[3] then
@@ -174,14 +241,17 @@ begin
     gDepPar.o := ResponseVariable;
     kM1 := gStrucPar.l;
     PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     kM1 := gStrucPar.u;
     PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+      '|' + IntToStr(i) + '|?|' + 'kM1');
+    i := i + 3;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[4] then
@@ -191,15 +261,18 @@ begin
     gDepPar.o := ResponseVariable;
     kM2 := gStrucPar.l;
     PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     kM2 := gStrucPar.u;
     PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
-  end;
+     TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+      '|' + IntToStr(i) + '|?|' + 'kM2');
+    i := i + 3;
+ end;
 
   if TornadoPlotForm.CheckGroup1.Checked[5] then
   begin
@@ -208,14 +281,17 @@ begin
     gDepPar.o := ResponseVariable;
     DT := gStrucPar.l;
     PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     DT := gStrucPar.u;
     PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+      '|' + IntToStr(i) + '|?|' + 'DT');
+    i := i + 3;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[6] then
@@ -225,22 +301,31 @@ begin
     gDepPar.o := ResponseVariable;
     LS := gStrucPar.l;
     PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     LS := gStrucPar.u;
     PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o;
+    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
     TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+      '|' + IntToStr(i) + '|?|' + 'LS');
+    i := i + 3;
   end;
 
+  if i = 1 then
+    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) + '|' +
+      IntToStr(i) + '|?|' + '');
   PredictEquilibrium;     {restore previous predictions}
 
 end;
 
 procedure TTornadoPlotForm.FormCreate(Sender: TObject);
 begin
+  gDecreaseTitle := '20% ' + DECREASE_STRING;
+  gINcreaseTitle := '20% ' + INCREASE_STRING;
+  RadioGroup1.ItemIndex := 0;
   DrawTornadoPlot;
 end;
 
@@ -257,6 +342,48 @@ end;
 procedure TTornadoPlotForm.ComboBox1Change(Sender: TObject);
 begin
   DrawTornadoPlot;
+end;
+
+procedure TTornadoPlotForm.CopyTornado(Sender: TObject);
+var
+  {$IFDEF UNIX}
+  theImage: TPortableNetworkGraphic;
+  {$ELSE}
+  theImage: TBitMap;
+  {$ENDIF}
+  theWidth, theHeight: integer;
+begin
+  if Chart1 = nil then
+    bell
+  else
+  begin
+    {gSelectedChart.CopyToClipboardBitmap doesn't work on Mac OS X}
+    {$IFDEF UNIX}
+    theImage := TPortableNetworkGraphic.Create;
+    try
+      theWidth := Chart1.Width;
+      theHeight := Chart1.Height;
+      theImage.Width := theWidth;
+      theImage.Height := theHeight;
+      Chart1.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas);
+      Clipboard.Assign(theImage);
+    finally
+      theImage.Free;
+    end;
+    {$ELSE}
+    Chart1.CopyToClipboardBitmap;
+    {$ENDIF}
+  end;
+end;
+
+procedure TTornadoPlotForm.RadioGroup1Click(Sender: TObject);
+begin
+  DrawTornadoPlot;
+end;
+
+procedure TTornadoPlotForm.CopyItemClick(Sender: TObject);
+begin
+  CopyTornado(Sender);
 end;
 
 procedure TTornadoPlotForm.FormShow(Sender: TObject);
