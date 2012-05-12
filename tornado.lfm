@@ -30,7 +30,7 @@ object TornadoPlotForm: TTornadoPlotForm
         Grid.Visible = False
         Title.LabelFont.Height = -9
         Title.Visible = True
-        Title.Caption = 'Change in dependent variable (%)'
+        Title.Caption = 'Change in dependent variable'
       end>
     BackColor = clWhite
     Foot.Brush.Color = clBtnFace
