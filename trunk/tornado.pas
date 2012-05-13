@@ -189,6 +189,7 @@ begin
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    PredictEquilibrium;     {restore previous predictions}
     TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
       '|' + IntToStr(i) + '|?|' + 'GD1');
     i := i + 3;
@@ -209,6 +210,7 @@ begin
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    PredictEquilibrium;     {restore previous predictions}
     TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
       '|' + IntToStr(i) + '|?|' + 'GD2');
     i := i + 3;
@@ -229,6 +231,7 @@ begin
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    PredictEquilibrium;     {restore previous predictions}
     TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
       '|' + IntToStr(i) + '|?|' + 'GT');
     i := i + 3;
@@ -249,6 +252,7 @@ begin
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    PredictEquilibrium;     {restore previous predictions}
     TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
       '|' + IntToStr(i) + '|?|' + 'kM1');
     i := i + 3;
@@ -269,6 +273,7 @@ begin
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    PredictEquilibrium;     {restore previous predictions}
      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
       '|' + IntToStr(i) + '|?|' + 'kM2');
     i := i + 3;
@@ -289,6 +294,7 @@ begin
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    PredictEquilibrium;     {restore previous predictions}
     TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
       '|' + IntToStr(i) + '|?|' + 'DT');
     i := i + 3;
@@ -309,6 +315,7 @@ begin
     TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
+    PredictEquilibrium;     {restore previous predictions}
     TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
       '|' + IntToStr(i) + '|?|' + 'LS');
     i := i + 3;

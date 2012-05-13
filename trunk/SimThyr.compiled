@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <CONFIG>
-  <Compiler Value="C:\lazarus\fpc\2.6.0\bin\i386-win32\fpc.exe" Date="1080494083"/>
-  <Params Value=" -MObjFPC -Scgi -CX -O1 -gl -Xs -XX -WG -vewnhi -l -FuC:\lazarus\components\tachart\lib\i386-win32\win32 -FuC:\lazarus\ideintf\units\i386-win32 -FuC:\lazarus\lcl\units\i386-win32 -FuC:\lazarus\lcl\units\i386-win32\win32 -FuC:\lazarus\packager\units\i386-win32 &quot;-FuC:\Dokumente und Einstellungen\Administrator\Desktop\trunk\&quot; -Fu. -oSimThyr.exe -k-macosx_version_min -k10.4  -XR/Developer/SDKs/MacOSX10.4u.sdk/ -dLCL -dLCLwin32 SimThyr.lpr"/>
+  <Compiler Value="/usr/local/bin/ppcppc" Date="1324569333"/>
+  <Params Value=" -MObjFPC -Scgi -CX -O1 -gl -Xs -XX -vewnhi -l -Fu/Developer/lazarus/components/tachart/lib/powerpc-darwin/carbon -Fu/Developer/lazarus/ideintf/units/powerpc-darwin -Fu/Developer/lazarus/lcl/units/powerpc-darwin -Fu/Developer/lazarus/lcl/units/powerpc-darwin/carbon -Fu/Developer/lazarus/packager/units/powerpc-darwin &quot;-Fu/Volumes/G5 Dokumente/Projekte/Endokrinologie/SD/TFC/SimThyr/code/trunk/&quot; -Fu. -oSimThyr -k-macosx_version_min -k10.4 -XR/Developer/SDKs/MacOSX10.4u.sdk/ -dLCL -dLCLcarbon SimThyr.lpr"/>
 </CONFIG>
