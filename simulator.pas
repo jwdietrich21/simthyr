@@ -165,7 +165,7 @@ implementation
 { Set parameters and initial values }
   SetBaseVariables;
 
-{Referenzwerte:}
+{Reference values:}
 {TRH: 5 — 6 ng/l im peripheren Blut, ca. 2000 ng/l im Portalsystem}
 {TSH: 0,4 — 4 mU/l oder 9 — 29 µmol/l}
 {TT4: 4,5 — 10 µg/dl oder 57,9 — 128,7 nmol/l}
@@ -173,7 +173,7 @@ implementation
 {TT3: 80 — 180 ng/dl oder 1,23 — 2,77 nmol/l}
 {FT3: 2,3 — 4,2 pg/ml oder 3,5 — 6,5 µmol/l}
 
-{Übertragungsbeiwerte:}
+{Transfer parameters:}
   alphaR := 0.4;               {/l			Verdünnungsfaktor für TRH bei TRH-Test, wie alphaS}
   alphaS := 0.4;               {/l			bei V0 = 2.5l (Peptidhormon, das sich nur im peripheren Plasma verteilt)}
   betaS := 2.3e-4;             {/s		bei HWZ von ca. 50 Min. [Li et al. 1995, Odell et al. 1967]}

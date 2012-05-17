@@ -1,12 +1,12 @@
 object TornadoPlotForm: TTornadoPlotForm
-  Left = 308
+  Left = 312
   Height = 426
-  Top = 198
-  Width = 709
+  Top = 244
+  Width = 708
   AlphaBlendValue = 0
   Caption = 'Tornado Plot'
   ClientHeight = 426
-  ClientWidth = 709
+  ClientWidth = 708
   Color = clWhite
   Constraints.MinHeight = 413
   Constraints.MinWidth = 600
@@ -15,7 +15,7 @@ object TornadoPlotForm: TTornadoPlotForm
   LCLVersion = '0.9.30.4'
   Visible = True
   object CheckGroup1: TCheckGroup
-    Left = 509
+    Left = 508
     Height = 209
     Hint = 'Select the independent structure parameters whose influence you want to check'
     Top = 16
@@ -30,14 +30,26 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkHorizontal = crsScaleChilds
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
-    ChildSizing.ControlsPerLine = 1
+    ChildSizing.ControlsPerLine = 2
+    Columns = 2
     Items.Strings = (
       'GD1'
       'GD2'
-      'GT'
       'KM1'
       'KM2'
+      'GT'
       'DT'
+      'GH'
+      'DH'
+      'SS'
+      'DS'
+      'GR'
+      'DR'
+      'betaS'
+      'betaS2'
+      'betaT'
+      'beta31'
+      'beta32'
       'LS'
     )
     OnClick = CheckGroup1Click
@@ -46,14 +58,14 @@ object TornadoPlotForm: TTornadoPlotForm
     ShowHint = True
     TabOrder = 0
     Data = {
-      0700000002020202020202
+      12000000020202020202020202020202020202020202
     }
   end
-  object ComboBox1: TComboBox
-    Left = 509
+  object DepParameterCombo: TComboBox
+    Left = 508
     Height = 21
     Hint = 'Select the depdentent parameter, e.g. hormone level here.'
-    Top = 338
+    Top = 368
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 0
@@ -65,7 +77,7 @@ object TornadoPlotForm: TTornadoPlotForm
       'FT3'
       'cT3'
     )
-    OnChange = ComboBox1Change
+    OnChange = DepParameterComboChange
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
@@ -75,11 +87,11 @@ object TornadoPlotForm: TTornadoPlotForm
     Left = 0
     Height = 15
     Top = 411
-    Width = 709
+    Width = 708
     Panels = <>
   end
   object RadioGroup1: TRadioGroup
-    Left = 509
+    Left = 508
     Height = 84
     Top = 232
     Width = 185
@@ -108,18 +120,18 @@ object TornadoPlotForm: TTornadoPlotForm
     Left = 8
     Height = 379
     Top = 16
-    Width = 488
+    Width = 487
     Anchors = [akTop, akLeft, akRight, akBottom]
     Caption = 'Panel1'
     ClientHeight = 379
-    ClientWidth = 488
+    ClientWidth = 487
     TabOrder = 4
     object Chart1: TChart
       Left = 8
       Height = 360
       Hint = 'Drag to zoom'
       Top = 16
-      Width = 476
+      Width = 475
       AxisList = <      
         item
           Grid.Visible = False
@@ -173,6 +185,25 @@ object TornadoPlotForm: TTornadoPlotForm
       end
     end
   end
+  object LegendPosCombo: TComboBox
+    Left = 508
+    Height = 21
+    Top = 328
+    Width = 185
+    Anchors = [akRight, akBottom]
+    ItemHeight = 0
+    ItemIndex = 0
+    Items.Strings = (
+      'Legend position...'
+      'Top left'
+      'Top right'
+      'Bottom left'
+      'Bottom right'
+    )
+    OnChange = LegendPosComboChange
+    TabOrder = 5
+    Text = 'Legend position...'
+  end
   object ListChartSource1: TListChartSource
     DataPoints.Strings = (
       '1|1|?|'
@@ -189,12 +220,12 @@ object TornadoPlotForm: TTornadoPlotForm
       '12|12|?|'
       '13|13|?|'
     )
-    left = 40
+    left = 264
     top = 632
   end
   object PopupMenu1: TPopupMenu
-    left = 104
-    top = 632
+    left = 208
+    top = 296
     object UndoItem: TMenuItem
       Caption = 'Undo'
       Enabled = False
