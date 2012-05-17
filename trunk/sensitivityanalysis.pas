@@ -28,6 +28,8 @@ const
   KM2_FACTOR = 1e9;
   DT_FACTOR = 1;
   LS_FACTOR = 1e-6;
+  DH_FACTOR = 1e9;
+  DR_FACTOR = 1e12;
 
 type
 
@@ -76,7 +78,9 @@ type
   end;
 
   TStoredParameters = record
-    GT, GD1, GD2, kM1, kM2, dT, LS: real
+    GT, GD1, GD2, kM1, kM2, dT, LS: real;
+    GH, DH, SS, DS, GR, DR: real;
+    betaS, betaS2, betaT, beta31, beta32: real;
   end;
 
 var
@@ -128,20 +132,6 @@ begin
         1 / GD2_FACTOR;
     end;
     3:
-    begin {GT}
-      gSpinFactor := GT_FACTOR;
-      gMinXPar := GT / 3;
-      gMaxXPar := GT * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
-      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
-      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
-        1 / GT_FACTOR;
-    end;
-    4:
     begin {kM1}
       gSpinFactor := KM1_FACTOR;
       gMinXPar := kM1 / 3;
@@ -155,7 +145,7 @@ begin
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / KM1_FACTOR;
     end;
-    5:
+    4:
     begin {kM2}
       gSpinFactor := KM2_FACTOR;
       gMinXPar := kM2 / 3;
@@ -168,6 +158,20 @@ begin
       gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / KM2_FACTOR;
+    end;
+    5:
+    begin {GT}
+      gSpinFactor := GT_FACTOR;
+      gMinXPar := GT / 3;
+      gMaxXPar := GT * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / GT_FACTOR;
     end;
     6:
     begin {DT}
@@ -184,6 +188,160 @@ begin
         1 / DT_FACTOR;
     end;
     7:
+    begin {GH}
+      gSpinFactor := DT_FACTOR;
+      gMinXPar := GH / 3;
+      gMaxXPar := GH * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DT_FACTOR;
+    end;
+    8:
+    begin {DH}
+      gSpinFactor := DH_FACTOR;
+      gMinXPar := DH / 3;
+      gMaxXPar := DH * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DH_FACTOR;
+    end;
+    9:
+    begin {SS}
+      gSpinFactor := DT_FACTOR;
+      gMinXPar := SS / 3;
+      gMaxXPar := SS * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DT_FACTOR;
+    end;
+    10:
+    begin {DS}
+      gSpinFactor := DT_FACTOR;
+      gMinXPar := DS / 3;
+      gMaxXPar := DS * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DT_FACTOR;
+    end;
+    11:
+    begin {GR}
+      gSpinFactor := DT_FACTOR;
+      gMinXPar := GR / 3;
+      gMaxXPar := GR * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DT_FACTOR;
+    end;
+    12:
+    begin {DR}
+      gSpinFactor := DR_FACTOR;
+      gMinXPar := DR / 3;
+      gMaxXPar := DR * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DR_FACTOR;
+    end;
+    13:
+    begin {betaS}
+      gSpinFactor := DT_FACTOR;
+      gMinXPar := betaS / 3;
+      gMaxXPar := betaS * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DT_FACTOR;
+    end;
+    14:
+    begin {betaS2}
+      gSpinFactor := DT_FACTOR;
+      gMinXPar := betaS2 / 3;
+      gMaxXPar := betaS2 * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DT_FACTOR;
+    end;
+    15:
+    begin {betaT}
+      gSpinFactor := DT_FACTOR;
+      gMinXPar := betaT / 3;
+      gMaxXPar := betaT * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DT_FACTOR;
+    end;
+    16:
+    begin {beta31}
+      gSpinFactor := DT_FACTOR;
+      gMinXPar := beta31 / 3;
+      gMaxXPar := beta31 * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DT_FACTOR;
+    end;
+    17:
+    begin {beta32}
+      gSpinFactor := DT_FACTOR;
+      gMinXPar := beta32 / 3;
+      gMaxXPar := beta32 * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / DT_FACTOR;
+    end;
+    18:
     begin {LS}
       gSpinFactor := LS_FACTOR;
       gMinXPar := LS / 3;
@@ -209,6 +367,15 @@ begin
   StoredParameters.kM1 := kM1;
   StoredParameters.kM2 := kM2;
   StoredParameters.dT := dT;
+  StoredParameters.GH := GH;
+  StoredParameters.DH := DH;
+  StoredParameters.GR := GR;
+  StoredParameters.DR := DR;
+  StoredParameters.betaS := betaS;
+  StoredParameters.betaS2 := betaS2;
+  StoredParameters.betaT := betaT;
+  StoredParameters.beta31 := beta31;
+  StoredParameters.beta32 := beta32;
   StoredParameters.LS := LS;
 end;
 
@@ -221,6 +388,15 @@ begin
   kM1 := StoredParameters.kM1;
   kM2 := StoredParameters.kM2;
   dT := StoredParameters.dT;
+  GH := StoredParameters.GH;
+  DH := StoredParameters.DH;
+  GR := StoredParameters.GR;
+  DR := StoredParameters.DR;
+  betaS := StoredParameters.betaS;
+  betaS2 := StoredParameters.betaS2;
+  betaT := StoredParameters.betaT;
+  beta31 := StoredParameters.beta31;
+  beta32 := StoredParameters.beta32;
   LS := StoredParameters.LS;
 end;
 
@@ -346,21 +522,21 @@ begin
         end;
         3:
         begin
-          GT := gMinXPar + i * interval;
-          PredictEquilibrium;
-          DrawCurves(GT);
-        end;
-        4:
-        begin
           kM1 := gMinXPar + i * interval;
           PredictEquilibrium;
           DrawCurves(kM1);
         end;
-        5:
+        4:
         begin
           kM2 := gMinXPar + i * interval;
           PredictEquilibrium;
           DrawCurves(kM2);
+        end;
+        5:
+        begin
+          GT := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(GT);
         end;
         6:
         begin
@@ -369,6 +545,72 @@ begin
           DrawCurves(dT);
         end;
         7:
+        begin
+          GH := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(GH);
+        end;
+        8:
+        begin
+          DH := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(DH);
+        end;
+        9:
+        begin
+          SS := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(SS);
+        end;
+        10:
+        begin
+          DS := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(DS);
+        end;
+        11:
+        begin
+          GR := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(GR);
+        end;
+        12:
+        begin
+          DR := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(DR);
+        end;
+        13:
+        begin
+          betaS := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(betaS);
+        end;
+        14:
+        begin
+          betaS2 := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(betaS2);
+        end;
+        15:
+        begin
+          betaT := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(betaT);
+        end;
+        16:
+        begin
+          beta31 := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(beta31);
+        end;
+        17:
+        begin
+          beta32 := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(beta32);
+        end;
+        18:
         begin
           LS := gMinXPar + i * interval;
           PredictEquilibrium;
