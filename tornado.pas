@@ -67,6 +67,8 @@ var
   gFracFactor: real;
   gDecreaseTitle, gIncreaseTitle: string;
 
+procedure DrawTornadoPlot;
+
 implementation
 
 uses TACustomSeries;

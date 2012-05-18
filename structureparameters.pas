@@ -123,6 +123,9 @@ var
 
 implementation
 
+uses
+  SimThyrPrediction, Sensitivityanalysis, Tornado;
+
 procedure TStructureParameters.FillInParameters;
 begin
   AlphaREdit.Text := FloatToStrF(AlphaR, ffGeneral, 5, 2);;
@@ -248,6 +251,16 @@ procedure TStructureParameters.OKButtonClick(Sender: TObject);
 begin
   if ParametersCorrect then
     StructureParametersDlg.Close;
+  if TornadoPlotForm.Visible = true then
+    begin
+      PredictEquilibrium;
+      DrawTornadoPlot;
+    end;
+  if (SensitivityAnalysisForm.Visible = true) and OWSensPlotReady then
+    begin
+      PredictEquilibrium;
+      DrawOWSensitivityPlot(false);
+    end;
 end;
 
 procedure TStructureParameters.CancelButtonClick(Sender: TObject);
