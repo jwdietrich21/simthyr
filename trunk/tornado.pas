@@ -17,7 +17,8 @@ uses
   SimThyrTypes, Classes, SysUtils, FileUtil, LResources, Forms, Controls,
   Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, Menus, TAGraph, TAStyles,
   TASeries, TASources, TATools, TATransformations, TALegend, TALegendPanel,
-  SimThyrServices, Sensitivityanalysis, SimThyrPrediction, Clipbrd, Buttons;
+  SimThyrServices, Sensitivityanalysis, SimThyrPrediction, Clipbrd, Buttons,
+  ColorBox;
 
 type
 
@@ -25,6 +26,8 @@ type
 
   TTornadoPlotForm = class(TForm)
     Chart1: TChart;
+    DecreaseColorBox: TColorBox;
+    IncreaseColorBox: TColorBox;
     LegendPosCombo: TComboBox;
     DummySeries: TBarSeries;
     CheckGroup1: TCheckGroup;
@@ -44,11 +47,13 @@ type
     {procedure SaveAsSVG(Sender: TObject);  // for a future extension }
     procedure CheckGroup1Click(Sender: TObject);
     procedure CheckGroup1ItemClick(Sender: TObject; Index: integer);
+    procedure DecreaseColorBoxChange(Sender: TObject);
     procedure DepParameterComboChange(Sender: TObject);
     procedure CopyItemClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure CopyTornado(Sender: TObject);
+    procedure IncreaseColorBoxChange(Sender: TObject);
     procedure LegendPosComboChange(Sender: TObject);
     procedure RadioGroup1Click(Sender: TObject);
   private
@@ -156,7 +161,7 @@ begin
     AxisIndexX := 1;
     AxisIndexY := 0;
     BarWidthPercent := 70;
-    SeriesColor := clGray;
+    SeriesColor := TornadoPlotForm.DecreaseColorBox.Selected;
     Title := gDecreaseTitle;
   end;
   Rotate(TornadoPlotForm.FBar);
@@ -167,7 +172,7 @@ begin
     AxisIndexX := 1;
     AxisIndexY := 0;
     BarWidthPercent := 70;
-    SeriesColor := clBlack;
+    SeriesColor := TornadoPlotForm.IncreaseColorBox.Selected;
     Title := gIncreaseTitle;
   end;
 
@@ -222,8 +227,8 @@ begin
     GD1 := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -243,8 +248,8 @@ begin
     GD2 := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -264,8 +269,8 @@ begin
     kM1 := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -285,8 +290,8 @@ begin
     kM2 := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -306,8 +311,8 @@ begin
     GT := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -327,8 +332,8 @@ begin
     DT := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -348,8 +353,8 @@ begin
     GH := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -369,8 +374,8 @@ begin
     DH := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -390,8 +395,8 @@ begin
     SS := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -411,8 +416,8 @@ begin
     DS := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -432,8 +437,8 @@ begin
     GR := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -453,8 +458,8 @@ begin
     DR := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -474,8 +479,8 @@ begin
     betaS := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -495,8 +500,8 @@ begin
     betaS2 := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -516,8 +521,8 @@ begin
     betaT := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -537,8 +542,8 @@ begin
     beta31 := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -558,8 +563,8 @@ begin
     beta32 := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -579,8 +584,8 @@ begin
     LS := gStrucPar.u;
     PredictEquilibrium;
     gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', clGray);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', clBlack);
+    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
     TornadoPlotForm.FBar.Add(0, '', clDkGray);
     RestoreStrucPars;
     PredictEquilibrium;     {restore previous predictions}
@@ -640,6 +645,11 @@ begin
   DrawTornadoPlot;
 end;
 
+procedure TTornadoPlotForm.DecreaseColorBoxChange(Sender: TObject);
+begin
+  DrawTornadoPlot;
+end;
+
 procedure TTornadoPlotForm.DepParameterComboChange(Sender: TObject);
 begin
   DrawTornadoPlot;
@@ -675,6 +685,11 @@ begin
     Chart1.CopyToClipboardBitmap;
     {$ENDIF}
   end;
+end;
+
+procedure TTornadoPlotForm.IncreaseColorBoxChange(Sender: TObject);
+begin
+  DrawTornadoPlot;
 end;
 
 procedure TTornadoPlotForm.LegendPosComboChange(Sender: TObject);
