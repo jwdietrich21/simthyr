@@ -131,10 +131,6 @@ implementation
   i0 := 0;
   dTSH := 0.001;               {mU/s		Inhibited production rate [calculated according to D'Angelo 1976, Okuno 1979 and Greenspan 1997]}
 {InitialValues:}
-  TRHe := 0;                   {mol/l		exogeniously applied TRH}
-  TRHi := 2500;                {ng/l		endogenious TRH, according to Rondeel et al. 1988}
-  TRHi := TRHi * UTRH;         {mol/l}
-  TRH0 := TRHi + TRHe;         {mol/l		portal total TRH concentration}
   TRH := TRH0;
   TSH := 2;                    {mU/l		from reference value}
   TSHz := 4;                   {Mittlerer Wert}
@@ -163,6 +159,7 @@ implementation
  procedure StandardValues;
  begin
 { Set parameters and initial values }
+  TRHs := 2500;                {ng/l		endogenious TRH, according to Rondeel et al. 1988}
   SetBaseVariables;
 
 {Reference values:}
@@ -302,7 +299,7 @@ begin
            omega := 2 * pi * f; {Kreisfrequenz}
            chi := 2 * pi / 24 * 5;
            circadianControl := cos(omega * t - chi);
-           TRHi := TRH1 + 1500 * circadianControl * UTRH;
+           TRHi := TRH1 + 3/5 * TRHs * circadianControl * UTRH;
            TRH := TRHi + TRHe;
            TRH := TRH * getgauss(0.5); {Rauscheinfluß}
 {Pituitary:}
