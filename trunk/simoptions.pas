@@ -1,8 +1,8 @@
 unit SimOptions;
 { SimThyr Project }
-{ (c) J. W. Dietrich, 1994 - 2011 }
+{ (c) J. W. Dietrich, 1994 - 2012 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2011 }
+{ (c) Ruhr University of Bochum 2005 - 2012 }
 
 { This unit supports a small dialog with additional simulation settings }
 
@@ -22,6 +22,9 @@ type
 
   TSimOptionsDlg = class(TForm)
     CancelButton: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    TRHEdit: TEdit;
     OKButton: TButton;
     NoiseCheckBox: TCheckBox;
     PreviewCheckBox: TCheckBox;
@@ -66,8 +69,11 @@ procedure TSimOptionsDlg.FormShow(Sender: TObject);
 begin
   temp_noiseflag := noiseflag;
   temp_previewflag := previewflag;
+  TRHEdit.Text := FloatToStrF(TRHs, ffGeneral, 5, 2);
   CheckNoise;
   CheckPreview;
+  ShowOnTop;
+  SetFocus;
 end;
 
 procedure TSimOptionsDlg.CancelButtonClick(Sender: TObject);
@@ -87,6 +93,7 @@ procedure TSimOptionsDlg.OKButtonClick(Sender: TObject);
 begin
   noiseflag := temp_noiseflag;
   previewflag := temp_previewflag;
+  TRHs := StrToFloat(TRHEdit.Text);
   SimOptionsDlg.Close;
 end;
 

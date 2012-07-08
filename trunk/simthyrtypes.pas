@@ -99,7 +99,7 @@ var
  delt: real;
  testflag, tbgflag, signalflag, previewflag, noiseflag: boolean;
  haltsim, runcommand, simready, splashflag, showSettingsAtStartup: boolean;
- TRH0, TRH1, TSH1, TSH2, TSH3, FT41, FT42, FT43: real;
+ TRHs, TRH1, TSH1, TSH2, TSH3, FT41, FT42, FT43: real;
  T3z1, T3z2, T3z3, T3n1, T3n2, T3n3, FT31, FT32, FT33: real;
  TSHz1, TSHz2, TSHz3, T3R1, T3R2, T3R3: real;
  G3, t1, x1, x2, x3, x4, x5, x6, xe, ya, t: real;

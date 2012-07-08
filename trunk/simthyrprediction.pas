@@ -31,6 +31,7 @@ type
 var
   Prediction: TPrediction;
 
+function TRH0: real;
 procedure PredictEquilibrium;
 procedure ClearPrediction;
 procedure ShowPredictedValues;
@@ -50,6 +51,14 @@ function arccosinus (cosphi: real): real;
 begin
  arcsin := arctan(cosphi / sqrt(1 - sqr(cosphi)));
  arccosinus := arc(90) - arcsin;
+end;
+
+function TRH0: real;
+begin
+  TRHe := 0;                   {mol/l		exogeniously applied TRH}
+  TRHi := TRHs;                {ng/l		endogenious TRH, according to Rondeel et al. 1988}
+  TRHi := TRHi * UTRH;         {mol/l}
+  TRH0 := TRHi + TRHe;  {mol/l		portal total TRH concentration}
 end;
 
 procedure PredictEquilibrium;
