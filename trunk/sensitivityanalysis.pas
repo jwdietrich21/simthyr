@@ -356,6 +356,12 @@ begin
         1 / LS_FACTOR;
     end
   end;
+  if SensitivityAnalysisForm.MinSpinEdit.Value < 10 then SensitivityAnalysisForm.MinSpinEdit.DecimalPlaces := 4
+  else if SensitivityAnalysisForm.MinSpinEdit.Value > 100 then SensitivityAnalysisForm.MinSpinEdit.DecimalPlaces := 1
+  else SensitivityAnalysisForm.MinSpinEdit.DecimalPlaces := 2;
+  if SensitivityAnalysisForm.MaxSpinEdit.Value < 10 then SensitivityAnalysisForm.MaxSpinEdit.DecimalPlaces := 4
+  else if SensitivityAnalysisForm.MaxSpinEdit.Value > 100 then SensitivityAnalysisForm.MaxSpinEdit.DecimalPlaces := 1
+  else SensitivityAnalysisForm.MaxSpinEdit.DecimalPlaces := 2;
 end;
 
 procedure SaveStrucPars;
@@ -508,6 +514,8 @@ begin
     for i := 0 to max_i do
     begin
       case SensitivityAnalysisForm.StrucParCombo.ItemIndex of
+        0:
+        ;
         1:
         begin
           GD1 := gMinXPar + i * interval;
@@ -616,6 +624,8 @@ begin
           PredictEquilibrium;
           DrawCurves(LS);
         end
+        otherwise
+          if not gStartup then bell;
       end;
     end;
     SetBottomAxisCaption;
