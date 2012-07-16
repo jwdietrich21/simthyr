@@ -2,12 +2,12 @@
 
 LazarusResources.Add('TAboutWindow','FORMDATA',[
   'TPF0'#12'TAboutWindow'#11'AboutWindow'#6'Cursor'#7#11'crHandPoint'#4'Left'#3
-  +#139#1#6'Height'#3#141#1#3'Top'#3#228#0#5'Width'#3#234#1#21'HorzScrollBar.Vi'
-  +'sible'#8#21'VertScrollBar.Visible'#8#10'AlphaBlend'#9#15'AlphaBlendValue'#2
-  +#0#11'BorderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderStyle'#7#8
-  +'bsSingle'#7'Caption'#6#13'About SimThyr'#12'ClientHeight'#3#141#1#11'Client'
-  +'Width'#3#234#1#5'Color'#7#7'clWhite'#10'Font.Pitch'#7#10'fpVariable'#8'Posi'
-  +'tion'#7#14'poScreenCenter'#13'ShowInTaskBar'#7#7'stNever'#10'LCLVersion'#6#8
+  +#139#1#6'Height'#3#141#1#3'Top'#3'9'#1#5'Width'#3#234#1#21'HorzScrollBar.Vis'
+  +'ible'#8#21'VertScrollBar.Visible'#8#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0
+  +#11'BorderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderStyle'#7#8'bs'
+  +'Single'#7'Caption'#6#13'About SimThyr'#12'ClientHeight'#3#141#1#11'ClientWi'
+  +'dth'#3#234#1#5'Color'#7#7'clWhite'#10'Font.Pitch'#7#10'fpVariable'#8'Positi'
+  +'on'#7#14'poScreenCenter'#13'ShowInTaskBar'#7#7'stNever'#10'LCLVersion'#6#8
   +'0.9.30.4'#7'Visible'#9#0#7'TButton'#8'OKButton'#4'Left'#3#223#0#6'Height'#2
   +#25#3'Top'#3'c'#1#5'Width'#2'K'#7'Anchors'#11#8'akBottom'#0#7'Caption'#6#2'O'
   +'K'#7'OnClick'#7#13'OKButtonClick'#8'TabOrder'#2#0#0#0#12'TPageControl'#4'Ta'

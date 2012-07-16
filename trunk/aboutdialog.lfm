@@ -2,7 +2,7 @@ object AboutWindow: TAboutWindow
   Cursor = crHandPoint
   Left = 395
   Height = 397
-  Top = 228
+  Top = 313
   Width = 490
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
