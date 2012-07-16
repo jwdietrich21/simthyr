@@ -14,11 +14,11 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  Grids, ExtCtrls, StdActns, StdCtrls, LCLType, Menus, ActnList, SimThyrTypes,
+  ExtCtrls, StdActns, LCLType, Menus, ActnList, SimThyrTypes,
   SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers, ComCtrls,
   LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog, ShowAboutModel,
   StructureParameters, SimThyrPrediction, Sensitivityanalysis, tornado,
-  ScenarioHandler, HandlePreferences, HandleNotifier, LCLProc, LazHelpHTML;
+  ScenarioHandler, HandlePreferences, HandleNotifier, LCLProc;
 
 type
 
@@ -312,11 +312,8 @@ end;
 
 procedure TSimThyrToolbar.OpenToolButtonClick(Sender: TObject);
 var
-  theFile: File of Byte;
-  fileData: Array of Byte;
-  theString, theFileName: String;
+  theFileName: String;
   theSize: Int64;
-  i: integer;
 begin
   OpenDialog1.FilterIndex := 2;
   if OpenDialog1.Execute then
