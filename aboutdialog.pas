@@ -14,7 +14,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, Buttons, StdCtrls, types, LCLIntf, ComCtrls, SimThyrTypes,
+  ExtCtrls, Buttons, StdCtrls, LCLIntf, ComCtrls, SimThyrTypes,
   SimThyrServices, VersionSupport, DOS, HandlePreferences;
 
 type

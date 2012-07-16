@@ -23,8 +23,7 @@ implementation
 procedure ReadScenario(theFileName: String); {reads a simulation scenario}
 var
   Doc: TXMLDocument;
-  RootNode, theNode: TDOMNode;
-  theString: String;
+  RootNode: TDOMNode;
 begin
   if FileExists(theFileName) then
   begin
@@ -75,7 +74,7 @@ end;
 procedure SaveScenario(theFileName: String); {saves scenario as XML file}
 var
   Doc: TXMLDocument;
-  RootNode, ElementNode, ItemNode, TextNode: TDOMNode;
+  RootNode, ElementNode: TDOMNode;
 begin
   try
     Doc := TXMLDocument.Create;
