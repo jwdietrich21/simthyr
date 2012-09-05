@@ -17,7 +17,7 @@ uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Arrow, Buttons, Menus, TAGraph,
   TASources, TATools, TASeries, TATransformations, TAStyles, TALegendPanel,
-  DateUtils, SimThyrTypes, SimThyrServices, HandleNotifier, Clipbrd;
+  DateUtils, SimThyrTypes, SimThyrServices, HandleNotifier, Clipbrd, TAIntervalSources;
 
 type
 
