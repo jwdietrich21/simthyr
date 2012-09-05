@@ -217,7 +217,16 @@ end;
 procedure writeaMemoLine(theMemo: TMemo; theString: Str255);
 {emulates writeln for a memo}
 begin
+  {$IFDEF win32}
   theMemo.Lines.Text := theMemo.Lines.Text + kCRLF + theString;
+  {$ELSE}
+    {$IFDEF LCLCarbon}
+  theMemo.Lines.Text := theMemo.Lines.Text + kRETURN + theString;
+    {$ELSE}
+  theMemo.Lines.Text := theMemo.Lines.Text + kLF + theString;
+    {$ENDIF}
+  {$ENDIF}
+
 end;
 
 

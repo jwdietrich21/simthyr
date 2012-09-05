@@ -310,7 +310,7 @@ object ValuesPlot: TValuesPlot
   }
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '0.9.30.4'
+  LCLVersion = '1.0.1.3'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -373,6 +373,7 @@ object ValuesPlot: TValuesPlot
             Grid.Color = clSilver
             Grid.Style = psDash
             Marks.LabelFont.Height = -11
+            Minors = <>
             Title.Distance = 3
             Title.LabelFont.Height = -11
             Title.LabelFont.Orientation = 900
@@ -380,13 +381,14 @@ object ValuesPlot: TValuesPlot
             Title.Caption = 'y'
           end        
           item
-            Alignment = calBottom
             Grid.Style = psClear
+            Alignment = calBottom
             Marks.LabelFont.Height = -11
             Marks.Format = '%2:s'
             Marks.OverlapPolicy = opHideNeighbour
             Marks.Source = DateTimeIntervalChartSource1
             Marks.Style = smsLegend
+            Minors = <>
             Title.Distance = 1
             Title.LabelFont.Height = -11
             Title.Visible = True
@@ -521,6 +523,7 @@ object ValuesPlot: TValuesPlot
             Grid.Color = clSilver
             Grid.Style = psDash
             Marks.LabelFont.Height = -11
+            Minors = <>
             Title.Distance = 3
             Title.LabelFont.Height = -11
             Title.LabelFont.Orientation = 900
@@ -528,13 +531,14 @@ object ValuesPlot: TValuesPlot
             Title.Caption = 'y'
           end        
           item
-            Alignment = calBottom
             Grid.Style = psClear
+            Alignment = calBottom
             Marks.LabelFont.Height = -11
             Marks.Format = '%2:s'
             Marks.OverlapPolicy = opHideNeighbour
             Marks.Source = DateTimeIntervalChartSource1
             Marks.Style = smsLabel
+            Minors = <>
             Title.Distance = 1
             Title.LabelFont.Height = -11
             Title.Visible = True
