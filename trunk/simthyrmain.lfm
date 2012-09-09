@@ -1,9 +1,9 @@
 object SimThyrToolbar: TSimThyrToolbar
-  Left = 236
-  Height = 73
+  Left = 237
+  Height = 60
   Hint = 'Please use the icons to load or save settings and to start or stop the simulation.'
-  Top = 132
-  Width = 687
+  Top = 122
+  Width = 691
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   Align = alTop
@@ -11,8 +11,8 @@ object SimThyrToolbar: TSimThyrToolbar
   AlphaBlendValue = 0
   AutoSize = True
   Caption = 'SimThyr'
-  ClientHeight = 73
-  ClientWidth = 687
+  ClientHeight = 60
+  ClientWidth = 691
   DefaultMonitor = dmMainForm
   DockSite = True
   Icon.Data = {
@@ -315,14 +315,14 @@ object SimThyrToolbar: TSimThyrToolbar
   OnCreate = FormCreate
   OnShow = FormShow
   ShowInTaskBar = stAlways
-  LCLVersion = '0.9.30.4'
+  LCLVersion = '1.0.1.3'
   Visible = True
   WindowState = wsMaximized
   object ToolBar1: TToolBar
     Left = 0
     Height = 26
     Top = 0
-    Width = 687
+    Width = 691
     Caption = 'ToolBar1'
     Images = ImageList1
     TabOrder = 0
@@ -370,7 +370,7 @@ object SimThyrToolbar: TSimThyrToolbar
       ShowHint = True
     end
     object RunToolButton: TToolButton
-      Left = 224
+      Left = 228
       Hint = 'Run simulation'
       Top = 2
       Caption = 'RunToolButton'
@@ -381,7 +381,7 @@ object SimThyrToolbar: TSimThyrToolbar
       ShowHint = True
     end
     object PauseToolButton: TToolButton
-      Left = 247
+      Left = 251
       Hint = 'Pause simulation'
       Top = 2
       Caption = 'PauseToolButton'
@@ -391,7 +391,7 @@ object SimThyrToolbar: TSimThyrToolbar
       ShowHint = True
     end
     object StopToolButton: TToolButton
-      Left = 270
+      Left = 274
       Hint = 'Stop and reset simulation'
       Top = 2
       Caption = 'StopToolButton'
@@ -403,19 +403,19 @@ object SimThyrToolbar: TSimThyrToolbar
     object ToolButton9: TToolButton
       Left = 116
       Top = 2
-      Width = 8
+      Width = 10
       Caption = 'ToolButton9'
       Style = tbsSeparator
     end
     object ToolButton1: TToolButton
-      Left = 293
+      Left = 297
       Top = 2
-      Width = 8
+      Width = 10
       Caption = 'ToolButton1'
       Style = tbsSeparator
     end
     object PrefsToolButton: TToolButton
-      Left = 301
+      Left = 307
       Hint = 'Global application preferences'
       Top = 2
       Caption = 'PrefsToolButton'
@@ -425,7 +425,7 @@ object SimThyrToolbar: TSimThyrToolbar
       ShowHint = True
     end
     object ParametersToolButton: TToolButton
-      Left = 355
+      Left = 363
       Hint = 'Modify parameters of this simulation scenario'
       Top = 2
       Caption = 'ParametersToolButton'
@@ -435,7 +435,7 @@ object SimThyrToolbar: TSimThyrToolbar
       ShowHint = True
     end
     object UndoToolButton: TToolButton
-      Left = 124
+      Left = 126
       Hint = 'Undo'
       Top = 2
       Caption = 'UndoToolButton'
@@ -444,7 +444,7 @@ object SimThyrToolbar: TSimThyrToolbar
       ShowHint = True
     end
     object CutToolButton: TToolButton
-      Left = 147
+      Left = 149
       Hint = 'Cut'
       Top = 2
       Caption = 'CutToolButton'
@@ -453,7 +453,7 @@ object SimThyrToolbar: TSimThyrToolbar
       ShowHint = True
     end
     object CopyToolButton: TToolButton
-      Left = 170
+      Left = 172
       Hint = 'Copy'
       Top = 2
       Caption = 'CopyToolButton'
@@ -462,7 +462,7 @@ object SimThyrToolbar: TSimThyrToolbar
       ShowHint = True
     end
     object PasteToolButton: TToolButton
-      Left = 193
+      Left = 195
       Hint = 'Paste'
       Top = 2
       Caption = 'PasteToolButton'
@@ -482,21 +482,21 @@ object SimThyrToolbar: TSimThyrToolbar
       ShowHint = True
     end
     object ToolButton2: TToolButton
-      Left = 216
+      Left = 218
       Top = 2
-      Width = 8
+      Width = 10
       Caption = 'ToolButton2'
       Style = tbsSeparator
     end
     object ToolButton3: TToolButton
-      Left = 324
+      Left = 330
       Top = 2
-      Width = 8
+      Width = 10
       Caption = 'ToolButton3'
       Style = tbsSeparator
     end
     object ToolButton4: TToolButton
-      Left = 332
+      Left = 340
       Hint = 'Information processing structure (IPS)'
       Top = 2
       Caption = 'ToolButton4'
@@ -1875,7 +1875,7 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SavePictureDialog1: TSavePictureDialog
-    Title = 'Datei sichern als'
+    Filter = 'Grafik (*.bmp;*.xpm;*.png;*.pbm;*.pgm;*.ppm;*.ico;*.icns;*.cur;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif)|*.bmp;*.xpm;*.png;*.pbm;*.pgm;*.ppm;*.ico;*.icns;*.cur;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif|Bitmaps (*.bmp)|*.bmp|Pixmap (*.xpm)|*.xpm|Portable Network Graphic (*.png)|*.png|Portable PixMap (*.pbm;*.pgm;*.ppm)|*.pbm;*.pgm;*.ppm|Icon (*.ico)|*.ico|Mac OS X Icon (*.icns)|*.icns|Cursor (*.cur)|*.cur|Joint Picture Expert Group (*.jpg;*.jpeg;*.jpe;*.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Tagged Image File Format (*.tif;*.tiff)|*.tif;*.tiff|Scalable Vector Graphic|*.svg|Alle Dateien (*)|*'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
     left = 8
     top = 864
