@@ -314,12 +314,17 @@ procedure TSimThyrToolbar.OpenToolButtonClick(Sender: TObject);
 var
   theFileName: String;
   theSize: Int64;
+  theFilterIndex: integer;
 begin
   OpenDialog1.FilterIndex := 2;
   if OpenDialog1.Execute then
   begin
     theFileName := OpenDialog1.FileName;
-    case OpenDialog1.FilterIndex of
+    theFilterIndex := OpenDialog1.FilterIndex;
+  {$IFDEF LCLcarbon} {compensates for a bug in the carbon widgetset}
+    theFilterIndex := theFilterIndex + 1;
+  {$ENDIF} {may be removed in future versions}
+    case theFilterIndex of
       0: bell;
       1: ReadScenario(theFileName);
       end;
@@ -387,6 +392,7 @@ var
   theForm: TForm;
   theDelimiter: Char;
   theFileName: String;
+  theFilterIndex: integer;
 begin
   theForm := Screen.ActiveForm;
   if theForm = IPSForm then
@@ -395,7 +401,11 @@ begin
       if SavePictureDialog1.Execute then
       try
         theFileName := SavePictureDialog1.FileName;
-        if SavePictureDialog1.FilterIndex = 10 then bell
+        theFilterIndex := SavePictureDialog1.FilterIndex;
+          {$IFDEF LCLcarbon} {compensates for a bug in the carbon widgetset}
+        theFilterIndex := theFilterIndex + 1;
+         {$ENDIF} {may be removed in future versions}
+        if theFilterIndex = 11 then bell
         else IPSForm.Image1.Picture.SaveToFile(theFileName);
       finally
         ;
@@ -411,17 +421,21 @@ begin
       if SaveDialog1.Execute then
         begin
           theFileName := SaveDialog1.FileName;
-          case SaveDialog1.FilterIndex of
-            0: theDelimiter := kTab;
-            1: if DecimalSeparator = ',' then
+          theFilterIndex := SaveDialog1.FilterIndex;
+        {$IFDEF LCLcarbon} {compensates for a bug in the carbon widgetset}
+          theFilterIndex := theFilterIndex + 1;
+        {$ENDIF} {may be removed in future versions}
+          case theFilterIndex of
+            1: theDelimiter := kTab;
+            2: if DecimalSeparator = ',' then
                  theDelimiter := ';'
                else theDelimiter := ',';
-            2: theDelimiter := 'd';
-            3: theDelimiter := ' ';
+            3: theDelimiter := 'd';
+            4: theDelimiter := ' ';
           end;
-          case SaveDialog1.FilterIndex of
-            0..2: SimThyrLogWindow.SaveGrid(theFileName, theDelimiter);
-            3: SaveScenario(theFilename);
+          case theFilterIndex of
+            1..3: SimThyrLogWindow.SaveGrid(theFileName, theDelimiter);
+            4: SaveScenario(theFilename);
           end;
         end;
       end
