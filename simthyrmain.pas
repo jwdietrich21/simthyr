@@ -320,8 +320,8 @@ begin
   begin
     theFileName := OpenDialog1.FileName;
     case OpenDialog1.FilterIndex of
-      1: bell;
-      2: ReadScenario(theFileName);
+      0: bell;
+      1: ReadScenario(theFileName);
       end;
   end;
 end;
@@ -391,10 +391,12 @@ begin
   theForm := Screen.ActiveForm;
   if theForm = IPSForm then
     begin
+      SavePictureDialog1.FilterIndex := 2;
       if SavePictureDialog1.Execute then
       try
         theFileName := SavePictureDialog1.FileName;
-        IPSForm.Image1.Picture.SaveToFile(theFileName);
+        if SavePictureDialog1.FilterIndex = 10 then bell
+        else IPSForm.Image1.Picture.SaveToFile(theFileName);
       finally
         ;
       end;
@@ -404,24 +406,30 @@ begin
     if theForm = SimThyrToolbar then
       SaveDialog1.FilterIndex := 4
     else if theForm = SimThyrLogWindow then
+    begin
       SaveDialog1.FilterIndex := 1;
-    if SaveDialog1.Execute then
-      begin
-        theFileName := SaveDialog1.FileName;
-        case SaveDialog1.FilterIndex of
-          1: theDelimiter := kTab;
-          2: if DecimalSeparator = ',' then
-               theDelimiter := ';'
-             else theDelimiter := ',';
-          3: theDelimiter := 'd';
-          4: theDelimiter := ' ';
+      if SaveDialog1.Execute then
+        begin
+          theFileName := SaveDialog1.FileName;
+          case SaveDialog1.FilterIndex of
+            0: theDelimiter := kTab;
+            1: if DecimalSeparator = ',' then
+                 theDelimiter := ';'
+               else theDelimiter := ',';
+            2: theDelimiter := 'd';
+            3: theDelimiter := ' ';
+          end;
+          case SaveDialog1.FilterIndex of
+            0..2: SimThyrLogWindow.SaveGrid(theFileName, theDelimiter);
+            3: SaveScenario(theFilename);
+          end;
         end;
-        case SaveDialog1.FilterIndex of
-          1..3: SimThyrLogWindow.SaveGrid(theFileName, theDelimiter);
-          4: SaveScenario(theFilename);
-        end;
-      end;
+      end
+    else if theForm = ValuesPlot then
+    begin
+      bell;
     end;
+  end;
 end;
 
 procedure TSimThyrToolbar.OWSensitivityAnalysisItemClick(Sender: TObject);
