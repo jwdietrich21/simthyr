@@ -49,22 +49,7 @@ begin
   noiseflag := true;
   haltsim := false;
   Application.CreateForm(TSimThyrToolbar, SimThyrToolbar);
-  with SimThyrToolbar do
-  begin
-    hide;
-  {$IFDEF LCLcarbon}
-    left := 0;
-    top := 20;
-    width := Screen.Width;
-  {$ELSE}
-    left := 1;
-    top := 0;
-    width := Screen.Width - 3;
-  {$ENDIF}
-    height := Toolbar1.Height + 3;
-    WindowState := wsNormal;
-    AlphaBlend := false;
-  end;
+  SimThyrToolbar.SetPosition;
   if splashflag then SplashScreen.Update;
   {Application.MainFormOnTaskbar := True;}
   Application.BringToFront;

@@ -14,7 +14,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, clipbrd, Menus, SimThyrServices;
+  ExtCtrls, clipbrd, Menus, SimThyrTypes, SimThyrServices;
 
 type
 
@@ -31,6 +31,8 @@ type
     UndoItem: TMenuItem;
     procedure CopyImage;
     procedure CopyItemClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     private
     { private declarations }
   public
@@ -50,6 +52,16 @@ end;
 procedure TIPSForm.CopyItemClick(Sender: TObject);
 begin
   CopyImage;
+end;
+
+procedure TIPSForm.FormActivate(Sender: TObject);
+begin
+  gLastActiveCustomForm := IPSForm;
+end;
+
+procedure TIPSForm.FormCreate(Sender: TObject);
+begin
+
 end;
 
 initialization
