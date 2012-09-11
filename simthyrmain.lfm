@@ -11,7 +11,7 @@ object SimThyrToolbar: TSimThyrToolbar
   AlphaBlendValue = 0
   AutoSize = True
   Caption = 'SimThyr'
-  ClientHeight = 53
+  ClientHeight = 73
   ClientWidth = 687
   DefaultMonitor = dmMainForm
   DockSite = True
@@ -457,6 +457,7 @@ object SimThyrToolbar: TSimThyrToolbar
       Top = 2
       Caption = 'CopyToolButton'
       ImageIndex = 7
+      OnClick = CopyToolButtonClick
       ParentShowHint = False
       ShowHint = True
     end

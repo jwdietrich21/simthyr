@@ -112,6 +112,7 @@ type
     procedure AboutModelItemClick(Sender: TObject);
     procedure CloseMenuItemClick(Sender: TObject);
     procedure CopyMenuItemClick(Sender: TObject);
+    procedure CopyToolButtonClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -300,16 +301,21 @@ begin
     IPSForm.CopyImage
   else if (theForm = ValuesPlot) or ((theForm = SimThyrToolbar) and
     (gLastActiveCustomForm = ValuesPlot)) then
-    ValuesPlot.CopyChart(Sender)
+    ValuesPlot.CopyChart
   else if (theForm = SensitivityAnalysisForm) or
     ((theForm = SimThyrToolbar) and (gLastActiveCustomForm =
     SensitivityAnalysisForm)) then
-    SensitivityAnalysisForm.CopyChart(Sender)
+    SensitivityAnalysisForm.CopyChart
   else if (theForm = TornadoPlotForm) or ((theForm = SimThyrToolbar) and
     (gLastActiveCustomForm = TornadoPlotForm)) then
-    TornadoPlotForm.CopyTornado(Sender)
+    TornadoPlotForm.CopyTornado
   else
     ActionList1.Actions[2].Execute;
+end;
+
+procedure TSimThyrToolbar.CopyToolButtonClick(Sender: TObject);
+begin
+  CopyMenuItemClick(Sender);
 end;
 
 procedure TSimThyrToolbar.IPSItemClick(Sender: TObject);

@@ -15,8 +15,8 @@ LazarusResources.Add('TTornadoPlotForm','FORMDATA',[
   +'sChildResize'#27'ChildSizing.EnlargeVertical'#7#24'crsHomogenousChildResize'
   +#28'ChildSizing.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildSizing.Shrink'
   +'Vertical'#7#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclLeftToRightTh'
-  +'enTopToBottom'#27'ChildSizing.ControlsPerLine'#2#2#12'ClientHeight'#3#191#0
-  +#11'ClientWidth'#3#181#0#7'Columns'#2#2#13'Items.Strings'#1#6#3'GD1'#6#3'GD2'
+  +'enTopToBottom'#27'ChildSizing.ControlsPerLine'#2#2#12'ClientHeight'#3#187#0
+  +#11'ClientWidth'#3#177#0#7'Columns'#2#2#13'Items.Strings'#1#6#3'GD1'#6#3'GD2'
   +#6#3'KM1'#6#3'KM2'#6#2'GT'#6#2'DT'#6#2'GH'#6#2'DH'#6#2'SS'#6#2'DS'#6#2'GR'#6
   +#2'DR'#6#5'betaS'#6#6'betaS2'#6#5'betaT'#6#6'beta31'#6#6'beta32'#6#2'LS'#0#7
   +'OnClick'#7#16'CheckGroup1Click'#11'OnItemClick'#7#20'CheckGroup1ItemClick'
@@ -24,11 +24,11 @@ LazarusResources.Add('TTornadoPlotForm','FORMDATA',[
   +#0#0#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#2#0#0#9'TComboBox'#17'DepParameterCom'
   +'bo'#4'Left'#3#250#1#6'Height'#2#21#4'Hint'#6'9Select the depdentent paramet'
   +'er, e.g. hormone level here.'#3'Top'#3#151#1#5'Width'#3#185#0#7'Anchors'#11
-  +#7'akRight'#8'akBottom'#0#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Stri'
-  +'ngs'#1#6#22'Dependent parameter...'#6#3'TSH'#6#3'FT4'#6#3'FT3'#6#3'cT3'#0#8
+  +#7'akRight'#8'akBottom'#0#10'ItemHeight'#2#0#9'ItemIndex'#2#0#13'Items.Strin'
+  +'gs'#1#6#22'Dependent parameter...'#6#3'TSH'#6#3'FT4'#6#3'FT3'#6#3'cT3'#0#8
   +'OnChange'#7#23'DepParameterComboChange'#14'ParentShowHint'#8#8'ShowHint'#9#8
   +'TabOrder'#2#1#4'Text'#6#22'Dependent parameter...'#0#0#10'TStatusBar'#10'St'
-  +'atusBar1'#4'Left'#2#0#6'Height'#2#23#3'Top'#3#186#1#5'Width'#3#194#2#6'Pane'
+  +'atusBar1'#4'Left'#2#0#6'Height'#2#15#3'Top'#3#194#1#5'Width'#3#194#2#6'Pane'
   +'ls'#14#0#0#0#11'TRadioGroup'#11'RadioGroup1'#4'Left'#3#250#1#6'Height'#2'T'
   +#3'Top'#3#232#0#5'Width'#3#185#0#7'Anchors'#11#5'akTop'#7'akRight'#0#8'AutoF'
   +'ill'#9#7'Caption'#6#17'Display change as'#28'ChildSizing.LeftRightSpacing'#2
@@ -37,7 +37,7 @@ LazarusResources.Add('TTornadoPlotForm','FORMDATA',[
   +'nousChildResize'#28'ChildSizing.ShrinkHorizontal'#7#14'crsScaleChilds'#26'C'
   +'hildSizing.ShrinkVertical'#7#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29
   +'cclLeftToRightThenTopToBottom'#27'ChildSizing.ControlsPerLine'#2#1#12'Clien'
-  +'tHeight'#2'B'#11'ClientWidth'#3#181#0#9'ItemIndex'#2#0#13'Items.Strings'#1#6
+  +'tHeight'#2'>'#11'ClientWidth'#3#177#0#9'ItemIndex'#2#0#13'Items.Strings'#1#6
   +#8'Fraction'#6#7'percent'#0#7'OnClick'#7#16'RadioGroup1Click'#8'TabOrder'#2#3
   +#0#0#6'TPanel'#6'Panel1'#4'Left'#2#8#6'Height'#3#162#1#3'Top'#2#16#5'Width'#3
   +#229#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#7'Caption'#6
@@ -62,16 +62,16 @@ LazarusResources.Add('TTornadoPlotForm','FORMDATA',[
   +'ase'#10'AxisIndexX'#2#1#10'AxisIndexY'#2#0#14'BarBrush.Color'#7#7'clBlack'#0
   +#0#0#0#9'TComboBox'#14'LegendPosCombo'#4'Left'#3#250#1#6'Height'#2#21#3'Top'
   +#3'x'#1#5'Width'#3#185#0#7'Anchors'#11#7'akRight'#8'akBottom'#0#10'ItemHeigh'
-  +'t'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6#18'Legend position...'#6#8'T'
-  +'op left'#6#9'Top right'#6#11'Bottom left'#6#12'Bottom right'#0#8'OnChange'#7
+  +'t'#2#0#9'ItemIndex'#2#0#13'Items.Strings'#1#6#18'Legend position...'#6#8'To'
+  +'p left'#6#9'Top right'#6#11'Bottom left'#6#12'Bottom right'#0#8'OnChange'#7
   +#20'LegendPosComboChange'#8'TabOrder'#2#5#4'Text'#6#18'Legend position...'#0
-  ,#0#9'TColorBox'#16'DecreaseColorBox'#4'Left'#3#250#1#6'Height'#2#24#4'Hint'#6
-  +'4Select color for decresing indepenent variable here.'#3'Top'#3'<'#1#5'Widt'
+  ,#0#9'TColorBox'#16'DecreaseColorBox'#4'Left'#3#250#1#6'Height'#2#20#4'Hint'#6
+  +'4Select color for decresing indepenent variable here.'#3'Top'#3'@'#1#5'Widt'
   +'h'#3#185#0#17'DefaultColorColor'#7#6'clGray'#8'Selected'#7#6'clGray'#7'Anch'
   +'ors'#11#7'akRight'#8'akBottom'#0#10'ItemHeight'#2#16#8'OnChange'#7#22'Decre'
   +'aseColorBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#6#0#0#9
-  +'TColorBox'#16'IncreaseColorBox'#4'Left'#3#250#1#6'Height'#2#24#4'Hint'#6'4S'
-  +'elect color for incresing indepenent variable here.'#3'Top'#3'T'#1#5'Width'
+  +'TColorBox'#16'IncreaseColorBox'#4'Left'#3#250#1#6'Height'#2#20#4'Hint'#6'4S'
+  +'elect color for incresing indepenent variable here.'#3'Top'#3'X'#1#5'Width'
   +#3#185#0#7'Anchors'#11#7'akRight'#8'akBottom'#0#10'ItemHeight'#2#16#8'OnChan'
   +'ge'#7#22'IncreaseColorBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOr'
   +'der'#2#7#0#0#16'TListChartSource'#16'ListChartSource1'#18'DataPoints.String'
