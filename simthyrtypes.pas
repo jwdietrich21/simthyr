@@ -13,7 +13,7 @@ unit SimThyrTypes;
 interface
 
 uses
-  Classes, SysUtils, Graphics, TAGraph;
+  Classes, SysUtils, Forms, Graphics, TAGraph;
 
 const
 
@@ -121,7 +121,7 @@ var
  gSelectedChart: tChart;
  tmax_text, tmax_unit, i1_text, i1_unit: str255;
  gNumberFormat, gDateTimeFormat: String;
-
+ gLastActiveCustomForm: TForm;
 
 implementation
 

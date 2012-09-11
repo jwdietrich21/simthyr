@@ -10,7 +10,9 @@ object IPSForm: TIPSForm
   ClientHeight = 574
   ClientWidth = 469
   Color = clWhite
-  LCLVersion = '0.9.30.2RC1'
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  LCLVersion = '1.0.1.3'
   Visible = True
   object Image1: TImage
     Left = 16

@@ -62,6 +62,7 @@ type
     procedure CheckGroup1ItemClick(Sender: TObject; Index: integer);
     procedure CopyItemClick(Sender: TObject);
     procedure cT3ColorBoxChange(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FT3ColorBoxChange(Sender: TObject);
     procedure FT4ColorBoxChange(Sender: TObject);
@@ -685,6 +686,11 @@ end;
 procedure TSensitivityAnalysisForm.cT3ColorBoxChange(Sender: TObject);
 begin
   DrawOWSensitivityPlot(False);
+end;
+
+procedure TSensitivityAnalysisForm.FormActivate(Sender: TObject);
+begin
+  gLastActiveCustomForm := SensitivityAnalysisForm;
 end;
 
 procedure TSensitivityAnalysisForm.MaxSpinEditChange(Sender: TObject);

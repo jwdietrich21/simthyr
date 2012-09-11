@@ -1,8 +1,9 @@
 unit SimThyrMain;
-{ SimThyr Project }
-{ (c) J. W. Dietrich, 1994 - 2012 }
-{ (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2012 }
+
+ { SimThyr Project }
+ { (c) J. W. Dietrich, 1994 - 2012 }
+ { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
+ { (c) Ruhr University of Bochum 2005 - 2012 }
 
 { This unit provides global GUI functions, toolbar and menubar handling }
 
@@ -25,88 +26,88 @@ type
   { TSimThyrToolbar }
 
   TSimThyrToolbar = class(TForm)
-    ActionList1: TActionList;
+    ActionList1:  TActionList;
     ApplicationProperties1: TApplicationProperties;
     CloseMenuItem: TMenuItem;
     CopyMenuItem: TMenuItem;
-    CutMenuItem: TMenuItem;
-    Divider_1_1: TMenuItem;
-    Divider_2_1: TMenuItem;
-    EditCopy1: TEditCopy;
-    EditCut1: TEditCut;
-    EditDelete1: TEditDelete;
-    EditMenu: TMenuItem;
-    EditPaste1: TEditPaste;
-    EditUndo1: TEditUndo;
-    FileMenu: TMenuItem;
-    IdleTimer1: TIdleTimer;
-    ImageList1: TImageList;
+    CutMenuItem:  TMenuItem;
+    Divider_1_1:  TMenuItem;
+    Divider_2_1:  TMenuItem;
+    EditCopy1:    TEditCopy;
+    EditCut1:     TEditCut;
+    EditDelete1:  TEditDelete;
+    EditMenu:     TMenuItem;
+    EditPaste1:   TEditPaste;
+    EditUndo1:    TEditUndo;
+    FileMenu:     TMenuItem;
+    IdleTimer1:   TIdleTimer;
+    ImageList1:   TImageList;
     MacAboutItem: TMenuItem;
-    AppleMenu: TMenuItem;
+    AppleMenu:    TMenuItem;
     MacPreferencesItem: TMenuItem;
-    MainMenu1: TMainMenu;
-    HelpMenu: TMenuItem;
-    HelpItem: TMenuItem;
-    Divider_5_1: TMenuItem;
-    Divider_1_3: TMenuItem;
-    Divider_1_2: TMenuItem;
+    MainMenu1:    TMainMenu;
+    HelpMenu:     TMenuItem;
+    HelpItem:     TMenuItem;
+    Divider_5_1:  TMenuItem;
+    Divider_1_3:  TMenuItem;
+    Divider_1_2:  TMenuItem;
     AboutModelItem: TMenuItem;
-    Divider_3_3: TMenuItem;
+    Divider_3_3:  TMenuItem;
     ChangeParItem: TMenuItem;
-    IPSItem: TMenuItem;
-    LogItem: TMenuItem;
-    IPSItem2: TMenuItem;
-    Divider_3_2: TMenuItem;
+    IPSItem:      TMenuItem;
+    LogItem:      TMenuItem;
+    IPSItem2:     TMenuItem;
+    Divider_3_2:  TMenuItem;
     OWSensitivityAnalysisItem: TMenuItem;
     TornadoPlotItem: TMenuItem;
     TornadoPlotItem2: TMenuItem;
     OWSensitivityAnalysisItem2: TMenuItem;
     SavePictureDialog1: TSavePictureDialog;
     WinPreferencesItem: TMenuItem;
-    Divider_2_2: TMenuItem;
+    Divider_2_2:  TMenuItem;
     PredictionItem: TMenuItem;
-    PlotItem: TMenuItem;
-    WindowMenu: TMenuItem;
-    PauseItem: TMenuItem;
-    StopItem: TMenuItem;
-    Divider_3_1: TMenuItem;
-    RunItem: TMenuItem;
+    PlotItem:     TMenuItem;
+    WindowMenu:   TMenuItem;
+    PauseItem:    TMenuItem;
+    StopItem:     TMenuItem;
+    Divider_3_1:  TMenuItem;
+    RunItem:      TMenuItem;
     SimulationMenu: TMenuItem;
-    PrintItem: TMenuItem;
+    PrintItem:    TMenuItem;
     PageSetupItem: TMenuItem;
-    SaveItem: TMenuItem;
+    SaveItem:     TMenuItem;
     QuitMenuItem: TMenuItem;
-    ToolBar1: TToolBar;
+    ToolBar1:     TToolBar;
     NewToolButton: TToolButton;
     OpenToolButton: TToolButton;
     SaveToolButton: TToolButton;
     SaveAsToolButton: TToolButton;
-    ToolButton1: TToolButton;
+    ToolButton1:  TToolButton;
     PrefsToolButton: TToolButton;
     ParametersToolButton: TToolButton;
     RunToolButton: TToolButton;
     PauseToolButton: TToolButton;
     StopToolButton: TToolButton;
-    ToolButton2: TToolButton;
-    ToolButton3: TToolButton;
-    ToolButton4: TToolButton;
+    ToolButton2:  TToolButton;
+    ToolButton3:  TToolButton;
+    ToolButton4:  TToolButton;
     UndoToolButton: TToolButton;
     CutToolButton: TToolButton;
     CopyToolButton: TToolButton;
     PasteToolButton: TToolButton;
     PrintToolButton: TToolButton;
-    ToolButton9: TToolButton;
+    ToolButton9:  TToolButton;
     WinAboutItem: TMenuItem;
-    OnlineInfo: TMenuItem;
-    Divider_0_1: TMenuItem;
-    Divider_0_2: TMenuItem;
+    OnlineInfo:   TMenuItem;
+    Divider_0_1:  TMenuItem;
+    Divider_0_2:  TMenuItem;
     DeleteMenuItem: TMenuItem;
-    NewMenuItem: TMenuItem;
-    OpenDialog1: TOpenDialog;
+    NewMenuItem:  TMenuItem;
+    OpenDialog1:  TOpenDialog;
     OpenMenuItem: TMenuItem;
     PasteMenuItem: TMenuItem;
-    SaveAsItem: TMenuItem;
-    SaveDialog1: TSaveDialog;
+    SaveAsItem:   TMenuItem;
+    SaveDialog1:  TSaveDialog;
     UndoMenuItem: TMenuItem;
     procedure AboutModelItemClick(Sender: TObject);
     procedure CloseMenuItemClick(Sender: TObject);
@@ -114,7 +115,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure HandleIdle(Sender: TObject; var Done: Boolean);
+    procedure HandleIdle(Sender: TObject; var Done: boolean);
     procedure HelpItemClick(Sender: TObject);
     procedure IdleTimer1Timer(Sender: TObject);
     procedure IPSItemClick(Sender: TObject);
@@ -141,17 +142,19 @@ type
     procedure TornadoPlotItemClick(Sender: TObject);
     procedure UndoMenuItemClick(Sender: TObject);
     procedure AboutItemClick(Sender: TObject);
+    procedure SetPosition;
   private
     { private declarations }
   public
     { public declarations }
   end;
+
   tInterfaceLanguage = (English, German);
 
 var
-  SimThyrToolbar: TSimThyrToolbar;
+  SimThyrToolbar:     TSimThyrToolbar;
   gInterfaceLanguage: tInterfaceLanguage;
-  j, gIdleCounter: integer;
+  j, gIdleCounter:    integer;
 
 implementation
 
@@ -164,48 +167,48 @@ var
   modifierKey: TShiftState;
 begin
   {$IFDEF LCLcarbon}
-    modifierKey := [ssMeta];
-    SimThyrToolbar.WinAboutItem.Visible := false;
-    SimThyrToolbar.Divider_5_1.Visible := false;
-    SimThyrToolbar.Divider_2_2.Visible := false;
-    SimThyrToolbar.Divider_2_2.Visible := false;
-    SimThyrToolbar.WinPreferencesItem.Visible := false;
-    SimThyrToolbar.AppleMenu.Visible := true;
+  modifierKey := [ssMeta];
+  SimThyrToolbar.WinAboutItem.Visible := False;
+  SimThyrToolbar.Divider_5_1.Visible := False;
+  SimThyrToolbar.Divider_2_2.Visible := False;
+  SimThyrToolbar.Divider_2_2.Visible := False;
+  SimThyrToolbar.WinPreferencesItem.Visible := False;
+  SimThyrToolbar.AppleMenu.Visible := True;
   {$ELSE}
-    modifierKey := [ssCtrl];
-    SimThyrToolbar.WinAboutItem.Visible := true;
-    SimThyrToolbar.Divider_5_1.Visible := true;
-    SimThyrToolbar.Divider_2_2.Visible := true;
-    SimThyrToolbar.WinPreferencesItem.Visible := true;
-    SimThyrToolbar.AppleMenu.Visible := false;
+  modifierKey := [ssCtrl];
+  SimThyrToolbar.WinAboutItem.Visible := True;
+  SimThyrToolbar.Divider_5_1.Visible := True;
+  SimThyrToolbar.Divider_2_2.Visible := True;
+  SimThyrToolbar.WinPreferencesItem.Visible := True;
+  SimThyrToolbar.AppleMenu.Visible := False;
   {$ENDIF}
-  SimThyrToolbar.NewMenuItem.ShortCut:=ShortCut(VK_N, modifierKey);
-  SimThyrToolbar.OpenMenuItem.ShortCut:=ShortCut(VK_O, modifierKey);
-  SimThyrToolbar.CloseMenuItem.ShortCut:=ShortCut(VK_W, modifierKey);
-  SimThyrToolbar.SaveItem.ShortCut:=ShortCut(VK_S, modifierKey);
-  SimThyrToolbar.PrintItem.ShortCut:=ShortCut(VK_P, modifierKey);
-  SimThyrToolbar.QuitMenuItem.ShortCut:=ShortCut(VK_Q, modifierKey);
-  SimThyrToolbar.UndoMenuItem.ShortCut:=ShortCut(VK_Z, modifierKey);
-  SimThyrToolbar.CutMenuItem.ShortCut:=ShortCut(VK_X, modifierKey);
-  SimThyrToolbar.CopyMenuItem.ShortCut:=ShortCut(VK_C, modifierKey);
-  SimThyrToolbar.PasteMenuItem.ShortCut:=ShortCut(VK_V, modifierKey);
-  SimThyrToolbar.RunItem.ShortCut:=ShortCut(VK_R, modifierKey);
-  SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut:=ShortCut(VK_E, modifierKey);
-  SimThyrToolbar.TornadoPlotItem.ShortCut:=ShortCut(VK_T, modifierKey);
+  SimThyrToolbar.NewMenuItem.ShortCut := ShortCut(VK_N, modifierKey);
+  SimThyrToolbar.OpenMenuItem.ShortCut := ShortCut(VK_O, modifierKey);
+  SimThyrToolbar.CloseMenuItem.ShortCut := ShortCut(VK_W, modifierKey);
+  SimThyrToolbar.SaveItem.ShortCut := ShortCut(VK_S, modifierKey);
+  SimThyrToolbar.PrintItem.ShortCut := ShortCut(VK_P, modifierKey);
+  SimThyrToolbar.QuitMenuItem.ShortCut := ShortCut(VK_Q, modifierKey);
+  SimThyrToolbar.UndoMenuItem.ShortCut := ShortCut(VK_Z, modifierKey);
+  SimThyrToolbar.CutMenuItem.ShortCut := ShortCut(VK_X, modifierKey);
+  SimThyrToolbar.CopyMenuItem.ShortCut := ShortCut(VK_C, modifierKey);
+  SimThyrToolbar.PasteMenuItem.ShortCut := ShortCut(VK_V, modifierKey);
+  SimThyrToolbar.RunItem.ShortCut := ShortCut(VK_R, modifierKey);
+  SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut := ShortCut(VK_E, modifierKey);
+  SimThyrToolbar.TornadoPlotItem.ShortCut := ShortCut(VK_T, modifierKey);
 end;
 
 procedure AdaptLanguages;
 { Scaffold for future extension supporting language switching }
 begin
-   if gInterfaceLanguage = English then
-   begin
-     ;
-   end
-   else
-   begin
-     ;
-   end;
-   AdaptMenus;
+  if gInterfaceLanguage = English then
+  begin
+    ;
+  end
+  else
+  begin
+    ;
+  end;
+  AdaptMenus;
 end;
 
 procedure TSimThyrToolbar.FormCreate(Sender: TObject);
@@ -223,22 +226,22 @@ begin
   end;
 end;
 
-procedure TSimThyrToolbar.HandleIdle(Sender: TObject; var Done: Boolean);
+procedure TSimThyrToolbar.HandleIdle(Sender: TObject; var Done: boolean);
 begin
   if simready then
   begin
   {$IFDEF LCLcarbon}
     SimThyrLogWindow.ValuesGrid.BeginUpdate;
-    SimThyrLogWindow.ValuesGrid.EndUpdate(true);
+    SimThyrLogWindow.ValuesGrid.EndUpdate(True);
   {$ENDIF}
     if gIdleCounter < 2 then
     begin
-     SimThyrToolbar.SendToBack;
-     SimulationSettings.ShowOnTop;
-     SimulationSettings.SetFocus;
-     gIdleCounter := gIdleCounter + 1;
+      SimThyrToolbar.SendToBack;
+      SimulationSettings.ShowOnTop;
+      SimulationSettings.SetFocus;
+      gIdleCounter := gIdleCounter + 1;
     end;
-  application.ProcessMessages;
+    application.ProcessMessages;
   end
   else;
 end;
@@ -254,7 +257,7 @@ begin
   begin
   {$IFDEF LCLcarbon}
     SimThyrLogWindow.ValuesGrid.BeginUpdate;
-    SimThyrLogWindow.ValuesGrid.EndUpdate(true);
+    SimThyrLogWindow.ValuesGrid.EndUpdate(True);
   {$ENDIF}
     application.ProcessMessages;
     Notice.Hide;
@@ -271,7 +274,8 @@ begin
 end;
 
 procedure TSimThyrToolbar.CloseMenuItemClick(Sender: TObject);
-var theForm: TForm;
+var
+  theForm: TForm;
 begin
   theForm := Screen.ActiveForm;
   {if (simready and theForm = SimThyrLogWindow) then SimThread.free;}
@@ -284,15 +288,28 @@ begin
 end;
 
 procedure TSimThyrToolbar.CopyMenuItemClick(Sender: TObject);
-var theForm: TForm;
+var
+  theForm: TForm;
 begin
   theForm := Screen.ActiveForm;
-  if theForm = SimThyrLogWindow then SimThyrLogWindow.CopyCells
-  else if theForm = IPSForm then IPSForm.CopyImage
-  else if theForm = ValuesPlot then ValuesPlot.CopyChart(Sender)
-  else if theForm = SensitivityAnalysisForm then SensitivityAnalysisForm.CopyChart(Sender)
-  else if theForm = TornadoPlotForm then TornadoPlotForm.CopyTornado(Sender)
-  else ActionList1.Actions[2].Execute;
+  if (theForm = SimThyrLogWindow) or ((theForm = SimThyrToolbar) and
+    (gLastActiveCustomForm = SimThyrLogWindow)) then
+    SimThyrLogWindow.CopyCells
+  else if (theForm = IPSForm) or ((theForm = SimThyrToolbar) and
+    (gLastActiveCustomForm = IPSForm)) then
+    IPSForm.CopyImage
+  else if (theForm = ValuesPlot) or ((theForm = SimThyrToolbar) and
+    (gLastActiveCustomForm = ValuesPlot)) then
+    ValuesPlot.CopyChart(Sender)
+  else if (theForm = SensitivityAnalysisForm) or
+    ((theForm = SimThyrToolbar) and (gLastActiveCustomForm =
+    SensitivityAnalysisForm)) then
+    SensitivityAnalysisForm.CopyChart(Sender)
+  else if (theForm = TornadoPlotForm) or ((theForm = SimThyrToolbar) and
+    (gLastActiveCustomForm = TornadoPlotForm)) then
+    TornadoPlotForm.CopyTornado(Sender)
+  else
+    ActionList1.Actions[2].Execute;
 end;
 
 procedure TSimThyrToolbar.IPSItemClick(Sender: TObject);
@@ -307,27 +324,27 @@ end;
 
 procedure TSimThyrToolbar.OnlineInfoClick(Sender: TObject);
 begin
- OpenURL(BASE_URL);
+  OpenURL(BASE_URL);
 end;
 
 procedure TSimThyrToolbar.OpenToolButtonClick(Sender: TObject);
 var
-  theFileName: String;
-  theSize: Int64;
+  theFileName: string;
+  theSize:     int64;
   theFilterIndex: integer;
 begin
   OpenDialog1.FilterIndex := 2;
   if OpenDialog1.Execute then
   begin
-    theFileName := OpenDialog1.FileName;
+    theFileName    := OpenDialog1.FileName;
     theFilterIndex := OpenDialog1.FilterIndex;
-  {$IFDEF LCLcarbon} {compensates for a bug in the carbon widgetset}
+  {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
     theFilterIndex := theFilterIndex + 1;
-  {$ENDIF} {may be removed in future versions}
+  {$ENDIF}{may be removed in future versions}
     case theFilterIndex of
       0: bell;
       1: ReadScenario(theFileName);
-      end;
+    end;
   end;
 end;
 
@@ -374,7 +391,7 @@ end;
 
 procedure TSimThyrToolbar.RunItemClick(Sender: TObject);
 begin
-  if simready = true then
+  if simready = True then
     SimulationSettings.ShowOnTop
   else if haltsim then
     SimThread.Restart
@@ -389,59 +406,63 @@ end;
 
 procedure TSimThyrToolbar.SaveToolButtonClick(Sender: TObject);
 var
-  theForm: TForm;
-  theDelimiter: Char;
-  theFileName: String;
+  theForm:      TForm;
+  theDelimiter: char;
+  theFileName:  string;
   theFilterIndex: integer;
 begin
   theForm := Screen.ActiveForm;
-  if theForm = IPSForm then
-    begin
-      SavePictureDialog1.FilterIndex := 2;
-      if SavePictureDialog1.Execute then
+  if (theForm = IPSForm) or ((theForm = SimThyrToolbar) and
+    (gLastActiveCustomForm = IPSForm)) then
+  begin
+    SavePictureDialog1.FilterIndex := 2;
+    if SavePictureDialog1.Execute then
       try
-        theFileName := SavePictureDialog1.FileName;
+        theFileName    := SavePictureDialog1.FileName;
         theFilterIndex := SavePictureDialog1.FilterIndex;
-          {$IFDEF LCLcarbon} {compensates for a bug in the carbon widgetset}
+          {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
         theFilterIndex := theFilterIndex + 1;
-         {$ENDIF} {may be removed in future versions}
-        if theFilterIndex = 11 then bell
-        else IPSForm.Image1.Picture.SaveToFile(theFileName);
+         {$ENDIF}{may be removed in future versions}
+        if theFilterIndex = 11 then
+          bell
+        else
+          IPSForm.Image1.Picture.SaveToFile(theFileName);
       finally
         ;
       end;
-    end
+  end
+  else if (theForm = ValuesPlot) or ((theForm = SimThyrToolbar) and
+    (gLastActiveCustomForm = ValuesPlot)) then
+  begin
+    bell;
+  end
   else
   begin
-    if theForm = SimThyrToolbar then
-      SaveDialog1.FilterIndex := 4
-    else if theForm = SimThyrLogWindow then
+    if (theForm = SimThyrLogWindow) or ((theForm = SimThyrToolbar) and
+      (gLastActiveCustomForm = SimThyrLogWindow)) then
+      SaveDialog1.FilterIndex := 1
+    else
+      SaveDialog1.FilterIndex := 4;
+    if SaveDialog1.Execute then
     begin
-      SaveDialog1.FilterIndex := 1;
-      if SaveDialog1.Execute then
-        begin
-          theFileName := SaveDialog1.FileName;
-          theFilterIndex := SaveDialog1.FilterIndex;
-        {$IFDEF LCLcarbon} {compensates for a bug in the carbon widgetset}
-          theFilterIndex := theFilterIndex + 1;
-        {$ENDIF} {may be removed in future versions}
-          case theFilterIndex of
-            1: theDelimiter := kTab;
-            2: if DecimalSeparator = ',' then
-                 theDelimiter := ';'
-               else theDelimiter := ',';
-            3: theDelimiter := 'd';
-            4: theDelimiter := ' ';
-          end;
-          case theFilterIndex of
-            1..3: SimThyrLogWindow.SaveGrid(theFileName, theDelimiter);
-            4: SaveScenario(theFilename);
-          end;
-        end;
-      end
-    else if theForm = ValuesPlot then
-    begin
-      bell;
+      theFileName    := SaveDialog1.FileName;
+      theFilterIndex := SaveDialog1.FilterIndex;
+        {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
+      theFilterIndex := theFilterIndex + 1;
+        {$ENDIF}{may be removed in future versions}
+      case theFilterIndex of
+        1: theDelimiter := kTab;
+        2: if DecimalSeparator = ',' then
+            theDelimiter := ';'
+          else
+            theDelimiter := ',';
+        3: theDelimiter := 'd';
+        4: theDelimiter := ' ';
+      end;
+      case theFilterIndex of
+        1..3: SimThyrLogWindow.SaveGrid(theFileName, theDelimiter);
+        4: SaveScenario(theFilename);
+      end;
     end;
   end;
 end;
@@ -453,19 +474,19 @@ end;
 
 procedure TSimThyrToolbar.StopToolButtonClick(Sender: TObject);
 begin
-  haltsim := true;
-  graphready := false;
+  haltsim := True;
+  graphready := False;
   nmax := 0;
   if SimThread <> nil then
-    begin
-      SimThread.WaitFor;  {ensure that simulation thread has completed last cycle}
-      SimThread.Terminate;
-    end;
+  begin
+    SimThread.WaitFor;  {ensure that simulation thread has completed last cycle}
+    SimThread.Terminate;
+  end;
   SetBaseVariables;
   SetLength(gResultMatrix, 0, 9);
   SimThyrLogWindow.InitGrid;
   ClearPrediction;
-  DrawPlot(true);
+  DrawPlot(True);
 end;
 
 procedure TSimThyrToolbar.ToolBar1Click(Sender: TObject);
@@ -484,7 +505,8 @@ begin
 end;
 
 procedure TSimThyrToolbar.PrintToolButtonClick(Sender: TObject);
-var theForm: TForm;
+var
+  theForm: TForm;
 begin
   theForm := Screen.ActiveForm;
   if theForm = ValuesPlot then
@@ -500,7 +522,8 @@ end;
 
 procedure TSimThyrToolbar.TornadoPlotItemClick(Sender: TObject);
 begin
-  TornadoPlotForm.Show;;
+  TornadoPlotForm.Show;
+  ;
 end;
 
 procedure TSimThyrToolbar.UndoMenuItemClick(Sender: TObject);
@@ -513,18 +536,38 @@ begin
   AboutWindow.ShowAbout;
 end;
 
+procedure TSimThyrToolbar.SetPosition;
+begin
+  with SimThyrToolbar do
+  begin
+    hide;
+    {$IFDEF LCLcarbon}
+    left   := 0;
+    top    := 20;
+    Width  := Screen.Width;
+    {$ELSE}
+    left   := 1;
+    top    := 0;
+    Width  := Screen.Width - 3;
+    {$ENDIF}
+    Height := Toolbar1.Height + 3;
+    WindowState := wsNormal;
+    AlphaBlend := False;
+  end;
+end;
+
 initialization
   {$I simthyrmain.lrs}
-  gParameterLabel[i_pos] := 'i';
-  gParameterLabel[t_pos] := 'Time';
-  gParameterLabel[TRH_pos] := 'Portal TRH';
+  gParameterLabel[i_pos]    := 'i';
+  gParameterLabel[t_pos]    := 'Time';
+  gParameterLabel[TRH_pos]  := 'Portal TRH';
   gParameterLabel[pTSH_pos] := 'Pituitary TSH';
-  gParameterLabel[TSH_pos] := 'Serum TSH';
-  gParameterLabel[TT4_pos] := 'Serum total T4';
-  gParameterLabel[FT4_pos] := 'Serum free T4';
-  gParameterLabel[TT3_pos] := 'Serum total T3';
-  gParameterLabel[FT3_pos] := 'Serum free T3';
-  gParameterLabel[cT3_pos] := 'Central T3';
-  for j := i_pos to cT3_pos do gParameterFactor[j] := 1;
+  gParameterLabel[TSH_pos]  := 'Serum TSH';
+  gParameterLabel[TT4_pos]  := 'Serum total T4';
+  gParameterLabel[FT4_pos]  := 'Serum free T4';
+  gParameterLabel[TT3_pos]  := 'Serum total T3';
+  gParameterLabel[FT3_pos]  := 'Serum free T3';
+  gParameterLabel[cT3_pos]  := 'Central T3';
+  for j := i_pos to cT3_pos do
+    gParameterFactor[j] := 1;
 end.
-

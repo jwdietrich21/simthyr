@@ -33,6 +33,7 @@ type
     UndoItem: TMenuItem;
     ValuesGrid: TStringGrid;
     procedure CopyCells;
+    procedure FormActivate(Sender: TObject);
     procedure InitGrid;
     procedure PopupMenu1Popup(Sender: TObject);
     procedure SaveGrid(theFileName: String; theDelimiter: Char);
@@ -76,6 +77,11 @@ end;
 procedure TSimThyrLogWindow.CopyCells;
 begin
   CutorCopyfromGrid(valuesGrid, false);
+end;
+
+procedure TSimThyrLogWindow.FormActivate(Sender: TObject);
+begin
+  gLastActiveCustomForm := SimThyrLogWindow;
 end;
 
 procedure TSimThyrLogWindow.InitGrid;

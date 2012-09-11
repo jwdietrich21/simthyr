@@ -50,6 +50,7 @@ type
     procedure DecreaseColorBoxChange(Sender: TObject);
     procedure DepParameterComboChange(Sender: TObject);
     procedure CopyItemClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure CopyTornado(Sender: TObject);
@@ -705,6 +706,11 @@ end;
 procedure TTornadoPlotForm.CopyItemClick(Sender: TObject);
 begin
   CopyTornado(Sender);
+end;
+
+procedure TTornadoPlotForm.FormActivate(Sender: TObject);
+begin
+  gLastActiveCustomForm := TornadoPlotForm;
 end;
 
 procedure TTornadoPlotForm.FormShow(Sender: TObject);

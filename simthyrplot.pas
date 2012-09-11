@@ -61,6 +61,7 @@ type
     procedure ComboBox1Change(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
     procedure CopyItemClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure UpdateTimeAxes;
     procedure FormShow(Sender: TObject);
@@ -389,6 +390,11 @@ end;
 procedure TValuesPlot.CopyItemClick(Sender: TObject);
 begin
   CopyChart(Sender);
+end;
+
+procedure TValuesPlot.FormActivate(Sender: TObject);
+begin
+  gLastActiveCustomForm := ValuesPlot;
 end;
 
 procedure TValuesPlot.PrintChart(Sender: TObject);
