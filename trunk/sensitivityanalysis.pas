@@ -71,7 +71,7 @@ type
     procedure MinSpinEditChange(Sender: TObject);
     procedure StrucParComboChange(Sender: TObject);
     procedure TSHColorBoxChange(Sender: TObject);
-    procedure CopyChart(Sender: TObject);
+    procedure CopyChart;
   private
     { private declarations }
   public
@@ -736,7 +736,7 @@ begin
   DrawOWSensitivityPlot(False);
 end;
 
-procedure TSensitivityAnalysisForm.CopyChart(Sender: TObject);
+procedure TSensitivityAnalysisForm.CopyChart;
 var
   {$IFDEF UNIX}
   theImage: TPortableNetworkGraphic;
@@ -770,7 +770,7 @@ end;
 
 procedure TSensitivityAnalysisForm.CopyItemClick(Sender: TObject);
 begin
-  CopyChart(Sender);
+  CopyChart;
 end;
 
 

@@ -68,7 +68,7 @@ type
     procedure Panel1Click(Sender: TObject);
     procedure Panel2Click(Sender: TObject);
     procedure PlotPanel2Click(Sender: TObject);
-    procedure CopyChart(Sender: TObject);
+    procedure CopyChart;
     procedure PrintChart(Sender: TObject);
     procedure FullScaleButton2Click(Sender: TObject);
     procedure FullScaleButton1Click(Sender: TObject);
@@ -354,7 +354,7 @@ begin
   PlotPanel2.Color := clWhite;
 end;
 
-procedure TValuesPlot.CopyChart(Sender: TObject);
+procedure TValuesPlot.CopyChart;
 var
   {$IFDEF UNIX}
   theImage: TPortableNetworkGraphic;
@@ -389,7 +389,7 @@ end;
 
 procedure TValuesPlot.CopyItemClick(Sender: TObject);
 begin
-  CopyChart(Sender);
+  CopyChart;
 end;
 
 procedure TValuesPlot.FormActivate(Sender: TObject);

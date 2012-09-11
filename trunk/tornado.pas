@@ -53,7 +53,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure CopyTornado(Sender: TObject);
+    procedure CopyTornado;
     procedure IncreaseColorBoxChange(Sender: TObject);
     procedure LegendPosComboChange(Sender: TObject);
     procedure RadioGroup1Click(Sender: TObject);
@@ -656,7 +656,7 @@ begin
   DrawTornadoPlot;
 end;
 
-procedure TTornadoPlotForm.CopyTornado(Sender: TObject);
+procedure TTornadoPlotForm.CopyTornado;
 var
   {$IFDEF UNIX}
   theImage: TPortableNetworkGraphic;
@@ -705,7 +705,7 @@ end;
 
 procedure TTornadoPlotForm.CopyItemClick(Sender: TObject);
 begin
-  CopyTornado(Sender);
+  CopyTornado;
 end;
 
 procedure TTornadoPlotForm.FormActivate(Sender: TObject);
