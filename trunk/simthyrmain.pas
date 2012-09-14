@@ -196,6 +196,7 @@ begin
   SimThyrToolbar.RunItem.ShortCut := ShortCut(VK_R, modifierKey);
   SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut := ShortCut(VK_E, modifierKey);
   SimThyrToolbar.TornadoPlotItem.ShortCut := ShortCut(VK_T, modifierKey);
+  SimThyrToolbar.IPSItem.ShortCut := ShortCut(VK_I, modifierKey);
 end;
 
 procedure AdaptLanguages;
@@ -429,7 +430,7 @@ begin
           {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
         theFilterIndex := theFilterIndex + 1;
          {$ENDIF}{may be removed in future versions}
-        if theFilterIndex = 11 then
+        if theFilterIndex = 8 then
           bell
         else
           IPSForm.Image1.Picture.SaveToFile(theFileName);

@@ -416,9 +416,12 @@ begin
          {$ENDIF}{may be removed in future versions}
         case theFilterIndex of
         2: gSelectedChart.SaveToBitmapFile(theFileName);
+        3: gSelectedChart.SaveToFile(TPixmap, theFileName);
         4: gSelectedChart.SaveToFile(TPortableNetworkGraphic, theFileName);
-        9: gSelectedChart.SaveToFile(TJPEGImage, theFileName);
-        11: bell;
+        5: gSelectedChart.SaveToFile(TPortableAnyMapGraphic, theFileName);
+        6: gSelectedChart.SaveToFile(TJPEGImage, theFileName);
+        7: gSelectedChart.SaveToFile(TTIFFImage, theFileName);
+        8: bell;
         otherwise bell;
         end;
       finally
