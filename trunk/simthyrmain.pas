@@ -440,7 +440,7 @@ begin
   else if (theForm = ValuesPlot) or ((theForm = SimThyrToolbar) and
     (gLastActiveCustomForm = ValuesPlot)) then
   begin
-    bell;
+    ValuesPlot.SaveChart;
   end
   else
   begin
