@@ -69,6 +69,7 @@ type
     procedure Panel2Click(Sender: TObject);
     procedure PlotPanel2Click(Sender: TObject);
     procedure CopyChart;
+    procedure SaveChart;
     procedure PrintChart(Sender: TObject);
     procedure FullScaleButton2Click(Sender: TObject);
     procedure FullScaleButton1Click(Sender: TObject);
@@ -92,6 +93,9 @@ function FormattedTime(x: real): Str255;
 procedure DrawPlot(empty: boolean);
 
 implementation
+
+uses
+  SimThyrMain;
 
 function AsTime(x: real): TDateTime;
   {Converts second values to TDateTime representation}
@@ -384,6 +388,42 @@ begin
     {$ELSE}
     gSelectedChart.CopyToClipboardBitmap;
     {$ENDIF}
+  end;
+end;
+
+procedure TValuesPlot.SaveChart;
+var
+  {$IFDEF UNIX}
+  theImage: TPortableNetworkGraphic;
+  {$ELSE}
+  theImage: TBitMap;
+  {$ENDIF}
+  theFileName:  string;
+  theFilterIndex: integer;
+  theWidth, theHeight: integer;
+begin
+  if gSelectedChart = nil then
+    bell
+  else
+  begin
+    SimThyrMain.SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
+    if SimThyrMain.SimThyrToolbar.SavePictureDialog1.Execute then
+      try
+        theFileName    := SimThyrMain.SimThyrToolbar.SavePictureDialog1.FileName;
+        theFilterIndex := SimThyrMain.SimThyrToolbar.SavePictureDialog1.FilterIndex;
+          {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
+        theFilterIndex := theFilterIndex + 1;
+         {$ENDIF}{may be removed in future versions}
+        case theFilterIndex of
+        2: gSelectedChart.SaveToBitmapFile(theFileName);
+        4: gSelectedChart.SaveToFile(TPortableNetworkGraphic, theFileName);
+        9: gSelectedChart.SaveToFile(TJPEGImage, theFileName);
+        11: bell;
+        otherwise bell;
+        end;
+      finally
+        ;
+      end;
   end;
 end;
 

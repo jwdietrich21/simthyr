@@ -62,11 +62,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="19"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="288"/>
-        <CursorPos X="67" Y="320"/>
+        <TopLine Value="415"/>
+        <CursorPos X="25" Y="443"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -105,10 +104,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPlot"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="364"/>
-        <CursorPos X="12" Y="392"/>
+        <TopLine Value="399"/>
+        <CursorPos X="44" Y="422"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -577,7 +577,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="45" Y="1"/>
-        <UsageCount Value="196"/>
+        <UsageCount Value="197"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit57>
@@ -680,7 +680,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="34" Y="1"/>
-        <UsageCount Value="175"/>
+        <UsageCount Value="176"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit70>
@@ -692,7 +692,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="55" Y="5"/>
-        <UsageCount Value="169"/>
+        <UsageCount Value="170"/>
         <Loaded Value="True"/>
       </Unit71>
       <Unit72>
@@ -703,7 +703,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="27" Y="1"/>
-        <UsageCount Value="163"/>
+        <UsageCount Value="164"/>
         <Loaded Value="True"/>
       </Unit72>
       <Unit73>
@@ -717,7 +717,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="45" Y="12"/>
-        <UsageCount Value="159"/>
+        <UsageCount Value="160"/>
         <Bookmarks Count="1">
           <Item0 X="1" Y="484" ID="8"/>
         </Bookmarks>
@@ -750,7 +750,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="47" Y="10"/>
-        <UsageCount Value="154"/>
+        <UsageCount Value="155"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit76>
@@ -893,7 +893,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="745"/>
         <CursorPos X="12" Y="773"/>
-        <UsageCount Value="82"/>
+        <UsageCount Value="83"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit94>
@@ -942,9 +942,9 @@
         <UnitName Value="tornado"/>
         <EditorIndex Value="15"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="21"/>
+        <TopLine Value="36"/>
         <CursorPos X="14" Y="708"/>
-        <UsageCount Value="53"/>
+        <UsageCount Value="54"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit100>
@@ -998,123 +998,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="392" Column="8" TopLine="364"/>
+        <Caret Line="469" Column="36" TopLine="441"/>
       </Position1>
       <Position2>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="408" Column="31" TopLine="380"/>
+        <Caret Line="453" Column="42" TopLine="331"/>
       </Position2>
       <Position3>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="430" Column="31" TopLine="402"/>
+        <Caret Line="10" Column="93" TopLine="1"/>
       </Position3>
       <Position4>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="435" Column="38" TopLine="407"/>
+        <Caret Line="65" Column="30" TopLine="37"/>
       </Position4>
       <Position5>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="449" Column="11" TopLine="421"/>
+        <Caret Line="78" Column="9" TopLine="50"/>
       </Position5>
       <Position6>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="451" Column="11" TopLine="423"/>
+        <Caret Line="83" Column="9" TopLine="55"/>
       </Position6>
       <Position7>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="452" Column="12" TopLine="424"/>
+        <Caret Line="84" Column="9" TopLine="56"/>
       </Position7>
       <Position8>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="454" Column="29" TopLine="426"/>
+        <Caret Line="109" Column="9" TopLine="81"/>
       </Position8>
       <Position9>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="455" Column="29" TopLine="427"/>
+        <Caret Line="110" Column="24" TopLine="82"/>
       </Position9>
       <Position10>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="469" Column="36" TopLine="441"/>
+        <Caret Line="134" Column="19" TopLine="106"/>
       </Position10>
       <Position11>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="453" Column="42" TopLine="331"/>
+        <Caret Line="135" Column="19" TopLine="107"/>
       </Position11>
       <Position12>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="10" Column="93" TopLine="1"/>
+        <Caret Line="189" Column="22" TopLine="161"/>
       </Position12>
       <Position13>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="65" Column="30" TopLine="37"/>
+        <Caret Line="392" Column="8" TopLine="364"/>
       </Position13>
       <Position14>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="78" Column="9" TopLine="50"/>
+        <Caret Line="408" Column="31" TopLine="380"/>
       </Position14>
       <Position15>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="83" Column="9" TopLine="55"/>
+        <Caret Line="32" Column="9" TopLine="15"/>
       </Position15>
       <Position16>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="84" Column="9" TopLine="56"/>
+        <Caret Line="36" Column="28" TopLine="15"/>
       </Position16>
       <Position17>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="109" Column="9" TopLine="81"/>
+        <Caret Line="96" Column="9" TopLine="68"/>
       </Position17>
       <Position18>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="110" Column="24" TopLine="82"/>
+        <Caret Line="114" Column="19" TopLine="86"/>
       </Position18>
       <Position19>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="134" Column="19" TopLine="106"/>
+        <Caret Line="115" Column="19" TopLine="87"/>
       </Position19>
       <Position20>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="135" Column="19" TopLine="107"/>
+        <Caret Line="194" Column="22" TopLine="166"/>
       </Position20>
       <Position21>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="189" Column="22" TopLine="161"/>
+        <Caret Line="291" Column="31" TopLine="263"/>
       </Position21>
       <Position22>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="392" Column="8" TopLine="364"/>
+        <Caret Line="429" Column="1" TopLine="411"/>
       </Position22>
       <Position23>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="408" Column="31" TopLine="380"/>
+        <Caret Line="431" Column="1" TopLine="411"/>
       </Position23>
       <Position24>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="32" Column="9" TopLine="15"/>
+        <Caret Line="433" Column="1" TopLine="411"/>
       </Position24>
       <Position25>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="36" Column="28" TopLine="15"/>
+        <Caret Line="429" Column="1" TopLine="411"/>
       </Position25>
       <Position26>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="96" Column="9" TopLine="68"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="392" Column="12" TopLine="390"/>
       </Position26>
       <Position27>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="114" Column="19" TopLine="86"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="394" Column="50" TopLine="390"/>
       </Position27>
       <Position28>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="115" Column="19" TopLine="87"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="98" Column="15" TopLine="86"/>
       </Position28>
       <Position29>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="194" Column="22" TopLine="166"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="407" Column="23" TopLine="392"/>
       </Position29>
       <Position30>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="291" Column="31" TopLine="263"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="410" Column="32" TopLine="392"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
