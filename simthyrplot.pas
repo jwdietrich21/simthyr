@@ -17,7 +17,8 @@ uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Arrow, Buttons, Menus, TAGraph,
   TASources, TATools, TASeries, TATransformations, TAStyles, TALegendPanel,
-  DateUtils, SimThyrTypes, SimThyrServices, HandleNotifier, Clipbrd, TAIntervalSources;
+  DateUtils, SimThyrTypes, SimThyrServices, HandleNotifier, Clipbrd,
+  TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas;
 
 type
 
@@ -393,19 +394,17 @@ end;
 
 procedure TValuesPlot.SaveChart;
 var
-  {$IFDEF UNIX}
-  theImage: TPortableNetworkGraphic;
-  {$ELSE}
-  theImage: TBitMap;
-  {$ENDIF}
   theFileName:  string;
   theFilterIndex: integer;
+  theStream: TFileStream;
+  theDrawer: IChartDrawer;
   theWidth, theHeight: integer;
 begin
   if gSelectedChart = nil then
     bell
   else
   begin
+    theStream := nil;
     SimThyrMain.SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
     if SimThyrMain.SimThyrToolbar.SavePictureDialog1.Execute then
       try
@@ -421,11 +420,17 @@ begin
         5: gSelectedChart.SaveToFile(TPortableAnyMapGraphic, theFileName);
         6: gSelectedChart.SaveToFile(TJPEGImage, theFileName);
         7: gSelectedChart.SaveToFile(TTIFFImage, theFileName);
-        8: bell;
+        8: begin
+             theStream := TFileStream.Create(theFileName, fmCreate);
+             theDrawer := TSVGDrawer.Create(theStream, true);
+             theDrawer.DoChartColorToFPColor := @ChartColorSysToFPColor;
+             with gSelectedChart do
+               Draw(theDrawer, Rect(0, 0, Width, Height));
+           end;
         otherwise bell;
         end;
       finally
-        ;
+        if theStream <> nil then theStream.Free;
       end;
   end;
 end;
