@@ -6,7 +6,7 @@ LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   +' the simulation.'#3'Top'#2'4'#5'Width'#3#133#3#21'HorzScrollBar.Visible'#8
   +#21'VertScrollBar.Visible'#8#5'Align'#7#5'alTop'#10'AlphaBlend'#9#15'AlphaBl'
   +'endValue'#2#0#7'Anchors'#11#0#8'AutoSize'#9#7'Caption'#6#7'SimThyr'#12'Clie'
-  +'ntHeight'#2'T'#11'ClientWidth'#3#133#3#14'DefaultMonitor'#7#10'dmMainForm'#8
+  +'ntHeight'#2'h'#11'ClientWidth'#3#133#3#14'DefaultMonitor'#7#10'dmMainForm'#8
   +'DockSite'#9#9'Icon.Data'#10#154'$'#0#0#150'$'#0#0#0#0#1#0#8#0'  '#2#0#1#0#1
   +#0'0'#1#0#0#134#0#0#0#16#16#2#0#1#0#1#0#176#0#0#0#182#1#0#0'  '#16#0#1#0#4#0
   +#232#2#0#0'f'#2#0#0#16#16#16#0#1#0#4#0'('#1#0#0'N'#5#0#0'  '#0#0#1#0#8#0#168

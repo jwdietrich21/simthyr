@@ -405,11 +405,11 @@ begin
   else
   begin
     theStream := nil;
-    SimThyrMain.SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
-    if SimThyrMain.SimThyrToolbar.SavePictureDialog1.Execute then
+    SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
+    if SimThyrToolbar.SavePictureDialog1.Execute then
       try
-        theFileName    := SimThyrMain.SimThyrToolbar.SavePictureDialog1.FileName;
-        theFilterIndex := SimThyrMain.SimThyrToolbar.SavePictureDialog1.FilterIndex;
+        theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
+        theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
           {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
         theFilterIndex := theFilterIndex + 1;
          {$ENDIF}{may be removed in future versions}

@@ -421,57 +421,39 @@ begin
   theForm := Screen.ActiveForm;
   if (theForm = IPSForm) or ((theForm = SimThyrToolbar) and
     (gLastActiveCustomForm = IPSForm)) then
-  begin
-    SavePictureDialog1.FilterIndex := 2;
-    if SavePictureDialog1.Execute then
-      try
-        theFileName    := SavePictureDialog1.FileName;
-        theFilterIndex := SavePictureDialog1.FilterIndex;
-          {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
-        theFilterIndex := theFilterIndex + 1;
-         {$ENDIF}{may be removed in future versions}
-        if theFilterIndex = 8 then
-          bell
-        else
-          IPSForm.Image1.Picture.SaveToFile(theFileName);
-      finally
-        ;
-      end;
-  end
+      IPSForm.SaveFigure
   else if (theForm = ValuesPlot) or ((theForm = SimThyrToolbar) and
     (gLastActiveCustomForm = ValuesPlot)) then
-  begin
-    ValuesPlot.SaveChart;
-  end
+      ValuesPlot.SaveChart
   else
-  begin
-    if (theForm = SimThyrLogWindow) or ((theForm = SimThyrToolbar) and
-      (gLastActiveCustomForm = SimThyrLogWindow)) then
-      SaveDialog1.FilterIndex := 1
-    else
-      SaveDialog1.FilterIndex := 4;
-    if SaveDialog1.Execute then
     begin
-      theFileName    := SaveDialog1.FileName;
-      theFilterIndex := SaveDialog1.FilterIndex;
-        {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
-      theFilterIndex := theFilterIndex + 1;
-        {$ENDIF}{may be removed in future versions}
-      case theFilterIndex of
-        1: theDelimiter := kTab;
-        2: if DecimalSeparator = ',' then
-            theDelimiter := ';'
-          else
-            theDelimiter := ',';
-        3: theDelimiter := 'd';
-        4: theDelimiter := ' ';
-      end;
-      case theFilterIndex of
-        1..3: SimThyrLogWindow.SaveGrid(theFileName, theDelimiter);
-        4: SaveScenario(theFilename);
+      if (theForm = SimThyrLogWindow) or ((theForm = SimThyrToolbar) and
+      (gLastActiveCustomForm = SimThyrLogWindow)) then
+        SaveDialog1.FilterIndex := 1
+      else {any other window}
+        SaveDialog1.FilterIndex := 4;
+      if SaveDialog1.Execute then
+      begin
+        theFileName    := SaveDialog1.FileName;
+        theFilterIndex := SaveDialog1.FilterIndex;
+          {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
+        theFilterIndex := theFilterIndex + 1;
+          {$ENDIF}{may be removed in future versions}
+        case theFilterIndex of
+          1: theDelimiter := kTab;
+          2: if DecimalSeparator = ',' then
+              theDelimiter := ';'
+            else
+              theDelimiter := ',';
+          3: theDelimiter := 'd';
+          4: theDelimiter := ' ';
+        end;
+        case theFilterIndex of
+          1..3: SimThyrLogWindow.SaveGrid(theFileName, theDelimiter);
+          4: SaveScenario(theFilename);
+        end;
       end;
     end;
-  end;
 end;
 
 procedure TSimThyrToolbar.OWSensitivityAnalysisItemClick(Sender: TObject);
