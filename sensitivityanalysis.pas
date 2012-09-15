@@ -17,7 +17,8 @@ uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, Spin, Buttons, ExtCtrls, ColorBox, ComCtrls, TAGraph, TASources,
   TATools, TASeries, TATransformations, TAStyles, TALegendPanel, SimThyrTypes,
-  SimThyrServices, SimThyrPrediction, Clipbrd, Menus;
+  SimThyrServices, SimThyrPrediction, Clipbrd, Menus,
+  TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas;
 
 const
   MAX_SERIES = 8;
@@ -72,6 +73,7 @@ type
     procedure StrucParComboChange(Sender: TObject);
     procedure TSHColorBoxChange(Sender: TObject);
     procedure CopyChart;
+    procedure SaveChart;
   private
     { private declarations }
   public
@@ -97,6 +99,9 @@ procedure RestoreStrucPars;
 procedure DrawOWSensitivityPlot(empty: boolean);
 
 implementation
+
+uses
+  SimThyrMain;
 
 procedure SetStandardStrucParBoundaries(factor1, factor2: real);
 {sets the initial boundaries to useful values}
@@ -749,7 +754,7 @@ begin
     bell
   else
   begin
-    {gSelectedChart.CopyToClipboardBitmap doesn't work on Mac OS X}
+    {Chart1.CopyToClipboardBitmap doesn't work on Mac OS X}
     {$IFDEF UNIX}
     theImage := TPortableNetworkGraphic.Create;
     try
@@ -773,6 +778,48 @@ begin
   CopyChart;
 end;
 
+procedure TSensitivityAnalysisForm.SaveChart;
+var
+  theFileName:  string;
+  theFilterIndex: integer;
+  theStream: TFileStream;
+  theDrawer: IChartDrawer;
+  theWidth, theHeight: integer;
+begin
+  if Chart1 = nil then
+    bell
+  else
+  begin
+    theStream := nil;
+    SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
+    if SimThyrToolbar.SavePictureDialog1.Execute then
+      try
+        theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
+        theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
+         {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
+        theFilterIndex := theFilterIndex + 1;
+         {$ENDIF}{may be removed in future versions}
+        case theFilterIndex of
+        2: Chart1.SaveToBitmapFile(theFileName);
+        3: Chart1.SaveToFile(TPixmap, theFileName);
+        4: Chart1.SaveToFile(TPortableNetworkGraphic, theFileName);
+        5: Chart1.SaveToFile(TPortableAnyMapGraphic, theFileName);
+        6: Chart1.SaveToFile(TJPEGImage, theFileName);
+        7: Chart1.SaveToFile(TTIFFImage, theFileName);
+        8: begin
+             theStream := TFileStream.Create(theFileName, fmCreate);
+             theDrawer := TSVGDrawer.Create(theStream, true);
+             theDrawer.DoChartColorToFPColor := @ChartColorSysToFPColor;
+             with Chart1 do
+               Draw(theDrawer, Rect(0, 0, Width, Height));
+           end;
+        otherwise bell;
+        end;
+      finally
+        if theStream <> nil then theStream.Free;
+      end;
+  end;
+end;
 
 initialization
   {$I sensitivityanalysis.lrs}

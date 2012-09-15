@@ -425,6 +425,9 @@ begin
   else if (theForm = ValuesPlot) or ((theForm = SimThyrToolbar) and
     (gLastActiveCustomForm = ValuesPlot)) then
       ValuesPlot.SaveChart
+  else if (theForm = SensitivityAnalysisForm) or ((theForm = SimThyrToolbar) and
+      (gLastActiveCustomForm = SensitivityAnalysisForm)) then
+        SensitivityAnalysisForm.SaveChart
   else
     begin
       if (theForm = SimThyrLogWindow) or ((theForm = SimThyrToolbar) and
