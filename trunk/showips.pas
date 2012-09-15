@@ -32,6 +32,7 @@ type
     procedure CopyImage;
     procedure CopyItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure SaveFigure;
     procedure FormCreate(Sender: TObject);
     private
     { private declarations }
@@ -43,6 +44,9 @@ var
   IPSForm: TIPSForm;
 
 implementation
+
+uses
+  SimThyrMain;
 
 procedure TIPSForm.CopyImage;
 begin
@@ -58,6 +62,29 @@ procedure TIPSForm.FormActivate(Sender: TObject);
 begin
   gLastActiveCustomForm := IPSForm;
 end;
+
+procedure TIPSForm.SaveFigure;
+var
+  theFileName:  string;
+  theFilterIndex: integer;
+begin
+  SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
+  if SimThyrToolbar.SavePictureDialog1.Execute then
+    try
+      theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
+      theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
+        {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
+      theFilterIndex := theFilterIndex + 1;
+       {$ENDIF}{may be removed in future versions}
+      if theFilterIndex = 8 then
+        bell
+      else
+        IPSForm.Image1.Picture.SaveToFile(theFileName);
+    except
+      bell;
+    end;
+end;
+
 
 procedure TIPSForm.FormCreate(Sender: TObject);
 begin

@@ -12,7 +12,7 @@ object SimThyrToolbar: TSimThyrToolbar
   Anchors = []
   AutoSize = True
   Caption = 'SimThyr'
-  ClientHeight = 84
+  ClientHeight = 104
   ClientWidth = 901
   DefaultMonitor = dmMainForm
   DockSite = True
