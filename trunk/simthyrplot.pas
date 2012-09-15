@@ -410,7 +410,7 @@ begin
       try
         theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
         theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
-          {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
+         {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
         theFilterIndex := theFilterIndex + 1;
          {$ENDIF}{may be removed in future versions}
         case theFilterIndex of
