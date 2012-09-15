@@ -15,7 +15,7 @@
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="1"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="116"/>
+      <BuildNr Value="118"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Project" FileDescription="SimThyr" InternalName="SimThyr 3.1.1" LegalCopyright="1994-2012 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.1.1"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -49,8 +49,8 @@
         <UnitName Value="SimThyr"/>
         <EditorIndex Value="20"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="60" Y="12"/>
+        <TopLine Value="95"/>
+        <CursorPos X="39" Y="107"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -62,10 +62,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="19"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="408"/>
-        <CursorPos X="30" Y="433"/>
+        <TopLine Value="538"/>
+        <CursorPos X="63" Y="571"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -104,7 +105,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPlot"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
         <TopLine Value="400"/>
@@ -577,7 +577,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="45" Y="1"/>
-        <UsageCount Value="199"/>
+        <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit57>
@@ -680,7 +680,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="34" Y="1"/>
-        <UsageCount Value="178"/>
+        <UsageCount Value="179"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit70>
@@ -692,7 +692,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="55" Y="5"/>
-        <UsageCount Value="172"/>
+        <UsageCount Value="173"/>
         <Loaded Value="True"/>
       </Unit71>
       <Unit72>
@@ -703,7 +703,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="27" Y="1"/>
-        <UsageCount Value="166"/>
+        <UsageCount Value="167"/>
         <Loaded Value="True"/>
       </Unit72>
       <Unit73>
@@ -717,7 +717,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="45" Y="12"/>
-        <UsageCount Value="162"/>
+        <UsageCount Value="163"/>
         <Bookmarks Count="1">
           <Item0 X="1" Y="484" ID="8"/>
         </Bookmarks>
@@ -750,7 +750,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="47" Y="10"/>
-        <UsageCount Value="157"/>
+        <UsageCount Value="158"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit76>
@@ -893,7 +893,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="745"/>
         <CursorPos X="12" Y="773"/>
-        <UsageCount Value="85"/>
+        <UsageCount Value="86"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit94>
@@ -944,7 +944,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="615"/>
         <CursorPos X="14" Y="708"/>
-        <UsageCount Value="56"/>
+        <UsageCount Value="57"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit100>
