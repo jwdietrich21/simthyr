@@ -730,10 +730,15 @@ end;
 
 procedure TSensitivityAnalysisForm.StrucParComboChange(Sender: TObject);
 begin
-  SetBottomAxisCaption;
-  {ItemIndex is evaluated in the SetStandardStrucParBoundaries and plot routine}
-  SetStandardStrucParBoundaries(1 / 3, 3);
-  DrawOWSensitivityPlot(False);
+  if SensitivityAnalysisForm.StrucParCombo.Text <> '' then
+  begin
+    SensitivityAnalysisForm.StrucParCombo.Enabled := false; {fixes error #8}
+    SetBottomAxisCaption;
+    {ItemIndex is evaluated in the SetStandardStrucParBoundaries and plot routine}
+    SetStandardStrucParBoundaries(1 / 3, 3);
+    DrawOWSensitivityPlot(False);
+    SensitivityAnalysisForm.StrucParCombo.Enabled := true;
+  end;
 end;
 
 procedure TSensitivityAnalysisForm.TSHColorBoxChange(Sender: TObject);
