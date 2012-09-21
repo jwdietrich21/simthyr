@@ -532,15 +532,18 @@ begin
 end;
 
 procedure TSimThyrToolbar.SetPosition;
+{sets the toolbar to the screen's top margin}
 begin
   with SimThyrToolbar do
   begin
     hide;
     {$IFDEF LCLcarbon}
+    WindowState := wsMaximized;
     left   := 0;
     top    := 20;
     Width  := Screen.Width;
     {$ELSE}
+    WindowState := wsNormal;
     left   := 1;
     top    := 0;
     Width  := Screen.Width - 3;

@@ -1,7 +1,7 @@
 object TornadoPlotForm: TTornadoPlotForm
-  Left = 312
+  Left = 309
   Height = 465
-  Top = 244
+  Top = 243
   Width = 706
   AlphaBlendValue = 0
   Caption = 'Tornado Plot'
@@ -32,8 +32,8 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 2
-    ClientHeight = 187
-    ClientWidth = 177
+    ClientHeight = 191
+    ClientWidth = 181
     Columns = 2
     Items.Strings = (
       'GD1'
@@ -71,7 +71,7 @@ object TornadoPlotForm: TTornadoPlotForm
     Top = 407
     Width = 185
     Anchors = [akRight, akBottom]
-    ItemHeight = 0
+    ItemHeight = 13
     ItemIndex = 0
     Items.Strings = (
       'Dependent parameter...'
@@ -88,8 +88,8 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
-    Top = 450
+    Height = 20
+    Top = 445
     Width = 706
     Panels = <>
   end
@@ -109,8 +109,8 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 62
-    ClientWidth = 177
+    ClientHeight = 66
+    ClientWidth = 181
     ItemIndex = 0
     Items.Strings = (
       'Fraction'
@@ -196,7 +196,7 @@ object TornadoPlotForm: TTornadoPlotForm
     Top = 376
     Width = 185
     Anchors = [akRight, akBottom]
-    ItemHeight = 0
+    ItemHeight = 13
     ItemIndex = 0
     Items.Strings = (
       'Legend position...'
@@ -211,9 +211,9 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object DecreaseColorBox: TColorBox
     Left = 506
-    Height = 20
+    Height = 22
     Hint = 'Select color for decresing indepenent variable here.'
-    Top = 320
+    Top = 318
     Width = 185
     DefaultColorColor = clGray
     Selected = clGray
@@ -226,9 +226,9 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object IncreaseColorBox: TColorBox
     Left = 506
-    Height = 20
+    Height = 22
     Hint = 'Select color for incresing indepenent variable here.'
-    Top = 344
+    Top = 342
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 16

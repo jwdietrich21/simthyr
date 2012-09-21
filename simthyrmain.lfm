@@ -12,7 +12,7 @@ object SimThyrToolbar: TSimThyrToolbar
   Anchors = []
   AutoSize = True
   Caption = 'SimThyr'
-  ClientHeight = 60
+  ClientHeight = 41
   ClientWidth = 691
   DefaultMonitor = dmMainForm
   DockSite = True
@@ -315,10 +315,8 @@ object SimThyrToolbar: TSimThyrToolbar
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  ShowInTaskBar = stAlways
   LCLVersion = '1.0.1.3'
   Visible = True
-  WindowState = wsMaximized
   object ToolBar1: TToolBar
     Left = 0
     Height = 26
