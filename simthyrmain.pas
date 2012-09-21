@@ -428,6 +428,9 @@ begin
   else if (theForm = SensitivityAnalysisForm) or ((theForm = SimThyrToolbar) and
       (gLastActiveCustomForm = SensitivityAnalysisForm)) then
         SensitivityAnalysisForm.SaveChart
+  else if (theForm = TornadoPlotForm) or ((theForm = SimThyrToolbar) and
+      (gLastActiveCustomForm = TornadoPlotForm)) then
+        TornadoPlotForm.SaveChart
   else
     begin
       if (theForm = SimThyrLogWindow) or ((theForm = SimThyrToolbar) and
