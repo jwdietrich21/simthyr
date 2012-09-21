@@ -18,7 +18,7 @@ uses
   Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, Menus, TAGraph, TAStyles,
   TASeries, TASources, TATools, TATransformations, TALegend, TALegendPanel,
   SimThyrServices, Sensitivityanalysis, SimThyrPrediction, Clipbrd, Buttons,
-  ColorBox;
+  ColorBox, TADrawerSVG, TADrawUtils, TADrawerCanvas;
 
 type
 
@@ -57,6 +57,7 @@ type
     procedure IncreaseColorBoxChange(Sender: TObject);
     procedure LegendPosComboChange(Sender: TObject);
     procedure RadioGroup1Click(Sender: TObject);
+    procedure SaveChart;
   private
     { private declarations }
   public
@@ -77,7 +78,8 @@ procedure DrawTornadoPlot;
 
 implementation
 
-uses TACustomSeries;
+uses
+  SimThyrMain, TACustomSeries;
 
 { TTornadoPlotForm }
 
@@ -706,6 +708,49 @@ end;
 procedure TTornadoPlotForm.CopyItemClick(Sender: TObject);
 begin
   CopyTornado;
+end;
+
+procedure TTornadoPlotForm.SaveChart;
+var
+  theFileName:  string;
+  theFilterIndex: integer;
+  theStream: TFileStream;
+  theDrawer: IChartDrawer;
+  theWidth, theHeight: integer;
+begin
+  if Chart1 = nil then
+    bell
+  else
+  begin
+    theStream := nil;
+    SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
+    if SimThyrToolbar.SavePictureDialog1.Execute then
+      try
+        theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
+        theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
+         {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
+        theFilterIndex := theFilterIndex + 1;
+         {$ENDIF}{may be removed in future versions}
+        case theFilterIndex of
+        2: Chart1.SaveToBitmapFile(theFileName);
+        3: Chart1.SaveToFile(TPixmap, theFileName);
+        4: Chart1.SaveToFile(TPortableNetworkGraphic, theFileName);
+        5: Chart1.SaveToFile(TPortableAnyMapGraphic, theFileName);
+        6: Chart1.SaveToFile(TJPEGImage, theFileName);
+        7: Chart1.SaveToFile(TTIFFImage, theFileName);
+        8: begin
+             theStream := TFileStream.Create(theFileName, fmCreate);
+             theDrawer := TSVGDrawer.Create(theStream, true);
+             theDrawer.DoChartColorToFPColor := @ChartColorSysToFPColor;
+             with Chart1 do
+               Draw(theDrawer, Rect(0, 0, Width, Height));
+           end;
+        otherwise bell;
+        end;
+      finally
+        if theStream <> nil then theStream.Free;
+      end;
+  end;
 end;
 
 procedure TTornadoPlotForm.FormActivate(Sender: TObject);
