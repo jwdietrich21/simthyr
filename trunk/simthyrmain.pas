@@ -52,12 +52,14 @@ type
     Divider_1_3:  TMenuItem;
     Divider_1_2:  TMenuItem;
     AboutModelItem: TMenuItem;
-    Divider_3_3:  TMenuItem;
+    Divider_3_4:  TMenuItem;
     ChangeParItem: TMenuItem;
     IPSItem:      TMenuItem;
     LogItem:      TMenuItem;
     IPSItem2:     TMenuItem;
-    Divider_3_2:  TMenuItem;
+    Divider_3_3:  TMenuItem;
+    Divide_3_1: TMenuItem;
+    PredEqItem: TMenuItem;
     OWSensitivityAnalysisItem: TMenuItem;
     TornadoPlotItem: TMenuItem;
     TornadoPlotItem2: TMenuItem;
@@ -70,7 +72,7 @@ type
     WindowMenu:   TMenuItem;
     PauseItem:    TMenuItem;
     StopItem:     TMenuItem;
-    Divider_3_1:  TMenuItem;
+    Divider_3_2:  TMenuItem;
     RunItem:      TMenuItem;
     SimulationMenu: TMenuItem;
     PrintItem:    TMenuItem;
@@ -128,6 +130,7 @@ type
     procedure ParametersToolButtonClick(Sender: TObject);
     procedure PauseToolButtonClick(Sender: TObject);
     procedure PlotItemClick(Sender: TObject);
+    procedure PredEqItemClick(Sender: TObject);
     procedure PredictionItemClick(Sender: TObject);
     procedure QuitMenuItemClick(Sender: TObject);
     procedure RunItemClick(Sender: TObject);
@@ -194,6 +197,7 @@ begin
   SimThyrToolbar.CopyMenuItem.ShortCut := ShortCut(VK_C, modifierKey);
   SimThyrToolbar.PasteMenuItem.ShortCut := ShortCut(VK_V, modifierKey);
   SimThyrToolbar.RunItem.ShortCut := ShortCut(VK_R, modifierKey);
+  SimThyrToolbar.PredEqItem.ShortCut := ShortCut(VK_L, modifierKey);
   SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut := ShortCut(VK_E, modifierKey);
   SimThyrToolbar.TornadoPlotItem.ShortCut := ShortCut(VK_T, modifierKey);
   SimThyrToolbar.IPSItem.ShortCut := ShortCut(VK_I, modifierKey);
@@ -381,6 +385,12 @@ end;
 procedure TSimThyrToolbar.PlotItemClick(Sender: TObject);
 begin
   ValuesPlot.Show;
+end;
+
+procedure TSimThyrToolbar.PredEqItemClick(Sender: TObject);
+begin
+  PredictEquilibrium;
+  ShowPredictedValues;
 end;
 
 procedure TSimThyrToolbar.PredictionItemClick(Sender: TObject);

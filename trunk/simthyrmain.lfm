@@ -12,7 +12,7 @@ object SimThyrToolbar: TSimThyrToolbar
   Anchors = []
   AutoSize = True
   Caption = 'SimThyr'
-  ClientHeight = 41
+  ClientHeight = 60
   ClientWidth = 691
   DefaultMonitor = dmMainForm
   DockSite = True
@@ -1148,7 +1148,15 @@ object SimThyrToolbar: TSimThyrToolbar
         ImageIndex = 12
         OnClick = StopToolButtonClick
       end
-      object Divider_3_1: TMenuItem
+      object Divide_3_1: TMenuItem
+        Caption = '-'
+      end
+      object PredEqItem: TMenuItem
+        Caption = 'Predict Equilibrium'
+        ShortCut = 16460
+        OnClick = PredEqItemClick
+      end
+      object Divider_3_2: TMenuItem
         Caption = '-'
       end
       object ChangeParItem: TMenuItem
@@ -1192,7 +1200,7 @@ object SimThyrToolbar: TSimThyrToolbar
         ImageIndex = 14
         OnClick = ParametersToolButtonClick
       end
-      object Divider_3_2: TMenuItem
+      object Divider_3_3: TMenuItem
         Caption = '-'
       end
       object OWSensitivityAnalysisItem: TMenuItem
@@ -1205,7 +1213,7 @@ object SimThyrToolbar: TSimThyrToolbar
         ShortCut = 4180
         OnClick = TornadoPlotItemClick
       end
-      object Divider_3_3: TMenuItem
+      object Divider_3_4: TMenuItem
         Caption = '-'
       end
       object AboutModelItem: TMenuItem
