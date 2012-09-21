@@ -32,8 +32,8 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 2
-    ClientHeight = 191
-    ClientWidth = 181
+    ClientHeight = 187
+    ClientWidth = 177
     Columns = 2
     Items.Strings = (
       'GD1'
@@ -71,7 +71,7 @@ object TornadoPlotForm: TTornadoPlotForm
     Top = 407
     Width = 185
     Anchors = [akRight, akBottom]
-    ItemHeight = 13
+    ItemHeight = 0
     ItemIndex = 0
     Items.Strings = (
       'Dependent parameter...'
@@ -88,8 +88,8 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 20
-    Top = 445
+    Height = 15
+    Top = 450
     Width = 706
     Panels = <>
   end
@@ -109,8 +109,8 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 66
-    ClientWidth = 181
+    ClientHeight = 62
+    ClientWidth = 177
     ItemIndex = 0
     Items.Strings = (
       'Fraction'
@@ -196,7 +196,7 @@ object TornadoPlotForm: TTornadoPlotForm
     Top = 376
     Width = 185
     Anchors = [akRight, akBottom]
-    ItemHeight = 13
+    ItemHeight = 0
     ItemIndex = 0
     Items.Strings = (
       'Legend position...'
@@ -211,9 +211,9 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object DecreaseColorBox: TColorBox
     Left = 506
-    Height = 22
+    Height = 20
     Hint = 'Select color for decresing indepenent variable here.'
-    Top = 318
+    Top = 320
     Width = 185
     DefaultColorColor = clGray
     Selected = clGray
@@ -226,9 +226,9 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object IncreaseColorBox: TColorBox
     Left = 506
-    Height = 22
+    Height = 20
     Hint = 'Select color for incresing indepenent variable here.'
-    Top = 342
+    Top = 344
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 16

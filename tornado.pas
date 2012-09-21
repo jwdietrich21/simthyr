@@ -617,32 +617,6 @@ begin
   DrawTornadoPlot;
 end;
 
-{function TTornadoPlotForm.GetFileName(const AExt: String): String;  // for a future extension
-begin
-  with SaveDialog1 do begin
-    FileName := '';
-    DefaultExt := AExt;
-    if not Execute then Abort;
-    Result := FileName;
-  end;
-end;}
-
-{procedure TTornadoPlotForm.SaveAsSVG(Sender: TObject); // for a future extension
-var
-  fs: TFileStream;
-  id: IChartDrawer;
-begin
-  fs := TFileStream.Create(GetFileName('svg'), fmCreate);
-  try
-    id := TSVGDrawer.Create(fs, true);
-    id.DoChartColorToFPColor := @ChartColorSysToFPColor;
-    with Chart1 do
-      Draw(id, Rect(0, 0, Width, Height));
-  finally
-    fs.Free;
-  end;
-end;   }
-
 procedure TTornadoPlotForm.CheckGroup1ItemClick(Sender: TObject; Index: integer);
 begin
   DrawTornadoPlot;
