@@ -253,7 +253,6 @@ end;
 procedure TSimulationThread.Execute; {Main simulation thread}
 var
   theContents: tResultContent;
-  j: integer;
   circadianControl: real;
   nmaxString, iString: string;
 begin
@@ -359,9 +358,7 @@ begin
   SimThyrLogWindow.ProgressBar1.Position := 0;
 end;
 
-procedure simulate;
-var
-  theContents: tResultContent;
+procedure simulate; {Creates and starts simulation thread}
 begin
   SetStatusBarPanel0('   0:', IntToStr(nmax));
   graphready := false;

@@ -15,7 +15,7 @@ interface
 
 uses
   Classes, SysUtils, Grids, StdCtrls, Dialogs, Forms, SimThyrTypes,
-  DOM, XMLRead, XMLWrite, FileUtil
+  DOM, XMLRead, FileUtil
       {$IFDEF win32}
   , Windows, Win32Proc
   {$ELSE}
@@ -62,9 +62,6 @@ implementation
 uses SimThyrLog;
 
 function OSVersion: Str255; {returns the major version of the operating system}
-var
-  osErr: integer;
-  response: longint;
 begin
   {$IFDEF LCLcarbon}
   OSVersion := 'Mac OS X 10.';
@@ -191,8 +188,7 @@ end;
 procedure writeTableCells(theTable: TStringGrid; theContents: tResultContent);
 {writes a vector of values to the last line of a StringGrid}
 var
-  j, ignored: integer;
-  cSize: TPoint;
+  j: integer;
   theCell: TableCell;
   theString: Str255;
 begin
