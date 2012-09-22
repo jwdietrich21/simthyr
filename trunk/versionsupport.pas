@@ -1,4 +1,5 @@
 Unit VersionSupport;
+
 {From Mike Thompson}
 {http://www.lazarus.freepascal.org/index.php/topic,13957.0.html}
 
@@ -257,4 +258,4 @@ Initialization
 Finalization
   If Assigned(FInfo) Then
     FInfo.Free;
-End.
+End.

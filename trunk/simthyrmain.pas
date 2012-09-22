@@ -1,9 +1,9 @@
 unit SimThyrMain;
 
- { SimThyr Project }
- { (c) J. W. Dietrich, 1994 - 2012 }
- { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
- { (c) Ruhr University of Bochum 2005 - 2012 }
+{ SimThyr Project }
+{ (c) J. W. Dietrich, 1994 - 2012 }
+{ (c) Ludwig Maximilian University of Munich 1995 - 2002 }
+{ (c) Ruhr University of Bochum 2005 - 2012 }
 
 { This unit provides global GUI functions, toolbar and menubar handling }
 
@@ -341,7 +341,6 @@ end;
 procedure TSimThyrToolbar.OpenToolButtonClick(Sender: TObject);
 var
   theFileName: string;
-  theSize:     int64;
   theFilterIndex: integer;
 begin
   OpenDialog1.FilterIndex := 2;

@@ -27,7 +27,6 @@ type
   TValuesPlot = class(TForm)
     Button1: TButton;
     Chart1: TChart;
-    Chart1LineSeries1: TLineSeries;
     Chart2: TChart;
     ColorButton1: TColorButton;
     ColorListBox1: TColorListBox;
