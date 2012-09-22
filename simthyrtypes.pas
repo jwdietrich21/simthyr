@@ -1,4 +1,5 @@
 unit SimThyrTypes;
+
 { SimThyr Project }
 { (c) J. W. Dietrich, 1994 - 2012 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -89,7 +90,8 @@ type
  tmode = (integerMode, realMode);
 
 var
- nmax, nmax_old, tmax, tt, gridrows: integer;
+ nmax_old, tmax, tt, gridrows: integer;
+ nmax: longint;
  Werte: array[1..MAX_VARS, 1..MAX_N] of real;
  PrefixLabel, T4UnitLabel, T3UnitLabel: array[0..MAXFACTORS - 1] of Str3;
  PrefixFactor, T4UnitFactor, T3UnitFactor: array[0..MAXFACTORS - 1] of real;

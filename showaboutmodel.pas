@@ -1,4 +1,5 @@
 unit ShowAboutModel;
+
 { SimThyr Project }
 { (c) J. W. Dietrich, 1994 - 2011 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }

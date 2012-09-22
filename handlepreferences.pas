@@ -1,4 +1,5 @@
 unit HandlePreferences;
+
 { SimThyr Project }
 { (c) J. W. Dietrich, 1994 - 2012 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -559,8 +560,8 @@ end;
 procedure ReadPreferences; {should not be called before PreferencesDialog has been created}
 var
   Doc: TXMLDocument;
-  RootNode, theNode: TDOMNode;
-  theFileName, theString: String;
+  RootNode: TDOMNode;
+  theFileName: String;
 begin
   theFileName := GetPreferencesFile;
   if FileExists(theFileName) then
@@ -606,7 +607,7 @@ var
   theFileName, PreferencesFolder: String;
   Doc: TXMLDocument;
   StartComment: TDOMComment;
-  RootNode, ElementNode, ItemNode, TextNode: TDOMNode;
+  RootNode, ElementNode: TDOMNode;
 begin
   theFileName := GetPreferencesFile;
   PreferencesFolder := GetPreferencesFolder;

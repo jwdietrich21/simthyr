@@ -1,4 +1,5 @@
 unit Simulator;
+
 { SimThyr Project }
 { (c) J. W. Dietrich, 1994 - 2012 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -31,8 +32,9 @@ type
 
 var
   xt1, xt2, xt22, xt3, xt4: TQueue_xt;
-  i, nt1, nt2, nt22, nt3, nt4: integer;
+  nt1, nt2, nt22, nt3, nt4: integer;
   i2, rastergap_text, rastergap_werte: integer;
+  i: longint;
   SimCS: TCriticalSection;
   SimThread: TSimulationThread;
 
@@ -123,6 +125,7 @@ implementation
  end;
 
  procedure SetBaseVariables;
+ { set initial values for hormone levels etc.}
  begin
   i := 1;
   t := 0;
@@ -158,50 +161,50 @@ implementation
 
  procedure StandardValues;
  begin
-{ Set parameters and initial values }
-  TRHs := 2500;                {ng/l		endogenious TRH, according to Rondeel et al. 1988}
+{ Set initial values for structure parameters and time constants }
+  TRHs := 2500;                {ng/l, endogenious TRH, according to Rondeel et al. 1988}
   SetBaseVariables;
 
 {Reference values:}
-{TRH: 5 — 6 ng/l im peripheren Blut, ca. 2000 ng/l im Portalsystem}
-{TSH: 0,4 — 4 mU/l oder 9 — 29 µmol/l}
-{TT4: 4,5 — 10 µg/dl oder 57,9 — 128,7 nmol/l}
-{FT4: 0,8 — 1,8 ng/dl oder 10 — 23 pmol/l}
-{TT3: 80 — 180 ng/dl oder 1,23 — 2,77 nmol/l}
-{FT3: 2,3 — 4,2 pg/ml oder 3,5 — 6,5 µmol/l}
+{TRH: 5 — 6 ng/l in peripheral plasma, ca. 2000 ng/l in portal plasma}
+{TSH: 0,4 — 4 mU/l or 9 — 29 µmol/l}
+{TT4: 4,5 — 10 µg/dl or 57,9 — 128,7 nmol/l}
+{FT4: 0,8 — 1,8 ng/dl or 10 — 23 pmol/l}
+{TT3: 80 — 180 ng/dl or 1,23 — 2,77 nmol/l}
+{FT3: 2,3 — 4,2 pg/ml or 3,5 — 6,5 µmol/l}
 
 {Transfer parameters:}
-  alphaR := 0.4;               {/l			Verdünnungsfaktor für TRH bei TRH-Test, wie alphaS}
-  alphaS := 0.4;               {/l			bei V0 = 2.5l (Peptidhormon, das sich nur im peripheren Plasma verteilt)}
-  betaS := 2.3e-4;             {/s		bei HWZ von ca. 50 Min. [Li et al. 1995, Odell et al. 1967]}
-  alphaS2 := 2.6e5;            {/l			bei V0 = 3,8µl (errechnet u. a. nach Edelman 1959)}
-  betaS2 := 140;               {/s		Kinetik primär unbekannt, Analogieschluß aus typ. Rezeptorpotentialen, entspricht HWZ von 5 ms}
-  dH := 47e-9;                 {mol/l		[Le Dafniet et al. 1994]: 47 nmol/l}
-  dR := 0.1e-9;                {mol/l		[Vybok et al. 1994, Lazar et al., 1990]}
-  GR := 1;                     {mol/s	auf 1 normiert, da Rückkoppelungsstärke durch LS quantifiziert}
-  SS := 100;                   {l/mU		errechnet aus Werten von [Kakita et al. 1984] mit Lineweaver-Burk-Regression}
-  DS := 50;                    {mU/l		errechnet aus Werten von [Kakita et al. 1984] mit Lineweaver-Burk-Regression}
-  GT := 1.5e-12 * 2.25;        {mol/s	2.25-facher Wert der mittleren Produktionsrate [Li et al. 1995]}
-  alphaT := 0.1;               {/l			bei V0 = 10 l [Greenspan 1997]}
-  betaT := 1.1e-6;             {/s		bei HWZ von 7 Tagen [Greenspan 1997]}
-  dT := 2.75;                  {mU/l		[gemittelt nach Dumont & Vassart 1995]}
-  GD1 := 2.8e-8;               {mol/sec	aus Referenzwerten ermittelt}
-  GD2 := 4.3e-15;              {mol/sec	aus hypophysärem T3-Gehalt errechnet}
-  alpha31 := 2.6e-2;           {/l			bei V0 = 38 l [Greenspan 1997]}
-  beta31 := 8e-6;              {/s		bei HWZ von 24h [Greenspan 1997]}
-  alpha32 := 1.3e5;            {/l			aus V0 = 7,6 µl errechnet}
-  beta32 := 8.3e-4;            {/s		bei HWZ von 15 Minuten [Oppenheimer et al. 1967}
-  kM1 := 0.5e-6;               {mol/l		[Greenspan 1997]}
-  kM2 := 1e-9;                 {mol/l		[Visser et al. 1983]}
-  k30 := 2e9;                  {l/mol		[Li et al. 1995]}
-  k31 := 2e9;                  {l/mol		geschätzt}
-  k41 := 2e10;                 {l/mol		[Li et al. 1995]}
-  k42 := 2e8;                  {l/mol		[Li et al. 1995]}
-  k3 := GD2 * alpha32 / (beta32 * (1 + k31 * IBS)); {Zur Errechnung von LS aus klinischen Daten}
-  G3 := k3 * GR / (k3 + dR);   {dto.: Verstärkungsfaktor für T3z }
-  AC1 := 500;                  {dto.: typische ungebremste TSH-Konzentration}
-  MI := AC1 / 0.001;           {dto.: Inhibitions-Stärke }
-  LS := MI / G3;               {Ausgleich von GR; LS hängt dann nur von emp. Daten ab; Näherungswert: 1.68 e6 l/mol}
+  alphaR := 0.4;               {/l: Dilution factor for TRH in TRH-Test, as alphaS}
+  alphaS := 0.4;               {/l: from V0 = 2.5l (peptide hormone disbributing in peripheral plasma only)}
+  betaS := 2.3e-4;             {/s: from halflife of about 50 Min. [Li et al. 1995, Odell et al. 1967]}
+  alphaS2 := 2.6e5;            {/l: from V0 = 3,8µl (calculated according to Edelman 1959 and other sources)}
+  betaS2 := 140;               {/s: primary unknown kinetics, conclusions by analogy from typical receptor potentials, corresponding to halflife of 5 ms}
+  dH := 47e-9;                 {mol/l: [Le Dafniet et al. 1994]: 47 nmol/l}
+  dR := 0.1e-9;                {mol/l: [Vybok et al. 1994, Lazar et al., 1990]}
+  GR := 1;                     {mol/s: scaled to 1, as amplification of feedback path quantified by LS}
+  SS := 100;                   {l/mU: calculated from results of [Kakita et al. 1984] with Lineweaver-Burk regression}
+  DS := 50;                    {mU/l: calculated from results of [Kakita et al. 1984] with Lineweaver-Burk regression}
+  GT := 1.5e-12 * 2.25;        {mol/s: Mean production rate times 2.25 [Li et al. 1995]}
+  alphaT := 0.1;               {/l: from V0 = 10 l [Greenspan 1997]}
+  betaT := 1.1e-6;             {/s: from halflife of seven days [Greenspan 1997]}
+  dT := 2.75;                  {mU/l: averaged from[Dumont & Vassart 1995]}
+  GD1 := 2.8e-8;               {mol/sec: determined from reference values from SPINA I trial}
+  GD2 := 4.3e-15;              {mol/sec: calculated from pituitary T3 content}
+  alpha31 := 2.6e-2;           {/l: from V0 = 38 l [Greenspan 1997]}
+  beta31 := 8e-6;              {/s: from halflife of 24h [Greenspan 1997]}
+  alpha32 := 1.3e5;            {/l: calculated from V0 = 7.6 µl}
+  beta32 := 8.3e-4;            {/s: from halflife of 15 minutes [Oppenheimer et al. 1967}
+  kM1 := 0.5e-6;               {mol/l: [Greenspan 1997]}
+  kM2 := 1e-9;                 {mol/l: [Visser et al. 1983]}
+  k30 := 2e9;                  {l/mol: [Li et al. 1995]}
+  k31 := 2e9;                  {l/mol: estimated}
+  k41 := 2e10;                 {l/mol: [Li et al. 1995]}
+  k42 := 2e8;                  {l/mol: [Li et al. 1995]}
+  k3 := GD2 * alpha32 / (beta32 * (1 + k31 * IBS)); {for calculating LS from clinical data}
+  G3 := k3 * GR / (k3 + dR);   {dto.: Amplification factor for T3z }
+  AC1 := 500;                  {dto.: typical non-brakes TSH concentration}
+  MI := AC1 / 0.001;           {dto.: strength of inhibition}
+  LS := MI / G3;               {Compensation for GR; LS therefore depending from empirical data only; approximation: 1.68 e6 l/mol}
 
   SetDerivedVariables;
 
@@ -220,18 +223,18 @@ implementation
   t124 := ln(2) / beta32;      {T3z: Halflife in seconds}
   t125 := ln(2) / beta31;      {T3p: Halflife in seconds}
   t126 := ln(2) / betaS2;      {TSHz: Halflife in seconds}
-  tpt11 := t121 / ln(2);       {Verzögerungskonstante 1. Ordnung für TRH}
-  tpt12 := t122 / ln(2);       {Verzögerungskonstante 1. Ordnung für TSH}
-  tpt13 := t123 / ln(2);       {Verzögerungskonstante 1. Ordnung für T4}
-  tpt14 := t124 / ln(2);       {Verzögerungskonstante 1. Ordnung für T3z}
-  tpt15 := t125 / ln(2);       {Verzögerungskonstante 1. Ordnung für T3p}
-  tpt16 := t126 / ln(2);       {Verzögerungskonstante 1. Ordnung für TSHz}
-  Tt1 := 1800;                 {Totzeit für TRH}
-  Tt2 := 120;                  {Totzeit für TSH}
-  Tt22 := 3240;                {Totzeit für Ultrashort-Feedback-Wirkung [abgeleitet von Greenspan 1997]}
-  Tt3 := 300;                  {Totzeit für T4}
-  Tt4 := 3600;                 {Totzeit für T3z}
-  nt2 := trunc(Tt2 / delt);    {'trunc' rundet immer ab, 'round' rundet zur nächsten ganzen Zahl}
+  tpt11 := t121 / ln(2);       {1st order delay constant for TRH}
+  tpt12 := t122 / ln(2);       {1st order delay constant for TSH}
+  tpt13 := t123 / ln(2);       {1st order delay constant for T4}
+  tpt14 := t124 / ln(2);       {1st order delay constant for T3z}
+  tpt15 := t125 / ln(2);       {1st order delay constant for T3p}
+  tpt16 := t126 / ln(2);       {1st order delay constant for TSHz}
+  Tt1 := 1800;                 {dead time for TRH}
+  Tt2 := 120;                  {dead time for TSH}
+  Tt22 := 3240;                {dead time for Ultrashort feedback effect [derived from Greenspan 1997]}
+  Tt3 := 300;                  {dead time for T4}
+  Tt4 := 3600;                 {dead time for T3z}
+  nt2 := trunc(Tt2 / delt);
   nt22 := trunc(Tt22 / delt);
   nt3 := trunc(Tt3 / delt);
   nt4 := trunc(Tt4 / delt);
@@ -294,45 +297,45 @@ begin
              SimThyrLogWindow.ProgressBar1.Position := 100;
            t := t + delt;
 {Hypothalamus:}
-           f := 1 / 86400; {Frequenz des circadianen TRH-Rhythmus}
-           omega := 2 * pi * f; {Kreisfrequenz}
+           f := 1 / 86400; {Frequency of circadian rhythm of TRH secretion}
+           omega := 2 * pi * f; {Angular frequency}
            chi := 2 * pi / 24 * 5;
            circadianControl := cos(omega * t - chi);
            TRHi := TRH1 + 3/5 * TRHs * circadianControl * UTRH;
-           TRH := TRHi + TRHe;
-           TRH := TRH * getgauss(0.5); {Rauscheinfluß}
+           TRH := TRHi + TRHe; {Total TRH is sum of internal and external TRH}
+           TRH := TRH * getgauss(0.5); {Noise}
 {Pituitary:}
            T3n := T3z / (1 + k31 * IBS);
            T3R := GR * T3n / (dR + T3n);
            dTSH := gH * TRH / ((dH + TRH) * (1 + LS * T3R) * (1 + SS * TSHz / (DS + TSHz)));
-           {nur Ausschüttungsrate, kein Abbau}
-				{Näherungswert im Äquifinium: TSHz := (alphaS2 / betaS2) * dTSH;}
+           {differential quotient of secretory rate only, no degradation}
+		{Equifinal approximation: TSHz := (alphaS2 / betaS2) * dTSH;}
            vpt10 := alphaS2 / betaS2;
            pt1(vpt10, tpt16, x6, dTSH, TSHz);
-           TSHz := pt0(xt22, nt22, TSHz);
-        {TSHz := TSHz * getgauss(0.2); {Rauscheinfluß}}
+           TSHz := pt0(xt22, nt22, TSHz); {pituitary TSH for Brokken-Wiersinga-Prummel loop}
+           {optional: TSHz := TSHz * getgauss(0.2); {Noise}}
            vpt10 := alphaS / betaS;
            pt1(vpt10, tpt12, x2, dTSH, TSH);
-				{Näherungswert im Äquifinium: TSH := alphaS * dTSH / betaS;}
+		{Equifinal approximation: TSH := alphaS * dTSH / betaS;}
            TSH := pt0(xt2, nt2, TSH);
 {Thyroid:}
            dT4 := GT * TSH / (dT + TSH);
            vpt10 := alphaT / betaT;
            pt1(vpt10, tpt13, x3, dT4, T4);
-				{Näherungswert im Äquifinium: T4 := alphaT * dT4 / betaT;}
+		{Equifinal approximation: T4 := alphaT * dT4 / betaT;}
            T4 := pt0(xt3, nt3, T4);
            FT4 := T4 / (1 + k41 * TBG + k42 * TBPA);
-{5'-Dejodinase II (central):}
+{5'-Deiodinase type II (central):}
            dT3z := GD2 * FT4 / (kM2 + FT4);
            vpt10 := alpha32 / beta32;
            pt1(vpt10, tpt14, x4, dT3z, T3z);
-				{Näherungswert im Äquifinium: T3z := alpha32 * dT3z / beta32;}
+		{Equifinal approximation: T3z := alpha32 * dT3z / beta32;}
            T3z := pt0(xt4, nt4, T3z);
-{5'-Dejodinase I (peripheral):}
+{5'-Deiodinase type I (peripheral):}
            dT3p := GD1 * FT4 / (kM1 + FT4);
            vpt10 := alpha31 / beta31;
            pt1(vpt10, tpt15, x5, dT3p, T3p);
-				{Näherungswert im Äquifinium: T3p := alpha31 * dT3p / beta31;}
+		{Equifinal approximation: T3p := alpha31 * dT3p / beta31;}
            FT3 := T3p / (1 + k30 * TBG);
          finally
            SimCS.Leave;
@@ -360,7 +363,7 @@ end;
 
 procedure simulate; {Creates and starts simulation thread}
 begin
-  SetStatusBarPanel0('   0:', IntToStr(nmax));
+  SetStatusBarPanel0('   0', IntToStr(nmax));
   graphready := false;
   ValuesPlot.Caption := WAIT_TITLE;
   SimThyrLogWindow.Caption := WAIT_TITLE;

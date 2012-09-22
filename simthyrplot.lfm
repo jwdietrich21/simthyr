@@ -413,8 +413,6 @@ object ValuesPlot: TValuesPlot
         PopupMenu = PopupMenu1
         ShowHint = True
         OnClick = Chart1Click
-        object Chart1LineSeries1: TLineSeries
-        end
       end
     end
     object ColorListBox1: TColorListBox
