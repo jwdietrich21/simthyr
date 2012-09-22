@@ -14,7 +14,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  Grids, clipbrd, ComCtrls, StdCtrls, ExtCtrls, PopupNotifier, Menus,
+  Grids, clipbrd, ComCtrls, ExtCtrls, Menus,
   SimThyrTypes, SimThyrServices;
 
 type
@@ -33,6 +33,7 @@ type
     UndoItem: TMenuItem;
     ValuesGrid: TStringGrid;
     procedure CopyCells;
+    procedure CopyItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure InitGrid;
     procedure PopupMenu1Popup(Sender: TObject);
@@ -49,6 +50,7 @@ var
 implementation
 
 procedure CutorCopyfromGrid(theGrid: TStringGrid; cut: Boolean = False);
+{supports cutting or copying cells from the grid}
 var
   theSelection: TGridRect;
   r, c: integer;
@@ -79,9 +81,14 @@ begin
   CutorCopyfromGrid(valuesGrid, false);
 end;
 
+procedure TSimThyrLogWindow.CopyItemClick(Sender: TObject);
+begin
+  CopyCells;
+end;
+
 procedure TSimThyrLogWindow.FormActivate(Sender: TObject);
 begin
-  gLastActiveCustomForm := SimThyrLogWindow;
+  gLastActiveCustomForm := SimThyrLogWindow; {stores window as last active form}
 end;
 
 procedure TSimThyrLogWindow.InitGrid;
@@ -94,15 +101,14 @@ end;
 
 procedure TSimThyrLogWindow.PopupMenu1Popup(Sender: TObject);
 begin
-  CopyCells;
+
 end;
 
 procedure TSimThyrLogWindow.SaveGrid(theFileName: String; theDelimiter: Char);
+{saves the contents of the log window}
+{file type and, where applicable, delimiter are defined by variable theDelimiter}
 var
-  theFile: File of Byte;
-  fileData: Array of Byte;
   theString: String;
-  theSize: Int64;
   r, c: integer;
   theContents: TStringList;
 begin
@@ -110,7 +116,7 @@ begin
   begin
     ShowImplementationMessage;  {DIF file handling}
   end
-  else if theDelimiter <> ' ' then
+  else if theDelimiter <> ' ' then {tab delimited and CSV files}
   begin
     theContents := TStringList.Create;
     SetFileName(SimThyrLogWindow, theFileName);
@@ -144,4 +150,4 @@ initialization
   {$I simthyrlog.lrs}
 
 end.
-
+
