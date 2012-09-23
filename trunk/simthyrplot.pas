@@ -83,7 +83,7 @@ type
 
 var
   factor, i0, i1: longint;
-  graphready: boolean;
+  graphready, append: boolean;
   ValuesPlot: TValuesPlot;
   gr_nummer, antwort, antwort_p: string[4];
 
@@ -157,6 +157,7 @@ begin
     AddXY(10, 0, '', SeriesColor);
   end;
   ValuesPlot.Caption := 'Chart View';
+  append := false;
 end;
 
 procedure DrawPlot(empty: boolean);
@@ -165,12 +166,14 @@ var
   theTime: TDateTime;
   theSecond: real;
 begin
-  if ValuesPlot.Fline1 <> nil then
-    ValuesPlot.Chart1.ClearSeries;
-  if ValuesPlot.Fline2 <> nil then
-    ValuesPlot.Chart2.ClearSeries;
-  ValuesPlot.Fline1 := TLineSeries.Create(ValuesPlot.Chart1);
-  ValuesPlot.Fline2 := TLineSeries.Create(ValuesPlot.Chart2);
+  if (empty or not append) then begin
+    if ValuesPlot.Fline1 <> nil then
+      ValuesPlot.Chart1.Series.Clear;
+    if ValuesPlot.Fline2 <> nil then
+      ValuesPlot.Chart2.Series.Clear;
+    ValuesPlot.Fline1 := TLineSeries.Create(ValuesPlot.Chart1);
+    ValuesPlot.Fline2 := TLineSeries.Create(ValuesPlot.Chart2);
+  end;
   ValuesPlot.Fline1.BeginUpdate;
   ValuesPlot.Fline2.BeginUpdate;
   if empty then
@@ -184,7 +187,7 @@ begin
       Pointer.Brush.Color := ValuesPlot.ColorListBox1.Selected;
       SeriesColor := ValuesPlot.ColorListBox1.Selected;
       ValuesPlot.Chart1.AddSeries(ValuesPlot.Fline1);
-      for j := 0 to length(gResultMatrix) - 1 do
+      for j := nmax_old to length(gResultMatrix) - 1 do
       begin
         theSecond := gResultMatrix[j, t_pos];
         AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2] *
@@ -198,7 +201,7 @@ begin
       Pointer.Brush.Color := ValuesPlot.ColorListBox2.Selected;
       SeriesColor := ValuesPlot.ColorListBox2.Selected;
       ValuesPlot.Chart2.AddSeries(ValuesPlot.Fline2);
-      for j := 0 to length(gResultMatrix) - 1 do
+      for j := nmax_old to length(gResultMatrix) - 1 do
       begin
         theSecond := gResultMatrix[j, t_pos];
         AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] *
@@ -207,6 +210,7 @@ begin
     end;
     graphready := True;
     ValuesPlot.Caption := PLOT_TITLE;
+    append := true;
   end;
   ValuesPlot.Fline1.EndUpdate;
   ValuesPlot.Fline2.EndUpdate;
@@ -332,6 +336,7 @@ begin
   gSelectedChart := nil;
   PlotPanel1.Color := clWhite;
   PlotPanel2.Color := clWhite;
+  append := false;
 end;
 
 procedure TValuesPlot.UpdateTimeAxes;
