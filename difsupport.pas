@@ -17,23 +17,62 @@ uses
   Classes, SysUtils;
 
 type
-  TDIFFile = class
-    content: TStringList;
-    procedure InsertHead;
-    procedure InsertTuple;
+  tHeader = Record
+    version: Integer;
+    Identifier: String;
+    vectors, tuples: Integer;
   end;
+  TDIFDocument = class
+    content: TStringList;
+    Header: tHeader;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      procedure SetHead(Identifier: String);
+      procedure AppendTuple(Value: String);
+      procedure AppendTuple(Value: Real);
+      procedure AppendTuple(Value: Boolean);
+  end;
+
+procedure WriteDIFFile(Doc: TDIFDocument; path: String);
 
 implementation
 
-procedure TDifFile.InsertHead;
+constructor TDIFDocument.Create;
+begin
+  content.Create;
+end;
+
+destructor TDIFDocument.Destroy;
+begin
+  content.Destroy;
+  Inherited destroy;
+end;
+
+procedure TDIFDocument.SetHead(Identifier: String);
+begin
+  Header.Identifier := Identifier;
+end;
+
+procedure TDIFDocument.AppendTuple(Value: String);
 begin
 
 end;
 
-procedure TDIFFIle.InsertTuple;
+procedure TDIFDocument.AppendTuple(Value: Real);
+begin
+
+end;
+
+procedure TDIFDocument.AppendTuple(Value: Boolean);
+begin
+
+end;
+
+procedure WriteDIFFile(Doc: TDIFDocument; path: String);
 begin
 
 end;
 
 end.
-
+
