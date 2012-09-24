@@ -413,6 +413,7 @@ begin
 end;
 
 procedure SetBottomAxisCaption;
+{sets caption and measurement unit for bottom axis according to selected item}
 var
   theCaption: string;
 begin
@@ -492,7 +493,7 @@ procedure DrawOWSensitivityPlot(empty: boolean);
 const
   max_i = 100;
 var
-  i, j, k: integer;
+  i: integer;
   interval: real;
 begin
   {If line series exists it is cleared and recreated to support foundations of redrawing}
