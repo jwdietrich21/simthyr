@@ -112,10 +112,37 @@ var
   theString: String;
   r, c: integer;
   theContents: TStringList;
+  doc: TDIFDocument;
 begin
   if theDelimiter = 'd' then
-  begin
-    ShowImplementationMessage;  {DIF file handling}
+  begin {DIF file handling}
+    SetFileName(SimThyrLogWindow, theFileName);
+    try
+      doc := TDIFDocument.Create;
+      doc.SetHead('SimThyr');
+
+      doc.NewTuple;
+      theString := '';
+      for c := 1 to SimThyrLogWindow.ValuesGrid.ColCount - 1 do
+      begin
+        theString := SimThyrLogWindow.ValuesGrid.Cells[c, 0];
+        Doc.AppendCell(theString);
+      end;
+      for r := 1 to SimThyrLogWindow.ValuesGrid.RowCount - 1 do
+        begin
+          doc.NewTuple;
+          theString := '';
+          for c := 1 to SimThyrLogWindow.ValuesGrid.ColCount - 1 do
+            begin
+              theString := SimThyrLogWindow.ValuesGrid.Cells[c, r];
+              Doc.AppendCell(theString);
+            end;
+        end;
+
+      WriteDIFFile(doc, theFileName);
+    finally
+      doc.Free;
+    end;
   end
   else if theDelimiter <> ' ' then {tab delimited and CSV files}
   begin
@@ -151,4 +178,4 @@ initialization
   {$I simthyrlog.lrs}
 
 end.
-
+
