@@ -233,6 +233,7 @@ begin
 end;
 
 procedure TSimThyrToolbar.HandleIdle(Sender: TObject; var Done: boolean);
+{enures that the simulation setting are shown in the front}
 begin
   if simready then
   begin
