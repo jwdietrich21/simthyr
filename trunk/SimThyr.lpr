@@ -21,7 +21,7 @@ uses
   simthyrlog, SimThyrTypes, SimThyrServices, ShowIPS, Simulator, Splash,
   AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
   SimOptions, VersionSupport, ScenarioHandler, HandlePreferences,
-  HandleNotifier, Sensitivityanalysis, tornado;
+  HandleNotifier, Sensitivityanalysis, tornado, DIFSupport;
 
 {{$IFDEF WINDOWS}{$R SimThyr.rc}{$ENDIF}}
 
