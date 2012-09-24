@@ -312,7 +312,7 @@ object SimThyrLogWindow: TSimThyrLogWindow
   object ValuesGrid: TStringGrid
     Cursor = crIBeam
     Left = 0
-    Height = 263
+    Height = 255
     Top = 0
     Width = 751
     Align = alClient
@@ -376,9 +376,9 @@ object SimThyrLogWindow: TSimThyrLogWindow
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
+    Height = 23
     Hint = 'Number of iterations'
-    Top = 263
+    Top = 255
     Width = 751
     Panels = <    
       item
@@ -434,4 +434,4 @@ object SimThyrLogWindow: TSimThyrLogWindow
       Enabled = False
     end
   end
-end
+end
