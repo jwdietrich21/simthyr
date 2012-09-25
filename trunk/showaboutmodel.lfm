@@ -1,7 +1,7 @@
 object AboutModelForm: TAboutModelForm
-  Left = 498
-  Height = 730
-  Top = 180
+  Left = 473
+  Height = 689
+  Top = 102
   Width = 577
   HorzScrollBar.Page = 509
   HorzScrollBar.Range = 509
@@ -13,16 +13,16 @@ object AboutModelForm: TAboutModelForm
   Anchors = []
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'About the model'
-  ClientHeight = 730
+  ClientHeight = 689
   ClientWidth = 577
   Color = clWhite
   LCLVersion = '1.0.1.3'
   Visible = True
   object Label1: TLabel
     Left = 56
-    Height = 17
+    Height = 14
     Top = 96
-    Width = 78
+    Width = 68
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -42,10 +42,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 307
-    Height = 17
+    Left = 360
+    Height = 14
     Top = 64
-    Width = 213
+    Width = 160
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -59,7 +59,7 @@ object AboutModelForm: TAboutModelForm
   end
   object Memo1: TMemo
     Left = 56
-    Height = 552
+    Height = 517
     Top = 120
     Width = 464
     Anchors = [akTop, akLeft, akRight, akBottom]
@@ -111,4 +111,4 @@ object AboutModelForm: TAboutModelForm
     ScrollBars = ssAutoBoth
     TabOrder = 1
   end
-end
+end
