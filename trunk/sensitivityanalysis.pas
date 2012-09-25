@@ -696,6 +696,7 @@ end;
 
 procedure TSensitivityAnalysisForm.FormActivate(Sender: TObject);
 begin
+  SimThyrToolbar.SelectAllMenuItem.Enabled := false;
   gLastActiveCustomForm := SensitivityAnalysisForm;
 end;
 

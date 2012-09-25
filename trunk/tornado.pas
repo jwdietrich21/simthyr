@@ -729,6 +729,7 @@ end;
 
 procedure TTornadoPlotForm.FormActivate(Sender: TObject);
 begin
+  SimThyrToolbar.SelectAllMenuItem.Enabled := false;
   gLastActiveCustomForm := TornadoPlotForm;
 end;
 

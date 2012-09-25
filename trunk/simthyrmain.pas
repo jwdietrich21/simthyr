@@ -38,6 +38,7 @@ type
     EditDelete1:  TEditDelete;
     EditMenu:     TMenuItem;
     EditPaste1:   TEditPaste;
+    EditSelectAll1: TEditSelectAll;
     EditUndo1:    TEditUndo;
     FileMenu:     TMenuItem;
     IdleTimer1:   TIdleTimer;
@@ -179,6 +180,7 @@ begin
   SimThyrToolbar.Divider_5_1.Visible := False;
   SimThyrToolbar.Divider_2_2.Visible := False;
   SimThyrToolbar.Divider_2_2.Visible := False;
+  SimThyrToolbar.Divider_2_3.Visible := False;
   SimThyrToolbar.WinPreferencesItem.Visible := False;
   SimThyrToolbar.AppleMenu.Visible := True;
   {$ELSE}
@@ -199,6 +201,7 @@ begin
   SimThyrToolbar.CutMenuItem.ShortCut := ShortCut(VK_X, modifierKey);
   SimThyrToolbar.CopyMenuItem.ShortCut := ShortCut(VK_C, modifierKey);
   SimThyrToolbar.PasteMenuItem.ShortCut := ShortCut(VK_V, modifierKey);
+  SimThyrToolbar.SelectAllMenuItem.ShortCut := ShortCut(VK_A, modifierKey);
   SimThyrToolbar.RunItem.ShortCut := ShortCut(VK_R, modifierKey);
   SimThyrToolbar.PredEqItem.ShortCut := ShortCut(VK_L, modifierKey);
   SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut := ShortCut(VK_E, modifierKey);
@@ -281,6 +284,7 @@ begin
     SimulationSettings.ShowOnTop;
     SimulationSettings.SetFocus;
   end;
+  SelectAllMenuItem.Enabled := true;
 end;
 
 procedure TSimThyrToolbar.CloseMenuItemClick(Sender: TObject);

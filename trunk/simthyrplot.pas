@@ -446,6 +446,7 @@ end;
 
 procedure TValuesPlot.FormActivate(Sender: TObject);
 begin
+  SimThyrToolbar.SelectAllMenuItem.Enabled := false;
   gLastActiveCustomForm := ValuesPlot;
 end;
 

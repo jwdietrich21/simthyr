@@ -50,6 +50,9 @@ var
 
 implementation
 
+uses
+  SimThyrMain;
+
 procedure CutorCopyfromGrid(theGrid: TStringGrid; cut: Boolean = False);
 {supports cutting or copying cells from the grid}
 var
@@ -89,6 +92,7 @@ end;
 
 procedure TSimThyrLogWindow.FormActivate(Sender: TObject);
 begin
+  SimThyrToolbar.SelectAllMenuItem.Enabled := true;
   gLastActiveCustomForm := SimThyrLogWindow; {stores window as last active form}
 end;
 
