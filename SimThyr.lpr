@@ -127,6 +127,7 @@ begin
   end
   else SimulationSettings.hide;
   gStartup := false;
+  SimThyrToolbar.SelectAllMenuItem.Enabled := true;
   Application.Run;
 end.
 

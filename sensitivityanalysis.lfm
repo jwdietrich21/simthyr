@@ -24,16 +24,16 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     BorderSpacing.Top = 20
     BorderStyle = bsSingle
     Caption = 'Panel1'
-    ClientHeight = 318
-    ClientWidth = 421
+    ClientHeight = 322
+    ClientWidth = 425
     TabOrder = 0
     object Chart1: TChart
       Cursor = crCross
       Left = 8
-      Height = 300
+      Height = 304
       Hint = 'Drag with mouse to zoom'
       Top = 10
-      Width = 405
+      Width = 409
       AxisList = <      
         item
           Grid.Color = clSilver
@@ -95,8 +95,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 182
-    ClientWidth = 199
+    ClientHeight = 178
+    ClientWidth = 195
     Items.Strings = (
       'TSH'
       'FT4'
@@ -114,7 +114,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object TSHColorBox: TColorBox
     Left = 567
-    Height = 22
+    Height = 20
     Top = 64
     Width = 113
     DefaultColorColor = clRed
@@ -126,7 +126,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object FT4ColorBox: TColorBox
     Left = 567
-    Height = 22
+    Height = 20
     Top = 106
     Width = 113
     DefaultColorColor = clBlue
@@ -138,7 +138,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object FT3ColorBox: TColorBox
     Left = 567
-    Height = 22
+    Height = 20
     Top = 150
     Width = 113
     DefaultColorColor = clGreen
@@ -150,7 +150,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object cT3ColorBox: TColorBox
     Left = 567
-    Height = 22
+    Height = 20
     Top = 192
     Width = 113
     DefaultColorColor = clMaroon
@@ -167,14 +167,14 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Width = 426
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Independent parameter'
-    ClientHeight = 32
-    ClientWidth = 422
+    ClientHeight = 28
+    ClientWidth = 418
     TabOrder = 6
     object MinSpinEdit: TFloatSpinEdit
       Left = 12
-      Height = 21
+      Height = 16
       Hint = 'Minimum of selected structure parameter'
-      Top = 2
+      Top = 3
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
@@ -188,10 +188,10 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Value = 0
     end
     object MaxSpinEdit: TFloatSpinEdit
-      Left = 338
-      Height = 21
+      Left = 334
+      Height = 16
       Hint = 'Maximum of selected structure parameter'
-      Top = 2
+      Top = 3
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
@@ -208,11 +208,11 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 5
-      Width = 216
+      Top = 1
+      Width = 212
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 13
+      ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
         'Select independent parameter...'
@@ -244,8 +244,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
-    Top = 418
+    Height = 15
+    Top = 426
     Width = 721
     Panels = <>
   end
