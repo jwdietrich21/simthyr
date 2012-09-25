@@ -59,6 +59,8 @@ type
     IPSItem2:     TMenuItem;
     Divider_3_3:  TMenuItem;
     Divide_3_1: TMenuItem;
+    SelectAllMenuItem: TMenuItem;
+    Divider_2_3: TMenuItem;
     PredEqItem: TMenuItem;
     OWSensitivityAnalysisItem: TMenuItem;
     TornadoPlotItem: TMenuItem;
@@ -137,6 +139,7 @@ type
     procedure SaveAsToolButtonClick(Sender: TObject);
     procedure SaveToolButtonClick(Sender: TObject);
     procedure OWSensitivityAnalysisItemClick(Sender: TObject);
+    procedure SelectAllMenuItemClick(Sender: TObject);
     procedure StopToolButtonClick(Sender: TObject);
     procedure ToolBar1Click(Sender: TObject);
     procedure NewToolButtonClick(Sender: TObject);
@@ -475,6 +478,21 @@ end;
 procedure TSimThyrToolbar.OWSensitivityAnalysisItemClick(Sender: TObject);
 begin
   SensitivityAnalysisForm.Show;
+end;
+
+procedure TSimThyrToolbar.SelectAllMenuItemClick(Sender: TObject);
+var
+  theForm: TForm;
+  i, j: integer;
+begin
+  theForm := Screen.ActiveForm;
+  if (theForm = SimThyrLogWindow) or ((theForm = SimThyrToolbar) and
+      (gLastActiveCustomForm = SimThyrLogWindow)) then
+      begin
+        i := SimThyrLogWindow.ValuesGrid.ColCount;
+        j := SimThyrLogWindow.ValuesGrid.RowCount;
+        SimThyrLogWindow.ValuesGrid.Selection := Rect(1,1,i,j);
+      end;
 end;
 
 procedure TSimThyrToolbar.StopToolButtonClick(Sender: TObject);
