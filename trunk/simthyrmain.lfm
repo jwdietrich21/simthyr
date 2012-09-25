@@ -1017,6 +1017,14 @@ object SimThyrToolbar: TSimThyrToolbar
         Caption = '-'
         Enabled = False
       end
+      object SelectAllMenuItem: TMenuItem
+        Caption = 'Select All'
+        ShortCut = 16449
+        OnClick = SelectAllMenuItemClick
+      end
+      object Divider_2_3: TMenuItem
+        Caption = '-'
+      end
       object WinPreferencesItem: TMenuItem
         Caption = 'Preferences'
         OnClick = PrefsToolButtonClick
