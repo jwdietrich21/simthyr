@@ -99,11 +99,11 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ClientWidth = 195
     Items.Strings = (
       'TSH'
+      'TT4'
       'FT4'
+      'TT3'
       'FT3'
       'cT3'
-      'TT4'
-      'TT3'
     )
     OnClick = CheckGroup1Click
     OnItemClick = CheckGroup1ItemClick
@@ -129,7 +129,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object FT4ColorBox: TColorBox
     Left = 567
     Height = 20
-    Top = 106
+    Top = 150
     Width = 113
     DefaultColorColor = clBlue
     Selected = clBlue
@@ -141,7 +141,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object FT3ColorBox: TColorBox
     Left = 567
     Height = 20
-    Top = 150
+    Top = 235
     Width = 113
     DefaultColorColor = clGreen
     Selected = clGreen
@@ -153,7 +153,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object cT3ColorBox: TColorBox
     Left = 567
     Height = 20
-    Top = 192
+    Top = 277
     Width = 113
     DefaultColorColor = clMaroon
     Selected = clMaroon
@@ -304,25 +304,25 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object TT4ColorBox: TColorBox
     Left = 567
     Height = 20
-    Top = 234
+    Top = 107
     Width = 113
     DefaultColorColor = clNavy
     Selected = clNavy
     Anchors = [akTop, akRight]
     ItemHeight = 16
-    OnChange = cT3ColorBoxChange
+    OnChange = TT4ColorBoxChange
     TabOrder = 8
   end
   object TT3ColorBox: TColorBox
     Left = 567
     Height = 20
-    Top = 276
+    Top = 192
     Width = 113
     DefaultColorColor = clOlive
     Selected = clOlive
     Anchors = [akTop, akRight]
     ItemHeight = 16
-    OnChange = cT3ColorBoxChange
+    OnChange = TT3ColorBoxChange
     TabOrder = 9
   end
   object ChartAxisTransformations1: TChartAxisTransformations

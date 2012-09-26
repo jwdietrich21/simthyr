@@ -78,6 +78,8 @@ type
     procedure TSHColorBoxChange(Sender: TObject);
     procedure CopyChart;
     procedure SaveChart;
+    procedure TT3ColorBoxChange(Sender: TObject);
+    procedure TT4ColorBoxChange(Sender: TObject);
   private
     { private declarations }
   public
@@ -493,6 +495,16 @@ begin
   end;
   if SensitivityAnalysisForm.CheckGroup1.Checked[1] then
   begin
+    {TT4}
+    FLine[5].AddXY(xPar, T41 / UFT4 * gParameterFactor[TT4_pos], '',
+      SensitivityAnalysisForm.TT4ColorBox.Selected);
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
+      'TT4' + ': ' + gParameterUnit[TT4_pos];
+    Inc(SeriesCount);
+    FLine[5].SeriesColor := SensitivityAnalysisForm.TT4ColorBox.Selected;
+  end;
+  if SensitivityAnalysisForm.CheckGroup1.Checked[2] then
+  begin
     {FT4}
     FLine[2].AddXY(xPar, FT41 / UFT4 * gParameterFactor[FT4_pos], '',
       SensitivityAnalysisForm.FT4ColorBox.Selected);
@@ -501,7 +513,17 @@ begin
     Inc(SeriesCount);
     FLine[2].SeriesColor := SensitivityAnalysisForm.FT4ColorBox.Selected;
   end;
-  if SensitivityAnalysisForm.CheckGroup1.Checked[2] then
+  if SensitivityAnalysisForm.CheckGroup1.Checked[3] then
+  begin
+    {TT3}
+    FLine[6].AddXY(xPar, T31 / UFT3 * gParameterFactor[TT3_pos], '',
+      SensitivityAnalysisForm.TT3ColorBox.Selected);
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
+      'TT3' + ': ' + gParameterUnit[TT3_pos];
+    Inc(SeriesCount);
+    FLine[6].SeriesColor := SensitivityAnalysisForm.TT3ColorBox.Selected;
+  end;
+  if SensitivityAnalysisForm.CheckGroup1.Checked[4] then
   begin
     {FT3}
     FLine[3].AddXY(xPar, FT31 / UFT3 * gParameterFactor[FT3_pos], '',
@@ -511,7 +533,7 @@ begin
     Inc(SeriesCount);
     FLine[3].SeriesColor := SensitivityAnalysisForm.FT3ColorBox.Selected;
   end;
-  if SensitivityAnalysisForm.CheckGroup1.Checked[3] then
+  if SensitivityAnalysisForm.CheckGroup1.Checked[5] then
   begin
     {cT3}
     FLine[4].AddXY(xPar, T3z1 / UFT3 * gParameterFactor[cT3_pos], '',
@@ -520,26 +542,6 @@ begin
       'cT3' + ': ' + gParameterUnit[cT3_pos];
     Inc(SeriesCount);
     FLine[4].SeriesColor := SensitivityAnalysisForm.cT3ColorBox.Selected;
-  end;
-  if SensitivityAnalysisForm.CheckGroup1.Checked[4] then
-  begin
-    {TT4}
-    FLine[5].AddXY(xPar, T41 / UFT4 * gParameterFactor[TT4_pos], '',
-      SensitivityAnalysisForm.TT4ColorBox.Selected);
-    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
-      'TT4' + ': ' + gParameterUnit[TT4_pos];
-    Inc(SeriesCount);
-    FLine[5].SeriesColor := SensitivityAnalysisForm.TT4ColorBox.Selected;
-  end;
-  if SensitivityAnalysisForm.CheckGroup1.Checked[5] then
-  begin
-    {TT3}
-    FLine[6].AddXY(xPar, T31 / UFT3 * gParameterFactor[TT3_pos], '',
-      SensitivityAnalysisForm.TT3ColorBox.Selected);
-    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
-      'TT3' + ': ' + gParameterUnit[TT3_pos];
-    Inc(SeriesCount);
-    FLine[6].SeriesColor := SensitivityAnalysisForm.TT3ColorBox.Selected;
   end;
   if SeriesCount > 1 then
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameters';
@@ -730,6 +732,8 @@ begin
   SensitivityAnalysisForm.FT4ColorBox.Selected := gDefaultColors[6];
   SensitivityAnalysisForm.FT3ColorBox.Selected := gDefaultColors[8];
   SensitivityAnalysisForm.cT3ColorBox.Selected := gDefaultColors[9];
+  SensitivityAnalysisForm.TT4ColorBox.Selected := gDefaultColors[5];
+  SensitivityAnalysisForm.TT3ColorBox.Selected := gDefaultColors[7];
   SetStandardStrucParBoundaries(1 / 3, 3);
   DrawOWSensitivityPlot(True);
 end;
@@ -895,6 +899,16 @@ begin
         if theStream <> nil then theStream.Free;
       end;
   end;
+end;
+
+procedure TSensitivityAnalysisForm.TT3ColorBoxChange(Sender: TObject);
+begin
+  DrawOWSensitivityPlot(False);
+end;
+
+procedure TSensitivityAnalysisForm.TT4ColorBoxChange(Sender: TObject);
+begin
+  DrawOWSensitivityPlot(False);
 end;
 
 initialization
