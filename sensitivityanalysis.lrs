@@ -37,27 +37,27 @@ LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
   +'ng.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildSizing.ShrinkVertical'#7
   +#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclLeftToRightThenTopToBotto'
   +'m'#27'ChildSizing.ControlsPerLine'#2#1#12'ClientHeight'#3#7#1#11'ClientWidt'
-  +'h'#3#195#0#13'Items.Strings'#1#6#3'TSH'#6#3'FT4'#6#3'FT3'#6#3'cT3'#6#3'TT4'
-  +#6#3'TT3'#0#7'OnClick'#7#16'CheckGroup1Click'#11'OnItemClick'#7#20'CheckGrou'
+  +'h'#3#195#0#13'Items.Strings'#1#6#3'TSH'#6#3'TT4'#6#3'FT4'#6#3'TT3'#6#3'FT3'
+  +#6#3'cT3'#0#7'OnClick'#7#16'CheckGroup1Click'#11'OnItemClick'#7#20'CheckGrou'
   +'p1ItemClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#4'Data'#10
   +#10#0#0#0#6#0#0#0#2#2#2#2#2#2#0#0#9'TColorBox'#11'TSHColorBox'#4'Left'#3'7'#2
   +#6'Height'#2#20#3'Top'#2'@'#5'Width'#2'q'#17'DefaultColorColor'#7#5'clRed'#8
   +'Selected'#7#5'clRed'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16
   +#8'OnChange'#7#17'TSHColorBoxChange'#8'TabOrder'#2#2#0#0#9'TColorBox'#11'FT4'
-  +'ColorBox'#4'Left'#3'7'#2#6'Height'#2#20#3'Top'#2'j'#5'Width'#2'q'#17'Defaul'
-  +'tColorColor'#7#6'clBlue'#8'Selected'#7#6'clBlue'#7'Anchors'#11#5'akTop'#7'a'
-  +'kRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#17'FT4ColorBoxChange'#8'TabOrde'
-  +'r'#2#3#0#0#9'TColorBox'#11'FT3ColorBox'#4'Left'#3'7'#2#6'Height'#2#20#3'Top'
-  +#3#150#0#5'Width'#2'q'#17'DefaultColorColor'#7#7'clGreen'#8'Selected'#7#7'cl'
-  +'Green'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7
-  +#17'FT3ColorBoxChange'#8'TabOrder'#2#4#0#0#9'TColorBox'#11'cT3ColorBox'#4'Le'
-  +'ft'#3'7'#2#6'Height'#2#20#3'Top'#3#192#0#5'Width'#2'q'#17'DefaultColorColor'
-  +#7#8'clMaroon'#8'Selected'#7#8'clMaroon'#7'Anchors'#11#5'akTop'#7'akRight'#0
-  +#10'ItemHeight'#2#16#8'OnChange'#7#17'cT3ColorBoxChange'#8'TabOrder'#2#5#0#0
-  +#9'TGroupBox'#9'GroupBox1'#4'Left'#2'0'#6'Height'#2'2'#3'Top'#3'j'#1#5'Width'
-  +#3#170#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#7'Caption'#6#21'In'
-  +'dependent parameter'#12'ClientHeight'#2#28#11'ClientWidth'#3#162#1#8'TabOrd'
-  +'er'#2#6#0#14'TFloatSpinEdit'#11'MinSpinEdit'#4'Left'#2#12#6'Height'#2#16#4
+  +'ColorBox'#4'Left'#3'7'#2#6'Height'#2#20#3'Top'#3#150#0#5'Width'#2'q'#17'Def'
+  +'aultColorColor'#7#6'clBlue'#8'Selected'#7#6'clBlue'#7'Anchors'#11#5'akTop'#7
+  +'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#17'FT4ColorBoxChange'#8'TabOrd'
+  +'er'#2#3#0#0#9'TColorBox'#11'FT3ColorBox'#4'Left'#3'7'#2#6'Height'#2#20#3'To'
+  +'p'#3#235#0#5'Width'#2'q'#17'DefaultColorColor'#7#7'clGreen'#8'Selected'#7#7
+  +'clGreen'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'
+  +#7#17'FT3ColorBoxChange'#8'TabOrder'#2#4#0#0#9'TColorBox'#11'cT3ColorBox'#4
+  +'Left'#3'7'#2#6'Height'#2#20#3'Top'#3#21#1#5'Width'#2'q'#17'DefaultColorColo'
+  +'r'#7#8'clMaroon'#8'Selected'#7#8'clMaroon'#7'Anchors'#11#5'akTop'#7'akRight'
+  +#0#10'ItemHeight'#2#16#8'OnChange'#7#17'cT3ColorBoxChange'#8'TabOrder'#2#5#0
+  +#0#9'TGroupBox'#9'GroupBox1'#4'Left'#2'0'#6'Height'#2'2'#3'Top'#3'j'#1#5'Wid'
+  +'th'#3#170#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#7'Caption'#6#21
+  +'Independent parameter'#12'ClientHeight'#2#28#11'ClientWidth'#3#162#1#8'TabO'
+  +'rder'#2#6#0#14'TFloatSpinEdit'#11'MinSpinEdit'#4'Left'#2#12#6'Height'#2#16#4
   +'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2#3#5'Width'#2'H'
   +#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0
   +#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0
@@ -139,19 +139,19 @@ LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
   +#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255
   +#133#138#136#153#9'NumGlyphs'#2#0#7'OnClick'#7#21'FullScaleButton1Click'#8'S'
   +'howHint'#9#14'ParentShowHint'#8#0#0#9'TColorBox'#11'TT4ColorBox'#4'Left'#3
-  +'7'#2#6'Height'#2#20#3'Top'#3#234#0#5'Width'#2'q'#17'DefaultColorColor'#7#6
-  +'clNavy'#8'Selected'#7#6'clNavy'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'Item'
-  +'Height'#2#16#8'OnChange'#7#17'cT3ColorBoxChange'#8'TabOrder'#2#8#0#0#9'TCol'
-  +'orBox'#11'TT3ColorBox'#4'Left'#3'7'#2#6'Height'#2#20#3'Top'#3#20#1#5'Width'
-  +#2'q'#17'DefaultColorColor'#7#7'clOlive'#8'Selected'#7#7'clOlive'#7'Anchors'
-  +#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#17'cT3ColorBoxCh'
-  +'ange'#8'TabOrder'#2#9#0#0#25'TChartAxisTransformations'#25'ChartAxisTransfo'
-  +'rmations1'#4'left'#3'x'#1#3'top'#3#152#2#0#20'TLinearAxisTransform-ChartAxi'
-  +'sTransformations1LinearAxisTransform1'#5'Scale'#5#0#136'Po'#9#204#188#140
-  +#215'?'#0#0#0#10'TPopupMenu'#10'PopupMenu1'#4'left'#3'x'#1#3'top'#3#24#2#0#9
-  +'TMenuItem'#8'UndoItem'#7'Caption'#6#4'Undo'#7'Enabled'#8#0#0#9'TMenuItem'#8
-  +'Divider1'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#7'CutItem'#7'Caption'#6#3'Cut'
-  +#7'Enabled'#8#0#0#9'TMenuItem'#8'CopyItem'#7'Caption'#6#4'Copy'#7'OnClick'#7
-  +#13'CopyItemClick'#0#0#9'TMenuItem'#9'PasteItem'#7'Caption'#6#5'Paste'#7'Ena'
-  +'bled'#8#0#0#0#0
+  +'7'#2#6'Height'#2#20#3'Top'#2'k'#5'Width'#2'q'#17'DefaultColorColor'#7#6'clN'
+  +'avy'#8'Selected'#7#6'clNavy'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHei'
+  +'ght'#2#16#8'OnChange'#7#17'TT4ColorBoxChange'#8'TabOrder'#2#8#0#0#9'TColorB'
+  +'ox'#11'TT3ColorBox'#4'Left'#3'7'#2#6'Height'#2#20#3'Top'#3#192#0#5'Width'#2
+  +'q'#17'DefaultColorColor'#7#7'clOlive'#8'Selected'#7#7'clOlive'#7'Anchors'#11
+  +#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#17'TT3ColorBoxChang'
+  +'e'#8'TabOrder'#2#9#0#0#25'TChartAxisTransformations'#25'ChartAxisTransforma'
+  +'tions1'#4'left'#3'x'#1#3'top'#3#152#2#0#20'TLinearAxisTransform-ChartAxisTr'
+  +'ansformations1LinearAxisTransform1'#5'Scale'#5#0#136'Po'#9#204#188#140#215
+  +'?'#0#0#0#10'TPopupMenu'#10'PopupMenu1'#4'left'#3'x'#1#3'top'#3#24#2#0#9'TMe'
+  +'nuItem'#8'UndoItem'#7'Caption'#6#4'Undo'#7'Enabled'#8#0#0#9'TMenuItem'#8'Di'
+  +'vider1'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#7'CutItem'#7'Caption'#6#3'Cut'#7
+  +'Enabled'#8#0#0#9'TMenuItem'#8'CopyItem'#7'Caption'#6#4'Copy'#7'OnClick'#7#13
+  +'CopyItemClick'#0#0#9'TMenuItem'#9'PasteItem'#7'Caption'#6#5'Paste'#7'Enable'
+  +'d'#8#0#0#0#0
 ]);
