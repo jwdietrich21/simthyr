@@ -22,7 +22,7 @@ uses
 
 const
   MAX_SERIES = 8;
-  GD1_FACTOR = 1e9;
+  GD1_FACTOR = 1e9; {these factors allow to provide for metric prefixes}
   GD2_FACTOR = 1e15;
   GT_FACTOR = 1e12;
   KM1_FACTOR = 1e9;
@@ -31,6 +31,8 @@ const
   LS_FACTOR = 1e-6;
   DH_FACTOR = 1e9;
   DR_FACTOR = 1e12;
+  TBG_FACTOR = 1e9;
+  TBPA_FACTOR = 1e6;
 
 type
 
@@ -42,10 +44,12 @@ type
     ChartAxisTransformations1: TChartAxisTransformations;
     ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform;
     CheckGroup1: TCheckGroup;
+    TT4ColorBox: TColorBox;
     Divider1: TMenuItem;
     CutItem: TMenuItem;
     CopyItem: TMenuItem;
     PasteItem: TMenuItem;
+    TT3ColorBox: TColorBox;
     UndoItem: TMenuItem;
     PopupMenu1: TPopupMenu;
     TSHColorBox: TColorBox;
@@ -84,6 +88,7 @@ type
     GT, GD1, GD2, kM1, kM2, dT, LS: real;
     GH, DH, SS, DS, GR, DR: real;
     betaS, betaS2, betaT, beta31, beta32: real;
+    TBG, TBPA: real;
   end;
 
 var
@@ -360,6 +365,34 @@ begin
       gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / LS_FACTOR;
+    end;
+    19:
+    begin {TBG}
+      gSpinFactor := TBG_FACTOR;
+      gMinXPar := TBG / 3;
+      gMaxXPar := TBG * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / TBG_FACTOR;
+    end;
+    20:
+    begin {TBPA}
+      gSpinFactor := TBPA_FACTOR;
+      gMinXPar := TBPA / 3;
+      gMaxXPar := TBPA * 3;
+      tempMinX := gMinXPar;
+      tempMaxX := gMaxXPar;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
+      SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
+        1 / TBPA_FACTOR;
     end
   end;
   if SensitivityAnalysisForm.MinSpinEdit.Value < 10 then SensitivityAnalysisForm.MinSpinEdit.DecimalPlaces := 4
@@ -389,6 +422,8 @@ begin
   StoredParameters.beta31 := beta31;
   StoredParameters.beta32 := beta32;
   StoredParameters.LS := LS;
+  StoredParameters.TBG := TBG;
+  StoredParameters.TBPA := TBPA;
 end;
 
 procedure RestoreStrucPars;
@@ -410,6 +445,8 @@ begin
   beta31 := StoredParameters.beta31;
   beta32 := StoredParameters.beta32;
   LS := StoredParameters.LS;
+  TBG := StoredParameters.TBG;
+  TBPA := StoredParameters.TBPA;
 end;
 
 procedure SetBottomAxisCaption;
@@ -456,7 +493,7 @@ begin
   end;
   if SensitivityAnalysisForm.CheckGroup1.Checked[1] then
   begin
-    {FT3}
+    {FT4}
     FLine[2].AddXY(xPar, FT41 / UFT4 * gParameterFactor[FT4_pos], '',
       SensitivityAnalysisForm.FT4ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
@@ -483,6 +520,26 @@ begin
       'cT3' + ': ' + gParameterUnit[cT3_pos];
     Inc(SeriesCount);
     FLine[4].SeriesColor := SensitivityAnalysisForm.cT3ColorBox.Selected;
+  end;
+  if SensitivityAnalysisForm.CheckGroup1.Checked[4] then
+  begin
+    {TT4}
+    FLine[5].AddXY(xPar, T41 / UFT4 * gParameterFactor[TT4_pos], '',
+      SensitivityAnalysisForm.TT4ColorBox.Selected);
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
+      'TT4' + ': ' + gParameterUnit[TT4_pos];
+    Inc(SeriesCount);
+    FLine[5].SeriesColor := SensitivityAnalysisForm.TT4ColorBox.Selected;
+  end;
+  if SensitivityAnalysisForm.CheckGroup1.Checked[5] then
+  begin
+    {TT3}
+    FLine[6].AddXY(xPar, T31 / UFT3 * gParameterFactor[TT3_pos], '',
+      SensitivityAnalysisForm.TT3ColorBox.Selected);
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
+      'TT3' + ': ' + gParameterUnit[TT3_pos];
+    Inc(SeriesCount);
+    FLine[6].SeriesColor := SensitivityAnalysisForm.TT3ColorBox.Selected;
   end;
   if SeriesCount > 1 then
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameters';
@@ -630,7 +687,19 @@ begin
           LS := gMinXPar + i * interval;
           PredictEquilibrium;
           DrawCurves(LS);
-        end
+         end;
+        19:
+        begin
+          TBG := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(TBG);
+        end;
+        20:
+        begin
+          TBPA := gMinXPar + i * interval;
+          PredictEquilibrium;
+          DrawCurves(TBPA);
+       end
         otherwise
           if not gStartup then bell;
       end;
