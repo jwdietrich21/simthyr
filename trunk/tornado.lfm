@@ -17,7 +17,7 @@ object TornadoPlotForm: TTornadoPlotForm
   Visible = True
   object CheckGroup1: TCheckGroup
     Left = 506
-    Height = 209
+    Height = 217
     Hint = 'Select the independent structure parameters whose influence you want to check'
     Top = 16
     Width = 185
@@ -32,7 +32,7 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 2
-    ClientHeight = 187
+    ClientHeight = 195
     ClientWidth = 177
     Columns = 2
     Items.Strings = (
@@ -54,6 +54,8 @@ object TornadoPlotForm: TTornadoPlotForm
       'beta31'
       'beta32'
       'LS'
+      'TBG'
+      'TBPA'
     )
     OnClick = CheckGroup1Click
     OnItemClick = CheckGroup1ItemClick
@@ -61,7 +63,7 @@ object TornadoPlotForm: TTornadoPlotForm
     ShowHint = True
     TabOrder = 0
     Data = {
-      12000000020202020202020202020202020202020202
+      140000000202020202020202020202020202020202020202
     }
   end
   object DepParameterCombo: TComboBox
@@ -76,7 +78,9 @@ object TornadoPlotForm: TTornadoPlotForm
     Items.Strings = (
       'Dependent parameter...'
       'TSH'
+      'TT4'
       'FT4'
+      'TT3'
       'FT3'
       'cT3'
     )
@@ -95,8 +99,8 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object RadioGroup1: TRadioGroup
     Left = 506
-    Height = 84
-    Top = 232
+    Height = 76
+    Top = 240
     Width = 185
     Anchors = [akTop, akRight]
     AutoFill = True
@@ -109,7 +113,7 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 62
+    ClientHeight = 54
     ClientWidth = 177
     ItemIndex = 0
     Items.Strings = (
@@ -149,6 +153,7 @@ object TornadoPlotForm: TTornadoPlotForm
         end      
         item
           Alignment = calBottom
+          Marks.LabelFont.Height = 11
           Minors = <>
           Title.LabelFont.Height = -9
           Title.Visible = True
