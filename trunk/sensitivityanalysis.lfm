@@ -1,7 +1,7 @@
 object SensitivityAnalysisForm: TSensitivityAnalysisForm
-  Left = 233
+  Left = 383
   Height = 441
-  Top = 224
+  Top = 236
   Width = 721
   AlphaBlendValue = 0
   Anchors = [akTop, akLeft, akBottom]
@@ -79,7 +79,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object CheckGroup1: TCheckGroup
     AnchorSideTop.Side = asrBottom
     Left = 488
-    Height = 200
+    Height = 285
     Hint = 'Select the behavioural parameter that servers as dependent variable here.'
     Top = 32
     Width = 203
@@ -95,13 +95,15 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 178
+    ClientHeight = 263
     ClientWidth = 195
     Items.Strings = (
       'TSH'
       'FT4'
       'FT3'
       'cT3'
+      'TT4'
+      'TT3'
     )
     OnClick = CheckGroup1Click
     OnItemClick = CheckGroup1ItemClick
@@ -109,7 +111,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ShowHint = True
     TabOrder = 1
     Data = {
-      0400000002020202
+      06000000020202020202
     }
   end
   object TSHColorBox: TColorBox
@@ -234,6 +236,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
         'beta31 (/s)'
         'beta32 (/s)'
         'LS (l/µmol)'
+        'TBG (nmol/l)'
+        'TBPA (µmol/l)'
       )
       OnChange = StrucParComboChange
       ParentShowHint = False
@@ -296,6 +300,30 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     OnClick = FullScaleButton1Click
     ShowHint = True
     ParentShowHint = False
+  end
+  object TT4ColorBox: TColorBox
+    Left = 567
+    Height = 20
+    Top = 234
+    Width = 113
+    DefaultColorColor = clNavy
+    Selected = clNavy
+    Anchors = [akTop, akRight]
+    ItemHeight = 16
+    OnChange = cT3ColorBoxChange
+    TabOrder = 8
+  end
+  object TT3ColorBox: TColorBox
+    Left = 567
+    Height = 20
+    Top = 276
+    Width = 113
+    DefaultColorColor = clOlive
+    Selected = clOlive
+    Anchors = [akTop, akRight]
+    ItemHeight = 16
+    OnChange = cT3ColorBoxChange
+    TabOrder = 9
   end
   object ChartAxisTransformations1: TChartAxisTransformations
     left = 376

@@ -112,6 +112,9 @@ begin
   FT41 := alphaT * GT * TSH1 / (betaT * (dT + TSH1) * (1 + k41 * TBG + k42 * TBPA));
   FT42 := alphaT * GT * TSH2 / (betaT * (dT + TSH2) * (1 + k41 * TBG + k42 * TBPA));
   FT43 := alphaT * GT * TSH3 / (betaT * (dT + TSH3) * (1 + k41 * TBG + k42 * TBPA));
+  T41 := alphaT * GT * TSH1 / (betaT * (dT + TSH1));
+  T42 := alphaT * GT * TSH2 / (betaT * (dT + TSH2));
+  T43 := alphaT * GT * TSH3 / (betaT * (dT + TSH3));
   T3z1 := alpha32 * GD2 * FT41 / (beta32 * (kM2 + FT41));
   T3z2 := alpha32 * GD2 * FT42 / (beta32 * (kM2 + FT42));
   T3z3 := alpha32 * GD2 * FT43 / (beta32 * (kM2 + FT43));
@@ -124,6 +127,9 @@ begin
   FT31 := k51 * FT41 / (kM1 + FT41);
   FT32 := k51 * FT42 / (kM1 + FT42);
   FT33 := k51 * FT43 / (kM1 + FT43);
+  T31 := k5 * FT41 / (kM1 + FT41);
+  T32 := k5 * FT42 / (kM1 + FT42);
+  T33 := k5 * FT43 / (kM1 + FT43);
 end;
 
 procedure ClearPrediction;
@@ -147,10 +153,13 @@ begin
   writeaMemoLine(Prediction.Memo1, '');
   writeaMemoLine(Prediction.Memo1, 'TRH: ' + FloatToStrF(TRH1 / UTRH, FF, 0, 4) + ' ' + gParameterUnit[TRH_pos]);
   writeaMemoLine(Prediction.Memo1, 'TSH: ' + FloatToStrF(TSH1 * gParameterFactor[pTSH_pos], FF, 0, 4) + ', ' + FloatToStrF(TSH2 * gParameterFactor[pTSH_pos], FF, 0, 4) + ' and ' + FloatToStrF(TSH3 * gParameterFactor[pTSH_pos], FF, 0, 4) + ' ' + gParameterUnit[TSH_pos]);
+  writeaMemoLine(Prediction.Memo1, 'TT4: ' + FloatToStrF(T41 / UFT4 * gParameterFactor[TT4_pos], FF, 0, 4) + ', ' + FloatToStrF(T42 / UFT4 * gParameterFactor[TT4_pos], FF, 0, 4) + ' and ' + FloatToStrF(T43 / UFT4 * gParameterFactor[TT4_pos], FF, 0, 4) + ' ' + gParameterUnit[TT4_pos]);
   writeaMemoLine(Prediction.Memo1, 'FT4: ' + FloatToStrF(FT41 / UFT4 * gParameterFactor[FT4_pos], FF, 0, 4) + ', ' + FloatToStrF(FT42 / UFT4 * gParameterFactor[FT4_pos], FF, 0, 4) + ' and ' + FloatToStrF(FT43 / UFT4 * gParameterFactor[FT4_pos], FF, 0, 4) + ' ' + gParameterUnit[FT4_pos]);
+  writeaMemoLine(Prediction.Memo1, 'TT3: ' + FloatToStrF(T31 / UFT3 * gParameterFactor[TT3_pos], FF, 0, 4) + ', ' + FloatToStrF(T32 / UFT3 * gParameterFactor[TT3_pos], FF, 0, 4) + ' and ' + FloatToStrF(T33 / UFT3 * gParameterFactor[TT3_pos], FF, 0, 4) + ' ' + gParameterUnit[TT3_pos]);
   writeaMemoLine(Prediction.Memo1, 'FT3: ' + FloatToStrF(FT31 / UFT3 * gParameterFactor[FT3_pos], FF, 0, 4) + ', ' + FloatToStrF(FT32 / UFT3 * gParameterFactor[FT3_pos], FF, 0, 4) + ' and ' + FloatToStrF(FT33 / UFT3 * gParameterFactor[FT3_pos], FF, 0, 4) + ' ' + gParameterUnit[FT3_pos]);
   writeaMemoLine(Prediction.Memo1, 'cT3: ' + FloatToStrF(T3z1 / UFT3, FF, 0, 4) + ', ' + FloatToStrF(T3z2 / UFT3, FF, 0, 4) + ' and ' + FloatToStrF(T3z2 / UFT3, FF, 0, 4) + ' ' + gParameterUnit[FT3_pos]);
   writeaMemoLine(Prediction.Memo1, '');
+  writeaMemoLine(Prediction.Memo1, NEGATIVE_VALUES_HINT);
   writeaMemoLine(Prediction.Memo1, DEVIATION_STRING);
 end;
 

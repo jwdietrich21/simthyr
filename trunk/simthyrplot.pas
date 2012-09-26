@@ -135,6 +135,7 @@ end;
 { TValuesPlot }
 
 procedure DrawDummyPlots;
+  {Draws empty plots that are displayed before simulation run}
 begin
   with ValuesPlot.Fline1 do
   begin
@@ -161,6 +162,7 @@ begin
 end;
 
 procedure DrawPlot(empty: boolean);
+  {Draws plots from simulated values in gResultMatrix}
 var
   j: integer;
   theTime: TDateTime;
