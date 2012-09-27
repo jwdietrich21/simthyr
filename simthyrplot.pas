@@ -367,7 +367,7 @@ end;
 
 procedure TValuesPlot.CopyChart;
 var
-  {$IFDEF UNIX}
+  {$IFDEF UNIX} {selects optimal type of clipboard graphic for respective OS}
   theImage: TPortableNetworkGraphic;
   {$ELSE}
   theImage: TBitMap;
@@ -457,7 +457,7 @@ begin
   if gSelectedChart = nil then
     bell
   else
-    bell;
+    bell;  {this function is not yet implemented}
 end;
 
 procedure TValuesPlot.FullScaleButton2Click(Sender: TObject);

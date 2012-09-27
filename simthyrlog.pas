@@ -1,9 +1,9 @@
 unit SimThyrLog;
 
 { SimThyr Project }
-{ (c) J. W. Dietrich, 1994 - 2011 }
+{ (c) J. W. Dietrich, 1994 - 2012 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2011 }
+{ (c) Ruhr University of Bochum 2005 - 2012 }
 
 { This unit draws a spreadsheet-like grid with simulation results }
 
@@ -96,7 +96,7 @@ begin
   gLastActiveCustomForm := SimThyrLogWindow; {stores window as last active form}
 end;
 
-procedure TSimThyrLogWindow.InitGrid;
+procedure TSimThyrLogWindow.InitGrid; {initializes empty table}
 begin
   ValuesGrid.RowCount := 1;
   GridRows := RES_BLANK_ROWS;

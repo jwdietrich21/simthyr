@@ -1,21 +1,19 @@
 object AboutModelForm: TAboutModelForm
-  Left = 498
-  Height = 699
-  Top = 180
-  Width = 575
-  HorzScrollBar.Page = 509
-  HorzScrollBar.Range = 509
+  Left = 500
+  Height = 701
+  Top = 150
+  Width = 525
+  HorzScrollBar.Page = 1
   HorzScrollBar.Visible = False
-  VertScrollBar.Page = 695
-  VertScrollBar.Range = 695
+  VertScrollBar.Page = 1
   VertScrollBar.Visible = False
   AlphaBlend = True
   AlphaBlendValue = 0
   Anchors = []
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'About the model'
-  ClientHeight = 699
-  ClientWidth = 575
+  ClientHeight = 701
+  ClientWidth = 525
   Color = clWhite
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
@@ -155,12 +153,11 @@ object AboutModelForm: TAboutModelForm
     0000
   }
   LCLVersion = '1.0.1.3'
-  Visible = True
   object Label1: TLabel
     Left = 56
-    Height = 14
+    Height = 17
     Top = 96
-    Width = 68
+    Width = 78
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -171,7 +168,7 @@ object AboutModelForm: TAboutModelForm
     Left = 56
     Height = 48
     Top = 16
-    Width = 462
+    Width = 412
     Anchors = [akTop, akLeft, akRight]
     Caption = 'This simulation is based on version 10 of the MiMe-NoCoDI model of thyrotropic feedback control proposed by Dietrich et al. 1997 and subsequently.'
     Font.Quality = fqAntialiased
@@ -180,10 +177,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 358
-    Height = 14
+    Left = 255
+    Height = 17
     Top = 64
-    Width = 160
+    Width = 213
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -197,49 +194,58 @@ object AboutModelForm: TAboutModelForm
   end
   object Memo1: TMemo
     Left = 56
-    Height = 527
+    Height = 529
     Top = 120
-    Width = 462
+    Width = 412
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.InnerBorder = 5
     Color = clWhite
     Lines.Strings = (
-      '1. Dietrich JW, Mitzdorf U, Weitkunat R, Pickardt CR. The pituitary-thyroid feedback '
-      'control: stability and oscillations in a new nonlinear model. Journal of Endocrinological '
+      '1. Dietrich JW, Mitzdorf U, Weitkunat R, Pickardt CR. The'
+      'pituitary-thyroid feedback control: stability and oscillations in'
+      'a new nonlinear model. Journal of Endocrinological'
       'Investigation. 1997;20(Suppl. to no. 5):100.'
       ''
-      '2. Dietrich JW, Fischer MR, Jauch J, Pantke E, Gärtner R, Pickardt CR. SPINA-THYR: A '
-      'novel systems theoretic approach to determine the secretion capacity of the thyroid '
-      'gland. European Journal of Internal Medicine. 1999;10 (Suppl. 1)(May 1999):S34.'
+      '2. Dietrich JW, Fischer MR, Jauch J, Pantke E, Gärtner R,'
+      'Pickardt CR. SPINA-THYR: A novel systems theoretic approach'
+      'to determine the secretion capacity of the thyroid gland.'
+      'European Journal of Internal Medicine. 1999;10 (Suppl. 1)(May'
+      '1999):S34.'
       ''
-      '3. Dietrich JW. Signal Storage in Metabolic Pathways: The ASIA Element. kybernetiknet. '
-      '2000;1(3, 2000):1-9.'
+      '3. Dietrich JW. Signal Storage in Metabolic Pathways: The ASIA'
+      'Element. kybernetiknet. 2000;1(3, 2000):1-9.'
       ''
-      '4. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Fractal Properties of the Thyrotropic '
-      'Feedback Control: Implications of a Nonlinear Model Compared with Empirical Data. In: '
-      'Trappl R, ed. Cybernetics and Systems 2002. Vienna: Austrian Society for Cybernetic '
-      'Studies; 2002:329-34.'
+      '4. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Fractal'
+      'Properties of the Thyrotropic Feedback Control: Implications'
+      'of a Nonlinear Model Compared with Empirical Data. In:'
+      'Trappl R, ed. Cybernetics and Systems 2002. Vienna: Austrian'
+      'Society for Cybernetic Studies; 2002:329-34.'
       ''
-      '5. Dietrich JW. Der Hypophysen-Schilddrüsen-Regelkreis. Entwicklung und klinische '
-      'Anwendung eines nichtlinearen Modells. Vol. 2 Berlin: Logos-Verlag; 2002. (Schardt F, ed. '
+      '5. Dietrich JW. Der Hypophysen-Schilddrüsen-Regelkreis.'
+      'Entwicklung und klinische Anwendung eines nichtlinearen'
+      'Modells. Vol. 2 Berlin: Logos Verlag; 2002. (Schardt F, ed.'
       'Spektrum medizinischer Forschung).'
       ''
-      '6. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Thyrotropic Feedback Control: '
-      'Evidence for an Additional Ultrashort Feedback Loop from Fractal Analysis. Cybernetics '
-      'and Systems. 2004;35(4):315-31.'
+      '6. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Thyrotropic'
+      'Feedback Control: Evidence for an Additional Ultrashort'
+      'Feedback Loop from Fractal Analysis. Cybernetics and'
+      'Systems. 2004;35(4):315-31.'
       ''
-      '7. Dietrich, J. W. and B. O. Boehm (2006). Equilibrium behaviour of feedback-coupled '
-      'physiological saturation kinetics. In: Cybernetics and Systems 2006. R. Trappl (Hrsg). '
+      '7. Dietrich, J. W. and B. O. Boehm (2006). Equilibrium'
+      'behaviour of feedback-coupled physiological saturation'
+      'kinetics. In: Cybernetics and Systems 2006. R. Trappl (Hrsg).'
       'Vienna, Austrian Society for Cybernetic Studies. 1: 269-74.'
       ''
-      '8. Dietrich, J. W., A. Stachon, B. Antic, H. H. Klein und S. Hering (2008). "The '
-      'AQUA-FONTIS Study: Protocol of a multidisciplinary, cross-sectional and prospective '
-      'longitudinal study for developing standardized diagnostics and classification of '
-      'non-thyroidal illness syndrome." BMC Endocrine Disorders 8 (13).'
+      '8. Dietrich, J. W., A. Stachon, B. Antic, H. H. Klein und S.'
+      'Hering (2008). "The AQUA-FONTIS Study: Protocol of a'
+      'multidisciplinary, cross sectional and prospective longitudinal'
+      'study for developing standardized diagnostics and'
+      'classification of non-thyroidal illness syndrome." BMC'
+      'Endocrine Disorders 8 (13).'
     )
     OnChange = Memo1Change
     ReadOnly = True
     ScrollBars = ssAutoBoth
     TabOrder = 1
   end
-end
+end

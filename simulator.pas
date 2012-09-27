@@ -150,6 +150,8 @@ implementation
   TBG := 3e-7;                 {mol/l		from reference value}
   TBPA := 4.5e-6;              {mol/l		from reference value}
   IBS := 8e-6;                 {mol/l		estimated from TBG level, corrected for intracellular accumulation [Hays et al. 1988]}
+                               {                CRYM, Mu-crystallin homolog also known as NADP-regulated thyroid-hormone-binding     }
+                               {                protein (THBP) could be a biochemical representation of IBS}
  end;
 
  procedure SetDerivedVariables;

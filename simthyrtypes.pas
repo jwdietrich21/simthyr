@@ -18,7 +18,7 @@ uses
 
 const
 
- kNUL = char(0);
+ kNUL = char(0);           {Special ASCII characters}
  kENTER = char(3);
  kTAB = char(9);
  kLF = char(10);
@@ -31,19 +31,14 @@ const
  kOMIT = '•';
  kCRLF = #13#10;
 
- RES_MAX_COLS = 10;
- RES_BLANK_ROWS = 26;
-
- COL_WIDTH = 62;
-
- MAX_VARS = 2;
- MAX_N = 2001;
+ RES_MAX_COLS = 10;       {number of columns of table in log window}
+ RES_BLANK_ROWS = 26;     {number of blank rows for empty window}
 
  DEC_POINT = '.';
  DEC_COMMA = ',';
 
- i_pos = 0;
- t_pos = 1;
+ i_pos = 0;               {positions of simulated variables in}
+ t_pos = 1;               {several arrays and in result matrix}
  TRH_pos = 2;
  pTSH_pos = 3;
  TSH_pos = 4;
@@ -56,9 +51,9 @@ const
  UFT4 = 1.28E-11; {Conversion factor ng/dl -> mol/l (T4)}
  UFT3 = 1.54E-12; {Conversion factor pg/ml -> mol/l (T3)}
  UTRH = 2.76E-12; {Conversion factor ng/l -> mol/l (TRH; MW=362) [Jackson 1987]}
- UTSH = 1e-3; {Dummy conversion factor for TSH}
+ UTSH = 1e-3;     {Dummy conversion factor for TSH}
 
- MAXFACTORS = 10;
+ MAXFACTORS = 10; {for measurement units and preferences}
 
  BASE_URL = 'http://simthyr.medical-cybernetics.de';
  SIMTHYR_GLOBAL_ID = 'net.sf.simthyr';
@@ -86,14 +81,13 @@ type
  TableCell = TPoint;
  Str3 = string[3];
  Str255 = string[255];
- tResultMatrix = array of array of real;
+ tResultMatrix = array of array of real;               {matrix with simulated values}
  tResultContent = array[0..RES_MAX_COLS-1] of Str255;
  tmode = (integerMode, realMode);
 
 var
  nmax_old, tmax, tt, gridrows: integer;
  nmax: longint;
- Werte: array[1..MAX_VARS, 1..MAX_N] of real;
  PrefixLabel, T4UnitLabel, T3UnitLabel: array[0..MAXFACTORS - 1] of Str3;
  PrefixFactor, T4UnitFactor, T3UnitFactor: array[0..MAXFACTORS - 1] of real;
  gLabel: array[1..3] of Str255;
