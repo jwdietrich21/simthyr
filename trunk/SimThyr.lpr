@@ -80,7 +80,7 @@ begin
   begin
     Hide;
     InitGrid;
-    Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 45;
+    Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 52;
     Left := 32;
     AlphaBlend := false;
   end;
