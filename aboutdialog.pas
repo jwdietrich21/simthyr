@@ -32,6 +32,8 @@ type
     Image7: TImage;
     Image8: TImage;
     Image9: TImage;
+    Label10: TLabel;
+    Label11: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -59,6 +61,7 @@ type
     procedure Image7Click(Sender: TObject);
     procedure Image8Click(Sender: TObject);
     procedure Image9Click(Sender: TObject);
+    procedure Label10Click(Sender: TObject);
     procedure Label2Click(Sender: TObject);
     procedure Label5Click(Sender: TObject);
     procedure Label7Click(Sender: TObject);
@@ -157,6 +160,11 @@ end;
 procedure TAboutWindow.Image9Click(Sender: TObject);
 begin
   OpenURL('http://www.barebones.com/products/textwrangler/');
+end;
+
+procedure TAboutWindow.Label10Click(Sender: TObject);
+begin
+
 end;
 
 procedure TAboutWindow.ShowAbout;
