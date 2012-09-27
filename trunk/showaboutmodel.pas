@@ -1,9 +1,9 @@
 unit ShowAboutModel;
 
 { SimThyr Project }
-{ (c) J. W. Dietrich, 1994 - 2011 }
+{ (c) J. W. Dietrich, 1994 - 2012 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2011 }
+{ (c) Ruhr University of Bochum 2005 - 2012 }
 
 { This unit draws a window with additional information and references }
 

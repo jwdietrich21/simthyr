@@ -485,6 +485,7 @@ begin
 end;
 
 procedure TSimThyrToolbar.SelectAllMenuItemClick(Sender: TObject);
+{currently implemented for result table only}
 var
   theForm: TForm;
   i, j: integer;
