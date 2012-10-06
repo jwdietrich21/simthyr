@@ -229,6 +229,7 @@ begin
     gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' +
     gParameterUnit[ComboBox1.ItemIndex + 2];
   ColorListBox1.Selected := gDefaultColors[ComboBox1.ItemIndex + 2];
+  DrawDummyPlots;
   DrawPlot(not graphready);
 end;
 
@@ -306,6 +307,7 @@ begin
     gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' +
     gParameterUnit[ComboBox2.ItemIndex + 2];
   ColorListBox2.Selected := gDefaultColors[ComboBox2.ItemIndex + 2];
+  DrawDummyPlots;
   DrawPlot(not graphready);
 end;
 
