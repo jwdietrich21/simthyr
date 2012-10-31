@@ -24,6 +24,8 @@ type
 
   TAboutWindow = class(TForm)
     Image10: TImage;
+    Image11: TImage;
+    Image12: TImage;
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
@@ -52,6 +54,8 @@ type
     TabSheet3: TTabSheet;
     TabSheet4: TTabSheet;
     procedure Image10Click(Sender: TObject);
+    procedure Image11Click(Sender: TObject);
+    procedure Image12Click(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure Image2Click(Sender: TObject);
     procedure Image3Click(Sender: TObject);
@@ -122,6 +126,16 @@ begin
   OpenURL('http://versionsapp.com/');
 end;
 
+procedure TAboutWindow.Image11Click(Sender: TObject);
+begin
+  OpenURL('http://www.zennaware.com');
+end;
+
+procedure TAboutWindow.Image12Click(Sender: TObject);
+begin
+  OpenURL('http://developer.apple.com/');
+end;
+
 procedure TAboutWindow.Image2Click(Sender: TObject);
 begin
   OpenURL('http://link.medinn.med.uni-muenchen.de');
@@ -175,7 +189,7 @@ begin
   AboutWindow.FormStyle := fsStayOnTop;
   AboutWindow.AlphaBlend := false;
   AboutWindow.Memo1.Lines.Clear;
-  AboutWindow.Memo1.Lines.Add('SimThyr 3.2');
+  AboutWindow.Memo1.Lines.Add('SimThyr 3.2.1');
   AboutWindow.Memo1.Lines.Add('');
   AboutWindow.Memo1.Lines.Add('Licence: BSD');
   AboutWindow.Memo1.Lines.Add('');
