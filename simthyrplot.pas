@@ -230,6 +230,7 @@ begin
     gParameterUnit[ComboBox1.ItemIndex + 2];
   ColorListBox1.Selected := gDefaultColors[ComboBox1.ItemIndex + 2];
   DrawDummyPlots;
+  nmax_old := 0;
   DrawPlot(not graphready);
 end;
 
@@ -293,11 +294,15 @@ end;
 
 procedure TValuesPlot.ColorListBox1Click(Sender: TObject);
 begin
+  DrawDummyPlots;
+  nmax_old := 0;
   DrawPlot(not graphready);
 end;
 
 procedure TValuesPlot.ColorListBox2Click(Sender: TObject);
 begin
+  DrawDummyPlots;
+  nmax_old := 0;
   DrawPlot(not graphready);
 end;
 
@@ -308,6 +313,7 @@ begin
     gParameterUnit[ComboBox2.ItemIndex + 2];
   ColorListBox2.Selected := gDefaultColors[ComboBox2.ItemIndex + 2];
   DrawDummyPlots;
+  nmax_old := 0;
   DrawPlot(not graphready);
 end;
 
