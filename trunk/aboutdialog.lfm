@@ -15,6 +15,7 @@ object AboutWindow: TAboutWindow
   ClientWidth = 490
   Color = clWhite
   Font.Pitch = fpVariable
+  OnKeyDown = FormKeyDown
   Position = poScreenCenter
   ShowInTaskBar = stNever
   LCLVersion = '1.0.2.0'
@@ -863,9 +864,9 @@ object AboutWindow: TAboutWindow
       ClientHeight = 289
       ClientWidth = 418
       object Label3: TLabel
-        Left = 28
+        Left = 25
         Height = 17
-        Top = 26
+        Top = 20
         Width = 334
         Caption = 'SimThyr uses the following third party resources:'
         Font.Pitch = fpVariable
@@ -875,18 +876,18 @@ object AboutWindow: TAboutWindow
         WordWrap = True
       end
       object Label4: TLabel
-        Left = 28
+        Left = 25
         Height = 17
-        Top = 58
+        Top = 44
         Width = 197
         Caption = 'Silk icon set 1.3 by Mark James'
         ParentColor = False
       end
       object Label5: TLabel
         Cursor = crHandPoint
-        Left = 28
+        Left = 25
         Height = 17
-        Top = 74
+        Top = 60
         Width = 283
         Caption = 'http://www.famfamfam.com/lab/icons/silk/'
         Font.Color = clNavy
@@ -896,18 +897,18 @@ object AboutWindow: TAboutWindow
         OnClick = Label5Click
       end
       object Label6: TLabel
-        Left = 28
+        Left = 25
         Height = 17
-        Top = 106
+        Top = 84
         Width = 119
         Caption = 'Tango Icon Library'
         ParentColor = False
       end
       object Label7: TLabel
         Cursor = crHandPoint
-        Left = 28
+        Left = 25
         Height = 17
-        Top = 123
+        Top = 101
         Width = 315
         Caption = 'http://tango.freedesktop.org/Tango_Icon_Library'
         Font.Color = clNavy
@@ -917,18 +918,18 @@ object AboutWindow: TAboutWindow
         OnClick = Label7Click
       end
       object Label8: TLabel
-        Left = 28
+        Left = 25
         Height = 17
-        Top = 154
+        Top = 124
         Width = 251
         Caption = 'VersionSupport unit by Mike Thompson'
         ParentColor = False
       end
       object Label9: TLabel
         Cursor = crHandPoint
-        Left = 28
+        Left = 25
         Height = 17
-        Top = 170
+        Top = 140
         Width = 372
         Caption = 'http://www.lazarus.freepascal.org/index.php/topic,13957'
         Font.Color = clNavy
@@ -938,9 +939,9 @@ object AboutWindow: TAboutWindow
         OnClick = Label9Click
       end
       object Label10: TLabel
-        Left = 28
+        Left = 25
         Height = 17
-        Top = 210
+        Top = 180
         Width = 205
         Caption = 'Scientific and technical advise:'
         Font.Pitch = fpVariable
@@ -950,11 +951,32 @@ object AboutWindow: TAboutWindow
         OnClick = Label10Click
       end
       object Label11: TLabel
-        Left = 28
-        Height = 33
-        Top = 242
-        Width = 407
-        Caption = 'Ulla Mitzdorf, C. Renate Pickardt, Martin Adler, Matthias Holzer, '#13#10'Phil Hess, Martin R. Fischer, Rudolf Hörmann, John E. Midgley'
+        Left = 25
+        Height = 16
+        Top = 204
+        Width = 368
+        AutoSize = False
+        Caption = 'Ulla Mitzdorf, C. Renate Pickardt, Martin Adler'
+        ParentColor = False
+        OnClick = Label10Click
+      end
+      object Label12: TLabel
+        Left = 25
+        Height = 16
+        Top = 220
+        Width = 368
+        AutoSize = False
+        Caption = 'Matthias Holzer, Phil Hess, Martin R. Fischer,'
+        ParentColor = False
+        OnClick = Label10Click
+      end
+      object Label13: TLabel
+        Left = 25
+        Height = 16
+        Top = 236
+        Width = 368
+        AutoSize = False
+        Caption = 'Rudolf Hörmann, John E. Midgley'
         ParentColor = False
         OnClick = Label10Click
       end
@@ -1889,6 +1911,7 @@ object AboutWindow: TAboutWindow
         ShowHint = True
       end
       object Image11: TImage
+        Cursor = crHandPoint
         Left = 329
         Height = 48
         Top = 180
@@ -2055,6 +2078,7 @@ object AboutWindow: TAboutWindow
         }
       end
       object Image12: TImage
+        Cursor = crHandPoint
         Left = 217
         Height = 48
         Top = 180

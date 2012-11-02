@@ -36,6 +36,8 @@ type
     Image9: TImage;
     Label10: TLabel;
     Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -53,6 +55,7 @@ type
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
     TabSheet4: TTabSheet;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure Image10Click(Sender: TObject);
     procedure Image11Click(Sender: TObject);
     procedure Image12Click(Sender: TObject);
@@ -126,6 +129,17 @@ begin
   OpenURL('http://versionsapp.com/');
 end;
 
+procedure TAboutWindow.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+{provide additional information, if option or alt key is pressed}
+begin
+  if key = 18 then
+  begin
+    AboutWindow.Memo1.Lines.Add('');
+    AboutWindow.Memo1.Lines.Add('Preferences file: ' + GetPreferencesFile);
+  end;
+end;
+
 procedure TAboutWindow.Image11Click(Sender: TObject);
 begin
   OpenURL('http://www.zennaware.com');
@@ -188,6 +202,8 @@ begin
   SystemStem := OSVersion;
   AboutWindow.FormStyle := fsStayOnTop;
   AboutWindow.AlphaBlend := false;
+  {The following lines provide additional information}
+  {on the software installation}
   AboutWindow.Memo1.Lines.Clear;
   AboutWindow.Memo1.Lines.Add('SimThyr 3.2.1');
   AboutWindow.Memo1.Lines.Add('');
@@ -210,8 +226,6 @@ begin
   MinVer := IntToStr(Hi(DosVersion));
   {$ENDIF}
   AboutWindow.Memo1.Lines.Add('Operating system: ' + GetOS + ' (' + SystemStem + MajVer + '.' + MinVer + ')');
-  {AboutWindow.Memo1.Lines.Add('');
-  AboutWindow.Memo1.Lines.Add('Preferences file: ' + GetPreferencesFile);}
   AboutWindow.ShowModal;
 end;
 
