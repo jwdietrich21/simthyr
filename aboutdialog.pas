@@ -84,6 +84,7 @@ type
 
 var
   AboutWindow: TAboutWindow;
+  gExtendedInfo: boolean;
 
 implementation
 
@@ -133,10 +134,11 @@ procedure TAboutWindow.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 {provide additional information, if option or alt key is pressed}
 begin
-  if key = 18 then
+  if (key = 18) and not gExtendedInfo then
   begin
     AboutWindow.Memo1.Lines.Add('');
     AboutWindow.Memo1.Lines.Add('Preferences file: ' + GetPreferencesFile);
+    gExtendedInfo := true;
   end;
 end;
 
@@ -199,6 +201,7 @@ procedure TAboutWindow.ShowAbout;
 var
   SystemStem, MajVer, MinVer: Str255;
 begin
+  gExtendedInfo := false;
   SystemStem := OSVersion;
   AboutWindow.FormStyle := fsStayOnTop;
   AboutWindow.AlphaBlend := false;
