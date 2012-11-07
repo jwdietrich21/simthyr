@@ -126,8 +126,8 @@ var
   {$IFDEF DARWIN}
   theError: OSErr;
   theRef: FSRef;
-  {$ENDIF}
   pathBuffer: PChar;
+  {$ENDIF}
 begin
   {$IFDEF DARWIN}
     try
