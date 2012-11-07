@@ -132,7 +132,11 @@ begin
   {$IFDEF DARWIN}
     try
       pathBuffer := Allocmem(kMaxPath);
-    except on exception do exit;
+    except on exception do
+      begin
+        ShowMessage(PREFERENCES_READ_ERROR_MESSAGE);
+        exit;
+      end;
     end;
     try
       Fillchar(pathBuffer^, kMaxPath, #0);
@@ -141,7 +145,10 @@ begin
       if (pathBuffer <> nil) and (theError = noErr) then
       begin
         theError := FSRefMakePath(theRef, pathBuffer, kMaxPath);
-        if theError = noErr then GetPreferencesFolder := UTF8ToAnsi(StrPas(pathBuffer)) + '/';
+        if theError = noErr then
+          GetPreferencesFolder := UTF8ToAnsi(StrPas(pathBuffer)) + '/'
+        else
+          ShowMessage(PREFERENCES_SAVE_ERROR_MESSAGE);
       end;
     finally
       Freemem(pathBuffer);

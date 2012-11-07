@@ -66,6 +66,7 @@ const
  IMPLEMENTATION_MESSAGE = 'This function is not implemented in this version of SimThyr.';
  FORMAT_MESSAGE = 'Please check your input.';
  SAVE_ERROR_MESSAGE = 'Error saving the file';
+ PREFERENCES_READ_ERROR_MESSAGE = 'Preferences could not be read. Please check access rights of your user or home folder';
  PREFERENCES_SAVE_ERROR_MESSAGE = 'The preferences could not be saved permanently, however, they are valid for this session';
 
  EXAMPLE_STRING = 'Example: ';
