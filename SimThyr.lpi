@@ -15,7 +15,7 @@
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="2"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="176"/>
+      <BuildNr Value="178"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Project" FileDescription="SimThyr" InternalName="SimThyr 3.2" LegalCopyright="1994-2012 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.2"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -716,7 +716,7 @@
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="32" Y="2"/>
+        <CursorPos X="110" Y="17"/>
         <UsageCount Value="196"/>
         <Bookmarks Count="1">
           <Item0 X="1" Y="492" ID="8"/>
