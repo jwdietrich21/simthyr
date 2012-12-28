@@ -307,7 +307,7 @@ object SimThyrLogWindow: TSimThyrLogWindow
     AC418CC3AC418CC3AC41CCE3AC41CDF3AC41EFFFAC41FFFFAC41
   }
   OnActivate = FormActivate
-  LCLVersion = '1.0.1.3'
+  LCLVersion = '1.0.2.0'
   Visible = True
   object ValuesGrid: TStringGrid
     Cursor = crIBeam
@@ -323,7 +323,7 @@ object SimThyrLogWindow: TSimThyrLogWindow
     HeaderHotZones = [gzFixedRows]
     HeaderPushZones = []
     MouseWheelOption = mwGrid
-    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goColMoving, goTabs, goDblClickAutoSize, goSmoothScroll]
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goTabs, goDblClickAutoSize, goSmoothScroll, goFixedColSizing]
     PopupMenu = PopupMenu1
     RowCount = 1
     TabOrder = 0
