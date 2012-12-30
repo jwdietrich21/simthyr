@@ -19,7 +19,7 @@ uses
   SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers, ComCtrls,
   LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog, ShowAboutModel,
   StructureParameters, SimThyrPrediction, Sensitivityanalysis, tornado,
-  ScenarioHandler, HandlePreferences, HandleNotifier, LCLProc;
+  ScenarioHandler, HandlePreferences, HandleNotifier, LCLProc, StdCtrls;
 
 type
 
@@ -43,6 +43,7 @@ type
     FileMenu:     TMenuItem;
     IdleTimer1:   TIdleTimer;
     ImageList1:   TImageList;
+    Label1: TLabel;
     MacAboutItem: TMenuItem;
     AppleMenu:    TMenuItem;
     MacPreferencesItem: TMenuItem;
