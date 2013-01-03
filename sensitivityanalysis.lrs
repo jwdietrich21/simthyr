@@ -7,7 +7,7 @@ LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
   +'itivity Analysis'#12'ClientHeight'#3#185#1#11'ClientWidth'#3#209#2#5'Color'
   +#7#7'clWhite'#21'Constraints.MinHeight'#3#144#1#20'Constraints.MinWidth'#3'X'
   +#2#10'OnActivate'#7#12'FormActivate'#8'OnCreate'#7#10'FormCreate'#10'LCLVers'
-  +'ion'#6#7'1.0.1.3'#7'Visible'#9#0#6'TPanel'#6'Panel1'#4'Left'#2'0'#6'Height'
+  +'ion'#6#7'1.0.2.0'#7'Visible'#9#0#6'TPanel'#6'Panel1'#4'Left'#2'0'#6'Height'
   +#3'B'#1#3'Top'#2' '#5'Width'#3#169#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRi'
   +'ght'#8'akBottom'#0#17'BorderSpacing.Top'#2#20#11'BorderStyle'#7#8'bsSingle'
   +#7'Caption'#6#6'Panel1'#12'ClientHeight'#3'B'#1#11'ClientWidth'#3#169#1#8'Ta'
@@ -57,14 +57,14 @@ LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
   +#0#9'TGroupBox'#9'GroupBox1'#4'Left'#2'0'#6'Height'#2'2'#3'Top'#3'j'#1#5'Wid'
   +'th'#3#170#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#7'Caption'#6#21
   +'Independent parameter'#12'ClientHeight'#2#28#11'ClientWidth'#3#162#1#8'TabO'
-  +'rder'#2#6#0#14'TFloatSpinEdit'#11'MinSpinEdit'#4'Left'#2#12#6'Height'#2#16#4
-  +'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2#3#5'Width'#2'H'
+  +'rder'#2#6#0#14'TFloatSpinEdit'#11'MinSpinEdit'#4'Left'#2#12#6'Height'#2#15#4
+  +'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2#4#5'Width'#2'H'
   +#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0
   +#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0
   +#0#0#0#0#0#0#0#0#0#8'OnChange'#7#17'MinSpinEditChange'#14'ParentShowHint'#8#8
   +'ShowHint'#9#8'TabOrder'#2#0#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#14'TFloatSpi'
-  +'nEdit'#11'MaxSpinEdit'#4'Left'#3'N'#1#6'Height'#2#16#4'Hint'#6'''Maximum of'
-  +' selected structure parameter'#3'Top'#2#3#5'Width'#2'H'#7'Anchors'#11#7'akR'
+  +'nEdit'#11'MaxSpinEdit'#4'Left'#3'N'#1#6'Height'#2#15#4'Hint'#6'''Maximum of'
+  +' selected structure parameter'#3'Top'#2#4#5'Width'#2'H'#7'Anchors'#11#7'akR'
   ,'ight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0#0#0#0#0#128
   +#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0
   +#0#8'OnChange'#7#17'MaxSpinEditChange'#14'ParentShowHint'#8#8'ShowHint'#9#8

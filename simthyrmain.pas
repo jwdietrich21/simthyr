@@ -1,9 +1,9 @@
 unit SimThyrMain;
 
 { SimThyr Project }
-{ (c) J. W. Dietrich, 1994 - 2012 }
+{ (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2012 }
+{ (c) Ruhr University of Bochum 2005 - 2013 }
 
 { This unit provides global GUI functions, toolbar and menubar handling }
 
@@ -18,7 +18,7 @@ uses
   ExtCtrls, StdActns, LCLType, Menus, ActnList, SimThyrTypes,
   SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers, ComCtrls,
   LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog, ShowAboutModel,
-  StructureParameters, SimThyrPrediction, Sensitivityanalysis, tornado,
+  StructureParameters, SimThyrPrediction, Sensitivityanalysis, tornado, help,
   ScenarioHandler, HandlePreferences, HandleNotifier, LCLProc, StdCtrls;
 
 type
@@ -262,7 +262,7 @@ end;
 
 procedure TSimThyrToolbar.HelpItemClick(Sender: TObject);
 begin
-  OpenURL(HELP_URL);
+  HelpWindow.ShowOnTop;
 end;
 
 procedure TSimThyrToolbar.IdleTimer1Timer(Sender: TObject);

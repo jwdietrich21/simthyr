@@ -208,7 +208,7 @@ begin
   {The following lines provide additional information}
   {on the software installation}
   AboutWindow.Memo1.Lines.Clear;
-  AboutWindow.Memo1.Lines.Add('SimThyr 3.2.1');
+  AboutWindow.Memo1.Lines.Add('SimThyr ' + GetFileVersion);
   AboutWindow.Memo1.Lines.Add('');
   AboutWindow.Memo1.Lines.Add('Licence: BSD');
   AboutWindow.Memo1.Lines.Add('');

@@ -1,9 +1,9 @@
 unit SimThyrPrediction;
 
 { SimThyr Project }
-{ (c) J. W. Dietrich, 1994 - 2012 }
+{ (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2012 }
+{ (c) Ruhr University of Bochum 2005 - 2013 }
 
 { This unit implements a window showing predicted equilibrium values }
 

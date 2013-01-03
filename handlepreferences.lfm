@@ -406,7 +406,7 @@ object PreferencesDialog: TPreferencesDialog
     TabOrder = 3
     object NumberFormatEdit: TEdit
       Left = 76
-      Height = 22
+      Height = 21
       Hint = '0: Digit place holder (replaces/fills with 0); 1: Digit place holder (digit in the value replaces #); .: Location of decimal separator; ,: Location of thousands separator e+ and e-: Scientific notation; ; Separates positive, negative and zero numbers, respectively.'
       Top = 8
       Width = 168
@@ -434,7 +434,7 @@ object PreferencesDialog: TPreferencesDialog
     end
     object DateTimeFormatEdit: TEdit
       Left = 76
-      Height = 22
+      Height = 21
       Hint = 'D: day; dd: day with leading zero; h: hour; n: minute; s: second'
       Top = 38
       Width = 168
