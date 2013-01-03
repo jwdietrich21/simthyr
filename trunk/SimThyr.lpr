@@ -1,9 +1,9 @@
 program SimThyr;
 
 { SimThyr Project }
-{ (c) J. W. Dietrich, 1994 - 2012 }
+{ (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2012 }
+{ (c) Ruhr University of Bochum 2005 - 2013 }
 
 { This is the main project file }
 
@@ -21,7 +21,7 @@ uses
   simthyrlog, SimThyrTypes, SimThyrServices, ShowIPS, Simulator, Splash,
   AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
   SimOptions, VersionSupport, ScenarioHandler, HandlePreferences,
-  HandleNotifier, Sensitivityanalysis, tornado, DIFSupport;
+  HandleNotifier, Sensitivityanalysis, tornado, DIFSupport, help;
 
 {{$IFDEF WINDOWS}{$R SimThyr.rc}{$ENDIF}}
 
@@ -128,6 +128,7 @@ begin
   else SimulationSettings.hide;
   gStartup := false;
   SimThyrToolbar.SelectAllMenuItem.Enabled := true;
+  Application.CreateForm(THelpWindow, HelpWindow);
   Application.Run;
 end.
 

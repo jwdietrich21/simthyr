@@ -149,7 +149,7 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#10'LCLVersion'#6#7'1.0.1.3'#0#6'TLabel'#6'Lab'
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#10'LCLVersion'#6#7'1.0.2.0'#0#6'TLabel'#6'Lab'
   +'el1'#4'Left'#2'8'#6'Height'#2#17#3'Top'#2'`'#5'Width'#2'N'#7'Caption'#6#11
   +'References:'#12'Font.Quality'#7#13'fqAntialiased'#10'Font.Style'#11#6'fsBol'
   +'d'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#11'TStaticText'#11'StaticText2'
@@ -161,37 +161,41 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +'crHandPoint'#4'Left'#3#255#0#6'Height'#2#17#3'Top'#2'@'#5'Width'#3#213#0#9
   +'Alignment'#7#14'taRightJustify'#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Capti'
   +'on'#6'!http://tfc.medical-cybernetics.de'#5'Color'#7#8'clWindow'#10'Font.Co'
-  +'lor'#7#15'clActiveCaption'#12'Font.Quality'#7#13'fqAntialiased'#11'ParentCo'
-  +'lor'#8#10'ParentFont'#8#11'Transparent'#8#7'OnClick'#7#11'Label2Click'#0#0#5
-  +'TMemo'#5'Memo1'#4'Left'#2'8'#6'Height'#3#17#2#3'Top'#2'x'#5'Width'#3#156#1#7
-  +'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#25'BorderSpacing.In'
-  +'nerBorder'#2#5#5'Color'#7#7'clWhite'#13'Lines.Strings'#1#6'91. Dietrich JW,'
-  +' Mitzdorf U, Weitkunat R, Pickardt CR. The'#6'Apituitary-thyroid feedback c'
-  +'ontrol: stability and oscillations in'#6'2a new nonlinear model. Journal of'
-  +' Endocrinological'#6',Investigation. 1997;20(Suppl. to no. 5):100.'#6#0#6':'
-  +'2. Dietrich JW, Fischer MR, Jauch J, Pantke E, G'#195#164'rtner R,'#6';Pick'
-  +'ardt CR. SPINA-THYR: A novel systems theoretic approach'#6'9to determine th'
-  +'e secretion capacity of the thyroid gland.'#6'=European Journal of Internal'
-  +' Medicine. 1999;10 (Suppl. 1)(May'#6#10'1999):S34.'#6#0#6'>3. Dietrich JW. '
-  +'Signal Storage in Metabolic Pathways: The ASIA'#6',Element. kybernetiknet. '
-  +'2000;1(3, 2000):1-9.'#6#0#6':4. Dietrich JW, Tesche A, Pickardt CR, Mitzdor'
-  +'f U. Fractal'#6'<Properties of the Thyrotropic Feedback Control: Implicatio'
-  +'ns'#6'6of a Nonlinear Model Compared with Empirical Data. In:'#6'<Trappl R,'
-  +' ed. Cybernetics and Systems 2002. Vienna: Austrian'#6',Society for Cyberne'
-  +'tic Studies; 2002:329-34.'#6#0#6'85. Dietrich JW. Der Hypophysen-Schilddr'
-  +#195#188'sen-Regelkreis.'#6'7Entwicklung und klinische Anwendung eines nicht'
-  +'linearen'#6';Modells. Vol. 2 Berlin: Logos Verlag; 2002. (Schardt F, ed.'#6
-  +'"Spektrum medizinischer Forschung).'#6#0#6'>6. Dietrich JW, Tesche A, Picka'
-  +'rdt CR, Mitzdorf U. Thyrotropic'#6'7Feedback Control: Evidence for an Addit'
-  +'ional Ultrashort'#6'4Feedback Loop from Fractal Analysis. Cybernetics and'#6
-  +#27'Systems. 2004;35(4):315-31.'#6#0#6'67. Dietrich, J. W. and B. O. Boehm ('
-  +'2006). Equilibrium'#6'6behaviour of feedback-coupled physiological saturati'
-  +'on'#6'=kinetics. In: Cybernetics and Systems 2006. R. Trappl (Hrsg).'#6';Vi'
-  +'enna, Austrian Society for Cybernetic Studies. 1: 269-74.'#6#0#6'<8. Dietri'
-  +'ch, J. W., A. Stachon, B. Antic, H. H. Klein und S.'#6'4Hering (2008). "The'
-  +' AQUA-FONTIS Study: Protocol of a'#6'?multidisciplinary, cross sectional an'
-  +'d prospective longitudinal'#6'1study for developing standardized diagnostic'
-  +'s and'#6'6classification of non-thyroidal illness syndrome." BMC'#6#27'Endo'
-  +'crine Disorders 8 (13).'#0#8'OnChange'#7#11'Memo1Change'#8'ReadOnly'#9#10'S'
-  ,'crollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#1#0#0#0
+  +'lor'#7#6'clNavy'#10'Font.Pitch'#7#10'fpVariable'#12'Font.Quality'#7#13'fqAn'
+  +'tialiased'#11'ParentColor'#8#10'ParentFont'#8#11'Transparent'#8#7'OnClick'#7
+  +#11'Label2Click'#0#0#5'TMemo'#5'Memo1'#4'Left'#2'8'#6'Height'#3#17#2#3'Top'#2
+  +'x'#5'Width'#3#156#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'
+  +#0#25'BorderSpacing.InnerBorder'#2#5#5'Color'#7#7'clWhite'#13'Lines.Strings'
+  +#1#6'C1. Dietrich JW, Mitzdorf U, Weitkunat R, Pickardt CR. The pituitary'#6
+  +'=thyroid feedback control: stability and oscillations in a new'#6';nonlinea'
+  +'r model. Journal of Endocrinological Investigation.'#6#29'1997;20(Suppl. to'
+  +' no. 5):100.'#6#0#6'G2. Dietrich JW, Fischer MR, Jauch J, Pantke E, G'#195
+  +#164'rtner R, Pickardt CR.'#6'?SPINA-THYR: A novel systems theoretic approac'
+  +'h to determine the'#6'Esecretion capacity of the thyroid gland. European Jo'
+  +'urnal of Internal'#6'+Medicine. 1999;10 (Suppl. 1)(May 1999):S34.'#6#0#6'>3'
+  +'. Dietrich JW. Signal Storage in Metabolic Pathways: The ASIA'#6',Element. '
+  +'kybernetiknet. 2000;1(3, 2000):1-9.'#6#0#6'E4. Dietrich JW, Tesche A, Picka'
+  +'rdt CR, Mitzdorf U. Fractal Properties'#6'@of the Thyrotropic Feedback Cont'
+  +'rol: Implications of a Nonlinear'#6'AModel Compared with Empirical Data. In'
+  +': Trappl R, ed. Cybernetics'#6'Band Systems 2002. Vienna: Austrian Society '
+  +'for Cybernetic Studies;'#6#12'2002:329-34.'#6#0#6'85. Dietrich JW. Der Hypo'
+  +'physen-Schilddr'#195#188'sen-Regelkreis.'#6'@Entwicklung und klinische Anwe'
+  +'ndung eines nichtlinearen Modells.'#6';Vol. 2 Berlin: Logos Verlag; 2002. ('
+  +'Schardt F, ed. Spektrum'#6#25'medizinischer Forschung).'#6#0#6'>6. Dietrich'
+  +' JW, Tesche A, Pickardt CR, Mitzdorf U. Thyrotropic'#6'@Feedback Control: E'
+  +'vidence for an Additional Ultrashort Feedback'#6'?Loop from Fractal Analysi'
+  +'s. Cybernetics and Systems. 2004;35(4)'#6#7'315-31.'#6#0#6'C7. Dietrich, J.'
+  +' W. and B. O. Boehm (2006). Equilibrium behaviour of'#6'Cfeedback-coupled p'
+  +'hysiological saturation kinetics. In: Cybernetics'#6'@and Systems 2006. R. '
+  +'Trappl (Hrsg). Vienna, Austrian Society for'#6#30'Cybernetic Studies. 1: 26'
+  +'9-74.'#6#0#6'C8. Dietrich, J. W., A. Stachon, B. Antic, H. H. Klein und S. '
+  +'Hering'#6'@(2008). "The AQUA-FONTIS Study: Protocol of a multidisciplinary,'
+  +#6'Across sectional and prospective longitudinal study for developing'#6'Dst'
+  +'andardized diagnostics and classification of non-thyroidal illness'#6'*synd'
+  +'rome." BMC Endocrine Disorders 8 (13).'#6#0#6'@9. Dietrich, J. W., G. Landg'
+  ,'rafe, E. H. Fotiadou (2012). TSH and'#6'Cthyrotropic agonists: Key actors i'
+  +'n thyroid homeostasis. Journal of'#6'?Thyroid Research, vol. 2012, Article '
+  +'ID 351864, 29 pages, 2012.'#6#24'doi:10.1155/2012/351864.'#6#0#0#8'OnChange'
+  +#7#11'Memo1Change'#8'ReadOnly'#9#10'ScrollBars'#7#10'ssAutoBoth'#8'TabOrder'
+  +#2#1#0#0#0
 ]);
