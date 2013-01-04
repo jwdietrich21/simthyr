@@ -15,8 +15,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Arrow, Buttons, Menus, TAGraph,
-  TASources, TATools, TASeries, TATransformations, TAStyles, TALegendPanel,
+  ExtCtrls, StdCtrls, ComCtrls, ColorBox, Buttons, Menus, TAGraph,
+  TATools, TASeries, TATransformations,
   DateUtils, SimThyrTypes, SimThyrServices, HandleNotifier, Clipbrd,
   TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas;
 
@@ -165,7 +165,6 @@ procedure DrawPlot(empty: boolean);
   {Draws plots from simulated values in gResultMatrix}
 var
   j: integer;
-  theTime: TDateTime;
   theSecond: real;
 begin
   if (empty or not append) then begin
@@ -412,7 +411,6 @@ var
   theFilterIndex: integer;
   theStream: TFileStream;
   theDrawer: IChartDrawer;
-  theWidth, theHeight: integer;
 begin
   if gSelectedChart = nil then
     bell
