@@ -492,8 +492,10 @@ begin
         if copy(theString, 1, 1) = 'm' then
           begin
             if copy(theString, 2, 1) = 'c' then
-              MassPrefix := PrefixLabel[4]; {mc -> µ}
-            end
+              MassPrefix := PrefixLabel[4] {mc -> µ}
+            else
+              MassPrefix := 'm';
+          end
           else
             MassPrefix := copy(theString, 1, 1);
         MassUnit := copy(theString, 2, pos('/', theString) - 2);
