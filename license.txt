@@ -1,4 +1,4 @@
-Copyright (c) 1994-2012, Dr. Johannes W. Dietrich M.D., Klinikum der Universitaet Muenchen, Universitaetsklinikum Ulm, and Universitaetsklinikum Bergmannsheil, Ruhr-Universitaet Bochum.
+Copyright (c) 1994-2013, Dr. Johannes W. Dietrich M.D., Klinikum der Universitaet Muenchen, Universitaetsklinikum Ulm, and Universitaetsklinikum Bergmannsheil, Ruhr-Universitaet Bochum.
 
 All rights reserved.
 
@@ -18,7 +18,7 @@ We have invested a lot of time and effort in creating SimThyr, please cite it wh
 
 In order to cite SimThyr in publications use:
 
-* J. W. Dietrich (1994-2012). SimThyr, a simulator of thyrotropic feedback control. URL http://simthyr.sf.net.
+* J. W. Dietrich (1994-2013). SimThyr, a simulator of thyrotropic feedback control. URL http://simthyr.sf.net.
 
 Additionally you might want to cite one of the following papers:
 
@@ -28,4 +28,7 @@ Additionally you might want to cite one of the following papers:
 
 3. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Thyrotropic Feedback Control: Evidence for an Additional Ultrashort Feedback Loop from Fractal Analysis. Cybernetics and Systems. 2004;35(4):315-31.
 
-4. Dietrich, J. W. and B. O. Boehm (2006). Equilibrium behaviour of feedback-coupled physiological saturation kinetics. In: Cybernetics and Systems 2006. R. Trappl (Hrsg). Vienna, Austrian Society for Cybernetic Studies. 1: 269-74.
+4. Dietrich, JW and BO Boehm (2006). Equilibrium behaviour of feedback-coupled physiological saturation kinetics. In: Cybernetics and Systems 2006. R. Trappl (Hrsg). Vienna, Austrian Society for Cybernetic Studies. 1: 269-74.
+
+5. Dietrich, JW, G Landgrafe, EH Fotiadou (2012). TSH and thyrotropic agonists: Key actors in thyroid homeostasis. Journal of Thyroid Research, vol. 2012, Article ID 351864, 29 pages, 2012. doi:10.1155/2012/351864.
+
