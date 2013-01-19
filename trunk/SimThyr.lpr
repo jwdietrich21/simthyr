@@ -42,6 +42,8 @@ begin
   runcommand := false;
   simready := true;
   randomize;
+  InitSimulationControl;
+  SetBaseVariables;
   StandardValues;
   InitConversionFactors;
   testflag := false;

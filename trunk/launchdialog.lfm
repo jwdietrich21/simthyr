@@ -53,9 +53,9 @@ object SimulationSettings: TSimulationSettings
     OnClick = GroupBox1Click
     object RunTimeEdit: TEdit
       Left = 78
-      Height = 21
+      Height = 22
       Hint = 'Enter a numeric value for duration of simulation'
-      Top = 18
+      Top = 17
       Width = 80
       Alignment = taRightJustify
       Anchors = [akLeft]
@@ -177,9 +177,9 @@ object SimulationSettings: TSimulationSettings
     end
     object TestTimeEdit: TEdit
       Left = 78
-      Height = 21
+      Height = 22
       Hint = 'Enter a numeric value for begin of test signal'
-      Top = 50
+      Top = 49
       Width = 80
       Alignment = taRightJustify
       Anchors = [akLeft]

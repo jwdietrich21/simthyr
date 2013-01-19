@@ -15,7 +15,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ExtCtrls, SimThyrTypes, SimThyrServices, Simulator;
+  StdCtrls, ExtCtrls, SimThyrTypes, SimThyrServices, Simulator, SimOptions;
 
 type
 
@@ -24,6 +24,7 @@ type
   TStructureParameters = class(TForm)
     AlphaREdit: TEdit;
     BetaREdit: TEdit;
+    Button1: TButton;
     StandardButton: TButton;
     CancelButton: TButton;
     DREdit: TEdit;
@@ -103,6 +104,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    procedure Button1Click(Sender: TObject);
     procedure StandardButtonClick(Sender: TObject);
     procedure FillInParameters;
     function ParametersCorrect: boolean;
@@ -226,6 +228,11 @@ procedure TStructureParameters.StandardButtonClick(Sender: TObject);
 begin
   StandardValues;
   FillInParameters;
+end;
+
+procedure TStructureParameters.Button1Click(Sender: TObject);
+begin
+  SimOptionsDlg.ShowOnTop;
 end;
 
 procedure TStructureParameters.HandleStrucPars;

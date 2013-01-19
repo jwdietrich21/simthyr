@@ -27,7 +27,7 @@ object StructureParameters: TStructureParameters
   end
   object AlphaREdit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 48
     Width = 80
     TabOrder = 0
@@ -35,7 +35,7 @@ object StructureParameters: TStructureParameters
   end
   object BetaREdit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 72
     Width = 80
     TabOrder = 1
@@ -83,7 +83,7 @@ object StructureParameters: TStructureParameters
   end
   object GREdit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 48
     Width = 80
     TabOrder = 2
@@ -91,7 +91,7 @@ object StructureParameters: TStructureParameters
   end
   object DREdit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 72
     Width = 80
     TabOrder = 3
@@ -115,7 +115,7 @@ object StructureParameters: TStructureParameters
   end
   object AlphaSEdit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 120
     Width = 80
     TabOrder = 4
@@ -123,7 +123,7 @@ object StructureParameters: TStructureParameters
   end
   object BetaSEdit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 144
     Width = 80
     TabOrder = 5
@@ -131,7 +131,7 @@ object StructureParameters: TStructureParameters
   end
   object AlphaS2Edit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 168
     Width = 80
     TabOrder = 6
@@ -139,7 +139,7 @@ object StructureParameters: TStructureParameters
   end
   object BetaS2Edit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 192
     Width = 80
     TabOrder = 7
@@ -147,7 +147,7 @@ object StructureParameters: TStructureParameters
   end
   object GHEdit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 144
     Width = 80
     TabOrder = 8
@@ -155,7 +155,7 @@ object StructureParameters: TStructureParameters
   end
   object DHEdit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 168
     Width = 80
     TabOrder = 9
@@ -163,7 +163,7 @@ object StructureParameters: TStructureParameters
   end
   object LSEdit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 192
     Width = 80
     TabOrder = 10
@@ -171,7 +171,7 @@ object StructureParameters: TStructureParameters
   end
   object SSEdit: TEdit
     Left = 469
-    Height = 21
+    Height = 22
     Top = 144
     Width = 80
     TabOrder = 11
@@ -179,7 +179,7 @@ object StructureParameters: TStructureParameters
   end
   object DSEdit: TEdit
     Left = 469
-    Height = 21
+    Height = 22
     Top = 168
     Width = 80
     TabOrder = 12
@@ -260,7 +260,7 @@ object StructureParameters: TStructureParameters
   end
   object AlphaTEdit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 240
     Width = 80
     TabOrder = 13
@@ -268,7 +268,7 @@ object StructureParameters: TStructureParameters
   end
   object BetaTEdit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 264
     Width = 80
     TabOrder = 14
@@ -276,7 +276,7 @@ object StructureParameters: TStructureParameters
   end
   object GTEdit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 240
     Width = 80
     TabOrder = 15
@@ -284,7 +284,7 @@ object StructureParameters: TStructureParameters
   end
   object DTEdit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 264
     Width = 80
     TabOrder = 16
@@ -324,7 +324,7 @@ object StructureParameters: TStructureParameters
   end
   object Alpha31Edit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 312
     Width = 80
     TabOrder = 17
@@ -332,7 +332,7 @@ object StructureParameters: TStructureParameters
   end
   object Beta31Edit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 336
     Width = 80
     TabOrder = 18
@@ -340,7 +340,7 @@ object StructureParameters: TStructureParameters
   end
   object GD1Edit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 312
     Width = 80
     TabOrder = 19
@@ -348,7 +348,7 @@ object StructureParameters: TStructureParameters
   end
   object KM1Edit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 336
     Width = 80
     TabOrder = 20
@@ -388,7 +388,7 @@ object StructureParameters: TStructureParameters
   end
   object Alpha32Edit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 384
     Width = 80
     TabOrder = 21
@@ -396,7 +396,7 @@ object StructureParameters: TStructureParameters
   end
   object Beta32Edit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 408
     Width = 80
     TabOrder = 22
@@ -404,7 +404,7 @@ object StructureParameters: TStructureParameters
   end
   object GD2Edit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 384
     Width = 80
     TabOrder = 23
@@ -412,7 +412,7 @@ object StructureParameters: TStructureParameters
   end
   object KM2Edit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 408
     Width = 80
     TabOrder = 24
@@ -452,7 +452,7 @@ object StructureParameters: TStructureParameters
   end
   object k30Edit: TEdit
     Left = 469
-    Height = 21
+    Height = 22
     Top = 312
     Width = 80
     TabOrder = 25
@@ -460,7 +460,7 @@ object StructureParameters: TStructureParameters
   end
   object k31Edit: TEdit
     Left = 469
-    Height = 21
+    Height = 22
     Top = 336
     Width = 80
     TabOrder = 26
@@ -468,7 +468,7 @@ object StructureParameters: TStructureParameters
   end
   object k41Edit: TEdit
     Left = 469
-    Height = 21
+    Height = 22
     Top = 360
     Width = 80
     TabOrder = 27
@@ -476,7 +476,7 @@ object StructureParameters: TStructureParameters
   end
   object k42Edit: TEdit
     Left = 469
-    Height = 21
+    Height = 22
     Top = 384
     Width = 80
     TabOrder = 28
@@ -775,7 +775,7 @@ object StructureParameters: TStructureParameters
   end
   object Tau0REdit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 501
     Width = 80
     TabOrder = 29
@@ -783,7 +783,7 @@ object StructureParameters: TStructureParameters
   end
   object Tau0SEdit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 525
     Width = 80
     TabOrder = 30
@@ -791,7 +791,7 @@ object StructureParameters: TStructureParameters
   end
   object Tau0S2Edit: TEdit
     Left = 88
-    Height = 21
+    Height = 22
     Top = 549
     Width = 80
     TabOrder = 31
@@ -799,7 +799,7 @@ object StructureParameters: TStructureParameters
   end
   object Tau0TEdit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 525
     Width = 80
     TabOrder = 32
@@ -807,7 +807,7 @@ object StructureParameters: TStructureParameters
   end
   object Tau03zEdit: TEdit
     Left = 296
-    Height = 21
+    Height = 22
     Top = 549
     Width = 80
     TabOrder = 33
@@ -965,5 +965,17 @@ object StructureParameters: TStructureParameters
       EFFFFFFF83FFFFFF83FFFFFFC7FFFFFFC7FFFFFFEFFFFFFFEFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFF
     }
+  end
+  object Button1: TButton
+    Left = 492
+    Height = 25
+    Hint = 'Set additional simulation options like noise and standard TRH level here...'
+    Top = 488
+    Width = 75
+    Caption = 'Options'
+    OnClick = Button1Click
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 37
   end
 end
