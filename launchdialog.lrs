@@ -19,8 +19,8 @@ LazarusResources.Add('TSimulationSettings','FORMDATA',[
   +#19'BorderSpacing.Right'#2#1#20'BorderSpacing.Bottom'#2#1#12'ClientHeight'#2
   +'I'#11'ClientWidth'#3#11#2#5'Color'#7#7'clWhite'#11'ParentColor'#8#8'TabOrde'
   +'r'#2#0#7'OnClick'#7#14'GroupBox1Click'#0#5'TEdit'#11'RunTimeEdit'#4'Left'#2
-  +'N'#6'Height'#2#21#4'Hint'#6'0Enter a numeric value for duration of simulati'
-  +'on'#3'Top'#2#18#5'Width'#2'P'#9'Alignment'#7#14'taRightJustify'#7'Anchors'
+  +'N'#6'Height'#2#22#4'Hint'#6'0Enter a numeric value for duration of simulati'
+  +'on'#3'Top'#2#17#5'Width'#2'P'#9'Alignment'#7#14'taRightJustify'#7'Anchors'
   +#11#6'akLeft'#0#8'OnChange'#7#17'RunTimeEditChange'#14'ParentShowHint'#8#8'S'
   +'howHint'#9#8'TabOrder'#2#0#4'Text'#6#1'1'#0#0#12'TRadioButton'#15'RunSecond'
   +'sRadio'#4'Left'#3#192#0#6'Height'#2#18#4'Hint'#6'4Designate the number ente'
@@ -55,8 +55,8 @@ LazarusResources.Add('TSimulationSettings','FORMDATA',[
   +'thyroxine binding globulin level, e. g. in pregnancy'#3'Top'#2#8#5'Width'#2
   +'f'#7'Caption'#6#12'50% TBG rise'#8'OnChange'#7#18'TestTBGRadioChange'#14'Pa'
   +'rentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#0#0#5'TEdit'#12'TestTimeEdit'
-  +#4'Left'#2'N'#6'Height'#2#21#4'Hint'#6'.Enter a numeric value for begin of t'
-  +'est signal'#3'Top'#2'2'#5'Width'#2'P'#9'Alignment'#7#14'taRightJustify'#7'A'
+  +#4'Left'#2'N'#6'Height'#2#22#4'Hint'#6'.Enter a numeric value for begin of t'
+  +'est signal'#3'Top'#2'1'#5'Width'#2'P'#9'Alignment'#7#14'taRightJustify'#7'A'
   +'nchors'#11#6'akLeft'#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#4
   +'Text'#6#1'0'#0#0#11'TRadioGroup'#14'TestRadioGroup'#4'Left'#3#177#0#6'Heigh'
   +'t'#2'@'#3'Top'#2''''#5'Width'#3'G'#1#7'Anchors'#11#6'akLeft'#0#8'AutoFill'#9

@@ -110,7 +110,7 @@ var
  Tt1, Tt2, Tt22, Tt3, Tt4, tpt11, tpt12, tpt13, tpt14, tpt15, tpt16, vpt10: real;
  t121, t122, t123, t124, t125, t126: real;
  k1, k2, k21, k22, k3, k30, k31, k41, k42, k5, k51, k7, dTSH1, dTSH2: real;
- phi, chi, omega, f, dTSH3: real;
+ phi, chi, omega, f, dTSH3, gH0: real;
  k6, k11, k8, k9, k61: real;
  gResultMatrix: tResultMatrix;
  gParameterLabel: array[0..RES_MAX_COLS - 1] of Str255;

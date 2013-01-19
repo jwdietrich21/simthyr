@@ -511,6 +511,7 @@ begin
     SimThread.WaitFor;  {ensure that simulation thread has completed last cycle}
     SimThread.Terminate;
   end;
+  InitSimulationControl;
   SetBaseVariables;
   SetLength(gResultMatrix, 0, 9);
   SimThyrLogWindow.InitGrid;

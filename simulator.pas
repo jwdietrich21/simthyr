@@ -39,6 +39,7 @@ var
   SimThread: TSimulationThread;
 
 function cycles (var n: longint; n_text: str255): integer;
+procedure InitSimulationControl;
 procedure SetBaseVariables;
 procedure StandardValues;
 procedure InitSimulation;
@@ -124,16 +125,22 @@ implementation
    getgauss := 1;
  end;
 
- procedure SetBaseVariables;
- { set initial values for hormone levels etc.}
+ procedure InitSimulationControl;
+ { sets standard initial values for time and parameters that control the simulation process }
  begin
   i := 1;
   t := 0;
   delt := 100;                 {calculation steps in seconds; e.g. 1/3 of smallest Halflife}
   signalflag := false;         {Is test signal set?}
   i0 := 0;
+ end;
+
+ procedure SetBaseVariables;
+ { set initial values for hormone levels and other behavioural parameters  }
+ begin
   dTSH := 0.001;               {mU/s		Inhibited production rate [calculated according to D'Angelo 1976, Okuno 1979 and Greenspan 1997]}
 {InitialValues:}
+  TRHs := 2500;                {ng/l, endogenious TRH, according to Rondeel et al. 1988}
   TRH := TRH0;
   TSH := 2;                    {mU/l		from reference value}
   TSHz := 4;                   {Mittlerer Wert}
@@ -164,8 +171,6 @@ implementation
  procedure StandardValues;
  begin
 { Set initial values for structure parameters and time constants }
-  TRHs := 2500;                {ng/l, endogenious TRH, according to Rondeel et al. 1988}
-  SetBaseVariables;
 
 {Reference values:}
 {TRH: 5 — 6 ng/l in peripheral plasma, ca. 2000 ng/l in portal plasma}
@@ -209,6 +214,10 @@ implementation
   LS := MI / G3;               {Compensation for GR; LS therefore depending from empirical data only; approximation: 1.68 e6 l/mol}
 
   SetDerivedVariables;
+  if gStartup then
+    gH0 := gH                  {stores standard value for gH}
+  else
+    gH := gH0;                 {restores gH to native value in order to avoid interference as gH is infered from other parameters}
 
   x1 := TRH0;
   x2 := TSH;
