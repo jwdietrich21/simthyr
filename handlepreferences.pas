@@ -122,14 +122,14 @@ function GetPreferencesFolder: String;
   { platform-independend method to search for the location of preferences folder}
 const
   kMaxPath = 1024;
+{$IFDEF DARWIN}
 var
-  {$IFDEF DARWIN}
   theError: OSErr;
   theRef: FSRef;
   pathBuffer: PChar;
-  {$ENDIF}
+{$ENDIF}
 begin
-  {$IFDEF DARWIN}
+{$IFDEF DARWIN}
     try
       pathBuffer := Allocmem(kMaxPath);
     except on exception do
