@@ -240,11 +240,11 @@ implementation
   tpt14 := t124 / ln(2);       {1st order delay constant for T3z}
   tpt15 := t125 / ln(2);       {1st order delay constant for T3p}
   tpt16 := t126 / ln(2);       {1st order delay constant for TSHz}
-  Tt1 := 1800;                 {dead time for TRH}
-  Tt2 := 120;                  {dead time for TSH}
-  Tt22 := 3240;                {dead time for Ultrashort feedback effect [derived from Greenspan 1997]}
-  Tt3 := 300;                  {dead time for T4}
-  Tt4 := 3600;                 {dead time for T3z}
+  Tt1 := 1800;                 {dead time for TRH: Tau 0 R}
+  Tt2 := 120;                  {dead time for TSH: Tau 0 S}
+  Tt22 := 3240;                {dead time for Ultrashort feedback effect [derived from Greenspan 1997]: Tau 0 S2}
+  Tt3 := 300;                  {dead time for T4: Tau 0 T}
+  Tt4 := 3600;                 {dead time for T3z: Tau 0 3z}
   nt2 := trunc(Tt2 / delt);
   nt22 := trunc(Tt22 / delt);
   nt3 := trunc(Tt3 / delt);

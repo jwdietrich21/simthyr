@@ -205,6 +205,7 @@ begin
   SimThyrToolbar.SelectAllMenuItem.ShortCut := ShortCut(VK_A, modifierKey);
   SimThyrToolbar.RunItem.ShortCut := ShortCut(VK_R, modifierKey);
   SimThyrToolbar.PredEqItem.ShortCut := ShortCut(VK_L, modifierKey);
+  SimThyrToolbar.ChangeParItem.ShortCut := ShortCut(VK_M, modifierKey);
   SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut := ShortCut(VK_E, modifierKey);
   SimThyrToolbar.TornadoPlotItem.ShortCut := ShortCut(VK_T, modifierKey);
   SimThyrToolbar.IPSItem.ShortCut := ShortCut(VK_I, modifierKey);
