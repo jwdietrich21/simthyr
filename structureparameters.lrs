@@ -1,15 +1,15 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TStructureParameters','FORMDATA',[
-  'TPF0'#20'TStructureParameters'#19'StructureParameters'#4'Left'#3#174#1#6'Hei'
-  +'ght'#3#157#2#3'Top'#3#169#0#5'Width'#3'Y'#2#10'AlphaBlend'#9#15'AlphaBlendV'
-  +'alue'#2#0#11'BorderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderSty'
-  +'le'#7#8'bsDialog'#7'Caption'#6#29'Constant Structure Parameters'#12'ClientH'
-  +'eight'#3#157#2#11'ClientWidth'#3'Y'#2#5'Color'#7#7'clWhite'#6'OnShow'#7#8'F'
-  +'ormShow'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#7'1.0.2.0'#7'Vis'
-  +'ible'#9#0#6'TLabel'#6'Label1'#4'Left'#2#24#6'Height'#2#17#3'Top'#2#16#5'Wid'
-  +'th'#3's'#1#7'Caption'#6'6Constant structure parameters of the feedback cont'
-  +'rol:'#10'Font.Style'#11#6'fsBold'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#5
+  'TPF0'#20'TStructureParameters'#19'StructureParameters'#4'Left'#3')'#2#6'Heig'
+  +'ht'#3#157#2#3'Top'#3#163#0#5'Width'#3'Y'#2#10'AlphaBlend'#9#15'AlphaBlendVa'
+  +'lue'#2#0#11'BorderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderStyl'
+  +'e'#7#8'bsDialog'#7'Caption'#6#29'Constant Structure Parameters'#12'ClientHe'
+  +'ight'#3#157#2#11'ClientWidth'#3'Y'#2#5'Color'#7#7'clWhite'#6'OnShow'#7#8'Fo'
+  +'rmShow'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#7'1.0.2.0'#7'Visi'
+  +'ble'#9#0#6'TLabel'#6'Label1'#4'Left'#2#24#6'Height'#2#17#3'Top'#2#16#5'Widt'
+  +'h'#3's'#1#7'Caption'#6'6Constant structure parameters of the feedback contr'
+  +'ol:'#10'Font.Style'#11#6'fsBold'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#5
   +'TEdit'#10'AlphaREdit'#4'Left'#2'X'#6'Height'#2#22#3'Top'#2'0'#5'Width'#2'P'
   +#8'TabOrder'#2#0#4'Text'#6#10'AlphaREdit'#0#0#5'TEdit'#9'BetaREdit'#4'Left'#2
   +'X'#6'Height'#2#22#3'Top'#2'H'#5'Width'#2'P'#8'TabOrder'#2#1#4'Text'#6#9'Bet'
@@ -405,8 +405,8 @@ LazarusResources.Add('TStructureParameters','FORMDATA',[
   +#255#239#255#255#255#239#253#255#255#239#255#255#255#239#253'UW'#239#255#255
   +#255#131#255#255#255#131#255#255#255#199#255#255#255#199#255#255#255#239#255
   +#255#255#239#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#0#0
-  +#7'TButton'#7'Button1'#4'Left'#3#236#1#6'Height'#2#25#4'Hint'#6'KSet additio'
-  +'nal simulation options like noise and standard TRH level here...'#3'Top'#3
-  +#232#1#5'Width'#2'K'#7'Caption'#6#7'Options'#7'OnClick'#7#12'Button1Click'#14
-  +'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2'%'#0#0#0
+  +#7'TButton'#13'OptionsButton'#4'Left'#3#236#1#6'Height'#2#25#4'Hint'#6'KSet '
+  +'additional simulation options like noise and standard TRH level here...'#3
+  +'Top'#3#232#1#5'Width'#2'K'#7'Caption'#6#7'Options'#7'OnClick'#7#18'OptionsB'
+  +'uttonClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2'%'#0#0#0
 ]);

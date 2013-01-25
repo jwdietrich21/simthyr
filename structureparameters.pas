@@ -24,7 +24,7 @@ type
   TStructureParameters = class(TForm)
     AlphaREdit: TEdit;
     BetaREdit: TEdit;
-    Button1: TButton;
+    OptionsButton: TButton;
     StandardButton: TButton;
     CancelButton: TButton;
     DREdit: TEdit;
@@ -104,7 +104,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    procedure Button1Click(Sender: TObject);
+    procedure OptionsButtonClick(Sender: TObject);
     procedure StandardButtonClick(Sender: TObject);
     procedure FillInParameters;
     function ParametersCorrect: boolean;
@@ -131,40 +131,40 @@ uses
 
 procedure TStructureParameters.FillInParameters;
 begin
-  AlphaREdit.Text := FloatToStrF(AlphaR, ffGeneral, 5, 2);;
-  BetaREdit.Text := FloatToStrF(BetaR, ffGeneral, 5, 2);;
-  GREdit.Text := FloatToStrF(GR, ffGeneral, 5, 2);;
-  DREdit.Text := FloatToStrF(DR, ffGeneral, 5, 2);;
-  AlphaSEdit.Text := FloatToStrF(AlphaS, ffGeneral, 5, 2);;
-  BetaSEdit.Text := FloatToStrF(BetaS, ffGeneral, 5, 2);;
-  AlphaS2Edit.Text := FloatToStrF(AlphaS2, ffGeneral, 5, 2);;
-  BetaS2Edit.Text := FloatToStrF(BetaS2, ffGeneral, 5, 2);;
-  GHEdit.Text := FloatToStrF(GH, ffGeneral, 5, 2);;
-  DHEdit.Text := FloatToStrF(DH, ffGeneral, 5, 2);;
-  LSEdit.Text := FloatToStrF(LS, ffGeneral, 5, 2);;
-  SSEdit.Text := FloatToStrF(SS, ffGeneral, 5, 2);;
-  DSEdit.Text := FloatToStrF(DS, ffGeneral, 5, 2);;
-  AlphaTEdit.Text := FloatToStrF(AlphaT, ffGeneral, 5, 2);;
-  BetaTEdit.Text := FloatToStrF(BetaT, ffGeneral, 5, 2);;
-  GTEdit.Text := FloatToStrF(GT, ffGeneral, 5, 2);;
-  DTEdit.Text := FloatToStrF(DT, ffGeneral, 5, 2);;
-  Alpha31Edit.Text := FloatToStrF(Alpha31, ffGeneral, 5, 2);;
-  Beta31Edit.Text := FloatToStrF(Beta31, ffGeneral, 5, 2);;
-  GD1Edit.Text := FloatToStrF(GD1, ffGeneral, 5, 2);;
-  KM1Edit.Text := FloatToStrF(KM1, ffGeneral, 5, 2);;
-  Alpha32Edit.Text := FloatToStrF(Alpha32, ffGeneral, 5, 2);;
-  Beta32Edit.Text := FloatToStrF(Beta32, ffGeneral, 5, 2);;
-  GD2Edit.Text := FloatToStrF(GD2, ffGeneral, 5, 2);;
-  KM2Edit.Text := FloatToStrF(KM2, ffGeneral, 5, 2);;
-  K30Edit.Text := FloatToStrF(K30, ffGeneral, 5, 2);;
-  K31Edit.Text := FloatToStrF(K31, ffGeneral, 5, 2);;
-  K41Edit.Text := FloatToStrF(K41, ffGeneral, 5, 2);;
-  K42Edit.Text := FloatToStrF(K42, ffGeneral, 5, 2);;
-  Tau0REdit.Text := FloatToStrF(TT1, ffGeneral, 5, 2);;
-  Tau0SEdit.Text := FloatToStrF(TT2, ffGeneral, 5, 2);;
-  Tau0S2Edit.Text := FloatToStrF(TT22, ffGeneral, 5, 2);;
-  Tau0TEdit.Text := FloatToStrF(TT3, ffGeneral, 5, 2);;
-  Tau03zEdit.Text := FloatToStrF(TT4, ffGeneral, 5, 2);;
+  AlphaREdit.Text := FloatToStrF(AlphaR, ffGeneral, 5, 2);
+  BetaREdit.Text := FloatToStrF(BetaR, ffGeneral, 5, 2);
+  GREdit.Text := FloatToStrF(GR, ffGeneral, 5, 2);
+  DREdit.Text := FloatToStrF(DR, ffGeneral, 5, 2);
+  AlphaSEdit.Text := FloatToStrF(AlphaS, ffGeneral, 5, 2);
+  BetaSEdit.Text := FloatToStrF(BetaS, ffGeneral, 6, 2);
+  AlphaS2Edit.Text := FloatToStrF(AlphaS2, ffGeneral, 5, 2);
+  BetaS2Edit.Text := FloatToStrF(BetaS2, ffGeneral, 5, 2);
+  GHEdit.Text := FloatToStrF(GH, ffGeneral, 5, 2);
+  DHEdit.Text := FloatToStrF(DH, ffGeneral, 5, 2);
+  LSEdit.Text := FloatToStrF(LS, ffGeneral, 5, 2);
+  SSEdit.Text := FloatToStrF(SS, ffGeneral, 5, 2);
+  DSEdit.Text := FloatToStrF(DS, ffGeneral, 5, 2);
+  AlphaTEdit.Text := FloatToStrF(AlphaT, ffGeneral, 5, 2);
+  BetaTEdit.Text := FloatToStrF(BetaT, ffGeneral, 5, 2);
+  GTEdit.Text := FloatToStrF(GT, ffGeneral, 5, 2);
+  DTEdit.Text := FloatToStrF(DT, ffGeneral, 5, 2);
+  Alpha31Edit.Text := FloatToStrF(Alpha31, ffGeneral, 5, 2);
+  Beta31Edit.Text := FloatToStrF(Beta31, ffGeneral, 5, 2);
+  GD1Edit.Text := FloatToStrF(GD1, ffGeneral, 5, 2);
+  KM1Edit.Text := FloatToStrF(KM1, ffGeneral, 5, 2);
+  Alpha32Edit.Text := FloatToStrF(Alpha32, ffGeneral, 5, 2);
+  Beta32Edit.Text := FloatToStrF(Beta32, ffGeneral, 6, 2);
+  GD2Edit.Text := FloatToStrF(GD2, ffGeneral, 5, 2);
+  KM2Edit.Text := FloatToStrF(KM2, ffGeneral, 5, 2);
+  K30Edit.Text := FloatToStrF(K30, ffGeneral, 5, 2);
+  K31Edit.Text := FloatToStrF(K31, ffGeneral, 5, 2);
+  K41Edit.Text := FloatToStrF(K41, ffGeneral, 5, 2);
+  K42Edit.Text := FloatToStrF(K42, ffGeneral, 5, 2);
+  Tau0REdit.Text := FloatToStrF(TT1, ffGeneral, 5, 2);
+  Tau0SEdit.Text := FloatToStrF(TT2, ffGeneral, 5, 2);
+  Tau0S2Edit.Text := FloatToStrF(TT22, ffGeneral, 5, 2);
+  Tau0TEdit.Text := FloatToStrF(TT3, ffGeneral, 5, 2);
+  Tau03zEdit.Text := FloatToStrF(TT4, ffGeneral, 5, 2);
 end;
 
 function TStructureParameters.ParametersCorrect: boolean;
@@ -230,7 +230,7 @@ begin
   FillInParameters;
 end;
 
-procedure TStructureParameters.Button1Click(Sender: TObject);
+procedure TStructureParameters.OptionsButtonClick(Sender: TObject);
 begin
   SimOptionsDlg.ShowOnTop;
 end;

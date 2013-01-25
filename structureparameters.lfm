@@ -1,7 +1,7 @@
 object StructureParameters: TStructureParameters
-  Left = 430
+  Left = 553
   Height = 669
-  Top = 169
+  Top = 163
   Width = 601
   AlphaBlend = True
   AlphaBlendValue = 0
@@ -966,14 +966,14 @@ object StructureParameters: TStructureParameters
       FFFFFFFFFFFFFFFF
     }
   end
-  object Button1: TButton
+  object OptionsButton: TButton
     Left = 492
     Height = 25
     Hint = 'Set additional simulation options like noise and standard TRH level here...'
     Top = 488
     Width = 75
     Caption = 'Options'
-    OnClick = Button1Click
+    OnClick = OptionsButtonClick
     ParentShowHint = False
     ShowHint = True
     TabOrder = 37

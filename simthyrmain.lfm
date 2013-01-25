@@ -1257,6 +1257,7 @@ object SimThyrToolbar: TSimThyrToolbar
           BF63FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
         }
         ImageIndex = 14
+        ShortCut = 16461
         OnClick = ParametersToolButtonClick
       end
       object Divider_3_3: TMenuItem
