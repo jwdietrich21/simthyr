@@ -1,6 +1,10 @@
 unit Splash;
 
 { SimThyr Project }
+{ A numerical simulator of thyrotropic feedback control }
+
+{ Version 3.2.2 }
+
 { (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
 { (c) Ruhr University of Bochum 2005 - 2013 }
@@ -8,6 +12,7 @@ unit Splash;
 { This unit implements a splash screen, while other windows are loaded }
 
 { Source code released under the BSD License }
+{ See http://simthyr.sourceforge.net for details }
 
 {$mode objfpc}
 

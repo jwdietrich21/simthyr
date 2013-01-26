@@ -669,7 +669,7 @@ object ValuesPlot: TValuesPlot
   end
   object TitleEdit: TEdit
     Left = 48
-    Height = 21
+    Height = 22
     Hint = 'You may enter a title that is shown on the top of every chart here.'
     Top = 10
     Width = 414

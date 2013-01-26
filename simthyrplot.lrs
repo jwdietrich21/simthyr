@@ -527,7 +527,7 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +'color for title string'#3'Top'#2#10#5'Width'#2'0'#7'Anchors'#11#5'akTop'#7
   +'akRight'#0#11'BorderWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonColor'#7#7
   +'clBlack'#14'OnColorChanged'#7#24'ColorButton1ColorChanged'#8'ShowHint'#9#14
-  +'ParentShowHint'#8#0#0#5'TEdit'#9'TitleEdit'#4'Left'#2'0'#6'Height'#2#21#4'H'
+  +'ParentShowHint'#8#0#0#5'TEdit'#9'TitleEdit'#4'Left'#2'0'#6'Height'#2#22#4'H'
   +'int'#6'CYou may enter a title that is shown on the top of every chart here.'
   +#3'Top'#2#10#5'Width'#3#158#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0
   +#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6#5'Title'#0#0#28

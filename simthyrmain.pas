@@ -1,6 +1,10 @@
 unit SimThyrMain;
 
 { SimThyr Project }
+{ A numerical simulator of thyrotropic feedback control }
+
+{ Version 3.2.2 }
+
 { (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
 { (c) Ruhr University of Bochum 2005 - 2013 }
@@ -8,6 +12,7 @@ unit SimThyrMain;
 { This unit provides global GUI functions, toolbar and menubar handling }
 
 { Source code released under the BSD License }
+{ See http://simthyr.sourceforge.net for details }
 
 {$mode objfpc}{$H+}{$R+}
 
