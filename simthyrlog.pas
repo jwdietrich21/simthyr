@@ -117,6 +117,7 @@ var
   r, c: integer;
   theContents: TStringList;
   doc: TDIFDocument;
+  theCode: integer;
 begin
   if theDelimiter = 'd' then
   begin {DIF file handling}
@@ -143,7 +144,8 @@ begin
             end;
         end;
 
-      WriteDIFFile(doc, theFileName);
+      WriteDIFFile(doc, theFileName, theCode);
+      if theCode <> 0 then bell;
     finally
       doc.Free;
     end;

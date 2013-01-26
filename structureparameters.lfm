@@ -67,6 +67,7 @@ object StructureParameters: TStructureParameters
     BorderSpacing.Bottom = 13
     Caption = 'OK'
     Default = True
+    ModalResult = 1
     OnClick = OKButtonClick
     TabOrder = 36
   end
@@ -76,6 +77,7 @@ object StructureParameters: TStructureParameters
     Top = 582
     Width = 75
     Anchors = [akRight, akBottom]
+    Cancel = True
     Caption = 'Cancel'
     ModalResult = 2
     OnClick = CancelButtonClick

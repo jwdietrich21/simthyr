@@ -25,6 +25,8 @@ type
     version: Integer;
     title: String;
     vectors, tuples: Integer;
+    labels, comments, units, displayUnits: TStringList;
+    sizes: array of integer;
   end;
   TDIFDocument = class
     content: TStrings;
@@ -37,9 +39,10 @@ type
       procedure AppendCell(Value: String);
       procedure AppendCell(Value: Real);
       procedure AppendCell(Value: Boolean);
+      function NewLabel(Value: string): string;
   end;
 
-procedure WriteDIFFile(Doc: TDIFDocument; path: String);
+procedure WriteDIFFile(Doc: TDIFDocument; path: String; var ReturnCode: integer);
 
 var
   gNumVectors: integer;
@@ -60,6 +63,7 @@ begin
 end;
 
 procedure TDIFDocument.SetHead(Identifier: String);
+{creates a scaffold for header}
 begin
   with Header do
   begin
@@ -67,6 +71,11 @@ begin
   version := 1;
   vectors := 0;
   tuples := 0;
+  labels := nil;
+  comments := nil;
+  units := nil;
+  displayUnits := nil;
+  SetLength(sizes, 0);
   end;
 end;
 
@@ -100,20 +109,39 @@ begin
     AppendCell('FALSE');
 end;
 
-procedure WriteDIFFile(Doc: TDIFDocument; path: String);
+function TDIFDocument.NewLabel(Value: string): string;
 var
-  headerChunk, dataChunk, endChunk: String;
+  tempString: string;
+begin
+  tempString := '';
+  Inc(gNumVectors);
+  if gNumVectors > header.vectors then
+    header.vectors := gNumVectors;
+  tempString := ('LABEL' + kCRLF + IntToStr(gNumVectors) + ',0' + kCRLF);
+  tempString := tempString + (kQUOT + Value + kQUOT + kCRLF);
+  Result := tempString;
+end;
+
+procedure WriteDIFFile(Doc: TDIFDocument; path: String; var ReturnCode: integer);
+var
+  headerChunk, dataChunk, endChunk: AnsiString;
+  i: integer;
 begin
   headerChunk := 'TABLE' + kCRLF + '0,' + IntToStr(Doc.Header.version) + kCRLF;
   headerChunk := headerChunk + kQUOT + Doc.Header.title + kQUOT + kCRLF;
   headerChunk := headerChunk + 'VECTORS' + kCRLF + '0,' + IntToStr(Doc.Header.vectors) + kCRLF + kQUOT + kQUOT + kCRLF;
   headerChunk := headerChunk + 'TUPLES' + kCRLF + '0,' + IntToStr(Doc.Header.tuples) + kCRLF + kQUOT + kQUOT + kCRLF;
+  if Doc.Header.labels <> nil then
+    for i := 1 to Doc.Header.labels.Count do
+      headerChunk := headerChunk + Doc.NewLabel(Doc.Header.labels.Strings[i - 1]);
   dataChunk := 'DATA' + kCRLF + '0,0' + kCRLF + kQUOT + kQUOT;
   endChunk := '-1,0' + kCRLF + 'EOD';
   Doc.content.Insert(0, headerChunk + dataChunk);
   Doc.content.Append(endChunk);
+  ReturnCode := 6;
   try
     Doc.content.SaveToFile(path);
+    ReturnCode := 0;
   finally
   end;
 end;

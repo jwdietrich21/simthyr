@@ -15,7 +15,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, clipbrd, Menus, SimThyrTypes, SimThyrServices;
+  ExtCtrls, clipbrd, Menus, SimThyrTypes, SimThyrServices, StructureParameters;
 
 type
 
@@ -33,6 +33,7 @@ type
     procedure CopyImage;
     procedure CopyItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
     procedure SaveFigure;
     procedure FormCreate(Sender: TObject);
     private
@@ -62,6 +63,11 @@ end;
 procedure TIPSForm.FormActivate(Sender: TObject);
 begin
   gLastActiveCustomForm := IPSForm;
+end;
+
+procedure TIPSForm.Image1Click(Sender: TObject);
+begin
+  StructureParametersDlg.HandleStrucPars;
 end;
 
 procedure TIPSForm.SaveFigure;

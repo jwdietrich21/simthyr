@@ -22,6 +22,7 @@ object IPSForm: TIPSForm
     Width = 440
     Anchors = [akTop, akLeft, akRight, akBottom]
     AutoSize = True
+    OnClick = Image1Click
     ParentShowHint = False
     Picture.Data = {
       1754506F727461626C654E6574776F726B477261706869630497010089504E47

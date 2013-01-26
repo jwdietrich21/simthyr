@@ -117,6 +117,7 @@ begin
 end;
 
 function EncodeGreek(theString: string): string;
+{encodes greek mu letter as ASCII substitution sequence}
 var
   theFlags: TReplaceFlags;
 begin
@@ -125,6 +126,7 @@ begin
 end;
 
 function DecodeGreek(theString: string): string;
+{decodes ASCII substitution sequence for greek mu letter}
 begin
   result := UTF8Decode(StringReplace(theString, 'mc', PrefixLabel[4], [rfReplaceAll, rfIgnoreCase]));
 end;
@@ -170,6 +172,7 @@ begin
 end;
 
 procedure ClearResultContents(var theContents: tResultContent);
+{deletes a row}
 var
   counter: integer;
 begin

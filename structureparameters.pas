@@ -5,7 +5,7 @@ unit StructureParameters;
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
 { (c) Ruhr University of Bochum 2005 - 2013 }
 
-{ This unit iplements an editor for structure parameters }
+{ This unit implements an editor for structure parameters }
 
 { Source code released under the BSD License }
 
@@ -130,6 +130,7 @@ uses
   SimThyrPrediction, Sensitivityanalysis, Tornado;
 
 procedure TStructureParameters.FillInParameters;
+{fills TEdit boxes of the dialog box with existing values of structure parameters}
 begin
   AlphaREdit.Text := FloatToStrF(AlphaR, ffGeneral, 5, 2);
   BetaREdit.Text := FloatToStrF(BetaR, ffGeneral, 5, 2);
@@ -168,7 +169,7 @@ begin
 end;
 
 function TStructureParameters.ParametersCorrect: boolean;
-  {reads structure parameters and checks for syntactical correctness}
+{reads structure parameters from dialog and checks for syntactical correctness}
 var
   wellFormated: boolean;
 begin
@@ -236,26 +237,28 @@ begin
 end;
 
 procedure TStructureParameters.HandleStrucPars;
+{opens the window and displays it in front similar to a dialog box}
 begin
   StructureParametersDlg.ShowModal;
 end;
 
 procedure TStructureParameters.Image1Click(Sender: TObject);
 begin
-
+  {for future extensions}
 end;
 
 procedure TStructureParameters.Label31Click(Sender: TObject);
 begin
-
+  {for future extensions}
 end;
 
 procedure TStructureParameters.Label6Click(Sender: TObject);
 begin
-
+  {for future extensions}
 end;
 
 procedure TStructureParameters.OKButtonClick(Sender: TObject);
+{reads entered values and closes window}
 begin
   if ParametersCorrect then
     StructureParametersDlg.Close;
@@ -272,11 +275,13 @@ begin
 end;
 
 procedure TStructureParameters.CancelButtonClick(Sender: TObject);
+{closes window without reading parameter values}
 begin
   StructureParametersDlg.Close;
 end;
 
 procedure TStructureParameters.FormShow(Sender: TObject);
+{standard actions on show}
 begin
   FillInParameters;
 end;
