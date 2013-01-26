@@ -51,6 +51,7 @@ implementation
 { TSimOptionsDlg }
 
 procedure TSimOptionsDlg.CheckNoise;
+{flag for simulating noise}
 begin
   if noiseflag then
     NoiseCheckBox.Checked := true
@@ -59,6 +60,7 @@ begin
 end;
 
 procedure TSimOptionsDlg.CheckPreview;
+{flag for beginning simulation with predicted values}
 begin
   if previewflag then
     PreviewCheckBox.Checked := true
@@ -67,6 +69,7 @@ begin
 end;
 
 procedure TSimOptionsDlg.FormShow(Sender: TObject);
+{code executed on show}
 begin
   temp_noiseflag := noiseflag;
   temp_previewflag := previewflag;
@@ -78,11 +81,13 @@ begin
 end;
 
 procedure TSimOptionsDlg.CancelButtonClick(Sender: TObject);
+{closes dialog without reading any data}
 begin
   SimOptionsDlg.Close;
 end;
 
 procedure TSimOptionsDlg.NoiseCheckBoxChange(Sender: TObject);
+{flag for simulating noise}
 begin
   if NoiseCheckBox.Checked then
     temp_noiseflag := true
@@ -91,6 +96,7 @@ begin
 end;
 
 procedure TSimOptionsDlg.OKButtonClick(Sender: TObject);
+{closes dialog and accepts entered data}
 begin
   noiseflag := temp_noiseflag;
   previewflag := temp_previewflag;
@@ -99,6 +105,7 @@ begin
 end;
 
 procedure TSimOptionsDlg.PreviewCheckBoxChange(Sender: TObject);
+{flag for beginning simulation with predicted values}
 begin
   if PreviewCheckBox.Checked then
     temp_previewflag := true
