@@ -1,6 +1,10 @@
 program SimThyr;
 
 { SimThyr Project }
+{ A numerical simulator of thyrotropic feedback control }
+
+{ Version 3.2.2 }
+
 { (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
 { (c) Ruhr University of Bochum 2005 - 2013 }
