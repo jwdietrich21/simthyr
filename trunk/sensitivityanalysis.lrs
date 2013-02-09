@@ -146,13 +146,15 @@ LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
   +'q'#17'DefaultColorColor'#7#7'clOlive'#8'Selected'#7#7'clOlive'#7'Anchors'#11
   +#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#17'TT3ColorBoxChang'
   +'e'#8'TabOrder'#2#9#0#0#14'TChartNavPanel'#14'ChartNavPanel1'#4'Left'#2#16#6
-  +'Height'#2#24#3'Top'#2'H'#5'Width'#2#23#5'Chart'#7#6'Chart1'#7'MiniMap'#9#0#0
-  +#25'TChartAxisTransformations'#25'ChartAxisTransformations1'#4'left'#3'x'#1#3
-  +'top'#3#152#2#0#20'TLinearAxisTransform-ChartAxisTransformations1LinearAxisT'
-  +'ransform1'#5'Scale'#5#0#136'Po'#9#204#188#140#215'?'#0#0#0#10'TPopupMenu'#10
-  +'PopupMenu1'#4'left'#3'x'#1#3'top'#3#24#2#0#9'TMenuItem'#8'UndoItem'#7'Capti'
-  +'on'#6#4'Undo'#7'Enabled'#8#0#0#9'TMenuItem'#8'Divider1'#7'Caption'#6#1'-'#0
-  +#0#9'TMenuItem'#7'CutItem'#7'Caption'#6#3'Cut'#7'Enabled'#8#0#0#9'TMenuItem'
-  +#8'CopyItem'#7'Caption'#6#4'Copy'#7'OnClick'#7#13'CopyItemClick'#0#0#9'TMenu'
-  +'Item'#9'PasteItem'#7'Caption'#6#5'Paste'#7'Enabled'#8#0#0#0#0
+  +'Height'#2#24#4'Hint'#6'4Drag to select the part of the plot to be displayed'
+  +'.'#3'Top'#2'H'#5'Width'#2#23#5'Chart'#7#6'Chart1'#22'LogicalExtentPen.Color'
+  +#7#8'clMaroon'#7'MiniMap'#9#0#0#25'TChartAxisTransformations'#25'ChartAxisTr'
+  +'ansformations1'#4'left'#3'x'#1#3'top'#3#152#2#0#20'TLinearAxisTransform-Cha'
+  +'rtAxisTransformations1LinearAxisTransform1'#5'Scale'#5#0#136'Po'#9#204#188
+  +#140#215'?'#0#0#0#10'TPopupMenu'#10'PopupMenu1'#4'left'#3'x'#1#3'top'#3#24#2
+  +#0#9'TMenuItem'#8'UndoItem'#7'Caption'#6#4'Undo'#7'Enabled'#8#0#0#9'TMenuIte'
+  +'m'#8'Divider1'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#7'CutItem'#7'Caption'#6#3
+  +'Cut'#7'Enabled'#8#0#0#9'TMenuItem'#8'CopyItem'#7'Caption'#6#4'Copy'#7'OnCli'
+  +'ck'#7#13'CopyItemClick'#0#0#9'TMenuItem'#9'PasteItem'#7'Caption'#6#5'Paste'
+  +#7'Enabled'#8#0#0#0#0
 ]);
