@@ -13,7 +13,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   Constraints.MinWidth = 600
   OnActivate = FormActivate
   OnCreate = FormCreate
-  LCLVersion = '1.0.2.0'
+  LCLVersion = '1.0.6.0'
   Visible = True
   object Panel1: TPanel
     Left = 48
@@ -324,6 +324,14 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ItemHeight = 16
     OnChange = TT3ColorBoxChange
     TabOrder = 9
+  end
+  object ChartNavPanel1: TChartNavPanel
+    Left = 16
+    Height = 24
+    Top = 72
+    Width = 23
+    Chart = Chart1
+    MiniMap = True
   end
   object ChartAxisTransformations1: TChartAxisTransformations
     left = 376

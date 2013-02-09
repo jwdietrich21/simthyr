@@ -1,22 +1,22 @@
 object TornadoPlotForm: TTornadoPlotForm
   Left = 309
-  Height = 465
+  Height = 472
   Top = 243
-  Width = 706
+  Width = 708
   AlphaBlendValue = 0
   Caption = 'Tornado Plot'
-  ClientHeight = 465
-  ClientWidth = 706
+  ClientHeight = 472
+  ClientWidth = 708
   Color = clWhite
   Constraints.MinHeight = 465
   Constraints.MinWidth = 600
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.0.2.0'
+  LCLVersion = '1.0.6.0'
   Visible = True
   object CheckGroup1: TCheckGroup
-    Left = 506
+    Left = 508
     Height = 217
     Hint = 'Select the independent structure parameters whose influence you want to check'
     Top = 16
@@ -67,10 +67,10 @@ object TornadoPlotForm: TTornadoPlotForm
     }
   end
   object DepParameterCombo: TComboBox
-    Left = 506
+    Left = 508
     Height = 21
     Hint = 'Select the depdentent parameter, e.g. hormone level here.'
-    Top = 407
+    Top = 414
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 0
@@ -93,15 +93,15 @@ object TornadoPlotForm: TTornadoPlotForm
   object StatusBar1: TStatusBar
     Left = 0
     Height = 15
-    Top = 450
-    Width = 706
+    Top = 457
+    Width = 708
     Panels = <>
   end
   object RadioGroup1: TRadioGroup
-    Left = 506
+    Left = 508
     Height = 76
     Top = 240
-    Width = 185
+    Width = 118
     Anchors = [akTop, akRight]
     AutoFill = True
     Caption = 'Display change as'
@@ -114,7 +114,7 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
     ClientHeight = 54
-    ClientWidth = 177
+    ClientWidth = 110
     ItemIndex = 0
     Items.Strings = (
       'Fraction'
@@ -125,20 +125,20 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object Panel1: TPanel
     Left = 8
-    Height = 418
+    Height = 425
     Top = 16
-    Width = 485
+    Width = 487
     Anchors = [akTop, akLeft, akRight, akBottom]
     Caption = 'Panel1'
-    ClientHeight = 418
-    ClientWidth = 485
+    ClientHeight = 425
+    ClientWidth = 487
     TabOrder = 4
     object Chart1: TChart
       Left = 8
-      Height = 399
+      Height = 406
       Hint = 'Drag to zoom'
       Top = 16
-      Width = 473
+      Width = 475
       AxisList = <      
         item
           Grid.Visible = False
@@ -196,9 +196,9 @@ object TornadoPlotForm: TTornadoPlotForm
     end
   end
   object LegendPosCombo: TComboBox
-    Left = 506
+    Left = 508
     Height = 21
-    Top = 376
+    Top = 383
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 0
@@ -215,10 +215,10 @@ object TornadoPlotForm: TTornadoPlotForm
     Text = 'Legend position...'
   end
   object DecreaseColorBox: TColorBox
-    Left = 506
+    Left = 508
     Height = 20
     Hint = 'Select color for decresing indepenent variable here.'
-    Top = 320
+    Top = 327
     Width = 185
     DefaultColorColor = clGray
     Selected = clGray
@@ -230,10 +230,10 @@ object TornadoPlotForm: TTornadoPlotForm
     TabOrder = 6
   end
   object IncreaseColorBox: TColorBox
-    Left = 506
+    Left = 508
     Height = 20
     Hint = 'Select color for incresing indepenent variable here.'
-    Top = 344
+    Top = 351
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 16

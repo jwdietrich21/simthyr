@@ -152,7 +152,7 @@ object AboutModelForm: TAboutModelForm
     0000000000000000000000000000000000000000000000000000000000000000
     0000
   }
-  LCLVersion = '1.0.2.0'
+  LCLVersion = '1.0.6.0'
   object Label1: TLabel
     Left = 56
     Height = 17
