@@ -476,9 +476,11 @@ object ValuesPlot: TValuesPlot
     object ChartNavPanel1: TChartNavPanel
       Left = 16
       Height = 16
+      Hint = 'Drag to select the part of the plot to be displayed.'
       Top = 48
       Width = 23
       Chart = Chart1
+      LogicalExtentPen.Color = clMaroon
       MiniMap = True
     end
   end
@@ -655,10 +657,12 @@ object ValuesPlot: TValuesPlot
     end
     object ChartNavPanel2: TChartNavPanel
       Left = 15
-      Height = 14
+      Height = 16
+      Hint = 'Drag to select the part of the plot to be displayed.'
       Top = 48
       Width = 23
       Chart = Chart2
+      LogicalExtentPen.Color = clMaroon
       MiniMap = True
     end
   end

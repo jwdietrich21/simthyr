@@ -328,9 +328,11 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object ChartNavPanel1: TChartNavPanel
     Left = 16
     Height = 24
+    Hint = 'Drag to select the part of the plot to be displayed.'
     Top = 72
     Width = 23
     Chart = Chart1
+    LogicalExtentPen.Color = clMaroon
     MiniMap = True
   end
   object ChartAxisTransformations1: TChartAxisTransformations

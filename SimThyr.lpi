@@ -1080,7 +1080,7 @@
         <UsageCount Value="10"/>
       </Unit116>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="showips.pas"/>
         <Caret Line="16" Column="1" TopLine="1"/>
@@ -1139,27 +1139,27 @@
       </Position14>
       <Position15>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="105" Column="10" TopLine="111"/>
+        <Caret Line="135" Column="10" TopLine="117"/>
       </Position15>
       <Position16>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="135" Column="10" TopLine="117"/>
+        <Caret Line="169" Column="11" TopLine="151"/>
       </Position16>
       <Position17>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="169" Column="11" TopLine="151"/>
+        <Caret Line="142" Column="11" TopLine="124"/>
       </Position17>
       <Position18>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="142" Column="11" TopLine="124"/>
+        <Caret Line="77" Column="15" TopLine="60"/>
       </Position18>
       <Position19>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="159" Column="108" TopLine="225"/>
+        <Caret Line="429" Column="35" TopLine="419"/>
       </Position19>
       <Position20>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="77" Column="15" TopLine="60"/>
+        <Caret Line="430" Column="35" TopLine="420"/>
       </Position20>
       <Position21>
         <Filename Value="simthyrplot.pas"/>
@@ -1179,28 +1179,20 @@
       </Position24>
       <Position25>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="429" Column="35" TopLine="419"/>
+        <Caret Line="431" Column="35" TopLine="421"/>
       </Position25>
       <Position26>
         <Filename Value="simthyrplot.pas"/>
         <Caret Line="430" Column="35" TopLine="420"/>
       </Position26>
       <Position27>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="431" Column="35" TopLine="421"/>
-      </Position27>
-      <Position28>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="430" Column="35" TopLine="420"/>
-      </Position28>
-      <Position29>
         <Filename Value="sensitivityanalysis.pas"/>
         <Caret Line="6" Column="16" TopLine="1"/>
-      </Position29>
-      <Position30>
+      </Position27>
+      <Position28>
         <Filename Value="tornado.pas"/>
         <Caret Line="7" Column="16" TopLine="1"/>
-      </Position30>
+      </Position28>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
