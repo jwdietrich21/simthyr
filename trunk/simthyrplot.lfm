@@ -311,7 +311,7 @@ object ValuesPlot: TValuesPlot
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.0.2.0'
+  LCLVersion = '1.0.6.0'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -472,6 +472,14 @@ object ValuesPlot: TValuesPlot
       OnClick = FullScaleButton1Click
       ShowHint = True
       ParentShowHint = False
+    end
+    object ChartNavPanel1: TChartNavPanel
+      Left = 16
+      Height = 16
+      Top = 48
+      Width = 23
+      Chart = Chart1
+      MiniMap = True
     end
   end
   object Button1: TButton
@@ -644,6 +652,14 @@ object ValuesPlot: TValuesPlot
       OnClick = FullScaleButton2Click
       ShowHint = True
       ParentShowHint = False
+    end
+    object ChartNavPanel2: TChartNavPanel
+      Left = 15
+      Height = 14
+      Top = 48
+      Width = 23
+      Chart = Chart2
+      MiniMap = True
     end
   end
   object StatusBar1: TStatusBar

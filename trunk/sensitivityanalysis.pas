@@ -3,7 +3,7 @@ unit Sensitivityanalysis;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.2.2 }
+{ Version 3.2.3 }
 
 { (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -23,7 +23,7 @@ uses
   StdCtrls, Spin, Buttons, ExtCtrls, ColorBox, ComCtrls, TAGraph, TASources,
   TATools, TASeries, TATransformations, TAStyles, TALegendPanel, SimThyrTypes,
   SimThyrServices, SimThyrPrediction, Clipbrd, Menus,
-  TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas;
+  TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas, TANavigation;
 
 const
   MAX_SERIES = 8;
@@ -48,6 +48,7 @@ type
     Chart1LineSeries1: TLineSeries;
     ChartAxisTransformations1: TChartAxisTransformations;
     ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform;
+    ChartNavPanel1: TChartNavPanel;
     CheckGroup1: TCheckGroup;
     TT4ColorBox: TColorBox;
     Divider1: TMenuItem;

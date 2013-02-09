@@ -10,7 +10,7 @@ object HelpWindow: THelpWindow
   Constraints.MinHeight = 250
   Constraints.MinWidth = 500
   Position = poScreenCenter
-  LCLVersion = '1.0.2.0'
+  LCLVersion = '1.0.6.0'
   object Label1: TLabel
     Left = 80
     Height = 22

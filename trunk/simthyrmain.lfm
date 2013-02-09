@@ -315,7 +315,7 @@ object SimThyrToolbar: TSimThyrToolbar
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.0.2.0'
+  LCLVersion = '1.0.6.0'
   Visible = True
   object ToolBar1: TToolBar
     Left = 0

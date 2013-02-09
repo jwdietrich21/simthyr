@@ -4,7 +4,7 @@ unit tornado;
 
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.2.2 }
+{ Version 3.2.3 }
 
 { (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -24,7 +24,7 @@ uses
   Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, Menus, TAGraph, TAStyles,
   TASeries, TASources, TATools, TATransformations, TALegend, TALegendPanel,
   SimThyrServices, Sensitivityanalysis, SimThyrPrediction, Clipbrd, Buttons,
-  ColorBox, TADrawerSVG, TADrawUtils, TADrawerCanvas;
+  ColorBox, TADrawerSVG, TADrawUtils, TADrawerCanvas, TANavigation;
 
 type
 

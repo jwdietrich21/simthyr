@@ -3,7 +3,7 @@ unit SimThyrPlot;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.2.2 }
+{ Version 3.2.3 }
 
 { (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -20,10 +20,10 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdCtrls, ComCtrls, ColorBox, Buttons, Menus, TAGraph,
-  TATools, TASeries, TATransformations,
-  DateUtils, SimThyrTypes, SimThyrServices, HandleNotifier, Clipbrd,
-  TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas;
+  ExtCtrls, StdCtrls, ComCtrls, ColorBox, Buttons, Menus, TAGraph, TATools,
+  TASeries, TATransformations, DateUtils, SimThyrTypes, SimThyrServices,
+  HandleNotifier, Clipbrd, TAIntervalSources, TADrawerSVG, TADrawUtils,
+  TADrawerCanvas, TAStyles, TANavigation;
 
 type
 
@@ -33,6 +33,8 @@ type
     Button1: TButton;
     Chart1: TChart;
     Chart2: TChart;
+    ChartNavPanel1: TChartNavPanel;
+    ChartNavPanel2: TChartNavPanel;
     ColorButton1: TColorButton;
     ColorListBox1: TColorListBox;
     ColorListBox2: TColorListBox;
