@@ -254,6 +254,13 @@ object AboutModelForm: TAboutModelForm
       'controlled homoeostasis during thyroxine treatment? Eur J'
       'Endocrinol. 168(2):271-80. doi 10.1530/EJE-12-0819. PMID'
       '23184912.'
+      ''
+      '11. Midgley JE, Hoermann R, Larisch R, Dietrich JW (2013). '
+      'Physiological states and functional relation between '
+      'thyrotropin and free thyroxine in thyroid health and disease: '
+      'in vivo and in silico data suggest a hierarchical model. '
+      'J Clin Pathol. 2013 Feb 19. [Epub ahead of print] '
+      'PMID 23423518.'
     )
     OnChange = Memo1Change
     ReadOnly = True

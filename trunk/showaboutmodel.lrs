@@ -199,6 +199,11 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +'ermann R, Midgley JE, Larisch R, Dietrich JW (2013). Is'#6'4pituitary TSH a'
   +'n adequate measure of thyroid hormone'#6'9controlled homoeostasis during th'
   +'yroxine treatment? Eur J'#6'8Endocrinol. 168(2):271-80. doi 10.1530/EJE-12-'
-  +'0819. PMID'#6#9'23184912.'#0#8'OnChange'#7#11'Memo1Change'#8'ReadOnly'#9#10
-  +'ScrollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#1#11'WantReturns'#8#0#0#0
+  +'0819. PMID'#6#9'23184912.'#6#0#6';11. Midgley JE, Hoermann R, Larisch R, Di'
+  +'etrich JW (2013). '#6'5Physiological states and functional relation between'
+  +' '#6'>thyrotropin and free thyroxine in thyroid health and disease: '#6'9in'
+  +' vivo and in silico data suggest a hierarchical model. '#6'2J Clin Pathol. '
+  +'2013 Feb 19. [Epub ahead of print] '#6#14'PMID 23423518.'#0#8'OnChange'#7#11
+  +'Memo1Change'#8'ReadOnly'#9#10'ScrollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#1
+  +#11'WantReturns'#8#0#0#0
 ]);
