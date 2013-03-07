@@ -44,6 +44,8 @@ type
     procedure InitGrid;
     procedure PopupMenu1Popup(Sender: TObject);
     procedure SaveGrid(theFileName: String; theDelimiter: Char);
+    procedure ValuesGridGetCellHint(Sender: TObject; ACol, ARow: Integer;
+      var HintText: String);
   private
     { private declarations }
   public
@@ -183,6 +185,15 @@ begin
   end
   else
     bell;
+end;
+
+procedure TSimThyrLogWindow.ValuesGridGetCellHint(Sender: TObject; ACol,
+  ARow: Integer; var HintText: String);  { TODO 9 -oJ. W. Dietrich -cbugs : This bug is to be fixed. }
+begin
+  {
+  if ACol > 1 then
+    HintText := gParameterLabel[ACol - 1];
+  }
 end;
 
 initialization

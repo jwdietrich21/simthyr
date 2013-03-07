@@ -313,6 +313,7 @@ object SimThyrLogWindow: TSimThyrLogWindow
     Cursor = crIBeam
     Left = 0
     Height = 263
+    Hint = 'Simulated behavioural parameters of thyroid homeostasis'
     Top = 0
     Width = 751
     Align = alClient
@@ -323,11 +324,14 @@ object SimThyrLogWindow: TSimThyrLogWindow
     HeaderHotZones = [gzFixedRows]
     HeaderPushZones = []
     MouseWheelOption = mwGrid
-    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goTabs, goDblClickAutoSize, goSmoothScroll, goFixedColSizing]
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goTabs, goDblClickAutoSize, goSmoothScroll, goFixedColSizing, goCellHints]
+    ParentShowHint = False
     PopupMenu = PopupMenu1
     RowCount = 1
+    ShowHint = True
     TabOrder = 0
     TitleFont.Pitch = fpVariable
+    OnGetCellHint = ValuesGridGetCellHint
     ColWidths = (
       64
       76
