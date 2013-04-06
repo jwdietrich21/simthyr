@@ -504,7 +504,12 @@ begin
         i := SimThyrLogWindow.ValuesGrid.ColCount;
         j := SimThyrLogWindow.ValuesGrid.RowCount;
         SimThyrLogWindow.ValuesGrid.Selection := Rect(1,1,i,j);
-      end;
+      end
+  else if (theForm = Prediction) or ((theForm = SimThyrToolbar) and
+      (gLastActiveCustomForm = Prediction)) then
+      begin
+        Prediction.PredictionMemo.SelectAll;
+      end
 end;
 
 procedure TSimThyrToolbar.StopToolButtonClick(Sender: TObject);
