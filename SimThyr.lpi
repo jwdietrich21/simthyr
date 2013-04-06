@@ -15,7 +15,7 @@
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="2"/>
       <RevisionNr Value="3"/>
-      <BuildNr Value="202"/>
+      <BuildNr Value="203"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Project" FileDescription="SimThyr" InternalName="SimThyr 3.2.2" LegalCopyright="1994-2013 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.2.2"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -47,7 +47,6 @@
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyr"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="23"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -63,10 +62,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="22"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="37" Y="7"/>
+        <CursorPos X="47" Y="6"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -122,7 +122,7 @@
         <EditorIndex Value="16"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="16" Y="6"/>
+        <CursorPos X="56" Y="6"/>
         <UsageCount Value="100"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -892,7 +892,7 @@
         <EditorIndex Value="15"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="16" Y="6"/>
+        <CursorPos X="48" Y="90"/>
         <UsageCount Value="130"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1085,7 +1085,7 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="3"/>
+        <CursorPos X="1" Y="2"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
@@ -1093,64 +1093,64 @@
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="structureparameters.pas"/>
+        <Filename Value="aboutdialog.pas"/>
         <Caret Line="16" Column="1" TopLine="1"/>
       </Position1>
       <Position2>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="16" Column="1" TopLine="1"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="17" Column="1" TopLine="1"/>
       </Position2>
       <Position3>
-        <Filename Value="simthyrprediction.pas"/>
+        <Filename Value="showaboutmodel.pas"/>
         <Caret Line="16" Column="1" TopLine="1"/>
       </Position3>
       <Position4>
-        <Filename Value="splash.pas"/>
+        <Filename Value="help.pas"/>
         <Caret Line="16" Column="1" TopLine="1"/>
       </Position4>
       <Position5>
-        <Filename Value="aboutdialog.pas"/>
+        <Filename Value="simthyrmain.pas"/>
         <Caret Line="16" Column="1" TopLine="1"/>
       </Position5>
       <Position6>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="17" Column="1" TopLine="1"/>
-      </Position6>
-      <Position7>
-        <Filename Value="showaboutmodel.pas"/>
-        <Caret Line="16" Column="1" TopLine="1"/>
-      </Position7>
-      <Position8>
-        <Filename Value="help.pas"/>
-        <Caret Line="16" Column="1" TopLine="1"/>
-      </Position8>
-      <Position9>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="16" Column="1" TopLine="1"/>
-      </Position9>
-      <Position10>
         <Filename Value="SimThyr.lpr"/>
         <Caret Line="7" Column="1" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="5" Column="33" TopLine="1"/>
+      </Position7>
+      <Position8>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="135" Column="10" TopLine="117"/>
+      </Position8>
+      <Position9>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="169" Column="11" TopLine="151"/>
+      </Position9>
+      <Position10>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="142" Column="11" TopLine="124"/>
       </Position10>
       <Position11>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="5" Column="33" TopLine="1"/>
+        <Caret Line="77" Column="15" TopLine="60"/>
       </Position11>
       <Position12>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="135" Column="10" TopLine="117"/>
+        <Caret Line="429" Column="35" TopLine="419"/>
       </Position12>
       <Position13>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="169" Column="11" TopLine="151"/>
+        <Caret Line="430" Column="35" TopLine="420"/>
       </Position13>
       <Position14>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="142" Column="11" TopLine="124"/>
+        <Caret Line="429" Column="35" TopLine="419"/>
       </Position14>
       <Position15>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="77" Column="15" TopLine="60"/>
+        <Caret Line="430" Column="35" TopLine="420"/>
       </Position15>
       <Position16>
         <Filename Value="simthyrplot.pas"/>
@@ -1162,55 +1162,55 @@
       </Position17>
       <Position18>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="429" Column="35" TopLine="419"/>
+        <Caret Line="431" Column="35" TopLine="421"/>
       </Position18>
       <Position19>
         <Filename Value="simthyrplot.pas"/>
         <Caret Line="430" Column="35" TopLine="420"/>
       </Position19>
       <Position20>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="429" Column="35" TopLine="419"/>
-      </Position20>
-      <Position21>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="430" Column="35" TopLine="420"/>
-      </Position21>
-      <Position22>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="431" Column="35" TopLine="421"/>
-      </Position22>
-      <Position23>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="430" Column="35" TopLine="420"/>
-      </Position23>
-      <Position24>
         <Filename Value="sensitivityanalysis.pas"/>
         <Caret Line="6" Column="16" TopLine="1"/>
-      </Position24>
-      <Position25>
+      </Position20>
+      <Position21>
         <Filename Value="tornado.pas"/>
         <Caret Line="7" Column="16" TopLine="1"/>
-      </Position25>
-      <Position26>
+      </Position21>
+      <Position22>
         <Filename Value="simthyrlog.pas"/>
         <Caret Line="6" Column="16" TopLine="1"/>
-      </Position26>
-      <Position27>
+      </Position22>
+      <Position23>
         <Filename Value="simthyrlog.pas"/>
         <Caret Line="193" Column="79" TopLine="161"/>
-      </Position27>
-      <Position28>
+      </Position23>
+      <Position24>
         <Filename Value="simthyrtypes.pas"/>
         <Caret Line="99" Column="88" TopLine="93"/>
-      </Position28>
-      <Position29>
+      </Position24>
+      <Position25>
         <Filename Value="simthyrlog.pas"/>
         <Caret Line="185" Column="77" TopLine="161"/>
-      </Position29>
-      <Position30>
+      </Position25>
+      <Position26>
         <Filename Value="simthyrplot.pas"/>
         <Caret Line="427" Column="81" TopLine="422"/>
+      </Position26>
+      <Position27>
+        <Filename Value="simthyrprediction.pas"/>
+        <Caret Line="11" Column="50" TopLine="1"/>
+      </Position27>
+      <Position28>
+        <Filename Value="simthyrprediction.pas"/>
+        <Caret Line="143" Column="41" TopLine="127"/>
+      </Position28>
+      <Position29>
+        <Filename Value="simthyrprediction.pas"/>
+        <Caret Line="168" Column="43" TopLine="138"/>
+      </Position29>
+      <Position30>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="511" Column="44" TopLine="494"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

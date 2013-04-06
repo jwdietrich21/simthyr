@@ -339,7 +339,7 @@ LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   +#172'A'#128#7#172'A'#128#7#172'A'#132#135#172'A'#140#135#172'A'#140#195#172
   +'A'#140#195#172'A'#204#227#172'A'#205#243#172'A'#239#255#172'A'#255#255#172
   +'A'#4'Menu'#7#9'MainMenu1'#10'OnActivate'#7#12'FormActivate'#8'OnCreate'#7#10
-  +'FormCreate'#6'OnShow'#7#8'FormShow'#10'LCLVersion'#6#7'1.0.6.0'#7'Visible'#9
+  +'FormCreate'#6'OnShow'#7#8'FormShow'#10'LCLVersion'#6#7'1.0.8.0'#7'Visible'#9
   +#0#8'TToolBar'#8'ToolBar1'#4'Left'#2#0#6'Height'#2#26#3'Top'#2#0#5'Width'#3
   +#179#2#7'Caption'#6#8'ToolBar1'#6'Images'#7#10'ImageList1'#8'TabOrder'#2#0#7
   +'OnClick'#7#13'ToolBar1Click'#0#11'TToolButton'#13'NewToolButton'#4'Left'#2#1
