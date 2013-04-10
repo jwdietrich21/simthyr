@@ -112,19 +112,22 @@ implementation
   cycles := round(n * factor / delt) + 1;
  end;
 
+function rnorm (mean, sd: real): real;
+{Calculates Gaußian random numbers according to the Box-Müller approach}
+ var
+  u1, u2: real;
+begin
+  u1 := random;
+  u2 := random;
+  rnorm := mean * abs(1 + sqrt(-2 * (ln(u1))) * cos(2 * pi * u2) * sd);
+ end;
+
  function getgauss (sigma: real): real;
- {Calculates Gaußian random numbers according to the Box-Müller-Verfahren}
-  var
-   u1, u2: real;
+ {controllable function to calculate random numbers of a normal distribution}
  begin
   if noiseflag then
    begin
-    {Randomize;      THINK Pascal only: randSeed := TickCount;}
-    {u1 := ((random + 32768) / 65536);
-    u2 := ((random + 32768) / 65536);}
-    u1 := random;
-    u2 := random;
-    getgauss := abs(1 + sqrt(-2 * (ln(u1))) * cos(2 * pi * u2) * sigma);
+    getgauss := rnorm(1, sigma);
    end
   else
    getgauss := 1;
