@@ -150,6 +150,8 @@ begin
     SetStatusBarPanel0('   ' + IntToStr(nmax_old) + ':', IntToStr(nmax));
     SimThyrLogWindow.StatusBar1.Panels[1].Text := '   DeltaT:' + FloatToStr(delt) + ' s';
     InitSimulation;
+    ValuesPlot.BringToFront;
+    SimThyrLogWindow.BringToFront; {activates Windows after start of simulation}
   end;
 end;
 
