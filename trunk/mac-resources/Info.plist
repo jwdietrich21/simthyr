@@ -1,31 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+SimThyr Project
+A numerical simulator of thyrotropic feedback control
+
+Version 3.2.3
+
+(c) J. W. Dietrich, 1994 - 2013
+(c) Ludwig Maximilian University of Munich 1995 - 2002
+(c) Ruhr University of Bochum 2005 - 2013
+
+This unit delivers the launch dialog with simulation settings
+
+Source code released under the BSD License
+See http://simthyr.sourceforge.net for details
+-->
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>SimThyr</string>
-	<key>CFBundleName</key>
-	<string>SimThyr</string>
-	<key>CFBundleGetInfoString</key>
-	<string>3.2.3, ©1994-2013 J. W. Dietrich</string>
-	<key>CFBundleIdentifier</key>
-	<string>net.sf.simthyr</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleExecutable</key>
+	<string>SimThyr</string>
+	<key>CFBundleVersion</key>
+	<string>3.2.3</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleName</key>
+	<string>SimThyr</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleSignature</key>
 	<string>SimT</string>
 	<key>CFBundleShortVersionString</key>
 	<string>3.2.3</string>
+	<key>CFBundleGetInfoString</key>
+	<string>3.2.3, ©1994-2013 J. W. Dietrich</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>3.2.3, ©1994-2013 J. W. Dietrich</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.sf.simthyr</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.medical</string>
 	<key>CFBundleIconFile</key>
 	<string>SimThyr.icns</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
 	<key>LSRequiresCarbon</key>
@@ -48,6 +65,6 @@
 		</dict>
 	</array>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.4</string>
+	<string>10.4.0</string>
 </dict>
 </plist>
