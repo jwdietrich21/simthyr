@@ -423,8 +423,8 @@ begin
   ShowPredictedValues;
   GridRows := nmax + 1;
   SimThyrLogWindow.ValuesGrid.RowCount := GridRows;
-  ValuesPlot.Show;
-  SimThyrLogWindow.ShowOnTop;
+  SimThyrLogWindow.Show;
+  ValuesPlot.ShowOnTop;
   simulate;
 end;
 
