@@ -1,19 +1,19 @@
 object StructureParameters: TStructureParameters
-  Left = 553
-  Height = 669
-  Top = 163
-  Width = 601
+  Left = 407
+  Height = 675
+  Top = 157
+  Width = 677
   AlphaBlend = True
   AlphaBlendValue = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   Caption = 'Constant Structure Parameters'
-  ClientHeight = 669
-  ClientWidth = 601
+  ClientHeight = 675
+  ClientWidth = 677
   Color = clWhite
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.0.6.0'
+  LCLVersion = '1.0.8.0'
   Visible = True
   object Label1: TLabel
     Left = 24
@@ -58,9 +58,9 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object OKButton: TButton
-    Left = 492
+    Left = 568
     Height = 25
-    Top = 617
+    Top = 623
     Width = 75
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 13
@@ -72,9 +72,9 @@ object StructureParameters: TStructureParameters
     TabOrder = 36
   end
   object CancelButton: TButton
-    Left = 492
+    Left = 568
     Height = 25
-    Top = 582
+    Top = 588
     Width = 75
     Anchors = [akRight, akBottom]
     Cancel = True
@@ -84,7 +84,7 @@ object StructureParameters: TStructureParameters
     TabOrder = 35
   end
   object GREdit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 48
     Width = 80
@@ -92,7 +92,7 @@ object StructureParameters: TStructureParameters
     Text = 'GREdit'
   end
   object DREdit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 72
     Width = 80
@@ -100,7 +100,7 @@ object StructureParameters: TStructureParameters
     Text = 'DREdit'
   end
   object Label4: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 53
     Width = 23
@@ -108,7 +108,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label5: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 79
     Width = 23
@@ -148,7 +148,7 @@ object StructureParameters: TStructureParameters
     Text = 'BetaS2Edit'
   end
   object GHEdit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 144
     Width = 80
@@ -156,7 +156,7 @@ object StructureParameters: TStructureParameters
     Text = 'GHEdit'
   end
   object DHEdit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 168
     Width = 80
@@ -164,7 +164,7 @@ object StructureParameters: TStructureParameters
     Text = 'DHEdit'
   end
   object LSEdit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 192
     Width = 80
@@ -172,7 +172,7 @@ object StructureParameters: TStructureParameters
     Text = 'LSEdit'
   end
   object SSEdit: TEdit
-    Left = 469
+    Left = 525
     Height = 22
     Top = 144
     Width = 80
@@ -180,7 +180,7 @@ object StructureParameters: TStructureParameters
     Text = 'SSEdit'
   end
   object DSEdit: TEdit
-    Left = 469
+    Left = 525
     Height = 22
     Top = 168
     Width = 80
@@ -221,7 +221,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label10: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 151
     Width = 24
@@ -229,7 +229,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label11: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 175
     Width = 24
@@ -237,7 +237,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label12: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 199
     Width = 19
@@ -245,7 +245,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label13: TLabel
-    Left = 416
+    Left = 472
     Height = 17
     Top = 151
     Width = 19
@@ -253,7 +253,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label14: TLabel
-    Left = 416
+    Left = 472
     Height = 17
     Top = 175
     Width = 22
@@ -277,7 +277,7 @@ object StructureParameters: TStructureParameters
     Text = 'BetaTEdit'
   end
   object GTEdit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 240
     Width = 80
@@ -285,7 +285,7 @@ object StructureParameters: TStructureParameters
     Text = 'GTEdit'
   end
   object DTEdit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 264
     Width = 80
@@ -309,7 +309,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label17: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 247
     Width = 23
@@ -317,7 +317,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label18: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 271
     Width = 23
@@ -341,7 +341,7 @@ object StructureParameters: TStructureParameters
     Text = 'Beta31Edit'
   end
   object GD1Edit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 312
     Width = 80
@@ -349,7 +349,7 @@ object StructureParameters: TStructureParameters
     Text = 'GD1Edit'
   end
   object KM1Edit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 336
     Width = 80
@@ -373,7 +373,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label21: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 319
     Width = 32
@@ -381,7 +381,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label22: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 343
     Width = 29
@@ -405,7 +405,7 @@ object StructureParameters: TStructureParameters
     Text = 'Beta32Edit'
   end
   object GD2Edit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 384
     Width = 80
@@ -413,7 +413,7 @@ object StructureParameters: TStructureParameters
     Text = 'GD2Edit'
   end
   object KM2Edit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 408
     Width = 80
@@ -437,7 +437,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label25: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 391
     Width = 32
@@ -445,7 +445,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label26: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 415
     Width = 33
@@ -453,7 +453,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object k30Edit: TEdit
-    Left = 469
+    Left = 525
     Height = 22
     Top = 312
     Width = 80
@@ -461,7 +461,7 @@ object StructureParameters: TStructureParameters
     Text = 'k30Edit'
   end
   object k31Edit: TEdit
-    Left = 469
+    Left = 525
     Height = 22
     Top = 336
     Width = 80
@@ -469,7 +469,7 @@ object StructureParameters: TStructureParameters
     Text = 'k31Edit'
   end
   object k41Edit: TEdit
-    Left = 469
+    Left = 525
     Height = 22
     Top = 360
     Width = 80
@@ -477,7 +477,7 @@ object StructureParameters: TStructureParameters
     Text = 'k41Edit'
   end
   object k42Edit: TEdit
-    Left = 469
+    Left = 525
     Height = 22
     Top = 384
     Width = 80
@@ -485,7 +485,7 @@ object StructureParameters: TStructureParameters
     Text = 'k42Edit'
   end
   object Label27: TLabel
-    Left = 416
+    Left = 472
     Height = 17
     Top = 319
     Width = 30
@@ -493,7 +493,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label28: TLabel
-    Left = 416
+    Left = 472
     Height = 17
     Top = 343
     Width = 30
@@ -501,7 +501,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label29: TLabel
-    Left = 416
+    Left = 472
     Height = 17
     Top = 367
     Width = 30
@@ -509,7 +509,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Label30: TLabel
-    Left = 416
+    Left = 472
     Height = 17
     Top = 391
     Width = 30
@@ -517,7 +517,7 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object Image1: TImage
-    Left = 440
+    Left = 496
     Height = 82
     Top = 24
     Width = 109
@@ -563,7 +563,7 @@ object StructureParameters: TStructureParameters
     }
   end
   object Image2: TImage
-    Left = 184
+    Left = 208
     Height = 32
     Top = 248
     Width = 32
@@ -642,7 +642,7 @@ object StructureParameters: TStructureParameters
     }
   end
   object Image3: TImage
-    Left = 184
+    Left = 208
     Height = 50
     Top = 53
     Width = 32
@@ -683,7 +683,7 @@ object StructureParameters: TStructureParameters
     }
   end
   object Image4: TImage
-    Left = 184
+    Left = 208
     Height = 42
     Top = 151
     Width = 34
@@ -723,7 +723,7 @@ object StructureParameters: TStructureParameters
     }
   end
   object Image5: TImage
-    Left = 192
+    Left = 216
     Height = 50
     Top = 384
     Width = 24
@@ -763,7 +763,7 @@ object StructureParameters: TStructureParameters
   end
   object Label31: TLabel
     AnchorSideLeft.Control = Label27
-    Left = 416
+    Left = 472
     Height = 34
     Top = 264
     Width = 133
@@ -800,7 +800,7 @@ object StructureParameters: TStructureParameters
     Text = 'Tau0S2Edit'
   end
   object Tau0TEdit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 525
     Width = 80
@@ -808,7 +808,7 @@ object StructureParameters: TStructureParameters
     Text = 'Tau0TEdit'
   end
   object Tau03zEdit: TEdit
-    Left = 296
+    Left = 312
     Height = 22
     Top = 549
     Width = 80
@@ -819,40 +819,40 @@ object StructureParameters: TStructureParameters
     Left = 24
     Height = 17
     Top = 506
-    Width = 53
-    Caption = 'Tau 0 R:'
+    Width = 49
+    Caption = 'Tau0 R:'
     ParentColor = False
   end
   object Label33: TLabel
     Left = 24
     Height = 17
     Top = 532
-    Width = 52
-    Caption = 'Tau 0 S:'
+    Width = 48
+    Caption = 'Tau0 S:'
     ParentColor = False
   end
   object Label34: TLabel
     Left = 24
     Height = 17
     Top = 556
-    Width = 60
-    Caption = 'Tau 0 S2:'
+    Width = 56
+    Caption = 'Tau0 S2:'
     ParentColor = False
   end
   object Label35: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 532
-    Width = 53
-    Caption = 'Tau 0 T:'
+    Width = 49
+    Caption = 'Tau0 T:'
     ParentColor = False
   end
   object Label36: TLabel
-    Left = 232
+    Left = 256
     Height = 17
     Top = 556
-    Width = 61
-    Caption = 'Tau 0 3z:'
+    Width = 57
+    Caption = 'Tau0 3z:'
     ParentColor = False
   end
   object Label37: TLabel
@@ -877,10 +877,10 @@ object StructureParameters: TStructureParameters
     OnClick = Label31Click
   end
   object StandardButton: TButton
-    Left = 492
+    Left = 568
     Height = 25
     Hint = 'Set all parameters to normal standard values'
-    Top = 548
+    Top = 554
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Standard'
@@ -890,7 +890,7 @@ object StructureParameters: TStructureParameters
     TabOrder = 34
   end
   object Image6: TImage
-    Left = 184
+    Left = 208
     Height = 24
     Top = 501
     Width = 34
@@ -969,15 +969,288 @@ object StructureParameters: TStructureParameters
     }
   end
   object OptionsButton: TButton
-    Left = 492
+    Left = 568
     Height = 25
     Hint = 'Set additional simulation options like noise and standard TRH level here...'
-    Top = 488
+    Top = 493
     Width = 75
+    Anchors = [akRight, akBottom]
     Caption = 'Options'
     OnClick = OptionsButtonClick
     ParentShowHint = False
     ShowHint = True
     TabOrder = 37
+  end
+  object Label39: TLabel
+    Left = 176
+    Height = 17
+    Top = 53
+    Width = 12
+    Caption = '/l'
+    ParentColor = False
+  end
+  object Label40: TLabel
+    Left = 176
+    Height = 17
+    Top = 79
+    Width = 14
+    Caption = '/s'
+    ParentColor = False
+  end
+  object Label41: TLabel
+    Left = 176
+    Height = 17
+    Top = 127
+    Width = 12
+    Caption = '/l'
+    ParentColor = False
+  end
+  object Label42: TLabel
+    Left = 176
+    Height = 17
+    Top = 175
+    Width = 12
+    Caption = '/l'
+    ParentColor = False
+  end
+  object Label43: TLabel
+    Left = 176
+    Height = 17
+    Top = 247
+    Width = 12
+    Caption = '/l'
+    ParentColor = False
+  end
+  object Label44: TLabel
+    Left = 176
+    Height = 17
+    Top = 319
+    Width = 12
+    Caption = '/l'
+    ParentColor = False
+  end
+  object Label45: TLabel
+    Left = 176
+    Height = 17
+    Top = 391
+    Width = 12
+    Caption = '/l'
+    ParentColor = False
+  end
+  object Label46: TLabel
+    Left = 174
+    Height = 17
+    Top = 151
+    Width = 14
+    Caption = '/s'
+    ParentColor = False
+  end
+  object Label47: TLabel
+    Left = 174
+    Height = 17
+    Top = 199
+    Width = 14
+    Caption = '/s'
+    ParentColor = False
+  end
+  object Label48: TLabel
+    Left = 174
+    Height = 17
+    Top = 271
+    Width = 14
+    Caption = '/s'
+    ParentColor = False
+  end
+  object Label49: TLabel
+    Left = 174
+    Height = 17
+    Top = 343
+    Width = 14
+    Caption = '/s'
+    ParentColor = False
+  end
+  object Label50: TLabel
+    Left = 176
+    Height = 17
+    Top = 415
+    Width = 14
+    Caption = '/s'
+    ParentColor = False
+  end
+  object Label51: TLabel
+    Left = 176
+    Height = 17
+    Top = 506
+    Width = 8
+    Caption = 's'
+    ParentColor = False
+  end
+  object Label52: TLabel
+    Left = 176
+    Height = 17
+    Top = 532
+    Width = 8
+    Caption = 's'
+    ParentColor = False
+  end
+  object Label53: TLabel
+    Left = 176
+    Height = 17
+    Top = 556
+    Width = 8
+    Caption = 's'
+    ParentColor = False
+  end
+  object Label54: TLabel
+    Left = 400
+    Height = 17
+    Top = 532
+    Width = 8
+    Caption = 's'
+    ParentColor = False
+  end
+  object Label55: TLabel
+    Left = 400
+    Height = 17
+    Top = 556
+    Width = 8
+    Caption = 's'
+    ParentColor = False
+  end
+  object Label56: TLabel
+    Left = 400
+    Height = 17
+    Top = 53
+    Width = 38
+    Caption = 'mol/s'
+    ParentColor = False
+  end
+  object Label57: TLabel
+    Left = 400
+    Height = 17
+    Top = 247
+    Width = 38
+    Caption = 'mol/s'
+    ParentColor = False
+  end
+  object Label58: TLabel
+    Left = 400
+    Height = 17
+    Top = 319
+    Width = 38
+    Caption = 'mol/s'
+    ParentColor = False
+  end
+  object Label59: TLabel
+    Left = 400
+    Height = 17
+    Top = 391
+    Width = 38
+    Caption = 'mol/s'
+    ParentColor = False
+  end
+  object Label60: TLabel
+    Left = 400
+    Height = 17
+    Top = 151
+    Width = 36
+    Caption = 'mU/s'
+    ParentColor = False
+  end
+  object Label61: TLabel
+    Left = 400
+    Height = 17
+    Top = 79
+    Width = 35
+    Caption = 'mol/l'
+    ParentColor = False
+  end
+  object Label62: TLabel
+    Left = 400
+    Height = 17
+    Top = 175
+    Width = 35
+    Caption = 'mol/l'
+    ParentColor = False
+  end
+  object Label63: TLabel
+    Left = 400
+    Height = 17
+    Top = 343
+    Width = 35
+    Caption = 'mol/l'
+    ParentColor = False
+  end
+  object Label64: TLabel
+    Left = 400
+    Height = 17
+    Top = 413
+    Width = 35
+    Caption = 'mol/l'
+    ParentColor = False
+  end
+  object Label65: TLabel
+    Left = 400
+    Height = 17
+    Top = 271
+    Width = 33
+    Caption = 'mU/l'
+    ParentColor = False
+  end
+  object Label66: TLabel
+    Left = 400
+    Height = 17
+    Top = 199
+    Width = 44
+    Caption = 'l/µmol'
+    ParentColor = False
+  end
+  object Label67: TLabel
+    Left = 608
+    Height = 17
+    Top = 151
+    Width = 33
+    Caption = 'l/mU'
+    ParentColor = False
+  end
+  object Label68: TLabel
+    Left = 608
+    Height = 17
+    Top = 175
+    Width = 33
+    Caption = 'mU/l'
+    ParentColor = False
+  end
+  object Label69: TLabel
+    Left = 608
+    Height = 17
+    Top = 319
+    Width = 35
+    Caption = 'l/mol'
+    ParentColor = False
+  end
+  object Label70: TLabel
+    Left = 608
+    Height = 17
+    Top = 343
+    Width = 35
+    Caption = 'l/mol'
+    ParentColor = False
+  end
+  object Label71: TLabel
+    Left = 608
+    Height = 17
+    Top = 367
+    Width = 35
+    Caption = 'l/mol'
+    ParentColor = False
+  end
+  object Label72: TLabel
+    Left = 608
+    Height = 17
+    Top = 391
+    Width = 35
+    Caption = 'l/mol'
+    ParentColor = False
   end
 end
