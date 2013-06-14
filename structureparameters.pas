@@ -64,6 +64,7 @@ type
     Label71: TLabel;
     Label72: TLabel;
     OptionsButton: TButton;
+    ScrollBox1: TScrollBox;
     StandardButton: TButton;
     CancelButton: TButton;
     DREdit: TEdit;
@@ -143,6 +144,7 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    procedure FormActivate(Sender: TObject);
     procedure OptionsButtonClick(Sender: TObject);
     procedure StandardButtonClick(Sender: TObject);
     procedure FillInParameters;
@@ -273,6 +275,17 @@ end;
 procedure TStructureParameters.OptionsButtonClick(Sender: TObject);
 begin
   SimOptionsDlg.ShowOnTop;
+end;
+
+procedure TStructureParameters.FormActivate(Sender: TObject);
+begin
+  {Adaptations for small screens:}
+  if StructureParametersDlg.Top < 0 then StructureParametersDlg.Top := 26;
+  if StructureParametersDlg.Left < 0 then StructureParametersDlg.Left := 7;
+  if Screen.Width < StructureParametersDlg.Left + StructureParametersDlg.Width then
+    StructureParametersDlg.Width := Screen.Width - StructureParametersDlg.Left;
+  if Screen.Height < StructureParametersDlg.Top + StructureParametersDlg.Height then
+    StructureParametersDlg.Height := Screen.Height - StructureParametersDlg.Top;
 end;
 
 procedure TStructureParameters.HandleStrucPars;

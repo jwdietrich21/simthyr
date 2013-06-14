@@ -1,9 +1,9 @@
 object AboutWindow: TAboutWindow
   Cursor = crHandPoint
-  Left = 480
-  Height = 397
-  Top = 298
-  Width = 490
+  Left = 492
+  Height = 389
+  Top = 103
+  Width = 491
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   AlphaBlend = True
@@ -11,19 +11,19 @@ object AboutWindow: TAboutWindow
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'About SimThyr'
-  ClientHeight = 397
-  ClientWidth = 490
+  ClientHeight = 389
+  ClientWidth = 491
   Color = clWhite
   Font.Pitch = fpVariable
   OnKeyDown = FormKeyDown
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.0.8.0'
+  LCLVersion = '1.0.10.0'
   Visible = True
   object OKButton: TButton
-    Left = 223
+    Left = 224
     Height = 25
-    Top = 355
+    Top = 347
     Width = 75
     Anchors = [akBottom]
     Caption = 'OK'

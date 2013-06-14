@@ -1,7 +1,7 @@
 object SimulationSettings: TSimulationSettings
-  Left = 468
-  Height = 400
-  Top = 325
+  Left = 393
+  Height = 390
+  Top = 268
   Width = 560
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
@@ -11,10 +11,10 @@ object SimulationSettings: TSimulationSettings
   BorderIcons = []
   BorderStyle = bsDialog
   Caption = 'Simulation Settings'
-  ClientHeight = 400
+  ClientHeight = 390
   ClientWidth = 560
   Color = clWhite
-  Constraints.MinHeight = 400
+  Constraints.MinHeight = 390
   Constraints.MinWidth = 560
   Font.Pitch = fpVariable
   OnCreate = FormCreate
@@ -23,7 +23,7 @@ object SimulationSettings: TSimulationSettings
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.0.8.0'
+  LCLVersion = '1.0.10.0'
   Visible = True
   object Label1: TLabel
     Left = 96
@@ -124,7 +124,7 @@ object SimulationSettings: TSimulationSettings
     Left = 16
     Height = 120
     Hint = 'Additional scheduled functions'
-    Top = 224
+    Top = 208
     Width = 531
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 1
@@ -220,7 +220,7 @@ object SimulationSettings: TSimulationSettings
     Left = 16
     Height = 25
     Hint = 'Additional simulation options'
-    Top = 360
+    Top = 344
     Width = 152
     Anchors = [akLeft, akBottom]
     Caption = 'Additional Options...'
@@ -235,7 +235,7 @@ object SimulationSettings: TSimulationSettings
     Left = 472
     Height = 25
     Hint = 'Run simulation'
-    Top = 360
+    Top = 344
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Start'
@@ -249,7 +249,7 @@ object SimulationSettings: TSimulationSettings
   object CancelButton: TButton
     Left = 384
     Height = 25
-    Top = 360
+    Top = 344
     Width = 75
     Anchors = [akRight, akBottom]
     Cancel = True
@@ -422,7 +422,7 @@ object SimulationSettings: TSimulationSettings
   object Image3: TImage
     Left = 32
     Height = 32
-    Top = 192
+    Top = 176
     Width = 32
     Picture.Data = {
       055449636F6EBE0800000000010001002020000000000000A808000016000000
@@ -511,7 +511,7 @@ object SimulationSettings: TSimulationSettings
   object Label3: TLabel
     Left = 96
     Height = 17
-    Top = 200
+    Top = 184
     Width = 74
     Caption = 'Test signal:'
     ParentColor = False
@@ -521,7 +521,7 @@ object SimulationSettings: TSimulationSettings
     Left = 176
     Height = 25
     Hint = 'Modify structure pareameters'
-    Top = 360
+    Top = 344
     Width = 168
     Anchors = [akLeft, akBottom]
     Caption = 'Structure Parameters...'

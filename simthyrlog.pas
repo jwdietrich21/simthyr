@@ -99,6 +99,8 @@ end;
 
 procedure TSimThyrLogWindow.FormActivate(Sender: TObject);
 begin
+  if Screen.Width < SimThyrLogWindow.Left + SimThyrLogWindow.Width then
+    SimThyrLogWindow.Width := Screen.Width - SimThyrLogWindow.Left - 13;
   SimThyrToolbar.SelectAllMenuItem.Enabled := true;
   gLastActiveCustomForm := SimThyrLogWindow; {stores window as last active form}
 end;
