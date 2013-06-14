@@ -1,7 +1,7 @@
 object AboutModelForm: TAboutModelForm
-  Left = 422
-  Height = 741
-  Top = 81
+  Left = 391
+  Height = 363
+  Top = 183
   Width = 559
   HorzScrollBar.Page = 1
   HorzScrollBar.Visible = False
@@ -12,7 +12,7 @@ object AboutModelForm: TAboutModelForm
   Anchors = []
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'About the model'
-  ClientHeight = 741
+  ClientHeight = 363
   ClientWidth = 559
   Color = clWhite
   Icon.Data = {
@@ -153,7 +153,7 @@ object AboutModelForm: TAboutModelForm
     0000
   }
   Position = poScreenCenter
-  LCLVersion = '1.0.6.0'
+  LCLVersion = '1.0.10.0'
   object Label1: TLabel
     Left = 56
     Height = 17
@@ -178,10 +178,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 278
+    Left = 289
     Height = 17
     Top = 64
-    Width = 224
+    Width = 213
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -196,7 +196,7 @@ object AboutModelForm: TAboutModelForm
   end
   object Memo1: TMemo
     Left = 56
-    Height = 569
+    Height = 191
     Top = 120
     Width = 446
     Anchors = [akTop, akLeft, akRight, akBottom]

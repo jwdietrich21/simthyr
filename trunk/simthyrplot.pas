@@ -461,6 +461,11 @@ end;
 
 procedure TValuesPlot.FormActivate(Sender: TObject);
 begin
+  {Compensation for very small screens:}
+  if Screen.Width < ValuesPlot.Left + ValuesPlot.Width then
+    ValuesPlot.Width := Screen.Width - ValuesPlot.Left - 13;
+  if ValuesPlot.Top < 0 then ValuesPlot.Top := 26;
+  if ValuesPlot.Left < 0 then ValuesPlot.Left := 13;
   SimThyrToolbar.SelectAllMenuItem.Enabled := false;
   gLastActiveCustomForm := ValuesPlot;
 end;

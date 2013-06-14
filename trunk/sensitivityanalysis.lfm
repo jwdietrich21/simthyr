@@ -1,40 +1,40 @@
 object SensitivityAnalysisForm: TSensitivityAnalysisForm
-  Left = 383
-  Height = 441
-  Top = 236
-  Width = 721
+  Left = 432
+  Height = 405
+  Top = 160
+  Width = 760
   AlphaBlendValue = 0
   Anchors = [akTop, akLeft, akBottom]
   Caption = 'One Way Sensitivity Analysis'
-  ClientHeight = 441
-  ClientWidth = 721
+  ClientHeight = 405
+  ClientWidth = 760
   Color = clWhite
   Constraints.MinHeight = 400
   Constraints.MinWidth = 600
   OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.0.6.0'
+  LCLVersion = '1.0.10.0'
   Visible = True
   object Panel1: TPanel
     Left = 48
-    Height = 322
+    Height = 286
     Top = 32
-    Width = 425
+    Width = 464
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 20
     BorderStyle = bsSingle
     Caption = 'Panel1'
-    ClientHeight = 322
-    ClientWidth = 425
+    ClientHeight = 286
+    ClientWidth = 464
     TabOrder = 0
     object Chart1: TChart
       Cursor = crCross
       Left = 8
-      Height = 304
+      Height = 268
       Hint = 'Drag with mouse to zoom'
       Top = 10
-      Width = 409
+      Width = 448
       AxisList = <      
         item
           Grid.Color = clSilver
@@ -79,7 +79,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object CheckGroup1: TCheckGroup
     AnchorSideTop.Side = asrBottom
-    Left = 488
+    Left = 527
     Height = 285
     Hint = 'Select the behavioural parameter that servers as dependent variable here.'
     Top = 32
@@ -116,7 +116,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     }
   end
   object TSHColorBox: TColorBox
-    Left = 567
+    Left = 606
     Height = 20
     Top = 64
     Width = 113
@@ -128,7 +128,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 2
   end
   object FT4ColorBox: TColorBox
-    Left = 567
+    Left = 606
     Height = 20
     Top = 150
     Width = 113
@@ -140,7 +140,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 3
   end
   object FT3ColorBox: TColorBox
-    Left = 567
+    Left = 606
     Height = 20
     Top = 235
     Width = 113
@@ -152,7 +152,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 4
   end
   object cT3ColorBox: TColorBox
-    Left = 567
+    Left = 606
     Height = 20
     Top = 277
     Width = 113
@@ -166,12 +166,12 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object GroupBox1: TGroupBox
     Left = 48
     Height = 50
-    Top = 362
-    Width = 426
+    Top = 326
+    Width = 465
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Independent parameter'
     ClientHeight = 28
-    ClientWidth = 418
+    ClientWidth = 457
     TabOrder = 6
     object MinSpinEdit: TFloatSpinEdit
       Left = 12
@@ -191,7 +191,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Value = 0
     end
     object MaxSpinEdit: TFloatSpinEdit
-      Left = 334
+      Left = 373
       Height = 16
       Hint = 'Maximum of selected structure parameter'
       Top = 3
@@ -212,7 +212,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
       Top = 1
-      Width = 212
+      Width = 251
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
       ItemHeight = 0
@@ -250,8 +250,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object StatusBar1: TStatusBar
     Left = 0
     Height = 15
-    Top = 426
-    Width = 721
+    Top = 390
+    Width = 760
     Panels = <>
   end
   object FullScaleButton1: TSpeedButton
@@ -303,7 +303,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ParentShowHint = False
   end
   object TT4ColorBox: TColorBox
-    Left = 567
+    Left = 606
     Height = 20
     Top = 107
     Width = 113
@@ -315,7 +315,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 8
   end
   object TT3ColorBox: TColorBox
-    Left = 567
+    Left = 606
     Height = 20
     Top = 192
     Width = 113

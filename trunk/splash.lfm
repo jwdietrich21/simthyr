@@ -1,8 +1,8 @@
 object SplashScreen: TSplashScreen
   Cursor = crAppStart
-  Left = 637
+  Left = 658
   Height = 308
-  Top = 133
+  Top = 108
   Width = 438
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
@@ -18,7 +18,7 @@ object SplashScreen: TSplashScreen
   Color = 15132390
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.0.8.0'
+  LCLVersion = '1.0.10.0'
   Visible = True
   object Image1: TImage
     Left = 24

@@ -1,5 +1,5 @@
 object Prediction: TPrediction
-  Left = 849
+  Left = 223
   Height = 190
   Top = 146
   Width = 417
@@ -306,7 +306,7 @@ object Prediction: TPrediction
     AC41E33FAC41C10FAC41C00FAC41C007AC418007AC418007AC418487AC418C87
     AC418CC3AC418CC3AC41CCE3AC41CDF3AC41EFFFAC41FFFFAC41
   }
-  LCLVersion = '1.0.8.0'
+  LCLVersion = '1.0.10.0'
   Visible = True
   object PredictionMemo: TMemo
     Left = 16

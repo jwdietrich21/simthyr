@@ -1,24 +1,24 @@
 object PreferencesDialog: TPreferencesDialog
-  Left = 361
-  Height = 389
-  Top = 259
+  Left = 212
+  Height = 363
+  Top = 298
   Width = 523
   AlphaBlend = True
   AlphaBlendValue = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   Caption = 'SimThyr Preferences'
-  ClientHeight = 389
+  ClientHeight = 363
   ClientWidth = 523
   Constraints.MinHeight = 350
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.0.6.0'
+  LCLVersion = '1.0.10.0'
   Visible = True
   object OKButton: TButton
     Left = 426
     Height = 25
-    Top = 342
+    Top = 316
     Width = 75
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 13
@@ -32,7 +32,7 @@ object PreferencesDialog: TPreferencesDialog
     AnchorSideRight.Control = OKButton
     Left = 338
     Height = 25
-    Top = 342
+    Top = 316
     Width = 75
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 13
@@ -70,7 +70,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 12
       Height = 17
       Top = 18
-      Width = 28
+      Width = 26
       Caption = 'TSH'
       ParentColor = False
     end
@@ -78,7 +78,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 148
       Height = 17
       Top = 18
-      Width = 18
+      Width = 17
       Caption = 'U/'
       ParentColor = False
     end
@@ -107,7 +107,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 278
       Height = 17
       Top = 18
-      Width = 65
+      Width = 63
       Caption = 'Example: '
       ParentColor = False
     end
@@ -115,7 +115,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 12
       Height = 17
       Top = 46
-      Width = 28
+      Width = 26
       Caption = 'TT4'
       ParentColor = False
     end
@@ -123,7 +123,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 278
       Height = 17
       Top = 46
-      Width = 65
+      Width = 63
       Caption = 'Example: '
       ParentColor = False
     end
@@ -155,7 +155,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 12
       Height = 17
       Top = 78
-      Width = 26
+      Width = 24
       Caption = 'FT4'
       ParentColor = False
     end
@@ -163,7 +163,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 278
       Height = 17
       Top = 78
-      Width = 65
+      Width = 63
       Caption = 'Example: '
       ParentColor = False
     end
@@ -171,7 +171,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 12
       Height = 17
       Top = 110
-      Width = 28
+      Width = 26
       Caption = 'TT3'
       ParentColor = False
     end
@@ -179,7 +179,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 278
       Height = 17
       Top = 110
-      Width = 65
+      Width = 63
       Caption = 'Example: '
       ParentColor = False
     end
@@ -187,7 +187,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 12
       Height = 17
       Top = 142
-      Width = 26
+      Width = 24
       Caption = 'FT3'
       ParentColor = False
     end
@@ -195,7 +195,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 278
       Height = 17
       Top = 142
-      Width = 65
+      Width = 63
       Caption = 'Example: '
       ParentColor = False
     end
@@ -421,7 +421,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 12
       Height = 17
       Top = 13
-      Width = 62
+      Width = 58
       Caption = 'Numbers'
       ParentColor = False
     end
@@ -429,7 +429,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 278
       Height = 17
       Top = 13
-      Width = 65
+      Width = 63
       Caption = 'Example: '
       ParentColor = False
     end
@@ -448,7 +448,7 @@ object PreferencesDialog: TPreferencesDialog
       Left = 12
       Height = 17
       Top = 43
-      Width = 34
+      Width = 32
       Caption = 'Time'
       ParentColor = False
     end

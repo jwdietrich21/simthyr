@@ -775,6 +775,8 @@ end;
 
 procedure TSensitivityAnalysisForm.FormActivate(Sender: TObject);
 begin
+  if Screen.Width < SensitivityAnalysisForm.Left + SensitivityAnalysisForm.Width then
+    SensitivityAnalysisForm.Width := Screen.Width - SensitivityAnalysisForm.Left - 13;
   SimThyrToolbar.SelectAllMenuItem.Enabled := false;
   gLastActiveCustomForm := SensitivityAnalysisForm;
 end;
