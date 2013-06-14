@@ -2,10 +2,10 @@
 
 LazarusResources.Add('TStructureParameters','FORMDATA',[
   'TPF0'#20'TStructureParameters'#19'StructureParameters'#4'Left'#3#151#1#6'Hei'
-  +'ght'#3#163#2#3'Top'#3#157#0#5'Width'#3#165#2#10'AlphaBlend'#9#15'AlphaBlend'
+  +'ght'#3#130#2#3'Top'#3#157#0#5'Width'#3#168#2#10'AlphaBlend'#9#15'AlphaBlend'
   +'Value'#2#0#11'BorderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderSt'
   +'yle'#7#8'bsDialog'#7'Caption'#6#29'Constant Structure Parameters'#12'Client'
-  +'Height'#3#163#2#11'ClientWidth'#3#165#2#5'Color'#7#7'clWhite'#6'OnShow'#7#8
+  +'Height'#3#130#2#11'ClientWidth'#3#168#2#5'Color'#7#7'clWhite'#6'OnShow'#7#8
   +'FormShow'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#7'1.0.8.0'#7'Vi'
   +'sible'#9#0#6'TLabel'#6'Label1'#4'Left'#2#24#6'Height'#2#17#3'Top'#2#16#5'Wi'
   +'dth'#3's'#1#7'Caption'#6'6Constant structure parameters of the feedback con'
@@ -16,11 +16,11 @@ LazarusResources.Add('TStructureParameters','FORMDATA',[
   +'BetaREdit'#0#0#6'TLabel'#6'Label2'#4'Left'#2#24#6'Height'#2#17#3'Top'#2'5'#5
   +'Width'#2'1'#7'Caption'#6#7'AlphaR:'#11'ParentColor'#8#0#0#6'TLabel'#6'Label'
   +'3'#4'Left'#2#24#6'Height'#2#17#3'Top'#2'O'#5'Width'#2'('#7'Caption'#6#6'Bet'
-  +'aR:'#11'ParentColor'#8#0#0#7'TButton'#8'OKButton'#4'Left'#3'8'#2#6'Height'#2
-  +#25#3'Top'#3'o'#2#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#19'Bo'
+  +'aR:'#11'ParentColor'#8#0#0#7'TButton'#8'OKButton'#4'Left'#3';'#2#6'Height'#2
+  +#25#3'Top'#3'N'#2#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#19'Bo'
   +'rderSpacing.Right'#2#13#20'BorderSpacing.Bottom'#2#13#7'Caption'#6#2'OK'#7
   +'Default'#9#11'ModalResult'#2#1#7'OnClick'#7#13'OKButtonClick'#8'TabOrder'#2
-  +'$'#0#0#7'TButton'#12'CancelButton'#4'Left'#3'8'#2#6'Height'#2#25#3'Top'#3'L'
+  +'$'#0#0#7'TButton'#12'CancelButton'#4'Left'#3';'#2#6'Height'#2#25#3'Top'#3'+'
   +#2#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#6'Cancel'#9#7'Captio'
   +'n'#6#6'Cancel'#11'ModalResult'#2#2#7'OnClick'#7#17'CancelButtonClick'#8'Tab'
   +'Order'#2'#'#0#0#5'TEdit'#6'GREdit'#4'Left'#3'8'#1#6'Height'#2#22#3'Top'#2'0'
@@ -324,8 +324,8 @@ LazarusResources.Add('TStructureParameters','FORMDATA',[
   ,'olor'#8#8'WordWrap'#9#0#0#6'TLabel'#7'Label38'#4'Left'#2#24#6'Height'#2#17#3
   +'Top'#3#213#1#5'Width'#2'k'#7'Caption'#6#15'Time constants:'#10'Font.Style'
   +#11#6'fsBold'#0#11'ParentColor'#8#10'ParentFont'#8#7'OnClick'#7#12'Label31Cl'
-  +'ick'#0#0#7'TButton'#14'StandardButton'#4'Left'#3'8'#2#6'Height'#2#25#4'Hint'
-  +#6',Set all parameters to normal standard values'#3'Top'#3'*'#2#5'Width'#2'K'
+  +'ick'#0#0#7'TButton'#14'StandardButton'#4'Left'#3';'#2#6'Height'#2#25#4'Hint'
+  +#6',Set all parameters to normal standard values'#3'Top'#3#9#2#5'Width'#2'K'
   +#7'Anchors'#11#7'akRight'#8'akBottom'#0#7'Caption'#6#8'Standard'#7'OnClick'#7
   +#19'StandardButtonClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2'"'
   +#0#0#6'TImage'#6'Image6'#4'Left'#3#208#0#6'Height'#2#24#3'Top'#3#245#1#5'Wid'
@@ -405,8 +405,8 @@ LazarusResources.Add('TStructureParameters','FORMDATA',[
   +#255#255#239#255#255#255#239#253'UW'#239#255#255#255#131#255#255#255#131#255
   +#255#255#199#255#255#255#199#255#255#255#239#255#255#255#239#255#255#255#255
   +#255#255#255#255#255#255#255#255#255#255#255#0#0#7'TButton'#13'OptionsButton'
-  +#4'Left'#3'8'#2#6'Height'#2#25#4'Hint'#6'KSet additional simulation options '
-  +'like noise and standard TRH level here...'#3'Top'#3#237#1#5'Width'#2'K'#7'A'
+  +#4'Left'#3';'#2#6'Height'#2#25#4'Hint'#6'KSet additional simulation options '
+  +'like noise and standard TRH level here...'#3'Top'#3#204#1#5'Width'#2'K'#7'A'
   +'nchors'#11#7'akRight'#8'akBottom'#0#7'Caption'#6#7'Options'#7'OnClick'#7#18
   +'OptionsButtonClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2'%'#0#0
   +#6'TLabel'#7'Label39'#4'Left'#3#176#0#6'Height'#2#17#3'Top'#2'5'#5'Width'#2
