@@ -152,7 +152,8 @@ object AboutModelForm: TAboutModelForm
     0000000000000000000000000000000000000000000000000000000000000000
     0000
   }
-  LCLVersion = '1.0.8.0'
+  Position = poScreenCenter
+  LCLVersion = '1.0.6.0'
   object Label1: TLabel
     Left = 56
     Height = 17
@@ -177,10 +178,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 289
+    Left = 278
     Height = 17
     Top = 64
-    Width = 213
+    Width = 224
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'

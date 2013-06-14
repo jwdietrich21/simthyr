@@ -1,15 +1,15 @@
 object StructureParameters: TStructureParameters
   Left = 407
-  Height = 675
+  Height = 642
   Top = 157
-  Width = 677
+  Width = 680
   AlphaBlend = True
   AlphaBlendValue = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   Caption = 'Constant Structure Parameters'
-  ClientHeight = 675
-  ClientWidth = 677
+  ClientHeight = 642
+  ClientWidth = 680
   Color = clWhite
   OnShow = FormShow
   Position = poScreenCenter
@@ -58,9 +58,9 @@ object StructureParameters: TStructureParameters
     ParentColor = False
   end
   object OKButton: TButton
-    Left = 568
+    Left = 571
     Height = 25
-    Top = 623
+    Top = 590
     Width = 75
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 13
@@ -72,9 +72,9 @@ object StructureParameters: TStructureParameters
     TabOrder = 36
   end
   object CancelButton: TButton
-    Left = 568
+    Left = 571
     Height = 25
-    Top = 588
+    Top = 555
     Width = 75
     Anchors = [akRight, akBottom]
     Cancel = True
@@ -877,10 +877,10 @@ object StructureParameters: TStructureParameters
     OnClick = Label31Click
   end
   object StandardButton: TButton
-    Left = 568
+    Left = 571
     Height = 25
     Hint = 'Set all parameters to normal standard values'
-    Top = 554
+    Top = 521
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Standard'
@@ -969,10 +969,10 @@ object StructureParameters: TStructureParameters
     }
   end
   object OptionsButton: TButton
-    Left = 568
+    Left = 571
     Height = 25
     Hint = 'Set additional simulation options like noise and standard TRH level here...'
-    Top = 493
+    Top = 460
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Options'

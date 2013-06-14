@@ -13,6 +13,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   Constraints.MinWidth = 600
   OnActivate = FormActivate
   OnCreate = FormCreate
+  Position = poScreenCenter
   LCLVersion = '1.0.6.0'
   Visible = True
   object Panel1: TPanel
