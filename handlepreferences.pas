@@ -173,60 +173,70 @@ begin
 end;
 
 function InterimTSHUnit:String;
+{Composes a preliminary unit string}
 begin
   with PreferencesDialog do
     result := TSHMassPrefixCombo.Caption + TSHMassUnitLabel.Caption + TSHVolumePrefixCombo.Caption + TSHVolumeUnitLabel.Caption;
 end;
 
 function InterimTT4Unit:String;
+{Composes a preliminary unit string}
 begin
   with PreferencesDialog do
     result := TT4MassPrefixCombo.Caption + TT4MassUnitCombo.Caption + '/' + TT4VolumePrefixCombo.Caption + TT4VolumeUnitLabel.Caption;
 end;
 
 function InterimFT4Unit:String;
+{Composes a preliminary unit string}
 begin
   with PreferencesDialog do
     result := FT4MassPrefixCombo.Caption + FT4MassUnitCombo.Caption + '/' + FT4VolumePrefixCombo.Caption + FT4VolumeUnitLabel.Caption;
 end;
 
 function InterimTT3Unit:String;
+{Composes a preliminary unit string}
 begin
   with PreferencesDialog do
     result := TT3MassPrefixCombo.Caption + TT3MassUnitCombo.Caption + '/' + TT3VolumePrefixCombo.Caption + TT3VolumeUnitLabel.Caption;
 end;
 
 function InterimFT3Unit:String;
+{Composes a preliminary unit string}
 begin
   with PreferencesDialog do
     result := FT3MassPrefixCombo.Caption + FT3MassUnitCombo.Caption + '/' + FT3VolumePrefixCombo.Caption + FT3VolumeUnitLabel.Caption;
 end;
 
 function InterimTSHFactor:real;
+{Calculates a preliminary conversion factor}
 begin
   with PreferencesDialog do
     result := VolumePrefixFactors[TSH_pos, TSHVolumePrefixCombo.ItemIndex] * UTSH / MassPrefixFactors[TSH_pos, TSHMassPrefixCombo.ItemIndex];
 end;
 
 function InterimTT4Factor:real;
+{Calculates a preliminary conversion factor}
 begin
   with PreferencesDialog do
     result := VolumePrefixFactors[TT4_pos, TT4VolumePrefixCombo.ItemIndex] * 1e-5 * T4MassUnitFactors[TT4_pos, TT4MassUnitCombo.ItemIndex] / MassPrefixFactors[TT4_pos, TT4MassPrefixCombo.ItemIndex];
 end;
 
 function InterimFT4Factor:real;
+{Calculates a preliminary conversion factor}
 begin
   with PreferencesDialog do
     result := VolumePrefixFactors[FT4_pos, FT4VolumePrefixCombo.ItemIndex] * 1e-5 * T4MassUnitFactors[FT4_pos, FT4MassUnitCombo.ItemIndex] / MassPrefixFactors[FT4_pos, FT4MassPrefixCombo.ItemIndex];
 end;
 
 function InterimTT3Factor:real;
+{Calculates a preliminary conversion factor}
 begin
   with PreferencesDialog do
     result := VolumePrefixFactors[TT3_pos, TT3VolumePrefixCombo.ItemIndex] * 1e-5 * T3MassUnitFactors[TT3_pos, TT3MassUnitCombo.ItemIndex] / MassPrefixFactors[TT3_pos, TT3MassPrefixCombo.ItemIndex];
 end;
 
 function InterimFT3Factor:real;
+{Calculates a preliminary conversion factor}
 begin
   with PreferencesDialog do
     result := VolumePrefixFactors[FT3_pos, FT3VolumePrefixCombo.ItemIndex] * 1e-5 * T3MassUnitFactors[FT3_pos, FT3MassUnitCombo.ItemIndex] / MassPrefixFactors[FT3_pos, FT3MassPrefixCombo.ItemIndex];
