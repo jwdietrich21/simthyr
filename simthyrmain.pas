@@ -189,8 +189,6 @@ begin
   SimThyrToolbar.Divider_2_3.Visible := False;
   SimThyrToolbar.WinPreferencesItem.Visible := False;
   SimThyrToolbar.AppleMenu.Visible := True;
-  //SimThyrToolbar.HelpItem.ShortCut := ShortCut(VK_LCL_SLASH, modifierKey);
-  //SimThyrToolbar.HelpItem.ShortCutKey2 := ShortCut(VK_HELP, []);
   {$ELSE}
   modifierKey := [ssCtrl];
   SimThyrToolbar.WinAboutItem.Visible := True;
