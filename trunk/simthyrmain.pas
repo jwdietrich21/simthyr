@@ -231,10 +231,35 @@ begin
   AdaptMenus;
 end;
 
+procedure TSimThyrToolbar.SetPosition;
+{sets the toolbar to the screen's top margin}
+begin
+  with SimThyrToolbar do
+  begin
+    hide;
+    {$IFDEF LCLcarbon}
+    WindowState := wsMaximized;
+    left   := 0;
+    top    := 20;
+    Width  := Screen.Width;
+    WindowState := wsNormal;
+    {$ELSE}
+    WindowState := wsNormal;
+    left   := 1;
+    top    := 0;
+    Width  := Screen.Width - 3;
+    {$ENDIF}
+    Height := Toolbar1.Height + 3;
+    AlphaBlend := False;
+  end;
+end;
+
 procedure TSimThyrToolbar.FormCreate(Sender: TObject);
 begin
   AdaptLanguages;
   gIdleCounter := 0;
+  SetPosition;
+  Show;
 end;
 
 procedure TSimThyrToolbar.FormShow(Sender: TObject);
@@ -576,29 +601,6 @@ end;
 procedure TSimThyrToolbar.AboutItemClick(Sender: TObject);
 begin
   AboutWindow.ShowAbout;
-end;
-
-procedure TSimThyrToolbar.SetPosition;
-{sets the toolbar to the screen's top margin}
-begin
-  with SimThyrToolbar do
-  begin
-    hide;
-    {$IFDEF LCLcarbon}
-    WindowState := wsMaximized;
-    left   := 0;
-    top    := 20;
-    Width  := Screen.Width;
-    {$ELSE}
-    WindowState := wsNormal;
-    left   := 1;
-    top    := 0;
-    Width  := Screen.Width - 3;
-    {$ENDIF}
-    Height := Toolbar1.Height + 3;
-    WindowState := wsNormal;
-    AlphaBlend := False;
-  end;
 end;
 
 initialization
