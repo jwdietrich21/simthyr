@@ -1,7 +1,8 @@
 object SimulationSettings: TSimulationSettings
-  Left = 393
-  Height = 390
-  Top = 268
+  Left = 444
+  Height = 400
+  Hint = 'Enter basic settings for the simulation here.'
+  Top = 250
   Width = 560
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
@@ -11,7 +12,7 @@ object SimulationSettings: TSimulationSettings
   BorderIcons = []
   BorderStyle = bsDialog
   Caption = 'Simulation Settings'
-  ClientHeight = 390
+  ClientHeight = 400
   ClientWidth = 560
   Color = clWhite
   Constraints.MinHeight = 390
@@ -22,6 +23,7 @@ object SimulationSettings: TSimulationSettings
   OnMouseWheelUp = FormMouseWheelUp
   OnShow = FormShow
   Position = poScreenCenter
+  ShowHint = True
   ShowInTaskBar = stNever
   LCLVersion = '1.0.10.0'
   Visible = True
@@ -50,7 +52,6 @@ object SimulationSettings: TSimulationSettings
     Color = clWhite
     ParentColor = False
     TabOrder = 0
-    OnClick = GroupBox1Click
     object RunTimeEdit: TEdit
       Left = 78
       Height = 22
@@ -220,7 +221,7 @@ object SimulationSettings: TSimulationSettings
     Left = 16
     Height = 25
     Hint = 'Additional simulation options'
-    Top = 344
+    Top = 354
     Width = 152
     Anchors = [akLeft, akBottom]
     Caption = 'Additional Options...'
@@ -235,7 +236,7 @@ object SimulationSettings: TSimulationSettings
     Left = 472
     Height = 25
     Hint = 'Run simulation'
-    Top = 344
+    Top = 354
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Start'
@@ -249,7 +250,7 @@ object SimulationSettings: TSimulationSettings
   object CancelButton: TButton
     Left = 384
     Height = 25
-    Top = 344
+    Top = 354
     Width = 75
     Anchors = [akRight, akBottom]
     Cancel = True
@@ -521,7 +522,7 @@ object SimulationSettings: TSimulationSettings
     Left = 176
     Height = 25
     Hint = 'Modify structure pareameters'
-    Top = 344
+    Top = 354
     Width = 168
     Anchors = [akLeft, akBottom]
     Caption = 'Structure Parameters...'

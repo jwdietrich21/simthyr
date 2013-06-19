@@ -1,15 +1,15 @@
 object StructureParameters: TStructureParameters
-  Left = 302
-  Height = 631
-  Top = 140
-  Width = 668
+  Left = 407
+  Height = 642
+  Top = 157
+  Width = 680
   AlphaBlend = True
   AlphaBlendValue = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   Caption = 'Constant Structure Parameters'
-  ClientHeight = 631
-  ClientWidth = 668
+  ClientHeight = 642
+  ClientWidth = 680
   Color = clWhite
   OnActivate = FormActivate
   OnShow = FormShow
@@ -17,9 +17,9 @@ object StructureParameters: TStructureParameters
   LCLVersion = '1.0.10.0'
   Visible = True
   object OKButton: TButton
-    Left = 559
+    Left = 571
     Height = 25
-    Top = 579
+    Top = 590
     Width = 75
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 13
@@ -31,9 +31,9 @@ object StructureParameters: TStructureParameters
     TabOrder = 7
   end
   object CancelButton: TButton
-    Left = 559
+    Left = 571
     Height = 25
-    Top = 544
+    Top = 555
     Width = 75
     Anchors = [akRight, akBottom]
     Cancel = True
@@ -45,7 +45,7 @@ object StructureParameters: TStructureParameters
   object Tau0REdit: TEdit
     Left = 88
     Height = 22
-    Top = 493
+    Top = 504
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 0
@@ -54,7 +54,7 @@ object StructureParameters: TStructureParameters
   object Tau0SEdit: TEdit
     Left = 88
     Height = 22
-    Top = 517
+    Top = 528
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 1
@@ -63,7 +63,7 @@ object StructureParameters: TStructureParameters
   object Tau0S2Edit: TEdit
     Left = 88
     Height = 22
-    Top = 541
+    Top = 552
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 2
@@ -72,7 +72,7 @@ object StructureParameters: TStructureParameters
   object Tau0TEdit: TEdit
     Left = 312
     Height = 22
-    Top = 517
+    Top = 528
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 3
@@ -81,7 +81,7 @@ object StructureParameters: TStructureParameters
   object Tau03zEdit: TEdit
     Left = 312
     Height = 22
-    Top = 541
+    Top = 552
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 4
@@ -90,7 +90,7 @@ object StructureParameters: TStructureParameters
   object Label32: TLabel
     Left = 24
     Height = 17
-    Top = 498
+    Top = 509
     Width = 49
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 R:'
@@ -99,7 +99,7 @@ object StructureParameters: TStructureParameters
   object Label33: TLabel
     Left = 24
     Height = 17
-    Top = 524
+    Top = 535
     Width = 48
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 S:'
@@ -108,7 +108,7 @@ object StructureParameters: TStructureParameters
   object Label34: TLabel
     Left = 24
     Height = 17
-    Top = 548
+    Top = 559
     Width = 56
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 S2:'
@@ -117,7 +117,7 @@ object StructureParameters: TStructureParameters
   object Label35: TLabel
     Left = 256
     Height = 17
-    Top = 524
+    Top = 535
     Width = 49
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 T:'
@@ -126,7 +126,7 @@ object StructureParameters: TStructureParameters
   object Label36: TLabel
     Left = 256
     Height = 17
-    Top = 548
+    Top = 559
     Width = 57
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 3z:'
@@ -135,7 +135,7 @@ object StructureParameters: TStructureParameters
   object Label37: TLabel
     Left = 24
     Height = 32
-    Top = 576
+    Top = 587
     Width = 344
     Anchors = [akLeft, akBottom]
     AutoSize = False
@@ -146,7 +146,7 @@ object StructureParameters: TStructureParameters
   object Label38: TLabel
     Left = 24
     Height = 17
-    Top = 461
+    Top = 472
     Width = 107
     Anchors = [akLeft, akBottom]
     Caption = 'Time constants:'
@@ -156,10 +156,10 @@ object StructureParameters: TStructureParameters
     OnClick = Label31Click
   end
   object StandardButton: TButton
-    Left = 559
+    Left = 571
     Height = 25
     Hint = 'Set all parameters to normal standard values'
-    Top = 510
+    Top = 521
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Standard'
@@ -171,7 +171,7 @@ object StructureParameters: TStructureParameters
   object Image6: TImage
     Left = 208
     Height = 24
-    Top = 493
+    Top = 504
     Width = 34
     Anchors = [akLeft, akBottom]
     Picture.Data = {
@@ -249,10 +249,10 @@ object StructureParameters: TStructureParameters
     }
   end
   object OptionsButton: TButton
-    Left = 559
+    Left = 571
     Height = 25
     Hint = 'Set additional simulation options like noise and standard TRH level here...'
-    Top = 449
+    Top = 460
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Options'
@@ -264,7 +264,7 @@ object StructureParameters: TStructureParameters
   object Label51: TLabel
     Left = 176
     Height = 17
-    Top = 498
+    Top = 509
     Width = 8
     Anchors = [akLeft, akBottom]
     Caption = 's'
@@ -273,7 +273,7 @@ object StructureParameters: TStructureParameters
   object Label52: TLabel
     Left = 176
     Height = 17
-    Top = 524
+    Top = 535
     Width = 8
     Anchors = [akLeft, akBottom]
     Caption = 's'
@@ -282,7 +282,7 @@ object StructureParameters: TStructureParameters
   object Label53: TLabel
     Left = 176
     Height = 17
-    Top = 548
+    Top = 559
     Width = 8
     Anchors = [akLeft, akBottom]
     Caption = 's'
@@ -291,7 +291,7 @@ object StructureParameters: TStructureParameters
   object Label54: TLabel
     Left = 400
     Height = 17
-    Top = 524
+    Top = 535
     Width = 8
     Anchors = [akLeft, akBottom]
     Caption = 's'
@@ -300,7 +300,7 @@ object StructureParameters: TStructureParameters
   object Label55: TLabel
     Left = 400
     Height = 17
-    Top = 548
+    Top = 559
     Width = 8
     Anchors = [akLeft, akBottom]
     Caption = 's'
@@ -308,14 +308,14 @@ object StructureParameters: TStructureParameters
   end
   object ScrollBox1: TScrollBox
     Left = 16
-    Height = 427
+    Height = 438
     Top = 16
-    Width = 638
-    HorzScrollBar.Page = 638
-    VertScrollBar.Page = 427
+    Width = 650
+    HorzScrollBar.Page = 650
+    VertScrollBar.Page = 438
     Anchors = [akTop, akLeft, akRight, akBottom]
-    ClientHeight = 427
-    ClientWidth = 638
+    ClientHeight = 438
+    ClientWidth = 650
     Color = clDefault
     ParentColor = False
     TabOrder = 9

@@ -1,7 +1,7 @@
 object SimOptionsDlg: TSimOptionsDlg
-  Left = 240
+  Left = 437
   Height = 155
-  Top = 385
+  Top = 449
   Width = 400
   ActiveControl = TRHEdit
   AlphaBlend = True
