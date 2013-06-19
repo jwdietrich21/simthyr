@@ -78,7 +78,7 @@ begin
     Hide;
     Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 32;
     Height := Screen.Height - Top - 100;
-    width := trunc(Height * Image1.Width / Image1.Height);
+    width := trunc(1.3 * Height * Image1.Width / Image1.Height);
     AlphaBlend := false;
   end;
   Application.CreateForm(TSimThyrLogWindow, SimThyrLogWindow);

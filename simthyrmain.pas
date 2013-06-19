@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdActns, LCLType, Menus, ActnList, SimThyrTypes,
+  ExtCtrls, StdActns, LCLType, Menus, ActnList, SimThyrTypes, SimOptions,
   SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers, ComCtrls,
   LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog, ShowAboutModel,
   StructureParameters, SimThyrPrediction, Sensitivityanalysis, tornado, help,
@@ -66,6 +66,7 @@ type
     IPSItem2:     TMenuItem;
     Divider_3_3:  TMenuItem;
     Divide_3_1: TMenuItem;
+    AddOptItem: TMenuItem;
     SelectAllMenuItem: TMenuItem;
     Divider_2_3: TMenuItem;
     PredEqItem: TMenuItem;
@@ -132,6 +133,7 @@ type
     procedure IdleTimer1Timer(Sender: TObject);
     procedure IPSItemClick(Sender: TObject);
     procedure LogItemClick(Sender: TObject);
+    procedure AddOptItemClick(Sender: TObject);
     procedure OnlineInfoClick(Sender: TObject);
     procedure OpenToolButtonClick(Sender: TObject);
     procedure OWSensitivityAnalysisItem2Click(Sender: TObject);
@@ -210,6 +212,9 @@ begin
   SimThyrToolbar.PasteMenuItem.ShortCut := ShortCut(VK_V, modifierKey);
   SimThyrToolbar.SelectAllMenuItem.ShortCut := ShortCut(VK_A, modifierKey);
   SimThyrToolbar.RunItem.ShortCut := ShortCut(VK_R, modifierKey);
+  SimThyrToolbar.PauseItem.ShortCut := ShortCut(VK_OEM_PERIOD, modifierKey);
+  SimThyrToolbar.StopItem.ShortCut := ShortCut(VK_RETURN, modifierKey + [ssShift]);
+  SimThyrToolbar.AddOptItem.ShortCut := ShortCut(VK_LCL_COMMA, modifierKey + [ssShift]);
   SimThyrToolbar.PredEqItem.ShortCut := ShortCut(VK_L, modifierKey);
   SimThyrToolbar.ChangeParItem.ShortCut := ShortCut(VK_M, modifierKey);
   SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut := ShortCut(VK_E, modifierKey);
@@ -372,6 +377,11 @@ end;
 procedure TSimThyrToolbar.LogItemClick(Sender: TObject);
 begin
   SimThyrLogWindow.Show;
+end;
+
+procedure TSimThyrToolbar.AddOptItemClick(Sender: TObject);
+begin
+  SimOptionsDlg.ShowOnTop;
 end;
 
 procedure TSimThyrToolbar.OnlineInfoClick(Sender: TObject);

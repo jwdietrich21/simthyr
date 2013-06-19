@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ExtCtrls, ActnList, types, SimThyrTypes, SimThyrServices,
+  StdCtrls, ExtCtrls, ActnList, types, LCLType, SimThyrTypes, SimThyrServices,
   SimThyrPlot, SimThyrLog, StructureParameters, Simulator, SimOptions;
 
 type
@@ -50,6 +50,7 @@ type
     TestOffRadio: TRadioButton;
     TestTRHRadio: TRadioButton;
     TestTBGRadio: TRadioButton;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure OptButtonClick(Sender: TObject);
     procedure OptButtonKeyPress(Sender: TObject; var Key: char);
     procedure OptButtonKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -76,7 +77,6 @@ type
     procedure TestTRHRadioKeyUp(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure RunTimeEditChange(Sender: TObject);
-    procedure GroupBox1Click(Sender: TObject);
   private
     { private declarations }
   public
@@ -89,11 +89,6 @@ var
 implementation
 
 { TSimulationSettings }
-
-procedure TSimulationSettings.GroupBox1Click(Sender: TObject);
-begin
-
-end;
 
 procedure TSimulationSettings.StartButtonClick(Sender: TObject);
 begin
@@ -156,6 +151,15 @@ end;
 procedure TSimulationSettings.OptButtonClick(Sender: TObject);
 begin
   SimOptionsDlg.ShowOnTop;
+end;
+
+procedure TSimulationSettings.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   if (Key = VK_D) and ((ssCtrl in Shift) or (ssMeta in Shift)) then
+   begin
+     ;
+   end;
 end;
 
 procedure TSimulationSettings.OptButtonKeyPress(Sender: TObject; var Key: char);

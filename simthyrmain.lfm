@@ -13,7 +13,7 @@ object SimThyrToolbar: TSimThyrToolbar
   AutoSize = True
   BorderStyle = bsToolWindow
   Caption = 'SimThyr'
-  ClientHeight = 63
+  ClientHeight = 82
   ClientWidth = 714
   DefaultMonitor = dmMainForm
   DockSite = True
@@ -509,10 +509,10 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object Label1: TLabel
-    Left = 634
+    Left = 631
     Height = 17
     Top = 5
-    Width = 49
+    Width = 52
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'SimThyr'
@@ -1166,6 +1166,7 @@ object SimThyrToolbar: TSimThyrToolbar
           454AFF974535FF97451AFFFFFF00FFFFFF00FFFFFF00FFFFFF00
         }
         ImageIndex = 11
+        ShortCut = 4286
         OnClick = PauseToolButtonClick
       end
       object StopItem: TMenuItem
@@ -1207,6 +1208,7 @@ object SimThyrToolbar: TSimThyrToolbar
           454AFF974535FF97451AFFFFFF00FFFFFF00FFFFFF00FFFFFF00
         }
         ImageIndex = 12
+        ShortCut = 12301
         OnClick = StopToolButtonClick
       end
       object Divide_3_1: TMenuItem
@@ -1261,6 +1263,11 @@ object SimThyrToolbar: TSimThyrToolbar
         ImageIndex = 14
         ShortCut = 16461
         OnClick = ParametersToolButtonClick
+      end
+      object AddOptItem: TMenuItem
+        Caption = 'Additional Options...'
+        ShortCut = 12476
+        OnClick = AddOptItemClick
       end
       object Divider_3_3: TMenuItem
         Caption = '-'
@@ -1396,7 +1403,6 @@ object SimThyrToolbar: TSimThyrToolbar
       object HelpItem: TMenuItem
         Caption = 'SimThyr Help'
         ShortCut = 12477
-        ShortCutKey2 = 45
         OnClick = HelpItemClick
       end
       object OnlineInfo: TMenuItem
