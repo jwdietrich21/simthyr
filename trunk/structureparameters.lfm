@@ -28,7 +28,7 @@ object StructureParameters: TStructureParameters
     Default = True
     ModalResult = 1
     OnClick = OKButtonClick
-    TabOrder = 7
+    TabOrder = 6
   end
   object CancelButton: TButton
     Left = 571
@@ -40,7 +40,7 @@ object StructureParameters: TStructureParameters
     Caption = 'Cancel'
     ModalResult = 2
     OnClick = CancelButtonClick
-    TabOrder = 6
+    TabOrder = 8
   end
   object Tau0REdit: TEdit
     Left = 88
@@ -48,7 +48,7 @@ object StructureParameters: TStructureParameters
     Top = 504
     Width = 80
     Anchors = [akLeft, akBottom]
-    TabOrder = 0
+    TabOrder = 1
     Text = 'Tau0REdit'
   end
   object Tau0SEdit: TEdit
@@ -57,7 +57,7 @@ object StructureParameters: TStructureParameters
     Top = 528
     Width = 80
     Anchors = [akLeft, akBottom]
-    TabOrder = 1
+    TabOrder = 2
     Text = 'Tau0SEdit'
   end
   object Tau0S2Edit: TEdit
@@ -66,7 +66,7 @@ object StructureParameters: TStructureParameters
     Top = 552
     Width = 80
     Anchors = [akLeft, akBottom]
-    TabOrder = 2
+    TabOrder = 3
     Text = 'Tau0S2Edit'
   end
   object Tau0TEdit: TEdit
@@ -75,7 +75,7 @@ object StructureParameters: TStructureParameters
     Top = 528
     Width = 80
     Anchors = [akLeft, akBottom]
-    TabOrder = 3
+    TabOrder = 4
     Text = 'Tau0TEdit'
   end
   object Tau03zEdit: TEdit
@@ -84,7 +84,7 @@ object StructureParameters: TStructureParameters
     Top = 552
     Width = 80
     Anchors = [akLeft, akBottom]
-    TabOrder = 4
+    TabOrder = 5
     Text = 'Tau03zEdit'
   end
   object Label32: TLabel
@@ -166,7 +166,7 @@ object StructureParameters: TStructureParameters
     OnClick = StandardButtonClick
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 5
+    TabOrder = 7
   end
   object Image6: TImage
     Left = 208
@@ -259,7 +259,7 @@ object StructureParameters: TStructureParameters
     OnClick = OptionsButtonClick
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 8
+    TabOrder = 9
   end
   object Label51: TLabel
     Left = 176
@@ -318,7 +318,7 @@ object StructureParameters: TStructureParameters
     ClientWidth = 650
     Color = clDefault
     ParentColor = False
-    TabOrder = 9
+    TabOrder = 0
     object Label72: TLabel
       Left = 584
       Height = 17
@@ -838,7 +838,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 320
       Width = 80
-      TabOrder = 0
+      TabOrder = 25
       Text = 'k30Edit'
     end
     object k31Edit: TEdit
@@ -846,7 +846,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 344
       Width = 80
-      TabOrder = 1
+      TabOrder = 26
       Text = 'k31Edit'
     end
     object k41Edit: TEdit
@@ -854,7 +854,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 368
       Width = 80
-      TabOrder = 2
+      TabOrder = 27
       Text = 'k41Edit'
     end
     object k42Edit: TEdit
@@ -862,7 +862,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 392
       Width = 80
-      TabOrder = 3
+      TabOrder = 28
       Text = 'k42Edit'
     end
     object Label27: TLabel
@@ -918,7 +918,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 298
       Width = 80
-      TabOrder = 4
+      TabOrder = 8
       Text = 'Alpha31Edit'
     end
     object Beta31Edit: TEdit
@@ -926,7 +926,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 322
       Width = 80
-      TabOrder = 5
+      TabOrder = 9
       Text = 'Beta31Edit'
     end
     object GD1Edit: TEdit
@@ -934,7 +934,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 298
       Width = 80
-      TabOrder = 6
+      TabOrder = 19
       Text = 'GD1Edit'
     end
     object KM1Edit: TEdit
@@ -942,7 +942,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 322
       Width = 80
-      TabOrder = 7
+      TabOrder = 20
       Text = 'KM1Edit'
     end
     object Label19: TLabel
@@ -982,7 +982,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 370
       Width = 80
-      TabOrder = 8
+      TabOrder = 10
       Text = 'Alpha32Edit'
     end
     object Beta32Edit: TEdit
@@ -990,7 +990,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 394
       Width = 80
-      TabOrder = 9
+      TabOrder = 11
       Text = 'Beta32Edit'
     end
     object GD2Edit: TEdit
@@ -998,7 +998,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 370
       Width = 80
-      TabOrder = 10
+      TabOrder = 21
       Text = 'GD2Edit'
     end
     object KM2Edit: TEdit
@@ -1006,7 +1006,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 394
       Width = 80
-      TabOrder = 11
+      TabOrder = 22
       Text = 'KM2Edit'
     end
     object Label23: TLabel
@@ -1078,7 +1078,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 226
       Width = 80
-      TabOrder = 12
+      TabOrder = 6
       Text = 'AlphaTEdit'
     end
     object BetaTEdit: TEdit
@@ -1086,7 +1086,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 250
       Width = 80
-      TabOrder = 13
+      TabOrder = 7
       Text = 'BetaTEdit'
     end
     object GTEdit: TEdit
@@ -1094,7 +1094,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 226
       Width = 80
-      TabOrder = 14
+      TabOrder = 17
       Text = 'GTEdit'
     end
     object DTEdit: TEdit
@@ -1102,7 +1102,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 250
       Width = 80
-      TabOrder = 15
+      TabOrder = 18
       Text = 'DTEdit'
     end
     object Label15: TLabel
@@ -1126,7 +1126,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 56
       Width = 80
-      TabOrder = 16
+      TabOrder = 13
       Text = 'DREdit'
     end
     object Label4: TLabel
@@ -1150,7 +1150,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 106
       Width = 80
-      TabOrder = 17
+      TabOrder = 2
       Text = 'AlphaSEdit'
     end
     object BetaSEdit: TEdit
@@ -1158,7 +1158,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 130
       Width = 80
-      TabOrder = 18
+      TabOrder = 3
       Text = 'BetaSEdit'
     end
     object AlphaS2Edit: TEdit
@@ -1166,7 +1166,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 154
       Width = 80
-      TabOrder = 19
+      TabOrder = 4
       Text = 'AlphaS2Edit'
     end
     object BetaS2Edit: TEdit
@@ -1174,7 +1174,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 178
       Width = 80
-      TabOrder = 20
+      TabOrder = 5
       Text = 'BetaS2Edit'
     end
     object GHEdit: TEdit
@@ -1182,7 +1182,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 128
       Width = 80
-      TabOrder = 21
+      TabOrder = 14
       Text = 'GHEdit'
     end
     object DHEdit: TEdit
@@ -1190,7 +1190,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 152
       Width = 80
-      TabOrder = 22
+      TabOrder = 15
       Text = 'DHEdit'
     end
     object LSEdit: TEdit
@@ -1198,7 +1198,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 176
       Width = 80
-      TabOrder = 23
+      TabOrder = 16
       Text = 'LSEdit'
     end
     object SSEdit: TEdit
@@ -1206,7 +1206,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 128
       Width = 80
-      TabOrder = 24
+      TabOrder = 23
       Text = 'SSEdit'
     end
     object DSEdit: TEdit
@@ -1214,7 +1214,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 152
       Width = 80
-      TabOrder = 25
+      TabOrder = 24
       Text = 'DSEdit'
     end
     object Label6: TLabel
@@ -1239,7 +1239,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 32
       Width = 80
-      TabOrder = 26
+      TabOrder = 12
       Text = 'GREdit'
     end
     object Label1: TLabel
@@ -1257,7 +1257,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 32
       Width = 80
-      TabOrder = 27
+      TabOrder = 0
       Text = 'AlphaREdit'
     end
     object BetaREdit: TEdit
@@ -1265,7 +1265,7 @@ object StructureParameters: TStructureParameters
       Height = 22
       Top = 58
       Width = 80
-      TabOrder = 28
+      TabOrder = 1
       Text = 'BetaREdit'
     end
     object Label2: TLabel

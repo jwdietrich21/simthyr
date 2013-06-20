@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, StdCtrls, ComCtrls, ColorBox, Buttons, Menus, TAGraph, TATools,
-  TASeries, TATransformations, DateUtils, SimThyrTypes, SimThyrServices,
+  TASeries, TATransformations, DateUtils, Math, SimThyrTypes, SimThyrServices,
   HandleNotifier, Clipbrd, TAIntervalSources, TADrawerSVG, TADrawUtils,
   TADrawerCanvas, TAStyles, TANavigation;
 
@@ -182,6 +182,11 @@ begin
     ValuesPlot.Fline1 := TLineSeries.Create(ValuesPlot.Chart1);
     ValuesPlot.Fline2 := TLineSeries.Create(ValuesPlot.Chart2);
   end;
+  if (ValuesPlot.FLine1 = nil) or (ValuesPlot.Fline2 = nil) then
+  begin
+    bell;
+    exit;
+  end;
   ValuesPlot.Fline1.BeginUpdate;
   ValuesPlot.Fline2.BeginUpdate;
   if empty then
@@ -197,9 +202,12 @@ begin
       ValuesPlot.Chart1.AddSeries(ValuesPlot.Fline1);
       for j := nmax_old to length(gResultMatrix) - 1 do
       begin
-        theSecond := gResultMatrix[j, t_pos];
-        AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2] *
-          gParameterFactor[ValuesPlot.ComboBox1.ItemIndex + 2], '', SeriesColor);
+        if not isNaN(gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2]) then
+        begin
+          theSecond := gResultMatrix[j, t_pos];
+          AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2] *
+            gParameterFactor[ValuesPlot.ComboBox1.ItemIndex + 2], '', SeriesColor);
+        end;
       end;
     end;
     with ValuesPlot.Fline2 do
@@ -211,9 +219,12 @@ begin
       ValuesPlot.Chart2.AddSeries(ValuesPlot.Fline2);
       for j := nmax_old to length(gResultMatrix) - 1 do
       begin
-        theSecond := gResultMatrix[j, t_pos];
-        AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] *
-          gParameterFactor[ValuesPlot.ComboBox2.ItemIndex + 2], '', SeriesColor);
+        if not isNaN(gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2]) then
+        begin
+          theSecond := gResultMatrix[j, t_pos];
+          AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] *
+            gParameterFactor[ValuesPlot.ComboBox2.ItemIndex + 2], '', SeriesColor);
+        end;
       end;
     end;
     graphready := True;
