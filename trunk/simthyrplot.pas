@@ -40,7 +40,7 @@ type
     ColorListBox2: TColorListBox;
     ComboBox1: TComboBox;
     ComboBox2: TComboBox;
-    DateTimeIntervalChartSource1: TDateTimeIntervalChartSource;
+    TimeAxisSource: TDateTimeIntervalChartSource;
     FullScaleButton2: TSpeedButton;
     Divider1: TMenuItem;
     CutItem: TMenuItem;
@@ -233,6 +233,8 @@ begin
   end;
   ValuesPlot.Fline1.EndUpdate;
   ValuesPlot.Fline2.EndUpdate;
+  ValuesPlot.Chart1.Invalidate;  {forces redrawing in some operating systems}
+  ValuesPlot.Chart2.Invalidate;
 end;
 
 procedure TValuesPlot.PlotPanel2Click(Sender: TObject);
@@ -368,7 +370,7 @@ end;
 
 procedure TValuesPlot.UpdateTimeAxes;
 begin
-  DateTimeIntervalChartSource1.DateTimeFormat := string(gDateTimeFormat);
+  TimeAxisSource.DateTimeFormat := string(gDateTimeFormat);
 end;
 
 procedure TValuesPlot.FormShow(Sender: TObject);
