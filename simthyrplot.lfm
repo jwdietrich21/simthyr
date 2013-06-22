@@ -387,7 +387,7 @@ object ValuesPlot: TValuesPlot
             Marks.LabelFont.Height = -11
             Marks.Format = '%2:s'
             Marks.OverlapPolicy = opHideNeighbour
-            Marks.Source = DateTimeIntervalChartSource1
+            Marks.Source = TimeAxisSource
             Marks.Style = smsLegend
             Minors = <>
             Title.Distance = 1
@@ -545,7 +545,7 @@ object ValuesPlot: TValuesPlot
             Marks.LabelFont.Height = -11
             Marks.Format = '%2:s'
             Marks.OverlapPolicy = opHideNeighbour
-            Marks.Source = DateTimeIntervalChartSource1
+            Marks.Source = TimeAxisSource
             Marks.Style = smsLabel
             Minors = <>
             Title.Distance = 1
@@ -699,7 +699,7 @@ object ValuesPlot: TValuesPlot
     TabOrder = 4
     Text = 'Title'
   end
-  object DateTimeIntervalChartSource1: TDateTimeIntervalChartSource
+  object TimeAxisSource: TDateTimeIntervalChartSource
     DateTimeFormat = '"d"D hh:nn:ss'
     Steps = [dtsDay, dtsHour, dtsMinute, dtsSecond]
     left = 704
