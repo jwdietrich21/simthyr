@@ -252,7 +252,7 @@ begin
     WindowState := wsNormal;
     left   := 1;
     top    := 0;
-    Width  := Screen.Width - 3;
+    Width  := Screen.Width - 6;
     {$ENDIF}
     Height := Toolbar1.Height + 3;
     AlphaBlend := False;
