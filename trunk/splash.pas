@@ -46,6 +46,7 @@ implementation
 
 procedure TSplashScreen.Timer1Timer(Sender: TObject);
 begin
+  Timer1.Free;
   Close;
 end;
 
