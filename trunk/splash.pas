@@ -48,6 +48,7 @@ procedure TSplashScreen.Timer1Timer(Sender: TObject);
 begin
   Timer1.Free;
   Close;
+  Free;
 end;
 
 procedure TSplashScreen.Image1Click(Sender: TObject);
