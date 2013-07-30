@@ -78,6 +78,7 @@ type
     TSHMassUnitLabel: TLabel;
     TSHVolumeUnitLabel: TLabel;
     FT4VolumeUnitLabel: TLabel;
+    procedure FormDestroy(Sender: TObject);
     procedure NumberFormatEditChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FT3MassPrefixComboChange(Sender: TObject);
@@ -473,6 +474,43 @@ end;
 procedure TPreferencesDialog.NumberFormatEditChange(Sender: TObject);
 begin
   DisplayExamples;
+end;
+
+procedure TPreferencesDialog.FormDestroy(Sender: TObject);
+{Deallocates items before destroying the preferences dialog}
+begin
+  TSHMassPrefixCombo.Items.Clear;
+  TSHMassPrefixCombo.ItemIndex := 0;
+  TSHVolumePrefixCombo.Items.Clear;
+  TSHVolumePrefixCombo.ItemIndex := 0;
+
+  TT4MassPrefixCombo.Items.Clear;
+  TT4MassPrefixCombo.ItemIndex := 0;
+  TT4MassUnitCombo.Items.Clear;
+  TT4MassUnitCombo.ItemIndex := 0;
+  TT4VolumePrefixCombo.Items.Clear;
+  TT4VolumePrefixCombo.ItemIndex := 0;
+
+  FT4MassPrefixCombo.Items.Clear;
+  FT4MassPrefixCombo.ItemIndex := 0;
+  FT4MassUnitCombo.Items.Clear;
+  FT4MassUnitCombo.ItemIndex := 0;
+  FT4VolumePrefixCombo.Items.Clear;
+  FT4VolumePrefixCombo.ItemIndex := 0;
+
+  TT3MassPrefixCombo.Items.Clear;
+  TT3MassPrefixCombo.ItemIndex := 0;
+  TT3MassUnitCombo.Items.Clear;
+  TT3MassUnitCombo.ItemIndex := 0;
+  TT3VolumePrefixCombo.Items.Clear;
+  TT3VolumePrefixCombo.ItemIndex := 0;
+
+  FT3MassPrefixCombo.Items.Clear;
+  FT3MassPrefixCombo.ItemIndex := 0;
+  FT3MassUnitCombo.Items.Clear;
+  FT3MassUnitCombo.ItemIndex := 0;
+  FT3VolumePrefixCombo.Items.Clear;
+  FT3VolumePrefixCombo.ItemIndex := 0;
 end;
 
 procedure TPreferencesDialog.CancelButtonClick(Sender: TObject);
