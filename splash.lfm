@@ -1,9 +1,9 @@
 object SplashScreen: TSplashScreen
   Cursor = crAppStart
-  Left = 394
-  Height = 339
-  Top = 342
-  Width = 492
+  Left = 637
+  Height = 299
+  Top = 133
+  Width = 425
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   AlphaBlend = True
@@ -13,8 +13,8 @@ object SplashScreen: TSplashScreen
   BorderStyle = bsDialog
   BorderWidth = 1
   Caption = 'SimThyr...'
-  ClientHeight = 339
-  ClientWidth = 492
+  ClientHeight = 299
+  ClientWidth = 425
   Color = 15132390
   Position = poScreenCenter
   ShowInTaskBar = stNever
@@ -1084,7 +1084,7 @@ object SplashScreen: TSplashScreen
   object Timer1: TTimer
     Interval = 2000
     OnTimer = Timer1Timer
-    left = 408
-    top = 264
+    left = 336
+    top = 240
   end
 end
