@@ -330,6 +330,7 @@ end;
 { TPreferencesDialog }
 
 procedure TPreferencesDialog.InitMenuItems;
+{sets menu items to initial values}
 begin
   with PreferencesDialog.TSHMassPrefixCombo do
   begin
@@ -514,6 +515,7 @@ begin
 end;
 
 procedure TPreferencesDialog.CancelButtonClick(Sender: TObject);
+{dismisses all entries}
 begin
   NumberFormatEdit.Text := gNumberFormat;
   DateTimeFormatEdit.Text := gDateTimeFormat;
@@ -521,6 +523,7 @@ begin
 end;
 
 procedure RescaleParameters;
+{change scaling of simulated parameters after change of measurement units}
 var j, k: integer;
 begin
   for j := 1 to length(gResultMatrix) do
