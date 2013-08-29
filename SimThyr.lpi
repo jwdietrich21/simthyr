@@ -15,7 +15,7 @@
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="2"/>
       <RevisionNr Value="3"/>
-      <BuildNr Value="251"/>
+      <BuildNr Value="252"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Project" FileDescription="SimThyr" InternalName="SimThyr 3.2.2" LegalCopyright="1994-2013 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.2.2"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -1113,7 +1113,7 @@
         <UsageCount Value="10"/>
       </Unit120>
     </Units>
-    <JumpHistory Count="24" HistoryIndex="23">
+    <JumpHistory Count="23" HistoryIndex="22">
       <Position1>
         <Filename Value="handlepreferences.pas"/>
         <Caret Line="493" Column="1" TopLine="470"/>
@@ -1168,48 +1168,44 @@
       </Position13>
       <Position14>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="561" Column="35" TopLine="709"/>
+        <Caret Line="6" Column="98" TopLine="1"/>
       </Position14>
       <Position15>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="6" Column="98" TopLine="1"/>
+        <Caret Line="150" Column="87" TopLine="120"/>
       </Position15>
       <Position16>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="150" Column="87" TopLine="120"/>
+        <Caret Line="622" Column="90" TopLine="592"/>
       </Position16>
       <Position17>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="622" Column="90" TopLine="592"/>
+        <Caret Line="631" Column="31" TopLine="601"/>
       </Position17>
       <Position18>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="631" Column="31" TopLine="601"/>
+        <Caret Line="677" Column="31" TopLine="656"/>
       </Position18>
       <Position19>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="677" Column="31" TopLine="656"/>
+        <Caret Line="679" Column="32" TopLine="656"/>
       </Position19>
       <Position20>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="679" Column="32" TopLine="656"/>
+        <Caret Line="682" Column="27" TopLine="656"/>
       </Position20>
       <Position21>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="682" Column="27" TopLine="656"/>
+        <Caret Line="686" Column="28" TopLine="656"/>
       </Position21>
       <Position22>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="686" Column="28" TopLine="656"/>
+        <Caret Line="696" Column="28" TopLine="666"/>
       </Position22>
       <Position23>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="696" Column="28" TopLine="666"/>
-      </Position23>
-      <Position24>
-        <Filename Value="handlepreferences.pas"/>
         <Caret Line="521" Column="74" TopLine="513"/>
-      </Position24>
+      </Position23>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
