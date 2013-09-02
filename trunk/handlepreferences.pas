@@ -653,7 +653,8 @@ begin
     gNumberFormat := NodeContent(RootNode, 'numbers');
     gDateTimeFormat := NodeContent(RootNode, 'time');
   finally
-    Doc.Free;
+    RootNode.Destroy;
+    Doc.Destroy;
   end
   else  {Standards from dialog, if preference file does not exist}
   if PreferencesDialog <> nil then begin

@@ -452,7 +452,12 @@ procedure TSimThyrToolbar.QuitMenuItemClick(Sender: TObject);
 begin
   {SavePreferences;}
   if SimThread <> nil then
-    SimThread.Terminate;
+    begin
+      SimThread.Terminate;
+      if assigned(SimCS) then
+        SimCS.Destroy;
+      SimThread.Destroy;
+    end;
   application.Terminate;
 end;
 
@@ -557,6 +562,9 @@ begin
   begin
     SimThread.WaitFor;  {ensure that simulation thread has completed last cycle}
     SimThread.Terminate;
+    if assigned(SimCS) then
+      SimCS.Destroy;
+    SimThread.Destroy;
   end;
   InitSimulationControl;
   SetBaseVariables;

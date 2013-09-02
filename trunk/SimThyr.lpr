@@ -136,5 +136,12 @@ begin
   SimThyrToolbar.SelectAllMenuItem.Enabled := true;
   Application.CreateForm(THelpWindow, HelpWindow);
   Application.Run;
+  if assigned(SimThread) then
+  begin
+    SimThread.Terminate;
+    if assigned(SimCS) then
+      SimCS.Destroy;
+    SimThread.Destroy;
+  end;
 end.
 
