@@ -130,6 +130,7 @@ var
 begin
   if theDelimiter = 'd' then
   begin {DIF file handling}
+    theCode := 0;
     SetFileName(SimThyrLogWindow, theFileName);
     try
       doc := TDIFDocument.Create;
@@ -191,10 +192,14 @@ end;
 
 procedure TSimThyrLogWindow.ValuesGridGetCellHint(Sender: TObject; ACol,
   ARow: Integer; var HintText: String);  { TODO 9 -oJ. W. Dietrich -cbugs : This bug is to be fixed. }
+var
+  theText: String;
 begin
-  {
+  { Raises a SIGSEGV exception
+  theText := 'Simulated behavioural parameters of thyroid homeostasis';
   if ACol > 1 then
-    HintText := gParameterLabel[ACol - 1];
+    theText := gParameterLabel[ACol - 1];
+  HintText := theText;
   }
 end;
 
@@ -202,4 +207,4 @@ initialization
   {$I simthyrlog.lrs}
 
 end.
-
+
