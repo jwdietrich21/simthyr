@@ -140,19 +140,25 @@ function NodeContent(theRoot: TDOMNode; Name: string): string;
   {supports XML routines, gets the contents of a node in a file}
 var
   theNode: TDOMNode;
+  theText: String;
 begin
   if assigned(theRoot) then
-    theNode := theRoot.FindNode(Name);
-  if assigned(theNode) then
-  begin
-    try
-      Result := UTF8Encode(theNode.TextContent);
-    except
+    begin
+      theNode := theRoot.FindNode(Name);
+    if assigned(theNode) then
+    begin
+      try
+        theText := theNode.TextContent;
+        if theText <> '' then
+          Result := UTF8Encode(theText);
+      except
+        Result := 'NA';
+      end;
+    end
+    else
       Result := 'NA';
-    end;
-  end
-  else
-    Result := 'NA';
+    theNode.Destroy;
+  end;
 end;
 
 procedure VarFromNode(theRoot: TDOMNode; Name: string; var theVar: real);

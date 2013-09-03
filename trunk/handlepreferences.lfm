@@ -1,6 +1,6 @@
 object PreferencesDialog: TPreferencesDialog
   Left = 212
-  Height = 363
+  Height = 385
   Top = 298
   Width = 523
   AlphaBlend = True
@@ -8,7 +8,7 @@ object PreferencesDialog: TPreferencesDialog
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   Caption = 'SimThyr Preferences'
-  ClientHeight = 363
+  ClientHeight = 385
   ClientWidth = 523
   Constraints.MinHeight = 350
   OnDestroy = FormDestroy
@@ -16,33 +16,6 @@ object PreferencesDialog: TPreferencesDialog
   Position = poScreenCenter
   LCLVersion = '1.0.12.0'
   Visible = True
-  object OKButton: TButton
-    Left = 426
-    Height = 25
-    Top = 316
-    Width = 75
-    Anchors = [akRight, akBottom]
-    BorderSpacing.Right = 13
-    BorderSpacing.Bottom = 13
-    Caption = 'OK'
-    Default = True
-    OnClick = OKButtonClick
-    TabOrder = 0
-  end
-  object CancelButton: TButton
-    AnchorSideRight.Control = OKButton
-    Left = 338
-    Height = 25
-    Top = 316
-    Width = 75
-    Anchors = [akRight, akBottom]
-    BorderSpacing.Right = 13
-    BorderSpacing.Bottom = 13
-    Cancel = True
-    Caption = 'Cancel'
-    OnClick = CancelButtonClick
-    TabOrder = 1
-  end
   object GroupBox1: TGroupBox
     Left = 24
     Height = 200
@@ -453,5 +426,32 @@ object PreferencesDialog: TPreferencesDialog
       Caption = 'Time'
       ParentColor = False
     end
+  end
+  object CancelButton: TButton
+    AnchorSideRight.Control = OKButton
+    Left = 338
+    Height = 25
+    Top = 338
+    Width = 75
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 13
+    BorderSpacing.Bottom = 13
+    Cancel = True
+    Caption = 'Cancel'
+    OnClick = CancelButtonClick
+    TabOrder = 1
+  end
+  object OKButton: TButton
+    Left = 426
+    Height = 25
+    Top = 338
+    Width = 75
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 13
+    BorderSpacing.Bottom = 13
+    Caption = 'OK'
+    Default = True
+    OnClick = OKButtonClick
+    TabOrder = 0
   end
 end

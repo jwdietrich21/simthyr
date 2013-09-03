@@ -650,14 +650,33 @@ begin
       gParameterUnit[cT3_pos] := gParameterUnit[FT3_pos];
     end;
     RootNode := Doc.DocumentElement.FindNode('formats');
-    gNumberFormat := NodeContent(RootNode, 'numbers');
-    gDateTimeFormat := NodeContent(RootNode, 'time');
+    if not assigned(RootNode) then
+      begin
+        if PreferencesDialog <> nil then
+        begin
+          gNumberFormat := PreferencesDialog.NumberFormatEdit.Text;
+          gDateTimeFormat := PreferencesDialog.DateTimeFormatEdit.Text;
+        end
+        else
+        begin  {fall-back solution, if neither file nor dialog exist}
+          gNumberFormat := '###,###.00##';
+          gDateTimeFormat := '"d"D hh:nn:ss';
+        end;
+      end
+    else
+    begin
+      gNumberFormat := NodeContent(RootNode, 'numbers');
+      gDateTimeFormat := NodeContent(RootNode, 'time');
+    end;
   finally
-    RootNode.Destroy;
-    Doc.Destroy;
+    if assigned(RootNode) then
+      RootNode.Destroy;
+    if assigned(Doc) then
+      Doc.Destroy;
   end
   else  {Standards from dialog, if preference file does not exist}
-  if PreferencesDialog <> nil then begin
+  if PreferencesDialog <> nil then
+  begin
     gNumberFormat := PreferencesDialog.NumberFormatEdit.Text;
     gDateTimeFormat := PreferencesDialog.DateTimeFormatEdit.Text;
   end
@@ -714,7 +733,9 @@ begin
           WriteXMLFile(Doc,theFileName);
         end;
   finally
-    Doc.Free;
+    ElementNode.Destroy;
+    RootNode.Destroy;
+    Doc.Destroy;
   end;
 end;
 
