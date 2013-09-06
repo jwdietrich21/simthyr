@@ -293,6 +293,8 @@ begin
       gIdleCounter := gIdleCounter + 1;
     end;
     application.ProcessMessages;
+    if assigned(SimThread) then
+      SimThread.SafeFree;
   end
   else;
 end;
@@ -452,12 +454,7 @@ procedure TSimThyrToolbar.QuitMenuItemClick(Sender: TObject);
 begin
   {SavePreferences;}
   if SimThread <> nil then
-    begin
-      SimThread.Terminate;
-      if assigned(SimCS) then
-        SimCS.Destroy;
-      SimThread.Destroy;
-    end;
+    SimThread.SafeFree;
   application.Terminate;
 end;
 
