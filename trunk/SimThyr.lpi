@@ -15,7 +15,7 @@
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="2"/>
       <RevisionNr Value="3"/>
-      <BuildNr Value="256"/>
+      <BuildNr Value="258"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Project" FileDescription="SimThyr" InternalName="SimThyr 3.2.2" LegalCopyright="1994-2013 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.2.2"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -51,7 +51,7 @@
         <EditorIndex Value="23"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
+        <CursorPos X="23" Y="140"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -66,7 +66,7 @@
         <EditorIndex Value="22"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
+        <CursorPos X="33" Y="298"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -270,7 +270,7 @@
         <EditorIndex Value="13"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
+        <CursorPos X="27" Y="37"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit21>
@@ -1092,42 +1092,42 @@
         <UsageCount Value="10"/>
       </Unit117>
       <Unit118>
-        <Filename Value="../../../../../../../lazarus/lcl/interfaces/win32/win32callback.inc"/>
+        <Filename Value="../../../../lazarus/lcl/interfaces/win32/win32callback.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="2714"/>
         <CursorPos X="1" Y="2736"/>
         <UsageCount Value="10"/>
       </Unit118>
       <Unit119>
-        <Filename Value="../../../../../../../lazarus/lcl/include/customform.inc"/>
+        <Filename Value="../../../../lazarus/lcl/include/customform.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="190"/>
         <CursorPos X="1" Y="219"/>
         <UsageCount Value="10"/>
       </Unit119>
       <Unit120>
-        <Filename Value="../../../../../../../lazarus/lcl/include/application.inc"/>
+        <Filename Value="../../../../lazarus/lcl/include/application.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1077"/>
         <CursorPos X="1" Y="1095"/>
         <UsageCount Value="10"/>
       </Unit120>
       <Unit121>
-        <Filename Value="../../../../../../../lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutilsh.inc"/>
+        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutilsh.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="23"/>
         <CursorPos X="26" Y="41"/>
         <UsageCount Value="10"/>
       </Unit121>
       <Unit122>
-        <Filename Value="../../../../../../../lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutil.inc"/>
+        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutil.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="91"/>
         <CursorPos X="10" Y="109"/>
         <UsageCount Value="10"/>
       </Unit122>
       <Unit123>
-        <Filename Value="../../../../../../../lazarus/fpc/2.6.2/source/rtl/win/sysutils.pp"/>
+        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/win/sysutils.pp"/>
         <UnitName Value="sysutils"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1105"/>
@@ -1135,7 +1135,7 @@
         <UsageCount Value="10"/>
       </Unit123>
       <Unit124>
-        <Filename Value="../../../../../../../lazarus/fpc/2.6.2/source/packages/fcl-xml/src/xmlread.pp"/>
+        <Filename Value="../../../../lazarus/fpc/2.6.2/source/packages/fcl-xml/src/xmlread.pp"/>
         <UnitName Value="XMLRead"/>
         <WindowIndex Value="0"/>
         <TopLine Value="34"/>
@@ -1143,7 +1143,7 @@
         <UsageCount Value="10"/>
       </Unit124>
       <Unit125>
-        <Filename Value="../../../../../../../lazarus/fpc/2.6.2/source/packages/fcl-xml/src/dom.pp"/>
+        <Filename Value="../../../../lazarus/fpc/2.6.2/source/packages/fcl-xml/src/dom.pp"/>
         <UnitName Value="DOM"/>
         <WindowIndex Value="0"/>
         <TopLine Value="207"/>
@@ -1151,7 +1151,7 @@
         <UsageCount Value="10"/>
       </Unit125>
       <Unit126>
-        <Filename Value="../../../../../../../lazarus/lcl/grids.pas"/>
+        <Filename Value="../../../../lazarus/lcl/grids.pas"/>
         <UnitName Value="Grids"/>
         <WindowIndex Value="0"/>
         <TopLine Value="3544"/>
@@ -1159,14 +1159,14 @@
         <UsageCount Value="10"/>
       </Unit126>
       <Unit127>
-        <Filename Value="../../../../../../../lazarus/fpc/2.6.2/source/rtl/inc/objpash.inc"/>
+        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/inc/objpash.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="177"/>
         <CursorPos X="22" Y="194"/>
         <UsageCount Value="10"/>
       </Unit127>
       <Unit128>
-        <Filename Value="../../../../../../../lazarus/components/tachart/taintervalsources.pas"/>
+        <Filename Value="../../../../lazarus/components/tachart/taintervalsources.pas"/>
         <UnitName Value="TAIntervalSources"/>
         <WindowIndex Value="0"/>
         <TopLine Value="391"/>
@@ -1288,12 +1288,12 @@
         <Caret Line="390" Column="1" TopLine="373"/>
       </Position28>
       <Position29>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="1" Column="1" TopLine="370"/>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="138" Column="47" TopLine="106"/>
       </Position29>
       <Position30>
         <Filename Value="SimThyr.lpr"/>
-        <Caret Line="138" Column="47" TopLine="106"/>
+        <Caret Line="140" Column="23" TopLine="116"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
