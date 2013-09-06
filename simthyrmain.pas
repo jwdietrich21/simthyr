@@ -223,7 +223,7 @@ begin
 end;
 
 procedure AdaptLanguages;
-{ Scaffold for future extension supporting language switching }
+{ Scaffold for future extension supporting multiple languages }
 begin
   if gInterfaceLanguage = English then
   begin
@@ -293,8 +293,10 @@ begin
       gIdleCounter := gIdleCounter + 1;
     end;
     application.ProcessMessages;
-    if assigned(SimThread) then
-      SimThread.SafeFree;
+    {$IFDEF Unix}  {this would result in a deadlock situation on Windows}
+      if assigned(SimThread) then
+        SimThread.SafeFree;
+    {$ENDIF}
   end
   else;
 end;
@@ -452,9 +454,6 @@ end;
 
 procedure TSimThyrToolbar.QuitMenuItemClick(Sender: TObject);
 begin
-  {SavePreferences;}
-  if SimThread <> nil then
-    SimThread.SafeFree;
   application.Terminate;
 end;
 
