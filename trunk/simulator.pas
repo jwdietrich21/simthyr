@@ -33,6 +33,7 @@ type
     procedure Pause;
     procedure Restart;
     procedure Execute; override;
+    procedure SafeFree;
   end;
 
 var
@@ -378,6 +379,14 @@ begin
   SimThyrLogWindow.Caption := LOG_TITLE;
   SetStatusBarPanel0(iString, nmaxString);
   SimThyrLogWindow.ProgressBar1.Position := 0;
+end;
+
+procedure TSimulationThread.SafeFree;  {avoids a dead-lock situation}
+begin
+  Terminate;
+  WaitFor;
+  if not FreeOnTerminate then
+    Free;
 end;
 
 procedure simulate; {Creates and starts simulation thread}

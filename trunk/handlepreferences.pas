@@ -30,6 +30,10 @@ uses
     {$ENDIF}
   {$ENDIF};
 
+const
+  STANDARD_NUM_FORMAT = '###,###.00##';
+  STANDARD_TIME_FORMAT = '"d"D hh:nn:ss';
+
 type
 
   { TPreferencesDialog }
@@ -78,6 +82,7 @@ type
     TSHMassUnitLabel: TLabel;
     TSHVolumeUnitLabel: TLabel;
     FT4VolumeUnitLabel: TLabel;
+    procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure NumberFormatEditChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -109,7 +114,6 @@ type
   TUnitElements = record
     MassPrefix, MassUnit, VolumePrefix, VolumeUnit: String;
   end;
-
 
 var
   PreferencesDialog: TPreferencesDialog;
@@ -514,6 +518,12 @@ begin
   FT3VolumePrefixCombo.ItemIndex := 0;
 end;
 
+procedure TPreferencesDialog.FormCreate(Sender: TObject);
+begin
+  NumberFormatEdit.Text := STANDARD_NUM_FORMAT;
+  DateTimeFormatEdit.Text := STANDARD_TIME_FORMAT;
+end;
+
 procedure TPreferencesDialog.CancelButtonClick(Sender: TObject);
 {dismisses all entries}
 begin
@@ -622,6 +632,23 @@ begin
   end;
 end;
 
+procedure SubstitutePreferences;
+{get standard values for preferences, if preferences file nonexistent or corrupt}
+begin
+  begin
+    if PreferencesDialog <> nil then
+    begin
+      gNumberFormat := PreferencesDialog.NumberFormatEdit.Text;
+      gDateTimeFormat := PreferencesDialog.DateTimeFormatEdit.Text;
+    end
+    else
+    begin  {fall-back solution, if neither file nor dialog exist}
+      gNumberFormat := STANDARD_NUM_FORMAT;
+      gDateTimeFormat := STANDARD_TIME_FORMAT;
+    end;
+  end
+end;
+
 procedure ReadPreferences; {should not be called before PreferencesDialog has been created}
 var
   Doc: TXMLDocument;
@@ -651,18 +678,7 @@ begin
     end;
     RootNode := Doc.DocumentElement.FindNode('formats');
     if not assigned(RootNode) then
-      begin
-        if PreferencesDialog <> nil then
-        begin
-          gNumberFormat := PreferencesDialog.NumberFormatEdit.Text;
-          gDateTimeFormat := PreferencesDialog.DateTimeFormatEdit.Text;
-        end
-        else
-        begin  {fall-back solution, if neither file nor dialog exist}
-          gNumberFormat := '###,###.00##';
-          gDateTimeFormat := '"d"D hh:nn:ss';
-        end;
-      end
+      SubstitutePreferences
     else
     begin
       gNumberFormat := NodeContent(RootNode, 'numbers');
@@ -675,16 +691,7 @@ begin
       Doc.Destroy;
   end
   else  {Standards from dialog, if preference file does not exist}
-  if PreferencesDialog <> nil then
-  begin
-    gNumberFormat := PreferencesDialog.NumberFormatEdit.Text;
-    gDateTimeFormat := PreferencesDialog.DateTimeFormatEdit.Text;
-  end
-  else
-  begin  {fall-back solution, if neither file nor dialog exist}
-    gNumberFormat := '###,###.00##';
-    gDateTimeFormat := '"d"D hh:nn:ss';
-  end;
+    SubstitutePreferences;
 end;
 
 procedure SavePreferences;
