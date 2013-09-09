@@ -399,7 +399,10 @@ begin
   Notice.ShowOnTop;
   haltsim := false;
   SimCS := TCriticalSection.Create;
-  SimThread := TSimulationThread.Create(false);
+  if assigned(SimThread) then
+    SimThread.Execute
+  else
+    SimThread := TSimulationThread.Create(false);
 end;
 
 procedure InitSimulation;  {sets initial conditions and calculates fixpoints}
