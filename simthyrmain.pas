@@ -293,10 +293,6 @@ begin
       gIdleCounter := gIdleCounter + 1;
     end;
     application.ProcessMessages;
-    {$IFDEF Unix}  {this would result in a deadlock situation on Windows}
-      if assigned(SimThread) then
-        SimThread.SafeFree;
-    {$ENDIF}
   end
   else;
 end;
