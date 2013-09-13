@@ -1,10 +1,10 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TPrediction','FORMDATA',[
-  'TPF0'#11'TPrediction'#10'Prediction'#4'Left'#3#223#0#6'Height'#3#190#0#3'Top'
+  'TPF0'#11'TPrediction'#10'Prediction'#4'Left'#3'Q'#3#6'Height'#3#187#0#3'Top'
   +#3#146#0#5'Width'#3#161#1#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0#11'Border'
   +'Icons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderStyle'#7#13'bsSizeTool'
-  +'Win'#7'Caption'#6#11' Prediction'#12'ClientHeight'#3#190#0#11'ClientWidth'#3
+  +'Win'#7'Caption'#6#11' Prediction'#12'ClientHeight'#3#187#0#11'ClientWidth'#3
   +#161#1#5'Color'#7#7'clWhite'#9'Icon.Data'#10#154'$'#0#0#150'$'#0#0#0#0#1#0#8
   +#0'  '#2#0#1#0#1#0'0'#1#0#0#134#0#0#0#16#16#2#0#1#0#1#0#176#0#0#0#182#1#0#0
   +'  '#16#0#1#0#4#0#232#2#0#0'f'#2#0#0#16#16#16#0#1#0#4#0'('#1#0#0'N'#5#0#0'  '
@@ -336,8 +336,8 @@ LazarusResources.Add('TPrediction','FORMDATA',[
   +#255#172'A'#255#255#172'A'#227'?'#172'A'#193#15#172'A'#192#15#172'A'#192#7
   +#172'A'#128#7#172'A'#128#7#172'A'#132#135#172'A'#140#135#172'A'#140#195#172
   +'A'#140#195#172'A'#204#227#172'A'#205#243#172'A'#239#255#172'A'#255#255#172
-  +'A'#10'LCLVersion'#6#8'1.0.10.0'#7'Visible'#9#0#5'TMemo'#14'PredictionMemo'#4
-  +'Left'#2#16#6'Height'#3#161#0#4'Hint'#6#224'This window displays predicted v'
+  +'A'#10'LCLVersion'#6#8'1.0.12.0'#7'Visible'#9#0#5'TMemo'#14'PredictionMemo'#4
+  +'Left'#2#16#6'Height'#3#158#0#4'Hint'#6#224'This window displays predicted v'
   +'alues for hormone levels from a closed-loop model. Negative values are virt'
   +'ual solutions that result from the system''s equations.  Only the positive '
   +'solution is possible in a biological sense.'#3'Top'#2#16#5'Width'#3#129#1#7
