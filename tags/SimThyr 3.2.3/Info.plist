@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>SimThyr</string>
+	<key>CFBundleName</key>
+	<string>SimThyr</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.sf.simthyr</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>SimT</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.4.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>3.2.1</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>CFBundleIconFile</key>
+	<string>SimThyr.icns</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>txt</string>
+				<string>text</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>document.icns</string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>text/plain</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Plain text document</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>TEXT</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>NSDocumentClass</key>
+			<string>BrowserDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>xml</string>
+				<string>xbl</string>
+				<string>xsl</string>
+				<string>xslt</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>document.icns</string>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>application/xml</string>
+				<string>text/xml</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>XML document</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>NSDocumentClass</key>
+			<string>BrowserDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>*</string>
+			</array>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>fold</string>
+				<string>disk</string>
+				<string>****</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleGetInfoString</key>
+	<string>3.2.1, Copyright © 1994-2012 J. W. Dietrich</string>
+</dict>
+</plist>
