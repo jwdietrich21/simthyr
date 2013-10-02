@@ -62,7 +62,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="22"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -115,14 +114,16 @@
       </Unit5>
       <Unit6>
         <Filename Value="simthyrprediction.pas"/>
+        <IsPartOfProject Value="True"/>
         <ComponentName Value="Prediction"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPrediction"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="14"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="56" Y="6"/>
+        <CursorPos X="36" Y="3"/>
         <UsageCount Value="100"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
