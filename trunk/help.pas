@@ -28,17 +28,18 @@ type
   { THelpWindow }
 
   THelpWindow = class(TForm)
-    Image1: TImage;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
-    Label7: TLabel;
-    procedure Label3Click(Sender: TObject);
-    procedure Label4Click(Sender: TObject);
-    procedure Label6Click(Sender: TObject);
+    SimThyrIconImage: TImage;
+    MainTitle: TLabel;
+    OnlineHelpSubTitle: TLabel;
+    ModelInfoTitle: TLabel;
+    OnlineHelpTitle: TLabel;
+    ModelInfoSubTitle: TLabel;
+    VersionInfoTitle: TLabel;
+    VersionInfoSubTitle: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure ModelInfoTitleClick(Sender: TObject);
+    procedure OnlineHelpTitleClick(Sender: TObject);
+    procedure VersionInfoTitleClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -52,21 +53,31 @@ implementation
 
 { THelpWindow }
 
-procedure THelpWindow.Label4Click(Sender: TObject);
+procedure THelpWindow.OnlineHelpTitleClick(Sender: TObject);
 begin
   OpenURL(HELP_URL);
 end;
 
-procedure THelpWindow.Label6Click(Sender: TObject);
+procedure THelpWindow.VersionInfoTitleClick(Sender: TObject);
 begin
   HelpWindow.Close;
   AboutWindow.ShowAbout;
 end;
 
-procedure THelpWindow.Label3Click(Sender: TObject);
+procedure THelpWindow.ModelInfoTitleClick(Sender: TObject);
 begin
   AboutModelForm.ShowOnTop;
   HelpWindow.Close;
+end;
+
+procedure THelpWindow.FormCreate(Sender: TObject);
+begin
+  {$IFDEF win32}
+    {adapt font sizes to be readable also under Windows}
+    OnlineHelpSubTitle.Font.Height := 12;
+    ModelInfoSubTitle.Font.Height := 12;
+    VersionInfoSubTitle.Font.Height := 12;
+  {$ENDIF}
 end;
 
 initialization

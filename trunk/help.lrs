@@ -4,30 +4,31 @@ LazarusResources.Add('THelpWindow','FORMDATA',[
   'TPF0'#11'THelpWindow'#10'HelpWindow'#4'Left'#3#138#1#6'Height'#3#9#1#3'Top'#3
   +#213#0#5'Width'#3#10#2#7'Caption'#6#12'SimThyr Help'#12'ClientHeight'#3#9#1
   +#11'ClientWidth'#3#10#2#5'Color'#7#7'clWhite'#21'Constraints.MinHeight'#3#250
-  +#0#20'Constraints.MinWidth'#3#244#1#8'Position'#7#14'poScreenCenter'#10'LCLV'
-  +'ersion'#6#8'1.0.12.0'#0#6'TLabel'#6'Label1'#4'Left'#2'P'#6'Height'#2#22#3'T'
-  +'op'#2'"'#5'Width'#2'~'#7'Caption'#6#12'SimThyr Help'#11'Font.Height'#2#238
-  +#10'Font.Style'#11#6'fsBold'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLab'
-  +'el'#6'Label3'#6'Cursor'#7#11'crHandPoint'#4'Left'#2'('#6'Height'#2#17#3'Top'
-  +#3#128#0#5'Width'#3#186#0#7'Caption'#6#28'Information about this model'#10'F'
-  +'ont.Color'#7#6'clNavy'#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10
-  +'ParentFont'#8#7'OnClick'#7#11'Label3Click'#0#0#6'TLabel'#6'Label4'#6'Cursor'
-  +#7#11'crHandPoint'#4'Left'#2'('#6'Height'#2#17#3'Top'#2'P'#5'Width'#2'K'#7'C'
-  +'aption'#6#11'Online Help'#10'Font.Color'#7#6'clNavy'#10'Font.Pitch'#7#10'fp'
-  +'Variable'#11'ParentColor'#8#10'ParentFont'#8#7'OnClick'#7#11'Label4Click'#0
-  +#0#6'TImage'#6'Image1'#4'Left'#2'('#6'Height'#2' '#3'Top'#2#24#5'Width'#2' '
-  +#8'AutoSize'#9#12'Picture.Data'#10#30#7#0#0#23'TPortableNetworkGraphic'#2#7#0
-  +#0#137'PNG'#13#10#26#10#0#0#0#13'IHDR'#0#0#0' '#0#0#0' '#8#6#0#0#0'szz'#244#0
-  +#0#6#201'IDATX'#133#197'WKP'#147'g'#20'e'#229#162':'#157#218'E'#167#157#218
-  +#206#184#239#162'['#23']'#214'.;'#29#199#25#187'*]tF'#23#157#17#167'+'#173
-  +#211#214#133'"'#160'`Q'#222#200'[ <'#131'"'#228#1'y'#145#7'IHH'#8'!'#9#134
-  +#135#128#200'C'#4#223#239#219'{'#174'|1'#9#130#216#233'L'#153#185#147#255'O'
-  +#254#255';'#231#158'{'#239#249'>2'#136'('#227#255#140#247'yx'#31'G'#214#179
-  +'g'#207'4KKKs'#28#180#184#184'H'#11#11#11't'#251#246#237'9'#254#236'|'#240
-  +#224#193'o'#235#207#253#167#4#246'1'#168'cyy'#153#16'w'#239#222#165#231#207
-  +#159#211#211#167'Oivv'#150#166#166#166#232#254#253#251#180#182#182'F'#243#243
-  +#243'r'#207#223#187#249#187'm'#17#217#234#199'='#10'xuu'#149'^'#189'zE/^'#188
-  +' '#254#142#158'<yB'#143#30'=R`B'#234#206#157';'#4'U'#160#8#136'LLL'#224'w7?'
+  +#0#20'Constraints.MinWidth'#3#244#1#8'OnCreate'#7#10'FormCreate'#8'Position'
+  +#7#14'poScreenCenter'#10'LCLVersion'#6#8'1.0.12.0'#0#6'TLabel'#9'MainTitle'#4
+  +'Left'#2'P'#6'Height'#2#23#3'Top'#2'"'#5'Width'#2'y'#7'Caption'#6#12'SimThyr'
+  +' Help'#11'Font.Height'#2#238#10'Font.Style'#11#6'fsBold'#0#11'ParentColor'#8
+  +#10'ParentFont'#8#0#0#6'TLabel'#14'ModelInfoTitle'#6'Cursor'#7#11'crHandPoin'
+  +'t'#4'Left'#2'('#6'Height'#2#14#3'Top'#3#128#0#5'Width'#3#139#0#7'Caption'#6
+  +#28'Information about this model'#10'Font.Color'#7#6'clNavy'#10'Font.Pitch'#7
+  +#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#7'OnClick'#7#19'ModelInfo'
+  +'TitleClick'#0#0#6'TLabel'#15'OnlineHelpTitle'#6'Cursor'#7#11'crHandPoint'#4
+  +'Left'#2'('#6'Height'#2#14#3'Top'#2'P'#5'Width'#2'7'#7'Caption'#6#11'Online '
+  +'Help'#10'Font.Color'#7#6'clNavy'#10'Font.Pitch'#7#10'fpVariable'#11'ParentC'
+  +'olor'#8#10'ParentFont'#8#7'OnClick'#7#20'OnlineHelpTitleClick'#0#0#6'TImage'
+  +#16'SimThyrIconImage'#4'Left'#2'('#6'Height'#2' '#3'Top'#2#24#5'Width'#2' '#8
+  +'AutoSize'#9#12'Picture.Data'#10#30#7#0#0#23'TPortableNetworkGraphic'#2#7#0#0
+  +#137'PNG'#13#10#26#10#0#0#0#13'IHDR'#0#0#0' '#0#0#0' '#8#6#0#0#0'szz'#244#0#0
+  +#6#201'IDATX'#133#197'WKP'#147'g'#20'e'#229#162':'#157#218'E'#167#157#218#206
+  +#184#239#162'['#23']'#214'.;'#29#199#25#187'*]tF'#23#157#17#167'+'#173#211
+  +#214#133'"'#160'`Q'#222#200'[ <'#131'"'#228#1'y'#145#7'IHH'#8'!'#9#134#135
+  +#128#200'C'#4#223#239#219'{'#174'|1'#9#130#216#233'L'#153#185#147#255'O'#254
+  +#255';'#231#158'{'#239#249'>2'#136'('#227#255#140#247'yx'#31'G'#214#179'g'
+  +#207'4KKKs'#28#180#184#184'H'#11#11#11't'#251#246#237'9'#254#236'|'#240#224
+  +#193'o'#235#207#253#167#4#246'1'#168'cyy'#153#16'w'#239#222#165#231#207#159
+  +#211#211#167'Oivv'#150#166#166#166#232#254#253#251#180#182#182'F'#243#243#243
+  +'r'#207#223#187#249#187'm'#17#217#234#199'='#10'xuu'#149'^'#189'zE/^'#188' '
+  +#254#142#158'<yB'#143#30'=R`B'#234#206#157';'#4'U'#160#8#136'LLL'#224'w7?'
   +#187#231#223#16'8'#248#240#225'C'#201#10#127'/_'#190#148#172#21'0KM'#247#238
   +#221#19#144'h4*'#202#160#28'\'#10#154#155#155#163#153#153#25#154#158#158#166
   +#201#201'I'#10#135#195' '#245#227#251#16'8'#136#140'A@'#1'C'#238#199#143#31
@@ -64,8 +65,8 @@ LazarusResources.Add('THelpWindow','FORMDATA',[
   +#25#17#167'B'#167#162'k'#1#138#151#175#234#12#137#5#149#2')'#241'g'#234'w['
   +#17'@'#9#174'\'#185'"e'#168#169#169#193'>'#177'7'#131#155'o'#6#158#173'|'#27
   +#142#133#135#213'L'#171#26'&+'#144'B'#132#9'('#5#22#191#220#153'B'#0#239'b'
-  +#26#20#1'-O'#23#128#171#170#170#168#178#178'rY'#8'`'#10'P'#2#236'X'#232#3'(`'
-  ,#230#18#224'%d'#15'wS'#11'&'#215':= '#127'z'#9'N'#156#248']'#250#0#201'`M'
+  ,#26#20#1'-O'#23#128#171#170#170#168#178#178'rY'#8'`'#10'P'#2#236'X'#232#3'(`'
+  +#230#18#224'%d'#15'wS'#11'&'#215':= '#127'z'#9'N'#156#248']'#250#0#201'`M'
   +#212#254#242#229#203'TQQ'#129'O''o'#235';'#196#7'P'#2#4'z'#0#10#232#250#250
   +#19#139#128#128'*'#3#22'_'#249#225#227#4#232#242#215#187'h'#233#187#15'_w'
   +#255#23';S|'#0#242'c'#12'U'#3#27#216#7#0'\VVF%%%(Em'#194#9#217#149#164#17#177
@@ -91,19 +92,20 @@ LazarusResources.Add('THelpWindow','FORMDATA',[
   +#239#252#223#141#247#138#253#220#15'AX'#168#2'V'#243#140#236'A*]n&1'#205#165
   +';'#201#7#157#183'f'#253'^'#4'T'#240'Qm?'#187'd'#30#159'h'#204#156#245'2'#236
   +#20#146#175#147'Yab^n'#216'"'#246#145#159'6'#147#251'm'#241#15'oh'#145'B'#164
-  +#5#134#21#0#0#0#0'IEND'#174'B`'#130#0#0#6'TLabel'#6'Label2'#4'Left'#2'('#6'H'
-  +'eight'#2#13#3'Top'#2'`'#5'Width'#3'-'#1#7'Caption'#6'?Get a short introduct'
-  +'ion, a full handbook and tutorials online.'#11'Font.Height'#2#10#11'ParentC'
-  +'olor'#8#10'ParentFont'#8#0#0#6'TLabel'#6'Label5'#4'Left'#2'('#6'Height'#2#13
-  +#3'Top'#3#144#0#5'Width'#3#135#1#7'Caption'#6'MReferences and background inf'
-  +'ormation on the theory that SimThyr is based on.'#11'Font.Height'#2#10#11'P'
-  +'arentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#6'Label6'#6'Cursor'#7#11'crHan'
-  +'dPoint'#4'Left'#2'('#6'Height'#2#17#3'Top'#3#168#0#5'Width'#2'M'#7'Caption'
-  +#6#12'Version info'#10'Font.Color'#7#6'clNavy'#10'Font.Pitch'#7#10'fpVariabl'
-  +'e'#11'ParentColor'#8#10'ParentFont'#8#7'OnClick'#7#11'Label6Click'#0#0#6'TL'
-  +'abel'#6'Label7'#4'Left'#2'('#6'Height'#2' '#3'Top'#3#184#0#5'Width'#3#148#1
-  +#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#8'AutoSize'#8#7'Caption'#6'aG'
-  +'et information about the version of this application and information on the'
-  +' runtime environment.'#11'Font.Height'#2#10#11'ParentColor'#8#10'ParentFont'
-  +#8#8'WordWrap'#9#0#0#0
+  +#5#134#21#0#0#0#0'IEND'#174'B`'#130#0#0#6'TLabel'#18'OnlineHelpSubTitle'#4'L'
+  +'eft'#2'('#6'Height'#2#11#3'Top'#2'`'#5'Width'#3#215#0#7'Caption'#6'?Get a s'
+  +'hort introduction, a full handbook and tutorials online.'#11'Font.Height'#2
+  +#10#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#17'ModelInfoSubTitle'#4
+  +'Left'#2'('#6'Height'#2#11#3'Top'#3#144#0#5'Width'#3#28#1#7'Caption'#6'MRefe'
+  +'rences and background information on the theory that SimThyr is based on.'
+  +#11'Font.Height'#2#10#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#16'Ve'
+  +'rsionInfoTitle'#6'Cursor'#7#11'crHandPoint'#4'Left'#2'('#6'Height'#2#14#3'T'
+  +'op'#3#168#0#5'Width'#2'9'#7'Caption'#6#12'Version info'#10'Font.Color'#7#6
+  +'clNavy'#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#7
+  +'OnClick'#7#21'VersionInfoTitleClick'#0#0#6'TLabel'#19'VersionInfoSubTitle'#4
+  +'Left'#2'('#6'Height'#2' '#3'Top'#3#184#0#5'Width'#3#148#1#7'Anchors'#11#5'a'
+  +'kTop'#6'akLeft'#7'akRight'#0#8'AutoSize'#8#7'Caption'#6'aGet information ab'
+  +'out the version of this application and information on the runtime environm'
+  +'ent.'#11'Font.Height'#2#10#11'ParentColor'#8#10'ParentFont'#8#8'WordWrap'#9
+  +#0#0#0
 ]);
