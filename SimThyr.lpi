@@ -15,7 +15,7 @@
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="2"/>
       <RevisionNr Value="4"/>
-      <BuildNr Value="272"/>
+      <BuildNr Value="274"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 3.2.4" LegalCopyright="1994-2013 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.2.4"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -42,16 +42,15 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="129">
+    <Units Count="131">
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyr"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="23"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="10" Y="19"/>
+        <CursorPos X="41" Y="1"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -230,7 +229,7 @@
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="18" Y="6"/>
+        <CursorPos X="34" Y="16"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit17>
@@ -1035,10 +1034,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="help"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="21"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="18" Y="6"/>
+        <CursorPos X="23" Y="5"/>
         <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1174,128 +1174,140 @@
         <CursorPos X="1" Y="409"/>
         <UsageCount Value="10"/>
       </Unit128>
+      <Unit129>
+        <Filename Value="../../../../lazarus/lcl/forms.pp"/>
+        <UnitName Value="Forms"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="33"/>
+        <CursorPos X="3" Y="46"/>
+        <UsageCount Value="10"/>
+      </Unit129>
+      <Unit130>
+        <Filename Value="../../../../lazarus/lcl/lclclasses.pp"/>
+        <UnitName Value="LCLClasses"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="19"/>
+        <CursorPos X="10" Y="32"/>
+        <UsageCount Value="10"/>
+      </Unit130>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="398" Column="1" TopLine="391"/>
+        <Caret Line="400" Column="1" TopLine="391"/>
       </Position1>
       <Position2>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="400" Column="1" TopLine="391"/>
+        <Caret Line="401" Column="1" TopLine="391"/>
       </Position2>
       <Position3>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="401" Column="1" TopLine="391"/>
+        <Caret Line="403" Column="1" TopLine="391"/>
       </Position3>
       <Position4>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="403" Column="1" TopLine="391"/>
+        <Caret Line="405" Column="1" TopLine="391"/>
       </Position4>
       <Position5>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="405" Column="1" TopLine="391"/>
+        <Caret Line="410" Column="1" TopLine="391"/>
       </Position5>
       <Position6>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="410" Column="1" TopLine="391"/>
+        <Caret Line="397" Column="1" TopLine="391"/>
       </Position6>
       <Position7>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="397" Column="1" TopLine="391"/>
+        <Caret Line="398" Column="1" TopLine="391"/>
       </Position7>
       <Position8>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="398" Column="1" TopLine="391"/>
+        <Caret Line="400" Column="1" TopLine="391"/>
       </Position8>
       <Position9>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="400" Column="1" TopLine="391"/>
+        <Caret Line="401" Column="1" TopLine="391"/>
       </Position9>
       <Position10>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="401" Column="1" TopLine="391"/>
+        <Caret Line="403" Column="1" TopLine="391"/>
       </Position10>
       <Position11>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="403" Column="1" TopLine="391"/>
+        <Caret Line="405" Column="1" TopLine="391"/>
       </Position11>
       <Position12>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="405" Column="1" TopLine="391"/>
+        <Caret Line="410" Column="1" TopLine="391"/>
       </Position12>
       <Position13>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="410" Column="1" TopLine="391"/>
+        <Caret Line="397" Column="1" TopLine="391"/>
       </Position13>
       <Position14>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="397" Column="1" TopLine="391"/>
+        <Caret Line="398" Column="1" TopLine="391"/>
       </Position14>
       <Position15>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="398" Column="1" TopLine="391"/>
+        <Caret Line="400" Column="1" TopLine="391"/>
       </Position15>
       <Position16>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="400" Column="1" TopLine="391"/>
+        <Caret Line="401" Column="1" TopLine="391"/>
       </Position16>
       <Position17>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="401" Column="1" TopLine="391"/>
+        <Caret Line="403" Column="1" TopLine="391"/>
       </Position17>
       <Position18>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="403" Column="1" TopLine="391"/>
+        <Caret Line="405" Column="1" TopLine="391"/>
       </Position18>
       <Position19>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="405" Column="1" TopLine="391"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
       </Position19>
       <Position20>
         <Filename Value="simthyrplot.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Caret Line="440" Column="39" TopLine="425"/>
       </Position20>
       <Position21>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="440" Column="39" TopLine="425"/>
+        <Filename Value="showips.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
       </Position21>
       <Position22>
-        <Filename Value="showips.pas"/>
+        <Filename Value="sensitivityanalysis.pas"/>
         <Caret Line="1" Column="1" TopLine="1"/>
       </Position22>
       <Position23>
-        <Filename Value="sensitivityanalysis.pas"/>
+        <Filename Value="tornado.pas"/>
         <Caret Line="1" Column="1" TopLine="1"/>
       </Position23>
       <Position24>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="407" Column="1" TopLine="391"/>
       </Position24>
       <Position25>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="407" Column="1" TopLine="391"/>
+        <Caret Line="401" Column="35" TopLine="394"/>
       </Position25>
       <Position26>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="401" Column="35" TopLine="394"/>
+        <Caret Line="501" Column="39" TopLine="495"/>
       </Position26>
       <Position27>
         <Filename Value="simthyrmain.pas"/>
-        <Caret Line="501" Column="39" TopLine="495"/>
+        <Caret Line="407" Column="8" TopLine="385"/>
       </Position27>
       <Position28>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="407" Column="8" TopLine="385"/>
-      </Position28>
-      <Position29>
         <Filename Value="SimThyr.lpr"/>
         <Caret Line="142" Column="1" TopLine="112"/>
-      </Position29>
-      <Position30>
+      </Position28>
+      <Position29>
         <Filename Value="simthyrtypes.pas"/>
         <Caret Line="1" Column="23" TopLine="1"/>
-      </Position30>
+      </Position29>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

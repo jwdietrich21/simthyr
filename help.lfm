@@ -9,46 +9,47 @@ object HelpWindow: THelpWindow
   Color = clWhite
   Constraints.MinHeight = 250
   Constraints.MinWidth = 500
+  OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.0.12.0'
-  object Label1: TLabel
+  object MainTitle: TLabel
     Left = 80
-    Height = 22
+    Height = 23
     Top = 34
-    Width = 126
+    Width = 121
     Caption = 'SimThyr Help'
     Font.Height = -18
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
   end
-  object Label3: TLabel
+  object ModelInfoTitle: TLabel
     Cursor = crHandPoint
     Left = 40
-    Height = 17
+    Height = 14
     Top = 128
-    Width = 186
+    Width = 139
     Caption = 'Information about this model'
     Font.Color = clNavy
     Font.Pitch = fpVariable
     ParentColor = False
     ParentFont = False
-    OnClick = Label3Click
+    OnClick = ModelInfoTitleClick
   end
-  object Label4: TLabel
+  object OnlineHelpTitle: TLabel
     Cursor = crHandPoint
     Left = 40
-    Height = 17
+    Height = 14
     Top = 80
-    Width = 75
+    Width = 55
     Caption = 'Online Help'
     Font.Color = clNavy
     Font.Pitch = fpVariable
     ParentColor = False
     ParentFont = False
-    OnClick = Label4Click
+    OnClick = OnlineHelpTitleClick
   end
-  object Image1: TImage
+  object SimThyrIconImage: TImage
     Left = 40
     Height = 32
     Top = 24
@@ -114,40 +115,40 @@ object HelpWindow: THelpWindow
       22F6919F3693FB6DF10F6F689142A40586150000000049454E44AE426082
     }
   end
-  object Label2: TLabel
+  object OnlineHelpSubTitle: TLabel
     Left = 40
-    Height = 13
+    Height = 11
     Top = 96
-    Width = 301
+    Width = 215
     Caption = 'Get a short introduction, a full handbook and tutorials online.'
     Font.Height = 10
     ParentColor = False
     ParentFont = False
   end
-  object Label5: TLabel
+  object ModelInfoSubTitle: TLabel
     Left = 40
-    Height = 13
+    Height = 11
     Top = 144
-    Width = 391
+    Width = 284
     Caption = 'References and background information on the theory that SimThyr is based on.'
     Font.Height = 10
     ParentColor = False
     ParentFont = False
   end
-  object Label6: TLabel
+  object VersionInfoTitle: TLabel
     Cursor = crHandPoint
     Left = 40
-    Height = 17
+    Height = 14
     Top = 168
-    Width = 77
+    Width = 57
     Caption = 'Version info'
     Font.Color = clNavy
     Font.Pitch = fpVariable
     ParentColor = False
     ParentFont = False
-    OnClick = Label6Click
+    OnClick = VersionInfoTitleClick
   end
-  object Label7: TLabel
+  object VersionInfoSubTitle: TLabel
     Left = 40
     Height = 32
     Top = 184
