@@ -3,7 +3,7 @@ unit SimThyrMain;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.2.3 }
+{ Version 3.2.4 }
 
 { (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -268,6 +268,7 @@ begin
 end;
 
 procedure TSimThyrToolbar.FormShow(Sender: TObject);
+{ensures that simulation setting are shown on top}
 begin
   if (SimulationSettings <> nil) and showSettingsAtStartup then
   begin
@@ -403,8 +404,8 @@ begin
     theFilterIndex := theFilterIndex + 1;
   {$ENDIF}{may be removed in future versions}
     case theFilterIndex of
-      0: bell;
-      1: ReadScenario(theFileName);
+      1: bell;  {unimplemented}
+      2: ReadScenario(theFileName);
     end;
   end;
 end;

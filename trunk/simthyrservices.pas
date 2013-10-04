@@ -3,7 +3,7 @@ unit SimThyrServices;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.2.3 }
+{ Version 3.2.4 }
 
 { (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -154,10 +154,10 @@ begin
       except
         Result := 'NA';
       end;
+      theNode.Destroy;
     end
     else
       Result := 'NA';
-    theNode.Destroy;
   end;
 end;
 
