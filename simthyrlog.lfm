@@ -1,14 +1,14 @@
 object SimThyrLogWindow: TSimThyrLogWindow
-  Left = 184
-  Height = 294
-  Top = 232
-  Width = 688
+  Left = 157
+  Height = 278
+  Top = 144
+  Width = 751
   Align = alRight
   AlphaBlend = True
   AlphaBlendValue = 0
   Caption = 'Log Window'
-  ClientHeight = 294
-  ClientWidth = 688
+  ClientHeight = 278
+  ClientWidth = 751
   DockSite = True
   Font.Pitch = fpVariable
   Icon.Data = {
@@ -312,10 +312,10 @@ object SimThyrLogWindow: TSimThyrLogWindow
   object ValuesGrid: TStringGrid
     Cursor = crIBeam
     Left = 0
-    Height = 271
+    Height = 263
     Hint = 'Simulated behavioural parameters of thyroid homeostasis'
     Top = 0
-    Width = 688
+    Width = 751
     Align = alClient
     AutoFillColumns = True
     BorderStyle = bsNone
@@ -334,15 +334,15 @@ object SimThyrLogWindow: TSimThyrLogWindow
     OnGetCellHint = ValuesGridGetCellHint
     ColWidths = (
       64
-      69
-      69
-      69
-      69
-      69
-      69
-      69
-      69
-      72
+      76
+      76
+      76
+      76
+      76
+      76
+      76
+      76
+      79
     )
     Cells = (
       10
@@ -380,10 +380,10 @@ object SimThyrLogWindow: TSimThyrLogWindow
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
+    Height = 15
     Hint = 'Number of iterations and time resolution'
-    Top = 271
-    Width = 688
+    Top = 263
+    Width = 751
     Panels = <    
       item
         Bevel = pbRaised
@@ -405,8 +405,8 @@ object SimThyrLogWindow: TSimThyrLogWindow
   object ProgressBar1: TProgressBar
     Left = 264
     Height = 10
-    Top = 280
-    Width = 405
+    Top = 264
+    Width = 468
     Anchors = [akLeft, akRight, akBottom]
     TabOrder = 2
   end
@@ -438,4 +438,4 @@ object SimThyrLogWindow: TSimThyrLogWindow
       Enabled = False
     end
   end
-end
+end

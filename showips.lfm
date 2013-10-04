@@ -12,7 +12,7 @@ object IPSForm: TIPSForm
   Color = clWhite
   OnActivate = FormActivate
   OnCreate = FormCreate
-  LCLVersion = '1.0.10.0'
+  LCLVersion = '1.0.12.0'
   Visible = True
   object Image1: TImage
     Left = 16

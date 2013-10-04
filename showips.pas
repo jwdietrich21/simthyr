@@ -3,7 +3,7 @@ unit ShowIPS;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.2.3 }
+{ Version 3.2.4 }
 
 { (c) J. W. Dietrich, 1994 - 2013 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -76,6 +76,7 @@ begin
 end;
 
 procedure TIPSForm.SaveFigure;
+{saves IPS as a graphics file}
 var
   theFileName:  string;
   theFilterIndex: integer;
@@ -100,7 +101,7 @@ end;
 
 procedure TIPSForm.FormCreate(Sender: TObject);
 begin
-
+  {scaffold for possible future extension}
 end;
 
 initialization
