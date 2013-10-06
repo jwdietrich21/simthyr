@@ -15,7 +15,7 @@
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="2"/>
       <RevisionNr Value="4"/>
-      <BuildNr Value="274"/>
+      <BuildNr Value="275"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 3.2.4" LegalCopyright="1994-2013 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.2.4"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -65,7 +65,7 @@
         <EditorIndex Value="22"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="18" Y="6"/>
+        <CursorPos X="22" Y="444"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -119,10 +119,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPrediction"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="14"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="18" Y="6"/>
+        <CursorPos X="23" Y="2"/>
         <UsageCount Value="102"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1034,11 +1035,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="help"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="21"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="23" Y="5"/>
+        <CursorPos X="109" Y="3"/>
         <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1191,7 +1191,7 @@
         <UsageCount Value="10"/>
       </Unit130>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="simthyrmain.pas"/>
         <Caret Line="400" Column="1" TopLine="391"/>
@@ -1308,6 +1308,10 @@
         <Filename Value="simthyrtypes.pas"/>
         <Caret Line="1" Column="23" TopLine="1"/>
       </Position29>
+      <Position30>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="444" Column="22" TopLine="425"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
