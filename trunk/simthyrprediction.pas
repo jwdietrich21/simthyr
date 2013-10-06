@@ -166,6 +166,8 @@ begin
   writeaMemoLine(Prediction.PredictionMemo, '');
   writeaMemoLine(Prediction.PredictionMemo, NEGATIVE_VALUES_HINT);
   writeaMemoLine(Prediction.PredictionMemo, DEVIATION_STRING);
+  Prediction.PredictionMemo.SelStart := 0;
+  Prediction.PredictionMemo.SelLength := 0;
 end;
 
 initialization
