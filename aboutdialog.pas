@@ -3,7 +3,7 @@ unit AboutDialog;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.2.4 }
+{ Version 3.2.5 }
 
 { (c) J. W. Dietrich, 1994 - 2012 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -144,7 +144,9 @@ begin
     AboutWindow.Memo1.Lines.Add('');
     AboutWindow.Memo1.Lines.Add('Preferences file: ' + GetPreferencesFile);
     gExtendedInfo := true;
-  end;
+  end
+  else if (key = 87) and ((ssMeta in Shift) or (ssCtrl in Shift)) then
+    self.Close;
 end;
 
 procedure TAboutWindow.Image11Click(Sender: TObject);
