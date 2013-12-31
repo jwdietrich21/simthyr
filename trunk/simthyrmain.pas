@@ -393,6 +393,7 @@ end;
 procedure TSimThyrToolbar.OpenToolButtonClick(Sender: TObject);
 var
   theFileName: string;
+  theVersion: Str13;
   theFilterIndex: integer;
 begin
   OpenDialog1.FilterIndex := 2;
@@ -405,8 +406,9 @@ begin
   {$ENDIF}{may be removed in future versions}
     case theFilterIndex of
       1: bell;  {unimplemented}
-      2: ReadScenario(theFileName);
+      2: ReadScenario(theFileName, theVersion);
     end;
+  if (theVersion <> '') and (theVersion <> '10.0') then bell;
   end;
 end;
 

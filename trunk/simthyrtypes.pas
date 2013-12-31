@@ -86,6 +86,7 @@ const
 type
  TableCell = TPoint;
  Str3 = string[3];
+ Str13 = string[13];
  Str255 = string[255];
  tResultMatrix = array of array of real;               {matrix with simulated values}
  tResultContent = array[0..RES_MAX_COLS-1] of Str255;

@@ -21,13 +21,15 @@ interface
 uses
   Classes, SysUtils, DOM, XMLRead, XMLWrite, SimThyrTypes, SimThyrServices;
 
-procedure ReadScenario(theFileName: String);
-procedure SaveScenario(theFileName: String);
+procedure ReadScenario(theFileName: string; var modelVersion: Str13);
+procedure SaveScenario(theFileName: string);
 
 implementation
 
-procedure ReadScenario(theFileName: String); {reads a simulation scenario}
+procedure ReadScenario(theFileName: string; var modelVersion: Str13);
+{reads a simulation scenario}
 var
+  i: integer;
   Doc: TXMLDocument;
   RootNode: TDOMNode;
 begin
@@ -36,48 +38,59 @@ begin
     try
       Doc := TXMLDocument.Create();
       ReadXMLFile(Doc, theFileName);
-      RootNode := Doc.DocumentElement.FindNode('strucpars');
-      VarFromNode(RootNode, 'AlphaR', AlphaR);
-      VarFromNode(RootNode, 'BetaR', BetaR);
-      VarFromNode(RootNode, 'GR', GR);
-      VarFromNode(RootNode, 'dR', dR);
-      VarFromNode(RootNode, 'AlphaS', AlphaS);
-      VarFromNode(RootNode, 'BetaS', BetaS);
-      VarFromNode(RootNode, 'AlphaS2', AlphaS2);
-      VarFromNode(RootNode, 'BetaS2', BetaS2);
-      VarFromNode(RootNode, 'GH', GH);
-      VarFromNode(RootNode, 'dH', dH);
-      VarFromNode(RootNode, 'LS', LS);
-      VarFromNode(RootNode, 'SS', SS);
-      VarFromNode(RootNode, 'DS', DS);
-      VarFromNode(RootNode, 'AlphaT', AlphaT);
-      VarFromNode(RootNode, 'BetaT', BetaT);
-      VarFromNode(RootNode, 'GT', GT);
-      VarFromNode(RootNode, 'dT', dT);
-      VarFromNode(RootNode, 'alpha31', alpha31);
-      VarFromNode(RootNode, 'beta31', beta31);
-      VarFromNode(RootNode, 'GD1', GD1);
-      VarFromNode(RootNode, 'KM1', KM1);
-      VarFromNode(RootNode, 'alpha32', alpha32);
-      VarFromNode(RootNode, 'beta32', beta32);
-      VarFromNode(RootNode, 'GD2', GD2);
-      VarFromNode(RootNode, 'KM2', KM2);
-      VarFromNode(RootNode, 'K30', K30);
-      VarFromNode(RootNode, 'K31', K31);
-      VarFromNode(RootNode, 'K41', K41);
-      VarFromNode(RootNode, 'K42', K42);
-      VarFromNode(RootNode, 'Tau0R', TT1);
-      VarFromNode(RootNode, 'Tau0S', TT2);
-      VarFromNode(RootNode, 'Tau0S2', TT22);
-      VarFromNode(RootNode, 'Tau0T', TT3);
-      VarFromNode(RootNode, 'Tau03z', TT4);
+      RootNode := Doc.DocumentElement;
+      if RootNode.HasAttributes and (RootNode.Attributes.Length > 0) then
+        for i := 0 to RootNode.Attributes.Length - 1 do
+          with RootNode.Attributes[i] do
+          begin
+            if NodeName = 'modelversion' then
+              modelVersion := NodeValue;
+          end;
+      if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
+      begin
+        RootNode := Doc.DocumentElement.FindNode('strucpars');
+        VarFromNode(RootNode, 'AlphaR', AlphaR);
+        VarFromNode(RootNode, 'BetaR', BetaR);
+        VarFromNode(RootNode, 'GR', GR);
+        VarFromNode(RootNode, 'dR', dR);
+        VarFromNode(RootNode, 'AlphaS', AlphaS);
+        VarFromNode(RootNode, 'BetaS', BetaS);
+        VarFromNode(RootNode, 'AlphaS2', AlphaS2);
+        VarFromNode(RootNode, 'BetaS2', BetaS2);
+        VarFromNode(RootNode, 'GH', GH);
+        VarFromNode(RootNode, 'dH', dH);
+        VarFromNode(RootNode, 'LS', LS);
+        VarFromNode(RootNode, 'SS', SS);
+        VarFromNode(RootNode, 'DS', DS);
+        VarFromNode(RootNode, 'AlphaT', AlphaT);
+        VarFromNode(RootNode, 'BetaT', BetaT);
+        VarFromNode(RootNode, 'GT', GT);
+        VarFromNode(RootNode, 'dT', dT);
+        VarFromNode(RootNode, 'alpha31', alpha31);
+        VarFromNode(RootNode, 'beta31', beta31);
+        VarFromNode(RootNode, 'GD1', GD1);
+        VarFromNode(RootNode, 'KM1', KM1);
+        VarFromNode(RootNode, 'alpha32', alpha32);
+        VarFromNode(RootNode, 'beta32', beta32);
+        VarFromNode(RootNode, 'GD2', GD2);
+        VarFromNode(RootNode, 'KM2', KM2);
+        VarFromNode(RootNode, 'K30', K30);
+        VarFromNode(RootNode, 'K31', K31);
+        VarFromNode(RootNode, 'K41', K41);
+        VarFromNode(RootNode, 'K42', K42);
+        VarFromNode(RootNode, 'Tau0R', TT1);
+        VarFromNode(RootNode, 'Tau0S', TT2);
+        VarFromNode(RootNode, 'Tau0S2', TT22);
+        VarFromNode(RootNode, 'Tau0T', TT3);
+        VarFromNode(RootNode, 'Tau03z', TT4);
+      end;
     finally
       Doc.Free;
     end;
   end;
 end;
 
-procedure SaveScenario(theFileName: String); {saves scenario as XML file}
+procedure SaveScenario(theFileName: string); {saves scenario as XML file}
 var
   Doc: TXMLDocument;
   RootNode, ElementNode: TDOMNode;
@@ -86,10 +99,11 @@ begin
     Doc := TXMLDocument.Create;
 
     RootNode := Doc.CreateElement('scenario');
+    TDOMElement(RootNode).SetAttribute('modelversion', '10.0');
     Doc.Appendchild(RootNode);
-    RootNode:= Doc.DocumentElement;
+    RootNode := Doc.DocumentElement;
 
-    ElementNode:=Doc.CreateElement('strucpars');
+    ElementNode := Doc.CreateElement('strucpars');
 
     ElementNode.AppendChild(SimpleNode(Doc, 'alphaR', FloatToStr(alphaR)));
     ElementNode.AppendChild(SimpleNode(Doc, 'betaR', FloatToStr(betaR)));
@@ -128,11 +142,10 @@ begin
 
     RootNode.AppendChild(ElementNode);
 
-    WriteXMLFile(Doc,theFileName);
+    WriteXMLFile(Doc, theFileName);
   finally
     Doc.Free;
   end;
 end;
 
 end.
-
