@@ -18,7 +18,7 @@ object Notice: TNotice
   Font.Style = [fsBold]
   Position = poOwnerFormCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.0.12.0'
+  LCLVersion = '1.0.14.0'
   Visible = True
   object Label1: TLabel
     Left = 49

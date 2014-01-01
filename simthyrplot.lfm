@@ -311,7 +311,7 @@ object ValuesPlot: TValuesPlot
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.0.12.0'
+  LCLVersion = '1.0.14.0'
   Visible = True
   object Panel1: TPanel
     Left = 0

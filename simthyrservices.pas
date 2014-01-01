@@ -5,7 +5,7 @@ unit SimThyrServices;
 
 { Version 3.2.5 }
 
-{ (c) J. W. Dietrich, 1994 - 2013 }
+{ (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
 { (c) Ruhr University of Bochum 2005 - 2013 }
 
@@ -95,7 +95,9 @@ begin
   else if WindowsVersion = wvVista then
     OSVersion := 'Windows Vista '
   else if WindowsVersion = wv7 then
-    OSVersion := 'Windows 7 '
+    OSVersion := 'Windows 7 ';
+  else if WindowsVersion = wv8 then
+    OSVersion := 'Windows 8 '
   else
     OSVersion := 'Windows ';
   {$ENDIF}

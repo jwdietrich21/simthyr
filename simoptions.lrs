@@ -7,7 +7,7 @@ LazarusResources.Add('TSimOptionsDlg','FORMDATA',[
   +'ize'#0#11'BorderStyle'#7#8'bsDialog'#7'Caption'#6#29'Additional Simulation '
   +'Options'#12'ClientHeight'#3#155#0#11'ClientWidth'#3#144#1#5'Color'#7#7'clWh'
   +'ite'#6'OnShow'#7#8'FormShow'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'
-  +#6#8'1.0.12.0'#7'Visible'#9#0#9'TCheckBox'#13'NoiseCheckBox'#4'Left'#2' '#6
+  +#6#8'1.0.14.0'#7'Visible'#9#0#9'TCheckBox'#13'NoiseCheckBox'#4'Left'#2' '#6
   +'Height'#2#18#4'Hint'#6'&Use noise at the level of hypothalamus'#3'Top'#2'8'
   +#5'Width'#3#140#0#7'Caption'#6#17'Superimpose noise'#7'Checked'#9#8'OnChange'
   +#7#19'NoiseCheckBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#5'State'#7#9'c'
