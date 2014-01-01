@@ -336,7 +336,7 @@ LazarusResources.Add('TPrediction','FORMDATA',[
   +#255#172'A'#255#255#172'A'#227'?'#172'A'#193#15#172'A'#192#15#172'A'#192#7
   +#172'A'#128#7#172'A'#128#7#172'A'#132#135#172'A'#140#135#172'A'#140#195#172
   +'A'#140#195#172'A'#204#227#172'A'#205#243#172'A'#239#255#172'A'#255#255#172
-  +'A'#10'LCLVersion'#6#8'1.0.12.0'#7'Visible'#9#0#5'TMemo'#14'PredictionMemo'#4
+  +'A'#10'LCLVersion'#6#8'1.0.14.0'#7'Visible'#9#0#5'TMemo'#14'PredictionMemo'#4
   +'Left'#2#16#6'Height'#3#174#0#4'Hint'#6#224'This window displays predicted v'
   +'alues for hormone levels from a closed-loop model. Negative values are virt'
   +'ual solutions that result from the system''s equations.  Only the positive '

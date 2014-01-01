@@ -11,7 +11,7 @@ object HelpWindow: THelpWindow
   Constraints.MinWidth = 500
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.0.12.0'
+  LCLVersion = '1.0.14.0'
   object MainTitle: TLabel
     Left = 80
     Height = 22
