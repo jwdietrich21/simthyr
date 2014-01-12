@@ -14,9 +14,9 @@ object HelpWindow: THelpWindow
   LCLVersion = '1.0.14.0'
   object MainTitle: TLabel
     Left = 80
-    Height = 22
+    Height = 23
     Top = 34
-    Width = 126
+    Width = 121
     Caption = 'SimThyr Help'
     Font.Height = -18
     Font.Style = [fsBold]
@@ -26,9 +26,9 @@ object HelpWindow: THelpWindow
   object ModelInfoTitle: TLabel
     Cursor = crHandPoint
     Left = 40
-    Height = 17
+    Height = 14
     Top = 128
-    Width = 186
+    Width = 139
     Caption = 'Information about this model'
     Font.Color = clNavy
     Font.Pitch = fpVariable
@@ -39,9 +39,9 @@ object HelpWindow: THelpWindow
   object OnlineHelpTitle: TLabel
     Cursor = crHandPoint
     Left = 40
-    Height = 17
+    Height = 14
     Top = 80
-    Width = 75
+    Width = 55
     Caption = 'Online Help'
     Font.Color = clNavy
     Font.Pitch = fpVariable
@@ -117,9 +117,9 @@ object HelpWindow: THelpWindow
   end
   object OnlineHelpSubTitle: TLabel
     Left = 40
-    Height = 13
+    Height = 11
     Top = 96
-    Width = 301
+    Width = 215
     Caption = 'Get a short introduction, a full handbook and tutorials online.'
     Font.Height = 10
     ParentColor = False
@@ -127,9 +127,9 @@ object HelpWindow: THelpWindow
   end
   object ModelInfoSubTitle: TLabel
     Left = 40
-    Height = 13
+    Height = 11
     Top = 144
-    Width = 391
+    Width = 284
     Caption = 'References and background information on the theory that SimThyr is based on.'
     Font.Height = 10
     ParentColor = False
@@ -138,9 +138,9 @@ object HelpWindow: THelpWindow
   object VersionInfoTitle: TLabel
     Cursor = crHandPoint
     Left = 40
-    Height = 17
+    Height = 14
     Top = 168
-    Width = 77
+    Width = 57
     Caption = 'Version info'
     Font.Color = clNavy
     Font.Pitch = fpVariable

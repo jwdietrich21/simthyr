@@ -1,7 +1,6 @@
 unit tornado;
 
 { SimThyr Project }
-
 { A numerical simulator of thyrotropic feedback control }
 
 { Version 3.2.5 }
