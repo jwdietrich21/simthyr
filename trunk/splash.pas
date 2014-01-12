@@ -20,15 +20,24 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, LaunchDialog;
+  ExtCtrls, StdCtrls, LaunchDialog, VersionSupport;
 
 type
 
   { TSplashScreen }
 
   TSplashScreen = class(TForm)
+    CopyrightLabel1: TLabel;
+    CopyrightLabel2: TLabel;
+    CopyrightLabel3: TLabel;
+    CopyrightLabel4: TLabel;
+    CopyrightLabel5: TLabel;
+    CopyrightLabel6: TLabel;
+    CopyrightLabel7: TLabel;
     Image1: TImage;
     Timer1: TTimer;
+    VersionLabel: TLabel;
+    procedure FormCreate(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
   private
@@ -54,6 +63,11 @@ end;
 procedure TSplashScreen.Image1Click(Sender: TObject);
 begin
 
+end;
+
+procedure TSplashScreen.FormCreate(Sender: TObject);
+begin
+  VersionLabel.Caption := 'Version ' + GetFileVersion;
 end;
 
 initialization

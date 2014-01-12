@@ -21,13 +21,29 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, Buttons, StdCtrls, LCLIntf, ComCtrls, SimThyrTypes,
-  SimThyrServices, VersionSupport, DOS, HandlePreferences;
+  SimThyrServices, VersionSupport, DOS, HandlePreferences
+  {$IFDEF win32}
+  , Windows, Win32Proc
+  {$ELSE}
+    {$IFDEF LCLCarbon}
+  , MacOSAll
+    {$ENDIF}
+  , Unix
+  {$ENDIF}  ;
+
 
 type
 
   { TAboutWindow }
 
   TAboutWindow = class(TForm)
+    CopyrightLabel1: TLabel;
+    CopyrightLabel2: TLabel;
+    CopyrightLabel3: TLabel;
+    CopyrightLabel4: TLabel;
+    CopyrightLabel5: TLabel;
+    CopyrightLabel6: TLabel;
+    CopyrightLabel7: TLabel;
     Image10: TImage;
     Image11: TImage;
     Image12: TImage;
@@ -60,6 +76,10 @@ type
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
     TabSheet4: TTabSheet;
+    URL1: TLabel;
+    URL2: TLabel;
+    VersionLabel: TLabel;
+    procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure Image10Click(Sender: TObject);
     procedure Image11Click(Sender: TObject);
@@ -81,6 +101,8 @@ type
     procedure Memo1Change(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
     procedure ShowAbout;
+    procedure URL1Click(Sender: TObject);
+    procedure URL2Click(Sender: TObject);
   private
     { private declarations }
   public
@@ -149,6 +171,11 @@ begin
     self.Close;
 end;
 
+procedure TAboutWindow.FormCreate(Sender: TObject);
+begin
+  VersionLabel.Caption := 'Version ' + GetFileVersion;
+end;
+
 procedure TAboutWindow.Image11Click(Sender: TObject);
 begin
   OpenURL('http://www.zennaware.com');
@@ -206,7 +233,11 @@ end;
 
 procedure TAboutWindow.ShowAbout;
 var
-  SystemStem, MajVer, MinVer: Str255;
+  SystemStem, MajVer, MinVer, BugfixVer, VersionString: Str255;
+  {$IFDEF LCLcarbon}
+  Major, Minor, Bugfix: SInt32;
+  theError: SInt16;
+  {$ENDIF}
 begin
   gExtendedInfo := false;
   SystemStem := OSVersion;
@@ -228,15 +259,48 @@ begin
   AboutWindow.Memo1.Lines.Add('with '+ GetCompilerInfo + ' on '+ GetCompiledDate);
   AboutWindow.Memo1.Lines.Add('and using '+ GetLCLVersion + ' and ' + GetWidgetset);
   AboutWindow.Memo1.Lines.Add('');
+  {$IFDEF LCLcarbon}
+  theError := Gestalt(gestaltSystemVersionMajor, Major);
+  if theError = 0 then
+    MajVer := IntToStr(Major)
+  else
+    MajVer := '';
+  theError := Gestalt(gestaltSystemVersionMinor, Minor);
+  if theError = 0 then
+    MinVer := IntToStr(Minor)
+  else
+    MinVer := '';
+  theError := Gestalt(gestaltSystemVersionBugFix, Bugfix);
+  if theError = 0 then
+    BugfixVer := IntToStr(Bugfix)
+  else
+    BugfixVer := '';
+  if SystemStem <> 'Mac OS X 10.' then
+    SystemStem := 'Mac OS ' + MajVer + '.';
+  VersionString := SystemStem + MinVer + '.' + BugfixVer;
+  {$ELSE}
   {$IFDEF WINDOWS}
   MajVer := IntToStr(Win32MajorVersion);
   MinVer := IntToStr(Win32MinorVersion);
+  VersionString := SystemStem + MajVer + '.' + MinVer;
   {$ELSE}
   MajVer := IntToStr(Lo(DosVersion) - 4);
   MinVer := IntToStr(Hi(DosVersion));
+  VersionString := SystemStem + MajVer + '.' + MinVer;
   {$ENDIF}
-  AboutWindow.Memo1.Lines.Add('Operating system: ' + GetOS + ' (' + SystemStem + MajVer + '.' + MinVer + ')');
+  {$ENDIF}
+  AboutWindow.Memo1.Lines.Add('Operating system: ' + GetOS + ' (' + VersionString + ')');
   AboutWindow.ShowModal;
+end;
+
+procedure TAboutWindow.URL1Click(Sender: TObject);
+begin
+  OpenURL('http://simthyr.medical-cybernetics.de')
+end;
+
+procedure TAboutWindow.URL2Click(Sender: TObject);
+begin
+  OpenURL('http://simthyr.sf.net')
 end;
 
 initialization

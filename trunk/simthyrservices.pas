@@ -95,9 +95,9 @@ begin
   else if WindowsVersion = wvVista then
     OSVersion := 'Windows Vista '
   else if WindowsVersion = wv7 then
-    OSVersion := 'Windows 7 ';
-  else if WindowsVersion = wv8 then
-    OSVersion := 'Windows 8 '
+    OSVersion := 'Windows 7 '
+  //else if WindowsVersion = wv8 then   // for future LCL versions
+  //  OSVersion := 'Windows 8 '
   else
     OSVersion := 'Windows ';
   {$ENDIF}
