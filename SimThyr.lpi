@@ -15,7 +15,7 @@
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="2"/>
       <RevisionNr Value="5"/>
-      <BuildNr Value="287"/>
+      <BuildNr Value="288"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 3.2.5" LegalCopyright="1994-2013 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.2.5"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -42,7 +42,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="131">
+    <Units Count="132">
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -50,7 +50,7 @@
         <EditorIndex Value="23"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="2" Y="2"/>
+        <CursorPos X="24" Y="138"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -62,11 +62,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="22"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="86" Y="22"/>
+        <CursorPos X="1" Y="16"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -368,7 +367,7 @@
         <EditorIndex Value="20"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos X="3" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -929,7 +928,7 @@
         <EditorIndex Value="19"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="10" Y="2"/>
+        <CursorPos X="11" Y="2"/>
         <UsageCount Value="130"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1035,10 +1034,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="help"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="21"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos X="39" Y="2"/>
         <UsageCount Value="59"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1190,127 +1190,134 @@
         <CursorPos X="10" Y="32"/>
         <UsageCount Value="10"/>
       </Unit130>
+      <Unit131>
+        <Filename Value="../../../../../../../lazarus/fpc/2.6.2/source/rtl/objpas/classes/classesh.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1595"/>
+        <CursorPos X="14" Y="1610"/>
+        <UsageCount Value="10"/>
+      </Unit131>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="launchdialog.pas"/>
-        <Caret Line="2" Column="6" TopLine="1"/>
-      </Position1>
-      <Position2>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="2" Column="5" TopLine="1"/>
-      </Position2>
-      <Position3>
-        <Filename Value="structureparameters.pas"/>
-        <Caret Line="2" Column="2" TopLine="1"/>
-      </Position3>
-      <Position4>
-        <Filename Value="simthyrprediction.pas"/>
-        <Caret Line="2" Column="2" TopLine="1"/>
-      </Position4>
-      <Position5>
         <Filename Value="handlenotifier.pas"/>
         <Caret Line="2" Column="5" TopLine="1"/>
-      </Position5>
-      <Position6>
+      </Position1>
+      <Position2>
         <Filename Value="sensitivityanalysis.pas"/>
         <Caret Line="2" Column="6" TopLine="1"/>
-      </Position6>
-      <Position7>
+      </Position2>
+      <Position3>
         <Filename Value="splash.pas"/>
         <Caret Line="2" Column="7" TopLine="1"/>
-      </Position7>
-      <Position8>
+      </Position3>
+      <Position4>
         <Filename Value="showaboutmodel.pas"/>
         <Caret Line="2" Column="8" TopLine="1"/>
-      </Position8>
-      <Position9>
+      </Position4>
+      <Position5>
         <Filename Value="tornado.pas"/>
         <Caret Line="2" Column="9" TopLine="1"/>
+      </Position5>
+      <Position6>
+        <Filename Value="aboutdialog.pas"/>
+        <Caret Line="2" Column="2" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="help.pas"/>
+        <Caret Line="2" Column="12" TopLine="1"/>
+      </Position7>
+      <Position8>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="403" Column="49" TopLine="392"/>
+      </Position8>
+      <Position9>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="2" Column="7" TopLine="1"/>
       </Position9>
       <Position10>
         <Filename Value="aboutdialog.pas"/>
-        <Caret Line="2" Column="2" TopLine="1"/>
+        <Caret Line="212" Column="26" TopLine="207"/>
       </Position10>
       <Position11>
-        <Filename Value="help.pas"/>
-        <Caret Line="2" Column="12" TopLine="1"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="100" Column="30" TopLine="82"/>
       </Position11>
       <Position12>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="403" Column="49" TopLine="392"/>
+        <Filename Value="aboutdialog.pas"/>
+        <Caret Line="212" Column="26" TopLine="207"/>
       </Position12>
       <Position13>
-        <Filename Value="SimThyr.lpr"/>
-        <Caret Line="2" Column="7" TopLine="1"/>
+        <Filename Value="aboutdialog.pas"/>
+        <Caret Line="2" Column="1" TopLine="1"/>
       </Position13>
       <Position14>
         <Filename Value="aboutdialog.pas"/>
-        <Caret Line="212" Column="26" TopLine="207"/>
+        <Caret Line="160" Column="80" TopLine="145"/>
       </Position14>
       <Position15>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="100" Column="30" TopLine="82"/>
+        <Filename Value="aboutdialog.pas"/>
+        <Caret Line="256" Column="49" TopLine="228"/>
       </Position15>
       <Position16>
         <Filename Value="aboutdialog.pas"/>
-        <Caret Line="212" Column="26" TopLine="207"/>
+        <Caret Line="268" Column="35" TopLine="239"/>
       </Position16>
       <Position17>
-        <Filename Value="aboutdialog.pas"/>
+        <Filename Value="splash.pas"/>
         <Caret Line="2" Column="1" TopLine="1"/>
       </Position17>
       <Position18>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="160" Column="80" TopLine="145"/>
+        <Filename Value="splash.pas"/>
+        <Caret Line="23" Column="82" TopLine="1"/>
       </Position18>
       <Position19>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="256" Column="49" TopLine="228"/>
+        <Filename Value="splash.pas"/>
+        <Caret Line="52" Column="60" TopLine="42"/>
       </Position19>
       <Position20>
         <Filename Value="aboutdialog.pas"/>
-        <Caret Line="268" Column="35" TopLine="239"/>
+        <Caret Line="167" Column="54" TopLine="139"/>
       </Position20>
       <Position21>
         <Filename Value="splash.pas"/>
-        <Caret Line="2" Column="1" TopLine="1"/>
+        <Caret Line="70" Column="54" TopLine="42"/>
       </Position21>
       <Position22>
-        <Filename Value="splash.pas"/>
-        <Caret Line="23" Column="82" TopLine="1"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="99" Column="67" TopLine="53"/>
       </Position22>
       <Position23>
-        <Filename Value="splash.pas"/>
-        <Caret Line="52" Column="60" TopLine="42"/>
+        <Filename Value="help.pas"/>
+        <Caret Line="2" Column="1" TopLine="1"/>
       </Position23>
       <Position24>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="167" Column="54" TopLine="139"/>
+        <Filename Value="help.pas"/>
+        <Caret Line="59" Column="53" TopLine="52"/>
       </Position24>
       <Position25>
-        <Filename Value="splash.pas"/>
-        <Caret Line="70" Column="54" TopLine="42"/>
+        <Filename Value="aboutdialog.pas"/>
+        <Caret Line="275" Column="70" TopLine="266"/>
       </Position25>
       <Position26>
         <Filename Value="simthyrservices.pas"/>
-        <Caret Line="99" Column="67" TopLine="53"/>
+        <Caret Line="102" Column="58" TopLine="89"/>
       </Position26>
       <Position27>
-        <Filename Value="help.pas"/>
-        <Caret Line="2" Column="1" TopLine="1"/>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="138" Column="23" TopLine="109"/>
       </Position27>
       <Position28>
-        <Filename Value="help.pas"/>
-        <Caret Line="59" Column="53" TopLine="52"/>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="387" Column="10" TopLine="384"/>
       </Position28>
       <Position29>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="275" Column="70" TopLine="266"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="58" Column="27" TopLine="41"/>
       </Position29>
       <Position30>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="102" Column="58" TopLine="89"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="797" Column="18" TopLine="773"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
