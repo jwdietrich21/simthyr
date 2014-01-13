@@ -58,7 +58,6 @@ begin
   Application.CreateForm(TSimThyrToolbar, SimThyrToolbar);
   SimThyrToolbar.SetPosition;
   if splashflag then SplashScreen.Update;
-  {Application.MainFormOnTaskbar := True;}
   Application.BringToFront;
   Application.CreateForm(TAboutWindow, AboutWindow);
   AboutWindow.Hide;
@@ -129,7 +128,6 @@ begin
     SimThyrToolbar.SendToBack;
     SimulationSettings.ShowOnTop;
     SimulationSettings.SetFocus;
-    {SimulationSettings.FormStyle := fsSystemStayOnTop;}
   end
   else SimulationSettings.hide;
   gStartup := false;
