@@ -518,7 +518,7 @@ object SplashScreen: TSplashScreen
     Height = 14
     Top = 130
     Width = 82
-    Caption = '© 1994 – 2013'
+    Caption = '© 1994 – 2014'
     Font.Height = -11
     Font.Pitch = fpVariable
     ParentColor = False
