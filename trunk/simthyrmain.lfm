@@ -316,7 +316,7 @@ object SimThyrToolbar: TSimThyrToolbar
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.0.14.0'
+  LCLVersion = '1.2.0.3'
   Visible = True
   WindowState = wsMaximized
   object ToolBar1: TToolBar
@@ -509,10 +509,10 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object Label1: TLabel
-    Left = 608
-    Height = 17
+    Left = 609
+    Height = 16
     Top = 5
-    Width = 52
+    Width = 51
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'SimThyr'

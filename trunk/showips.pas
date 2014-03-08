@@ -20,7 +20,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, clipbrd, Menus, SimThyrTypes, SimThyrServices, StructureParameters;
+  ExtCtrls, clipbrd, Menus, LCLVersion,
+  SimThyrTypes, SimThyrServices, StructureParameters;
 
 type
 
@@ -86,9 +87,10 @@ begin
     try
       theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
       theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
-        {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
-      theFilterIndex := theFilterIndex + 1;
-       {$ENDIF}{may be removed in future versions}
+        {$IFDEF LCLcarbon}{compensates for a bug in older version of carbon widgetset}
+          if (lcl_major < 2) and (lcl_minor < 2) then
+            theFilterIndex := theFilterIndex + 1;
+       {$ENDIF}
       if theFilterIndex = 8 then
         bell
       else

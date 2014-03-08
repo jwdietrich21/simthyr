@@ -5,18 +5,18 @@ LazarusResources.Add('TIPSForm','FORMDATA',[
   +'Width'#3#20#2#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0#7'Anchors'#11#5'akTo'
   +'p'#8'akBottom'#0#7'Caption'#6#3'IPS'#12'ClientHeight'#3'$'#3#11'ClientWidth'
   +#3#20#2#5'Color'#7#7'clWhite'#10'OnActivate'#7#12'FormActivate'#8'OnCreate'#7
-  +#10'FormCreate'#10'LCLVersion'#6#8'1.0.14.0'#7'Visible'#9#0#6'TImage'#6'Imag'
-  +'e1'#4'Left'#2#16#6'Height'#3#6#3#4'Hint'#6'8The information processing stru'
-  +'cture (IPS) of this model'#3'Top'#2#16#5'Width'#3#247#1#7'Anchors'#11#5'akT'
-  +'op'#6'akLeft'#7'akRight'#8'akBottom'#0#8'AutoSize'#9#6'Center'#9#7'OnClick'
-  +#7#11'Image1Click'#14'ParentShowHint'#8#12'Picture.Data'#10' '#151#1#0#23'TP'
-  +'ortableNetworkGraphic'#4#151#1#0#137'PNG'#13#10#26#10#0#0#0#13'IHDR'#0#0#2
-  +#207#0#0#4#0#8#2#0#0#0#145'~#'#187#0#0#0'#tEXtSoftware'#0'GraphicConverter ('
-  +'PowerPC)'#182#166's'#161#0#1#150#156'IDATx'#156#236#220#223'KSQ'#0#192#241
-  +'='#8#254#11#154#216#131#190#181'^Bl'#132#228'2F'#177#24#145#11#145'b'#136#16
-  +'"Y'#216'hEe'#166#246'k'#21'B'#162'O'#17'5{'#136'~'#140#136#146#213'KQ'#15#25
-  +'m'#172#208'D0s'#201#208#153'h\'#161#197#28#173#217#218#245#199'<w{'#168#135
-  +']'#189#233#247#243#180's'#182#157'{'#239#219#151'{w'#166'K'#0#0#0#168'I'#183
+  +#10'FormCreate'#10'LCLVersion'#6#7'1.2.0.3'#7'Visible'#9#0#6'TImage'#6'Image'
+  +'1'#4'Left'#2#16#6'Height'#3#6#3#4'Hint'#6'8The information processing struc'
+  +'ture (IPS) of this model'#3'Top'#2#16#5'Width'#3#247#1#7'Anchors'#11#5'akTo'
+  +'p'#6'akLeft'#7'akRight'#8'akBottom'#0#8'AutoSize'#9#6'Center'#9#7'OnClick'#7
+  +#11'Image1Click'#14'ParentShowHint'#8#12'Picture.Data'#10' '#151#1#0#23'TPor'
+  +'tableNetworkGraphic'#4#151#1#0#137'PNG'#13#10#26#10#0#0#0#13'IHDR'#0#0#2#207
+  +#0#0#4#0#8#2#0#0#0#145'~#'#187#0#0#0'#tEXtSoftware'#0'GraphicConverter (Powe'
+  +'rPC)'#182#166's'#161#0#1#150#156'IDATx'#156#236#220#223'KSQ'#0#192#241'='#8
+  +#254#11#154#216#131#190#181'^Bl'#132#228'2F'#177#24#145#11#145'b'#136#16'"Y'
+  +#216'hEe'#166#246'k'#21'B'#162'O'#17'5{'#136'~'#140#136#146#213'KQ'#15#25'm'
+  +#172#208'D0s'#201#208#153'h\'#161#197#28#173#217#218#245#199'<w{'#168#135']'
+  +#189#233#247#243#180's'#182#157'{'#239#219#151'{w'#166'K'#0#0#0#168'I'#183
   +#218''''#0#0#0#214'8j'#3#0#0#168#139#218#0#0#0#234#162'6'#0#0#128#186#168#13
   +#0#0#160'.j'#3#0#0#168#139#218#0#180'j'#198#187'Q'#151#148#235#242'~'#235#127
   +#243#188'Mv'#174#164#168#184#225'l'#235#252#235#203'}'#163#253#198#205#134
