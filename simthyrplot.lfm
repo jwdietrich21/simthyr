@@ -311,7 +311,7 @@ object ValuesPlot: TValuesPlot
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.0.14.0'
+  LCLVersion = '1.2.0.3'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -468,7 +468,6 @@ object ValuesPlot: TValuesPlot
         88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
         88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A8899
       }
-      NumGlyphs = 0
       OnClick = FullScaleButton1Click
       ShowHint = True
       ParentShowHint = False
@@ -650,7 +649,6 @@ object ValuesPlot: TValuesPlot
         88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
         88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A8899
       }
-      NumGlyphs = 0
       OnClick = FullScaleButton2Click
       ShowHint = True
       ParentShowHint = False

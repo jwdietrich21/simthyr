@@ -14,7 +14,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.0.14.0'
+  LCLVersion = '1.2.0.3'
   Visible = True
   object Panel1: TPanel
     Left = 48
@@ -74,6 +74,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       ShowHint = True
       object Chart1LineSeries1: TLineSeries
         LinePen.Color = clRed
+        Pointer.OverrideColor = [ocBrush]
       end
     end
   end
@@ -297,7 +298,6 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
       88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A8899
     }
-    NumGlyphs = 0
     OnClick = FullScaleButton1Click
     ShowHint = True
     ParentShowHint = False

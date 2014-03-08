@@ -24,7 +24,8 @@ uses
   SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers, ComCtrls,
   LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog, ShowAboutModel,
   StructureParameters, SimThyrPrediction, Sensitivityanalysis, tornado, help,
-  ScenarioHandler, HandlePreferences, HandleNotifier, LCLProc, StdCtrls;
+  ScenarioHandler, HandlePreferences, HandleNotifier,
+  LCLProc, StdCtrls, LCLVersion;
 
 type
 
@@ -402,7 +403,8 @@ begin
     theFileName    := OpenDialog1.FileName;
     theFilterIndex := OpenDialog1.FilterIndex;
   {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
-    theFilterIndex := theFilterIndex + 1;
+    if (lcl_major < 2) and (lcl_minor < 2) then
+      theFilterIndex := theFilterIndex + 1;
   {$ENDIF}{may be removed in future versions}
     case theFilterIndex of
       1: bell;  {unimplemented}
@@ -502,9 +504,10 @@ begin
       begin
         theFileName    := SaveDialog1.FileName;
         theFilterIndex := SaveDialog1.FilterIndex;
-          {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
-        theFilterIndex := theFilterIndex + 1;
-          {$ENDIF}{may be removed in future versions}
+          {$IFDEF LCLcarbon}{compensates for a bug in older versions of carbon widgetset}
+            if (lcl_major < 2) and (lcl_minor < 2) then
+              theFilterIndex := theFilterIndex + 1;
+          {$ENDIF}
         case theFilterIndex of
           1: theDelimiter := kTab;
           2: if DecimalSeparator = ',' then

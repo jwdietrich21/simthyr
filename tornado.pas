@@ -23,7 +23,7 @@ uses
   Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, Menus, TAGraph, TAStyles,
   TASeries, TASources, TATools, TATransformations, TALegend, TALegendPanel,
   SimThyrServices, Sensitivityanalysis, SimThyrPrediction, Clipbrd, Buttons,
-  ColorBox, TADrawerSVG, TADrawUtils, TADrawerCanvas, TANavigation;
+  ColorBox, TADrawerSVG, TADrawUtils, TADrawerCanvas, TANavigation, LCLVersion;
 
 type
 
@@ -761,9 +761,10 @@ begin
       try
         theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
         theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
-         {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
-        theFilterIndex := theFilterIndex + 1;
-         {$ENDIF}{may be removed in future versions}
+         {$IFDEF LCLcarbon}{compensates for a bug in older versions of carbon widgetset}
+           if (lcl_major < 2) and (lcl_minor < 2) then
+             theFilterIndex := theFilterIndex + 1;
+         {$ENDIF}
         case theFilterIndex of
         2: Chart1.SaveToBitmapFile(theFileName);
         3: Chart1.SaveToFile(TPixmap, theFileName);
