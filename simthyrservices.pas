@@ -7,7 +7,7 @@ unit SimThyrServices;
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2013 }
+{ (c) Ruhr University of Bochum 2005 - 2014 }
 
 { This unit provides some global functions }
 
@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, Grids, StdCtrls, Dialogs, Forms, SimThyrTypes,
-  DOM, XMLRead, FileUtil
+  SimThyrResources, DOM, XMLRead, FileUtil
       {$IFDEF win32}
   , Windows, Win32Proc
   {$ELSE}

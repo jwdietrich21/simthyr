@@ -7,7 +7,7 @@ unit tornado;
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2013 }
+{ (c) Ruhr University of Bochum 2005 - 2014 }
 
 { This unit implements a tornado plot for sensitivity analysis }
 
@@ -19,11 +19,12 @@ unit tornado;
 interface
 
 uses
-  SimThyrTypes, Classes, SysUtils, FileUtil, LResources, Forms, Controls,
-  Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, Menus, TAGraph, TAStyles,
-  TASeries, TASources, TATools, TATransformations, TALegend, TALegendPanel,
-  SimThyrServices, Sensitivityanalysis, SimThyrPrediction, Clipbrd, Buttons,
-  ColorBox, TADrawerSVG, TADrawUtils, TADrawerCanvas, TANavigation, LCLVersion;
+  SimThyrTypes, SimThyrResources, Classes, SysUtils, FileUtil, LResources,
+  Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, Menus,
+  TAGraph, TAStyles, TASeries, TASources, TATools, TATransformations, TALegend,
+  TALegendPanel, SimThyrServices, Sensitivityanalysis, SimThyrPrediction,
+  Clipbrd, Buttons, ColorBox, TADrawerSVG, TADrawUtils, TADrawerCanvas,
+  TANavigation, LCLVersion;
 
 type
 

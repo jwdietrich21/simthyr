@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, SimThyrTypes, SimThyrLog, SimThyrPlot, SimThyrPrediction,
+  StdCtrls, SimThyrTypes, SimThyrResources, SimThyrLog, SimThyrPlot, SimThyrPrediction,
   SimThyrServices, DOM, XMLRead, XMLWrite
   {$IFDEF win32}
   , Windows

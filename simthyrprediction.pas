@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, SimThyrTypes, SimThyrServices;
+  StdCtrls, SimThyrTypes, SimThyrResources, SimThyrServices;
 
 type
 

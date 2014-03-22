@@ -21,9 +21,9 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, StdCtrls, ComCtrls, ColorBox, Buttons, Menus, TAGraph, TATools,
-  TASeries, TATransformations, DateUtils, Math, SimThyrTypes, SimThyrServices,
-  HandleNotifier, Clipbrd, TAIntervalSources, TADrawerSVG, TADrawUtils,
-  TADrawerCanvas, TAStyles, TANavigation, LCLVersion;
+  TASeries, TATransformations, DateUtils, Math, SimThyrTypes, SimThyrResources,
+  SimThyrServices, HandleNotifier, Clipbrd, TAIntervalSources, TADrawerSVG,
+  TADrawUtils, TADrawerCanvas, TAStyles, TANavigation, LCLVersion;
 
 type
 

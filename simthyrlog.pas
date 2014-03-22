@@ -7,7 +7,7 @@ unit SimThyrLog;
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2013 }
+{ (c) Ruhr University of Bochum 2005 - 2014 }
 
 { This unit draws a spreadsheet-like grid with simulation results }
 
@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   Grids, clipbrd, ComCtrls, ExtCtrls, Menus,
-  SimThyrTypes, SimThyrServices, DIFSupport;
+  SimThyrTypes, SimThyrResources, SimThyrServices, DIFSupport;
 
 type
 

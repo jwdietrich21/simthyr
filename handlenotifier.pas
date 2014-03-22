@@ -7,7 +7,7 @@ unit HandleNotifier;
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2013 }
+{ (c) Ruhr University of Bochum 2005 - 2014 }
 
 { This unit draws a small notifier window that informs about simulation running }
 
@@ -28,6 +28,7 @@ type
 
   TNotice = class(TForm)
     Label1: TLabel;
+    procedure FormCreate(Sender: TObject);
   private
     { private declarations }
   public
@@ -38,6 +39,13 @@ var
   Notice: TNotice;
 
 implementation
+
+{ TNotice }
+
+procedure TNotice.FormCreate(Sender: TObject);
+begin
+  ;
+end;
 
 initialization
   {$I handlenotifier.lrs}

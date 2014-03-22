@@ -23,7 +23,7 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Classes, Forms, SyncObjs, SysUtils, SimThyrTypes, SimThyrServices, SimThyrLog,
+  Classes, Forms, SyncObjs, SysUtils, SimThyrTypes, SimThyrResources, SimThyrServices, SimThyrLog,
   SimThyrPlot, SimThyrPrediction, HandleNotifier;
 
 type
