@@ -7,7 +7,7 @@ unit SimThyrMain;
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2013 }
+{ (c) Ruhr University of Bochum 2005 - 2014 }
 
 { This unit provides global GUI functions, toolbar and menubar handling }
 
@@ -20,11 +20,11 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdActns, LCLType, Menus, ActnList, SimThyrTypes, SimOptions,
-  SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers, ComCtrls,
-  LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog, ShowAboutModel,
-  StructureParameters, SimThyrPrediction, Sensitivityanalysis, tornado, help,
-  ScenarioHandler, HandlePreferences, HandleNotifier,
+  ExtCtrls, StdActns, LCLType, Menus, ActnList, SimThyrTypes, SimThyrResources,
+  SimOptions, SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers,
+  ComCtrls, LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog,
+  ShowAboutModel, StructureParameters, SimThyrPrediction, Sensitivityanalysis,
+  tornado, help, ScenarioHandler, HandlePreferences, HandleNotifier,
   LCLProc, StdCtrls, LCLVersion;
 
 type

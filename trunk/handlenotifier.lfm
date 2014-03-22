@@ -16,9 +16,10 @@ object Notice: TNotice
   Constraints.MinHeight = 32
   Constraints.MinWidth = 300
   Font.Style = [fsBold]
+  OnCreate = FormCreate
   Position = poOwnerFormCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.0.14.0'
+  LCLVersion = '1.2.0.3'
   Visible = True
   object Label1: TLabel
     Left = 49

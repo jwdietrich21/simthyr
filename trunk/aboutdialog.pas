@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, Buttons, StdCtrls, LCLIntf, ComCtrls, SimThyrTypes,
+  ExtCtrls, Buttons, StdCtrls, LCLIntf, ComCtrls, SimThyrTypes, SimThyrResources,
   SimThyrServices, VersionSupport, DOS, HandlePreferences
   {$IFDEF win32}
   , Windows, Win32Proc

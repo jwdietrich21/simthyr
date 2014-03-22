@@ -15,7 +15,7 @@ object PreferencesDialog: TPreferencesDialog
   OnDestroy = FormDestroy
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.0.14.0'
+  LCLVersion = '1.2.0.3'
   Visible = True
   object GroupBox1: TGroupBox
     Left = 24
@@ -43,17 +43,17 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label1: TLabel
       Left = 12
-      Height = 17
+      Height = 16
       Top = 18
-      Width = 26
+      Width = 25
       Caption = 'TSH'
       ParentColor = False
     end
     object TSHMassUnitLabel: TLabel
       Left = 148
-      Height = 17
+      Height = 16
       Top = 18
-      Width = 17
+      Width = 16
       Caption = 'U/'
       ParentColor = False
     end
@@ -72,33 +72,33 @@ object PreferencesDialog: TPreferencesDialog
     end
     object TSHVolumeUnitLabel: TLabel
       Left = 252
-      Height = 17
+      Height = 16
       Top = 18
-      Width = 5
+      Width = 4
       Caption = 'l'
       ParentColor = False
     end
     object TSHExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 16
       Top = 18
-      Width = 63
+      Width = 62
       Caption = 'Example: '
       ParentColor = False
     end
     object Label2: TLabel
       Left = 12
-      Height = 17
+      Height = 16
       Top = 46
-      Width = 26
+      Width = 25
       Caption = 'TT4'
       ParentColor = False
     end
     object TT4ExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 16
       Top = 46
-      Width = 63
+      Width = 62
       Caption = 'Example: '
       ParentColor = False
     end
@@ -128,49 +128,49 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label3: TLabel
       Left = 12
-      Height = 17
+      Height = 16
       Top = 78
-      Width = 24
+      Width = 23
       Caption = 'FT4'
       ParentColor = False
     end
     object FT4ExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 16
       Top = 78
-      Width = 63
+      Width = 62
       Caption = 'Example: '
       ParentColor = False
     end
     object Label4: TLabel
       Left = 12
-      Height = 17
+      Height = 16
       Top = 110
-      Width = 26
+      Width = 25
       Caption = 'TT3'
       ParentColor = False
     end
     object TT3ExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 16
       Top = 110
-      Width = 63
+      Width = 62
       Caption = 'Example: '
       ParentColor = False
     end
     object Label5: TLabel
       Left = 12
-      Height = 17
+      Height = 16
       Top = 142
-      Width = 24
+      Width = 23
       Caption = 'FT3'
       ParentColor = False
     end
     object FT3ExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 16
       Top = 142
-      Width = 63
+      Width = 62
       Caption = 'Example: '
       ParentColor = False
     end
@@ -185,17 +185,17 @@ object PreferencesDialog: TPreferencesDialog
     end
     object TT4VolumeUnitLabel: TLabel
       Left = 252
-      Height = 17
+      Height = 16
       Top = 46
-      Width = 5
+      Width = 4
       Caption = 'l'
       ParentColor = False
     end
     object Label6: TLabel
       Left = 188
-      Height = 17
+      Height = 16
       Top = 46
-      Width = 8
+      Width = 7
       Caption = '/'
       ParentColor = False
     end
@@ -229,9 +229,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label7: TLabel
       Left = 188
-      Height = 17
+      Height = 16
       Top = 78
-      Width = 8
+      Width = 7
       Caption = '/'
       ParentColor = False
     end
@@ -250,9 +250,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object FT4VolumeUnitLabel: TLabel
       Left = 252
-      Height = 17
+      Height = 16
       Top = 78
-      Width = 5
+      Width = 4
       Caption = 'l'
       ParentColor = False
     end
@@ -286,9 +286,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label8: TLabel
       Left = 188
-      Height = 17
+      Height = 16
       Top = 110
-      Width = 8
+      Width = 7
       Caption = '/'
       ParentColor = False
     end
@@ -307,9 +307,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object TT3VolumeUnitLabel: TLabel
       Left = 252
-      Height = 17
+      Height = 16
       Top = 110
-      Width = 5
+      Width = 4
       Caption = 'l'
       ParentColor = False
     end
@@ -343,9 +343,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label10: TLabel
       Left = 188
-      Height = 17
+      Height = 16
       Top = 142
-      Width = 8
+      Width = 7
       Caption = '/'
       ParentColor = False
     end
@@ -364,9 +364,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object FT3VolumeUnitLabel: TLabel
       Left = 252
-      Height = 17
+      Height = 16
       Top = 142
-      Width = 5
+      Width = 4
       Caption = 'l'
       ParentColor = False
     end
@@ -394,17 +394,17 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label11: TLabel
       Left = 12
-      Height = 17
+      Height = 16
       Top = 13
-      Width = 58
+      Width = 57
       Caption = 'Numbers'
       ParentColor = False
     end
     object NumberFormatExampleLabel: TLabel
       Left = 278
-      Height = 17
+      Height = 16
       Top = 13
-      Width = 63
+      Width = 62
       Caption = 'Example: '
       ParentColor = False
     end
@@ -421,9 +421,9 @@ object PreferencesDialog: TPreferencesDialog
     end
     object Label12: TLabel
       Left = 12
-      Height = 17
+      Height = 16
       Top = 43
-      Width = 32
+      Width = 31
       Caption = 'Time'
       ParentColor = False
     end
