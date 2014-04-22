@@ -16,6 +16,8 @@ program SimThyr;
 {$mode objfpc}{$H+}{$R+}
 {$define UseCThreads}
 
+{ $DEFINE debug}
+
 uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
@@ -26,13 +28,22 @@ uses
   AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
   SimOptions, VersionSupport, ScenarioHandler, HandlePreferences,
   HandleNotifier, Sensitivityanalysis, tornado, DIFSupport, help,
-SimThyrResources;
+  SimThyrResources
+  {$IFDEF debug}
+  , SysUtils
+  {$ENDIF}
+  ;
 
 {{$IFDEF WINDOWS}{$R SimThyr.rc}{$ENDIF}}
 
 {$R *.res}
 
 begin
+  {$IFDEF debug}
+  if FileExists('heaptrace.trc') then
+    DeleteFile('heaptrace.trc');
+  SetHeapTraceOutput('heaptrace.trc');
+  {$ENDIF}
   Application.Initialize;
   splashflag := true; {for debugging}
   showSettingsAtStartup := true;
