@@ -38,7 +38,7 @@ const
 
   EXAMPLE_STRING = 'Example: ';
   NEGATIVE_VALUES_HINT = 'Negative values represent virtual solutions delivered by equilibrium polynomials.';
-  DEVIATION_STRING = 'Small deviations may result from transition effects and rounding.';
+  DEVIATION_STRING = 'Small deviations between predictions and simulated values may result from temporal dynamics including circadian and ultradian rhythms, transition effects and rounding.';
 
   CHANGE_IN_STRING = 'Change in ';
   DEPENDEND_VAR_STRING = 'dependent variable';
