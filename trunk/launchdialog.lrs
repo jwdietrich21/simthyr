@@ -1,83 +1,83 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TSimulationSettings','FORMDATA',[
-  'TPF0'#19'TSimulationSettings'#18'SimulationSettings'#4'Left'#3#188#1#6'Heigh'
-  +'t'#3#144#1#4'Hint'#6'-Enter basic settings for the simulation here.'#3'Top'
-  +#3#250#0#5'Width'#3'0'#2#21'HorzScrollBar.Visible'#8#21'VertScrollBar.Visibl'
-  +'e'#8#13'ActiveControl'#7#11'RunTimeEdit'#15'AlphaBlendValue'#3#220#0#7'Anch'
-  +'ors'#11#0#11'BorderIcons'#11#0#11'BorderStyle'#7#8'bsDialog'#7'Caption'#6#19
-  +'Simulation Settings'#12'ClientHeight'#3#144#1#11'ClientWidth'#3'0'#2#5'Colo'
-  +'r'#7#7'clWhite'#21'Constraints.MinHeight'#3#134#1#20'Constraints.MinWidth'#3
-  +'0'#2#10'Font.Pitch'#7#10'fpVariable'#8'OnCreate'#7#10'FormCreate'#12'OnDeac'
-  +'tivate'#7#14'FormDeactivate'#14'OnMouseWheelUp'#7#16'FormMouseWheelUp'#6'On'
-  +'Show'#7#8'FormShow'#8'Position'#7#14'poScreenCenter'#8'ShowHint'#9#13'ShowI'
-  +'nTaskBar'#7#7'stNever'#10'LCLVersion'#6#8'1.0.14.0'#7'Visible'#9#0#6'TLabel'
-  +#6'Label1'#4'Left'#2'`'#6'Height'#2#17#3'Top'#2#16#5'Width'#3'!'#1#7'Caption'
-  +#6'+Simulation of thyrotropic feedback control:'#10'Font.Style'#11#6'fsBold'
-  +#0#11'ParentColor'#8#10'ParentFont'#8#0#0#9'TGroupBox'#9'GroupBox1'#4'Left'#2
+  'TPF0'#19'TSimulationSettings'#18'SimulationSettings'#4'Left'#3#230#1#6'Heigh'
+  +'t'#3#145#1#4'Hint'#6'-Enter basic settings for the simulation here.'#3'Top'
+  +#3'D'#1#5'Width'#3'0'#2#21'HorzScrollBar.Visible'#8#21'VertScrollBar.Visible'
+  +#8#13'ActiveControl'#7#11'RunTimeEdit'#15'AlphaBlendValue'#3#220#0#7'Anchors'
+  +#11#0#11'BorderIcons'#11#0#11'BorderStyle'#7#8'bsDialog'#7'Caption'#6#19'Sim'
+  +'ulation Settings'#12'ClientHeight'#3#145#1#11'ClientWidth'#3'0'#2#5'Color'#7
+  +#7'clWhite'#21'Constraints.MinHeight'#3#134#1#20'Constraints.MinWidth'#3'0'#2
+  +#10'Font.Pitch'#7#10'fpVariable'#8'OnCreate'#7#10'FormCreate'#12'OnDeactivat'
+  +'e'#7#14'FormDeactivate'#14'OnMouseWheelUp'#7#16'FormMouseWheelUp'#6'OnShow'
+  +#7#8'FormShow'#8'Position'#7#14'poScreenCenter'#8'ShowHint'#9#13'ShowInTaskB'
+  +'ar'#7#7'stNever'#10'LCLVersion'#6#7'1.2.2.0'#7'Visible'#9#0#6'TLabel'#6'Lab'
+  +'el1'#4'Left'#2'`'#6'Height'#2#13#3'Top'#2#16#5'Width'#3#241#0#7'Caption'#6
+  +'+Simulation of thyrotropic feedback control:'#10'Font.Style'#11#6'fsBold'#0
+  +#11'ParentColor'#8#10'ParentFont'#8#0#0#9'TGroupBox'#9'GroupBox1'#4'Left'#2
   +#16#6'Height'#2'P'#3'Top'#2'X'#5'Width'#3#19#2#7'Anchors'#11#5'akTop'#6'akLe'
   +'ft'#7'akRight'#0#18'BorderSpacing.Left'#2#1#17'BorderSpacing.Top'#2#1#19'Bo'
-  +'rderSpacing.Right'#2#1#20'BorderSpacing.Bottom'#2#1#12'ClientHeight'#2'I'#11
-  +'ClientWidth'#3#11#2#5'Color'#7#7'clWhite'#11'ParentColor'#8#8'TabOrder'#2#0
-  +#0#5'TEdit'#11'RunTimeEdit'#4'Left'#2'N'#6'Height'#2#22#4'Hint'#6'0Enter a n'
-  +'umeric value for duration of simulation'#3'Top'#2#17#5'Width'#2'P'#9'Alignm'
+  +'rderSpacing.Right'#2#1#20'BorderSpacing.Bottom'#2#1#12'ClientHeight'#2'>'#11
+  +'ClientWidth'#3#15#2#5'Color'#7#7'clWhite'#11'ParentColor'#8#8'TabOrder'#2#0
+  +#0#5'TEdit'#11'RunTimeEdit'#4'Left'#2'N'#6'Height'#2#21#4'Hint'#6'0Enter a n'
+  +'umeric value for duration of simulation'#3'Top'#2#14#5'Width'#2'P'#9'Alignm'
   +'ent'#7#14'taRightJustify'#7'Anchors'#11#6'akLeft'#0#8'OnChange'#7#17'RunTim'
   +'eEditChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#4'Text'#6#1
-  +'1'#0#0#12'TRadioButton'#15'RunSecondsRadio'#4'Left'#3#192#0#6'Height'#2#18#4
-  +'Hint'#6'4Designate the number entered in the left as seconds.'#3'Top'#2#17#5
-  +'Width'#2'H'#7'Anchors'#11#6'akLeft'#0#7'Caption'#6#7'Seconds'#8'OnChange'#7
+  +'1'#0#0#12'TRadioButton'#15'RunSecondsRadio'#4'Left'#3#192#0#6'Height'#2#17#4
+  +'Hint'#6'4Designate the number entered in the left as seconds.'#3'Top'#2#14#5
+  +'Width'#2'<'#7'Anchors'#11#6'akLeft'#0#7'Caption'#6#7'Seconds'#8'OnChange'#7
   +#21'RunSecondsRadioChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1
-  +#0#0#12'TRadioButton'#15'RunMinutesRadio'#4'Left'#3'N'#1#6'Height'#2#18#4'Hi'
-  +'nt'#6'4Designate the number entered in the left as minutes.'#3'Top'#2#17#5
-  +'Width'#2'F'#7'Anchors'#11#6'akLeft'#0#7'Caption'#6#7'Minutes'#8'OnChange'#7
+  +#0#0#12'TRadioButton'#15'RunMinutesRadio'#4'Left'#3'N'#1#6'Height'#2#17#4'Hi'
+  +'nt'#6'4Designate the number entered in the left as minutes.'#3'Top'#2#14#5
+  +'Width'#2'7'#7'Anchors'#11#6'akLeft'#0#7'Caption'#6#7'Minutes'#8'OnChange'#7
   +#21'RunMinutesRadioChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2
-  +#0#0#12'TRadioButton'#13'RunHoursRadio'#4'Left'#3#192#0#6'Height'#2#18#4'Hin'
-  +'t'#6'2Designate the number entered in the left as hours.'#3'Top'#2'+'#5'Wid'
-  +'th'#2':'#7'Anchors'#11#6'akLeft'#0#7'Caption'#6#5'Hours'#8'OnChange'#7#19'R'
+  +#0#0#12'TRadioButton'#13'RunHoursRadio'#4'Left'#3#192#0#6'Height'#2#17#4'Hin'
+  +'t'#6'2Designate the number entered in the left as hours.'#3'Top'#2'$'#5'Wid'
+  +'th'#2'.'#7'Anchors'#11#6'akLeft'#0#7'Caption'#6#5'Hours'#8'OnChange'#7#19'R'
   +'unHoursRadioChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#0#0
-  +#12'TRadioButton'#12'RunDaysRadio'#4'Left'#3'N'#1#6'Height'#2#18#4'Hint'#6'1'
-  +'Designate the number entered in the left as days.'#3'Top'#2'+'#5'Width'#2'3'
+  +#12'TRadioButton'#12'RunDaysRadio'#4'Left'#3'N'#1#6'Height'#2#17#4'Hint'#6'1'
+  +'Designate the number entered in the left as days.'#3'Top'#2'$'#5'Width'#2'*'
   +#7'Anchors'#11#6'akLeft'#0#7'Caption'#6#4'Days'#7'Checked'#9#8'OnChange'#7#18
   +'RunDaysRadioChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#7'Ta'
   +'bStop'#9#0#0#0#9'TGroupBox'#9'GroupBox2'#4'Left'#2#16#6'Height'#2'x'#4'Hint'
   +#6#30'Additional scheduled functions'#3'Top'#3#208#0#5'Width'#3#19#2#7'Ancho'
   +'rs'#11#5'akTop'#6'akLeft'#7'akRight'#0#18'BorderSpacing.Left'#2#1#17'Border'
   +'Spacing.Top'#2#1#19'BorderSpacing.Right'#2#1#20'BorderSpacing.Bottom'#2#1#12
-  +'ClientHeight'#2'q'#11'ClientWidth'#3#11#2#5'Color'#7#7'clWhite'#11'ParentCo'
+  +'ClientHeight'#2'f'#11'ClientWidth'#3#15#2#5'Color'#7#7'clWhite'#11'ParentCo'
   +'lor'#8#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#0#12'TRadioButton'
-  +#12'TestOffRadio'#4'Left'#3#192#0#6'Height'#2#18#4'Hint'#6#14'No test signal'
-  +#3'Top'#2#8#5'Width'#2'('#7'Caption'#6#3'Off'#7'Checked'#9#14'ParentShowHint'
+  +#12'TestOffRadio'#4'Left'#3#192#0#6'Height'#2#17#4'Hint'#6#14'No test signal'
+  +#3'Top'#2#8#5'Width'#2' '#7'Caption'#6#3'Off'#7'Checked'#9#14'ParentShowHint'
   +#8#8'ShowHint'#9#8'TabOrder'#2#2#7'TabStop'#9#0#0#12'TRadioButton'#12'TestTR'
-  +'HRadio'#4'Left'#3#14#1#6'Height'#2#18#4'Hint'#6#18'Simulates TRH test'#3'To'
-  +'p'#2#8#5'Width'#2'`'#7'Caption'#6#11'200 '#194#181'g TRH'#8'OnChange'#7#18
+  +'HRadio'#4'Left'#3#14#1#6'Height'#2#17#4'Hint'#6#18'Simulates TRH test'#3'To'
+  +'p'#2#8#5'Width'#2'M'#7'Caption'#6#11'200 '#194#181'g TRH'#8'OnChange'#7#18
   +'TestTRHRadioChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#0#0
-  +#12'TRadioButton'#12'TestTBGRadio'#4'Left'#3'|'#1#6'Height'#2#18#4'Hint'#6'H'
+  +#12'TRadioButton'#12'TestTBGRadio'#4'Left'#3'|'#1#6'Height'#2#17#4'Hint'#6'H'
   +'Simulates a rise in thyroxine binding globulin level, e. g. in pregnancy'#3
-  +'Top'#2#8#5'Width'#2'f'#7'Caption'#6#12'50% TBG rise'#8'OnChange'#7#18'TestT'
+  +'Top'#2#8#5'Width'#2'R'#7'Caption'#6#12'50% TBG rise'#8'OnChange'#7#18'TestT'
   +'BGRadioChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#0#0#5'TEd'
-  +'it'#12'TestTimeEdit'#4'Left'#2'N'#6'Height'#2#22#4'Hint'#6'.Enter a numeric'
-  +' value for begin of test signal'#3'Top'#2'1'#5'Width'#2'P'#9'Alignment'#7#14
+  +'it'#12'TestTimeEdit'#4'Left'#2'N'#6'Height'#2#21#4'Hint'#6'.Enter a numeric'
+  +' value for begin of test signal'#3'Top'#2','#5'Width'#2'P'#9'Alignment'#7#14
   +'taRightJustify'#7'Anchors'#11#6'akLeft'#0#14'ParentShowHint'#8#8'ShowHint'#9
   +#8'TabOrder'#2#3#4'Text'#6#1'0'#0#0#11'TRadioGroup'#14'TestRadioGroup'#4'Lef'
-  +'t'#3#177#0#6'Height'#2'@'#3'Top'#2''''#5'Width'#3'G'#1#7'Anchors'#11#6'akLe'
-  +'ft'#0#8'AutoFill'#9#28'ChildSizing.LeftRightSpacing'#2#13#28'ChildSizing.To'
-  +'pBottomSpacing'#2#6#27'ChildSizing.VerticalSpacing'#2#11#29'ChildSizing.Enl'
-  +'argeHorizontal'#7#24'crsHomogenousChildResize'#27'ChildSizing.EnlargeVertic'
-  +'al'#7#24'crsHomogenousChildResize'#28'ChildSizing.ShrinkHorizontal'#7#14'cr'
-  +'sScaleChilds'#26'ChildSizing.ShrinkVertical'#7#14'crsScaleChilds'#18'ChildS'
-  ,'izing.Layout'#7#29'cclLeftToRightThenTopToBottom'#27'ChildSizing.ControlsPe'
-  +'rLine'#2#2#12'ClientHeight'#2'9'#11'ClientWidth'#3'?'#1#7'Columns'#2#2#13'I'
-  +'tems.Strings'#1#6#7'Seconds'#6#7'Minutes'#6#5'Hours'#6#4'Days'#0#8'TabOrder'
+  +'t'#3#177#0#6'Height'#2'@'#3'Top'#2' '#5'Width'#3'G'#1#7'Anchors'#11#6'akLef'
+  +'t'#0#8'AutoFill'#9#28'ChildSizing.LeftRightSpacing'#2#13#28'ChildSizing.Top'
+  +'BottomSpacing'#2#6#27'ChildSizing.VerticalSpacing'#2#11#29'ChildSizing.Enla'
+  +'rgeHorizontal'#7#24'crsHomogenousChildResize'#27'ChildSizing.EnlargeVertica'
+  +'l'#7#24'crsHomogenousChildResize'#28'ChildSizing.ShrinkHorizontal'#7#14'crs'
+  +'ScaleChilds'#26'ChildSizing.ShrinkVertical'#7#14'crsScaleChilds'#18'ChildSi'
+  ,'zing.Layout'#7#29'cclLeftToRightThenTopToBottom'#27'ChildSizing.ControlsPer'
+  +'Line'#2#2#12'ClientHeight'#2'.'#11'ClientWidth'#3'C'#1#7'Columns'#2#2#13'It'
+  +'ems.Strings'#1#6#7'Seconds'#6#7'Minutes'#6#5'Hours'#6#4'Days'#0#8'TabOrder'
   +#2#4#0#0#0#7'TButton'#9'OptButton'#4'Left'#2#16#6'Height'#2#25#4'Hint'#6#29
-  +'Additional simulation options'#3'Top'#3'b'#1#5'Width'#3#152#0#7'Anchors'#11
+  +'Additional simulation options'#3'Top'#3'c'#1#5'Width'#3#152#0#7'Anchors'#11
   +#6'akLeft'#8'akBottom'#0#7'Caption'#6#21'Additional Options...'#7'OnClick'#7
   +#14'OptButtonClick'#10'OnKeyPress'#7#17'OptButtonKeyPress'#7'OnKeyUp'#7#14'O'
   +'ptButtonKeyUp'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#0#0#7'TBu'
   +'tton'#11'StartButton'#4'Left'#3#216#1#6'Height'#2#25#4'Hint'#6#14'Run simul'
-  +'ation'#3'Top'#3'b'#1#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#7
+  +'ation'#3'Top'#3'c'#1#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#7
   +'Caption'#6#5'Start'#7'Default'#9#11'ModalResult'#2#1#7'OnClick'#7#16'StartB'
   +'uttonClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#0#0#7'TButto'
-  +'n'#12'CancelButton'#4'Left'#3#128#1#6'Height'#2#25#3'Top'#3'b'#1#5'Width'#2
+  +'n'#12'CancelButton'#4'Left'#3#128#1#6'Height'#2#25#3'Top'#3'c'#1#5'Width'#2
   +'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#6'Cancel'#9#7'Caption'#6#6'Cancel'
   +#11'ModalResult'#2#2#7'OnClick'#7#17'CancelButtonClick'#8'TabOrder'#2#4#0#0#6
   +'TImage'#6'Image1'#4'Left'#2' '#6'Height'#2' '#3'Top'#2#8#5'Width'#2' '#7'On'
@@ -292,12 +292,12 @@ LazarusResources.Add('TSimulationSettings','FORMDATA',[
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#11'Transparent'#9#0#0#6'TLabel'#6'Label2'#4'Left'#2'`'#6
-  +'Height'#2#17#3'Top'#2'@'#5'Width'#2'c'#7'Caption'#6#15'Simulated time:'#11
+  +'Height'#2#13#3'Top'#2'@'#5'Width'#2'G'#7'Caption'#6#15'Simulated time:'#11
   +'ParentColor'#8#7'OnClick'#7#11'Label2Click'#0#0#6'TLabel'#6'Label3'#4'Left'
-  +#2'`'#6'Height'#2#17#3'Top'#3#184#0#5'Width'#2'J'#7'Caption'#6#12'Test signa'
+  +#2'`'#6'Height'#2#13#3'Top'#3#184#0#5'Width'#2'6'#7'Caption'#6#12'Test signa'
   +'l:'#11'ParentColor'#8#7'OnClick'#7#11'Label2Click'#0#0#7'TButton'#10'ParsBu'
   +'tton'#4'Left'#3#176#0#6'Height'#2#25#4'Hint'#6#28'Modify structure pareamet'
-  +'ers'#3'Top'#3'b'#1#5'Width'#3#168#0#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7
+  +'ers'#3'Top'#3'c'#1#5'Width'#3#168#0#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7
   +'Caption'#6#23'Structure Parameters...'#7'OnClick'#7#15'ParsButtonClick'#14
   +'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#0#0#0
 ]);

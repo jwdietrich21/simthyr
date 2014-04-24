@@ -1,9 +1,9 @@
 object SplashScreen: TSplashScreen
   Cursor = crAppStart
-  Left = 637
-  Height = 299
-  Top = 133
-  Width = 425
+  Left = 394
+  Height = 298
+  Top = 342
+  Width = 443
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   AlphaBlend = True
@@ -13,13 +13,13 @@ object SplashScreen: TSplashScreen
   BorderStyle = bsDialog
   BorderWidth = 1
   Caption = 'SimThyr...'
-  ClientHeight = 299
-  ClientWidth = 425
+  ClientHeight = 298
+  ClientWidth = 443
   Color = 15132390
   OnCreate = FormCreate
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.0.14.0'
+  LCLVersion = '1.2.2.0'
   Visible = True
   object Image1: TImage
     Left = 16
@@ -504,9 +504,9 @@ object SplashScreen: TSplashScreen
   end
   object VersionLabel: TLabel
     Left = 17
-    Height = 14
+    Height = 13
     Top = 104
-    Width = 72
+    Width = 61
     Caption = 'Version 3.2.x'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -515,9 +515,9 @@ object SplashScreen: TSplashScreen
   end
   object CopyrightLabel1: TLabel
     Left = 17
-    Height = 14
+    Height = 13
     Top = 130
-    Width = 82
+    Width = 71
     Caption = '© 1994 – 2014'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -526,9 +526,9 @@ object SplashScreen: TSplashScreen
   end
   object CopyrightLabel2: TLabel
     Left = 17
-    Height = 14
+    Height = 13
     Top = 144
-    Width = 70
+    Width = 64
     Caption = 'J. W. Dietrich'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -537,9 +537,9 @@ object SplashScreen: TSplashScreen
   end
   object CopyrightLabel3: TLabel
     Left = 17
-    Height = 14
+    Height = 13
     Top = 168
-    Width = 110
+    Width = 94
     Caption = 'In Cooperation with:'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -548,9 +548,9 @@ object SplashScreen: TSplashScreen
   end
   object CopyrightLabel4: TLabel
     Left = 17
-    Height = 14
+    Height = 13
     Top = 194
-    Width = 148
+    Width = 131
     Caption = 'Klinikum der LMU München'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -559,9 +559,9 @@ object SplashScreen: TSplashScreen
   end
   object CopyrightLabel5: TLabel
     Left = 17
-    Height = 14
+    Height = 13
     Top = 208
-    Width = 135
+    Width = 114
     Caption = 'Universitätsklinikum Ulm'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -570,9 +570,9 @@ object SplashScreen: TSplashScreen
   end
   object CopyrightLabel6: TLabel
     Left = 17
-    Height = 14
+    Height = 13
     Top = 222
-    Width = 136
+    Width = 118
     Caption = 'Ruhr-Universität Bochum'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -581,9 +581,9 @@ object SplashScreen: TSplashScreen
   end
   object CopyrightLabel7: TLabel
     Left = 17
-    Height = 14
+    Height = 13
     Top = 236
-    Width = 192
+    Width = 165
     Caption = 'Universitätsklinikum Bergmannsheil'
     Font.Height = -11
     Font.Pitch = fpVariable

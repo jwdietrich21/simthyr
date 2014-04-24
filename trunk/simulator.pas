@@ -3,7 +3,7 @@ unit Simulator;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.2.5 }
+{ Version 3.3.0 }
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -320,7 +320,10 @@ begin
            f := 1 / 86400; {Frequency of circadian rhythm of TRH secretion}
            omega := 2 * pi * f; {Angular frequency}
            chi := 2 * pi / 24 * 5;
-           circadianControl := cos(omega * t - chi);
+           if circadianflag then
+             circadianControl := cos(omega * t - chi)
+           else
+             circadianControl := 0;
            TRHi := TRH1 + 3/5 * TRHs * circadianControl * UTRH;
            TRH := TRHi + TRHe; {Total TRH is sum of internal and external TRH}
            TRH := TRH * getgauss(0.5); {Noise}

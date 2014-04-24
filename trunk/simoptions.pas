@@ -3,7 +3,7 @@ unit SimOptions;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.2.5 }
+{ Version 3.3.0 }
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -28,6 +28,7 @@ type
 
   TSimOptionsDlg = class(TForm)
     CancelButton: TButton;
+    CircadianCheckBox: TCheckBox;
     Label1: TLabel;
     Label2: TLabel;
     TRHEdit: TEdit;
@@ -35,6 +36,8 @@ type
     NoiseCheckBox: TCheckBox;
     PreviewCheckBox: TCheckBox;
     procedure CancelButtonClick(Sender: TObject);
+    procedure CircadianCheckBoxChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure NoiseCheckBoxChange(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
@@ -43,13 +46,14 @@ type
     { private declarations }
     procedure CheckNoise;
     procedure CheckPreview;
+    procedure CheckCircadian;
   public
     { public declarations }
   end; 
 
 var
   SimOptionsDlg: TSimOptionsDlg;
-  temp_noiseflag, temp_previewflag: boolean;
+  temp_noiseflag, temp_previewflag, temp_circadianflag: boolean;
 
 implementation
 
@@ -58,19 +62,19 @@ implementation
 procedure TSimOptionsDlg.CheckNoise;
 {flag for simulating noise}
 begin
-  if noiseflag then
-    NoiseCheckBox.Checked := true
-  else
-    NoiseCheckBox.Checked := false;
+  NoiseCheckBox.Checked := noiseflag;
 end;
 
 procedure TSimOptionsDlg.CheckPreview;
 {flag for beginning simulation with predicted values}
 begin
-  if previewflag then
-    PreviewCheckBox.Checked := true
-  else
-    PreviewCheckBox.Checked := false;
+   PreviewCheckBox.Checked := previewflag;
+end;
+
+procedure TSimOptionsDlg.CheckCircadian;
+{flag for beginning simulation with predicted values}
+begin
+  CircadianCheckBox.Checked := circadianflag;
 end;
 
 procedure TSimOptionsDlg.FormShow(Sender: TObject);
@@ -78,9 +82,11 @@ procedure TSimOptionsDlg.FormShow(Sender: TObject);
 begin
   temp_noiseflag := noiseflag;
   temp_previewflag := previewflag;
+  temp_circadianflag := circadianflag;
   TRHEdit.Text := FloatToStrF(TRHs, ffGeneral, 5, 2);
   CheckNoise;
   CheckPreview;
+  CheckCircadian;
   ShowOnTop;
   SetFocus;
 end;
@@ -91,13 +97,26 @@ begin
   SimOptionsDlg.Close;
 end;
 
+procedure TSimOptionsDlg.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TSimOptionsDlg.PreviewCheckBoxChange(Sender: TObject);
+{flag for beginning simulation with predicted values}
+begin
+  temp_previewflag := PreviewCheckBox.Checked;
+end;
+
 procedure TSimOptionsDlg.NoiseCheckBoxChange(Sender: TObject);
 {flag for simulating noise}
 begin
-  if NoiseCheckBox.Checked then
-    temp_noiseflag := true
-  else
-    temp_noiseflag := false;
+  temp_noiseflag := NoiseCheckBox.Checked;
+end;
+
+procedure TSimOptionsDlg.CircadianCheckBoxChange(Sender: TObject);
+begin
+  temp_circadianflag := CircadianCheckBox.Checked;
 end;
 
 procedure TSimOptionsDlg.OKButtonClick(Sender: TObject);
@@ -105,21 +124,13 @@ procedure TSimOptionsDlg.OKButtonClick(Sender: TObject);
 begin
   noiseflag := temp_noiseflag;
   previewflag := temp_previewflag;
+  circadianflag := temp_circadianflag;
   TRHs := StrToFloat(TRHEdit.Text);
   SimOptionsDlg.Close;
-end;
-
-procedure TSimOptionsDlg.PreviewCheckBoxChange(Sender: TObject);
-{flag for beginning simulation with predicted values}
-begin
-  if PreviewCheckBox.Checked then
-    temp_previewflag := true
-  else
-    temp_previewflag := false;
 end;
 
 initialization
   {$I simoptions.lrs}
 
 end.
-
+

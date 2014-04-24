@@ -3,7 +3,7 @@ unit SimThyrTypes;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.2.5 }
+{ Version 3.3.0 }
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -78,7 +78,7 @@ var
  gMessage: array[1..3] of Str255;
  gStartup: boolean;
  delt: real;
- testflag, tbgflag, signalflag, previewflag, noiseflag: boolean;
+ testflag, tbgflag, signalflag, previewflag, noiseflag, circadianflag: boolean;
  haltsim, runcommand, simready, splashflag, showSettingsAtStartup: boolean;
  TRHs, TRH1, TSH1, TSH2, TSH3, FT41, FT42, FT43: real;
  T3z1, T3z2, T3z3, T3n1, T3n2, T3n3, FT31, FT32, FT33: real;
