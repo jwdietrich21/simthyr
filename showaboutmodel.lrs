@@ -149,8 +149,8 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#8'1.0.14.0'#0#6'TLabel'
-  +#6'Label1'#4'Left'#2'8'#6'Height'#2#17#3'Top'#2'`'#5'Width'#2'N'#7'Caption'#6
+  +#0#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#7'1.2.2.0'#0#6'TLabel'#6
+  +'Label1'#4'Left'#2'8'#6'Height'#2#13#3'Top'#2'`'#5'Width'#2'E'#7'Caption'#6
   +#11'References:'#12'Font.Quality'#7#13'fqAntialiased'#10'Font.Style'#11#6'fs'
   +'Bold'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#11'TStaticText'#11'StaticTex'
   +'t2'#4'Left'#2'8'#6'Height'#2'0'#3'Top'#2#16#5'Width'#3#190#1#7'Anchors'#11#5
@@ -158,7 +158,7 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +'version 10 of the MiMe-NoCoDI model of thyrotropic feedback control propose'
   +'d by Dietrich et al. 1997 and subsequently.'#12'Font.Quality'#7#13'fqAntial'
   +'iased'#10'ParentFont'#8#8'TabOrder'#2#0#0#0#6'TLabel'#6'Label2'#6'Cursor'#7
-  +#11'crHandPoint'#4'Left'#3'!'#1#6'Height'#2#17#3'Top'#2'@'#5'Width'#3#213#0#9
+  +#11'crHandPoint'#4'Left'#3'\'#1#6'Height'#2#13#3'Top'#2'@'#5'Width'#3#154#0#9
   +'Alignment'#7#14'taRightJustify'#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Capti'
   +'on'#6'!http://tfc.medical-cybernetics.de'#5'Color'#7#8'clWindow'#10'Font.Co'
   +'lor'#7#6'clNavy'#10'Font.Pitch'#7#10'fpVariable'#12'Font.Quality'#7#13'fqAn'
@@ -207,4 +207,4 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +'model. '#6'"J Clin Pathol. 2013 66(4):335-42. '#6'1doi 10.1136/jclinpath-20'
   +'12-201213. PMID 23423518.'#0#8'OnChange'#7#11'Memo1Change'#8'ReadOnly'#9#10
   +'ScrollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#1#11'WantReturns'#8#0#0#0
-]);
+]);
