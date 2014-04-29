@@ -279,109 +279,109 @@ var
   circadianControl: real;
   nmaxString, iString: string;
 begin
-  simready := false;
-  nmaxString := IntToStr(nmax);
-  while i <= nmax do
-    begin
-      iString := IntToStr(i);
-      if not haltsim then
-       begin
-         gResultMatrix[i-1, i_pos] := i;
-         gResultMatrix[i-1, t_pos] := AsTime(t);
-         gResultMatrix[i-1, TRH_pos] := TRH / UTRH;
-         gResultMatrix[i-1, pTSH_pos] := TSHz;
-         gResultMatrix[i-1, TSH_pos] := TSH;
-         gResultMatrix[i-1, TT4_pos] := T4 / UFT4;
-         gResultMatrix[i-1, FT4_pos] := FT4 / UFT4;
-         gResultMatrix[i-1, TT3_pos] := T3p / UFT3;
-         gResultMatrix[i-1, FT3_pos] := FT3 / UFT3;
-         gResultMatrix[i-1, cT3_pos] := T3z / UFT3;
-         theContents[i_pos] := iString;
-         theContents[t_pos] := FormattedTime(t);
-         theContents[TRH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TRH_pos] * gParameterFactor[TRH_pos]); {TRH}
-         theContents[pTSH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, pTSH_pos] * gParameterFactor[pTSH_pos]); {portal TSH}
-         theContents[TSH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TSH_pos] * gParameterFactor[TSH_pos]); {serum TSH}
-         theContents[TT4_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TT4_pos] * gParameterFactor[TT4_pos]); {T4}
-         theContents[FT4_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, FT4_pos] * gParameterFactor[FT4_pos]); {FT4}
-         theContents[TT3_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TT3_pos] * gParameterFactor[TT3_pos]); {T3p}
-         theContents[FT3_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, FT3_pos] * gParameterFactor[FT3_pos]); {FT3}
-         theContents[cT3_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, cT3_pos] * gParameterFactor[cT3_pos]); {T3z}
-         SimCS.Enter;
-         try
-           writeTableCells(SimThyrLogWindow.ValuesGrid, theContents);
-           if i mod 30 = 0 then
-             SetStatusBarPanel0(iString, nmaxString);
-           if nmax > 0 then
-             SimThyrLogWindow.ProgressBar1.Position := trunc(100 * i / nmax)
-           else
-             SimThyrLogWindow.ProgressBar1.Position := 100;
-           t := t + delt;
+  SimCS.Enter;
+  try
+    simready := false;
+    nmaxString := IntToStr(nmax);
+    while i <= nmax do
+      begin
+        iString := IntToStr(i);
+        if not haltsim then
+          begin
+            gResultMatrix[i-1, i_pos] := i;
+            gResultMatrix[i-1, t_pos] := AsTime(t);
+            gResultMatrix[i-1, TRH_pos] := TRH / UTRH;
+            gResultMatrix[i-1, pTSH_pos] := TSHz;
+            gResultMatrix[i-1, TSH_pos] := TSH;
+            gResultMatrix[i-1, TT4_pos] := T4 / UFT4;
+            gResultMatrix[i-1, FT4_pos] := FT4 / UFT4;
+            gResultMatrix[i-1, TT3_pos] := T3p / UFT3;
+            gResultMatrix[i-1, FT3_pos] := FT3 / UFT3;
+            gResultMatrix[i-1, cT3_pos] := T3z / UFT3;
+            theContents[i_pos] := iString;
+            theContents[t_pos] := FormattedTime(t);
+            theContents[TRH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TRH_pos] * gParameterFactor[TRH_pos]); {TRH}
+            theContents[pTSH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, pTSH_pos] * gParameterFactor[pTSH_pos]); {portal TSH}
+            theContents[TSH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TSH_pos] * gParameterFactor[TSH_pos]); {serum TSH}
+            theContents[TT4_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TT4_pos] * gParameterFactor[TT4_pos]); {T4}
+            theContents[FT4_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, FT4_pos] * gParameterFactor[FT4_pos]); {FT4}
+            theContents[TT3_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TT3_pos] * gParameterFactor[TT3_pos]); {T3p}
+            theContents[FT3_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, FT3_pos] * gParameterFactor[FT3_pos]); {FT3}
+            theContents[cT3_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, cT3_pos] * gParameterFactor[cT3_pos]); {T3z}
+            writeTableCells(SimThyrLogWindow.ValuesGrid, theContents);
+            if i mod 30 = 0 then
+              SetStatusBarPanel0(iString, nmaxString);
+            if nmax > 0 then
+              SimThyrLogWindow.ProgressBar1.Position := trunc(100 * i / nmax)
+            else
+              SimThyrLogWindow.ProgressBar1.Position := 100;
+            t := t + delt;
 {Hypothalamus:}
-           f := 1 / 86400; {Frequency of circadian rhythm of TRH secretion}
-           omega := 2 * pi * f; {Angular frequency}
-           chi := 2 * pi / 24 * 5;
-           if circadianflag then
-             circadianControl := cos(omega * t - chi)
-           else
-             circadianControl := 0;
-           TRHi := TRH1 + 3/5 * TRHs * circadianControl * UTRH;
-           TRH := TRHi + TRHe; {Total TRH is sum of internal and external TRH}
-           TRH := TRH * getgauss(0.5); {Noise}
+            f := 1 / 86400; {Frequency of circadian rhythm of TRH secretion}
+            omega := 2 * pi * f; {Angular frequency}
+            chi := 2 * pi / 24 * 5;
+            if circadianflag then
+              circadianControl := cos(omega * t - chi)
+            else
+              circadianControl := 0;
+            TRHi := TRH1 + 3/5 * TRHs * circadianControl * UTRH;
+            TRH := TRHi + TRHe; {Total TRH is sum of internal and external TRH}
+            TRH := TRH * getgauss(0.5); {Noise}
 {Pituitary:}
-           T3n := T3z / (1 + k31 * IBS);
-           T3R := GR * T3n / (dR + T3n);
-           dTSH := gH * TRH / ((dH + TRH) * (1 + LS * T3R) * (1 + SS * TSHz / (DS + TSHz)));
-           {differential quotient of secretory rate only, no degradation}
-		{Equifinal approximation: TSHz := (alphaS2 / betaS2) * dTSH;}
-           vpt10 := alphaS2 / betaS2;
-           pt1(vpt10, tpt16, x6, dTSH, TSHz);
-           TSHz := pt0(xt22, nt22, TSHz); {pituitary TSH for Brokken-Wiersinga-Prummel loop}
-           {optional: TSHz := TSHz * getgauss(0.2); {Noise}}
-           vpt10 := alphaS / betaS;
-           pt1(vpt10, tpt12, x2, dTSH, TSH);
-		{Equifinal approximation: TSH := alphaS * dTSH / betaS;}
-           TSH := pt0(xt2, nt2, TSH);
+            T3n := T3z / (1 + k31 * IBS);
+            T3R := GR * T3n / (dR + T3n);
+            dTSH := gH * TRH / ((dH + TRH) * (1 + LS * T3R) * (1 + SS * TSHz / (DS + TSHz)));
+            {differential quotient of secretory rate only, no degradation}
+	    {Equifinal approximation: TSHz := (alphaS2 / betaS2) * dTSH;}
+            vpt10 := alphaS2 / betaS2;
+            pt1(vpt10, tpt16, x6, dTSH, TSHz);
+            TSHz := pt0(xt22, nt22, TSHz); {pituitary TSH for Brokken-Wiersinga-Prummel loop}
+            {optional: TSHz := TSHz * getgauss(0.2); {Noise}}
+            vpt10 := alphaS / betaS;
+            pt1(vpt10, tpt12, x2, dTSH, TSH);
+	    {Equifinal approximation: TSH := alphaS * dTSH / betaS;}
+            TSH := pt0(xt2, nt2, TSH);
 {Thyroid:}
-           dT4 := GT * TSH / (dT + TSH);
-           vpt10 := alphaT / betaT;
-           pt1(vpt10, tpt13, x3, dT4, T4);
-		{Equifinal approximation: T4 := alphaT * dT4 / betaT;}
-           T4 := pt0(xt3, nt3, T4);
-           FT4 := T4 / (1 + k41 * TBG + k42 * TBPA);
+            dT4 := GT * TSH / (dT + TSH);
+            vpt10 := alphaT / betaT;
+            pt1(vpt10, tpt13, x3, dT4, T4);
+	    {Equifinal approximation: T4 := alphaT * dT4 / betaT;}
+            T4 := pt0(xt3, nt3, T4);
+            FT4 := T4 / (1 + k41 * TBG + k42 * TBPA);
 {5'-Deiodinase type II (central):}
-           dT3z := GD2 * FT4 / (kM2 + FT4);
-           vpt10 := alpha32 / beta32;
-           pt1(vpt10, tpt14, x4, dT3z, T3z);
-		{Equifinal approximation: T3z := alpha32 * dT3z / beta32;}
-           T3z := pt0(xt4, nt4, T3z);
+            dT3z := GD2 * FT4 / (kM2 + FT4);
+            vpt10 := alpha32 / beta32;
+            pt1(vpt10, tpt14, x4, dT3z, T3z);
+            {Equifinal approximation: T3z := alpha32 * dT3z / beta32;}
+            T3z := pt0(xt4, nt4, T3z);
 {5'-Deiodinase type I (peripheral):}
-           dT3p := GD1 * FT4 / (kM1 + FT4);
-           vpt10 := alpha31 / beta31;
-           pt1(vpt10, tpt15, x5, dT3p, T3p);
-		{Equifinal approximation: T3p := alpha31 * dT3p / beta31;}
-           FT3 := T3p / (1 + k30 * TBG);
-         finally
-           SimCS.Leave;
-           i := i + 1;
+            dT3p := GD1 * FT4 / (kM1 + FT4);
+            vpt10 := alpha31 / beta31;
+            pt1(vpt10, tpt15, x5, dT3p, T3p);
+            {Equifinal approximation: T3p := alpha31 * dT3p / beta31;}
+            FT3 := T3p / (1 + k30 * TBG);
+            i := i + 1;
 {Load:}
-           if (i > i1) and testflag then
-            begin
-              signalflag := true;
-              TRHe := UTRH * (200000 * alphaR * exp(-betaR * (t - i1 * delt)));
-            end
-            else if (i > i1) and tbgflag then
-            begin
-              signalflag := true;
-              TBG := 4.5e-7;
-            end;
-         end;
+            if (i > i1) and testflag then
+              begin
+                signalflag := true;
+                TRHe := UTRH * (200000 * alphaR * exp(-betaR * (t - i1 * delt)));
+              end
+              else if (i > i1) and tbgflag then
+              begin
+                signalflag := true;
+                TBG := 4.5e-7;
+              end;
+          end;
       end;
-    end;
-  simready := true;
-  DrawPlot(false);
-  SimThyrLogWindow.Caption := LOG_TITLE;
-  SetStatusBarPanel0(iString, nmaxString);
-  SimThyrLogWindow.ProgressBar1.Position := 0;
+    simready := true;
+    DrawPlot(false);
+    SimThyrLogWindow.Caption := LOG_TITLE;
+    SetStatusBarPanel0(iString, nmaxString);
+    SimThyrLogWindow.ProgressBar1.Position := 0;
+  finally
+    SimCS.Leave;
+  end;
 end;
 
 procedure TSimulationThread.SafeFree;  {avoids a dead-lock situation}
