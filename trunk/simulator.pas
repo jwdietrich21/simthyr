@@ -500,4 +500,26 @@ end.
 {  Electrolytes", Am. J. Med. 27, 256-77  }
 {18. Kakita, T., Laborde, N. P., Odell, W. D. (1984) "Autoregulatory  }
 {  Control of Thyrotrophin in Rabbits", Endocrinology 114: 2301-5  }
+{19. Dietrich, J. W., Tesche, A., Pickardt, C. R., Mitzdorf, U. (2004) }
+{  "Thyrotropic Feedback Control: Evidence for an Additional Ultrashort }
+{  Feedback Loop from Fractal Analysis", Cybernetics and Systems 35: }
+{  315-31 }
+{20. Dietrich JW, Stachon A, Antic B, Klein HH, Hering S. (2008) }
+{  "The AQUA-FONTIS study: protocol of a multidisciplinary, cross-sectional }
+{  and prospective longitudinal study for developing standardized diagnostics }
+{  and classification of non-thyroidal illness syndrome", BMC Endocr Disord. }
+{  8:13. doi: 10.1186/1472-6823-8-13. PMID 18851740 }
+{21. Dietrich JW, Landgrafe G, Fotiadou EH. (2012) "TSH and Thyrotropic }
+{  Agonists: Key Actors in Thyroid Homeostasis", J Thyroid Res. 2012:351864. }
+{  doi: 10.1155/2012/351864. PMID 23365787 }
+{22. Hoermann R, Midgley JE, Larisch R, Dietrich JW. (2013) "Is pituitary }
+{  TSH an adequate measure of thyroid hormone-controlled homoeostasis during }
+{  thyroxine treatment?", Eur J Endocrinol. 168(2):271-80. }
+{  doi: 10.1530/EJE-12-0819. PMID 23184912. }
+{23. Midgley JE, Hoermann R, Larisch R, Dietrich JW. (2013) "Physiological }
+{  states and functional relation between thyrotropin and free thyroxine in }
+{  thyroid health and disease: in vivo and in silico data suggest a }
+{  hierarchical model", J Clin Pathol. 66(4):335-42. }
+{  doi: 10.1136/jclinpath-2012-201213. PMID 23423518. }
+
 

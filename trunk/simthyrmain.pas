@@ -514,7 +514,7 @@ begin
           {$ENDIF}
         case theFilterIndex of
           1: theDelimiter := kTab;
-          2: if DecimalSeparator = ',' then
+          2: if DefaultFormatSettings.DecimalSeparator = ',' then
               theDelimiter := ';'
             else
               theDelimiter := ',';
