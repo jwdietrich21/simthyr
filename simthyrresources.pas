@@ -45,6 +45,17 @@ const
   DECREASE_STRING = 'decrease';
   INCREASE_STRING = 'increase';
 
+  I_LABEL = 'i';
+  TIME_LABEL = 'Time';
+  TRH_LABEL = 'Portal TRH';
+  P_TSH_LABEL = 'Pituitary TSH';
+  S_TSH_LABEL = 'Serum TSH';
+  TT4_LABEL = 'Serum total T4';
+  FT4_LABEL = 'Serum free T4';
+  TT3_LABEL = 'Serum total T3';
+  FT3_LABEL = 'Serum free T3';
+  C_T3_LABEL = 'Central T3';
+
 implementation
 
 end.

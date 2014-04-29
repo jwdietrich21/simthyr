@@ -314,6 +314,10 @@ begin
   {$ENDIF}
     application.ProcessMessages;
     Notice.Hide;
+    { Remove simulation thread, if it is no longer required: }
+    if assigned(SimThread) then
+      SimThread.SafeFree;
+    SimThread := nil;
   end;
 end;
 
@@ -621,16 +625,16 @@ end;
 
 initialization
   {$I simthyrmain.lrs}
-  gParameterLabel[i_pos]    := 'i';
-  gParameterLabel[t_pos]    := 'Time';
-  gParameterLabel[TRH_pos]  := 'Portal TRH';
-  gParameterLabel[pTSH_pos] := 'Pituitary TSH';
-  gParameterLabel[TSH_pos]  := 'Serum TSH';
-  gParameterLabel[TT4_pos]  := 'Serum total T4';
-  gParameterLabel[FT4_pos]  := 'Serum free T4';
-  gParameterLabel[TT3_pos]  := 'Serum total T3';
-  gParameterLabel[FT3_pos]  := 'Serum free T3';
-  gParameterLabel[cT3_pos]  := 'Central T3';
+  gParameterLabel[i_pos]    := I_LABEL;
+  gParameterLabel[t_pos]    := TIME_LABEL;
+  gParameterLabel[TRH_pos]  := TRH_LABEL;
+  gParameterLabel[pTSH_pos] := P_TSH_LABEL;
+  gParameterLabel[TSH_pos]  := S_TSH_LABEL;
+  gParameterLabel[TT4_pos]  := TT4_LABEL;
+  gParameterLabel[FT4_pos]  := FT4_LABEL;
+  gParameterLabel[TT3_pos]  := TT3_LABEL;
+  gParameterLabel[FT3_pos]  := FT3_LABEL;
+  gParameterLabel[cT3_pos]  := C_T3_LABEL;
   for j := i_pos to cT3_pos do
-    gParameterFactor[j] := 1;
+    gParameterFactor[j] := 1; // default values, to be changed later in program run
 end.
