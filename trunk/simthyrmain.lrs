@@ -2207,6 +2207,6 @@ LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   +'|*.svg|Alle Dateien (*)|*'#7'Options'#11#17'ofOverwritePrompt'#14'ofEnableS'
   +'izing'#12'ofViewDetail'#0#4'left'#3'0'#3#3'top'#2'('#0#0#22'TApplicationPro'
   +'perties'#22'ApplicationProperties1'#6'OnIdle'#7#10'HandleIdle'#4'left'#3#0#1
-  +#3'top'#2'('#0#0#10'TIdleTimer'#10'IdleTimer1'#8'Interval'#3#208#7#7'OnTimer'
-  +#7#15'IdleTimer1Timer'#4'left'#3#168#0#3'top'#2'('#0#0#0
+  +#3'top'#2'('#0#0#10'TIdleTimer'#10'IdleTimer1'#7'OnTimer'#7#15'IdleTimer1Tim'
+  +'er'#4'left'#3#168#0#3'top'#2'('#0#0#0
 ]);

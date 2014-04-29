@@ -149,5 +149,6 @@ begin
   Application.Run;
   if assigned(SimThread) then
     SimThread.SafeFree;
+  SimThread := nil;
 end.
 

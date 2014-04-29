@@ -2073,7 +2073,6 @@ object SimThyrToolbar: TSimThyrToolbar
     top = 40
   end
   object IdleTimer1: TIdleTimer
-    Interval = 2000
     OnTimer = IdleTimer1Timer
     left = 168
     top = 40
