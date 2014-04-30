@@ -20,8 +20,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, SimThyrTypes, SimThyrResources, SimThyrLog, SimThyrPlot, SimThyrPrediction,
-  SimThyrServices, DOM, XMLRead, XMLWrite
+  StdCtrls, SimThyrTypes, SimThyrResources, SimThyrLog, SimThyrPlot,
+  UnitConverter, SimThyrPrediction, SimThyrServices, DOM, XMLRead, XMLWrite
   {$IFDEF win32}
   , Windows
   {$ELSE}
@@ -230,7 +230,10 @@ function InterimFT4Factor:real;
 {Calculates a preliminary conversion factor}
 begin
   with PreferencesDialog do
-    result := VolumePrefixFactors[FT4_pos, FT4VolumePrefixCombo.ItemIndex] * 1e-5 * T4MassUnitFactors[FT4_pos, FT4MassUnitCombo.ItemIndex] / MassPrefixFactors[FT4_pos, FT4MassPrefixCombo.ItemIndex];
+    begin
+      result := ConvertedValue(1, T4_MOLAR_MASS, FT4MassPrefixCombo.Text + FT4MassUnitCombo.Text + '/' + FT4VolumePrefixCombo.Text + 'l', 'ng/dl');
+      result := VolumePrefixFactors[FT4_pos, FT4VolumePrefixCombo.ItemIndex] * 1e-5 * T4MassUnitFactors[FT4_pos, FT4MassUnitCombo.ItemIndex] / MassPrefixFactors[FT4_pos, FT4MassPrefixCombo.ItemIndex];
+    end;
 end;
 
 function InterimTT3Factor:real;
