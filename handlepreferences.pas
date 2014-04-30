@@ -221,7 +221,6 @@ begin
   with PreferencesDialog do
     begin
       result := 1 / ConvertedValue(1, T4_MOLAR_MASS, TT4MassPrefixCombo.Text + TT4MassUnitCombo.Text + '/' + TT4VolumePrefixCombo.Text + 'l', 'ng/dl');
-      result := VolumePrefixFactors[TT4_pos, TT4VolumePrefixCombo.ItemIndex] * 1e-5 * T4MassUnitFactors[TT4_pos, TT4MassUnitCombo.ItemIndex] / MassPrefixFactors[TT4_pos, TT4MassPrefixCombo.ItemIndex];
     end;
 end;
 
@@ -231,7 +230,6 @@ begin
   with PreferencesDialog do
     begin
       result := 1 / ConvertedValue(1, T4_MOLAR_MASS, FT4MassPrefixCombo.Text + FT4MassUnitCombo.Text + '/' + FT4VolumePrefixCombo.Text + 'l', 'ng/dl');
-      result := VolumePrefixFactors[FT4_pos, FT4VolumePrefixCombo.ItemIndex] * 1e-5 * T4MassUnitFactors[FT4_pos, FT4MassUnitCombo.ItemIndex] / MassPrefixFactors[FT4_pos, FT4MassPrefixCombo.ItemIndex];
     end;
 end;
 
@@ -241,7 +239,6 @@ begin
   with PreferencesDialog do
     begin
       result := 1 / ConvertedValue(1, T3_MOLAR_MASS, TT3MassPrefixCombo.Text + TT3MassUnitCombo.Text + '/' + TT3VolumePrefixCombo.Text + 'l', 'pg/ml');
-      result := VolumePrefixFactors[TT3_pos, TT3VolumePrefixCombo.ItemIndex] * 1e-5 * T3MassUnitFactors[TT3_pos, TT3MassUnitCombo.ItemIndex] / MassPrefixFactors[TT3_pos, TT3MassPrefixCombo.ItemIndex];
     end;
 end;
 
@@ -251,37 +248,17 @@ begin
   with PreferencesDialog do
     begin
       result := 1 / ConvertedValue(1, T3_MOLAR_MASS, FT3MassPrefixCombo.Text + FT3MassUnitCombo.Text + '/' + FT3VolumePrefixCombo.Text + 'l', 'pg/ml');
-      result := VolumePrefixFactors[FT3_pos, FT3VolumePrefixCombo.ItemIndex] * 1e-5 * T3MassUnitFactors[FT3_pos, FT3MassUnitCombo.ItemIndex] / MassPrefixFactors[FT3_pos, FT3MassPrefixCombo.ItemIndex];
     end;
 end;
 
 procedure InitHormoneConversionFactors;
 {sets labels and factors for the elements of measurement units}
 begin
-  PrefixLabel[0] := '';
-  PrefixLabel[1] := 'd';
-  PrefixLabel[2] := 'c';
-  PrefixLabel[3] := 'm';
-  PrefixLabel[4] := 'µ';
-  PrefixLabel[5] := 'n';
-  PrefixLabel[6] := 'p';
-  PrefixLabel[7] := 'f';
-  PrefixFactor[0] := 1;
-  PrefixFactor[1] := 1e-1;
-  PrefixFactor[2] := 1e-2;
-  PrefixFactor[3] := 1e-3;
-  PrefixFactor[4] := 1e-6;
-  PrefixFactor[5] := 1e-9;
-  PrefixFactor[6] := 1e-12;
-  PrefixFactor[7] := 1e-15;
-  T4UnitLabel[0] := 'g';
-  T4UnitLabel[1] := 'mol';
+  InitConversionFactors;
   T4UnitFactor[0] := 1e-3;
-  T4UnitFactor[1] := UFT4 * 1e5;
-  T3UnitLabel[0] := 'g';
-  T3UnitLabel[1] := 'mol';
+  T4UnitFactor[1] := 1 / T4_MOLAR_MASS * 1e-3;
   T3UnitFactor[0] := 1e-4;
-  T3UnitFactor[1] := UFT3 * 1e5;
+  T3UnitFactor[1] := 1 / T3_MOLAR_MASS * 1e-3;
 end;
 
 procedure SetUnits;
@@ -317,7 +294,7 @@ end;
 
 procedure SetT4MassUnitAndFactor(par1, par2: integer; theComboBox: TComboBox; position, theItem: integer);
 begin
-  theComboBox.Items.Add(T4UnitLabel[theItem]);
+  theComboBox.Items.Add(UnitLabel[theItem]);
   T4MassUnitFactors[par1, position] := T4UnitFactor[theItem];
   if par2 >= 0 then
     T4MassUnitFactors[par2, position] := T4UnitFactor[theItem];
@@ -325,7 +302,7 @@ end;
 
 procedure SetT3MassUnitAndFactor(par1, par2: integer; theComboBox: TComboBox; position, theItem: integer);
 begin
-  theComboBox.Items.Add(T3UnitLabel[theItem]);
+  theComboBox.Items.Add(UnitLabel[theItem]);
   T3MassUnitFactors[par1, position] := T3UnitFactor[theItem];
   if par2 >= 0 then
     T3MassUnitFactors[par2, position] := T3UnitFactor[theItem];

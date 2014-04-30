@@ -283,7 +283,7 @@ begin
   PrefixLabel[1] := 'd';
   PrefixLabel[2] := 'c';
   PrefixLabel[3] := 'm';
-  PrefixLabel[4] := 'µ';
+  PrefixLabel[4] := #194#181;
   PrefixLabel[5] := 'n';
   PrefixLabel[6] := 'p';
   PrefixLabel[7] := 'f';

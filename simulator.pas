@@ -24,7 +24,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Classes, Forms, SyncObjs, SysUtils, SimThyrTypes, SimThyrResources, SimThyrServices, SimThyrLog,
-  SimThyrPlot, SimThyrPrediction, HandleNotifier;
+  SimThyrPlot, SimThyrPrediction, HandleNotifier, UnitConverter;
 
 type
   TQueue_xt = array[0..300] of real;
@@ -153,16 +153,11 @@ begin
   TRH := TRH0;
   TSH := 2;                    {mU/l		from reference value}
   TSHz := 4;                   {Mittlerer Wert}
-  T4 := 7;                     {µg/dl		from reference value}
-  T4 := T4 * 1000 * UFT4;      {mol/l}
-  FT4 := 1.3;                  {ng/dl		from reference value}
-  FT4 := FT4 * UFT4;           {mol/l}
-  T3p := 130;                  {ng/dl		from reference value}
-  T3p := T3p * 10 * UFT3;      {mol/l}
-  FT3 := 3.2;                  {pg/ml	        from reference value}
-  FT3 := FT3 * UFT3;           {mol/l}
-  T3z := 8200;                 {pg/ml}
-  T3z := T3z * UFT3;           {mol/l}
+  T4 := ConvertedValue(7, T4_MOLAR_MASS, 'mcg/dl', 'mol/l');    {from reference value}
+  FT4 := ConvertedValue(1.3, T4_MOLAR_MASS, 'ng/dl', 'mol/l');  {from reference value}
+  T3p := ConvertedValue(130, T3_MOLAR_MASS, 'ng/dl', 'mol/l');  {from reference value}
+  FT3 := ConvertedValue(3.2, T3_MOLAR_MASS, 'pg/ml', 'mol/l');  {from reference value}
+  T3z := ConvertedValue(8200, T3_MOLAR_MASS, 'pg/ml', 'mol/l'); {from reference value}
   TBG := 3e-7;                 {mol/l		from reference value}
   TBPA := 4.5e-6;              {mol/l		from reference value}
   IBS := 8e-6;                 {mol/l		estimated from TBG level, corrected for intracellular accumulation [Hays et al. 1988]}
@@ -278,11 +273,15 @@ var
   theContents: tResultContent;
   circadianControl: real;
   nmaxString, iString: string;
+  T4conversionFactor, T3conversionFactor: real;
 begin
   SimCS.Enter;
   try
     simready := false;
     nmaxString := IntToStr(nmax);
+    { Precompute conversion factors in order to speed up simulation:}
+    T4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l', 'ng/dl');
+    T3conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l', 'pg/ml');
     while i <= nmax do
       begin
         iString := IntToStr(i);
@@ -293,11 +292,11 @@ begin
             gResultMatrix[i-1, TRH_pos] := TRH / UTRH;
             gResultMatrix[i-1, pTSH_pos] := TSHz;
             gResultMatrix[i-1, TSH_pos] := TSH;
-            gResultMatrix[i-1, TT4_pos] := T4 / UFT4;
-            gResultMatrix[i-1, FT4_pos] := FT4 / UFT4;
-            gResultMatrix[i-1, TT3_pos] := T3p / UFT3;
-            gResultMatrix[i-1, FT3_pos] := FT3 / UFT3;
-            gResultMatrix[i-1, cT3_pos] := T3z / UFT3;
+            gResultMatrix[i-1, TT4_pos] := T4 * T4conversionFactor;
+            gResultMatrix[i-1, FT4_pos] := FT4 * T4conversionFactor;
+            gResultMatrix[i-1, TT3_pos] := T3p * T3conversionFactor;
+            gResultMatrix[i-1, FT3_pos] := FT3 * T3conversionFactor;
+            gResultMatrix[i-1, cT3_pos] := T3z * T3conversionFactor;
             theContents[i_pos] := iString;
             theContents[t_pos] := FormattedTime(t);
             theContents[TRH_pos] := FormatFloat(gNumberFormat, gResultMatrix[i-1, TRH_pos] * gParameterFactor[TRH_pos]); {TRH}
