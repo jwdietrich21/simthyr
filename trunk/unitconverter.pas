@@ -6,7 +6,7 @@ unit UnitConverter;
 
 { Unit Converter }
 
-{ Version 1.2.4 }
+{ Version 1.3.0 }
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -184,6 +184,7 @@ function LeftStr(const S: string; Count: integer): string;
 {$IFNDEF FULLMATHAVAILABLE}
 function isNaN(const d : Extended): boolean;
 {$ENDIF}
+procedure InitConversionFactors;
 function DecodeGreek(theString: string): string;
 function EncodeGreek(theString: string): string;
 function ParsedUnitString(theString: String): TUnitElements;
@@ -681,4 +682,4 @@ end;
 initialization
   InitConversionFactors;
 
-end.
+end.

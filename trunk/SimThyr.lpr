@@ -61,7 +61,7 @@ begin
   InitSimulationControl;
   SetBaseVariables;
   StandardValues;
-  InitConversionFactors;
+  InitHormoneConversionFactors;
   testflag := false;
   tbgflag := false;
   previewflag := true;
