@@ -1,10 +1,10 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TIPSForm','FORMDATA',[
-  'TPF0'#8'TIPSForm'#7'IPSForm'#4'Left'#3'M'#1#6'Height'#3'$'#3#3'Top'#3#135#0#5
-  +'Width'#3#20#2#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0#7'Anchors'#11#5'akTo'
-  +'p'#8'akBottom'#0#7'Caption'#6#3'IPS'#12'ClientHeight'#3'$'#3#11'ClientWidth'
-  +#3#20#2#5'Color'#7#7'clWhite'#10'OnActivate'#7#12'FormActivate'#8'OnCreate'#7
+  'TPF0'#8'TIPSForm'#7'IPSForm'#4'Left'#3'7'#1#6'Height'#3'$'#3#3'Top'#2'4'#5'W'
+  +'idth'#3#20#2#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0#7'Anchors'#11#5'akTop'
+  +#8'akBottom'#0#7'Caption'#6#3'IPS'#12'ClientHeight'#3'$'#3#11'ClientWidth'#3
+  +#20#2#5'Color'#7#7'clWhite'#10'OnActivate'#7#12'FormActivate'#8'OnCreate'#7
   +#10'FormCreate'#10'LCLVersion'#6#7'1.2.2.0'#7'Visible'#9#0#6'TImage'#6'Image'
   +'1'#4'Left'#2#16#6'Height'#3#6#3#4'Hint'#6'8The information processing struc'
   +'ture (IPS) of this model'#3'Top'#2#16#5'Width'#3#247#1#7'Anchors'#11#5'akTo'
