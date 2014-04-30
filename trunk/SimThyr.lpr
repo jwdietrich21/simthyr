@@ -28,7 +28,7 @@ uses
   AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
   SimOptions, VersionSupport, ScenarioHandler, HandlePreferences,
   HandleNotifier, Sensitivityanalysis, tornado, DIFSupport, help,
-  SimThyrResources
+  SimThyrResources, unitconverter
   {$IFDEF debug}
   , SysUtils
   {$ENDIF}
