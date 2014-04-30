@@ -61,7 +61,7 @@ const
  UTRH = 2.76E-12; {Conversion factor ng/l -> mol/l (TRH; MW=362) [Jackson 1987]}
  UTSH = 1e-3;     {Dummy conversion factor for TSH}
 
- MAXFACTORS = 10; {for measurement units and preferences}
+ MAXFACTORS = 11; {for measurement units and preferences}
 
 type
  TableCell = TPoint;
