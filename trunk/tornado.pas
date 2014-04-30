@@ -750,7 +750,6 @@ var
   theFilterIndex: integer;
   theStream: TFileStream;
   theDrawer: IChartDrawer;
-  theWidth, theHeight: integer;
 begin
   if Chart1 = nil then
     bell
