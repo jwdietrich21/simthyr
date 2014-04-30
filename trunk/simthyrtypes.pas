@@ -75,7 +75,6 @@ type
 var
  nmax_old, tmax, tt, gridrows: integer;
  nmax: longint;
- T4UnitLabel, T3UnitLabel: array[0..MAXFACTORS - 1] of Str3;
  T4UnitFactor, T3UnitFactor: array[0..MAXFACTORS - 1] of real;
  gLabel: array[1..3] of Str255;
  gMessage: array[1..3] of Str255;
