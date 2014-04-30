@@ -111,16 +111,12 @@ type
     { public declarations }
   end;
 
-  TUnitElements = record
-    MassPrefix, MassUnit, VolumePrefix, VolumeUnit: String;
-  end;
-
 var
   PreferencesDialog: TPreferencesDialog;
   MassPrefixes, VolumePrefixes: array[0..RES_MAX_COLS -1] of array[0..MAXFACTORS - 1] of Str3;
   MassPrefixFactors, T4MassUnitFactors, T3MassUnitFactors, VolumePrefixFactors: array[0..RES_MAX_COLS -1] of array[0..MAXFACTORS - 1] of real;
 
-procedure InitConversionFactors;
+procedure InitHormoneConversionFactors;
 procedure SetUnits;
 function GetPreferencesFolder: String;
 function GetPreferencesFile: String;
@@ -223,7 +219,10 @@ function InterimTT4Factor:real;
 {Calculates a preliminary conversion factor}
 begin
   with PreferencesDialog do
-    result := VolumePrefixFactors[TT4_pos, TT4VolumePrefixCombo.ItemIndex] * 1e-5 * T4MassUnitFactors[TT4_pos, TT4MassUnitCombo.ItemIndex] / MassPrefixFactors[TT4_pos, TT4MassPrefixCombo.ItemIndex];
+    begin
+      result := 1 / ConvertedValue(1, T4_MOLAR_MASS, TT4MassPrefixCombo.Text + TT4MassUnitCombo.Text + '/' + TT4VolumePrefixCombo.Text + 'l', 'ng/dl');
+      result := VolumePrefixFactors[TT4_pos, TT4VolumePrefixCombo.ItemIndex] * 1e-5 * T4MassUnitFactors[TT4_pos, TT4MassUnitCombo.ItemIndex] / MassPrefixFactors[TT4_pos, TT4MassPrefixCombo.ItemIndex];
+    end;
 end;
 
 function InterimFT4Factor:real;
@@ -231,7 +230,7 @@ function InterimFT4Factor:real;
 begin
   with PreferencesDialog do
     begin
-      result := ConvertedValue(1, T4_MOLAR_MASS, FT4MassPrefixCombo.Text + FT4MassUnitCombo.Text + '/' + FT4VolumePrefixCombo.Text + 'l', 'ng/dl');
+      result := 1 / ConvertedValue(1, T4_MOLAR_MASS, FT4MassPrefixCombo.Text + FT4MassUnitCombo.Text + '/' + FT4VolumePrefixCombo.Text + 'l', 'ng/dl');
       result := VolumePrefixFactors[FT4_pos, FT4VolumePrefixCombo.ItemIndex] * 1e-5 * T4MassUnitFactors[FT4_pos, FT4MassUnitCombo.ItemIndex] / MassPrefixFactors[FT4_pos, FT4MassPrefixCombo.ItemIndex];
     end;
 end;
@@ -240,17 +239,23 @@ function InterimTT3Factor:real;
 {Calculates a preliminary conversion factor}
 begin
   with PreferencesDialog do
-    result := VolumePrefixFactors[TT3_pos, TT3VolumePrefixCombo.ItemIndex] * 1e-5 * T3MassUnitFactors[TT3_pos, TT3MassUnitCombo.ItemIndex] / MassPrefixFactors[TT3_pos, TT3MassPrefixCombo.ItemIndex];
+    begin
+      result := 1 / ConvertedValue(1, T3_MOLAR_MASS, TT3MassPrefixCombo.Text + TT3MassUnitCombo.Text + '/' + TT3VolumePrefixCombo.Text + 'l', 'pg/ml');
+      result := VolumePrefixFactors[TT3_pos, TT3VolumePrefixCombo.ItemIndex] * 1e-5 * T3MassUnitFactors[TT3_pos, TT3MassUnitCombo.ItemIndex] / MassPrefixFactors[TT3_pos, TT3MassPrefixCombo.ItemIndex];
+    end;
 end;
 
 function InterimFT3Factor:real;
 {Calculates a preliminary conversion factor}
 begin
   with PreferencesDialog do
-    result := VolumePrefixFactors[FT3_pos, FT3VolumePrefixCombo.ItemIndex] * 1e-5 * T3MassUnitFactors[FT3_pos, FT3MassUnitCombo.ItemIndex] / MassPrefixFactors[FT3_pos, FT3MassPrefixCombo.ItemIndex];
+    begin
+      result := 1 / ConvertedValue(1, T3_MOLAR_MASS, FT3MassPrefixCombo.Text + FT3MassUnitCombo.Text + '/' + FT3VolumePrefixCombo.Text + 'l', 'pg/ml');
+      result := VolumePrefixFactors[FT3_pos, FT3VolumePrefixCombo.ItemIndex] * 1e-5 * T3MassUnitFactors[FT3_pos, FT3MassUnitCombo.ItemIndex] / MassPrefixFactors[FT3_pos, FT3MassPrefixCombo.ItemIndex];
+    end;
 end;
 
-procedure InitConversionFactors;
+procedure InitHormoneConversionFactors;
 {sets labels and factors for the elements of measurement units}
 begin
   PrefixLabel[0] := '';
@@ -547,43 +552,6 @@ begin
         SimThyrLogWindow.ValuesGrid.Cells[k, j] := FormatFloat(gNumberFormat, gResultMatrix[j-1, k] * gParameterFactor[k]);
       end;
     end;
-end;
-
-function ParsedUnitString(theString: String): TUnitElements;
-  { parses a string for measurement unit and breaks it up in single parts }
-var
-  theElements: TUnitElements;
-begin
-  if theString <> 'NA' then
-    begin
-      with theElements do
-      begin
-        if copy(theString, 1, 1) = 'm' then
-          begin
-            if copy(theString, 2, 1) = 'c' then
-              MassPrefix := PrefixLabel[4] {mc -> µ}
-            else
-              MassPrefix := 'm';
-          end
-          else
-            MassPrefix := copy(theString, 1, 1);
-        MassUnit := copy(theString, 2, pos('/', theString) - 2);
-        VolumePrefix := copy(theString, pos('/', theString) + 1, 1);
-        VolumeUnit := 'l';
-        if VolumePrefix = VolumeUnit then VolumePrefix := '';  {no prefix set}
-      end;
-    end
-  else
-  begin
-    with theElements do
-    begin
-      MassPrefix := 'NA';
-      MassUnit := 'NA';
-      VolumePrefix := 'NA';
-      VolumeUnit := 'NA';
-    end;
-  end;
-  ParsedUnitString := theElements;
 end;
 
 procedure SetTSHUnitCombo;
