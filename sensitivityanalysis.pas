@@ -23,7 +23,8 @@ uses
   StdCtrls, Spin, Buttons, ExtCtrls, ColorBox, ComCtrls, TAGraph, TASources,
   TATools, TASeries, TATransformations, TAStyles, TALegendPanel, SimThyrTypes,
   SimThyrServices, SimThyrPrediction, Clipbrd, Menus, LCLVersion,
-  TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas, TANavigation;
+  TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas, TANavigation,
+  UnitConverter;
 
 const
   MAX_SERIES = 8;
@@ -487,8 +488,16 @@ end;
 
 procedure DrawCurves(xPar: real);
 {Draws the curves in dependence from the independent parameter xPar}
+var
+  FT4conversionFactor, FT3conversionFactor: real;
+  TT4conversionFactor, TT3conversionFactor, cT3conversionFactor: real;
 begin
   SeriesCount := 0;
+  FT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l', gParameterUnit[FT4_pos]);
+  TT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l', gParameterUnit[TT4_pos]);
+  TT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l', gParameterUnit[TT3_pos]);
+  FT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l', gParameterUnit[FT3_pos]);
+  cT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l', gParameterUnit[cT3_pos]);
   if SensitivityAnalysisForm.CheckGroup1.Checked[0] then
   begin
     {TSH}
@@ -502,7 +511,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[1] then
   begin
     {TT4}
-    FLine[5].AddXY(xPar, T41 / UFT4 * gParameterFactor[TT4_pos], '',
+    FLine[5].AddXY(xPar, T41 * TT4conversionFactor, '',
       SensitivityAnalysisForm.TT4ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'TT4' + ': ' + gParameterUnit[TT4_pos];
@@ -512,7 +521,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[2] then
   begin
     {FT4}
-    FLine[2].AddXY(xPar, FT41 / UFT4 * gParameterFactor[FT4_pos], '',
+    FLine[2].AddXY(xPar, FT41 * FT4conversionFactor, '',
       SensitivityAnalysisForm.FT4ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'FT4' + ': ' + gParameterUnit[FT4_pos];
@@ -522,7 +531,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[3] then
   begin
     {TT3}
-    FLine[6].AddXY(xPar, T31 / UFT3 * gParameterFactor[TT3_pos], '',
+    FLine[6].AddXY(xPar, T31 * TT3conversionFactor, '',
       SensitivityAnalysisForm.TT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'TT3' + ': ' + gParameterUnit[TT3_pos];
@@ -532,7 +541,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[4] then
   begin
     {FT3}
-    FLine[3].AddXY(xPar, FT31 / UFT3 * gParameterFactor[FT3_pos], '',
+    FLine[3].AddXY(xPar, FT31 * FT3conversionFactor, '',
       SensitivityAnalysisForm.FT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'FT3' + ': ' + gParameterUnit[FT3_pos];
@@ -542,7 +551,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[5] then
   begin
     {cT3}
-    FLine[4].AddXY(xPar, T3z1 / UFT3 * gParameterFactor[cT3_pos], '',
+    FLine[4].AddXY(xPar, T3z1 * cT3conversionFactor, '',
       SensitivityAnalysisForm.cT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'cT3' + ': ' + gParameterUnit[cT3_pos];
