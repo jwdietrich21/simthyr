@@ -56,8 +56,6 @@ const
  T4_MOLAR_MASS = 776.87; {molar mass of T4}
  T3_MOLAR_MASS = 650.97; {molar mass of T3}
 
- UFT4 = 1.28E-11; {Conversion factor ng/dl -> mol/l (T4)}
- UFT3 = 1.54E-12; {Conversion factor pg/ml -> mol/l (T3)}
  UTRH = 2.76E-12; {Conversion factor ng/l -> mol/l (TRH; MW=362) [Jackson 1987]}
  UTSH = 1e-3;     {Dummy conversion factor for TSH}
 
