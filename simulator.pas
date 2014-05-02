@@ -281,7 +281,7 @@ begin
     nmaxString := IntToStr(nmax);
     { Precompute conversion factors in order to speed up simulation:}
     T4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l', 'ng/dl');
-    T3conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l', 'pg/ml');
+    T3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l', 'pg/ml');
     while i <= nmax do
       begin
         iString := IntToStr(i);
