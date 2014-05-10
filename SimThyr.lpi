@@ -14,7 +14,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="3"/>
-      <BuildNr Value="332"/>
+      <BuildNr Value="333"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 3.3.0" LegalCopyright="1994-2014 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.3.0"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -214,10 +214,11 @@
         <Filename Value="simthyrtypes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrTypes"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos X="3" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit16>
@@ -266,7 +267,6 @@
         <Filename Value="simulator.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Simulator"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="14"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
