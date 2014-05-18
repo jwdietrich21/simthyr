@@ -24,8 +24,8 @@ uses
   SimOptions, SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers,
   ComCtrls, LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog,
   ShowAboutModel, StructureParameters, SimThyrPrediction, Sensitivityanalysis,
-  tornado, help, ScenarioHandler, HandlePreferences, HandleNotifier,
-  LCLProc, StdCtrls, LCLVersion;
+  TWSensitivityanalysis, tornado, help, ScenarioHandler, HandlePreferences,
+  HandleNotifier, LCLProc, StdCtrls, LCLVersion;
 
 type
 
@@ -68,6 +68,8 @@ type
     Divider_3_3:  TMenuItem;
     Divide_3_1: TMenuItem;
     AddOptItem: TMenuItem;
+    TWSensitivityAnalysisItem2: TMenuItem;
+    TWSensitivityAnalysisItem: TMenuItem;
     SelectAllMenuItem: TMenuItem;
     Divider_2_3: TMenuItem;
     PredEqItem: TMenuItem;
@@ -157,6 +159,8 @@ type
     procedure PrintToolButtonClick(Sender: TObject);
     procedure TornadoPlotItem2Click(Sender: TObject);
     procedure TornadoPlotItemClick(Sender: TObject);
+    procedure TWSensitivityAnalysisItem2Click(Sender: TObject);
+    procedure TWSensitivityAnalysisItemClick(Sender: TObject);
     procedure UndoMenuItemClick(Sender: TObject);
     procedure AboutItemClick(Sender: TObject);
     procedure SetPosition;
@@ -219,6 +223,7 @@ begin
   SimThyrToolbar.PredEqItem.ShortCut := ShortCut(VK_L, modifierKey);
   SimThyrToolbar.ChangeParItem.ShortCut := ShortCut(VK_M, modifierKey);
   SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut := ShortCut(VK_E, modifierKey);
+  SimThyrToolbar.TWSensitivityAnalysisItem.ShortCut := ShortCut(VK_2, modifierKey);
   SimThyrToolbar.TornadoPlotItem.ShortCut := ShortCut(VK_T, modifierKey);
   SimThyrToolbar.IPSItem.ShortCut := ShortCut(VK_I, modifierKey);
 end;
@@ -610,7 +615,16 @@ end;
 procedure TSimThyrToolbar.TornadoPlotItemClick(Sender: TObject);
 begin
   TornadoPlotForm.Show;
-  ;
+end;
+
+procedure TSimThyrToolbar.TWSensitivityAnalysisItem2Click(Sender: TObject);
+begin
+  TWSensitivityAnalysisForm.Show;
+end;
+
+procedure TSimThyrToolbar.TWSensitivityAnalysisItemClick(Sender: TObject);
+begin
+  TWSensitivityAnalysisForm.Show;
 end;
 
 procedure TSimThyrToolbar.UndoMenuItemClick(Sender: TObject);

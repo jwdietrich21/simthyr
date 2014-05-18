@@ -110,6 +110,7 @@ var
 
 procedure SaveStrucPars;
 procedure RestoreStrucPars;
+function composedAxisCaption(theString: String): String;
 procedure DrawOWSensitivityPlot(empty: boolean);
 
 implementation
@@ -458,18 +459,24 @@ begin
   TBPA := StoredParameters.TBPA;
 end;
 
+function composedAxisCaption(theString: String): String;
+{sets caption and measurement unit for bottom axis according to selected item}
+begin
+  if theString = 'GD1' then
+    theString := theString + ' (nmol/s)'
+  else if theString = 'GD2' then
+    theString := theString + ' (fmol/s)'
+  else if theString = 'GT' then
+    theString := theString + ' (pmol/s)';
+  result := theString;
+end;
+
 procedure SetBottomAxisCaption;
 {sets caption and measurement unit for bottom axis according to selected item}
 var
   theCaption: string;
 begin
-  theCaption := SensitivityAnalysisForm.StrucParCombo.Text;
-  if theCaption = 'GD1' then
-    theCaption := theCaption + ' (nmol/s)'
-  else if theCaption = 'GD2' then
-    theCaption := theCaption + ' (fmol/s)'
-  else if theCaption = 'GT' then
-    theCaption := theCaption + ' (pmol/s)';
+  theCaption := composedAxisCaption(SensitivityAnalysisForm.StrucParCombo.Text);
   SensitivityAnalysisForm.Chart1.BottomAxis.Title.Caption :=
     theCaption;
 end;
