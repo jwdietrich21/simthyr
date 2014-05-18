@@ -135,6 +135,7 @@ object TornadoPlotForm: TTornadoPlotForm
     ClientWidth = 419
     TabOrder = 4
     object Chart1: TChart
+      Cursor = crCross
       Left = 8
       Height = 399
       Hint = 'Drag to zoom'

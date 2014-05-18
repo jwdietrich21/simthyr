@@ -24,10 +24,12 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     ClientWidth = 520
     TabOrder = 0
     object ColorMap: TChart
+      Cursor = crCross
       Left = 8
       Height = 293
       Top = 8
       Width = 505
+      AllowZoom = False
       AxisList = <      
         item
           Marks.LabelFont.Height = -11
@@ -57,6 +59,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Title.Visible = True
       Anchors = [akTop, akLeft, akRight, akBottom]
       Color = clWhite
+      DoubleBuffered = True
       ParentColor = False
       ParentShowHint = False
       object ColorMapColorMapSeries1: TColorMapSeries
@@ -119,6 +122,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
       ItemHeight = 0
+      ItemIndex = 0
       Items.Strings = (
         'Select independent parameter (x)...'
         'GD1 (nmol/s)'
