@@ -5,7 +5,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   Width = 760
   AlphaBlendValue = 0
   Anchors = [akTop, akLeft, akBottom]
-  Caption = 'One Way Sensitivity Analysis'
+  Caption = 'One-Way Sensitivity Analysis'
   ClientHeight = 405
   ClientWidth = 760
   Color = clWhite

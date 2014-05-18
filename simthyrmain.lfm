@@ -1277,6 +1277,11 @@ object SimThyrToolbar: TSimThyrToolbar
         ShortCut = 4165
         OnClick = OWSensitivityAnalysisItemClick
       end
+      object TWSensitivityAnalysisItem: TMenuItem
+        Caption = 'Two-Way Sensitivity Analysis'
+        ShortCut = 4146
+        OnClick = TWSensitivityAnalysisItemClick
+      end
       object TornadoPlotItem: TMenuItem
         Caption = 'Tornado Plot'
         ShortCut = 4180
@@ -1387,6 +1392,10 @@ object SimThyrToolbar: TSimThyrToolbar
       object OWSensitivityAnalysisItem2: TMenuItem
         Caption = 'One-Way Sensitivity Analysis'
         OnClick = OWSensitivityAnalysisItemClick
+      end
+      object TWSensitivityAnalysisItem2: TMenuItem
+        Caption = 'Two-Way Sensitivity Analysis'
+        OnClick = TWSensitivityAnalysisItem2Click
       end
       object TornadoPlotItem2: TMenuItem
         Caption = 'Tornado Plot'

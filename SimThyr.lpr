@@ -28,7 +28,7 @@ uses
   AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
   SimOptions, VersionSupport, ScenarioHandler, HandlePreferences,
   HandleNotifier, Sensitivityanalysis, tornado, DIFSupport, help,
-  SimThyrResources, unitconverter
+  SimThyrResources, unitconverter, TWSensitivityanalysis
   {$IFDEF debug}
   , SysUtils
   {$ENDIF}
@@ -133,6 +133,9 @@ begin
   Application.CreateForm(TSensitivityAnalysisForm, SensitivityAnalysisForm);
   SensitivityAnalysisForm.Hide;
   SensitivityAnalysisForm.AlphaBlend := false;
+  Application.CreateForm(TTWSensitivityAnalysisForm, TWSensitivityAnalysisForm);
+  TWSensitivityAnalysisForm.Hide;
+  TWSensitivityAnalysisForm.AlphaBlend := false;
   Application.CreateForm(TTornadoPlotForm, TornadoPlotForm);
   TornadoPlotForm.Hide;
   TornadoPlotForm.AlphaBlend := false;
