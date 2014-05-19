@@ -78,6 +78,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         OnCalculate = SensitivityMapColorMapSeries1Calculate
         StepX = 5
         StepY = 5
+        UseImage = cmuiAlways
       end
     end
   end

@@ -723,6 +723,7 @@ var
   xmin, xmax, ymin, ymax: real;
 begin
   SensitivityMatrix.ClearContent;
+  SensitivityMap.DisableRedrawing;
   xmin := SensitivityMapColorMapSeries1.Extent.XMin;
   xmax := SensitivityMapColorMapSeries1.Extent.XMax;
   ymin := SensitivityMapColorMapSeries1.Extent.YMin;
@@ -741,6 +742,7 @@ begin
   j := 1 + trunc((AY - ext.a.y) / (ext.b.y - ext.a.y) * TWS_RESOLUTION);
   //AZ := (AX - ext.a.x) / (ext.b.x - ext.a.x);
   AZ := SensitivityMatrix.content[j, i];
+  SensitivityMap.EnableRedrawing;
 end;
 
 procedure TTWSensitivityAnalysisForm.DependentParComboChange(Sender: TObject);
