@@ -1,61 +1,61 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TStructureParameters','FORMDATA',[
-  'TPF0'#20'TStructureParameters'#19'StructureParameters'#4'Left'#3#151#1#6'Hei'
-  +'ght'#3#130#2#3'Top'#3#157#0#5'Width'#3#168#2#10'AlphaBlend'#9#15'AlphaBlend'
+  'TPF0'#20'TStructureParameters'#19'StructureParameters'#4'Left'#3#166#1#6'Hei'
+  +'ght'#3#128#2#3'Top'#3#137#0#5'Width'#3#150#2#10'AlphaBlend'#9#15'AlphaBlend'
   +'Value'#2#0#11'BorderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderSt'
   +'yle'#7#8'bsDialog'#7'Caption'#6#29'Constant Structure Parameters'#12'Client'
-  +'Height'#3#130#2#11'ClientWidth'#3#168#2#5'Color'#7#7'clWhite'#10'OnActivate'
+  +'Height'#3#128#2#11'ClientWidth'#3#150#2#5'Color'#7#7'clWhite'#10'OnActivate'
   +#7#12'FormActivate'#6'OnShow'#7#8'FormShow'#8'Position'#7#14'poScreenCenter'
   +#10'LCLVersion'#6#7'1.2.2.0'#7'Visible'#9#0#7'TButton'#8'OKButton'#4'Left'#3
-  +';'#2#6'Height'#2#25#3'Top'#3'N'#2#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8
+  +')'#2#6'Height'#2#25#3'Top'#3'L'#2#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8
   +'akBottom'#0#19'BorderSpacing.Right'#2#13#20'BorderSpacing.Bottom'#2#13#7'Ca'
   +'ption'#6#2'OK'#7'Default'#9#11'ModalResult'#2#1#7'OnClick'#7#13'OKButtonCli'
-  +'ck'#8'TabOrder'#2#6#0#0#7'TButton'#12'CancelButton'#4'Left'#3';'#2#6'Height'
-  +#2#25#3'Top'#3'+'#2#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#6'C'
+  +'ck'#8'TabOrder'#2#6#0#0#7'TButton'#12'CancelButton'#4'Left'#3')'#2#6'Height'
+  +#2#25#3'Top'#3')'#2#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#6'C'
   +'ancel'#9#7'Caption'#6#6'Cancel'#11'ModalResult'#2#2#7'OnClick'#7#17'CancelB'
   +'uttonClick'#8'TabOrder'#2#8#0#0#5'TEdit'#9'Tau0REdit'#4'Left'#2'X'#6'Height'
-  +#2#21#3'Top'#3#249#1#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#8'T'
+  +#2#21#3'Top'#3#247#1#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#8'T'
   +'abOrder'#2#1#4'Text'#6#9'Tau0REdit'#0#0#5'TEdit'#9'Tau0SEdit'#4'Left'#2'X'#6
-  +'Height'#2#21#3'Top'#3#17#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'
+  +'Height'#2#21#3'Top'#3#15#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'
   +#0#8'TabOrder'#2#2#4'Text'#6#9'Tau0SEdit'#0#0#5'TEdit'#10'Tau0S2Edit'#4'Left'
-  +#2'X'#6'Height'#2#21#3'Top'#3')'#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'a'
-  +'kBottom'#0#8'TabOrder'#2#3#4'Text'#6#10'Tau0S2Edit'#0#0#5'TEdit'#9'Tau0TEdi'
-  +'t'#4'Left'#3'8'#1#6'Height'#2#21#3'Top'#3#17#2#5'Width'#2'P'#7'Anchors'#11#6
-  +'akLeft'#8'akBottom'#0#8'TabOrder'#2#4#4'Text'#6#9'Tau0TEdit'#0#0#5'TEdit'#10
-  +'Tau03zEdit'#4'Left'#3'8'#1#6'Height'#2#21#3'Top'#3')'#2#5'Width'#2'P'#7'Anc'
-  +'hors'#11#6'akLeft'#8'akBottom'#0#8'TabOrder'#2#5#4'Text'#6#10'Tau03zEdit'#0
-  +#0#6'TLabel'#7'Label32'#4'Left'#2#24#6'Height'#2#13#3'Top'#3#1#2#5'Width'#2
-  +''''#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6#7'Tau0 R:'#11'Parent'
-  +'Color'#8#0#0#6'TLabel'#7'Label33'#4'Left'#2#24#6'Height'#2#13#3'Top'#3#27#2
-  +#5'Width'#2'&'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6#7'Tau0 S:'
-  +#11'ParentColor'#8#0#0#6'TLabel'#7'Label34'#4'Left'#2#24#6'Height'#2#13#3'To'
-  +'p'#3'3'#2#5'Width'#2','#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6#8
-  +'Tau0 S2:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label35'#4'Left'#3#0#1#6'Height'
-  +#2#13#3'Top'#3#27#2#5'Width'#2'&'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Ca'
-  +'ption'#6#7'Tau0 T:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label36'#4'Left'#3#0#1
-  +#6'Height'#2#13#3'Top'#3'3'#2#5'Width'#2'*'#7'Anchors'#11#6'akLeft'#8'akBott'
-  +'om'#0#7'Caption'#6#8'Tau0 3z:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label37'#4
-  +'Left'#2#24#6'Height'#2' '#3'Top'#3'K'#2#5'Width'#3'X'#1#7'Anchors'#11#6'akL'
-  +'eft'#8'akBottom'#0#8'AutoSize'#8#7'Caption'#6'gFirst order time constants a'
-  +'nd associated half-lifes follow from the clearance exponents (beta values).'
-  +#11'ParentColor'#8#8'WordWrap'#9#0#0#6'TLabel'#7'Label38'#4'Left'#2#24#6'Hei'
-  +'ght'#2#13#3'Top'#3#220#1#5'Width'#2'Z'#7'Anchors'#11#6'akLeft'#8'akBottom'#0
-  +#7'Caption'#6#15'Time constants:'#10'Font.Style'#11#6'fsBold'#0#11'ParentCol'
-  +'or'#8#10'ParentFont'#8#7'OnClick'#7#12'Label31Click'#0#0#7'TButton'#14'Stan'
-  +'dardButton'#4'Left'#3';'#2#6'Height'#2#25#4'Hint'#6',Set all parameters to '
-  +'normal standard values'#3'Top'#3#9#2#5'Width'#2'K'#7'Anchors'#11#7'akRight'
-  +#8'akBottom'#0#7'Caption'#6#8'Standard'#7'OnClick'#7#19'StandardButtonClick'
-  +#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#7#0#0#6'TImage'#6'Image6'#4
-  +'Left'#3#208#0#6'Height'#2#24#3'Top'#3#248#1#5'Width'#2'"'#7'Anchors'#11#6'a'
-  +'kLeft'#8'akBottom'#0#12'Picture.Data'#10#200#8#0#0#5'TIcon'#190#8#0#0#0#0#1
-  +#0#1#0'  '#0#0#0#0#0#0#168#8#0#0#22#0#0#0'('#0#0#0' '#0#0#0'@'#0#0#0#1#0#8#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#255#255#0#204#255#255#0
-  +#153#255#255#0'f'#255#255#0'3'#255#255#0#0#255#255#0#255#204#255#0#204#204
-  +#255#0#153#204#255#0'f'#204#255#0'3'#204#255#0#0#204#255#0#255#153#255#0#204
-  +#153#255#0#153#153#255#0'f'#153#255#0'3'#153#255#0#0#153#255#0#255'f'#255#0
-  +#204'f'#255#0#153'f'#255#0'ff'#255#0'3f'#255#0#0'f'#255#0#255'3'#255#0#204'3'
-  +#255#0#153'3'#255#0'f3'#255#0'33'#255#0#0'3'#255#0#255#0#255#0#204#0#255#0
+  +#2'X'#6'Height'#2#21#3'Top'#3''''#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8
+  +'akBottom'#0#8'TabOrder'#2#3#4'Text'#6#10'Tau0S2Edit'#0#0#5'TEdit'#9'Tau0TEd'
+  +'it'#4'Left'#3'8'#1#6'Height'#2#21#3'Top'#3#15#2#5'Width'#2'P'#7'Anchors'#11
+  +#6'akLeft'#8'akBottom'#0#8'TabOrder'#2#4#4'Text'#6#9'Tau0TEdit'#0#0#5'TEdit'
+  +#10'Tau03zEdit'#4'Left'#3'8'#1#6'Height'#2#21#3'Top'#3''''#2#5'Width'#2'P'#7
+  +'Anchors'#11#6'akLeft'#8'akBottom'#0#8'TabOrder'#2#5#4'Text'#6#10'Tau03zEdit'
+  +#0#0#6'TLabel'#7'Label32'#4'Left'#2#24#6'Height'#2#13#3'Top'#3#255#1#5'Width'
+  +#2''''#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6#7'Tau0 R:'#11'Pare'
+  +'ntColor'#8#0#0#6'TLabel'#7'Label33'#4'Left'#2#24#6'Height'#2#13#3'Top'#3#25
+  +#2#5'Width'#2'&'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6#7'Tau0 S'
+  +':'#11'ParentColor'#8#0#0#6'TLabel'#7'Label34'#4'Left'#2#24#6'Height'#2#13#3
+  +'Top'#3'1'#2#5'Width'#2','#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6
+  +#8'Tau0 S2:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label35'#4'Left'#3#0#1#6'Heig'
+  +'ht'#2#13#3'Top'#3#25#2#5'Width'#2'&'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7
+  +'Caption'#6#7'Tau0 T:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label36'#4'Left'#3#0
+  +#1#6'Height'#2#13#3'Top'#3'1'#2#5'Width'#2'*'#7'Anchors'#11#6'akLeft'#8'akBo'
+  +'ttom'#0#7'Caption'#6#8'Tau0 3z:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label37'
+  +#4'Left'#2#24#6'Height'#2' '#3'Top'#3'I'#2#5'Width'#3'X'#1#7'Anchors'#11#6'a'
+  +'kLeft'#8'akBottom'#0#8'AutoSize'#8#7'Caption'#6'gFirst order time constants'
+  +' and associated half-lifes follow from the clearance exponents (beta values'
+  +').'#11'ParentColor'#8#8'WordWrap'#9#0#0#6'TLabel'#7'Label38'#4'Left'#2#24#6
+  +'Height'#2#13#3'Top'#3#218#1#5'Width'#2'Z'#7'Anchors'#11#6'akLeft'#8'akBotto'
+  +'m'#0#7'Caption'#6#15'Time constants:'#10'Font.Style'#11#6'fsBold'#0#11'Pare'
+  +'ntColor'#8#10'ParentFont'#8#7'OnClick'#7#12'Label31Click'#0#0#7'TButton'#14
+  +'StandardButton'#4'Left'#3')'#2#6'Height'#2#25#4'Hint'#6',Set all parameters'
+  +' to normal standard values'#3'Top'#3#7#2#5'Width'#2'K'#7'Anchors'#11#7'akRi'
+  +'ght'#8'akBottom'#0#7'Caption'#6#8'Standard'#7'OnClick'#7#19'StandardButtonC'
+  +'lick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#7#0#0#6'TImage'#6'Im'
+  +'age6'#4'Left'#3#208#0#6'Height'#2#24#3'Top'#3#246#1#5'Width'#2'"'#7'Anchors'
+  +#11#6'akLeft'#8'akBottom'#0#12'Picture.Data'#10#200#8#0#0#5'TIcon'#190#8#0#0
+  +#0#0#1#0#1#0'  '#0#0#0#0#0#0#168#8#0#0#22#0#0#0'('#0#0#0' '#0#0#0'@'#0#0#0#1
+  +#0#8#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#255#255#0#204#255
+  +#255#0#153#255#255#0'f'#255#255#0'3'#255#255#0#0#255#255#0#255#204#255#0#204
+  +#204#255#0#153#204#255#0'f'#204#255#0'3'#204#255#0#0#204#255#0#255#153#255#0
+  +#204#153#255#0#153#153#255#0'f'#153#255#0'3'#153#255#0#0#153#255#0#255'f'#255
+  +#0#204'f'#255#0#153'f'#255#0'ff'#255#0'3f'#255#0#0'f'#255#0#255'3'#255#0#204
+  +'3'#255#0#153'3'#255#0'f3'#255#0'33'#255#0#0'3'#255#0#255#0#255#0#204#0#255#0
   +#153#0#255#0'f'#0#255#0'3'#0#255#0#0#0#255#0#255#255#204#0#204#255#204#0#153
   +#255#204#0'f'#255#204#0'3'#255#204#0#0#255#204#0#255#204#204#0#204#204#204#0
   +#153#204#204#0'f'#204#204#0'3'#204#204#0#0#204#204#0#255#153#204#0#204#153
@@ -124,26 +124,26 @@ LazarusResources.Add('TStructureParameters','FORMDATA',[
   +#255#239#255#255#255#239#253#255#255#239#255#255#255#239#253'UW'#239#255#255
   +#255#131#255#255#255#131#255#255#255#199#255#255#255#199#255#255#255#239#255
   +#255#255#239#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#0#0
-  +#7'TButton'#13'OptionsButton'#4'Left'#3';'#2#6'Height'#2#25#4'Hint'#6'KSet a'
+  +#7'TButton'#13'OptionsButton'#4'Left'#3')'#2#6'Height'#2#25#4'Hint'#6'KSet a'
   +'dditional simulation options like noise and standard TRH level here...'#3'T'
-  +'op'#3#204#1#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#7'Caption'
+  +'op'#3#202#1#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#7'Caption'
   +#6#7'Options'#7'OnClick'#7#18'OptionsButtonClick'#14'ParentShowHint'#8#8'Sho'
   +'wHint'#9#8'TabOrder'#2#9#0#0#6'TLabel'#7'Label51'#4'Left'#3#176#0#6'Height'
-  ,#2#13#3'Top'#3#1#2#5'Width'#2#5#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Capt'
-  +'ion'#6#1's'#11'ParentColor'#8#0#0#6'TLabel'#7'Label52'#4'Left'#3#176#0#6'He'
-  +'ight'#2#13#3'Top'#3#27#2#5'Width'#2#5#7'Anchors'#11#6'akLeft'#8'akBottom'#0
-  +#7'Caption'#6#1's'#11'ParentColor'#8#0#0#6'TLabel'#7'Label53'#4'Left'#3#176#0
-  +#6'Height'#2#13#3'Top'#3'3'#2#5'Width'#2#5#7'Anchors'#11#6'akLeft'#8'akBotto'
-  +'m'#0#7'Caption'#6#1's'#11'ParentColor'#8#0#0#6'TLabel'#7'Label54'#4'Left'#3
-  +#144#1#6'Height'#2#13#3'Top'#3#27#2#5'Width'#2#5#7'Anchors'#11#6'akLeft'#8'a'
-  +'kBottom'#0#7'Caption'#6#1's'#11'ParentColor'#8#0#0#6'TLabel'#7'Label55'#4'L'
-  +'eft'#3#144#1#6'Height'#2#13#3'Top'#3'3'#2#5'Width'#2#5#7'Anchors'#11#6'akLe'
-  +'ft'#8'akBottom'#0#7'Caption'#6#1's'#11'ParentColor'#8#0#0#10'TScrollBox'#10
-  +'ScrollBox1'#4'Left'#2#16#6'Height'#3#182#1#3'Top'#2#16#5'Width'#3#138#2#18
-  +'HorzScrollBar.Page'#3#134#2#18'VertScrollBar.Page'#3#178#1#7'Anchors'#11#5
-  +'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#12'ClientHeight'#3#178#1#11'Clien'
-  +'tWidth'#3#134#2#5'Color'#7#9'clDefault'#11'ParentColor'#8#8'TabOrder'#2#0#0
-  +#6'TLabel'#7'Label72'#4'Left'#3'H'#2#6'Height'#2#13#3'Top'#3#143#1#5'Width'#2
+  ,#2#13#3'Top'#3#255#1#5'Width'#2#5#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Ca'
+  +'ption'#6#1's'#11'ParentColor'#8#0#0#6'TLabel'#7'Label52'#4'Left'#3#176#0#6
+  +'Height'#2#13#3'Top'#3#25#2#5'Width'#2#5#7'Anchors'#11#6'akLeft'#8'akBottom'
+  +#0#7'Caption'#6#1's'#11'ParentColor'#8#0#0#6'TLabel'#7'Label53'#4'Left'#3#176
+  +#0#6'Height'#2#13#3'Top'#3'1'#2#5'Width'#2#5#7'Anchors'#11#6'akLeft'#8'akBot'
+  +'tom'#0#7'Caption'#6#1's'#11'ParentColor'#8#0#0#6'TLabel'#7'Label54'#4'Left'
+  +#3#144#1#6'Height'#2#13#3'Top'#3#25#2#5'Width'#2#5#7'Anchors'#11#6'akLeft'#8
+  +'akBottom'#0#7'Caption'#6#1's'#11'ParentColor'#8#0#0#6'TLabel'#7'Label55'#4
+  +'Left'#3#144#1#6'Height'#2#13#3'Top'#3'1'#2#5'Width'#2#5#7'Anchors'#11#6'akL'
+  +'eft'#8'akBottom'#0#7'Caption'#6#1's'#11'ParentColor'#8#0#0#10'TScrollBox'#10
+  +'ScrollBox1'#4'Left'#2#16#6'Height'#3#180#1#3'Top'#2#16#5'Width'#3'x'#2#18'H'
+  +'orzScrollBar.Page'#3't'#2#18'VertScrollBar.Page'#3#176#1#7'Anchors'#11#5'ak'
+  +'Top'#6'akLeft'#7'akRight'#8'akBottom'#0#12'ClientHeight'#3#176#1#11'ClientW'
+  +'idth'#3't'#2#5'Color'#7#9'clDefault'#11'ParentColor'#8#8'TabOrder'#2#0#0#6
+  +'TLabel'#7'Label72'#4'Left'#3'H'#2#6'Height'#2#13#3'Top'#3#143#1#5'Width'#2
   +#23#7'Caption'#6#5'l/mol'#11'ParentColor'#8#0#0#6'TLabel'#7'Label71'#4'Left'
   +#3'H'#2#6'Height'#2#13#3'Top'#3'w'#1#5'Width'#2#23#7'Caption'#6#5'l/mol'#11
   +'ParentColor'#8#0#0#6'TLabel'#7'Label70'#4'Left'#3'H'#2#6'Height'#2#13#3'Top'
