@@ -47,9 +47,9 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +'lect independent parameter (x axis)...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s'
   +')'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6
   +#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s'
-  +')'#6#11'DR (pmol/l)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'#6
-  +#11'beta31 (/s)'#6#11'beta32 (/s)'#6#12'LS (l/'#194#181'mol)'#6#12'TBG (nmol'
-  +'/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#20'StrucParCombo1Change'
+  +')'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaS (/s)'#6#11'betaS'
+  +'2 (/s)'#6#10'betaT (/s)'#6#12'beta31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nm'
+  +'ol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#20'StrucParCombo1Change'
   +#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6'(Select indepe'
   +'ndent parameter (x axis)...'#0#0#14'TFloatSpinEdit'#12'MinSpinEdit2'#4'Left'
   +#2#12#6'Height'#2#21#4'Hint'#6'''Minimum of selected structure parameter'#3
@@ -64,32 +64,32 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +'ent parameter (y axis)...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 ('
   +'nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'
   +#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (p'
-  +'mol/l)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'#6#11'beta31 (/s'
-  ,')'#6#11'beta32 (/s)'#6#12'LS (l/'#194#181'mol)'#6#12'TBG (nmol/l)'#6#14'TBP'
-  +'A ('#194#181'mol/l)'#0#8'OnChange'#7#20'StrucParCombo2Change'#14'ParentShow'
-  +'Hint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6'(Select independent paramet'
-  +'er (y axis)...'#0#0#14'TFloatSpinEdit'#12'MaxSpinEdit2'#4'Left'#3#176#1#6'H'
-  +'eight'#2#21#4'Hint'#6'''Maximum of selected structure parameter'#3'Top'#2'?'
-  +#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9
-  +'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8
-  +'MinValue'#5#0#0#0#0#0#0#0#0#0#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrd'
-  +'er'#2#5#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#17'DependentParComb'
-  +'o'#4'Left'#2'd'#6'Height'#2#21#4'Hint'#6'ISelect the structure parameter th'
-  +'at servers as independent variable here.'#3'Top'#2#1#5'Width'#3'6'#1#7'Anch'
-  +'ors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'I'
-  +'temHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6'*Select dependent pa'
-  +'rameter (colour map)...'#6#3'TSH'#6#3'TT4'#6#3'FT4'#6#3'TT3'#6#3'FT3'#6#3'c'
-  +'T3'#0#8'OnChange'#7#23'DependentParComboChange'#14'ParentShowHint'#8#8'Show'
-  +'Hint'#9#8'TabOrder'#2#6#4'Text'#6'*Select dependent parameter (colour map).'
-  +'..'#0#0#0#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#23#3'Top'#3
-  +#228#1#5'Width'#3#212#2#6'Panels'#14#0#0#0#6'TPanel'#13'ColorMapPanel'#4'Lef'
-  +'t'#3'?'#2#6'Height'#3'?'#1#3'Top'#2' '#5'Width'#3#130#0#7'Anchors'#11#5'akT'
-  +'op'#7'akRight'#8'akBottom'#0#10'BevelOuter'#7#6'bvNone'#11'BorderStyle'#7#8
-  +'bsSingle'#12'ClientHeight'#3';'#1#11'ClientWidth'#2'~'#8'TabOrder'#2#3#0#12
-  +'TColorButton'#12'ColorButton1'#4'Left'#2#16#6'Height'#2#25#3'Top'#3#128#0#5
-  +'Width'#2'K'#11'BorderWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonColor'#7#6
-  +'clNavy'#14'OnColorChanged'#7#24'ColorButton1ColorChanged'#0#0#12'TColorButt'
-  +'on'#12'ColorButton2'#4'Left'#2#16#6'Height'#2#25#3'Top'#2'X'#5'Width'#2'K'
+  +'mol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10
+  ,'betaT (/s)'#6#12'beta31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'T'
+  +'BPA ('#194#181'mol/l)'#0#8'OnChange'#7#20'StrucParCombo2Change'#14'ParentSh'
+  +'owHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6'(Select independent param'
+  +'eter (y axis)...'#0#0#14'TFloatSpinEdit'#12'MaxSpinEdit2'#4'Left'#3#176#1#6
+  +'Height'#2#21#4'Hint'#6'''Maximum of selected structure parameter'#3'Top'#2
+  +'?'#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2
+  +#4#9'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8
+  +'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#14'ParentShowHint'#8#8'ShowHint'#9#8'T'
+  +'abOrder'#2#5#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#17'DependentPa'
+  +'rCombo'#4'Left'#2'd'#6'Height'#2#21#4'Hint'#6'ISelect the structure paramet'
+  +'er that servers as independent variable here.'#3'Top'#2#1#5'Width'#3'6'#1#7
+  +'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8
+  +#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6'*Select dependen'
+  +'t parameter (colour map)...'#6#3'TSH'#6#3'TT4'#6#3'FT4'#6#3'TT3'#6#3'FT3'#6
+  +#3'cT3'#0#8'OnChange'#7#23'DependentParComboChange'#14'ParentShowHint'#8#8'S'
+  +'howHint'#9#8'TabOrder'#2#6#4'Text'#6'*Select dependent parameter (colour ma'
+  +'p)...'#0#0#0#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#23#3'Top'
+  +#3#228#1#5'Width'#3#212#2#6'Panels'#14#0#0#0#6'TPanel'#13'ColorMapPanel'#4'L'
+  +'eft'#3'?'#2#6'Height'#3'?'#1#3'Top'#2' '#5'Width'#3#130#0#7'Anchors'#11#5'a'
+  +'kTop'#7'akRight'#8'akBottom'#0#10'BevelOuter'#7#6'bvNone'#11'BorderStyle'#7
+  +#8'bsSingle'#12'ClientHeight'#3';'#1#11'ClientWidth'#2'~'#8'TabOrder'#2#3#0
+  +#12'TColorButton'#12'ColorButton1'#4'Left'#2#16#6'Height'#2#25#3'Top'#3#128#0
+  +#5'Width'#2'K'#11'BorderWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonColor'#7
+  +#6'clNavy'#14'OnColorChanged'#7#24'ColorButton1ColorChanged'#0#0#12'TColorBu'
+  +'tton'#12'ColorButton2'#4'Left'#2#16#6'Height'#2#25#3'Top'#2'X'#5'Width'#2'K'
   +#11'BorderWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonColor'#7#8'clYellow'
   +#14'OnColorChanged'#7#24'ColorButton2ColorChanged'#0#0#12'TColorButton'#12'C'
   +'olorButton3'#4'Left'#2#16#6'Height'#2#25#3'Top'#2'0'#5'Width'#2'K'#11'Borde'
