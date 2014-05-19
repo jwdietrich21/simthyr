@@ -44,6 +44,12 @@ type
     ColorButton2: TColorButton;
     ColorButton3: TColorButton;
     GroupBox2: TGroupBox;
+    LegendLabel2: TLabel;
+    LegendLabel1: TLabel;
+    LegendLabel3: TLabel;
+    LegendSymb2: TShape;
+    LegendSymb1: TShape;
+    LegendPanel: TPanel;
     SensitivityMap: TChart;
     SensitivityMapColorMapSeries1: TColorMapSeries;
     ColourSource: TListChartSource;
@@ -54,6 +60,8 @@ type
     MinSpinEdit1: TFloatSpinEdit;
     MinSpinEdit2: TFloatSpinEdit;
     PlotPanel: TPanel;
+    LegendSymb3: TShape;
+    LegendFrame: TShape;
     StatusBar1: TStatusBar;
     StrucParCombo1: TComboBox;
     StrucParCombo2: TComboBox;
@@ -73,6 +81,7 @@ type
     { private declarations }
     SensitivityMatrix: TSensitivityMatrix;
     gMinXPar, gMaxXPar, gSpinFactor: real;
+    procedure ColouriseLegend;
   public
     { public declarations }
     procedure PopulateColourSource;
@@ -755,24 +764,28 @@ end;
 procedure TTWSensitivityAnalysisForm.ColorButton3ColorChanged(Sender: TObject);
 begin
   PopulateColourSource;
+  ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton2ColorChanged(Sender: TObject);
 begin
   PopulateColourSource;
+  ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton1ColorChanged(Sender: TObject);
 begin
   PopulateColourSource;
+  ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.FormCreate(Sender: TObject);
 begin
   SensitivityMatrix := TSensitivityMatrix.create;
+  ColouriseLegend;
   PopulateColourSource;
   SetStandardStrucParBoundaries(1 / 3, 3);
 end;
@@ -830,6 +843,13 @@ begin
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
     TWSensitivityAnalysisForm.StrucParCombo2.Enabled := true;
   end;
+end;
+
+procedure TTWSensitivityAnalysisForm.ColouriseLegend;
+begin
+  LegendSymb1.Brush.Color := ColorButton1.ButtonColor;
+  LegendSymb2.Brush.Color := ColorButton2.ButtonColor;
+  LegendSymb3.Brush.Color := ColorButton3.ButtonColor;
 end;
 
 procedure TTWSensitivityAnalysisForm.PopulateColourSource;
