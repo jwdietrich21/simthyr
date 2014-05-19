@@ -34,6 +34,8 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Width = 501
       AxisList = <      
         item
+          Grid.Color = clNone
+          Grid.Style = psClear
           Marks.LabelFont.Height = -11
           Minors = <>
           Title.LabelFont.Height = -11
@@ -42,6 +44,8 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
           Title.Caption = 'Independent Structure Parameter 2'
         end      
         item
+          Grid.Color = clNone
+          Grid.Style = psClear
           Alignment = calBottom
           Marks.LabelFont.Height = -11
           Minors = <>
@@ -66,6 +70,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       ParentShowHint = False
       ShowHint = True
       object SensitivityMapColorMapSeries1: TColorMapSeries
+        Extent.UseXMax = True
+        Extent.UseXMin = True
+        Extent.UseYMax = True
+        Extent.UseYMin = True
         ColorSource = ColourSource
         Interpolate = True
         OnCalculate = SensitivityMapColorMapSeries1Calculate

@@ -125,6 +125,12 @@ var
   tempMinX, tempMaxX: real; {necessary to hinder Windows from altering the globals}
 begin
   case SensitivityAnalysisForm.StrucParCombo.ItemIndex of
+    0:
+    begin {Caption}
+      gSpinFactor := 0;
+      SensitivityAnalysisForm.MinSpinEdit.Value := 0;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := 0;
+    end;
     1:
     begin {GD1}
       gSpinFactor := GD1_FACTOR;
