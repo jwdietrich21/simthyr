@@ -1,13 +1,13 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
-  'TPF0'#15'TSimThyrToolbar'#14'SimThyrToolbar'#4'Left'#3#237#0#6'Height'#2'<'#4
+  'TPF0'#15'TSimThyrToolbar'#14'SimThyrToolbar'#4'Left'#3#248#0#6'Height'#2'<'#4
   +'Hint'#6'RPlease use the icons to load or save settings and to start or stop'
-  +' the simulation.'#3'Top'#2'z'#5'Width'#3#179#2#21'HorzScrollBar.Visible'#8
-  +#21'VertScrollBar.Visible'#8#5'Align'#7#5'alTop'#10'AlphaBlend'#9#15'AlphaBl'
-  +'endValue'#2#0#7'Anchors'#11#0#8'AutoSize'#9#11'BorderStyle'#7#12'bsToolWind'
-  +'ow'#7'Caption'#6#7'SimThyr'#12'ClientHeight'#2'<'#11'ClientWidth'#3#179#2#14
-  +'DefaultMonitor'#7#10'dmMainForm'#8'DockSite'#9#9'Icon.Data'#10#154'$'#0#0
+  +' the simulation.'#3'Top'#3#140#0#5'Width'#3#179#2#21'HorzScrollBar.Visible'
+  +#8#21'VertScrollBar.Visible'#8#5'Align'#7#5'alTop'#10'AlphaBlend'#9#15'Alpha'
+  +'BlendValue'#2#0#7'Anchors'#11#0#8'AutoSize'#9#11'BorderStyle'#7#12'bsToolWi'
+  +'ndow'#7'Caption'#6#7'SimThyr'#12'ClientHeight'#2'<'#11'ClientWidth'#3#179#2
+  +#14'DefaultMonitor'#7#10'dmMainForm'#8'DockSite'#9#9'Icon.Data'#10#154'$'#0#0
   +#150'$'#0#0#0#0#1#0#8#0'  '#2#0#1#0#1#0'0'#1#0#0#134#0#0#0#16#16#2#0#1#0#1#0
   +#176#0#0#0#182#1#0#0'  '#16#0#1#0#4#0#232#2#0#0'f'#2#0#0#16#16#16#0#1#0#4#0
   +'('#1#0#0'N'#5#0#0'  '#0#0#1#0#8#0#168#8#0#0'v'#6#0#0#16#16#0#0#1#0#8#0'h'#5

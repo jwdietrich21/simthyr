@@ -43,10 +43,9 @@ type
     ColorButton1: TColorButton;
     ColorButton2: TColorButton;
     ColorButton3: TColorButton;
+    GroupBox2: TGroupBox;
     SensitivityMap: TChart;
     SensitivityMapColorMapSeries1: TColorMapSeries;
-    ColorMapLabel: TLabel;
-    ColorMapPanel: TPanel;
     ColourSource: TListChartSource;
     FullScaleButton1: TSpeedButton;
     GroupBox1: TGroupBox;

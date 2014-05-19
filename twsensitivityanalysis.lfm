@@ -1,11 +1,11 @@
 object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
-  Left = 293
-  Height = 507
-  Top = 216
-  Width = 724
+  Left = 300
+  Height = 505
+  Top = 290
+  Width = 721
   Caption = 'Two-Way Sensitivity Analysis'
-  ClientHeight = 507
-  ClientWidth = 724
+  ClientHeight = 505
+  ClientWidth = 721
   Color = clWhite
   Constraints.MaxHeight = 800
   Constraints.MaxWidth = 800
@@ -16,22 +16,21 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   LCLVersion = '1.2.2.0'
   object PlotPanel: TPanel
     Left = 48
-    Height = 319
+    Height = 317
     Top = 32
-    Width = 520
+    Width = 517
     Anchors = [akTop, akLeft, akRight, akBottom]
-    BevelOuter = bvNone
     BorderStyle = bsSingle
-    ClientHeight = 315
-    ClientWidth = 516
+    ClientHeight = 317
+    ClientWidth = 517
     TabOrder = 0
     object SensitivityMap: TChart
       Cursor = crCross
       Left = 8
-      Height = 300
+      Height = 302
       Hint = 'Drag with mouse to zoom'
       Top = 8
-      Width = 501
+      Width = 502
       AxisList = <      
         item
           Grid.Color = clNone
@@ -85,18 +84,18 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   object GroupBox1: TGroupBox
     Left = 48
     Height = 112
-    Top = 360
-    Width = 520
+    Top = 358
+    Width = 517
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Parameters'
-    ClientHeight = 94
-    ClientWidth = 516
+    ClientHeight = 90
+    ClientWidth = 509
     TabOrder = 1
     object MinSpinEdit1: TFloatSpinEdit
       Left = 12
-      Height = 21
+      Height = 16
       Hint = 'Minimum of selected structure parameter'
-      Top = 31
+      Top = 37
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
@@ -109,10 +108,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Value = 0
     end
     object MaxSpinEdit1: TFloatSpinEdit
-      Left = 432
-      Height = 21
+      Left = 425
+      Height = 16
       Hint = 'Maximum of selected structure parameter'
-      Top = 31
+      Top = 37
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
@@ -128,11 +127,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 34
-      Width = 310
+      Top = 35
+      Width = 303
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 13
+      ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
         'Select independent parameter (x axis)...'
@@ -165,9 +164,9 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     end
     object MinSpinEdit2: TFloatSpinEdit
       Left = 12
-      Height = 21
+      Height = 16
       Hint = 'Minimum of selected structure parameter'
-      Top = 63
+      Top = 69
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
@@ -183,11 +182,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 66
-      Width = 310
+      Top = 67
+      Width = 303
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 13
+      ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
         'Select independent parameter (y axis)...'
@@ -219,10 +218,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Text = 'Select independent parameter (y axis)...'
     end
     object MaxSpinEdit2: TFloatSpinEdit
-      Left = 432
-      Height = 21
+      Left = 425
+      Height = 16
       Hint = 'Maximum of selected structure parameter'
-      Top = 63
+      Top = 69
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
@@ -238,11 +237,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 1
-      Width = 310
+      Top = 2
+      Width = 303
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 13
+      ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
         'Select dependent parameter (colour map)...'
@@ -262,60 +261,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
-    Top = 484
-    Width = 724
+    Height = 15
+    Top = 490
+    Width = 721
     Panels = <>
-  end
-  object ColorMapPanel: TPanel
-    Left = 575
-    Height = 319
-    Top = 32
-    Width = 130
-    Anchors = [akTop, akRight, akBottom]
-    BevelOuter = bvNone
-    BorderStyle = bsSingle
-    ClientHeight = 315
-    ClientWidth = 126
-    TabOrder = 3
-    object ColorButton1: TColorButton
-      Left = 16
-      Height = 25
-      Top = 128
-      Width = 75
-      BorderWidth = 2
-      ButtonColorSize = 16
-      ButtonColor = clNavy
-      OnColorChanged = ColorButton1ColorChanged
-    end
-    object ColorButton2: TColorButton
-      Left = 16
-      Height = 25
-      Top = 88
-      Width = 75
-      BorderWidth = 2
-      ButtonColorSize = 16
-      ButtonColor = clYellow
-      OnColorChanged = ColorButton2ColorChanged
-    end
-    object ColorButton3: TColorButton
-      Left = 16
-      Height = 25
-      Top = 48
-      Width = 75
-      BorderWidth = 2
-      ButtonColorSize = 16
-      ButtonColor = clRed
-      OnColorChanged = ColorButton3ColorChanged
-    end
-    object ColorMapLabel: TLabel
-      Left = 16
-      Height = 13
-      Top = 15
-      Width = 57
-      Caption = 'Colour Map:'
-      ParentColor = False
-    end
   end
   object FullScaleButton1: TSpeedButton
     Left = 16
@@ -373,8 +322,49 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Chart = SensitivityMap
     LogicalExtentPen.Color = clMaroon
   end
+  object GroupBox2: TGroupBox
+    Left = 573
+    Height = 113
+    Top = 358
+    Width = 129
+    Anchors = [akRight, akBottom]
+    Caption = 'Colour Map'
+    ClientHeight = 91
+    ClientWidth = 121
+    TabOrder = 4
+    object ColorButton1: TColorButton
+      Left = 16
+      Height = 25
+      Top = 60
+      Width = 75
+      BorderWidth = 2
+      ButtonColorSize = 16
+      ButtonColor = clNavy
+      OnColorChanged = ColorButton1ColorChanged
+    end
+    object ColorButton3: TColorButton
+      Left = 16
+      Height = 25
+      Top = 2
+      Width = 75
+      BorderWidth = 2
+      ButtonColorSize = 16
+      ButtonColor = clRed
+      OnColorChanged = ColorButton3ColorChanged
+    end
+    object ColorButton2: TColorButton
+      Left = 16
+      Height = 25
+      Top = 31
+      Width = 75
+      BorderWidth = 2
+      ButtonColorSize = 16
+      ButtonColor = clYellow
+      OnColorChanged = ColorButton2ColorChanged
+    end
+  end
   object ColourSource: TListChartSource
-    left = 104
-    top = 8
+    left = 16
+    top = 320
   end
 end
