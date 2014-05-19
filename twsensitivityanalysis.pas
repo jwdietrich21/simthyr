@@ -21,21 +21,23 @@ interface
 uses
   Classes, SysUtils, FileUtil, TAGraph, TAFuncSeries, TASources, LResources,
   Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Spin, ComCtrls,
-  ColorBox, TAChartUtils, Sensitivityanalysis;
+  ColorBox, Buttons, TAChartUtils, TANavigation, Sensitivityanalysis;
 
 type
 
   { TTWSensitivityAnalysisForm }
 
   TTWSensitivityAnalysisForm = class(TForm)
+    ChartNavPanel1: TChartNavPanel;
     ColorButton1: TColorButton;
     ColorButton2: TColorButton;
     ColorButton3: TColorButton;
-    ColorMap: TChart;
-    ColorMapColorMapSeries1: TColorMapSeries;
+    SensitivityMap: TChart;
+    SensitivityMapColorMapSeries1: TColorMapSeries;
     ColorMapLabel: TLabel;
     ColorMapPanel: TPanel;
     ColourSource: TListChartSource;
+    FullScaleButton1: TSpeedButton;
     GroupBox1: TGroupBox;
     MaxSpinEdit1: TFloatSpinEdit;
     MaxSpinEdit2: TFloatSpinEdit;
@@ -49,10 +51,11 @@ type
     procedure ColorButton1ColorChanged(Sender: TObject);
     procedure ColorButton2ColorChanged(Sender: TObject);
     procedure ColorButton3ColorChanged(Sender: TObject);
-    procedure ColorMapColorMapSeries1Calculate(const AX, AY: Double; out
+    procedure SensitivityMapColorMapSeries1Calculate(const AX, AY: Double; out
       AZ: Double);
     procedure DependentParComboChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FullScaleButton1Click(Sender: TObject);
     procedure StrucParCombo1Change(Sender: TObject);
     procedure StrucParCombo2Change(Sender: TObject);
   private
@@ -69,41 +72,48 @@ implementation
 
 { TTWSensitivityAnalysisForm }
 
-procedure TTWSensitivityAnalysisForm.ColorMapColorMapSeries1Calculate(const AX,
+procedure TTWSensitivityAnalysisForm.SensitivityMapColorMapSeries1Calculate(const AX,
   AY: Double; out AZ: Double);
+{ This procedure calculates equilibrium levels of the selected dependent parameter }
+{ according to variations in independent structure parameters }
 var
   ext: TDoubleRect;
 begin
-  ext := ColorMap.GetFullExtent;
+  ext := SensitivityMap.GetFullExtent;
   AZ := (AX - ext.a.x) / (ext.b.x - ext.a.x);
 end;
 
 procedure TTWSensitivityAnalysisForm.DependentParComboChange(Sender: TObject);
 begin
-  ColorMap.Title.Text.Text := DependentParCombo.Text;
+  SensitivityMap.Title.Text.Text := DependentParCombo.Text;
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton3ColorChanged(Sender: TObject);
 begin
   PopulateColourSource;
-  ColorMap.Invalidate;  {forces redrawing in some operating systems}
+  SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton2ColorChanged(Sender: TObject);
 begin
   PopulateColourSource;
-  ColorMap.Invalidate;  {forces redrawing in some operating systems}
+  SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton1ColorChanged(Sender: TObject);
 begin
   PopulateColourSource;
-  ColorMap.Invalidate;  {forces redrawing in some operating systems}
+  SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.FormCreate(Sender: TObject);
 begin
   PopulateColourSource;
+end;
+
+procedure TTWSensitivityAnalysisForm.FullScaleButton1Click(Sender: TObject);
+begin
+  SensitivityMap.ZoomFull;
 end;
 
 procedure SetLeftAxisCaption;
@@ -112,7 +122,7 @@ var
   theCaption: string;
 begin
   theCaption := composedAxisCaption(TWSensitivityAnalysisForm.StrucParCombo2.Text);
-  TWSensitivityAnalysisForm.ColorMap.LeftAxis.Title.Caption :=
+  TWSensitivityAnalysisForm.SensitivityMap.LeftAxis.Title.Caption :=
     theCaption;
 end;
 
@@ -122,7 +132,7 @@ var
   theCaption: string;
 begin
   theCaption := composedAxisCaption(TWSensitivityAnalysisForm.StrucParCombo1.Text);
-  TWSensitivityAnalysisForm.ColorMap.BottomAxis.Title.Caption :=
+  TWSensitivityAnalysisForm.SensitivityMap.BottomAxis.Title.Caption :=
     theCaption;
 end;
 

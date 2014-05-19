@@ -1,35 +1,37 @@
 object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   Left = 293
-  Height = 496
+  Height = 507
   Top = 216
   Width = 724
   Caption = 'Two-Way Sensitivity Analysis'
-  ClientHeight = 496
+  ClientHeight = 507
   ClientWidth = 724
   Color = clWhite
   Constraints.MaxHeight = 800
   Constraints.MaxWidth = 800
-  Constraints.MinHeight = 300
-  Constraints.MinWidth = 500
+  Constraints.MinHeight = 380
+  Constraints.MinWidth = 600
   OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.2.2.0'
   object PlotPanel: TPanel
     Left = 48
-    Height = 308
+    Height = 319
     Top = 32
     Width = 520
     Anchors = [akTop, akLeft, akRight, akBottom]
-    ClientHeight = 308
-    ClientWidth = 520
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    ClientHeight = 315
+    ClientWidth = 516
     TabOrder = 0
-    object ColorMap: TChart
+    object SensitivityMap: TChart
       Cursor = crCross
       Left = 8
-      Height = 293
+      Height = 300
+      Hint = 'Drag with mouse to zoom'
       Top = 8
-      Width = 505
-      AllowZoom = False
+      Width = 501
       AxisList = <      
         item
           Marks.LabelFont.Height = -11
@@ -45,7 +47,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
           Minors = <>
           Title.LabelFont.Height = -11
           Title.Visible = True
-          Title.Caption = 'Inpedendent Structure Parameter 1'
+          Title.Caption = 'Independent Structure Parameter 1'
         end>
       BackColor = clWhite
       Foot.Brush.Color = clBtnFace
@@ -62,10 +64,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       DoubleBuffered = True
       ParentColor = False
       ParentShowHint = False
-      object ColorMapColorMapSeries1: TColorMapSeries
+      ShowHint = True
+      object SensitivityMapColorMapSeries1: TColorMapSeries
         ColorSource = ColourSource
         Interpolate = True
-        OnCalculate = ColorMapColorMapSeries1Calculate
+        OnCalculate = SensitivityMapColorMapSeries1Calculate
         StepX = 5
         StepY = 5
       end
@@ -73,19 +76,19 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   end
   object GroupBox1: TGroupBox
     Left = 48
-    Height = 120
-    Top = 356
+    Height = 112
+    Top = 360
     Width = 520
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Parameters'
-    ClientHeight = 98
-    ClientWidth = 512
+    ClientHeight = 94
+    ClientWidth = 516
     TabOrder = 1
     object MinSpinEdit1: TFloatSpinEdit
       Left = 12
-      Height = 16
+      Height = 21
       Hint = 'Minimum of selected structure parameter'
-      Top = 40
+      Top = 31
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
@@ -98,10 +101,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Value = 0
     end
     object MaxSpinEdit1: TFloatSpinEdit
-      Left = 428
-      Height = 16
+      Left = 432
+      Height = 21
       Hint = 'Maximum of selected structure parameter'
-      Top = 40
+      Top = 31
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
@@ -117,14 +120,14 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 38
-      Width = 306
+      Top = 34
+      Width = 310
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
-        'Select independent parameter (x)...'
+        'Select independent parameter (x axis)...'
         'GD1 (nmol/s)'
         'GD2 (fmol/s)'
         'KM1 (nmol/l)'
@@ -150,13 +153,13 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
-      Text = 'Select independent parameter (x)...'
+      Text = 'Select independent parameter (x axis)...'
     end
     object MinSpinEdit2: TFloatSpinEdit
       Left = 12
-      Height = 16
+      Height = 21
       Hint = 'Minimum of selected structure parameter'
-      Top = 72
+      Top = 63
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
@@ -172,14 +175,14 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 70
-      Width = 306
+      Top = 66
+      Width = 310
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
-        'Select independent parameter (y)...'
+        'Select independent parameter (y axis)...'
         'GD1 (nmol/s)'
         'GD2 (fmol/s)'
         'KM1 (nmol/l)'
@@ -205,13 +208,13 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
-      Text = 'Select independent parameter (y)...'
+      Text = 'Select independent parameter (y axis)...'
     end
     object MaxSpinEdit2: TFloatSpinEdit
-      Left = 428
-      Height = 16
+      Left = 432
+      Height = 21
       Hint = 'Maximum of selected structure parameter'
-      Top = 72
+      Top = 63
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
@@ -227,14 +230,14 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 5
-      Width = 306
+      Top = 1
+      Width = 310
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
-        'Select dependent parameter...'
+        'Select dependent parameter (colour map)...'
         'TSH'
         'TT4'
         'FT4'
@@ -246,24 +249,26 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       ParentShowHint = False
       ShowHint = True
       TabOrder = 6
-      Text = 'Select dependent parameter...'
+      Text = 'Select dependent parameter (colour map)...'
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
-    Top = 481
+    Height = 23
+    Top = 484
     Width = 724
     Panels = <>
   end
   object ColorMapPanel: TPanel
     Left = 575
-    Height = 308
+    Height = 319
     Top = 32
     Width = 130
     Anchors = [akTop, akRight, akBottom]
-    ClientHeight = 308
-    ClientWidth = 130
+    BevelOuter = bvNone
+    BorderStyle = bsSingle
+    ClientHeight = 315
+    ClientWidth = 126
     TabOrder = 3
     object ColorButton1: TColorButton
       Left = 16
@@ -297,12 +302,68 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     end
     object ColorMapLabel: TLabel
       Left = 16
-      Height = 16
+      Height = 13
       Top = 15
-      Width = 77
+      Width = 57
       Caption = 'Colour Map:'
       ParentColor = False
     end
+  end
+  object FullScaleButton1: TSpeedButton
+    Left = 16
+    Height = 22
+    Hint = 'Full scale plot (drag with mouse over plot to zoom)'
+    Top = 32
+    Width = 23
+    BorderSpacing.Top = 20
+    Glyph.Data = {
+      36040000424D3604000000000000360000002800000010000000100000000100
+      20000000000000040000640000006400000000000000000000008186849D858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF7F8382A0858A88FFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA46534FFA46534FFA46534FFFAFBFBFFFAFBFBFFFCFCFDFFFDFC
+      FCFFA46534FFA46534FFA46534FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA46534FFA46534FFF9FAFAFFF9F9F9FFF9FAF9FFFBFBFBFFFBFB
+      FCFFFBFBFCFFA46534FFA46534FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA46636FFA76A3BFFAB7246FFF8F9F8FFF8F9F9FFFAFAFAFFFAFA
+      FBFFAA7043FFA56737FFA46534FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46635FFF6F7F7FFAE774CFFB98B67FFC9A68BFFF7F8F8FFF9F9F9FFD1B5
+      9EFFBD916FFFAE764BFFF9FAFAFFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFF5F6F6FFF4F6F6FFF6F6F7FFCAAA90FFDBC7B7FFE6DBD3FFEAE2DBFFE4D6
+      CAFFD4BAA6FFF8F9F9FFF9FAFAFFF9F9F9FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFF3F5F5FFF3F5F5FFF4F5F5FFF4F5F6FFE3D7CCFFF5F5F6FFF6F7F7FFEAE1
+      D9FFF7F8F8FFF8F9F8FFF7F9F9FFF8F8F9FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFEFF1F1FFF0F1F1FFF0F1F2FFF0F2F1FFDFD2C7FFF0F2F2FFF2F3F4FFE2D7
+      CEFFF3F4F5FFF3F4F5FFF3F5F5FFF4F5F4FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFEFF0F0FFEFF0F0FFEFF1F1FFCFB4A0FFD8C7B9FFE0D3C9FFE2D7CDFFDCCB
+      BDFFCFB49FFFF2F4F4FFF3F4F3FFF2F4F4FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46635FFEDEFEFFFB3825CFFC39F83FFCFB6A2FFEEF0F0FFF0F2F1FFCCB0
+      99FFC0987AFFB27F57FFF1F3F3FFA56737FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA56736FFAA7043FFB4845FFFEEEFEFFFEEEFEFFFF0F1F1FFF0F1
+      F1FFAE784EFFA96E40FFA56838FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA46534FFA56736FFECEEEEFFECEEEEFFECEEEFFFEEF0F0FFEEF0
+      F0FFEEF0F0FFA56736FFA46534FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA46534FFA46534FFA46534FFECEEEEFFECEEEEFFEEEFEFFFEDEF
+      EFFFA46534FFA46534FFA46534FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF858A88FF858A8899858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A8899
+    }
+    OnClick = FullScaleButton1Click
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object ChartNavPanel1: TChartNavPanel
+    Left = 16
+    Height = 24
+    Hint = 'Drag to select the part of the plot to be displayed.'
+    Top = 72
+    Width = 23
+    Chart = SensitivityMap
+    LogicalExtentPen.Color = clMaroon
   end
   object ColourSource: TListChartSource
     left = 104

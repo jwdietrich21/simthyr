@@ -14,7 +14,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="3"/>
-      <BuildNr Value="343"/>
+      <BuildNr Value="347"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 3.3.0" LegalCopyright="1994-2014 J. W. Dietrich" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.3.0"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -122,7 +122,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="2"/>
-        <UsageCount Value="123"/>
+        <UsageCount Value="124"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit6>
@@ -876,9 +876,9 @@
         <EditorIndex Value="18"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
+        <CursorPos X="1" Y="2"/>
         <ExtraEditorCount Value="1"/>
-        <UsageCount Value="177"/>
+        <UsageCount Value="178"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit92>
@@ -929,7 +929,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="2"/>
-        <UsageCount Value="148"/>
+        <UsageCount Value="149"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit98>
@@ -1002,7 +1002,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="2" Y="2"/>
-        <UsageCount Value="99"/>
+        <UsageCount Value="100"/>
         <Loaded Value="True"/>
       </Unit107>
       <Unit108>
@@ -1038,7 +1038,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="75" Y="35"/>
-        <UsageCount Value="77"/>
+        <UsageCount Value="78"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit111>
@@ -1064,7 +1064,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="19" Y="5"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="68"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit114>
@@ -1204,7 +1204,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="2"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit132>
       <Unit133>
@@ -1215,7 +1215,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="2"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit133>
       <Unit134>
@@ -1236,132 +1236,132 @@
         <EditorIndex Value="19"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="38" Y="13"/>
-        <UsageCount Value="26"/>
+        <CursorPos X="118" Y="20"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit135>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="912" Column="28" TopLine="884"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="85" Column="1" TopLine="72"/>
       </Position1>
       <Position2>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="924" Column="7" TopLine="895"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="86" Column="24" TopLine="73"/>
       </Position2>
       <Position3>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="929" Column="7" TopLine="900"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="99" Column="69" TopLine="79"/>
       </Position3>
       <Position4>
         <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="87" Column="49" TopLine="73"/>
+        <Caret Line="88" Column="3" TopLine="86"/>
       </Position4>
       <Position5>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="236" Column="81" TopLine="212"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="81" Column="1" TopLine="75"/>
       </Position5>
       <Position6>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="87" Column="45" TopLine="72"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="26" Column="26" TopLine="1"/>
       </Position6>
       <Position7>
-        <Filename Value="splash.pas"/>
-        <Caret Line="2" Column="9" TopLine="1"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="834" Column="19" TopLine="823"/>
       </Position7>
       <Position8>
         <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="85" Column="1" TopLine="72"/>
+        <Caret Line="115" Column="12" TopLine="84"/>
       </Position8>
       <Position9>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="86" Column="24" TopLine="73"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="283" Column="77" TopLine="282"/>
       </Position9>
       <Position10>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="99" Column="69" TopLine="79"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="828" Column="25" TopLine="822"/>
       </Position10>
       <Position11>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="88" Column="3" TopLine="86"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="460" Column="6" TopLine="443"/>
       </Position11>
       <Position12>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="81" Column="1" TopLine="75"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="2" Column="1" TopLine="1"/>
       </Position12>
       <Position13>
         <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="26" Column="26" TopLine="1"/>
+        <Caret Line="476" Column="1" TopLine="449"/>
       </Position13>
       <Position14>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="834" Column="19" TopLine="823"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="109" Column="108" TopLine="82"/>
       </Position14>
       <Position15>
         <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="115" Column="12" TopLine="84"/>
+        <Caret Line="135" Column="6" TopLine="114"/>
       </Position15>
       <Position16>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="283" Column="77" TopLine="282"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="118" Column="33" TopLine="99"/>
       </Position16>
       <Position17>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="828" Column="25" TopLine="822"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="24" Column="46" TopLine="1"/>
       </Position17>
       <Position18>
         <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="460" Column="6" TopLine="443"/>
+        <Caret Line="2" Column="10" TopLine="1"/>
       </Position18>
       <Position19>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="2" Column="1" TopLine="1"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="124" Column="36" TopLine="96"/>
       </Position19>
       <Position20>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="476" Column="1" TopLine="449"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="84" Column="62" TopLine="68"/>
       </Position20>
       <Position21>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="109" Column="108" TopLine="82"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="495" Column="46" TopLine="461"/>
       </Position21>
       <Position22>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="135" Column="6" TopLine="114"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="2" Column="1" TopLine="1"/>
       </Position22>
       <Position23>
         <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="118" Column="33" TopLine="99"/>
+        <Caret Line="83" Column="53" TopLine="65"/>
       </Position23>
       <Position24>
         <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="24" Column="46" TopLine="1"/>
+        <Caret Line="13" Column="38" TopLine="28"/>
       </Position24>
       <Position25>
         <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="2" Column="10" TopLine="1"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
       </Position25>
       <Position26>
         <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="124" Column="36" TopLine="96"/>
+        <Caret Line="13" Column="38" TopLine="28"/>
       </Position26>
       <Position27>
         <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="84" Column="62" TopLine="68"/>
+        <Caret Line="114" Column="1" TopLine="111"/>
       </Position27>
       <Position28>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="495" Column="46" TopLine="461"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="115" Column="1" TopLine="112"/>
       </Position28>
       <Position29>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="2" Column="1" TopLine="1"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="114" Column="1" TopLine="111"/>
       </Position29>
       <Position30>
         <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="83" Column="53" TopLine="65"/>
+        <Caret Line="73" Column="46" TopLine="64"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
