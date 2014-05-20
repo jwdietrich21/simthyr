@@ -74,7 +74,7 @@ type
     StrucParCombo2: TComboBox;
     DependentParCombo: TComboBox;
     CheckToggleBox: TToggleBox;
-    procedure CalculateSensitivityMatrix(theMatrix: TSensitivityMatrix;
+    procedure CalculateSensitivityMatrix(var theMatrix: TSensitivityMatrix;
       const ymax: real; const ymin: real; const xmax: real; const xmin: real);
     procedure CalculateMatrixWithCoordinates(theMatrix: TSensitivityMatrix);
     procedure CheckToggleBoxChange(Sender: TObject);
@@ -181,15 +181,20 @@ end;
 
 { TTWSensitivityAnalysisForm }
 
-procedure TTWSensitivityAnalysisForm.CalculateSensitivityMatrix(theMatrix:
+procedure TTWSensitivityAnalysisForm.CalculateSensitivityMatrix(var theMatrix:
   TSensitivityMatrix; const ymax: real; const ymin: real; const xmax: real;
   const xmin: real);
+{ This procedure calculates equilibrium levels of the selected dependent parameter }
+{ according to variations in independent structure parameters }
+{ results are stored in the 2d array "theMatrix" }
 var
+  plotPossible: boolean;
   i, j: integer;
   oldCursor: TCursor;
   FT4conversionFactor, FT3conversionFactor: real;
   TT4conversionFactor, TT3conversionFactor, cT3conversionFactor: real;
 begin
+  plotPossible := false;
   oldCursor := Cursor;
   Cursor := crHourGlass;
   CheckGrid.Clear;
@@ -210,42 +215,56 @@ begin
   for j := 0 to TWS_RESOLUTION do
   begin
     case StrucParCombo1.ItemIndex of
-      0:
-      ;
-      1:
-      begin
-        case StrucParCombo2.ItemIndex of
-          2:
-          begin
-            GD1 := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / GD1_FACTOR;
-            GD2 := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / GD2_FACTOR;
-            PredictEquilibrium;
-          end;
-        end;
-      end;
+      0: // title or undefined parameter selected
+        ;
+      1: // GD1
+        GD1 := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / GD1_FACTOR;
       otherwise
         ;
     end;
-    case DependentParCombo.ItemIndex of
-      1:
-        theMatrix.content[j + 1, i + 1] := TSH1 * gParameterFactor[TSH_pos];
-      2:
-        theMatrix.content[j + 1, i + 1] := T41 * TT4conversionFactor;
-      3:
-        theMatrix.content[j + 1, i + 1] := FT41 * FT4conversionFactor;
-      4:
-        theMatrix.content[j + 1, i + 1] := T31 * TT3conversionFactor;
-      5:
-        theMatrix.content[j + 1, i + 1] := FT31 * FT3conversionFactor;
-      6:
-        theMatrix.content[j + 1, i + 1] := T3z1 * cT3conversionFactor;
-      otherwise
-        theMatrix.content[j + 1, i + 1] := -1; // undefined parameter selected
+    case StrucParCombo2.ItemIndex of
+      1: // GD1
+        GD1 := (ymin + j / TWS_RESOLUTION * (ymax - xmin)) / GD1_FACTOR;
+      2: // GD2
+        GD2 := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / GD2_FACTOR;
+      3: // KM1
+        KM1 := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / KM1_FACTOR;
+      4: // KM2
+        KM2 := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / KM2_FACTOR;
+      5: // GT
+        GT := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / GT_FACTOR;
+      6: // DT
+        DT := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DT_FACTOR;
     end;
+    if (StrucParCombo1.ItemIndex > 0) and (StrucParCombo2.ItemIndex > 0) and
+       (StrucParCombo1.ItemIndex <> StrucParCombo2.ItemIndex) then
+       plotPossible := true;
+    if plotPossible then
+    begin
+      PredictEquilibrium;
+      case DependentParCombo.ItemIndex of
+        1:
+          theMatrix.content[j + 1, i + 1] := TSH1 * gParameterFactor[TSH_pos];
+        2:
+          theMatrix.content[j + 1, i + 1] := T41 * TT4conversionFactor;
+        3:
+          theMatrix.content[j + 1, i + 1] := FT41 * FT4conversionFactor;
+        4:
+          theMatrix.content[j + 1, i + 1] := T31 * TT3conversionFactor;
+        5:
+          theMatrix.content[j + 1, i + 1] := FT31 * FT3conversionFactor;
+        6:
+          theMatrix.content[j + 1, i + 1] := T3z1 * cT3conversionFactor;
+        otherwise
+          theMatrix.content[j + 1, i + 1] := -1; // undefined parameter selected
+      end
+    end
+    else
+      theMatrix.content[j + 1, i + 1] := -1;
   end;
   FillGrid(CheckGrid, theMatrix, TWS_RESOLUTION + 1, TWS_RESOLUTION + 1);
   RestoreStrucPars;
-  PredictEquilibrium;
+  PredictEquilibrium; // restore previous prediction
   Cursor := oldCursor;
 end;
 
@@ -883,8 +902,8 @@ end;
 
 procedure TTWSensitivityAnalysisForm.SensitivityMapColorMapSeries1Calculate(const AX,
   AY: Double; out AZ: Double);
-{ This procedure calculates equilibrium levels of the selected dependent parameter }
-{ according to variations in independent structure parameters }
+{ This procedure reads equilibrium levels from the sensitivity matrix }
+{ and delivers point-wise results in the variable AZ }
 var
   ext: TDoubleRect;
   i, j: integer;
@@ -893,7 +912,6 @@ begin
   ext := SensitivityMap.GetFullExtent;
   i := trunc((AX - ext.a.x) / (ext.b.x - ext.a.x) * TWS_RESOLUTION);
   j := trunc((AY - ext.a.y) / (ext.b.y - ext.a.y) * TWS_RESOLUTION);
-  //AZ := (AX - ext.a.x) / (ext.b.x - ext.a.x);
   AZ := SensitivityMatrix.content[j + 1, i + 1];
   SensitivityMap.EnableRedrawing;
 end;
