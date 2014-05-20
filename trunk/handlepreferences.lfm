@@ -1,7 +1,7 @@
 object PreferencesDialog: TPreferencesDialog
-  Left = 239
+  Left = 286
   Height = 385
-  Top = 195
+  Top = 196
   Width = 523
   AlphaBlend = True
   AlphaBlendValue = 0
