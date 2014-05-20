@@ -70,6 +70,7 @@ type
     CheckToggleBox: TToggleBox;
     procedure CalculateSensitivityMatrix(theMatrix: TSensitivityMatrix;
       const ymax: real; const ymin: real; const xmax: real; const xmin: real);
+    procedure CalculateMatrixWithCoordinates(theMatrix: TSensitivityMatrix);
     procedure CheckToggleBoxChange(Sender: TObject);
     procedure SetStandardStrucParBoundaries(factor1, factor2: real);
     procedure ColorButton1ColorChanged(Sender: TObject);
@@ -80,10 +81,8 @@ type
     procedure DependentParComboChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FullScaleButton1Click(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
     procedure StrucParCombo1Change(Sender: TObject);
     procedure StrucParCombo2Change(Sender: TObject);
-    procedure ToggleBox1Change(Sender: TObject);
   private
     { private declarations }
     SensitivityMatrix: TSensitivityMatrix;
@@ -91,7 +90,7 @@ type
     procedure ColouriseLegend;
   public
     { public declarations }
-    procedure PopulateColourSource;
+    procedure PopulateColourSource(const minScale, medScale, maxScale: real);
   end;
 
 var
@@ -202,6 +201,20 @@ begin
   RestoreStrucPars;
   PredictEquilibrium;
   Cursor := oldCursor;
+end;
+
+procedure TTWSensitivityAnalysisForm.CalculateMatrixWithCoordinates(theMatrix:
+  TSensitivityMatrix);
+var
+  xmin, xmax, ymin, ymax: real;
+begin
+  xmin := SensitivityMapColorMapSeries1.Extent.XMin;
+  xmax := SensitivityMapColorMapSeries1.Extent.XMax;
+  ymin := SensitivityMapColorMapSeries1.Extent.YMin;
+  ymax := SensitivityMapColorMapSeries1.Extent.YMax;
+  CalculateSensitivityMatrix(SensitivityMatrix, ymax, ymin, xmax, xmin);
+  StatusBar1.Panels[0].Text := ' ' + IntToStr(sqr(TWS_RESOLUTION)) +
+    ' data points';
 end;
 
 procedure TTWSensitivityAnalysisForm.CheckToggleBoxChange(Sender: TObject);
@@ -829,14 +842,8 @@ procedure TTWSensitivityAnalysisForm.SensitivityMapColorMapSeries1Calculate(cons
 var
   ext: TDoubleRect;
   i, j: integer;
-  xmin, xmax, ymin, ymax: real;
 begin
   SensitivityMap.DisableRedrawing;
-  xmin := SensitivityMapColorMapSeries1.Extent.XMin;
-  xmax := SensitivityMapColorMapSeries1.Extent.XMax;
-  ymin := SensitivityMapColorMapSeries1.Extent.YMin;
-  ymax := SensitivityMapColorMapSeries1.Extent.YMax;
-  CalculateSensitivityMatrix(SensitivityMatrix, ymax, ymin, xmax, xmin);
   ext := SensitivityMap.GetFullExtent;
   i := trunc((AX - ext.a.x) / (ext.b.x - ext.a.x) * TWS_RESOLUTION);
   j := trunc((AY - ext.a.y) / (ext.b.y - ext.a.y) * TWS_RESOLUTION);
@@ -848,27 +855,28 @@ end;
 procedure TTWSensitivityAnalysisForm.DependentParComboChange(Sender: TObject);
 begin
   SensitivityMap.Title.Text.Text := DependentParCombo.Text;
-  PopulateColourSource;
+  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  PopulateColourSource(0, 0.5, 1);
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton3ColorChanged(Sender: TObject);
 begin
-  PopulateColourSource;
+  PopulateColourSource(0, 0.5, 1);
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton2ColorChanged(Sender: TObject);
 begin
-  PopulateColourSource;
+  PopulateColourSource(0, 0.5, 1);
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton1ColorChanged(Sender: TObject);
 begin
-  PopulateColourSource;
+  PopulateColourSource(0, 0.5, 1);
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
@@ -882,18 +890,13 @@ begin
   {$ENDIF}
   SensitivityMatrix := TSensitivityMatrix.create;
   ColouriseLegend;
-  PopulateColourSource;
+  PopulateColourSource(0, 0.5, 1);
   SetStandardStrucParBoundaries(1 / 3, 3);
 end;
 
 procedure TTWSensitivityAnalysisForm.FullScaleButton1Click(Sender: TObject);
 begin
   SensitivityMap.ZoomFull;
-end;
-
-procedure TTWSensitivityAnalysisForm.SpeedButton1Click(Sender: TObject);
-begin
-
 end;
 
 procedure SetLeftAxisCaption;
@@ -922,10 +925,9 @@ begin
   begin
     TWSensitivityAnalysisForm.StrucParCombo1.Enabled := false; {fixes error #8}
     SetBottomAxisCaption;
-    {ItemIndex is evaluated in the SetStandardStrucParBoundaries and plot routine}
     SetStandardStrucParBoundaries(1 / 3, 3);
-    //DrawOWSensitivityPlot(False);
-    PopulateColourSource;
+    CalculateMatrixWithCoordinates(SensitivityMatrix);
+    PopulateColourSource(0, 0.5, 1);
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
     TWSensitivityAnalysisForm.StrucParCombo1.Enabled := true;
   end;
@@ -937,18 +939,12 @@ begin
   begin
     TWSensitivityAnalysisForm.StrucParCombo2.Enabled := false; {fixes error #8}
     SetLeftAxisCaption;
-    {ItemIndex is evaluated in the SetStandardStrucParBoundaries and plot routine}
     SetStandardStrucParBoundaries(1 / 3, 3);
-    //DrawOWSensitivityPlot(False);
-    PopulateColourSource;
+    CalculateMatrixWithCoordinates(SensitivityMatrix);
+    PopulateColourSource(0, 0.5, 1);
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
     TWSensitivityAnalysisForm.StrucParCombo2.Enabled := true;
   end;
-end;
-
-procedure TTWSensitivityAnalysisForm.ToggleBox1Change(Sender: TObject);
-begin
-
 end;
 
 procedure TTWSensitivityAnalysisForm.ColouriseLegend;
@@ -958,7 +954,8 @@ begin
   LegendSymb3.Brush.Color := ColorButton3.ButtonColor;
 end;
 
-procedure TTWSensitivityAnalysisForm.PopulateColourSource;
+procedure TTWSensitivityAnalysisForm.PopulateColourSource(const minScale,
+  medScale, maxScale: real);
 const
   DUMMY = 0.0;
 begin
@@ -966,9 +963,9 @@ begin
   begin
     Clear;
     Add(-1.0, DUMMY, '', clWhite);
-    Add(0.0, DUMMY, '', ColorButton1.ButtonColor);
-    Add(0.5, DUMMY, '', ColorButton2.ButtonColor);
-    Add(1.0, DUMMY, '', ColorButton3.ButtonColor);
+    Add(minScale, DUMMY, '', ColorButton1.ButtonColor);
+    Add(medScale, DUMMY, '', ColorButton2.ButtonColor);
+    Add(maxScale, DUMMY, '', ColorButton3.ButtonColor);
   end;
 end;
 
