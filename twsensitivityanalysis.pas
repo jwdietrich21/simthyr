@@ -219,10 +219,50 @@ begin
         ;
       1: // GD1
         GD1 := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / GD1_FACTOR;
+      2: // GD2
+        GD2 := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / GD2_FACTOR;
+      3: // KM1
+        KM1 := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / KM1_FACTOR;
+      4: // KM2
+        KM2 := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / KM2_FACTOR;
+      5: // GT
+        GT := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / GT_FACTOR;
+      6: // DT
+        DT := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / DT_FACTOR;
+      7: // GH
+        GH := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / DT_FACTOR;
+      8: // DH
+        DH := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / DH_FACTOR;
+      9: // SS
+        SS := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / DT_FACTOR;
+      10: // DS
+        DS := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / DT_FACTOR;
+      11: // GR
+        GR := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / DT_FACTOR;
+      12: // DR
+        DR := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / DR_FACTOR;
+      13: // LS
+        LS := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / LS_FACTOR;
+      14: // betaS
+        betaS := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / DT_FACTOR;
+      15: // betaS2
+        betaS2 := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / DT_FACTOR;
+      16: // betaT
+        betaT := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / BETAT_FACTOR;
+      17: // beta31
+        beta31 := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / BETAT_FACTOR;
+      18: // beta32
+        beta32 := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / DT_FACTOR;
+      19: // TBG
+        TBG := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / TBG_FACTOR;
+      20: // TBPA
+        TBPA := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / TBPA_FACTOR;
       otherwise
         ;
     end;
     case StrucParCombo2.ItemIndex of
+      0: // title or undefined parameter selected
+        ;
       1: // GD1
         GD1 := (ymin + j / TWS_RESOLUTION * (ymax - xmin)) / GD1_FACTOR;
       2: // GD2
@@ -235,6 +275,36 @@ begin
         GT := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / GT_FACTOR;
       6: // DT
         DT := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DT_FACTOR;
+      7: // GH
+        GH := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DT_FACTOR;
+      8: // DH
+        DH := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DH_FACTOR;
+      9: // SS
+        SS := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DT_FACTOR;
+      10: // DS
+        DS := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DT_FACTOR;
+      11: // GR
+        GR := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DT_FACTOR;
+      12: // DR
+        DR := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DR_FACTOR;
+      13: // LS
+        LS := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / LS_FACTOR;
+      14: // betaS
+        betaS := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DT_FACTOR;
+      15: // betaS2
+        betaS2 := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DT_FACTOR;
+      16: // betaT
+        betaT := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / BETAT_FACTOR;
+      17: // beta31
+        beta31 := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / BETAT_FACTOR;
+      18: // beta32
+        beta32 := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / DT_FACTOR;
+      19: // TBG
+        TBG := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / TBG_FACTOR;
+      20: // TBPA
+        TBPA := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / TBPA_FACTOR;
+      otherwise
+        ;
     end;
     if (StrucParCombo1.ItemIndex > 0) and (StrucParCombo2.ItemIndex > 0) and
        (StrucParCombo1.ItemIndex <> StrucParCombo2.ItemIndex) then
