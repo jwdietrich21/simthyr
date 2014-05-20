@@ -21,8 +21,8 @@ interface
 uses
   Classes, SysUtils, FileUtil, TAGraph, TAFuncSeries, TASources, LResources,
   Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Spin, ComCtrls,
-  ColorBox, Buttons, TAChartUtils, TANavigation, SimThyrTypes,
-  Sensitivityanalysis;
+  ColorBox, Buttons, TAChartUtils, TANavigation, SimThyrTypes, UnitConverter,
+  SimThyrPrediction, Sensitivityanalysis;
 
 type
 
@@ -66,6 +66,8 @@ type
     StrucParCombo1: TComboBox;
     StrucParCombo2: TComboBox;
     DependentParCombo: TComboBox;
+    procedure CalculateSensitivityMatrix(theMatrix: TSensitivityMatrix;
+      const ymax: real; const ymin: real; const xmax: real; const xmin: real);
     procedure SetStandardStrucParBoundaries(factor1, factor2: real);
     procedure ColorButton1ColorChanged(Sender: TObject);
     procedure ColorButton2ColorChanged(Sender: TObject);
@@ -89,6 +91,7 @@ type
 
 var
   TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm;
+  gMinYPar, gMaxYPar: real;
 
 implementation
 
@@ -118,10 +121,72 @@ end;
 
 { TTWSensitivityAnalysisForm }
 
+procedure TTWSensitivityAnalysisForm.CalculateSensitivityMatrix(theMatrix:
+  TSensitivityMatrix; const ymax: real; const ymin: real; const xmax: real;
+  const xmin: real);
+var
+  i, j: integer;
+  oldCursor: TCursor;
+  FT4conversionFactor, FT3conversionFactor: real;
+  TT4conversionFactor, TT3conversionFactor, cT3conversionFactor: real;
+begin
+  oldCursor := Cursor;
+  Cursor := crHourGlass;
+  SaveStrucPars;
+  FT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l', gParameterUnit[FT4_pos]);
+  TT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l', gParameterUnit[TT4_pos]);
+  TT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l', gParameterUnit[TT3_pos]);
+  FT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l', gParameterUnit[FT3_pos]);
+  cT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l', gParameterUnit[cT3_pos]);
+  theMatrix.ClearContent;
+  for i := 0 to TWS_RESOLUTION do
+    theMatrix.content[0, i + 1] := xmin + i / TWS_RESOLUTION * (xmax - xmin);
+  for j := 0 to TWS_RESOLUTION do
+    theMatrix.content[j + 1, 0] := ymin + j / TWS_RESOLUTION * (ymax - ymin);
+  for i := 1 to TWS_RESOLUTION do
+  for j := 1 to TWS_RESOLUTION do
+  begin
+    case StrucParCombo1.ItemIndex of
+      0:
+      ;
+      1:
+      begin
+        case StrucParCombo2.ItemIndex of
+          2:
+          begin
+            GD1 := gMinXPar + i / TWS_RESOLUTION * (xmax - xmin);
+            GD2 := gMinYPar + j / TWS_RESOLUTION * (ymax - ymin);
+            PredictEquilibrium;
+          end;
+        end;
+      end;
+      otherwise
+        ;
+    end;
+    case DependentParCombo.ItemIndex of
+      1:
+        theMatrix.content[j, i] := TSH1 * gParameterFactor[TSH_pos];
+      2:
+        theMatrix.content[j, i] := T41 * TT4conversionFactor;
+      3:
+        theMatrix.content[j, i] := FT41 * FT4conversionFactor;
+      4:
+        theMatrix.content[j, i] := T31 * TT3conversionFactor;
+      5:
+        theMatrix.content[j, i] := FT31 * FT3conversionFactor;
+      otherwise
+        theMatrix.content[j, i] := random; // for testing only
+    end;
+  end;
+  RestoreStrucPars;
+  PredictEquilibrium;
+  Cursor := oldCursor;
+end;
+
 procedure TTWSensitivityAnalysisForm.SetStandardStrucParBoundaries(factor1, factor2: real);
 {sets the initial boundaries to useful values}
 var
-  tempMinX, tempMaxX: real; {necessary to hinder Windows from altering the globals}
+  tempMinX, tempMaxX, tempMinY, tempMaxY: real; {necessary to hinder Windows from altering the globals}
 begin
   case StrucParCombo1.ItemIndex of
     0:
@@ -428,280 +493,280 @@ begin
     1:
     begin {GD1}
       gSpinFactor := GD1_FACTOR;
-      gMinXPar := GD1 / 3;
-      gMaxXPar := GD1 * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := GD1 / 3;
+      gMaxYPar := GD1 * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / GD1_FACTOR;}
     end;
     2:
     begin {GD2}
       gSpinFactor := GD2_FACTOR;
-      gMinXPar := GD2 / 3;
-      gMaxXPar := GD2 * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := GD2 / 3;
+      gMaxYPar := GD2 * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / GD2_FACTOR;  }
     end;
     3:
     begin {kM1}
       gSpinFactor := KM1_FACTOR;
-      gMinXPar := kM1 / 3;
-      gMaxXPar := kM1 * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := kM1 / 3;
+      gMaxYPar := kM1 * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / KM1_FACTOR;  }
     end;
     4:
     begin {kM2}
       gSpinFactor := KM2_FACTOR;
-      gMinXPar := kM2 / 3;
-      gMaxXPar := kM2 * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := kM2 / 3;
+      gMaxYPar := kM2 * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / KM2_FACTOR;}
     end;
     5:
     begin {GT}
       gSpinFactor := GT_FACTOR;
-      gMinXPar := GT / 3;
-      gMaxXPar := GT * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := GT / 3;
+      gMaxYPar := GT * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / GT_FACTOR; }
     end;
     6:
     begin {DT}
       gSpinFactor := DT_FACTOR;
-      gMinXPar := DT / 3;
-      gMaxXPar := DT * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := DT / 3;
+      gMaxYPar := DT * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DT_FACTOR;  }
     end;
     7:
     begin {GH}
       gSpinFactor := DT_FACTOR;
-      gMinXPar := GH / 3;
-      gMaxXPar := GH * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := GH / 3;
+      gMaxYPar := GH * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DT_FACTOR; }
     end;
     8:
     begin {DH}
       gSpinFactor := DH_FACTOR;
-      gMinXPar := DH / 3;
-      gMaxXPar := DH * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := DH / 3;
+      gMaxYPar := DH * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     9:
     begin {SS}
       gSpinFactor := DT_FACTOR;
-      gMinXPar := SS / 3;
-      gMaxXPar := SS * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := SS / 3;
+      gMaxYPar := SS * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     10:
     begin {DS}
       gSpinFactor := DT_FACTOR;
-      gMinXPar := DS / 3;
-      gMaxXPar := DS * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := DS / 3;
+      gMaxYPar := DS * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     11:
     begin {GR}
       gSpinFactor := DT_FACTOR;
-      gMinXPar := GR / 3;
-      gMaxXPar := GR * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := GR / 3;
+      gMaxYPar := GR * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     12:
     begin {DR}
       gSpinFactor := DR_FACTOR;
-      gMinXPar := DR / 3;
-      gMaxXPar := DR * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := DR / 3;
+      gMaxYPar := DR * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     13:
     begin {LS}
       gSpinFactor := LS_FACTOR;
-      gMinXPar := LS / 3;
-      gMaxXPar := LS * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := LS / 3;
+      gMaxYPar := LS * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     14:
     begin {betaS}
       gSpinFactor := DT_FACTOR;
-      gMinXPar := betaS / 3;
-      gMaxXPar := betaS * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := betaS / 3;
+      gMaxYPar := betaS * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     15:
     begin {betaS2}
       gSpinFactor := DT_FACTOR;
-      gMinXPar := betaS2 / 3;
-      gMaxXPar := betaS2 * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := betaS2 / 3;
+      gMaxYPar := betaS2 * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     16:
     begin {betaT}
       gSpinFactor := BETAT_FACTOR;
-      gMinXPar := betaT / 3;
-      gMaxXPar := betaT * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := betaT / 3;
+      gMaxYPar := betaT * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     17:
     begin {beta31}
       gSpinFactor := BETAT_FACTOR;
-      gMinXPar := beta31 / 3;
-      gMaxXPar := beta31 * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := beta31 / 3;
+      gMaxYPar := beta31 * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     18:
     begin {beta32}
       gSpinFactor := DT_FACTOR;
-      gMinXPar := beta32 / 3;
-      gMaxXPar := beta32 * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := beta32 / 3;
+      gMaxYPar := beta32 * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     19:
     begin {TBG}
       gSpinFactor := TBG_FACTOR;
-      gMinXPar := TBG / 3;
-      gMaxXPar := TBG * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := TBG / 3;
+      gMaxYPar := TBG * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end;
     20:
     begin {TBPA}
       gSpinFactor := TBPA_FACTOR;
-      gMinXPar := TBPA / 3;
-      gMaxXPar := TBPA * 3;
-      tempMinX := gMinXPar;
-      tempMaxX := gMaxXPar;
-      MinSpinEdit2.Value := tempMinX * gSpinFactor;
+      gMinYPar := TBPA / 3;
+      gMaxYPar := TBPA * 3;
+      tempMinY := gMinYPar;
+      tempMaxX := gMaxYPar;
+      MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
-      gMinXPar := tempMinX;
-      gMaxXPar := tempMaxX;
+      gMinYPar := tempMinY;
+      gMaxYPar := tempMaxY;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end
@@ -731,21 +796,12 @@ var
   i, j: integer;
   xmin, xmax, ymin, ymax: real;
 begin
-  SensitivityMatrix.ClearContent;
   SensitivityMap.DisableRedrawing;
   xmin := SensitivityMapColorMapSeries1.Extent.XMin;
   xmax := SensitivityMapColorMapSeries1.Extent.XMax;
   ymin := SensitivityMapColorMapSeries1.Extent.YMin;
   ymax := SensitivityMapColorMapSeries1.Extent.YMax;
-  for i := 0 to TWS_RESOLUTION do
-    SensitivityMatrix.content[0, i + 1] := xmin + i / TWS_RESOLUTION * (xmax - xmin);
-  for j := 0 to TWS_RESOLUTION do
-    SensitivityMatrix.content[j + 1, 0] := ymin + j / TWS_RESOLUTION * (ymax - ymin);
-  for i := 1 to TWS_RESOLUTION do
-  for j := 1 to TWS_RESOLUTION do
-  begin
-    SensitivityMatrix.content[j, i] := random;
-  end;
+  CalculateSensitivityMatrix(SensitivityMatrix, ymax, ymin, xmax, xmin);
   ext := SensitivityMap.GetFullExtent;
   i := 1 + trunc((AX - ext.a.x) / (ext.b.x - ext.a.x) * TWS_RESOLUTION);
   j := 1 + trunc((AY - ext.a.y) / (ext.b.y - ext.a.y) * TWS_RESOLUTION);
