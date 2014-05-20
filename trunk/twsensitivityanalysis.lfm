@@ -21,17 +21,17 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Width = 691
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderStyle = bsSingle
-    ClientHeight = 298
-    ClientWidth = 691
+    ClientHeight = 294
+    ClientWidth = 687
     TabOrder = 0
     object LegendPanel: TPanel
-      Left = 552
-      Height = 285
+      Left = 548
+      Height = 281
       Top = 8
       Width = 138
       Anchors = [akTop, akRight, akBottom]
       BevelOuter = bvNone
-      ClientHeight = 285
+      ClientHeight = 281
       ClientWidth = 138
       TabOrder = 1
       object LegendFrame: TShape
@@ -69,7 +69,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         Left = 60
         Height = 13
         Top = 47
-        Width = 7
+        Width = 6
         Caption = '3'
         Font.Height = -11
         ParentColor = False
@@ -79,7 +79,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         Left = 60
         Height = 13
         Top = 67
-        Width = 7
+        Width = 6
         Caption = '2'
         Font.Height = -11
         ParentColor = False
@@ -89,7 +89,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         Left = 60
         Height = 13
         Top = 89
-        Width = 7
+        Width = 6
         Caption = '1'
         Font.Height = -11
         ParentColor = False
@@ -99,10 +99,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     object SensitivityMap: TChart
       Cursor = crCross
       Left = 8
-      Height = 283
+      Height = 279
       Hint = 'Drag with mouse to zoom'
       Top = 8
-      Width = 548
+      Width = 544
       AxisList = <      
         item
           Grid.Color = clNone
@@ -141,6 +141,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       ParentShowHint = False
       ShowHint = True
       object SensitivityMapColorMapSeries1: TColorMapSeries
+        Active = False
         Extent.UseXMax = True
         Extent.UseXMin = True
         Extent.UseYMax = True
@@ -151,7 +152,6 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         OnCalculate = SensitivityMapColorMapSeries1Calculate
         StepX = 5
         StepY = 5
-        UseImage = cmuiAlways
       end
     end
   end
@@ -162,14 +162,14 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Width = 554
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Parameters'
-    ClientHeight = 90
-    ClientWidth = 546
+    ClientHeight = 94
+    ClientWidth = 550
     TabOrder = 1
     object MinSpinEdit1: TFloatSpinEdit
       Left = 12
-      Height = 16
+      Height = 21
       Hint = 'Minimum of selected structure parameter'
-      Top = 37
+      Top = 36
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
@@ -182,10 +182,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Value = 0
     end
     object MaxSpinEdit1: TFloatSpinEdit
-      Left = 462
-      Height = 16
+      Left = 466
+      Height = 21
       Hint = 'Maximum of selected structure parameter'
-      Top = 37
+      Top = 36
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
@@ -201,11 +201,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 35
-      Width = 340
+      Top = 39
+      Width = 344
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         'Select independent parameter (x axis)...'
@@ -238,9 +238,9 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     end
     object MinSpinEdit2: TFloatSpinEdit
       Left = 12
-      Height = 16
+      Height = 21
       Hint = 'Minimum of selected structure parameter'
-      Top = 69
+      Top = 68
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
@@ -256,11 +256,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 67
-      Width = 340
+      Top = 71
+      Width = 344
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         'Select independent parameter (y axis)...'
@@ -292,10 +292,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Text = 'Select independent parameter (y axis)...'
     end
     object MaxSpinEdit2: TFloatSpinEdit
-      Left = 462
-      Height = 16
+      Left = 466
+      Height = 21
       Hint = 'Maximum of selected structure parameter'
-      Top = 69
+      Top = 68
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
@@ -311,11 +311,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 2
-      Width = 340
+      Top = 6
+      Width = 344
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         'Select dependent parameter (colour map)...'
@@ -335,8 +335,8 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
-    Top = 471
+    Height = 23
+    Top = 463
     Width = 758
     Panels = <>
   end
@@ -403,8 +403,8 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Width = 129
     Anchors = [akRight, akBottom]
     Caption = 'Colour Map'
-    ClientHeight = 91
-    ClientWidth = 121
+    ClientHeight = 95
+    ClientWidth = 125
     TabOrder = 4
     object ColorButton1: TColorButton
       Left = 16
