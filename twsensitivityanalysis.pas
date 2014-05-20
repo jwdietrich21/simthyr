@@ -784,6 +784,11 @@ end;
 
 procedure TTWSensitivityAnalysisForm.FormCreate(Sender: TObject);
 begin
+  {$IFDEF LCLcarbon}
+  SensitivityMapColorMapSeries1.UseImage := cmuiAlways;
+  {$ELSE}
+  SensitivityMapColorMapSeries1.UseImage := cmuiAuto;
+  {$ENDIF}
   SensitivityMatrix := TSensitivityMatrix.create;
   ColouriseLegend;
   PopulateColourSource;
