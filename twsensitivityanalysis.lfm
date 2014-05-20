@@ -1,7 +1,7 @@
 object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
-  Left = 300
+  Left = 294
   Height = 486
-  Top = 290
+  Top = 228
   Width = 758
   Caption = 'Two-Way Sensitivity Analysis'
   ClientHeight = 486
@@ -141,7 +141,6 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       ParentShowHint = False
       ShowHint = True
       object SensitivityMapColorMapSeries1: TColorMapSeries
-        Active = False
         Extent.UseXMax = True
         Extent.UseXMin = True
         Extent.UseYMax = True

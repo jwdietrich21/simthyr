@@ -2,8 +2,8 @@
 
 LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   'TPF0'#26'TTWSensitivityAnalysisForm'#25'TWSensitivityAnalysisForm'#4'Left'#3
-  +','#1#6'Height'#3#230#1#3'Top'#3'"'#1#5'Width'#3#246#2#7'Caption'#6#28'Two-W'
-  +'ay Sensitivity Analysis'#12'ClientHeight'#3#230#1#11'ClientWidth'#3#246#2#5
+  +'&'#1#6'Height'#3#230#1#3'Top'#3#228#0#5'Width'#3#246#2#7'Caption'#6#28'Two-'
+  +'Way Sensitivity Analysis'#12'ClientHeight'#3#230#1#11'ClientWidth'#3#246#2#5
   +'Color'#7#7'clWhite'#21'Constraints.MaxHeight'#3' '#3#20'Constraints.MaxWidt'
   +'h'#3' '#3#21'Constraints.MinHeight'#3'|'#1#20'Constraints.MinWidth'#3'X'#2#8
   +'OnCreate'#7#10'FormCreate'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6
@@ -41,137 +41,137 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +'.Text.Strings'#1#6#19'Dependent Parameter'#0#13'Title.Visible'#9#7'Anchors'
   +#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#5'Color'#7#7'clWhite'#14'Dou'
   +'bleBuffered'#9#11'ParentColor'#8#14'ParentShowHint'#8#8'ShowHint'#9#0#15'TC'
-  +'olorMapSeries'#29'SensitivityMapColorMapSeries1'#6'Active'#8#14'Extent.UseX'
-  +'Max'#9#14'Extent.UseXMin'#9#14'Extent.UseYMax'#9#14'Extent.UseYMin'#9#5'Tit'
-  +'le'#6#4'test'#11'ColorSource'#7#12'ColourSource'#11'Interpolate'#9#11'OnCal'
-  +'culate'#7'&SensitivityMapColorMapSeries1Calculate'#5'StepX'#2#5#5'StepY'#2#5
-  +#0#0#0#0#9'TGroupBox'#9'GroupBox1'#4'Left'#2'0'#6'Height'#2'p'#3'Top'#3'S'#1
-  +#5'Width'#3'*'#2#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#7'Caption'
-  +#6#10'Parameters'#12'ClientHeight'#2'^'#11'ClientWidth'#3'&'#2#8'TabOrder'#2
-  +#1#0#14'TFloatSpinEdit'#12'MinSpinEdit1'#4'Left'#2#12#6'Height'#2#21#4'Hint'
-  +#6'''Minimum of selected structure parameter'#3'Top'#2'$'#5'Width'#2'H'#7'An'
-  +'chors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0
-  +#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0
-  +#0#0#0#0#0#0#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#5'Value'#5
-  +#0#0#0#0#0#0#0#0#0#0#0#0#14'TFloatSpinEdit'#12'MaxSpinEdit1'#4'Left'#3#210#1
-  +#6'Height'#2#21#4'Hint'#6'''Maximum of selected structure parameter'#3'Top'#2
-  +'$'#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2
-  +#4#9'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8
-  +'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#14'ParentShowHint'#8#8'ShowHint'#9#8'T'
-  +'abOrder'#2#1#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#14'StrucParCom'
-  +'bo1'#4'Left'#2'd'#6'Height'#2#21#4'Hint'#6'ISelect the structure parameter '
-  +'that servers as independent variable here.'#3'Top'#2''''#5'Width'#3'X'#1#7
-  +'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8
-  +#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6'(Select independ'
-  +'ent parameter (x axis)...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 ('
-  +'nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'
-  ,#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (p'
-  +'mol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10
-  +'betaT (/s)'#6#12'beta31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'T'
-  +'BPA ('#194#181'mol/l)'#0#8'OnChange'#7#20'StrucParCombo1Change'#14'ParentSh'
-  +'owHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6'(Select independent param'
-  +'eter (x axis)...'#0#0#14'TFloatSpinEdit'#12'MinSpinEdit2'#4'Left'#2#12#6'He'
-  +'ight'#2#21#4'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2'D'
-  +#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9
-  +'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8
+  +'olorMapSeries'#29'SensitivityMapColorMapSeries1'#14'Extent.UseXMax'#9#14'Ex'
+  +'tent.UseXMin'#9#14'Extent.UseYMax'#9#14'Extent.UseYMin'#9#5'Title'#6#4'test'
+  +#11'ColorSource'#7#12'ColourSource'#11'Interpolate'#9#11'OnCalculate'#7'&Sen'
+  +'sitivityMapColorMapSeries1Calculate'#5'StepX'#2#5#5'StepY'#2#5#0#0#0#0#9'TG'
+  +'roupBox'#9'GroupBox1'#4'Left'#2'0'#6'Height'#2'p'#3'Top'#3'S'#1#5'Width'#3
+  +'*'#2#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#7'Caption'#6#10'Param'
+  +'eters'#12'ClientHeight'#2'^'#11'ClientWidth'#3'&'#2#8'TabOrder'#2#1#0#14'TF'
+  +'loatSpinEdit'#12'MinSpinEdit1'#4'Left'#2#12#6'Height'#2#21#4'Hint'#6'''Mini'
+  +'mum of selected structure parameter'#3'Top'#2'$'#5'Width'#2'H'#7'Anchors'#11
+  +#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0#0#0#0#0
+  +#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0
+  +#0#0#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#5'Value'#5#0#0#0#0
+  +#0#0#0#0#0#0#0#0#14'TFloatSpinEdit'#12'MaxSpinEdit1'#4'Left'#3#210#1#6'Heigh'
+  +'t'#2#21#4'Hint'#6'''Maximum of selected structure parameter'#3'Top'#2'$'#5
+  +'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9
+  +'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8
   +'MinValue'#5#0#0#0#0#0#0#0#0#0#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrd'
-  +'er'#2#3#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#14'StrucParCombo2'#4
+  +'er'#2#1#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#14'StrucParCombo1'#4
   +'Left'#2'd'#6'Height'#2#21#4'Hint'#6'ISelect the structure parameter that se'
-  +'rvers as independent variable here.'#3'Top'#2'G'#5'Width'#3'X'#1#7'Anchors'
+  +'rvers as independent variable here.'#3'Top'#2''''#5'Width'#3'X'#1#7'Anchors'
   +#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHe'
   +'ight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6'(Select independent param'
-  +'eter (y axis)...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6
+  +'eter (x axis)...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6
   +#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (n'
-  +'mol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6
+  ,'mol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6
   +#12'LS (l/'#194#181'mol)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'
   +#6#12'beta31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194
-  +#181'mol/l)'#0#8'OnChange'#7#20'StrucParCombo2Change'#14'ParentShowHint'#8#8
-  +'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6'(Select independent parameter (y axis'
-  +')...'#0#0#14'TFloatSpinEdit'#12'MaxSpinEdit2'#4'Left'#3#210#1#6'Height'#2#21
-  +#4'Hint'#6'''Maximum of selected structure parameter'#3'Top'#2'D'#5'Width'#2
-  +'H'#7'Anchors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'
-  +#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8'MinValue'
-  +#5#0#0#0#0#0#0#0#0#0#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#5
-  +'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#17'DependentParCombo'#4'Left'
-  +#2'd'#6'Height'#2#21#4'Hint'#6'ISelect the structure parameter that servers '
-  +'as independent variable here.'#3'Top'#2#6#5'Width'#3'X'#1#7'Anchors'#11#6'a'
-  +'kLeft'#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2
-  +#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6'*Select dependent parameter (colo'
-  +'ur map)...'#6#3'TSH'#6#3'TT4'#6#3'FT4'#6#3'TT3'#6#3'FT3'#6#3'cT3'#0#8'OnCha'
-  +'nge'#7#23'DependentParComboChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'Tab'
-  +'Order'#2#6#4'Text'#6'*Select dependent parameter (colour map)...'#0#0#0#10
-  +'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#23#3'Top'#3#207#1#5'Widt'
-  +'h'#3#246#2#6'Panels'#14#0#0#0#12'TSpeedButton'#16'FullScaleButton1'#4'Left'
-  +#2#16#6'Height'#2#22#4'Hint'#6'3Full scale plot (drag with mouse over plot t'
-  +'o zoom)'#3'Top'#2' '#5'Width'#2#23#17'BorderSpacing.Top'#2#20#10'Glyph.Data'
-  +#10':'#4#0#0'6'#4#0#0'BM6'#4#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#16#0#0#0#16#0#0#0
-  +#1#0' '#0#0#0#0#0#0#4#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#129#134#132#157
-  +#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136
+  +#181'mol/l)'#0#8'OnChange'#7#20'StrucParCombo1Change'#14'ParentShowHint'#8#8
+  +'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6'(Select independent parameter (x axis'
+  +')...'#0#0#14'TFloatSpinEdit'#12'MinSpinEdit2'#4'Left'#2#12#6'Height'#2#21#4
+  +'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2'D'#5'Width'#2'H'
+  +#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0
+  +#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0
+  +#0#0#0#0#0#0#0#0#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#5'Valu'
+  +'e'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#14'StrucParCombo2'#4'Left'#2'd'#6
+  +'Height'#2#21#4'Hint'#6'ISelect the structure parameter that servers as inde'
+  +'pendent variable here.'#3'Top'#2'G'#5'Width'#3'X'#1#7'Anchors'#11#6'akLeft'
+  +#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9
+  +'ItemIndex'#2#0#13'Items.Strings'#1#6'(Select independent parameter (y axis)'
+  +'...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmo'
+  +'l/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9
+  +'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'
+  +#194#181'mol)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'#6#12'beta'
+  +'31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'
+  +#0#8'OnChange'#7#20'StrucParCombo2Change'#14'ParentShowHint'#8#8'ShowHint'#9
+  +#8'TabOrder'#2#4#4'Text'#6'(Select independent parameter (y axis)...'#0#0#14
+  +'TFloatSpinEdit'#12'MaxSpinEdit2'#4'Left'#3#210#1#6'Height'#2#21#4'Hint'#6
+  +'''Maximum of selected structure parameter'#3'Top'#2'D'#5'Width'#2'H'#7'Anch'
+  +'ors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0
+  +#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8'MinValue'#5#0#0#0
+  +#0#0#0#0#0#0#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#5'Value'#5
+  +#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#17'DependentParCombo'#4'Left'#2'd'#6'H'
+  +'eight'#2#21#4'Hint'#6'ISelect the structure parameter that servers as indep'
+  +'endent variable here.'#3'Top'#2#6#5'Width'#3'X'#1#7'Anchors'#11#6'akLeft'#7
+  +'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9'It'
+  +'emIndex'#2#0#13'Items.Strings'#1#6'*Select dependent parameter (colour map)'
+  +'...'#6#3'TSH'#6#3'TT4'#6#3'FT4'#6#3'TT3'#6#3'FT3'#6#3'cT3'#0#8'OnChange'#7
+  +#23'DependentParComboChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2
+  +#6#4'Text'#6'*Select dependent parameter (colour map)...'#0#0#0#10'TStatusBa'
+  +'r'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#23#3'Top'#3#207#1#5'Width'#3#246#2
+  +#6'Panels'#14#0#0#0#12'TSpeedButton'#16'FullScaleButton1'#4'Left'#2#16#6'Hei'
+  +'ght'#2#22#4'Hint'#6'3Full scale plot (drag with mouse over plot to zoom)'#3
+  +'Top'#2' '#5'Width'#2#23#17'BorderSpacing.Top'#2#20#10'Glyph.Data'#10':'#4#0
+  +#0'6'#4#0#0'BM6'#4#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#16#0#0#0#16#0#0#0#1#0' '#0#0
+  +#0#0#0#0#4#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#129#134#132#157#133#138#136
   +#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138
-  +#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#127
-  +#131#130#160#133#138#136#255#255#255#255#255#255#255#255#255#255#255#255#255
+  +#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133
+  +#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#127#131#130#160
+  +#133#138#136#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
   +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
   +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
-  +#255#255#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164
-  +'e4'#255#164'e4'#255#164'e4'#255#164'e4'#255#250#251#251#255#250#251#251#255
-  +#252#252#253#255#253#252#252#255#164'e4'#255#164'e4'#255#164'e4'#255#164'e4'
-  +#255#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'
-  +#255#164'e4'#255#164'e4'#255#249#250#250#255#249#249#249#255#249#250#249#255
-  +#251#251#251#255#251#251#252#255#251#251#252#255#164'e4'#255#164'e4'#255#164
-  +'e4'#255#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164
-  +'e4'#255#164'f6'#255#167'j;'#255#171'rF'#255#248#249#248#255#248#249#249#255
-  +#250#250#250#255#250#250#251#255#170'pC'#255#165'g7'#255#164'e4'#255#164'e4'
-  +#255#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'f5'
-  +#255#246#247#247#255#174'wL'#255#185#139'g'#255#201#166#139#255#247#248#248
-  +#255#249#249#249#255#209#181#158#255#189#145'o'#255#174'vK'#255#249#250#250
-  +#255#164'e4'#255#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255
-  +#255#245#246#246#255#244#246#246#255#246#246#247#255#202#170#144#255#219#199
-  +#183#255#230#219#211#255#234#226#219#255#228#214#202#255#212#186#166#255#248
-  +#249#249#255#249#250#250#255#249#249#249#255#255#255#255#255#133#138#136#255
-  +#133#138#136#255#255#255#255#255#243#245#245#255#243#245#245#255#244#245#245
-  ,#255#244#245#246#255#227#215#204#255#245#245#246#255#246#247#247#255#234#225
-  +#217#255#247#248#248#255#248#249#248#255#247#249#249#255#248#248#249#255#255
-  +#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#239#241#241#255
-  +#240#241#241#255#240#241#242#255#240#242#241#255#223#210#199#255#240#242#242
-  +#255#242#243#244#255#226#215#206#255#243#244#245#255#243#244#245#255#243#245
-  +#245#255#244#245#244#255#255#255#255#255#133#138#136#255#133#138#136#255#255
-  +#255#255#255#239#240#240#255#239#240#240#255#239#241#241#255#207#180#160#255
-  +#216#199#185#255#224#211#201#255#226#215#205#255#220#203#189#255#207#180#159
-  +#255#242#244#244#255#243#244#243#255#242#244#244#255#255#255#255#255#133#138
-  +#136#255#133#138#136#255#255#255#255#255#164'f5'#255#237#239#239#255#179#130
-  +'\'#255#195#159#131#255#207#182#162#255#238#240#240#255#240#242#241#255#204
-  +#176#153#255#192#152'z'#255#178#127'W'#255#241#243#243#255#165'g7'#255#255
-  +#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#165
-  +'g6'#255#170'pC'#255#180#132'_'#255#238#239#239#255#238#239#239#255#240#241
-  +#241#255#240#241#241#255#174'xN'#255#169'n@'#255#165'h8'#255#164'e4'#255#255
   +#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#164
-  +'e4'#255#165'g6'#255#236#238#238#255#236#238#238#255#236#238#239#255#238#240
-  +#240#255#238#240#240#255#238#240#240#255#165'g6'#255#164'e4'#255#164'e4'#255
-  +#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255
-  +#164'e4'#255#164'e4'#255#164'e4'#255#236#238#238#255#236#238#238#255#238#239
-  +#239#255#237#239#239#255#164'e4'#255#164'e4'#255#164'e4'#255#164'e4'#255#255
-  +#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#255#255#255#255
+  +'e4'#255#164'e4'#255#164'e4'#255#250#251#251#255#250#251#251#255#252#252#253
+  +#255#253#252#252#255#164'e4'#255#164'e4'#255#164'e4'#255#164'e4'#255#255#255
+  +#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#164'e4'
+  +#255#164'e4'#255#249#250#250#255#249#249#249#255#249#250#249#255#251#251#251
+  +#255#251#251#252#255#251#251#252#255#164'e4'#255#164'e4'#255#164'e4'#255#255
+  +#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#164
+  +'f6'#255#167'j;'#255#171'rF'#255#248#249#248#255#248#249#249#255#250#250#250
+  +#255#250#250#251#255#170'pC'#255#165'g7'#255#164'e4'#255#164'e4'#255#255#255
+  +#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'f5'#255#246#247
+  +#247#255#174'wL'#255#185#139'g'#255#201#166#139#255#247#248#248#255#249#249
+  +#249#255#209#181#158#255#189#145'o'#255#174'vK'#255#249#250#250#255#164'e4'
+  +#255#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#245#246
+  +#246#255#244#246#246#255#246#246#247#255#202#170#144#255#219#199#183#255#230
+  +#219#211#255#234#226#219#255#228#214#202#255#212#186#166#255#248#249#249#255
+  +#249#250#250#255#249#249#249#255#255#255#255#255#133#138#136#255#133#138#136
+  +#255#255#255#255#255#243#245#245#255#243#245#245#255#244#245#245#255#244#245
+  ,#246#255#227#215#204#255#245#245#246#255#246#247#247#255#234#225#217#255#247
+  +#248#248#255#248#249#248#255#247#249#249#255#248#248#249#255#255#255#255#255
+  +#133#138#136#255#133#138#136#255#255#255#255#255#239#241#241#255#240#241#241
+  +#255#240#241#242#255#240#242#241#255#223#210#199#255#240#242#242#255#242#243
+  +#244#255#226#215#206#255#243#244#245#255#243#244#245#255#243#245#245#255#244
+  +#245#244#255#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255
+  +#239#240#240#255#239#240#240#255#239#241#241#255#207#180#160#255#216#199#185
+  +#255#224#211#201#255#226#215#205#255#220#203#189#255#207#180#159#255#242#244
+  +#244#255#243#244#243#255#242#244#244#255#255#255#255#255#133#138#136#255#133
+  +#138#136#255#255#255#255#255#164'f5'#255#237#239#239#255#179#130'\'#255#195
+  +#159#131#255#207#182#162#255#238#240#240#255#240#242#241#255#204#176#153#255
+  +#192#152'z'#255#178#127'W'#255#241#243#243#255#165'g7'#255#255#255#255#255
+  +#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#165'g6'#255#170
+  +'pC'#255#180#132'_'#255#238#239#239#255#238#239#239#255#240#241#241#255#240
+  +#241#241#255#174'xN'#255#169'n@'#255#165'h8'#255#164'e4'#255#255#255#255#255
+  +#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#164'e4'#255#165
+  +'g6'#255#236#238#238#255#236#238#238#255#236#238#239#255#238#240#240#255#238
+  +#240#240#255#238#240#240#255#165'g6'#255#164'e4'#255#164'e4'#255#255#255#255
+  +#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#164'e4'#255
+  +#164'e4'#255#164'e4'#255#236#238#238#255#236#238#238#255#238#239#239#255#237
+  +#239#239#255#164'e4'#255#164'e4'#255#164'e4'#255#164'e4'#255#255#255#255#255
+  +#133#138#136#255#133#138#136#255#255#255#255#255#255#255#255#255#255#255#255
   +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
   +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
-  +#255#255#255#255#255#255#255#255#255#255#133#138#136#255#133#138#136#153#133
-  +#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255
+  +#255#255#255#255#255#255#255#133#138#136#255#133#138#136#153#133#138#136#255
   +#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136
   +#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138
-  +#136#153#7'OnClick'#7#21'FullScaleButton1Click'#8'ShowHint'#9#14'ParentShowH'
-  +'int'#8#0#0#14'TChartNavPanel'#14'ChartNavPanel1'#4'Left'#2#16#6'Height'#2#24
-  +#4'Hint'#6'4Drag to select the part of the plot to be displayed.'#3'Top'#2'H'
-  +#5'Width'#2#23#5'Chart'#7#14'SensitivityMap'#22'LogicalExtentPen.Color'#7#8
-  +'clMaroon'#0#0#9'TGroupBox'#9'GroupBox2'#4'Left'#3'b'#2#6'Height'#2'q'#3'Top'
-  +#3'S'#1#5'Width'#3#129#0#7'Anchors'#11#7'akRight'#8'akBottom'#0#7'Caption'#6
-  +#10'Colour Map'#12'ClientHeight'#2'_'#11'ClientWidth'#2'}'#8'TabOrder'#2#4#0
-  +#12'TColorButton'#12'ColorButton1'#4'Left'#2#16#6'Height'#2#25#3'Top'#2'<'#5
-  +'Width'#2'K'#11'BorderWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonColor'#7#6
-  +'clNavy'#14'OnColorChanged'#7#24'ColorButton1ColorChanged'#0#0#12'TColorButt'
-  +'on'#12'ColorButton3'#4'Left'#2#16#6'Height'#2#25#3'Top'#2#2#5'Width'#2'K'#11
-  +'BorderWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonColor'#7#5'clRed'#14'OnC'
-  +'olorChanged'#7#24'ColorButton3ColorChanged'#0#0#12'TColorButton'#12'ColorBu'
-  +'tton2'#4'Left'#2#16#6'Height'#2#25#3'Top'#2#31#5'Width'#2'K'#11'BorderWidth'
-  +#2#2#15'ButtonColorSize'#2#16#11'ButtonColor'#7#8'clYellow'#14'OnColorChange'
-  +'d'#7#24'ColorButton2ColorChanged'#0#0#0#16'TListChartSource'#12'ColourSourc'
-  +'e'#4'left'#2#16#3'top'#3'@'#1#0#0#0
+  +#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#153#7'O'
+  +'nClick'#7#21'FullScaleButton1Click'#8'ShowHint'#9#14'ParentShowHint'#8#0#0
+  +#14'TChartNavPanel'#14'ChartNavPanel1'#4'Left'#2#16#6'Height'#2#24#4'Hint'#6
+  +'4Drag to select the part of the plot to be displayed.'#3'Top'#2'H'#5'Width'
+  +#2#23#5'Chart'#7#14'SensitivityMap'#22'LogicalExtentPen.Color'#7#8'clMaroon'
+  +#0#0#9'TGroupBox'#9'GroupBox2'#4'Left'#3'b'#2#6'Height'#2'q'#3'Top'#3'S'#1#5
+  +'Width'#3#129#0#7'Anchors'#11#7'akRight'#8'akBottom'#0#7'Caption'#6#10'Colou'
+  +'r Map'#12'ClientHeight'#2'_'#11'ClientWidth'#2'}'#8'TabOrder'#2#4#0#12'TCol'
+  +'orButton'#12'ColorButton1'#4'Left'#2#16#6'Height'#2#25#3'Top'#2'<'#5'Width'
+  +#2'K'#11'BorderWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonColor'#7#6'clNav'
+  +'y'#14'OnColorChanged'#7#24'ColorButton1ColorChanged'#0#0#12'TColorButton'#12
+  +'ColorButton3'#4'Left'#2#16#6'Height'#2#25#3'Top'#2#2#5'Width'#2'K'#11'Borde'
+  +'rWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonColor'#7#5'clRed'#14'OnColorC'
+  +'hanged'#7#24'ColorButton3ColorChanged'#0#0#12'TColorButton'#12'ColorButton2'
+  +#4'Left'#2#16#6'Height'#2#25#3'Top'#2#31#5'Width'#2'K'#11'BorderWidth'#2#2#15
+  +'ButtonColorSize'#2#16#11'ButtonColor'#7#8'clYellow'#14'OnColorChanged'#7#24
+  +'ColorButton2ColorChanged'#0#0#0#16'TListChartSource'#12'ColourSource'#4'lef'
+  +'t'#2#16#3'top'#3'@'#1#0#0#0
 ]);
