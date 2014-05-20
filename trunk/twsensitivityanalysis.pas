@@ -21,22 +21,28 @@ interface
 uses
   Classes, SysUtils, FileUtil, TAGraph, TAFuncSeries, TASources, LResources,
   Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Spin, ComCtrls,
-  ColorBox, Buttons, Grids, TAChartUtils, TANavigation, SimThyrTypes,
+  ColorBox, Buttons, Grids, TAChartUtils, TANavigation, Math, SimThyrTypes,
   UnitConverter, SimThyrPrediction, Sensitivityanalysis;
 
 type
 
-  { TTWSensitivityAnalysisForm }
+  TPartialMatrix = array[1..TWS_RESOLUTION + 1, 1..TWS_RESOLUTION + 1] of real;
 
   { TSensitivityMatrix }
 
   TSensitivityMatrix = class(TObject)
-    content: array[0..TWS_RESOLUTION + 1, 0..TWS_RESOLUTION + 1] of real;
   public
+    content: array[0..TWS_RESOLUTION + 1, 0..TWS_RESOLUTION + 1] of real;
     constructor create;
     destructor destroy; override;
     procedure ClearContent;
+    function GetResults: TPartialMatrix;
+    function GetMin: real;
+    function GetMax: real;
+    function GetMean: real;
   end;
+
+  { TTWSensitivityAnalysisForm }
 
   TTWSensitivityAnalysisForm = class(TForm)
     ChartNavPanel1: TChartNavPanel;
@@ -101,13 +107,53 @@ implementation
 
 { TSensitivityMatrix }
 
+function TSensitivityMatrix.GetResults: TPartialMatrix;
+var
+  i, j: integer;
+begin
+  for i := 1 to TWS_RESOLUTION + 1 do
+  for j := 1 to TWS_RESOLUTION + 1 do
+  result[i, j] := content[i, j];
+end;
+
+function TSensitivityMatrix.GetMin: real;
+var
+  i, j: integer;
+begin
+  result := content[1, 1];
+  for i := 1 to TWS_RESOLUTION + 1 do
+  for j := 1 to TWS_RESOLUTION + 1 do // beginning with 1 to allow for matrix size of 1
+    if content[i, j] < result then result := content[i, j];
+end;
+
+function TSensitivityMatrix.GetMax: real;
+var
+  i, j: integer;
+begin
+  result := content[1, 1];
+  for i := 1 to TWS_RESOLUTION + 1 do
+  for j := 1 to TWS_RESOLUTION + 1 do // beginning with 1 to allow for matrix size of 1
+    if content[i, j] > result then result := content[i, j];
+end;
+
+function TSensitivityMatrix.GetMean: real;
+var
+  i, j: integer;
+begin
+  result := 0;
+  for i := 1 to TWS_RESOLUTION + 1 do
+  for j := 1 to TWS_RESOLUTION + 1 do
+    result := result + content[i, j];
+  result := result / sqr(TWS_RESOLUTION + 1);
+end;
+
 constructor TSensitivityMatrix.create;
 begin
   inherited create;
   ClearContent;
 end;
 
-destructor TSensitivityMatrix.Destroy;
+destructor TSensitivityMatrix.destroy;
 begin
   inherited Destroy;
 end;
@@ -853,30 +899,58 @@ begin
 end;
 
 procedure TTWSensitivityAnalysisForm.DependentParComboChange(Sender: TObject);
+var
+  subMat: TPartialMatrix;
 begin
   SensitivityMap.Title.Text.Text := DependentParCombo.Text;
   CalculateMatrixWithCoordinates(SensitivityMatrix);
-  PopulateColourSource(0, 0.5, 1);
+  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  with SensitivityMatrix do
+  begin
+    subMat := GetResults;
+    PopulateColourSource(GetMin, GetMean, GetMax);
+  end;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton3ColorChanged(Sender: TObject);
+var
+  subMat: TPartialMatrix;
 begin
-  PopulateColourSource(0, 0.5, 1);
+  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  with SensitivityMatrix do
+  begin
+    subMat := GetResults;
+    PopulateColourSource(GetMin, GetMean, GetMax);
+  end;
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton2ColorChanged(Sender: TObject);
+var
+  subMat: TPartialMatrix;
 begin
-  PopulateColourSource(0, 0.5, 1);
+  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  with SensitivityMatrix do
+  begin
+    subMat := GetResults;
+    PopulateColourSource(GetMin, GetMean, GetMax);
+  end;
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton1ColorChanged(Sender: TObject);
+var
+  subMat: TPartialMatrix;
 begin
-  PopulateColourSource(0, 0.5, 1);
+  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  with SensitivityMatrix do
+  begin
+    subMat := GetResults;
+    PopulateColourSource(GetMin, GetMean, GetMax);
+  end;
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
@@ -920,6 +994,8 @@ begin
 end;
 
 procedure TTWSensitivityAnalysisForm.StrucParCombo1Change(Sender: TObject);
+var
+  subMat: TPartialMatrix;
 begin
   if TWSensitivityAnalysisForm.StrucParCombo1.Text <> '' then
   begin
@@ -927,13 +1003,19 @@ begin
     SetBottomAxisCaption;
     SetStandardStrucParBoundaries(1 / 3, 3);
     CalculateMatrixWithCoordinates(SensitivityMatrix);
-    PopulateColourSource(0, 0.5, 1);
+    with SensitivityMatrix do
+    begin
+      subMat := GetResults;
+      PopulateColourSource(GetMin, GetMean, GetMax);
+    end;
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
     TWSensitivityAnalysisForm.StrucParCombo1.Enabled := true;
   end;
 end;
 
 procedure TTWSensitivityAnalysisForm.StrucParCombo2Change(Sender: TObject);
+var
+  subMat: TPartialMatrix;
 begin
   if TWSensitivityAnalysisForm.StrucParCombo2.Text <> '' then
   begin
@@ -941,7 +1023,11 @@ begin
     SetLeftAxisCaption;
     SetStandardStrucParBoundaries(1 / 3, 3);
     CalculateMatrixWithCoordinates(SensitivityMatrix);
-    PopulateColourSource(0, 0.5, 1);
+    with SensitivityMatrix do
+    begin
+      subMat := GetResults;
+      PopulateColourSource(GetMin, GetMean, GetMax);
+    end;
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
     TWSensitivityAnalysisForm.StrucParCombo2.Enabled := true;
   end;
