@@ -21,8 +21,8 @@ interface
 uses
   Classes, SysUtils, FileUtil, TAGraph, TAFuncSeries, TASources, LResources,
   Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Spin, ComCtrls,
-  ColorBox, Buttons, TAChartUtils, TANavigation, SimThyrTypes, UnitConverter,
-  SimThyrPrediction, Sensitivityanalysis;
+  ColorBox, Buttons, Grids, TAChartUtils, TANavigation, SimThyrTypes,
+  UnitConverter, SimThyrPrediction, Sensitivityanalysis;
 
 type
 
@@ -63,11 +63,14 @@ type
     LegendSymb3: TShape;
     LegendFrame: TShape;
     StatusBar1: TStatusBar;
+    CheckGrid: TStringGrid;
     StrucParCombo1: TComboBox;
     StrucParCombo2: TComboBox;
     DependentParCombo: TComboBox;
+    CheckToggleBox: TToggleBox;
     procedure CalculateSensitivityMatrix(theMatrix: TSensitivityMatrix;
       const ymax: real; const ymin: real; const xmax: real; const xmin: real);
+    procedure CheckToggleBoxChange(Sender: TObject);
     procedure SetStandardStrucParBoundaries(factor1, factor2: real);
     procedure ColorButton1ColorChanged(Sender: TObject);
     procedure ColorButton2ColorChanged(Sender: TObject);
@@ -77,8 +80,10 @@ type
     procedure DependentParComboChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FullScaleButton1Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
     procedure StrucParCombo1Change(Sender: TObject);
     procedure StrucParCombo2Change(Sender: TObject);
+    procedure ToggleBox1Change(Sender: TObject);
   private
     { private declarations }
     SensitivityMatrix: TSensitivityMatrix;
@@ -119,6 +124,16 @@ begin
   end;
 end;
 
+procedure FillGrid(theGrid: TStringGrid; theMatrix: TSensitivityMatrix;
+  const xres, yres: integer);
+var
+  i, j: integer;
+begin
+  for i := 0 to xres do
+  for j := 0 to yres do
+  theGrid.Cells[i, j] := FloatToStr(theMatrix.content[j, i]);
+end;
+
 { TTWSensitivityAnalysisForm }
 
 procedure TTWSensitivityAnalysisForm.CalculateSensitivityMatrix(theMatrix:
@@ -132,6 +147,9 @@ var
 begin
   oldCursor := Cursor;
   Cursor := crHourGlass;
+  CheckGrid.Clear;
+  CheckGrid.ColCount := TWS_RESOLUTION + 2;
+  CheckGrid.RowCount := TWS_RESOLUTION + 2;;
   SaveStrucPars;
   FT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l', gParameterUnit[FT4_pos]);
   TT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l', gParameterUnit[TT4_pos]);
@@ -143,8 +161,8 @@ begin
     theMatrix.content[0, i + 1] := xmin + i / TWS_RESOLUTION * (xmax - xmin);
   for j := 0 to TWS_RESOLUTION do
     theMatrix.content[j + 1, 0] := ymin + j / TWS_RESOLUTION * (ymax - ymin);
-  for i := 1 to TWS_RESOLUTION do
-  for j := 1 to TWS_RESOLUTION do
+  for i := 0 to TWS_RESOLUTION do
+  for j := 0 to TWS_RESOLUTION do
   begin
     case StrucParCombo1.ItemIndex of
       0:
@@ -154,8 +172,8 @@ begin
         case StrucParCombo2.ItemIndex of
           2:
           begin
-            GD1 := gMinXPar + i / TWS_RESOLUTION * (xmax - xmin);
-            GD2 := gMinYPar + j / TWS_RESOLUTION * (ymax - ymin);
+            GD1 := (xmin + i / TWS_RESOLUTION * (xmax - xmin)) / GD1_FACTOR;
+            GD2 := (ymin + j / TWS_RESOLUTION * (ymax - ymin)) / GD2_FACTOR;
             PredictEquilibrium;
           end;
         end;
@@ -165,22 +183,39 @@ begin
     end;
     case DependentParCombo.ItemIndex of
       1:
-        theMatrix.content[j, i] := TSH1 * gParameterFactor[TSH_pos];
+        theMatrix.content[j + 1, i + 1] := TSH1 * gParameterFactor[TSH_pos];
       2:
-        theMatrix.content[j, i] := T41 * TT4conversionFactor;
+        theMatrix.content[j + 1, i + 1] := T41 * TT4conversionFactor;
       3:
-        theMatrix.content[j, i] := FT41 * FT4conversionFactor;
+        theMatrix.content[j + 1, i + 1] := FT41 * FT4conversionFactor;
       4:
-        theMatrix.content[j, i] := T31 * TT3conversionFactor;
+        theMatrix.content[j + 1, i + 1] := T31 * TT3conversionFactor;
       5:
-        theMatrix.content[j, i] := FT31 * FT3conversionFactor;
+        theMatrix.content[j + 1, i + 1] := FT31 * FT3conversionFactor;
+      6:
+        theMatrix.content[j + 1, i + 1] := T3z1 * cT3conversionFactor;
       otherwise
-        theMatrix.content[j, i] := random; // for testing only
+        theMatrix.content[j + 1, i + 1] := -1; // undefined parameter selected
     end;
   end;
+  FillGrid(CheckGrid, theMatrix, TWS_RESOLUTION + 1, TWS_RESOLUTION + 1);
   RestoreStrucPars;
   PredictEquilibrium;
   Cursor := oldCursor;
+end;
+
+procedure TTWSensitivityAnalysisForm.CheckToggleBoxChange(Sender: TObject);
+begin
+  if CheckToggleBox.State = cbChecked then
+  begin
+    CheckGrid.Visible := true;
+    SensitivityMap.Visible := false;
+  end
+  else
+  begin
+    CheckGrid.Visible := false;
+    SensitivityMap.Visible := true;
+  end;
 end;
 
 procedure TTWSensitivityAnalysisForm.SetStandardStrucParBoundaries(factor1, factor2: real);
@@ -803,10 +838,10 @@ begin
   ymax := SensitivityMapColorMapSeries1.Extent.YMax;
   CalculateSensitivityMatrix(SensitivityMatrix, ymax, ymin, xmax, xmin);
   ext := SensitivityMap.GetFullExtent;
-  i := 1 + trunc((AX - ext.a.x) / (ext.b.x - ext.a.x) * TWS_RESOLUTION);
-  j := 1 + trunc((AY - ext.a.y) / (ext.b.y - ext.a.y) * TWS_RESOLUTION);
+  i := trunc((AX - ext.a.x) / (ext.b.x - ext.a.x) * TWS_RESOLUTION);
+  j := trunc((AY - ext.a.y) / (ext.b.y - ext.a.y) * TWS_RESOLUTION);
   //AZ := (AX - ext.a.x) / (ext.b.x - ext.a.x);
-  AZ := SensitivityMatrix.content[j, i];
+  AZ := SensitivityMatrix.content[j + 1, i + 1];
   SensitivityMap.EnableRedrawing;
 end;
 
@@ -854,6 +889,11 @@ end;
 procedure TTWSensitivityAnalysisForm.FullScaleButton1Click(Sender: TObject);
 begin
   SensitivityMap.ZoomFull;
+end;
+
+procedure TTWSensitivityAnalysisForm.SpeedButton1Click(Sender: TObject);
+begin
+
 end;
 
 procedure SetLeftAxisCaption;
@@ -906,6 +946,11 @@ begin
   end;
 end;
 
+procedure TTWSensitivityAnalysisForm.ToggleBox1Change(Sender: TObject);
+begin
+
+end;
+
 procedure TTWSensitivityAnalysisForm.ColouriseLegend;
 begin
   LegendSymb1.Brush.Color := ColorButton1.ButtonColor;
@@ -920,6 +965,7 @@ begin
   with ColourSource do
   begin
     Clear;
+    Add(-1.0, DUMMY, '', clWhite);
     Add(0.0, DUMMY, '', ColorButton1.ButtonColor);
     Add(0.5, DUMMY, '', ColorButton2.ButtonColor);
     Add(1.0, DUMMY, '', ColorButton3.ButtonColor);
