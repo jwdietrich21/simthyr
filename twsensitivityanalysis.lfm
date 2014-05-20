@@ -1,7 +1,7 @@
 object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
-  Left = 311
+  Left = 341
   Height = 486
-  Top = 171
+  Top = 189
   Width = 758
   Caption = 'Two-Way Sensitivity Analysis'
   ClientHeight = 486
@@ -45,13 +45,13 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     object LegendPanel: TPanel
       Left = 548
       Height = 281
-      Top = 8
+      Top = 4
       Width = 138
       Anchors = [akTop, akRight, akBottom]
       BevelOuter = bvNone
       ClientHeight = 281
       ClientWidth = 138
-      TabOrder = 1
+      TabOrder = 0
       object LegendFrame: TShape
         Left = 16
         Height = 90
@@ -355,7 +355,15 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Height = 23
     Top = 463
     Width = 758
-    Panels = <>
+    Panels = <    
+      item
+        Text = ' 0 data points'
+        Width = 150
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
   end
   object FullScaleButton1: TSpeedButton
     Left = 16
