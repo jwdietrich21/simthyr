@@ -4,7 +4,7 @@ LazarusResources.Add('TPrediction','FORMDATA',[
   'TPF0'#11'TPrediction'#10'Prediction'#4'Left'#3'Q'#3#6'Height'#3#243#0#3'Top'
   +#3#146#0#5'Width'#3#161#1#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0#11'Border'
   +'Icons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderStyle'#7#13'bsSizeTool'
-  +'Win'#7'Caption'#6#11' Prediction'#12'ClientHeight'#3#243#0#11'ClientWidth'#3
+  +'Win'#7'Caption'#6#10'Prediction'#12'ClientHeight'#3#243#0#11'ClientWidth'#3
   +#161#1#5'Color'#7#7'clWhite'#9'Icon.Data'#10#154'$'#0#0#150'$'#0#0#0#0#1#0#8
   +#0'  '#2#0#1#0#1#0'0'#1#0#0#134#0#0#0#16#16#2#0#1#0#1#0#176#0#0#0#182#1#0#0
   +'  '#16#0#1#0#4#0#232#2#0#0'f'#2#0#0#16#16#16#0#1#0#4#0'('#1#0#0'N'#5#0#0'  '
