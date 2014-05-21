@@ -21,7 +21,8 @@ interface
 uses
   Classes, SysUtils, FileUtil, TAGraph, TAFuncSeries, TASources, LResources,
   Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Spin, ComCtrls,
-  ColorBox, Buttons, Grids, TAChartUtils, TANavigation, Math, SimThyrTypes,
+  ColorBox, Buttons, Grids, Clipbrd, Menus, TAChartUtils, TANavigation, Math,
+  TADrawerSVG, TADrawUtils, TADrawerCanvas, SimThyrTypes, SimThyrServices,
   UnitConverter, SimThyrPrediction, Sensitivityanalysis;
 
 type
@@ -45,6 +46,9 @@ type
   { TTWSensitivityAnalysisForm }
 
   TTWSensitivityAnalysisForm = class(TForm)
+    CopyItem: TMenuItem;
+    CutItem: TMenuItem;
+    Divider1: TMenuItem;
     LegendMinLabel: TLabel;
     LegendMaxLabel: TLabel;
     LegendMap: TChart;
@@ -55,6 +59,8 @@ type
     ColorButton3: TColorButton;
     GroupBox2: TGroupBox;
     LegendPanel: TPanel;
+    PasteItem: TMenuItem;
+    PopupMenu1: TPopupMenu;
     SensitivityMap: TChart;
     SensitivityMapColorMapSeries: TColorMapSeries;
     ColourSource: TListChartSource;
@@ -72,10 +78,14 @@ type
     StrucParCombo2: TComboBox;
     DependentParCombo: TComboBox;
     CheckToggleBox: TToggleBox;
+    UndoItem: TMenuItem;
     procedure CalculateSensitivityMatrix(var theMatrix: TSensitivityMatrix;
       const ymax: real; const ymin: real; const xmax: real; const xmin: real);
     procedure CalculateMatrixWithCoordinates(theMatrix: TSensitivityMatrix);
     procedure CheckToggleBoxChange(Sender: TObject);
+    procedure CopyChart;
+    procedure CopyItemClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
     procedure LegendColorMapSeriesCalculate(const AX, AY: Double; out AZ: Double
       );
     procedure SetStandardStrucParBoundaries(factor1, factor2: real);
@@ -104,6 +114,9 @@ var
   gMinYPar, gMaxYPar: real;
 
 implementation
+
+uses
+  SimThyrMain;
 
 { TSensitivityMatrix }
 
@@ -364,6 +377,49 @@ begin
     CheckGrid.Visible := false;
     SensitivityMap.Visible := true;
   end;
+end;
+
+procedure TTWSensitivityAnalysisForm.CopyChart;
+var
+  {$IFDEF UNIX}
+  theImage: TPortableNetworkGraphic;
+  {$ELSE}
+  theImage: TBitMap;
+  {$ENDIF}
+  theWidth, theHeight: integer;
+begin
+  if SensitivityMap = nil then
+    bell
+  else
+  begin
+    {SensitivityMap.CopyToClipboardBitmap doesn't work on Mac OS X}
+    {$IFDEF UNIX}
+    theImage := TPortableNetworkGraphic.Create;
+    try
+      theWidth := SensitivityMap.Width;
+      theHeight := SensitivityMap.Height;
+      theImage.Width := theWidth;
+      theImage.Height := theHeight;
+      SensitivityMap.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas);
+      Clipboard.Assign(theImage);
+    finally
+      theImage.Free;
+    end;
+    {$ELSE}
+    SensitivityMap.CopyToClipboardBitmap;
+    {$ENDIF}
+  end;
+end;
+
+procedure TTWSensitivityAnalysisForm.CopyItemClick(Sender: TObject);
+begin
+  CopyChart;
+end;
+
+procedure TTWSensitivityAnalysisForm.FormActivate(Sender: TObject);
+begin
+  SimThyrToolbar.SelectAllMenuItem.Enabled := false;
+  gLastActiveCustomForm := SensitivityAnalysisForm;
 end;
 
 procedure TTWSensitivityAnalysisForm.LegendColorMapSeriesCalculate(const AX,

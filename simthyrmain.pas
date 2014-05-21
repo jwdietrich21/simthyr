@@ -368,6 +368,10 @@ begin
     ((theForm = SimThyrToolbar) and (gLastActiveCustomForm =
     SensitivityAnalysisForm)) then
     SensitivityAnalysisForm.CopyChart
+  else if (theForm = TWSensitivityAnalysisForm) or
+    ((theForm = SimThyrToolbar) and (gLastActiveCustomForm =
+    TWSensitivityAnalysisForm)) then
+    TWSensitivityAnalysisForm.CopyChart
   else if (theForm = TornadoPlotForm) or ((theForm = SimThyrToolbar) and
     (gLastActiveCustomForm = TornadoPlotForm)) then
     TornadoPlotForm.CopyTornado
