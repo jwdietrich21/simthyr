@@ -45,19 +45,16 @@ type
   { TTWSensitivityAnalysisForm }
 
   TTWSensitivityAnalysisForm = class(TForm)
+    LegendMap: TChart;
+    LegendColorMapSeries: TColorMapSeries;
     ChartNavPanel1: TChartNavPanel;
     ColorButton1: TColorButton;
     ColorButton2: TColorButton;
     ColorButton3: TColorButton;
     GroupBox2: TGroupBox;
-    LegendLabel2: TLabel;
-    LegendLabel1: TLabel;
-    LegendLabel3: TLabel;
-    LegendSymb2: TShape;
-    LegendSymb1: TShape;
     LegendPanel: TPanel;
     SensitivityMap: TChart;
-    SensitivityMapColorMapSeries1: TColorMapSeries;
+    SensitivityMapColorMapSeries: TColorMapSeries;
     ColourSource: TListChartSource;
     FullScaleButton1: TSpeedButton;
     GroupBox1: TGroupBox;
@@ -66,7 +63,6 @@ type
     MinSpinEdit1: TFloatSpinEdit;
     MinSpinEdit2: TFloatSpinEdit;
     PlotPanel: TPanel;
-    LegendSymb3: TShape;
     LegendFrame: TShape;
     StatusBar1: TStatusBar;
     CheckGrid: TStringGrid;
@@ -78,11 +74,13 @@ type
       const ymax: real; const ymin: real; const xmax: real; const xmin: real);
     procedure CalculateMatrixWithCoordinates(theMatrix: TSensitivityMatrix);
     procedure CheckToggleBoxChange(Sender: TObject);
+    procedure LegendColorMapSeriesCalculate(const AX, AY: Double; out AZ: Double
+      );
     procedure SetStandardStrucParBoundaries(factor1, factor2: real);
     procedure ColorButton1ColorChanged(Sender: TObject);
     procedure ColorButton2ColorChanged(Sender: TObject);
     procedure ColorButton3ColorChanged(Sender: TObject);
-    procedure SensitivityMapColorMapSeries1Calculate(const AX, AY: Double; out
+    procedure SensitivityMapColorMapSeriesCalculate(const AX, AY: Double; out
       AZ: Double);
     procedure DependentParComboChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -343,10 +341,10 @@ procedure TTWSensitivityAnalysisForm.CalculateMatrixWithCoordinates(theMatrix:
 var
   xmin, xmax, ymin, ymax: real;
 begin
-  xmin := SensitivityMapColorMapSeries1.Extent.XMin;
-  xmax := SensitivityMapColorMapSeries1.Extent.XMax;
-  ymin := SensitivityMapColorMapSeries1.Extent.YMin;
-  ymax := SensitivityMapColorMapSeries1.Extent.YMax;
+  xmin := SensitivityMapColorMapSeries.Extent.XMin;
+  xmax := SensitivityMapColorMapSeries.Extent.XMax;
+  ymin := SensitivityMapColorMapSeries.Extent.YMin;
+  ymax := SensitivityMapColorMapSeries.Extent.YMax;
   CalculateSensitivityMatrix(SensitivityMatrix, ymax, ymin, xmax, xmin);
   StatusBar1.Panels[0].Text := ' ' + IntToStr(sqr(TWS_RESOLUTION)) +
     ' data points';
@@ -364,6 +362,34 @@ begin
     CheckGrid.Visible := false;
     SensitivityMap.Visible := true;
   end;
+end;
+
+procedure TTWSensitivityAnalysisForm.LegendColorMapSeriesCalculate(const AX,
+  AY: Double; out AZ: Double);
+var
+  subMat: TPartialMatrix;
+  ext: TDoubleRect;
+  minResult, meanResult, maxResult: real;
+begin
+  ext := LegendMap.GetFullExtent;
+  with SensitivityMatrix do
+  begin
+    subMat := GetResults;
+    minResult := GetMin;
+    meanResult := GetMean;
+    maxResult := GetMax;
+  end;
+  if maxResult > minResult then
+  begin
+    //LegendColorMapSeries.Extent.YMin := minResult;
+    //LegendColorMapSeries.Extent.YMax := maxResult;
+  end
+  else
+  begin
+    //LegendColorMapSeries.Extent.YMin := 0;
+    //LegendColorMapSeries.Extent.YMax := 1;
+  end;
+  AZ := minResult + (maxResult - minResult) * (AY - ext.a.y) /(ext.b.y - ext.a.y);
 end;
 
 procedure TTWSensitivityAnalysisForm.SetStandardStrucParBoundaries(factor1, factor2: real);
@@ -960,17 +986,17 @@ begin
   if MaxSpinEdit2.Value < 10 then MaxSpinEdit2.DecimalPlaces := 4
   else if MaxSpinEdit2.Value > 100 then MaxSpinEdit2.DecimalPlaces := 1
   else MaxSpinEdit2.DecimalPlaces := 2;
-  SensitivityMapColorMapSeries1.Extent.XMin := MinSpinEdit1.Value;
-  SensitivityMapColorMapSeries1.Extent.XMax := MaxSpinEdit1.Value;
-  SensitivityMapColorMapSeries1.Extent.YMin := MinSpinEdit2.Value;
-  SensitivityMapColorMapSeries1.Extent.YMax := MaxSpinEdit2.Value;
+  SensitivityMapColorMapSeries.Extent.XMin := MinSpinEdit1.Value;
+  SensitivityMapColorMapSeries.Extent.XMax := MaxSpinEdit1.Value;
+  SensitivityMapColorMapSeries.Extent.YMin := MinSpinEdit2.Value;
+  SensitivityMapColorMapSeries.Extent.YMax := MaxSpinEdit2.Value;
   if SensitivityMatrix <> nil then
     SensitivityMatrix.ClearContent
   else
     SensitivityMatrix := TSensitivityMatrix.create;
 end;
 
-procedure TTWSensitivityAnalysisForm.SensitivityMapColorMapSeries1Calculate(const AX,
+procedure TTWSensitivityAnalysisForm.SensitivityMapColorMapSeriesCalculate(const AX,
   AY: Double; out AZ: Double);
 { This procedure reads equilibrium levels from the sensitivity matrix }
 { and delivers point-wise results in the variable AZ }
@@ -1013,6 +1039,7 @@ begin
   end;
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
+  LegendMap.Invalidate;
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton2ColorChanged(Sender: TObject);
@@ -1027,6 +1054,7 @@ begin
   end;
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
+  LegendMap.Invalidate;
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton1ColorChanged(Sender: TObject);
@@ -1041,14 +1069,17 @@ begin
   end;
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
+  LegendMap.Invalidate;
 end;
 
 procedure TTWSensitivityAnalysisForm.FormCreate(Sender: TObject);
 begin
   {$IFDEF LCLcarbon}
-  SensitivityMapColorMapSeries1.UseImage := cmuiAlways;
+  SensitivityMapColorMapSeries.UseImage := cmuiAlways;
+  LegendColorMapSeries.UseImage := cmuiAlways;
   {$ELSE}
-  SensitivityMapColorMapSeries1.UseImage := cmuiAuto;
+  SensitivityMapColorMapSeries.UseImage := cmuiAuto;
+  LegendColorMapSeries.UseImage := cmuiAuto;
   {$ENDIF}
   SensitivityMatrix := TSensitivityMatrix.create;
   ColouriseLegend;
@@ -1123,9 +1154,7 @@ end;
 
 procedure TTWSensitivityAnalysisForm.ColouriseLegend;
 begin
-  LegendSymb1.Brush.Color := ColorButton1.ButtonColor;
-  LegendSymb2.Brush.Color := ColorButton2.ButtonColor;
-  LegendSymb3.Brush.Color := ColorButton3.ButtonColor;
+  LegendMap.Invalidate;
 end;
 
 procedure TTWSensitivityAnalysisForm.PopulateColourSource(const minScale,
