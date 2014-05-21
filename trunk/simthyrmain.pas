@@ -371,7 +371,11 @@ begin
   else if (theForm = TWSensitivityAnalysisForm) or
     ((theForm = SimThyrToolbar) and (gLastActiveCustomForm =
     TWSensitivityAnalysisForm)) then
-    TWSensitivityAnalysisForm.CopyChart
+    begin
+      TWSensitivityAnalysisForm.BringToFront;
+      Application.ProcessMessages;
+      TWSensitivityAnalysisForm.CopyChart;
+    end
   else if (theForm = TornadoPlotForm) or ((theForm = SimThyrToolbar) and
     (gLastActiveCustomForm = TornadoPlotForm)) then
     TornadoPlotForm.CopyTornado
@@ -503,6 +507,9 @@ begin
   else if (theForm = SensitivityAnalysisForm) or ((theForm = SimThyrToolbar) and
       (gLastActiveCustomForm = SensitivityAnalysisForm)) then
         SensitivityAnalysisForm.SaveChart
+  else if (theForm = TWSensitivityAnalysisForm) or ((theForm = SimThyrToolbar) and
+      (gLastActiveCustomForm = TWSensitivityAnalysisForm)) then
+        TWSensitivityAnalysisForm.SaveChart
   else if (theForm = TornadoPlotForm) or ((theForm = SimThyrToolbar) and
       (gLastActiveCustomForm = TornadoPlotForm)) then
         TornadoPlotForm.SaveChart

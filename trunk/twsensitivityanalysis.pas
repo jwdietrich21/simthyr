@@ -49,6 +49,7 @@ type
     CopyItem: TMenuItem;
     CutItem: TMenuItem;
     Divider1: TMenuItem;
+    LegendLabel: TLabel;
     LegendMinLabel: TLabel;
     LegendMaxLabel: TLabel;
     LegendMap: TChart;
@@ -59,6 +60,8 @@ type
     ColorButton3: TColorButton;
     GroupBox2: TGroupBox;
     LegendPanel: TPanel;
+    Divider2: TMenuItem;
+    SaveAsItem: TMenuItem;
     PasteItem: TMenuItem;
     PopupMenu1: TPopupMenu;
     SensitivityMap: TChart;
@@ -84,6 +87,8 @@ type
     procedure CalculateMatrixWithCoordinates(theMatrix: TSensitivityMatrix);
     procedure CheckToggleBoxChange(Sender: TObject);
     procedure CopyChart;
+    procedure SaveAsItemClick(Sender: TObject);
+    procedure SaveChart;
     procedure CopyItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure LegendColorMapSeriesCalculate(const AX, AY: Double; out AZ: Double
@@ -408,6 +413,55 @@ begin
     {$ELSE}
     SensitivityMap.CopyToClipboardBitmap;
     {$ENDIF}
+  end;
+end;
+
+procedure TTWSensitivityAnalysisForm.SaveAsItemClick(Sender: TObject);
+begin
+  SaveChart;
+end;
+
+procedure TTWSensitivityAnalysisForm.SaveChart;
+{saves chart as bitmap or SVG file}
+var
+  theFileName:  string;
+  theFilterIndex: integer;
+  theStream: TFileStream;
+  theDrawer: IChartDrawer;
+begin
+  if SensitivityMap = nil then
+    bell
+  else
+  begin
+    theStream := nil;
+    SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
+    if SimThyrToolbar.SavePictureDialog1.Execute then
+      try
+        theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
+        theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
+         {$IFDEF LCLcarbon}{compensates for a bug in older versions of carbon widgetset}
+           if (lcl_major < 2) and (lcl_minor < 2) then
+             theFilterIndex := theFilterIndex + 1;
+         {$ENDIF}
+        case theFilterIndex of
+        2: SensitivityMap.SaveToBitmapFile(theFileName);
+        3: SensitivityMap.SaveToFile(TPixmap, theFileName);
+        4: SensitivityMap.SaveToFile(TPortableNetworkGraphic, theFileName);
+        5: SensitivityMap.SaveToFile(TPortableAnyMapGraphic, theFileName);
+        6: SensitivityMap.SaveToFile(TJPEGImage, theFileName);
+        7: SensitivityMap.SaveToFile(TTIFFImage, theFileName);
+        8: begin
+             theStream := TFileStream.Create(theFileName, fmCreate);
+             theDrawer := TSVGDrawer.Create(theStream, true);
+             theDrawer.DoChartColorToFPColor := @ChartColorSysToFPColor;
+             with SensitivityMap do
+               Draw(theDrawer, Rect(0, 0, Width, Height));
+           end;
+        otherwise bell;
+        end;
+      finally
+        if theStream <> nil then theStream.Free;
+      end;
   end;
 end;
 
