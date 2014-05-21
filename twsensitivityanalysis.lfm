@@ -80,6 +80,16 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         Caption = '0'
         ParentColor = False
       end
+      object LegendLabel: TLabel
+        Left = 8
+        Height = 13
+        Top = 10
+        Width = 42
+        Caption = 'Legend'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
     end
     object SensitivityMap: TChart
       Cursor = crCross
@@ -513,6 +523,13 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     object PasteItem: TMenuItem
       Caption = 'Paste'
       Enabled = False
+    end
+    object Divider2: TMenuItem
+      Caption = '-'
+    end
+    object SaveAsItem: TMenuItem
+      Caption = 'Save as...'
+      OnClick = SaveAsItemClick
     end
   end
 end
