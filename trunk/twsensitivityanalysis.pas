@@ -27,8 +27,6 @@ uses
 
 type
 
-  TPartialMatrix = array[1..TWS_RESOLUTION + 1, 1..TWS_RESOLUTION + 1] of real;
-
   { TSensitivityMatrix }
 
   TSensitivityMatrix = class(TObject)
@@ -37,7 +35,6 @@ type
     constructor create;
     destructor destroy; override;
     procedure ClearContent;
-    function GetResults: TPartialMatrix;
     function GetMin: real;
     function GetMax: real;
     function GetMean: real;
@@ -87,6 +84,10 @@ type
     procedure CalculateMatrixWithCoordinates(theMatrix: TSensitivityMatrix);
     procedure CheckToggleBoxChange(Sender: TObject);
     procedure CopyChart;
+    procedure MaxSpinEdit1Change(Sender: TObject);
+    procedure MaxSpinEdit2Change(Sender: TObject);
+    procedure MinSpinEdit1Change(Sender: TObject);
+    procedure MinSpinEdit2Change(Sender: TObject);
     procedure SaveAsItemClick(Sender: TObject);
     procedure SaveChart;
     procedure CopyItemClick(Sender: TObject);
@@ -124,15 +125,6 @@ uses
   SimThyrMain;
 
 { TSensitivityMatrix }
-
-function TSensitivityMatrix.GetResults: TPartialMatrix;
-var
-  i, j: integer;
-begin
-  for i := 1 to TWS_RESOLUTION + 1 do
-  for j := 1 to TWS_RESOLUTION + 1 do
-  result[i, j] := content[i, j];
-end;
 
 function TSensitivityMatrix.GetMin: real;
 var
@@ -416,6 +408,86 @@ begin
   end;
 end;
 
+procedure TTWSensitivityAnalysisForm.MaxSpinEdit1Change(Sender: TObject);
+begin
+  if MaxSpinEdit1.Value <
+    MinSpinEdit1.Value then
+    {adapts boundaries to avoid negative intervals}
+  begin
+    bell;
+    MaxSpinEdit1.Value :=
+      MinSpinEdit1.Value;
+  end;
+  gMinXPar := MinSpinEdit1.Value / gSpinFactor;
+  gMaxXPar := MaxSpinEdit1.Value / gSpinFactor;
+  SensitivityMapColorMapSeries.Extent.XMin := MinSpinEdit1.Value;
+    SensitivityMapColorMapSeries.Extent.XMax := MaxSpinEdit1.Value;
+  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  with SensitivityMatrix do
+    PopulateColourSource(GetMin, GetMean, GetMax);
+  SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
+end;
+
+procedure TTWSensitivityAnalysisForm.MaxSpinEdit2Change(Sender: TObject);
+begin
+  if MaxSpinEdit2.Value <
+    MinSpinEdit2.Value then
+    {adapts boundaries to avoid negative intervals}
+  begin
+    bell;
+    MaxSpinEdit2.Value :=
+      MinSpinEdit2.Value;
+  end;
+  gMinYPar := MinSpinEdit2.Value / gSpinFactor;
+  gMaxYPar := MaxSpinEdit2.Value / gSpinFactor;
+  SensitivityMapColorMapSeries.Extent.YMin := MinSpinEdit2.Value;
+    SensitivityMapColorMapSeries.Extent.YMax := MaxSpinEdit2.Value;
+  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  with SensitivityMatrix do
+    PopulateColourSource(GetMin, GetMean, GetMax);
+  SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
+end;
+
+procedure TTWSensitivityAnalysisForm.MinSpinEdit1Change(Sender: TObject);
+begin
+  if MaxSpinEdit1.Value <
+    MinSpinEdit1.Value then
+    {adapts boundaries to avoid negative intervals}
+  begin
+    bell;
+    MaxSpinEdit1.Value :=
+      MinSpinEdit1.Value;
+  end;
+  gMinXPar := MinSpinEdit1.Value / gSpinFactor;
+  gMaxXPar := MaxSpinEdit1.Value / gSpinFactor;
+  SensitivityMapColorMapSeries.Extent.XMin := MinSpinEdit1.Value;
+    SensitivityMapColorMapSeries.Extent.XMax := MaxSpinEdit1.Value;
+  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  with SensitivityMatrix do
+    PopulateColourSource(GetMin, GetMean, GetMax);
+  SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
+end;
+
+procedure TTWSensitivityAnalysisForm.MinSpinEdit2Change(Sender: TObject);
+begin
+  if MaxSpinEdit2.Value <
+    MinSpinEdit2.Value then
+    {adapts boundaries to avoid negative intervals}
+  begin
+    bell;
+    MaxSpinEdit2.Value :=
+      MinSpinEdit2.Value;
+  end;
+  gMinYPar := MinSpinEdit2.Value / gSpinFactor;
+  gMaxYPar := MaxSpinEdit2.Value / gSpinFactor;
+  SensitivityMapColorMapSeries.Extent.YMin := MinSpinEdit2.Value;
+    SensitivityMapColorMapSeries.Extent.YMax := MaxSpinEdit2.Value;
+  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  with SensitivityMatrix do
+    PopulateColourSource(GetMin, GetMean, GetMax);
+  SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
+end;
+
 procedure TTWSensitivityAnalysisForm.SaveAsItemClick(Sender: TObject);
 begin
   SaveChart;
@@ -479,14 +551,12 @@ end;
 procedure TTWSensitivityAnalysisForm.LegendColorMapSeriesCalculate(const AX,
   AY: Double; out AZ: Double);
 var
-  subMat: TPartialMatrix;
   ext: TDoubleRect;
   minResult, meanResult, maxResult: real;
 begin
   ext := LegendMap.GetFullExtent;
   with SensitivityMatrix do
   begin
-    subMat := GetResults;
     minResult := GetMin;
     meanResult := GetMean;
     maxResult := GetMax;
@@ -1125,60 +1195,39 @@ begin
 end;
 
 procedure TTWSensitivityAnalysisForm.DependentParComboChange(Sender: TObject);
-var
-  subMat: TPartialMatrix;
 begin
   SensitivityMap.Title.Text.Text := DependentParCombo.Text;
   CalculateMatrixWithCoordinates(SensitivityMatrix);
-  CalculateMatrixWithCoordinates(SensitivityMatrix);
   with SensitivityMatrix do
-  begin
-    subMat := GetResults;
     PopulateColourSource(GetMin, GetMean, GetMax);
-  end;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton3ColorChanged(Sender: TObject);
-var
-  subMat: TPartialMatrix;
 begin
   CalculateMatrixWithCoordinates(SensitivityMatrix);
   with SensitivityMatrix do
-  begin
-    subMat := GetResults;
     PopulateColourSource(GetMin, GetMean, GetMax);
-  end;
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
   LegendMap.Invalidate;
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton2ColorChanged(Sender: TObject);
-var
-  subMat: TPartialMatrix;
 begin
   CalculateMatrixWithCoordinates(SensitivityMatrix);
   with SensitivityMatrix do
-  begin
-    subMat := GetResults;
     PopulateColourSource(GetMin, GetMean, GetMax);
-  end;
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
   LegendMap.Invalidate;
 end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton1ColorChanged(Sender: TObject);
-var
-  subMat: TPartialMatrix;
 begin
   CalculateMatrixWithCoordinates(SensitivityMatrix);
   with SensitivityMatrix do
-  begin
-    subMat := GetResults;
     PopulateColourSource(GetMin, GetMean, GetMax);
-  end;
   ColouriseLegend;
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
   LegendMap.Invalidate;
@@ -1225,8 +1274,6 @@ begin
 end;
 
 procedure TTWSensitivityAnalysisForm.StrucParCombo1Change(Sender: TObject);
-var
-  subMat: TPartialMatrix;
 begin
   if TWSensitivityAnalysisForm.StrucParCombo1.Text <> '' then
   begin
@@ -1235,18 +1282,13 @@ begin
     SetStandardStrucParBoundaries(1 / 3, 3);
     CalculateMatrixWithCoordinates(SensitivityMatrix);
     with SensitivityMatrix do
-    begin
-      subMat := GetResults;
       PopulateColourSource(GetMin, GetMean, GetMax);
-    end;
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
     TWSensitivityAnalysisForm.StrucParCombo1.Enabled := true;
   end;
 end;
 
 procedure TTWSensitivityAnalysisForm.StrucParCombo2Change(Sender: TObject);
-var
-  subMat: TPartialMatrix;
 begin
   if TWSensitivityAnalysisForm.StrucParCombo2.Text <> '' then
   begin
@@ -1255,10 +1297,7 @@ begin
     SetStandardStrucParBoundaries(1 / 3, 3);
     CalculateMatrixWithCoordinates(SensitivityMatrix);
     with SensitivityMatrix do
-    begin
-      subMat := GetResults;
       PopulateColourSource(GetMin, GetMean, GetMax);
-    end;
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
     TWSensitivityAnalysisForm.StrucParCombo2.Enabled := true;
   end;

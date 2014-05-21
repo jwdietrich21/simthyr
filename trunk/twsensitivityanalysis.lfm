@@ -207,6 +207,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Increment = 1
       MaxValue = 100
       MinValue = 0
+      OnChange = MinSpinEdit1Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
@@ -223,6 +224,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Increment = 1
       MaxValue = 1000
       MinValue = 0
+      OnChange = MaxSpinEdit1Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
@@ -278,6 +280,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Increment = 1
       MaxValue = 100
       MinValue = 0
+      OnChange = MinSpinEdit2Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 3
@@ -333,6 +336,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Increment = 1
       MaxValue = 1000
       MinValue = 0
+      OnChange = MaxSpinEdit2Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 5

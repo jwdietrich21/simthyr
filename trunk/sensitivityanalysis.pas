@@ -806,31 +806,31 @@ end;
 
 procedure TSensitivityAnalysisForm.MaxSpinEditChange(Sender: TObject);
 begin
-  if SensitivityAnalysisForm.MaxSpinEdit.Value <
-    SensitivityAnalysisForm.MinSpinEdit.Value then
+  if MaxSpinEdit.Value <
+    MinSpinEdit.Value then
     {adapts boundaries to avoid negative intervals}
   begin
     bell;
-    SensitivityAnalysisForm.MinSpinEdit.Value :=
-      SensitivityAnalysisForm.MaxSpinEdit.Value;
+    MinSpinEdit.Value :=
+      MaxSpinEdit.Value;
   end;
-  gMinXPar := SensitivityAnalysisForm.MinSpinEdit.Value / gSpinFactor;
-  gMaxXPar := SensitivityAnalysisForm.MaxSpinEdit.Value / gSpinFactor;
+  gMinXPar := MinSpinEdit.Value / gSpinFactor;
+  gMaxXPar := MaxSpinEdit.Value / gSpinFactor;
   DrawOWSensitivityPlot(False);
 end;
 
 procedure TSensitivityAnalysisForm.MinSpinEditChange(Sender: TObject);
 begin
-  if SensitivityAnalysisForm.MaxSpinEdit.Value <
-    SensitivityAnalysisForm.MinSpinEdit.Value then
+  if MaxSpinEdit.Value <
+    MinSpinEdit.Value then
     {adapts boundaries to avoid negative intervals}
   begin
     bell;
-    SensitivityAnalysisForm.MaxSpinEdit.Value :=
-      SensitivityAnalysisForm.MinSpinEdit.Value;
+    MaxSpinEdit.Value :=
+      MinSpinEdit.Value;
   end;
-  gMinXPar := SensitivityAnalysisForm.MinSpinEdit.Value / gSpinFactor;
-  gMaxXPar := SensitivityAnalysisForm.MaxSpinEdit.Value / gSpinFactor;
+  gMinXPar := MinSpinEdit.Value / gSpinFactor;
+  gMaxXPar := MaxSpinEdit.Value / gSpinFactor;
   DrawOWSensitivityPlot(False);
 end;
 

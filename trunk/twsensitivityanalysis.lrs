@@ -62,52 +62,54 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +'t'#2#12#6'Height'#2#21#4'Hint'#6'''Minimum of selected structure parameter'
   +#3'Top'#2'$'#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalP'
   +'laces'#2#4#9'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0
-  +#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#14'ParentShowHint'#8#8'ShowHin'
-  +'t'#9#8'TabOrder'#2#0#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#14'TFloatSpinEdit'
-  +#12'MaxSpinEdit1'#4'Left'#3#159#1#6'Height'#2#21#4'Hint'#6'''Maximum of sele'
-  ,'cted structure parameter'#3'Top'#2'$'#5'Width'#2'H'#7'Anchors'#11#7'akRight'
-  +#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0#0#0#0#0#128#255'?'
-  +#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#14'P'
-  +'arentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#5'Value'#5#0#0#0#0#0#0#0#0#0
-  +#0#0#0#9'TComboBox'#14'StrucParCombo1'#4'Left'#2'd'#6'Height'#2#21#4'Hint'#6
-  +'ISelect the structure parameter that servers as independent variable here.'
-  +#3'Top'#2''''#5'Width'#3'%'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'
-  +#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items'
-  +'.Strings'#1#6'(Select independent parameter (x axis)...'#6#12'GD1 (nmol/s)'
-  +#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6
-  +#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'
-  +#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaS (/'
-  +'s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'#6#12'beta31 (/Ms)'#6#12'beta32 (/Ms)'
-  +#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#20'StrucPar'
-  +'Combo1Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6
-  +'(Select independent parameter (x axis)...'#0#0#14'TFloatSpinEdit'#12'MinSpi'
-  +'nEdit2'#4'Left'#2#12#6'Height'#2#21#4'Hint'#6'''Minimum of selected structu'
-  +'re parameter'#3'Top'#2'D'#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'
-  +#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'
-  +#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#14'ParentShowHin'
-  +'t'#8#8'ShowHint'#9#8'TabOrder'#2#3#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TCo'
-  +'mboBox'#14'StrucParCombo2'#4'Left'#2'd'#6'Height'#2#21#4'Hint'#6'ISelect th'
-  +'e structure parameter that servers as independent variable here.'#3'Top'#2
-  +'G'#5'Width'#3'%'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'Arro'
-  +'wKeysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'
-  +#1#6'(Select independent parameter (y axis)...'#6#12'GD1 (nmol/s)'#6#12'GD2 '
-  +'(fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (m'
-  +'U/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'G'
-  +'R (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaS (/s)'#6
-  +#11'betaS2 (/s)'#6#10'betaT (/s)'#6#12'beta31 (/Ms)'#6#12'beta32 (/Ms)'#6#12
-  +'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#20'StrucParCombo'
-  +'2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6'(Sele'
-  +'ct independent parameter (y axis)...'#0#0#14'TFloatSpinEdit'#12'MaxSpinEdit'
-  +'2'#4'Left'#3#159#1#6'Height'#2#21#4'Hint'#6'''Maximum of selected structure'
-  +' parameter'#3'Top'#2'D'#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'#0
+  +#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'MinSpinEdit1C'
+  +'hange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#5'Value'#5#0#0#0#0
+  +#0#0#0#0#0#0#0#0#14'TFloatSpinEdit'#12'MaxSpinEdit1'#4'Left'#3#159#1#6'Heigh'
+  ,'t'#2#21#4'Hint'#6'''Maximum of selected structure parameter'#3'Top'#2'$'#5
+  +'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9
+  +'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8
+  +'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'MaxSpinEdit1Change'#14'Par'
+  +'entShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#5'Value'#5#0#0#0#0#0#0#0#0#0#0
+  +#0#0#9'TComboBox'#14'StrucParCombo1'#4'Left'#2'd'#6'Height'#2#21#4'Hint'#6'I'
+  +'Select the structure parameter that servers as independent variable here.'#3
+  +'Top'#2''''#5'Width'#3'%'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0
+  +#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.S'
+  +'trings'#1#6'(Select independent parameter (x axis)...'#6#12'GD1 (nmol/s)'#6
+  +#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9
+  +'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6
+  +#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaS (/s)'
+  +#6#11'betaS2 (/s)'#6#10'betaT (/s)'#6#12'beta31 (/Ms)'#6#12'beta32 (/Ms)'#6
+  +#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#20'StrucParCo'
+  +'mbo1Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6'(S'
+  +'elect independent parameter (x axis)...'#0#0#14'TFloatSpinEdit'#12'MinSpinE'
+  +'dit2'#4'Left'#2#12#6'Height'#2#21#4'Hint'#6'''Minimum of selected structure'
+  +' parameter'#3'Top'#2'D'#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0
   +#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5
-  +#0#0#0#0#0#0#0#250#8'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#14'ParentShowHint'
-  +#8#8'ShowHint'#9#8'TabOrder'#2#5#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TCombo'
-  +'Box'#17'DependentParCombo'#4'Left'#2'd'#6'Height'#2#21#4'Hint'#6'ISelect th'
-  +'e structure parameter that servers as independent variable here.'#3'Top'#2#6
-  +#5'Width'#3'%'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKe'
-  +'ysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6
-  +'*Select dependent parameter (colour map)...'#6#3'TSH'#6#3'TT4'#6#3'FT4'#6#3
+  +#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'M'
+  +'inSpinEdit2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#5'Val'
+  +'ue'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#14'StrucParCombo2'#4'Left'#2'd'#6
+  +'Height'#2#21#4'Hint'#6'ISelect the structure parameter that servers as inde'
+  +'pendent variable here.'#3'Top'#2'G'#5'Width'#3'%'#1#7'Anchors'#11#6'akLeft'
+  +#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9
+  +'ItemIndex'#2#0#13'Items.Strings'#1#6'(Select independent parameter (y axis)'
+  +'...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmo'
+  +'l/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9
+  +'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'
+  +#194#181'mol)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'#6#12'beta'
+  +'31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'
+  +#0#8'OnChange'#7#20'StrucParCombo2Change'#14'ParentShowHint'#8#8'ShowHint'#9
+  +#8'TabOrder'#2#4#4'Text'#6'(Select independent parameter (y axis)...'#0#0#14
+  +'TFloatSpinEdit'#12'MaxSpinEdit2'#4'Left'#3#159#1#6'Height'#2#21#4'Hint'#6
+  +'''Maximum of selected structure parameter'#3'Top'#2'D'#5'Width'#2'H'#7'Anch'
+  +'ors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0
+  +#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8'MinValue'#5#0#0#0
+  +#0#0#0#0#0#0#0#8'OnChange'#7#18'MaxSpinEdit2Change'#14'ParentShowHint'#8#8'S'
+  +'howHint'#9#8'TabOrder'#2#5#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'
+  +#17'DependentParCombo'#4'Left'#2'd'#6'Height'#2#21#4'Hint'#6'ISelect the str'
+  +'ucture parameter that servers as independent variable here.'#3'Top'#2#6#5'W'
+  +'idth'#3'%'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKeysT'
+  +'raverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6'*'
+  +'Select dependent parameter (colour map)...'#6#3'TSH'#6#3'TT4'#6#3'FT4'#6#3
   +'TT3'#6#3'FT3'#6#3'cT3'#0#8'OnChange'#7#23'DependentParComboChange'#14'Paren'
   +'tShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#6#4'Text'#6'*Select dependent para'
   +'meter (colour map)...'#0#0#0#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'He'
@@ -127,9 +129,9 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +#136#255#133#138#136#255#255#255#255#255#164'e4'#255#164'e4'#255#164'e4'#255
   +#164'e4'#255#250#251#251#255#250#251#251#255#252#252#253#255#253#252#252#255
   +#164'e4'#255#164'e4'#255#164'e4'#255#164'e4'#255#255#255#255#255#133#138#136
-  +#255#133#138#136#255#255#255#255#255#164'e4'#255#164'e4'#255#164'e4'#255#249
+  ,#255#133#138#136#255#255#255#255#255#164'e4'#255#164'e4'#255#164'e4'#255#249
   +#250#250#255#249#249#249#255#249#250#249#255#251#251#251#255#251#251#252#255
-  ,#251#251#252#255#164'e4'#255#164'e4'#255#164'e4'#255#255#255#255#255#133#138
+  +#251#251#252#255#164'e4'#255#164'e4'#255#164'e4'#255#255#255#255#255#133#138
   +#136#255#133#138#136#255#255#255#255#255#164'e4'#255#164'f6'#255#167'j;'#255
   +#171'rF'#255#248#249#248#255#248#249#249#255#250#250#250#255#250#250#251#255
   +#170'pC'#255#165'g7'#255#164'e4'#255#164'e4'#255#255#255#255#255#133#138#136
@@ -191,9 +193,9 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +'Height'#2#23#4'Hint'#6'2Show results of sensitivity analysis in table form'
   +#3'Top'#2'x'#5'Width'#2#25#7'Caption'#6#1'T'#8'OnChange'#7#20'CheckToggleBox'
   +'Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#7'Visible'#8#0#0
-  +#16'TListChartSource'#12'ColourSource'#4'left'#2#16#3'top'#3'@'#1#0#0#10'TPo'
+  ,#16'TListChartSource'#12'ColourSource'#4'left'#2#16#3'top'#3'@'#1#0#0#10'TPo'
   +'pupMenu'#10'PopupMenu1'#4'left'#2#16#3'top'#3'p'#1#0#9'TMenuItem'#8'UndoIte'
-  ,'m'#7'Caption'#6#4'Undo'#7'Enabled'#8#0#0#9'TMenuItem'#8'Divider1'#7'Caption'
+  +'m'#7'Caption'#6#4'Undo'#7'Enabled'#8#0#0#9'TMenuItem'#8'Divider1'#7'Caption'
   +#6#1'-'#0#0#9'TMenuItem'#7'CutItem'#7'Caption'#6#3'Cut'#7'Enabled'#8#0#0#9'T'
   +'MenuItem'#8'CopyItem'#7'Caption'#6#4'Copy'#7'OnClick'#7#13'CopyItemClick'#0
   +#0#9'TMenuItem'#9'PasteItem'#7'Caption'#6#5'Paste'#7'Enabled'#8#0#0#9'TMenuI'
