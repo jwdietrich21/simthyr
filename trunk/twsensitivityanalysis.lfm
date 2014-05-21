@@ -1,7 +1,7 @@
 object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
-  Left = 341
+  Left = 397
   Height = 478
-  Top = 189
+  Top = 209
   Width = 707
   Caption = 'Two-Way Sensitivity Analysis'
   ClientHeight = 478
@@ -11,6 +11,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   Constraints.MaxWidth = 800
   Constraints.MinHeight = 380
   Constraints.MinWidth = 600
+  OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.2.2.0'
@@ -123,6 +124,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       DoubleBuffered = True
       ParentColor = False
       ParentShowHint = False
+      PopupMenu = PopupMenu1
       ShowHint = True
       object SensitivityMapColorMapSeries: TColorMapSeries
         Extent.UseXMax = True
@@ -436,32 +438,41 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     object ColorButton1: TColorButton
       Left = 16
       Height = 25
+      Hint = 'Select color for minimum level'
       Top = 60
       Width = 75
       BorderWidth = 2
       ButtonColorSize = 16
       ButtonColor = clNavy
       OnColorChanged = ColorButton1ColorChanged
+      ShowHint = True
+      ParentShowHint = False
     end
     object ColorButton3: TColorButton
       Left = 16
       Height = 25
+      Hint = 'Select color for maximum level'
       Top = 2
       Width = 75
       BorderWidth = 2
       ButtonColorSize = 16
       ButtonColor = clRed
       OnColorChanged = ColorButton3ColorChanged
+      ShowHint = True
+      ParentShowHint = False
     end
     object ColorButton2: TColorButton
       Left = 16
       Height = 25
+      Hint = 'Select color for mean level'
       Top = 31
       Width = 75
       BorderWidth = 2
       ButtonColorSize = 16
       ButtonColor = clYellow
       OnColorChanged = ColorButton2ColorChanged
+      ShowHint = True
+      ParentShowHint = False
     end
   end
   object CheckToggleBox: TToggleBox
@@ -480,5 +491,28 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   object ColourSource: TListChartSource
     left = 16
     top = 320
+  end
+  object PopupMenu1: TPopupMenu
+    left = 16
+    top = 368
+    object UndoItem: TMenuItem
+      Caption = 'Undo'
+      Enabled = False
+    end
+    object Divider1: TMenuItem
+      Caption = '-'
+    end
+    object CutItem: TMenuItem
+      Caption = 'Cut'
+      Enabled = False
+    end
+    object CopyItem: TMenuItem
+      Caption = 'Copy'
+      OnClick = CopyItemClick
+    end
+    object PasteItem: TMenuItem
+      Caption = 'Paste'
+      Enabled = False
+    end
   end
 end
