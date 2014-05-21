@@ -47,6 +47,7 @@ type
     Image10: TImage;
     Image11: TImage;
     Image12: TImage;
+    Image13: TImage;
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
@@ -84,6 +85,7 @@ type
     procedure Image10Click(Sender: TObject);
     procedure Image11Click(Sender: TObject);
     procedure Image12Click(Sender: TObject);
+    procedure Image13Click(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure Image2Click(Sender: TObject);
     procedure Image3Click(Sender: TObject);
@@ -184,6 +186,11 @@ end;
 procedure TAboutWindow.Image12Click(Sender: TObject);
 begin
   OpenURL('http://developer.apple.com/');
+end;
+
+procedure TAboutWindow.Image13Click(Sender: TObject);
+begin
+  OpenURL('http://puma-repository.sf.net');
 end;
 
 procedure TAboutWindow.Image2Click(Sender: TObject);

@@ -45,7 +45,7 @@ object StructureParameters: TStructureParameters
   object Tau0REdit: TEdit
     Left = 88
     Height = 22
-    Top = 502
+    Top = 504
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 1
@@ -54,7 +54,7 @@ object StructureParameters: TStructureParameters
   object Tau0SEdit: TEdit
     Left = 88
     Height = 22
-    Top = 526
+    Top = 528
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 2
@@ -63,7 +63,7 @@ object StructureParameters: TStructureParameters
   object Tau0S2Edit: TEdit
     Left = 88
     Height = 22
-    Top = 550
+    Top = 552
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 3
@@ -72,7 +72,7 @@ object StructureParameters: TStructureParameters
   object Tau0TEdit: TEdit
     Left = 312
     Height = 22
-    Top = 526
+    Top = 528
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 4
@@ -81,7 +81,7 @@ object StructureParameters: TStructureParameters
   object Tau03zEdit: TEdit
     Left = 312
     Height = 22
-    Top = 550
+    Top = 552
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 5

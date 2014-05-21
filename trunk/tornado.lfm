@@ -20,7 +20,7 @@ object TornadoPlotForm: TTornadoPlotForm
     Left = 440
     Height = 217
     Hint = 'Select the independent structure parameters whose influence you want to check'
-    Top = 8
+    Top = 45
     Width = 185
     Anchors = [akTop, akRight]
     AutoFill = True
@@ -33,8 +33,8 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 2
-    ClientHeight = 199
-    ClientWidth = 181
+    ClientHeight = 195
+    ClientWidth = 177
     Columns = 2
     Items.Strings = (
       'GD1'
@@ -71,10 +71,10 @@ object TornadoPlotForm: TTornadoPlotForm
     Left = 440
     Height = 21
     Hint = 'Select the depdentent parameter, e.g. hormone level here.'
-    Top = 407
+    Top = 8
     Width = 185
     Anchors = [akRight, akBottom]
-    ItemHeight = 13
+    ItemHeight = 0
     ItemIndex = 0
     Items.Strings = (
       'Dependent parameter...'
@@ -93,15 +93,15 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
-    Top = 442
+    Height = 15
+    Top = 450
     Width = 640
     Panels = <>
   end
   object RadioGroup1: TRadioGroup
     Left = 440
     Height = 76
-    Top = 232
+    Top = 269
     Width = 118
     Anchors = [akTop, akRight]
     AutoFill = True
@@ -114,8 +114,8 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 58
-    ClientWidth = 114
+    ClientHeight = 54
+    ClientWidth = 110
     ItemIndex = 0
     Items.Strings = (
       'Fraction'
@@ -200,10 +200,10 @@ object TornadoPlotForm: TTornadoPlotForm
   object LegendPosCombo: TComboBox
     Left = 440
     Height = 21
-    Top = 368
+    Top = 405
     Width = 185
     Anchors = [akRight, akBottom]
-    ItemHeight = 13
+    ItemHeight = 0
     ItemIndex = 0
     Items.Strings = (
       'Legend position...'
@@ -218,9 +218,9 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object DecreaseColorBox: TColorBox
     Left = 440
-    Height = 22
+    Height = 20
     Hint = 'Select color for decresing indepenent variable here.'
-    Top = 310
+    Top = 349
     Width = 185
     DefaultColorColor = clGray
     Selected = clGray
@@ -233,9 +233,9 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object IncreaseColorBox: TColorBox
     Left = 440
-    Height = 22
+    Height = 20
     Hint = 'Select color for incresing indepenent variable here.'
-    Top = 334
+    Top = 373
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 16

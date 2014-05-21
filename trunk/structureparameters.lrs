@@ -15,15 +15,15 @@ LazarusResources.Add('TStructureParameters','FORMDATA',[
   +#2#25#3'Top'#3')'#2#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#6'C'
   +'ancel'#9#7'Caption'#6#6'Cancel'#11'ModalResult'#2#2#7'OnClick'#7#17'CancelB'
   +'uttonClick'#8'TabOrder'#2#8#0#0#5'TEdit'#9'Tau0REdit'#4'Left'#2'X'#6'Height'
-  +#2#22#3'Top'#3#246#1#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#8'T'
+  +#2#22#3'Top'#3#248#1#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#8'T'
   +'abOrder'#2#1#4'Text'#6#9'Tau0REdit'#0#0#5'TEdit'#9'Tau0SEdit'#4'Left'#2'X'#6
-  +'Height'#2#22#3'Top'#3#14#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'
+  +'Height'#2#22#3'Top'#3#16#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'
   +#0#8'TabOrder'#2#2#4'Text'#6#9'Tau0SEdit'#0#0#5'TEdit'#10'Tau0S2Edit'#4'Left'
-  +#2'X'#6'Height'#2#22#3'Top'#3'&'#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'a'
+  +#2'X'#6'Height'#2#22#3'Top'#3'('#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'a'
   +'kBottom'#0#8'TabOrder'#2#3#4'Text'#6#10'Tau0S2Edit'#0#0#5'TEdit'#9'Tau0TEdi'
-  +'t'#4'Left'#3'8'#1#6'Height'#2#22#3'Top'#3#14#2#5'Width'#2'P'#7'Anchors'#11#6
+  +'t'#4'Left'#3'8'#1#6'Height'#2#22#3'Top'#3#16#2#5'Width'#2'P'#7'Anchors'#11#6
   +'akLeft'#8'akBottom'#0#8'TabOrder'#2#4#4'Text'#6#9'Tau0TEdit'#0#0#5'TEdit'#10
-  +'Tau03zEdit'#4'Left'#3'8'#1#6'Height'#2#22#3'Top'#3'&'#2#5'Width'#2'P'#7'Anc'
+  +'Tau03zEdit'#4'Left'#3'8'#1#6'Height'#2#22#3'Top'#3'('#2#5'Width'#2'P'#7'Anc'
   +'hors'#11#6'akLeft'#8'akBottom'#0#8'TabOrder'#2#5#4'Text'#6#10'Tau03zEdit'#0
   +#0#6'TLabel'#7'Label32'#4'Left'#2#24#6'Height'#2#16#3'Top'#3#252#1#5'Width'#2
   +'0'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6#7'Tau0 R:'#11'ParentC'

@@ -7,7 +7,7 @@ object Prediction: TPrediction
   AlphaBlendValue = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSizeToolWin
-  Caption = ' Prediction'
+  Caption = 'Prediction'
   ClientHeight = 243
   ClientWidth = 417
   Color = clWhite
