@@ -45,6 +45,8 @@ type
   { TTWSensitivityAnalysisForm }
 
   TTWSensitivityAnalysisForm = class(TForm)
+    LegendMinLabel: TLabel;
+    LegendMaxLabel: TLabel;
     LegendMap: TChart;
     LegendColorMapSeries: TColorMapSeries;
     ChartNavPanel1: TChartNavPanel;
@@ -381,13 +383,13 @@ begin
   end;
   if maxResult > minResult then
   begin
-    //LegendColorMapSeries.Extent.YMin := minResult;
-    //LegendColorMapSeries.Extent.YMax := maxResult;
+    LegendMinLabel.Caption := FloatToStr(minResult);
+    LegendMaxLabel.Caption := FloatToStr(maxResult);
   end
   else
   begin
-    //LegendColorMapSeries.Extent.YMin := 0;
-    //LegendColorMapSeries.Extent.YMax := 1;
+    LegendMinLabel.Caption := '0';
+    LegendMaxLabel.Caption := '0';
   end;
   AZ := minResult + (maxResult - minResult) * (AY - ext.a.y) /(ext.b.y - ext.a.y);
 end;
