@@ -249,7 +249,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     object StrucParCombo1: TComboBox
       Left = 100
       Height = 21
-      Hint = 'Select the structure parameter that servers as independent variable here.'
+      Hint = 'Select the first structure parameter that servers as independent variable here.'
       Top = 39
       Width = 301
       Anchors = [akLeft, akRight, akBottom]
@@ -305,7 +305,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     object StrucParCombo2: TComboBox
       Left = 100
       Height = 21
-      Hint = 'Select the structure parameter that servers as independent variable here.'
+      Hint = 'Select a second structure parameter that servers as independent variable here.'
       Top = 71
       Width = 301
       Anchors = [akLeft, akRight, akBottom]
@@ -361,7 +361,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     object DependentParCombo: TComboBox
       Left = 100
       Height = 21
-      Hint = 'Select the structure parameter that servers as independent variable here.'
+      Hint = 'Select a dependent behavioural parameter to be investigated here.'
       Top = 6
       Width = 301
       Anchors = [akLeft, akRight, akBottom]
