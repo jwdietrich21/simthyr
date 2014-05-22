@@ -46,6 +46,7 @@ type
     CopyItem: TMenuItem;
     CutItem: TMenuItem;
     Divider1: TMenuItem;
+    UoMLabel: TLabel;
     LegendLabel: TLabel;
     LegendMinLabel: TLabel;
     LegendMaxLabel: TLabel;
@@ -324,19 +325,40 @@ begin
       PredictEquilibrium;
       case DependentParCombo.ItemIndex of
         1:
-          theMatrix.content[j + 1, i + 1] := TSH1 * gParameterFactor[TSH_pos];
+          begin
+            theMatrix.content[j + 1, i + 1] := TSH1 * gParameterFactor[TSH_pos];
+            UoMLabel.Caption := gParameterUnit[TSH_pos];
+          end;
         2:
-          theMatrix.content[j + 1, i + 1] := T41 * TT4conversionFactor;
+          begin
+            theMatrix.content[j + 1, i + 1] := T41 * TT4conversionFactor;
+            UoMLabel.Caption := gParameterUnit[TT4_pos];
+          end;
         3:
-          theMatrix.content[j + 1, i + 1] := FT41 * FT4conversionFactor;
+          begin
+            theMatrix.content[j + 1, i + 1] := FT41 * FT4conversionFactor;
+            UoMLabel.Caption := gParameterUnit[FT4_pos];
+          end;
         4:
-          theMatrix.content[j + 1, i + 1] := T31 * TT3conversionFactor;
+          begin
+            theMatrix.content[j + 1, i + 1] := T31 * TT3conversionFactor;
+            UoMLabel.Caption := gParameterUnit[TT3_pos];
+          end;
         5:
-          theMatrix.content[j + 1, i + 1] := FT31 * FT3conversionFactor;
+          begin
+            theMatrix.content[j + 1, i + 1] := FT31 * FT3conversionFactor;
+            UoMLabel.Caption := gParameterUnit[FT3_pos];
+          end;
         6:
-          theMatrix.content[j + 1, i + 1] := T3z1 * cT3conversionFactor;
+          begin
+            theMatrix.content[j + 1, i + 1] := T3z1 * cT3conversionFactor;
+            UoMLabel.Caption := gParameterUnit[cT3_pos];
+          end;
         otherwise
-          theMatrix.content[j + 1, i + 1] := -1; // undefined parameter selected
+          begin
+            theMatrix.content[j + 1, i + 1] := -1; // undefined parameter selected
+            UoMLabel.Caption := '  ';
+          end;
       end
     end
     else
