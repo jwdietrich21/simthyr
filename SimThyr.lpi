@@ -14,7 +14,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="3"/>
       <MinorVersionNr Value="3"/>
-      <BuildNr Value="415"/>
+      <BuildNr Value="416"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 3.3.0" LegalCopyright="1994-2014 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.3.0"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -1240,7 +1240,7 @@
         <EditorIndex Value="19"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos X="96" Y="21"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <TopLine Value="1105"/>
@@ -1282,7 +1282,7 @@
         <UsageCount Value="10"/>
       </Unit139>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="twsensitivityanalysis.pas"/>
         <Caret Line="1191" Column="80" TopLine="1170"/>
@@ -1393,16 +1393,12 @@
       </Position27>
       <Position28>
         <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="1279" Column="3" TopLine="1304"/>
+        <Caret Line="1201" Column="33" TopLine="1197"/>
       </Position28>
       <Position29>
         <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="1201" Column="33" TopLine="1197"/>
-      </Position29>
-      <Position30>
-        <Filename Value="twsensitivityanalysis.pas"/>
         <Caret Line="335" Column="55" TopLine="320"/>
-      </Position30>
+      </Position29>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
