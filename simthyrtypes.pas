@@ -59,7 +59,7 @@ const
  UTRH = 2.76E-12; {Conversion factor ng/l -> mol/l (TRH; MW=362) [Jackson 1987]}
  UTSH = 1e-3;     {Dummy conversion factor for TSH}
 
- TWS_RESOLUTION = 50; {Resolution for two-way sensitivity analysis}
+ TWS_RESOLUTION = 100; {Resolution for two-way sensitivity analysis}
 
 type
  TableCell = TPoint;

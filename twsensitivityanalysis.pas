@@ -585,8 +585,8 @@ begin
   end;
   if maxResult > minResult then
   begin
-    LegendMinLabel.Caption := FloatToStr(minResult);
-    LegendMaxLabel.Caption := FloatToStr(maxResult);
+    LegendMinLabel.Caption := FloatToStrF(minResult, ffGeneral, 4, 2);
+    LegendMaxLabel.Caption := FloatToStrF(maxResult, ffGeneral, 4, 2);
   end
   else
   begin
