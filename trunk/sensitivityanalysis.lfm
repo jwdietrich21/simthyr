@@ -2,12 +2,12 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   Left = 312
   Height = 405
   Top = 193
-  Width = 760
+  Width = 755
   AlphaBlendValue = 0
   Anchors = [akTop, akLeft, akBottom]
   Caption = 'One-Way Sensitivity Analysis'
   ClientHeight = 405
-  ClientWidth = 760
+  ClientWidth = 755
   Color = clWhite
   Constraints.MinHeight = 400
   Constraints.MinWidth = 600
@@ -20,13 +20,13 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Left = 48
     Height = 286
     Top = 32
-    Width = 464
+    Width = 459
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 20
     BorderStyle = bsSingle
     Caption = 'Panel1'
     ClientHeight = 282
-    ClientWidth = 460
+    ClientWidth = 455
     TabOrder = 0
     object Chart1: TChart
       Cursor = crCross
@@ -34,7 +34,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Height = 264
       Hint = 'Drag with mouse to zoom'
       Top = 10
-      Width = 444
+      Width = 439
       AxisList = <      
         item
           Grid.Color = clSilver
@@ -79,7 +79,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object CheckGroup1: TCheckGroup
     AnchorSideTop.Side = asrBottom
-    Left = 527
+    Left = 522
     Height = 285
     Hint = 'Select the behavioural parameter that servers as dependent variable here.'
     Top = 32
@@ -116,7 +116,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     }
   end
   object TSHColorBox: TColorBox
-    Left = 606
+    Left = 601
     Height = 22
     Top = 64
     Width = 113
@@ -128,7 +128,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 2
   end
   object FT4ColorBox: TColorBox
-    Left = 606
+    Left = 601
     Height = 22
     Top = 150
     Width = 113
@@ -140,7 +140,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 3
   end
   object FT3ColorBox: TColorBox
-    Left = 606
+    Left = 601
     Height = 22
     Top = 235
     Width = 113
@@ -152,7 +152,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 4
   end
   object cT3ColorBox: TColorBox
-    Left = 606
+    Left = 601
     Height = 22
     Top = 277
     Width = 113
@@ -167,11 +167,11 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Left = 48
     Height = 50
     Top = 326
-    Width = 465
+    Width = 460
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Independent parameter'
     ClientHeight = 32
-    ClientWidth = 461
+    ClientWidth = 456
     TabOrder = 6
     object MinSpinEdit: TFloatSpinEdit
       Left = 12
@@ -191,7 +191,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Value = 0
     end
     object MaxSpinEdit: TFloatSpinEdit
-      Left = 377
+      Left = 372
       Height = 21
       Hint = 'Maximum of selected structure parameter'
       Top = 2
@@ -212,7 +212,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
       Top = 5
-      Width = 255
+      Width = 250
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
       ItemHeight = 13
@@ -251,7 +251,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Left = 0
     Height = 23
     Top = 382
-    Width = 760
+    Width = 755
     Panels = <>
   end
   object FullScaleButton1: TSpeedButton
@@ -302,7 +302,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ParentShowHint = False
   end
   object TT4ColorBox: TColorBox
-    Left = 606
+    Left = 601
     Height = 22
     Top = 107
     Width = 113
@@ -314,7 +314,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 8
   end
   object TT3ColorBox: TColorBox
-    Left = 606
+    Left = 601
     Height = 22
     Top = 192
     Width = 113
@@ -334,6 +334,55 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Chart = Chart1
     LogicalExtentPen.Color = clMaroon
     MiniMap = True
+  end
+  object ResetButton: TSpeedButton
+    AnchorSideBottom.Control = Panel1
+    AnchorSideBottom.Side = asrBottom
+    Left = 16
+    Height = 22
+    Hint = 'Reset to default boundaries'
+    Top = 296
+    Width = 23
+    Anchors = [akLeft, akBottom]
+    Glyph.Data = {
+      36040000424D3604000000000000360000002800000010000000100000000100
+      2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF0036813C03337D3978FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF003A87419C37823DD2FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00429149905AA462FF58A15EFF37833EFF347E3AFF317A36FF2E7533FF2B71
+      2FEA286D2CB7256929702266261DFFFFFF00FFFFFF00FFFFFF00FFFFFF00499C
+      518462AC6AFF85C88DFF85C78BFF82C688FF7FC486FF7CC282FF79C180FF71B9
+      78FF5FA865FF49914EFF256A2AB023662739FFFFFF00FFFFFF00FFFFFF004DA1
+      568A66B06EFF8ACA92FF89CA90FF86C88DFF83C68AFF80C587FF7EC384FF7BC2
+      81FF6DBB74FF76BE7CFF59A05DFF266B2AB02367271DFFFFFF00FFFFFF00FFFF
+      FF004DA2569367B16FFF64AD6BFF43944BFF408F47FF3C8A43FF398540FF549D
+      5AFF74BA7AFF79C17FFF77BF7DFF4A914FFF266B2B70FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF004EA3579F4B9E53D2FFFFFF00FFFFFF00FFFFFF00FFFFFF003A86
+      408F36813CE275BB7BFF70BD77FF63AB69FF2A702EB7FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF0052A85B034FA3587BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF003A87418F61A867FF7BC282FF76BC7CFF2D7532EAFFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF003E8D458F64AB6BFF7FC486FF79BE81FF317A36EAFFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF004697
+      4E8F42924AE281C388FF7DC485FF6EB375FF357F3BB7FFFFFF00FFFFFF00FFFF
+      FF005FBA6AFF5CB667FF59B364FF56AE60FF53AA5DFF50A659FF4DA156FF68B1
+      70FF88C890FF8DCC95FF8BCB92FF5DA564FF38853F70FFFFFF00FFFFFF00FFFF
+      FF0062BE6DFFA5DAAEFFA2D8ACFFA1D8AAFF9ED6A7FF9CD5A5FF99D4A2FF97D2
+      9FFF8CCD95FF91CF99FF73B87BFF408F47B03C8A431DFFFFFF00FFFFFF00FFFF
+      FF0064C170FFA6DBB0FFA6DAAFFFA3D9ADFFA2D8ABFF9FD7A8FF9CD5A5FF94D0
+      9DFF83C58CFF6CB474FF479950B044944C39FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF0066C472FF64C270FF62BF6EFF60BC6BFF5DB868FF5BB565FF58B162FD55AC
+      5FEA52A85BB74FA358704B9F541DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+    }
+    OnClick = ResetButtonClick
+    ShowHint = True
+    ParentShowHint = False
   end
   object ChartAxisTransformations1: TChartAxisTransformations
     left = 376

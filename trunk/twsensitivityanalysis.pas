@@ -22,8 +22,9 @@ uses
   Classes, SysUtils, FileUtil, TAGraph, TAFuncSeries, TASources, LResources,
   Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Spin, ComCtrls,
   ColorBox, Buttons, Grids, Clipbrd, Menus, TAChartUtils, TANavigation, Math,
-  TADrawerSVG, TADrawUtils, TADrawerCanvas, LCLVersion, SimThyrTypes,
-  SimThyrServices, UnitConverter, SimThyrPrediction, Sensitivityanalysis;
+  TADrawerSVG, TADrawUtils, TADrawerCanvas, TALegendPanel, TATools, LCLVersion,
+  SimThyrTypes, SimThyrServices, UnitConverter, SimThyrPrediction,
+  Sensitivityanalysis;
 
 type
 
@@ -46,6 +47,7 @@ type
     CopyItem: TMenuItem;
     CutItem: TMenuItem;
     Divider1: TMenuItem;
+    ResetButton: TSpeedButton;
     UoMLabel: TLabel;
     LegendLabel: TLabel;
     LegendMinLabel: TLabel;
@@ -89,6 +91,7 @@ type
     procedure MaxSpinEdit2Change(Sender: TObject);
     procedure MinSpinEdit1Change(Sender: TObject);
     procedure MinSpinEdit2Change(Sender: TObject);
+    procedure ResetButtonClick(Sender: TObject);
     procedure SaveAsItemClick(Sender: TObject);
     procedure SaveChart;
     procedure CopyItemClick(Sender: TObject);
@@ -504,6 +507,15 @@ begin
   gMaxYPar := MaxSpinEdit2.Value / gSpinFactor;
   SensitivityMapColorMapSeries.Extent.YMin := MinSpinEdit2.Value;
     SensitivityMapColorMapSeries.Extent.YMax := MaxSpinEdit2.Value;
+  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  with SensitivityMatrix do
+    PopulateColourSource(GetMin, GetMean, GetMax);
+  SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
+end;
+
+procedure TTWSensitivityAnalysisForm.ResetButtonClick(Sender: TObject);
+begin
+  SetStandardStrucParBoundaries(1 / 3, 3);
   CalculateMatrixWithCoordinates(SensitivityMatrix);
   with SensitivityMatrix do
     PopulateColourSource(GetMin, GetMean, GetMax);

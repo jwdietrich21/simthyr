@@ -48,7 +48,7 @@ type
     EditUndo1:    TEditUndo;
     FileMenu:     TMenuItem;
     IdleTimer1:   TIdleTimer;
-    ImageList1:   TImageList;
+    ToolbarImageList:   TImageList;
     Label1: TLabel;
     MacAboutItem: TMenuItem;
     AppleMenu:    TMenuItem;
@@ -68,6 +68,10 @@ type
     Divider_3_3:  TMenuItem;
     Divide_3_1: TMenuItem;
     AddOptItem: TMenuItem;
+    ToolButton5: TToolButton;
+    OWSensitivityAnalysisButton: TToolButton;
+    TWSensitivityAnalysisButton: TToolButton;
+    TornadoPlotButton: TToolButton;
     TWSensitivityAnalysisItem2: TMenuItem;
     TWSensitivityAnalysisItem: TMenuItem;
     SelectAllMenuItem: TMenuItem;
@@ -105,7 +109,7 @@ type
     StopToolButton: TToolButton;
     ToolButton2:  TToolButton;
     ToolButton3:  TToolButton;
-    ToolButton4:  TToolButton;
+    IPSToolButton:  TToolButton;
     UndoToolButton: TToolButton;
     CutToolButton: TToolButton;
     CopyToolButton: TToolButton;
