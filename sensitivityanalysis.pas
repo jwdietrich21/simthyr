@@ -52,6 +52,7 @@ type
     ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform;
     ChartNavPanel1: TChartNavPanel;
     CheckGroup1: TCheckGroup;
+    ResetButton: TSpeedButton;
     TT4ColorBox: TColorBox;
     Divider1: TMenuItem;
     CutItem: TMenuItem;
@@ -82,6 +83,7 @@ type
     procedure FullScaleButton1Click(Sender: TObject);
     procedure MaxSpinEditChange(Sender: TObject);
     procedure MinSpinEditChange(Sender: TObject);
+    procedure ResetButtonClick(Sender: TObject);
     procedure StrucParComboChange(Sender: TObject);
     procedure TSHColorBoxChange(Sender: TObject);
     procedure CopyChart;
@@ -832,6 +834,14 @@ begin
   gMinXPar := MinSpinEdit.Value / gSpinFactor;
   gMaxXPar := MaxSpinEdit.Value / gSpinFactor;
   DrawOWSensitivityPlot(False);
+end;
+
+procedure TSensitivityAnalysisForm.ResetButtonClick(Sender: TObject);
+begin
+  SensitivityAnalysisForm.StrucParCombo.Enabled := false; {fixes error #8}
+  SetStandardStrucParBoundaries(1 / 3, 3);
+  DrawOWSensitivityPlot(False);
+  SensitivityAnalysisForm.StrucParCombo.Enabled := true;
 end;
 
 procedure TSensitivityAnalysisForm.StrucParComboChange(Sender: TObject);

@@ -1,13 +1,13 @@
 object ValuesPlot: TValuesPlot
   Left = 290
-  Height = 458
+  Height = 442
   Top = 366
-  Width = 829
+  Width = 824
   AlphaBlend = True
   AlphaBlendValue = 0
   Caption = 'Chart View'
-  ClientHeight = 458
-  ClientWidth = 829
+  ClientHeight = 442
+  ClientWidth = 824
   Color = clWhite
   Constraints.MinHeight = 420
   Constraints.MinWidth = 500
@@ -318,22 +318,22 @@ object ValuesPlot: TValuesPlot
     Height = 200
     Hint = 'Select parameter'
     Top = 40
-    Width = 828
+    Width = 823
     Anchors = [akTop, akLeft, akRight]
     ClientHeight = 200
-    ClientWidth = 828
+    ClientWidth = 823
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
     OnClick = Panel1Click
     object ComboBox1: TComboBox
-      Left = 660
+      Left = 655
       Height = 21
       Hint = 'Select a parameter to show in the plot on the left.'
       Top = 15
       Width = 146
       Anchors = [akRight]
-      ItemHeight = 0
+      ItemHeight = 13
       Items.Strings = (
         'Portal TRH'
         'Pituitary TSH'
@@ -355,11 +355,11 @@ object ValuesPlot: TValuesPlot
       Left = 49
       Height = 189
       Top = 13
-      Width = 596
+      Width = 591
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
-      ClientHeight = 189
-      ClientWidth = 596
+      ClientHeight = 185
+      ClientWidth = 587
       Color = clWhite
       ParentColor = False
       TabOrder = 1
@@ -368,7 +368,7 @@ object ValuesPlot: TValuesPlot
         Height = 170
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 591
+        Width = 582
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -416,7 +416,7 @@ object ValuesPlot: TValuesPlot
       end
     end
     object ColorListBox1: TColorListBox
-      Left = 660
+      Left = 655
       Height = 91
       Hint = 'Select plot color here.'
       Top = 58
@@ -484,7 +484,7 @@ object ValuesPlot: TValuesPlot
     end
   end
   object Button1: TButton
-    Left = 573
+    Left = 568
     Height = 25
     Top = 10
     Width = 72
@@ -499,10 +499,10 @@ object ValuesPlot: TValuesPlot
     Height = 200
     Hint = 'Select parameter'
     Top = 240
-    Width = 828
+    Width = 823
     Anchors = [akTop, akLeft, akRight]
     ClientHeight = 200
-    ClientWidth = 828
+    ClientWidth = 823
     ParentShowHint = False
     ShowHint = True
     TabOrder = 2
@@ -512,11 +512,11 @@ object ValuesPlot: TValuesPlot
       Left = 49
       Height = 190
       Top = 13
-      Width = 596
+      Width = 591
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
-      ClientHeight = 190
-      ClientWidth = 596
+      ClientHeight = 186
+      ClientWidth = 587
       Color = clWhite
       ParentColor = False
       TabOrder = 0
@@ -525,7 +525,7 @@ object ValuesPlot: TValuesPlot
         Height = 170
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 591
+        Width = 582
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -573,13 +573,13 @@ object ValuesPlot: TValuesPlot
       end
     end
     object ComboBox2: TComboBox
-      Left = 661
+      Left = 656
       Height = 21
       Hint = 'Select a parameter to show in the plot on the left.'
       Top = 15
       Width = 146
       Anchors = [akRight]
-      ItemHeight = 0
+      ItemHeight = 13
       Items.Strings = (
         'Portal TRH'
         'Pituitary TSH'
@@ -597,7 +597,7 @@ object ValuesPlot: TValuesPlot
       Text = 'Unit 2'
     end
     object ColorListBox2: TColorListBox
-      Left = 661
+      Left = 656
       Height = 91
       Hint = 'Select plot color here.'
       Top = 58
@@ -666,13 +666,13 @@ object ValuesPlot: TValuesPlot
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
-    Top = 443
-    Width = 829
+    Height = 23
+    Top = 419
+    Width = 824
     Panels = <>
   end
   object ColorButton1: TColorButton
-    Left = 517
+    Left = 512
     Height = 25
     Hint = 'Select color for title string'
     Top = 10
@@ -687,10 +687,10 @@ object ValuesPlot: TValuesPlot
   end
   object TitleEdit: TEdit
     Left = 48
-    Height = 22
+    Height = 21
     Hint = 'You may enter a title that is shown on the top of every chart here.'
     Top = 10
-    Width = 453
+    Width = 448
     Anchors = [akTop, akLeft, akRight]
     ParentShowHint = False
     ShowHint = True
