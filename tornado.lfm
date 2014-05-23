@@ -20,7 +20,7 @@ object TornadoPlotForm: TTornadoPlotForm
     Left = 440
     Height = 217
     Hint = 'Select the independent structure parameters whose influence you want to check'
-    Top = 45
+    Top = 39
     Width = 185
     Anchors = [akTop, akRight]
     AutoFill = True
@@ -101,8 +101,8 @@ object TornadoPlotForm: TTornadoPlotForm
   object RadioGroup1: TRadioGroup
     Left = 440
     Height = 76
-    Top = 269
-    Width = 118
+    Top = 265
+    Width = 185
     Anchors = [akTop, akRight]
     AutoFill = True
     Caption = 'Display change as'
@@ -115,7 +115,7 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
     ClientHeight = 54
-    ClientWidth = 110
+    ClientWidth = 177
     ItemIndex = 0
     Items.Strings = (
       'Fraction'
@@ -220,7 +220,7 @@ object TornadoPlotForm: TTornadoPlotForm
     Left = 440
     Height = 20
     Hint = 'Select color for decresing indepenent variable here.'
-    Top = 349
+    Top = 348
     Width = 185
     DefaultColorColor = clGray
     Selected = clGray
@@ -235,7 +235,7 @@ object TornadoPlotForm: TTornadoPlotForm
     Left = 440
     Height = 20
     Hint = 'Select color for incresing indepenent variable here.'
-    Top = 373
+    Top = 372
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 16

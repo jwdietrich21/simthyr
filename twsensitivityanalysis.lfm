@@ -1,7 +1,7 @@
 object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
-  Left = 397
+  Left = 237
   Height = 477
-  Top = 209
+  Top = 238
   Width = 710
   Caption = 'Two-Way Sensitivity Analysis'
   ClientHeight = 477
@@ -22,14 +22,14 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Width = 643
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderStyle = bsSingle
-    ClientHeight = 285
-    ClientWidth = 639
+    ClientHeight = 289
+    ClientWidth = 643
     TabOrder = 0
     object CheckGrid: TStringGrid
       Left = 12
-      Height = 251
+      Height = 255
       Top = 16
-      Width = 476
+      Width = 480
       Anchors = [akTop, akLeft, akRight, akBottom]
       AutoEdit = False
       AutoFillColumns = True
@@ -37,25 +37,25 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Visible = False
       ColWidths = (
         64
-        102
-        102
-        102
-        102
+        104
+        104
+        104
+        104
       )
     end
     object LegendPanel: TPanel
-      Left = 498
-      Height = 272
+      Left = 502
+      Height = 276
       Top = 2
       Width = 138
       Anchors = [akTop, akRight, akBottom]
       BevelOuter = bvNone
-      ClientHeight = 272
+      ClientHeight = 276
       ClientWidth = 138
       TabOrder = 0
       object LegendFrame: TShape
         Left = 8
-        Height = 207
+        Height = 211
         Top = 32
         Width = 120
         Anchors = [akTop, akRight, akBottom]
@@ -64,7 +64,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       object LegendMinLabel: TLabel
         Left = 72
         Height = 13
-        Top = 207
+        Top = 211
         Width = 47
         Anchors = [akRight, akBottom]
         AutoSize = False
@@ -82,9 +82,9 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       end
       object LegendLabel: TLabel
         Left = 8
-        Height = 13
+        Height = 16
         Top = 10
-        Width = 42
+        Width = 49
         Caption = 'Legend'
         Font.Style = [fsBold]
         ParentColor = False
@@ -95,7 +95,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         AnchorSideTop.Side = asrBottom
         AnchorSideBottom.Control = LegendMinLabel
         Left = 71
-        Height = 106
+        Height = 110
         Top = 81
         Width = 49
         Anchors = [akTop, akRight, akBottom]
@@ -110,10 +110,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     object SensitivityMap: TChart
       Cursor = crCross
       Left = 8
-      Height = 270
+      Height = 274
       Hint = 'Drag with mouse to zoom'
       Top = 8
-      Width = 482
+      Width = 486
       AxisList = <      
         item
           Grid.Color = clNone
@@ -166,8 +166,8 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       end
     end
     object LegendMap: TChart
-      Left = 530
-      Height = 180
+      Left = 534
+      Height = 184
       Top = 48
       Width = 32
       AllowZoom = False
@@ -209,14 +209,14 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Width = 506
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Parameters'
-    ClientHeight = 94
-    ClientWidth = 502
+    ClientHeight = 90
+    ClientWidth = 498
     TabOrder = 1
     object MinSpinEdit1: TFloatSpinEdit
       Left = 12
-      Height = 21
+      Height = 16
       Hint = 'Minimum of selected structure parameter'
-      Top = 36
+      Top = 37
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
@@ -230,10 +230,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Value = 0
     end
     object MaxSpinEdit1: TFloatSpinEdit
-      Left = 418
-      Height = 21
+      Left = 414
+      Height = 16
       Hint = 'Maximum of selected structure parameter'
-      Top = 36
+      Top = 37
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
@@ -250,11 +250,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select the first structure parameter that servers as independent variable here.'
-      Top = 39
-      Width = 296
+      Top = 35
+      Width = 292
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 13
+      ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
         'Select independent parameter (x axis)...'
@@ -287,9 +287,9 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     end
     object MinSpinEdit2: TFloatSpinEdit
       Left = 12
-      Height = 21
+      Height = 16
       Hint = 'Minimum of selected structure parameter'
-      Top = 68
+      Top = 69
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
@@ -306,11 +306,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select a second structure parameter that servers as independent variable here.'
-      Top = 71
-      Width = 296
+      Top = 67
+      Width = 292
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 13
+      ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
         'Select independent parameter (y axis)...'
@@ -342,10 +342,10 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Text = 'Select independent parameter (y axis)...'
     end
     object MaxSpinEdit2: TFloatSpinEdit
-      Left = 418
-      Height = 21
+      Left = 414
+      Height = 16
       Hint = 'Maximum of selected structure parameter'
-      Top = 68
+      Top = 69
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
@@ -362,11 +362,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Left = 100
       Height = 21
       Hint = 'Select a dependent behavioural parameter to be investigated here.'
-      Top = 6
-      Width = 296
+      Top = 2
+      Width = 292
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 13
+      ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
         'Select dependent parameter (colour map)...'
@@ -386,8 +386,8 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
-    Top = 454
+    Height = 15
+    Top = 462
     Width = 710
     Panels = <    
       item
@@ -462,8 +462,8 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Width = 129
     Anchors = [akRight, akBottom]
     Caption = 'Colour Map'
-    ClientHeight = 95
-    ClientWidth = 125
+    ClientHeight = 91
+    ClientWidth = 121
     TabOrder = 4
     object ColorButton1: TColorButton
       Left = 16
@@ -529,39 +529,39 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Anchors = [akLeft, akBottom]
     Glyph.Data = {
       36040000424D3604000000000000360000002800000010000000100000000100
-      2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
-      FF00FFFFFF0036813C03337D3978FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF00FFFFFF003A87419C37823DD2FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF00429149905AA462FF58A15EFF37833EFF347E3AFF317A36FF2E7533FF2B71
-      2FEA286D2CB7256929702266261DFFFFFF00FFFFFF00FFFFFF00FFFFFF00499C
-      518462AC6AFF85C88DFF85C78BFF82C688FF7FC486FF7CC282FF79C180FF71B9
-      78FF5FA865FF49914EFF256A2AB023662739FFFFFF00FFFFFF00FFFFFF004DA1
-      568A66B06EFF8ACA92FF89CA90FF86C88DFF83C68AFF80C587FF7EC384FF7BC2
-      81FF6DBB74FF76BE7CFF59A05DFF266B2AB02367271DFFFFFF00FFFFFF00FFFF
-      FF004DA2569367B16FFF64AD6BFF43944BFF408F47FF3C8A43FF398540FF549D
-      5AFF74BA7AFF79C17FFF77BF7DFF4A914FFF266B2B70FFFFFF00FFFFFF00FFFF
-      FF00FFFFFF004EA3579F4B9E53D2FFFFFF00FFFFFF00FFFFFF00FFFFFF003A86
-      408F36813CE275BB7BFF70BD77FF63AB69FF2A702EB7FFFFFF00FFFFFF00FFFF
-      FF00FFFFFF0052A85B034FA3587BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF003A87418F61A867FF7BC282FF76BC7CFF2D7532EAFFFFFF00FFFFFF00FFFF
-      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF003E8D458F64AB6BFF7FC486FF79BE81FF317A36EAFFFFFF00FFFFFF00FFFF
-      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF004697
-      4E8F42924AE281C388FF7DC485FF6EB375FF357F3BB7FFFFFF00FFFFFF00FFFF
-      FF005FBA6AFF5CB667FF59B364FF56AE60FF53AA5DFF50A659FF4DA156FF68B1
-      70FF88C890FF8DCC95FF8BCB92FF5DA564FF38853F70FFFFFF00FFFFFF00FFFF
-      FF0062BE6DFFA5DAAEFFA2D8ACFFA1D8AAFF9ED6A7FF9CD5A5FF99D4A2FF97D2
-      9FFF8CCD95FF91CF99FF73B87BFF408F47B03C8A431DFFFFFF00FFFFFF00FFFF
-      FF0064C170FFA6DBB0FFA6DAAFFFA3D9ADFFA2D8ABFF9FD7A8FF9CD5A5FF94D0
-      9DFF83C58CFF6CB474FF479950B044944C39FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF0066C472FF64C270FF62BF6EFF60BC6BFF5DB868FF5BB565FF58B162FD55AC
-      5FEA52A85BB74FA358704B9F541DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+      2000000000000004000064000000640000000000000000000000FFFFFF00A465
+      34A2A4653401FFFFFF00FFFFFF00A4653405A4653453A76A3ABEA66938E9A466
+      35FAA76A3AE4A76B3BAAA4653424FFFFFF00FFFFFF00FFFFFF00FFFFFF00A465
+      34FFA5673693FFFFFF00A4653454A66737EEB58055F3CEA684FFD8B697FFDBB9
+      99FFD3AC8AFFC2946DFCA66838F6A466355BFFFFFF00FFFFFF00FFFFFF00A567
+      37FEB7845BF7A56736D4B17A4EF4E3CAB4FFECDAC9FFE7D1BCFFE3C9B0FFDEBE
+      A0FFD2AB88FFCEA582FFD3AE8EFFA66838F5A465342AFFFFFF00FFFFFF00A668
+      38FDF1E4D8FFD4B295FEF4E9E0FFF3E8DDFFEDDCCCFFD2AD8FFEB0784CF5A566
+      35FBA66939FFA66939FEA96D3DFFB0784CFFA76A3AA8FFFFFF00FFFFFF00A567
+      37FDF6EEE6FFF5ECE3FFF5EDE4FFE6D2C1FFB0794DF5A66938CAA4653436FFFF
+      FF00A465346AA96B3CEDB67C4FFFA76A3AFEA56837FAFFFFFF00FFFFFF00A466
+      35FCF6EEE6FFEBD7C4FFEAD9C9FFA46534FEA465346AFFFFFF00FFFFFF00FFFF
+      FF00A465340BA56635E9C9956C8DB77F53C2A46534FFA4653405FFFFFF00A465
+      34FCF5EDE5FFF6EDE5FFF5ECE4FFD7B79CFDA66837E0A4653410FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00D5A47E1ACD997239A46534FCA465340CFFFFFF00A465
+      34F9A46534FEA46534FEA46534FDA46534FCA46534FBA46534B9A465341DA465
+      3418A4653418A4653418A4653418A4653418A465341CFFFFFF00FFFFFF00A465
+      340DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00A46534A0A465
+      34FFAD7447F8AF774CF7AF774CF7AF784CF7A46534FFA4653408FFFFFF00A465
+      34FCB3794C7ECF9D762BBB835713A4653402FFFFFF00FFFFFF00A4653404A668
+      38C4D0AC8FFAF6EEE7FFF2E6DBFFF6EEE6FFA66A3AFBA4653409FFFFFF00A465
+      35FEA76A3AFBC791689DA56737E6A4653423FFFFFF00FFFFFF00FFFFFF00A465
+      3460A46635FFE9D7C7FFEBD8C6FFF5ECE3FFA66A3AFAA465340AFFFFFF00A668
+      38F3AB7041FFA96C3CFEA76A3AF5A4653475A4653419A4653445A66938CDB988
+      61F5EBDBCDFFF5EBE2FFF6EEE6FFF6EEE6FFA76A3AFAA465340BFFFFFF00A769
+      399BC09069FDC59872FFA86B3CFFA46635FFA76A3AFCB7855DF3D9BBA1FEF1E4
+      D8FFF2E6DBFFF3E8DDFFCEA788FDEAD8C8FFA76A3AF9A465340DFFFFFF00A465
+      3429A66939F5D3AD8CFFDCBD9DFFDDBEA1FFE5CBB4FFE9D3BFFFEEDDCCFFF0E2
+      D5FFE7D2BFFFAF774BF5A56736C0AB7143F7A46635FCA465340EFFFFFF00FFFF
+      FF00A4653550A66838F6C09068FAD3B08FFFDFC2A8FFDEC1A8FFD4B193FFB987
+      5FF4A56737F0A4653458FFFFFF00A4663566A46534FFA465340FFFFFFF00FFFF
+      FF00FFFFFF00A465341DA7693A9FA76A3ADEA56736F6A76939E5A76A3ABCA465
+      3453A4653405FFFFFF00FFFFFF00FFFFFF00A4653479A4653410
     }
     OnClick = ResetButtonClick
     ShowHint = True
