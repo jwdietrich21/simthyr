@@ -656,7 +656,7 @@ object AboutWindow: TAboutWindow
       object Label3: TLabel
         Left = 25
         Height = 16
-        Top = 20
+        Top = 8
         Width = 333
         Caption = 'SimThyr uses the following third party resources:'
         Font.Pitch = fpVariable
@@ -668,7 +668,7 @@ object AboutWindow: TAboutWindow
       object Label4: TLabel
         Left = 25
         Height = 16
-        Top = 44
+        Top = 31
         Width = 196
         Caption = 'Silk icon set 1.3 by Mark James'
         ParentColor = False
@@ -677,7 +677,7 @@ object AboutWindow: TAboutWindow
         Cursor = crHandPoint
         Left = 25
         Height = 16
-        Top = 60
+        Top = 47
         Width = 282
         Caption = 'http://www.famfamfam.com/lab/icons/silk/'
         Font.Color = clNavy
@@ -689,7 +689,7 @@ object AboutWindow: TAboutWindow
       object Label6: TLabel
         Left = 25
         Height = 16
-        Top = 84
+        Top = 70
         Width = 118
         Caption = 'Tango Icon Library'
         ParentColor = False
@@ -698,7 +698,7 @@ object AboutWindow: TAboutWindow
         Cursor = crHandPoint
         Left = 25
         Height = 16
-        Top = 101
+        Top = 86
         Width = 314
         Caption = 'http://tango.freedesktop.org/Tango_Icon_Library'
         Font.Color = clNavy
@@ -710,7 +710,7 @@ object AboutWindow: TAboutWindow
       object Label8: TLabel
         Left = 25
         Height = 16
-        Top = 124
+        Top = 109
         Width = 250
         Caption = 'VersionSupport unit by Mike Thompson'
         ParentColor = False
@@ -719,7 +719,7 @@ object AboutWindow: TAboutWindow
         Cursor = crHandPoint
         Left = 25
         Height = 16
-        Top = 140
+        Top = 125
         Width = 371
         Caption = 'http://www.lazarus.freepascal.org/index.php/topic,13957'
         Font.Color = clNavy
@@ -731,7 +731,7 @@ object AboutWindow: TAboutWindow
       object Label10: TLabel
         Left = 25
         Height = 16
-        Top = 180
+        Top = 196
         Width = 204
         Caption = 'Scientific and technical advise:'
         Font.Pitch = fpVariable
@@ -743,7 +743,7 @@ object AboutWindow: TAboutWindow
       object Label11: TLabel
         Left = 25
         Height = 16
-        Top = 204
+        Top = 220
         Width = 368
         AutoSize = False
         Caption = 'Ulla Mitzdorf, C. Renate Pickardt, Martin Adler'
@@ -753,7 +753,7 @@ object AboutWindow: TAboutWindow
       object Label12: TLabel
         Left = 25
         Height = 16
-        Top = 220
+        Top = 236
         Width = 368
         AutoSize = False
         Caption = 'Matthias Holzer, Phil Hess, Martin R. Fischer,'
@@ -763,12 +763,33 @@ object AboutWindow: TAboutWindow
       object Label13: TLabel
         Left = 25
         Height = 16
-        Top = 236
+        Top = 252
         Width = 368
         AutoSize = False
         Caption = 'Rudolf Hörmann, John E. Midgley'
         ParentColor = False
         OnClick = Label10Click
+      end
+      object Label14: TLabel
+        Left = 24
+        Height = 16
+        Top = 148
+        Width = 107
+        Caption = 'PUMA Repository'
+        ParentColor = False
+      end
+      object Label15: TLabel
+        Cursor = crHandPoint
+        Left = 24
+        Height = 16
+        Top = 163
+        Width = 191
+        Caption = 'http://puma-repository.sf.net'
+        Font.Color = clNavy
+        Font.Pitch = fpVariable
+        ParentColor = False
+        ParentFont = False
+        OnClick = Image13Click
       end
     end
     object TabSheet4: TTabSheet

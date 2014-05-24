@@ -60,6 +60,8 @@ type
     Label11: TLabel;
     Label12: TLabel;
     Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
