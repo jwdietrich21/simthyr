@@ -3,7 +3,7 @@ unit SimThyrServices;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.3.0 }
+{ Version 3.3.1 }
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -166,11 +166,15 @@ end;
 procedure VarFromNode(theRoot: TDOMNode; Name: string; var theVar: real);
 {supports XML routines}
 var
+  oldSep: char;
   theString: string;
 begin
+  oldSep := DefaultFormatSettings.DecimalSeparator;
+  DefaultFormatSettings.DecimalSeparator := kPERIOD;
   theString := NodeContent(theRoot, Name);
   if theString <> 'NA' then
     theVar := StrToFloat(theString);
+  DefaultFormatSettings.DecimalSeparator := oldSep;
 end;
 
 function SimpleNode(Doc: TXMLDocument; Name, Value: string): TDOMNode;
