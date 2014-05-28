@@ -3,7 +3,7 @@ unit ScenarioHandler;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.3.0 }
+{ Version 3.3.1 }
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -49,8 +49,8 @@ begin
       if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
       begin
         RootNode := Doc.DocumentElement.FindNode('strucpars');
-        VarFromNode(RootNode, 'AlphaR', AlphaR);
-        VarFromNode(RootNode, 'BetaR', BetaR);
+        VarFromNode(RootNode, 'alphaR', AlphaR);
+        VarFromNode(RootNode, 'betaR', BetaR);
         VarFromNode(RootNode, 'GR', GR);
         VarFromNode(RootNode, 'dR', dR);
         VarFromNode(RootNode, 'AlphaS', AlphaS);
@@ -92,9 +92,12 @@ end;
 
 procedure SaveScenario(theFileName: string); {saves scenario as XML file}
 var
+  oldSep: Char;
   Doc: TXMLDocument;
   RootNode, ElementNode: TDOMNode;
 begin
+  oldSep := DefaultFormatSettings.DecimalSeparator;
+  DefaultFormatSettings.DecimalSeparator := kPERIOD;
   try
     Doc := TXMLDocument.Create;
 
@@ -146,6 +149,7 @@ begin
   finally
     Doc.Free;
   end;
+  DefaultFormatSettings.DecimalSeparator := oldSep;
 end;
 
 end.
