@@ -25,7 +25,7 @@ uses
   ComCtrls, LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog,
   ShowAboutModel, StructureParameters, SimThyrPrediction, Sensitivityanalysis,
   TWSensitivityanalysis, tornado, help, ScenarioHandler, HandlePreferences,
-  HandleNotifier, LCLProc, StdCtrls, LCLVersion;
+  HandleNotifier, LCLProc, StdCtrls, LCLVersion, VersionSupport;
 
 type
 
@@ -49,7 +49,7 @@ type
     FileMenu:     TMenuItem;
     IdleTimer1:   TIdleTimer;
     ToolbarImageList:   TImageList;
-    Label1: TLabel;
+    SimThyrLabel: TLabel;
     MacAboutItem: TMenuItem;
     AppleMenu:    TMenuItem;
     MacPreferencesItem: TMenuItem;
@@ -271,6 +271,7 @@ end;
 
 procedure TSimThyrToolbar.FormCreate(Sender: TObject);
 begin
+  SimThyrToolbar.SimThyrLabel.Caption := 'SPINA Thyr ' + GetFileVersion;
   AdaptLanguages;
   gIdleCounter := 0;
   SetPosition;
