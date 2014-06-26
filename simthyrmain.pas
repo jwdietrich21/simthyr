@@ -271,7 +271,7 @@ end;
 
 procedure TSimThyrToolbar.FormCreate(Sender: TObject);
 begin
-  SimThyrToolbar.SimThyrLabel.Caption := 'SPINA Thyr ' + GetFileVersion;
+  SimThyrToolbar.SimThyrLabel.Caption := 'SimThyr ' + GetFileVersion;
   AdaptLanguages;
   gIdleCounter := 0;
   SetPosition;
