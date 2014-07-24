@@ -1224,7 +1224,8 @@ begin
   ext := SensitivityMap.GetFullExtent;
   i := trunc((AX - ext.a.x) / (ext.b.x - ext.a.x) * TWS_RESOLUTION);
   j := trunc((AY - ext.a.y) / (ext.b.y - ext.a.y) * TWS_RESOLUTION);
-  AZ := SensitivityMatrix.content[j + 1, i + 1];
+  if (i < TWS_RESOLUTION + 1) and (j < TWS_RESOLUTION + 1) then
+    AZ := SensitivityMatrix.content[j + 1, i + 1];
   SensitivityMap.EnableRedrawing;
 end;
 
