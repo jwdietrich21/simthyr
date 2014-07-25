@@ -117,6 +117,7 @@ type
   public
     { public declarations }
     procedure PopulateColourSource(const minScale, medScale, maxScale: real);
+    procedure Rescale2DMap;
   end;
 
 var
@@ -1310,31 +1311,31 @@ end;
 
 procedure TTWSensitivityAnalysisForm.StrucParCombo1Change(Sender: TObject);
 begin
-  if TWSensitivityAnalysisForm.StrucParCombo1.Text <> '' then
+  if StrucParCombo1.Text <> '' then
   begin
-    TWSensitivityAnalysisForm.StrucParCombo1.Enabled := false; {fixes error #8}
+    StrucParCombo1.Enabled := false; {fixes error #8}
     SetBottomAxisCaption;
     SetStandardStrucParBoundaries(1 / 3, 3);
     CalculateMatrixWithCoordinates(SensitivityMatrix);
     with SensitivityMatrix do
       PopulateColourSource(GetMin, GetMean, GetMax);
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
-    TWSensitivityAnalysisForm.StrucParCombo1.Enabled := true;
+    StrucParCombo1.Enabled := true;
   end;
 end;
 
 procedure TTWSensitivityAnalysisForm.StrucParCombo2Change(Sender: TObject);
 begin
-  if TWSensitivityAnalysisForm.StrucParCombo2.Text <> '' then
+  if StrucParCombo2.Text <> '' then
   begin
-    TWSensitivityAnalysisForm.StrucParCombo2.Enabled := false; {fixes error #8}
+    StrucParCombo2.Enabled := false; {fixes error #8}
     SetLeftAxisCaption;
     SetStandardStrucParBoundaries(1 / 3, 3);
     CalculateMatrixWithCoordinates(SensitivityMatrix);
     with SensitivityMatrix do
       PopulateColourSource(GetMin, GetMean, GetMax);
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
-    TWSensitivityAnalysisForm.StrucParCombo2.Enabled := true;
+    StrucParCombo2.Enabled := true;
   end;
 end;
 
@@ -1355,6 +1356,20 @@ begin
     Add(minScale, DUMMY, '', ColorButton1.ButtonColor);
     Add(medScale, DUMMY, '', ColorButton2.ButtonColor);
     Add(maxScale, DUMMY, '', ColorButton3.ButtonColor);
+  end;
+end;
+
+procedure TTWSensitivityAnalysisForm.Rescale2DMap;
+{ redraws color map, e.g. after change of UOMs }
+begin
+  if (StrucParCombo1.Text <> '') and (StrucParCombo1.Text <> '') then
+  begin
+    CalculateMatrixWithCoordinates(SensitivityMatrix);
+    with SensitivityMatrix do
+      PopulateColourSource(GetMin, GetMean, GetMax);
+    ColouriseLegend;
+    SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
+    LegendMap.Invalidate;
   end;
 end;
 
