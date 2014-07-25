@@ -1,8 +1,8 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TSimThyrLogWindow','FORMDATA',[
-  'TPF0'#17'TSimThyrLogWindow'#16'SimThyrLogWindow'#4'Left'#3#184#0#6'Height'#3
-  +'&'#1#3'Top'#3#232#0#5'Width'#3#176#2#5'Align'#7#7'alRight'#10'AlphaBlend'#9
+  'TPF0'#17'TSimThyrLogWindow'#16'SimThyrLogWindow'#4'Left'#3#225#0#6'Height'#3
+  +'&'#1#3'Top'#3#199#0#5'Width'#3#176#2#5'Align'#7#7'alRight'#10'AlphaBlend'#9
   +#15'AlphaBlendValue'#2#0#7'Caption'#6#10'Log Window'#12'ClientHeight'#3'&'#1
   +#11'ClientWidth'#3#176#2#8'DockSite'#9#10'Font.Pitch'#7#10'fpVariable'#9'Ico'
   +'n.Data'#10#154'$'#0#0#150'$'#0#0#0#0#1#0#8#0'  '#2#0#1#0#1#0'0'#1#0#0#134#0
@@ -338,7 +338,7 @@ LazarusResources.Add('TSimThyrLogWindow','FORMDATA',[
   +'A'#140#195#172'A'#204#227#172'A'#205#243#172'A'#239#255#172'A'#255#255#172
   +'A'#10'OnActivate'#7#12'FormActivate'#10'LCLVersion'#6#7'1.2.2.0'#7'Visible'
   +#9#0#11'TStringGrid'#10'ValuesGrid'#6'Cursor'#7#7'crIBeam'#4'Left'#2#0#6'Hei'
-  +'ght'#3#15#1#4'Hint'#6'7Simulated behavioural parameters of thyroid homeosta'
+  +'ght'#3#23#1#4'Hint'#6'7Simulated behavioural parameters of thyroid homeosta'
   +'sis'#3'Top'#2#0#5'Width'#3#176#2#5'Align'#7#8'alClient'#15'AutoFillColumns'
   +#9#11'BorderStyle'#7#6'bsNone'#5'Color'#7#7'clWhite'#8'ColCount'#2#10#14'Hea'
   +'derHotZones'#11#11'gzFixedRows'#0#15'HeaderPushZones'#11#0#16'MouseWheelOpt'
@@ -351,8 +351,8 @@ LazarusResources.Add('TSimThyrLogWindow','FORMDATA',[
   +'E'#2'E'#2'E'#2'H'#0#5'Cells'#1#2#10#2#0#2#0#6#1'i'#2#1#2#0#6#1't'#2#2#2#0#6
   +#3'TRH'#2#3#2#0#6#4'pTSH'#2#4#2#0#6#3'TSH'#2#5#2#0#6#3'TT4'#2#6#2#0#6#3'FT4'
   +#2#7#2#0#6#3'TT3'#2#8#2#0#6#3'FT3'#2#9#2#0#6#3'cT3'#0#0#0#10'TStatusBar'#10
-  +'StatusBar1'#4'Left'#2#0#6'Height'#2#23#4'Hint'#6'(Number of iterations and '
-  +'time resolution'#3'Top'#3#15#1#5'Width'#3#176#2#6'Panels'#14#1#5'Bevel'#7#8
+  +'StatusBar1'#4'Left'#2#0#6'Height'#2#15#4'Hint'#6'(Number of iterations and '
+  +'time resolution'#3'Top'#3#23#1#5'Width'#3#176#2#6'Panels'#14#1#5'Bevel'#7#8
   +'pbRaised'#4'Text'#6#6'   0:0'#5'Width'#3#150#0#0#1#5'Bevel'#7#8'pbRaised'#5
   +'Width'#2'd'#0#1#5'Bevel'#7#8'pbRaised'#5'Width'#2'2'#0#0#14'ParentShowHint'
   +#8#11'SimplePanel'#8#8'ShowHint'#9#0#0#12'TProgressBar'#12'ProgressBar1'#4'L'
@@ -365,4 +365,4 @@ LazarusResources.Add('TSimThyrLogWindow','FORMDATA',[
   +'CopyItemClick'#0#0#9'TMenuItem'#9'PasteItem'#7'Caption'#6#5'Paste'#7'Enable'
   +'d'#8#0#0#9'TMenuItem'#10'DeleteItem'#7'Caption'#6#6'Delete'#7'Enabled'#8#0#0
   +#0#0
-]);
+]);

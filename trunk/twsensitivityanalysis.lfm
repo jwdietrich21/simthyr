@@ -33,6 +33,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Anchors = [akTop, akLeft, akRight, akBottom]
       AutoEdit = False
       AutoFillColumns = True
+      Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDblClickAutoSize, goSmoothScroll]
       TabOrder = 2
       Visible = False
       ColWidths = (

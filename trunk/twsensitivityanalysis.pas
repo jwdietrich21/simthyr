@@ -419,11 +419,22 @@ begin
     {$IFDEF UNIX}
     theImage := TPortableNetworkGraphic.Create;
     try
-      theWidth := SensitivityMap.Width;
+      theWidth := trunc(SensitivityMap.Width + 130 + 1.3 * LegendMap.Width);
       theHeight := SensitivityMap.Height;
       theImage.Width := theWidth;
       theImage.Height := theHeight;
-      SensitivityMap.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas);
+      with theImage.Canvas do
+      begin
+        Pen.Color := clBlack;
+        Brush.Color := clWhite;
+        FillRect(0, 0, theWidth, theHeight);
+        SensitivityMap.PaintOnCanvas(theImage.canvas, rect(0, 0, SensitivityMap.Width, SensitivityMap.Height));
+        LegendMap.PaintOnCanvas(theImage.canvas, rect(LegendMap.Left, LegendMap.Top, LegendMap.Left + LegendMap.Width, LegendMap.Top + LegendMap.Height));
+        Font := LegendMinLabel.Font;
+        TextOut(LegendPanel.Left + LegendMinLabel.Left, LegendPanel.Top + LegendMinLabel.Top, LegendMinLabel.Caption);
+        TextOut(LegendPanel.Left + LegendMaxLabel.Left, LegendPanel.Top + LegendMaxLabel.Top, LegendMaxLabel.Caption);
+        TextOut(LegendPanel.Left + UoMLabel.Left, LegendPanel.Top + UoMLabel.Top + UoMLabel.Height div 2 - TextHeight(UoMLabel.Caption) div 2 , UoMLabel.Caption);
+      end;
       Clipboard.Assign(theImage);
     finally
       theImage.Free;
