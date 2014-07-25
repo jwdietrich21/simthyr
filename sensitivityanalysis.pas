@@ -611,8 +611,7 @@ begin
     for i := 0 to max_i do
     begin
       case SensitivityAnalysisForm.StrucParCombo.ItemIndex of
-        0:
-        ;
+        0: DrawDummySensitivityPlot;
         1:
         begin
           GD1 := gMinXPar + i * interval;

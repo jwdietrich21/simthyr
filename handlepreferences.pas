@@ -20,8 +20,9 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, SimThyrTypes, SimThyrResources, SimThyrLog, SimThyrPlot,
-  UnitConverter, SimThyrPrediction, SimThyrServices, DOM, XMLRead, XMLWrite
+  StdCtrls, SimThyrTypes, SimThyrResources, SimThyrServices, UnitConverter,
+  SimThyrLog, SimThyrPlot, Sensitivityanalysis, tornado, TWSensitivityanalysis,
+  SimThyrPrediction, DOM, XMLRead, XMLWrite
   {$IFDEF win32}
   , Windows
   {$ELSE}
@@ -597,7 +598,9 @@ begin
   end
 end;
 
-procedure ReadPreferences; {should not be called before PreferencesDialog has been created}
+procedure ReadPreferences;
+{reads preferences from file}
+{should not be called before PreferencesDialog has been created}
 var
   Doc: TXMLDocument;
   RootNode: TDOMNode;
@@ -643,6 +646,7 @@ begin
 end;
 
 procedure SavePreferences;
+{saves preferences to file}
 var
   theFileName, PreferencesFolder: String;
   Doc: TXMLDocument;
@@ -695,15 +699,19 @@ begin
 end;
 
 procedure TPreferencesDialog.OKButtonClick(Sender: TObject);
+{applies and saves preferences}
 begin
   SetUnits;
   gNumberFormat := NumberFormatEdit.Text;
   gDateTimeFormat := DateTimeFormatEdit.Text;
-  RescaleParameters;
-  ValuesPlot.UpdateTimeAxes;
+  RescaleParameters; // adapts contents of log window to reflect changes in UOM
+  ValuesPlot.UpdateTimeAxes; // adapts time-series plot
   ValuesPlot.ComboBox1Change(Sender);
   ValuesPlot.ComboBox2Change(Sender);
-  ShowPredictedValues;
+  ShowPredictedValues; // adapts prediction window
+  DrawOWSensitivityPlot(false); // adapts one-way sensitivity analysis
+  {DrawTornadoPlot; // tornado plot not affected since it displays percentages}
+  TWSensitivityAnalysisForm.Rescale2DMap; // rescales two-way sensitivity analysis
   SavePreferences;
   PreferencesDialog.Close;
 end;
