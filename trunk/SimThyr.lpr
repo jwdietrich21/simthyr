@@ -143,7 +143,6 @@ begin
   begin
     SimThyrToolbar.SendToBack;
     SimulationSettings.ShowModal;
-    {SimulationSettings.SetFocus;}
   end
   else SimulationSettings.hide;
   gStartup := false;

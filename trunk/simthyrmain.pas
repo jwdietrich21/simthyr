@@ -281,15 +281,11 @@ end;
 procedure TSimThyrToolbar.FormShow(Sender: TObject);
 {ensures that simulation setting are shown on top}
 begin
-  if (SimulationSettings <> nil) and showSettingsAtStartup then
-  begin
-    {SimulationSettings.ShowModal;
-    SimulationSettings.SetFocus;}
-  end;
+  { deprecated content has been removed }
 end;
 
 procedure TSimThyrToolbar.HandleIdle(Sender: TObject; var Done: boolean);
-{ensures that the simulation setting are shown in the front}
+{updates log window on Mac OS X}
 begin
   if simready then
   begin
@@ -297,13 +293,6 @@ begin
     SimThyrLogWindow.ValuesGrid.BeginUpdate;
     SimThyrLogWindow.ValuesGrid.EndUpdate(True);
   {$ENDIF}
-    {if gIdleCounter < 2 then
-    begin
-      SimThyrToolbar.SendToBack;
-      SimulationSettings.ShowModal;
-      SimulationSettings.SetFocus;
-      inc(gIdleCounter);
-    end;  }
     application.ProcessMessages;
   end
   else;
@@ -333,11 +322,6 @@ end;
 
 procedure TSimThyrToolbar.FormActivate(Sender: TObject);
 begin
-  {if (SimulationSettings <> nil) and gStartup and showSettingsAtStartup then
-  begin
-    SimulationSettings.ShowModal;
-    SimulationSettings.SetFocus;
-  end;             }
   SelectAllMenuItem.Enabled := true;
 end;
 
