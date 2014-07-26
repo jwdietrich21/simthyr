@@ -142,8 +142,8 @@ begin
   if showSettingsAtStartup then
   begin
     SimThyrToolbar.SendToBack;
-    SimulationSettings.ShowOnTop;
-    SimulationSettings.SetFocus;
+    SimulationSettings.ShowModal;
+    {SimulationSettings.SetFocus;}
   end
   else SimulationSettings.hide;
   gStartup := false;

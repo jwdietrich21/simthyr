@@ -283,13 +283,13 @@ procedure TSimThyrToolbar.FormShow(Sender: TObject);
 begin
   if (SimulationSettings <> nil) and showSettingsAtStartup then
   begin
-    SimulationSettings.ShowOnTop;
-    SimulationSettings.SetFocus;
+    {SimulationSettings.ShowModal;
+    SimulationSettings.SetFocus;}
   end;
 end;
 
 procedure TSimThyrToolbar.HandleIdle(Sender: TObject; var Done: boolean);
-{enures that the simulation setting are shown in the front}
+{ensures that the simulation setting are shown in the front}
 begin
   if simready then
   begin
@@ -297,13 +297,13 @@ begin
     SimThyrLogWindow.ValuesGrid.BeginUpdate;
     SimThyrLogWindow.ValuesGrid.EndUpdate(True);
   {$ENDIF}
-    if gIdleCounter < 2 then
+    {if gIdleCounter < 2 then
     begin
       SimThyrToolbar.SendToBack;
-      SimulationSettings.ShowOnTop;
+      SimulationSettings.ShowModal;
       SimulationSettings.SetFocus;
-      gIdleCounter := gIdleCounter + 1;
-    end;
+      inc(gIdleCounter);
+    end;  }
     application.ProcessMessages;
   end
   else;
@@ -333,11 +333,11 @@ end;
 
 procedure TSimThyrToolbar.FormActivate(Sender: TObject);
 begin
-  if (SimulationSettings <> nil) and gStartup and showSettingsAtStartup then
+  {if (SimulationSettings <> nil) and gStartup and showSettingsAtStartup then
   begin
-    SimulationSettings.ShowOnTop;
+    SimulationSettings.ShowModal;
     SimulationSettings.SetFocus;
-  end;
+  end;             }
   SelectAllMenuItem.Enabled := true;
 end;
 
@@ -483,7 +483,7 @@ end;
 procedure TSimThyrToolbar.RunItemClick(Sender: TObject);
 begin
   if simready = True then
-    SimulationSettings.ShowOnTop
+    SimulationSettings.ShowModal
   else if haltsim then
     SimThread.Restart
   else
