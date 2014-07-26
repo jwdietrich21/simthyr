@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "SimThyr"
-#define MyAppVersion "3.3.0"
+#define MyAppVersion "3.3.1"
 #define MyAppPublisher "FORMATIO RETICULARIS"
 #define MyAppURL "http://simthyr.sf.net"
 #define MyAppExeName "SimThyr.exe"
