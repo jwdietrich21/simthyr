@@ -23,8 +23,8 @@ uses
   Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Spin, ComCtrls,
   ColorBox, Buttons, Grids, Clipbrd, Menus, TAChartUtils, TANavigation, Math,
   TADrawerSVG, TADrawUtils, TADrawerCanvas, TALegendPanel, TATools, LCLVersion,
-  SimThyrTypes, SimThyrServices, UnitConverter, SimThyrPrediction,
-  Sensitivityanalysis;
+  FPimage, SimThyrTypes, SimThyrServices, UnitConverter,
+  SimThyrPrediction, Sensitivityanalysis;
 
 type
 
@@ -93,6 +93,7 @@ type
     procedure MinSpinEdit2Change(Sender: TObject);
     procedure ResetButtonClick(Sender: TObject);
     procedure SaveAsItemClick(Sender: TObject);
+    procedure DrawToImage(var theImage: TFPImageBitmap);
     procedure SaveChart;
     procedure CopyItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
@@ -402,6 +403,132 @@ begin
   end;
 end;
 
+procedure TTWSensitivityAnalysisForm.DrawToImage(var theImage: TFPImageBitmap);
+var
+  theHeight: integer;
+  theWidth: integer;
+begin
+  theWidth := trunc(SensitivityMap.Width + 130 + 1.3 * LegendMap.Width);
+  theHeight := SensitivityMap.Height;
+  theImage.Width := theWidth;
+  theImage.Height := theHeight;
+  with theImage.Canvas do
+  begin
+    Pen.Color := clBlack;
+    Brush.Color := clWhite;
+    FillRect(0, 0, theWidth, theHeight);
+    SensitivityMap.PaintOnCanvas(theImage.canvas, rect(0, 0, SensitivityMap.Width, SensitivityMap.Height));
+    LegendMap.PaintOnCanvas(theImage.canvas, rect(LegendMap.Left, LegendMap.Top, LegendMap.Left + LegendMap.Width, LegendMap.Top + LegendMap.Height));
+    {Reset after changes introduced by chart:}
+    Pen.Color := clBlack;
+    Brush.Color := clWhite;
+    Font := LegendMinLabel.Font;
+    TextOut(LegendPanel.Left + LegendMinLabel.Left, LegendPanel.Top + LegendMinLabel.Top, LegendMinLabel.Caption);
+    TextOut(LegendPanel.Left + LegendMaxLabel.Left, LegendPanel.Top + LegendMaxLabel.Top, LegendMaxLabel.Caption);
+    TextOut(LegendPanel.Left + UoMLabel.Left, LegendPanel.Top + UoMLabel.Top + UoMLabel.Height div 2 - TextHeight(UoMLabel.Caption) div 2 , UoMLabel.Caption);
+  end;
+end;
+
+procedure TTWSensitivityAnalysisForm.SaveChart;
+{saves chart as bitmap or SVG file}
+var
+  theFileName:  string;
+  theFilterIndex: integer;
+  theStream: TFileStream;
+  theDrawer: IChartDrawer;
+  theImage: TFPImageBitmap;
+begin
+  if SensitivityMap = nil then
+    bell
+  else
+  begin
+    theStream := nil;
+    SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
+    if SimThyrToolbar.SavePictureDialog1.Execute then
+      try
+        theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
+        theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
+         {$IFDEF LCLcarbon}{compensates for a bug in older versions of carbon widgetset}
+           if (lcl_major < 2) and (lcl_minor < 2) then
+             theFilterIndex := theFilterIndex + 1;
+         {$ENDIF}
+        case theFilterIndex of
+        2:
+          begin
+            theImage := TBitmap.Create;
+            try
+              DrawToImage(TFPImageBitmap(theImage));
+              theImage.SaveToFile(theFileName);
+            finally
+              theImage.Free;
+            end;
+          end;
+        3:
+          begin
+            theImage := TPixmap.Create;
+            try
+              DrawToImage(TFPImageBitmap(theImage));
+              theImage.SaveToFile(theFileName);
+            finally
+              theImage.Free;
+            end;
+          end;
+        4: //SensitivityMap.SaveToFile(TPortableNetworkGraphic, theFileName);
+          begin
+            theImage := TPortableNetworkGraphic.Create;
+            try
+              DrawToImage(TFPImageBitmap(theImage));
+              theImage.SaveToFile(theFileName);
+            finally
+              theImage.Free;
+            end;
+          end;
+        5: //SensitivityMap.SaveToFile(TPortableAnyMapGraphic, theFileName);
+        begin
+          theImage := TPortableAnyMapGraphic.Create;
+          try
+            DrawToImage(TFPImageBitmap(theImage));
+            theImage.SaveToFile(theFileName);
+          finally
+            theImage.Free;
+          end;
+        end;
+        6: //SensitivityMap.SaveToFile(TJPEGImage, theFileName);
+        begin
+          theImage := TJPEGImage.Create;
+          try
+            DrawToImage(TFPImageBitmap(theImage));
+            theImage.SaveToFile(theFileName);
+          finally
+            theImage.Free;
+          end;
+        end;
+        7: //SensitivityMap.SaveToFile(TTIFFImage, theFileName);
+         begin
+          theImage := TTIFFImage.Create;
+          try
+            DrawToImage(TFPImageBitmap(theImage));
+            theImage.SaveToFile(theFileName);
+          finally
+            theImage.Free;
+          end;
+        end;
+       8: begin
+            theStream := TFileStream.Create(theFileName, fmCreate);
+            theDrawer := TSVGDrawer.Create(theStream, true);
+            theDrawer.DoChartColorToFPColor := @ChartColorSysToFPColor;
+             with SensitivityMap do
+              Draw(theDrawer, Rect(0, 0, Width, Height));
+             { Drawing of legend not implemented }
+          end;
+        otherwise bell;
+        end;
+      finally
+        if theStream <> nil then theStream.Free;
+      end;
+  end;
+end;
+
 procedure TTWSensitivityAnalysisForm.CopyChart;
 var
   {$IFDEF UNIX}
@@ -409,38 +536,27 @@ var
   {$ELSE}
   theImage: TBitMap;
   {$ENDIF}
-  theWidth, theHeight: integer;
 begin
   if SensitivityMap = nil then
     bell
   else
   begin
-    {SensitivityMap.CopyToClipboardBitmap doesn't work on Mac OS X}
     {$IFDEF UNIX}
     theImage := TPortableNetworkGraphic.Create;
     try
-      theWidth := trunc(SensitivityMap.Width + 130 + 1.3 * LegendMap.Width);
-      theHeight := SensitivityMap.Height;
-      theImage.Width := theWidth;
-      theImage.Height := theHeight;
-      with theImage.Canvas do
-      begin
-        Pen.Color := clBlack;
-        Brush.Color := clWhite;
-        FillRect(0, 0, theWidth, theHeight);
-        SensitivityMap.PaintOnCanvas(theImage.canvas, rect(0, 0, SensitivityMap.Width, SensitivityMap.Height));
-        LegendMap.PaintOnCanvas(theImage.canvas, rect(LegendMap.Left, LegendMap.Top, LegendMap.Left + LegendMap.Width, LegendMap.Top + LegendMap.Height));
-        Font := LegendMinLabel.Font;
-        TextOut(LegendPanel.Left + LegendMinLabel.Left, LegendPanel.Top + LegendMinLabel.Top, LegendMinLabel.Caption);
-        TextOut(LegendPanel.Left + LegendMaxLabel.Left, LegendPanel.Top + LegendMaxLabel.Top, LegendMaxLabel.Caption);
-        TextOut(LegendPanel.Left + UoMLabel.Left, LegendPanel.Top + UoMLabel.Top + UoMLabel.Height div 2 - TextHeight(UoMLabel.Caption) div 2 , UoMLabel.Caption);
-      end;
+      DrawToImage(TFPImageBitmap(theImage));
       Clipboard.Assign(theImage);
     finally
       theImage.Free;
     end;
     {$ELSE}
-    SensitivityMap.CopyToClipboardBitmap;
+    theImage := TBitmap.Create;
+    try
+      DrawToImage(TFPImageBitmap(theImage));
+      Clipboard.Assign(theImage);
+    finally
+      theImage.Free;
+    end;
     {$ENDIF}
   end;
 end;
@@ -537,50 +653,6 @@ end;
 procedure TTWSensitivityAnalysisForm.SaveAsItemClick(Sender: TObject);
 begin
   SaveChart;
-end;
-
-procedure TTWSensitivityAnalysisForm.SaveChart;
-{saves chart as bitmap or SVG file}
-var
-  theFileName:  string;
-  theFilterIndex: integer;
-  theStream: TFileStream;
-  theDrawer: IChartDrawer;
-begin
-  if SensitivityMap = nil then
-    bell
-  else
-  begin
-    theStream := nil;
-    SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
-    if SimThyrToolbar.SavePictureDialog1.Execute then
-      try
-        theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
-        theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
-         {$IFDEF LCLcarbon}{compensates for a bug in older versions of carbon widgetset}
-           if (lcl_major < 2) and (lcl_minor < 2) then
-             theFilterIndex := theFilterIndex + 1;
-         {$ENDIF}
-        case theFilterIndex of
-        2: SensitivityMap.SaveToBitmapFile(theFileName);
-        3: SensitivityMap.SaveToFile(TPixmap, theFileName);
-        4: SensitivityMap.SaveToFile(TPortableNetworkGraphic, theFileName);
-        5: SensitivityMap.SaveToFile(TPortableAnyMapGraphic, theFileName);
-        6: SensitivityMap.SaveToFile(TJPEGImage, theFileName);
-        7: SensitivityMap.SaveToFile(TTIFFImage, theFileName);
-        8: begin
-             theStream := TFileStream.Create(theFileName, fmCreate);
-             theDrawer := TSVGDrawer.Create(theStream, true);
-             theDrawer.DoChartColorToFPColor := @ChartColorSysToFPColor;
-             with SensitivityMap do
-               Draw(theDrawer, Rect(0, 0, Width, Height));
-           end;
-        otherwise bell;
-        end;
-      finally
-        if theStream <> nil then theStream.Free;
-      end;
-  end;
 end;
 
 procedure TTWSensitivityAnalysisForm.CopyItemClick(Sender: TObject);
