@@ -23,9 +23,9 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, SimThyrMain, Controls, TAChartLazarusPkg, SimThyrPlot, LaunchDialog,
-  simthyrlog, SimThyrTypes, SimThyrServices, ShowIPS, Simulator, Splash,
-  AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
+  Forms, SimThyrMain, Controls, TAChartLazarusPkg, fpvectorialpkg, SimThyrPlot,
+  LaunchDialog, simthyrlog, SimThyrTypes, SimThyrServices, ShowIPS, Simulator,
+  Splash, AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
   SimOptions, VersionSupport, ScenarioHandler, HandlePreferences,
   HandleNotifier, Sensitivityanalysis, tornado, DIFSupport, help,
   SimThyrResources, unitconverter, TWSensitivityanalysis
