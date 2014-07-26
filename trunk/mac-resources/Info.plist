@@ -4,7 +4,7 @@
 SimThyr Project
 A numerical simulator of thyrotropic feedback control
 
-Version 3.3.0
+Version 3.3.1
 
 (c) J. W. Dietrich, 1994 - 2014
 (c) Ludwig Maximilian University of Munich 1995 - 2002
@@ -20,7 +20,7 @@ See http://simthyr.sourceforge.net for details
 	<key>CFBundleExecutable</key>
 	<string>SimThyr</string>
 	<key>CFBundleVersion</key>
-	<string>3.3.0</string>
+	<string>3.3.1</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleName</key>
@@ -30,11 +30,11 @@ See http://simthyr.sourceforge.net for details
 	<key>CFBundleSignature</key>
 	<string>SimT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.3.0</string>
+	<string>3.3.1</string>
 	<key>CFBundleGetInfoString</key>
-	<string>3.3.0, ©1994-2014 J. W. Dietrich</string>
+	<string>3.3.1, ©1994-2014 J. W. Dietrich</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>3.3.0, ©1994-2014 J. W. Dietrich</string>
+	<string>3.3.1, ©1994-2014 J. W. Dietrich</string>
 	<key>CFBundleIdentifier</key>
 	<string>net.sf.simthyr</string>
 	<key>LSApplicationCategoryType</key>
