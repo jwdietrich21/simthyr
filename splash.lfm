@@ -502,7 +502,7 @@ object SplashScreen: TSplashScreen
     Left = 17
     Height = 13
     Top = 104
-    Width = 59
+    Width = 69
     Caption = 'Version x.y.z'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -513,7 +513,7 @@ object SplashScreen: TSplashScreen
     Left = 17
     Height = 13
     Top = 130
-    Width = 71
+    Width = 81
     Caption = '© 1994 – 2014'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -524,7 +524,7 @@ object SplashScreen: TSplashScreen
     Left = 17
     Height = 13
     Top = 144
-    Width = 64
+    Width = 69
     Caption = 'J. W. Dietrich'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -535,7 +535,7 @@ object SplashScreen: TSplashScreen
     Left = 17
     Height = 13
     Top = 168
-    Width = 94
+    Width = 109
     Caption = 'In Cooperation with:'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -546,7 +546,7 @@ object SplashScreen: TSplashScreen
     Left = 17
     Height = 13
     Top = 194
-    Width = 131
+    Width = 147
     Caption = 'Klinikum der LMU München'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -557,7 +557,7 @@ object SplashScreen: TSplashScreen
     Left = 17
     Height = 13
     Top = 208
-    Width = 114
+    Width = 134
     Caption = 'Universitätsklinikum Ulm'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -568,7 +568,7 @@ object SplashScreen: TSplashScreen
     Left = 17
     Height = 13
     Top = 222
-    Width = 118
+    Width = 135
     Caption = 'Ruhr-Universität Bochum'
     Font.Height = -11
     Font.Pitch = fpVariable
@@ -579,7 +579,7 @@ object SplashScreen: TSplashScreen
     Left = 17
     Height = 13
     Top = 236
-    Width = 165
+    Width = 191
     Caption = 'Universitätsklinikum Bergmannsheil'
     Font.Height = -11
     Font.Pitch = fpVariable

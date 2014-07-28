@@ -19,10 +19,10 @@ object SimOptionsDlg: TSimOptionsDlg
   Visible = True
   object NoiseCheckBox: TCheckBox
     Left = 32
-    Height = 17
+    Height = 18
     Hint = 'Use noise at the level of hypothalamus'
     Top = 56
-    Width = 107
+    Width = 140
     Caption = 'Superimpose noise'
     Checked = True
     OnChange = NoiseCheckBoxChange
@@ -33,10 +33,10 @@ object SimOptionsDlg: TSimOptionsDlg
   end
   object PreviewCheckBox: TCheckBox
     Left = 32
-    Height = 17
+    Height = 18
     Hint = 'Use the calculated equilibrium values as shown in the preview palette as initial hormone levels'
     Top = 80
-    Width = 246
+    Width = 326
     Caption = 'Use calculated equilibrium values as start values'
     Checked = True
     OnChange = PreviewCheckBoxChange
@@ -69,7 +69,7 @@ object SimOptionsDlg: TSimOptionsDlg
   end
   object TRHEdit: TEdit
     Left = 152
-    Height = 21
+    Height = 22
     Top = 16
     Width = 80
     TabOrder = 4
@@ -77,29 +77,29 @@ object SimOptionsDlg: TSimOptionsDlg
   end
   object Label1: TLabel
     Left = 32
-    Height = 13
+    Height = 16
     Top = 21
-    Width = 81
+    Width = 101
     Caption = 'Mean TRH level:'
     ParentColor = False
   end
   object Label2: TLabel
     Left = 240
-    Height = 13
+    Height = 16
     Top = 21
-    Width = 19
+    Width = 27
     Caption = 'ng/l'
     ParentColor = False
   end
   object CircadianCheckBox: TCheckBox
     Left = 32
-    Height = 17
+    Height = 18
     Top = 104
-    Width = 222
+    Width = 294
     Caption = 'Simulate circadian rhythm of TRH secretion'
     Checked = True
     OnChange = CircadianCheckBoxChange
     State = cbChecked
     TabOrder = 5
   end
-end
+end
