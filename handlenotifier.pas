@@ -20,14 +20,15 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls;
+  StdCtrls, SimThyrLog;
 
 type
 
   { TNotice }
 
   TNotice = class(TForm)
-    Label1: TLabel;
+    NoticeLabel: TLabel;
+    procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     { private declarations }
@@ -44,7 +45,13 @@ implementation
 
 procedure TNotice.FormCreate(Sender: TObject);
 begin
-  ;
+  Left := SimThyrLogWindow.Left + SimThyrLogWindow.Width div 2 - Width div 2;
+  Top := SimThyrLogWindow.Top + SimThyrLogWindow.Height div 3;
+end;
+
+procedure TNotice.FormActivate(Sender: TObject);
+begin
+  BringToFront;
 end;
 
 initialization

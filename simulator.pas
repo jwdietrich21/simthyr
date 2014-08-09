@@ -166,6 +166,7 @@ begin
  end;
 
  procedure SetDerivedVariables;
+ { calculate initial values for variables that have been derived from others }
  begin
   T3n := T3z / (1 + k31 * IBS);
   T3R := GR * T3n / (DR + T3n);	{Calculated from physiological initial values for T3z}

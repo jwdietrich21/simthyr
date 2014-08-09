@@ -121,7 +121,7 @@ begin
   SimOptionsDlg.AlphaBlend := false;
   Notice := TNotice.Create(SimThyrLogWindow);
   Notice.Hide;
-  Notice.Label1.Caption := WAIT_TITLE;
+  Notice.NoticeLabel.Caption := WAIT_TITLE;
   Application.CreateForm(TSimulationSettings, SimulationSettings);
   SimThyrToolbar.Show;
   ValuesPlot.show;
@@ -139,15 +139,19 @@ begin
   Application.CreateForm(TTornadoPlotForm, TornadoPlotForm);
   TornadoPlotForm.Hide;
   TornadoPlotForm.AlphaBlend := false;
+  Application.CreateForm(THelpWindow, HelpWindow);
   if showSettingsAtStartup then
   begin
     SimThyrToolbar.SendToBack;
+    {$IFDEF LCLcarbon}
+    SimulationSettings.ShowOnTop; // fixes a bug in the Carbon widgetset
+    SimulationSettings.Hide;
+    {$ENDIF}
     SimulationSettings.ShowModal;
   end
   else SimulationSettings.hide;
   gStartup := false;
   SimThyrToolbar.SelectAllMenuItem.Enabled := true;
-  Application.CreateForm(THelpWindow, HelpWindow);
   Application.Run;
   if assigned(SimThread) then
     SimThread.SafeFree;
