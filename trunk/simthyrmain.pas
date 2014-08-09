@@ -317,7 +317,9 @@ begin
     if assigned(SimThread) then
       SimThread.SafeFree;
     SimThread := nil;
-  end;
+  end
+  else
+    Notice.ShowOnTop;
 end;
 
 procedure TSimThyrToolbar.FormActivate(Sender: TObject);

@@ -1,8 +1,8 @@
 object SimulationSettings: TSimulationSettings
-  Left = 486
+  Left = 427
   Height = 401
   Hint = 'Enter basic settings for the simulation here.'
-  Top = 324
+  Top = 297
   Width = 560
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
@@ -10,7 +10,6 @@ object SimulationSettings: TSimulationSettings
   AlphaBlendValue = 220
   Anchors = []
   BorderIcons = []
-  BorderStyle = bsDialog
   Caption = 'Simulation Settings'
   ClientHeight = 401
   ClientWidth = 560
