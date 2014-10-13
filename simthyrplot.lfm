@@ -311,7 +311,7 @@ object ValuesPlot: TValuesPlot
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.2.2.0'
+  LCLVersion = '1.2.4.0'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -483,7 +483,7 @@ object ValuesPlot: TValuesPlot
       MiniMap = True
     end
   end
-  object Button1: TButton
+  object AddTitleButton: TButton
     Left = 568
     Height = 25
     Top = 10
@@ -491,7 +491,7 @@ object ValuesPlot: TValuesPlot
     Anchors = [akTop, akRight]
     Caption = 'Add'
     Default = True
-    OnClick = Button1Click
+    OnClick = AddTitleButtonClick
     TabOrder = 1
   end
   object Panel2: TPanel

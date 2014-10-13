@@ -46,6 +46,7 @@ var
   gSaveMode: tSaveMode;
 
 function OSVersion: Str255;
+function YosemiteORNewer: Boolean;
 procedure bell;
 function EncodeGreek(theString: string): string;
 function DecodeGreek(theString: string): string;
@@ -103,6 +104,23 @@ begin
   {$ENDIF}
   {$ENDIF}
   {$ENDIF}
+  {$ENDIF}
+end;
+
+function YosemiteORNewer: Boolean;
+{ returns true, if this app runs on Mac OS X 10.10 Yosemite or newer }
+  {$IFDEF LCLcarbon}
+var
+  Major, Minor, Bugfix: SInt32;
+  theError: SInt16;
+  {$ENDIF}
+begin
+  result := false;
+  {$IFDEF LCLcarbon}
+  theError := Gestalt(gestaltSystemVersionMinor, Minor);
+  if TheError = 0 then
+    if Minor >= 10 then
+      result := true;
   {$ENDIF}
 end;
 

@@ -1,13 +1,13 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TIPSForm','FORMDATA',[
-  'TPF0'#8'TIPSForm'#7'IPSForm'#4'Left'#3'?'#1#6'Height'#3#200#2#3'Top'#2'n'#5
-  +'Width'#3#178#1#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0#7'Anchors'#11#5'akT'
-  +'op'#8'akBottom'#0#7'Caption'#6#3'IPS'#12'ClientHeight'#3#200#2#11'ClientWid'
-  +'th'#3#178#1#5'Color'#7#7'clWhite'#10'OnActivate'#7#12'FormActivate'#8'OnCre'
-  +'ate'#7#10'FormCreate'#10'LCLVersion'#6#7'1.2.2.0'#7'Visible'#9#0#6'TImage'#6
-  +'Image1'#4'Left'#2#16#6'Height'#3#170#2#4'Hint'#6'8The information processin'
-  +'g structure (IPS) of this model'#3'Top'#2#16#5'Width'#3#149#1#7'Anchors'#11
+  'TPF0'#8'TIPSForm'#7'IPSForm'#4'Left'#3'?'#1#6'Height'#3#208#2#3'Top'#2'n'#5
+  +'Width'#3#215#1#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0#7'Anchors'#11#5'akT'
+  +'op'#8'akBottom'#0#7'Caption'#6#3'IPS'#12'ClientHeight'#3#208#2#11'ClientWid'
+  +'th'#3#215#1#5'Color'#7#7'clWhite'#10'OnActivate'#7#12'FormActivate'#8'OnCre'
+  +'ate'#7#10'FormCreate'#10'LCLVersion'#6#7'1.2.4.0'#7'Visible'#9#0#6'TImage'#6
+  +'Image1'#4'Left'#2#16#6'Height'#3#178#2#4'Hint'#6'8The information processin'
+  +'g structure (IPS) of this model'#3'Top'#2#16#5'Width'#3#186#1#7'Anchors'#11
   +#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#8'AutoSize'#9#6'Center'#9#7'OnC'
   +'lick'#7#11'Image1Click'#14'ParentShowHint'#8#12'Picture.Data'#10#184#254#1#0
   +#23'TPortableNetworkGraphic'#156#254#1#0#137'PNG'#13#10#26#10#0#0#0#13'IHDR'

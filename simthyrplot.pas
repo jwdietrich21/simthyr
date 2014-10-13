@@ -30,7 +30,7 @@ type
   { TValuesPlot }
 
   TValuesPlot = class(TForm)
-    Button1: TButton;
+    AddTitleButton: TButton;
     Chart1: TChart;
     Chart2: TChart;
     ChartNavPanel1: TChartNavPanel;
@@ -56,7 +56,7 @@ type
     PlotPanel1: TPanel;
     FullScaleButton1: TSpeedButton;
     StatusBar1: TStatusBar;
-    procedure Button1Click(Sender: TObject);
+    procedure AddTitleButtonClick(Sender: TObject);
     procedure Chart1Click(Sender: TObject);
     procedure Chart2Click(Sender: TObject);
     procedure ColorBox1Change(Sender: TObject);
@@ -258,23 +258,23 @@ begin
   DrawPlot(not graphready);
 end;
 
-procedure TValuesPlot.Button1Click(Sender: TObject);
+procedure TValuesPlot.AddTitleButtonClick(Sender: TObject);
 begin
-  ValuesPlot.Chart1.Title.Text.SetText(PChar(ValuesPlot.TitleEdit.Text));
-  ValuesPlot.Chart1.Title.Visible := not (ValuesPlot.Chart1.Title.Visible);
-  ValuesPlot.Chart1.Title.Font.Color := ValuesPlot.ColorButton1.ButtonColor;
-  ValuesPlot.Chart2.Title.Text.SetText(PChar(ValuesPlot.TitleEdit.Text));
-  ValuesPlot.Chart2.Title.Visible := not (ValuesPlot.Chart2.Title.Visible);
-  ValuesPlot.Chart2.Title.Font.Color := ValuesPlot.ColorButton1.ButtonColor;
-  if ValuesPlot.Chart1.Title.Visible then
+  Chart1.Title.Text.SetText(PChar(TitleEdit.Text));
+  Chart1.Title.Visible := not (Chart1.Title.Visible);
+  Chart1.Title.Font.Color := ColorButton1.ButtonColor;
+  Chart2.Title.Text.SetText(PChar(TitleEdit.Text));
+  Chart2.Title.Visible := not (Chart2.Title.Visible);
+  Chart2.Title.Font.Color := ColorButton1.ButtonColor;
+  if Chart1.Title.Visible then
   begin
-    ValuesPlot.Button1.Caption := 'Remove';
-    ValuesPlot.TitleEdit.Enabled := False;
+    AddTitleButton.Caption := 'Remove';
+    TitleEdit.Enabled := False;
   end
   else
   begin
-    ValuesPlot.Button1.Caption := 'Add';
-    ValuesPlot.TitleEdit.Enabled := True;
+    AddTitleButton.Caption := 'Add';
+    TitleEdit.Enabled := True;
   end;
 end;
 
@@ -366,6 +366,8 @@ begin
   PlotPanel1.Color := clWhite;
   PlotPanel2.Color := clWhite;
   append := false;
+  if YosemiteORNewer then
+    AddTitleButton.Height := 22;
 end;
 
 procedure TValuesPlot.UpdateTimeAxes;

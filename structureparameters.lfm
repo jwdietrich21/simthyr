@@ -12,9 +12,10 @@ object StructureParameters: TStructureParameters
   ClientWidth = 662
   Color = clWhite
   OnActivate = FormActivate
+  OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.2.2.0'
+  LCLVersion = '1.2.4.0'
   Visible = True
   object OKButton: TButton
     Left = 553
@@ -311,11 +312,11 @@ object StructureParameters: TStructureParameters
     Height = 436
     Top = 16
     Width = 632
-    HorzScrollBar.Page = 632
-    VertScrollBar.Page = 436
+    HorzScrollBar.Page = 618
+    VertScrollBar.Page = 416
     Anchors = [akTop, akLeft, akRight, akBottom]
-    ClientHeight = 436
-    ClientWidth = 632
+    ClientHeight = 421
+    ClientWidth = 617
     Color = clDefault
     ParentColor = False
     TabOrder = 0

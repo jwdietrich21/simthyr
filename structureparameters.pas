@@ -145,6 +145,7 @@ type
     Label2: TLabel;
     Label3: TLabel;
     procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure OptionsButtonClick(Sender: TObject);
     procedure StandardButtonClick(Sender: TObject);
     procedure FillInParameters;
@@ -286,6 +287,17 @@ begin
     StructureParametersDlg.Width := Screen.Width - StructureParametersDlg.Left;
   if Screen.Height < StructureParametersDlg.Top + StructureParametersDlg.Height then
     StructureParametersDlg.Height := Screen.Height - StructureParametersDlg.Top;
+end;
+
+procedure TStructureParameters.FormCreate(Sender: TObject);
+begin
+  if YosemiteORNewer then
+    begin
+      OKButton.Height := 22;
+      CancelButton.Height := 22;
+      OptionsButton.Height := 22;
+      StandardButton.Height := 22;
+    end;
 end;
 
 procedure TStructureParameters.HandleStrucPars;

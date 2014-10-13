@@ -7,7 +7,7 @@ LazarusResources.Add('TPreferencesDialog','FORMDATA',[
   +'bsDialog'#7'Caption'#6#19'SimThyr Preferences'#12'ClientHeight'#3#129#1#11
   +'ClientWidth'#3#11#2#21'Constraints.MinHeight'#3'^'#1#8'OnCreate'#7#10'FormC'
   +'reate'#9'OnDestroy'#7#11'FormDestroy'#6'OnShow'#7#8'FormShow'#8'Position'#7
-  +#14'poScreenCenter'#10'LCLVersion'#6#7'1.2.2.0'#7'Visible'#9#0#9'TGroupBox'#9
+  +#14'poScreenCenter'#10'LCLVersion'#6#7'1.2.4.0'#7'Visible'#9#0#9'TGroupBox'#9
   +'GroupBox1'#4'Left'#2#24#6'Height'#3#200#0#3'Top'#2#24#5'Width'#3#221#1#7'An'
   +'chors'#11#5'akTop'#6'akLeft'#7'akRight'#0#19'BorderSpacing.Right'#2#13#7'Ca'
   +'ption'#6#18'Measurement Units:'#12'ClientHeight'#3#178#0#11'ClientWidth'#3

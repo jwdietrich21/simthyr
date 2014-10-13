@@ -508,6 +508,11 @@ procedure TPreferencesDialog.FormCreate(Sender: TObject);
 begin
   NumberFormatEdit.Text := STANDARD_NUM_FORMAT;
   DateTimeFormatEdit.Text := STANDARD_TIME_FORMAT;
+  if YosemiteORNewer then
+    begin
+      OKButton.Height := 22;
+      CancelButton.Height := 22;
+    end;
 end;
 
 procedure TPreferencesDialog.CancelButtonClick(Sender: TObject);

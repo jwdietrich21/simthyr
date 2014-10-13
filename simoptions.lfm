@@ -15,7 +15,7 @@ object SimOptionsDlg: TSimOptionsDlg
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.2.2.0'
+  LCLVersion = '1.2.4.0'
   Visible = True
   object NoiseCheckBox: TCheckBox
     Left = 32

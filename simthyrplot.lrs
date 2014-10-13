@@ -337,7 +337,7 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +#172'A'#192#15#172'A'#192#7#172'A'#128#7#172'A'#128#7#172'A'#132#135#172'A'
   +#140#135#172'A'#140#195#172'A'#140#195#172'A'#204#227#172'A'#205#243#172'A'
   +#239#255#172'A'#255#255#172'A'#10'OnActivate'#7#12'FormActivate'#8'OnCreate'
-  +#7#10'FormCreate'#6'OnShow'#7#8'FormShow'#10'LCLVersion'#6#7'1.2.2.0'#7'Visi'
+  +#7#10'FormCreate'#6'OnShow'#7#8'FormShow'#10'LCLVersion'#6#7'1.2.4.0'#7'Visi'
   +'ble'#9#0#6'TPanel'#6'Panel1'#4'Left'#2#0#6'Height'#3#200#0#4'Hint'#6#16'Sel'
   +'ect parameter'#3'Top'#2'('#5'Width'#3'7'#3#7'Anchors'#11#5'akTop'#6'akLeft'
   +#7'akRight'#0#12'ClientHeight'#3#200#0#11'ClientWidth'#3'7'#3#14'ParentShowH'
@@ -431,41 +431,41 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +#0#14'TChartNavPanel'#14'ChartNavPanel1'#4'Left'#2#16#6'Height'#2#16#4'Hint'
   +#6'4Drag to select the part of the plot to be displayed.'#3'Top'#2'0'#5'Widt'
   +'h'#2#23#5'Chart'#7#6'Chart1'#22'LogicalExtentPen.Color'#7#8'clMaroon'#7'Min'
-  +'iMap'#9#0#0#0#7'TButton'#7'Button1'#4'Left'#3'8'#2#6'Height'#2#25#3'Top'#2
-  +#10#5'Width'#2'H'#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Caption'#6#3'Add'#7
-  +'Default'#9#7'OnClick'#7#12'Button1Click'#8'TabOrder'#2#1#0#0#6'TPanel'#6'Pa'
-  +'nel2'#4'Left'#2#1#6'Height'#3#200#0#4'Hint'#6#16'Select parameter'#3'Top'#3
-  +#240#0#5'Width'#3'7'#3#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#12'Clie'
-  +'ntHeight'#3#200#0#11'ClientWidth'#3'7'#3#14'ParentShowHint'#8#8'ShowHint'#9
-  +#8'TabOrder'#2#2#7'OnClick'#7#11'Panel2Click'#0#6'TPanel'#10'PlotPanel2'#6'C'
-  +'ursor'#7#7'crCross'#4'Left'#2'1'#6'Height'#3#190#0#3'Top'#2#13#5'Width'#3'O'
-  +#2#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#11'BorderStyle'
-  +#7#8'bsSingle'#12'ClientHeight'#3#190#0#11'ClientWidth'#3'O'#2#5'Color'#7#7
-  +'clWhite'#11'ParentColor'#8#8'TabOrder'#2#0#0#6'TChart'#6'Chart2'#4'Left'#2#2
-  +#6'Height'#3#170#0#4'Hint'#6#23'Drag with mouse to zoom'#3'Top'#2#7#5'Width'
-  +#3'J'#2#8'AxisList'#14#1#10'Grid.Color'#7#8'clSilver'#10'Grid.Style'#7#6'psD'
-  +'ash'#22'Marks.LabelFont.Height'#2#245#6'Minors'#14#0#14'Title.Distance'#2#3
-  +#22'Title.LabelFont.Height'#2#245#27'Title.LabelFont.Orientation'#3#132#3#13
-  +'Title.Visible'#9#13'Title.Caption'#6#1'y'#0#1#10'Grid.Style'#7#7'psClear'#9
-  +'Alignment'#7#9'calBottom'#22'Marks.LabelFont.Height'#2#245#12'Marks.Format'
-  +#6#4'%2:s'#19'Marks.OverlapPolicy'#7#15'opHideNeighbour'#12'Marks.Source'#7
-  ,#14'TimeAxisSource'#11'Marks.Style'#7#8'smsLabel'#6'Minors'#14#0#14'Title.Di'
-  +'stance'#2#1#22'Title.LabelFont.Height'#2#245#13'Title.Visible'#9#13'Title.C'
-  +'aption'#6#4'time'#0#0#9'BackColor'#7#7'clWhite'#11'Extent.XMax'#5#0#0#0#0#0
-  +#0#0#200#5'@'#16'Foot.Brush.Color'#7#9'clBtnFace'#15'Foot.Font.Color'#7#6'cl'
-  +'Blue'#17'Title.Brush.Color'#7#9'clBtnFace'#17'Title.Brush.Style'#7#7'bsClea'
-  +'r'#16'Title.Font.Color'#7#6'clBlue'#16'Title.Font.Style'#11#6'fsBold'#0#18
-  +'Title.Text.Strings'#1#6#5'Title'#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRig'
-  +'ht'#0#5'Color'#7#7'clWhite'#11'ParentColor'#8#14'ParentShowHint'#8#9'PopupM'
-  +'enu'#7#10'PopupMenu1'#8'ShowHint'#9#7'OnClick'#7#11'Chart2Click'#0#0#0#9'TC'
-  +'omboBox'#9'ComboBox2'#4'Left'#3#144#2#6'Height'#2#21#4'Hint'#6'3Select a pa'
-  +'rameter to show in the plot on the left.'#3'Top'#2#15#5'Width'#3#146#0#7'An'
-  +'chors'#11#7'akRight'#0#10'ItemHeight'#2#0#13'Items.Strings'#1#6#10'Portal T'
-  +'RH'#6#13'Pituitary TSH'#6#9'Serum TSH'#6#14'Serum total T4'#6#13'Serum free'
-  +' T4'#6#14'Serum total T3'#6#13'Serum free T3'#6#10'Central T3'#0#8'OnChange'
-  +#7#15'ComboBox2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#4
-  +'Text'#6#6'Unit 2'#0#0#13'TColorListBox'#13'ColorListBox2'#4'Left'#3#144#2#6
-  +'Height'#2'['#4'Hint'#6#23'Select plot color here.'#3'Top'#2':'#5'Width'#3
+  +'iMap'#9#0#0#0#7'TButton'#14'AddTitleButton'#4'Left'#3'8'#2#6'Height'#2#25#3
+  +'Top'#2#10#5'Width'#2'H'#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Caption'#6#3
+  +'Add'#7'Default'#9#7'OnClick'#7#19'AddTitleButtonClick'#8'TabOrder'#2#1#0#0#6
+  +'TPanel'#6'Panel2'#4'Left'#2#1#6'Height'#3#200#0#4'Hint'#6#16'Select paramet'
+  +'er'#3'Top'#3#240#0#5'Width'#3'7'#3#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRig'
+  +'ht'#0#12'ClientHeight'#3#200#0#11'ClientWidth'#3'7'#3#14'ParentShowHint'#8#8
+  +'ShowHint'#9#8'TabOrder'#2#2#7'OnClick'#7#11'Panel2Click'#0#6'TPanel'#10'Plo'
+  +'tPanel2'#6'Cursor'#7#7'crCross'#4'Left'#2'1'#6'Height'#3#190#0#3'Top'#2#13#5
+  +'Width'#3'O'#2#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#11
+  +'BorderStyle'#7#8'bsSingle'#12'ClientHeight'#3#190#0#11'ClientWidth'#3'O'#2#5
+  +'Color'#7#7'clWhite'#11'ParentColor'#8#8'TabOrder'#2#0#0#6'TChart'#6'Chart2'
+  +#4'Left'#2#2#6'Height'#3#170#0#4'Hint'#6#23'Drag with mouse to zoom'#3'Top'#2
+  +#7#5'Width'#3'J'#2#8'AxisList'#14#1#10'Grid.Color'#7#8'clSilver'#10'Grid.Sty'
+  +'le'#7#6'psDash'#22'Marks.LabelFont.Height'#2#245#6'Minors'#14#0#14'Title.Di'
+  +'stance'#2#3#22'Title.LabelFont.Height'#2#245#27'Title.LabelFont.Orientation'
+  +#3#132#3#13'Title.Visible'#9#13'Title.Caption'#6#1'y'#0#1#10'Grid.Style'#7#7
+  +'psClear'#9'Alignment'#7#9'calBottom'#22'Marks.LabelFont.Height'#2#245#12'Ma'
+  +'rks.Format'#6#4'%2:s'#19'Marks.OverlapPolicy'#7#15'opHideNeighbour'#12'Mark'
+  ,'s.Source'#7#14'TimeAxisSource'#11'Marks.Style'#7#8'smsLabel'#6'Minors'#14#0
+  +#14'Title.Distance'#2#1#22'Title.LabelFont.Height'#2#245#13'Title.Visible'#9
+  +#13'Title.Caption'#6#4'time'#0#0#9'BackColor'#7#7'clWhite'#11'Extent.XMax'#5
+  +#0#0#0#0#0#0#0#200#5'@'#16'Foot.Brush.Color'#7#9'clBtnFace'#15'Foot.Font.Col'
+  +'or'#7#6'clBlue'#17'Title.Brush.Color'#7#9'clBtnFace'#17'Title.Brush.Style'#7
+  +#7'bsClear'#16'Title.Font.Color'#7#6'clBlue'#16'Title.Font.Style'#11#6'fsBol'
+  +'d'#0#18'Title.Text.Strings'#1#6#5'Title'#0#7'Anchors'#11#5'akTop'#6'akLeft'
+  +#7'akRight'#0#5'Color'#7#7'clWhite'#11'ParentColor'#8#14'ParentShowHint'#8#9
+  +'PopupMenu'#7#10'PopupMenu1'#8'ShowHint'#9#7'OnClick'#7#11'Chart2Click'#0#0#0
+  +#9'TComboBox'#9'ComboBox2'#4'Left'#3#144#2#6'Height'#2#21#4'Hint'#6'3Select '
+  +'a parameter to show in the plot on the left.'#3'Top'#2#15#5'Width'#3#146#0#7
+  +'Anchors'#11#7'akRight'#0#10'ItemHeight'#2#0#13'Items.Strings'#1#6#10'Portal'
+  +' TRH'#6#13'Pituitary TSH'#6#9'Serum TSH'#6#14'Serum total T4'#6#13'Serum fr'
+  +'ee T4'#6#14'Serum total T3'#6#13'Serum free T3'#6#10'Central T3'#0#8'OnChan'
+  +'ge'#7#15'ComboBox2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1
+  +#4'Text'#6#6'Unit 2'#0#0#13'TColorListBox'#13'ColorListBox2'#4'Left'#3#144#2
+  +#6'Height'#2'['#4'Hint'#6#23'Select plot color here.'#3'Top'#2':'#5'Width'#3
   +#146#0#7'Anchors'#11#7'akRight'#0#10'ItemHeight'#2#0#7'OnClick'#7#18'ColorLi'
   +'stBox2Click'#8'TabOrder'#2#2#0#0#12'TSpeedButton'#16'FullScaleButton2'#4'Le'
   +'ft'#2#15#6'Height'#2#22#4'Hint'#6'3Full scale plot (drag with mouse over pl'

@@ -178,6 +178,8 @@ end;
 procedure TAboutWindow.FormCreate(Sender: TObject);
 begin
   VersionLabel.Caption := 'Version ' + GetFileVersion;
+  if YosemiteORNewer then
+    OKButton.Height := 22;
 end;
 
 procedure TAboutWindow.Image11Click(Sender: TObject);
