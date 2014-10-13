@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, SimThyrTypes;
+  StdCtrls, SimThyrTypes, SimThyrServices;
 
 type
 
@@ -99,7 +99,11 @@ end;
 
 procedure TSimOptionsDlg.FormCreate(Sender: TObject);
 begin
-
+  if YosemiteORNewer then
+    begin
+      OKButton.Height := 22;
+      CancelButton.Height := 22;
+    end;
 end;
 
 procedure TSimOptionsDlg.PreviewCheckBoxChange(Sender: TObject);

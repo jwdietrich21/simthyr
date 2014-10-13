@@ -220,6 +220,13 @@ begin
   else if RunSecondsRadio.Checked then
       tmax_unit := 's'
   else tmax_unit := '';
+  if YosemiteORNewer then
+    begin
+      StartButton.Height := 22;
+      CancelButton.Height := 22;
+      OptButton.Height := 22;
+      ParsButton.Height := 22;
+    end;
 end;
 
 procedure TSimulationSettings.FormDeactivate(Sender: TObject);
