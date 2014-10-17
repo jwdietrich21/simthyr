@@ -270,12 +270,26 @@ begin
 end;
 
 procedure TSimulationThread.Execute; {Main simulation thread}
+const
+  HOURS_PER_DAY = 24;
+  THREE_FIFTH = 3 / 5; { optimization for speed }
 var
   theContents: tResultContent;
   circadianControl: real;
   nmaxString, iString: string;
   T4conversionFactor, T3conversionFactor: real;
+  inv_hpd, inv_nmax, inv_UTRH: real;
+  ultrashortFeebackGain: real;
+  gainOfTSH, gainOfT4, gainOfCentralT3, gainOfPeripheralT3: real;
 begin
+  inv_hpd := 1 / HOURS_PER_DAY; { optimization for speed: }
+  inv_nmax := 1 / nmax;         { on most processors multiplications are }
+  inv_UTRH := 1 / UTRH;         { faster than divisions }
+  ultrashortFeebackGain := alphaS2 / betaS2;
+  gainOfTSH := alphaS / betaS;
+  gainOfT4 := alphaT / betaT;
+  gainOfCentralT3 := alpha32 / beta32;
+  gainOfPeripheralT3 := alpha31 / beta31;
   SimCS.Enter;
   try
     simready := false;
@@ -290,7 +304,7 @@ begin
           begin
             gResultMatrix[i-1, i_pos] := i;
             gResultMatrix[i-1, t_pos] := AsTime(t);
-            gResultMatrix[i-1, TRH_pos] := TRH / UTRH;
+            gResultMatrix[i-1, TRH_pos] := TRH * inv_UTRH;
             gResultMatrix[i-1, pTSH_pos] := TSHz;
             gResultMatrix[i-1, TSH_pos] := TSH;
             gResultMatrix[i-1, TT4_pos] := T4 * T4conversionFactor;
@@ -317,14 +331,13 @@ begin
               SimThyrLogWindow.ProgressBar1.Position := 100;
             t := t + delt;
 {Hypothalamus:}
-            f := 1 / 86400; {Frequency of circadian rhythm of TRH secretion}
             omega := 2 * pi * f; {Angular frequency}
-            chi := 2 * pi / 24 * 5;
+            chi := 2 * pi * inv_hpd * 5;
             if circadianflag then
               circadianControl := cos(omega * t - chi)
             else
               circadianControl := 0;
-            TRHi := TRH1 + 3/5 * TRHs * circadianControl * UTRH;
+            TRHi := TRH1 + THREE_FIFTH * TRHs * circadianControl * UTRH;
             TRH := TRHi + TRHe; {Total TRH is sum of internal and external TRH}
             TRH := TRH * getgauss(0.5); {Noise}
 {Pituitary:}
@@ -333,30 +346,30 @@ begin
             dTSH := gH * TRH / ((dH + TRH) * (1 + LS * T3R) * (1 + SS * TSHz / (DS + TSHz)));
             {differential quotient of secretory rate only, no degradation}
 	    {Equifinal approximation: TSHz := (alphaS2 / betaS2) * dTSH;}
-            vpt10 := alphaS2 / betaS2;
+            vpt10 := ultrashortFeebackGain;
             pt1(vpt10, tpt16, x6, dTSH, TSHz);
             TSHz := pt0(xt22, nt22, TSHz); {pituitary TSH for Brokken-Wiersinga-Prummel loop}
             {optional: TSHz := TSHz * getgauss(0.2); {Noise}}
-            vpt10 := alphaS / betaS;
+            vpt10 := gainOfTSH;
             pt1(vpt10, tpt12, x2, dTSH, TSH);
 	    {Equifinal approximation: TSH := alphaS * dTSH / betaS;}
             TSH := pt0(xt2, nt2, TSH);
 {Thyroid:}
             dT4 := GT * TSH / (dT + TSH);
-            vpt10 := alphaT / betaT;
+            vpt10 := gainOfT4;
             pt1(vpt10, tpt13, x3, dT4, T4);
 	    {Equifinal approximation: T4 := alphaT * dT4 / betaT;}
             T4 := pt0(xt3, nt3, T4);
             FT4 := T4 / (1 + k41 * TBG + k42 * TBPA);
 {5'-Deiodinase type II (central):}
             dT3z := GD2 * FT4 / (kM2 + FT4);
-            vpt10 := alpha32 / beta32;
+            vpt10 := gainOfCentralT3;
             pt1(vpt10, tpt14, x4, dT3z, T3z);
             {Equifinal approximation: T3z := alpha32 * dT3z / beta32;}
             T3z := pt0(xt4, nt4, T3z);
 {5'-Deiodinase type I (peripheral):}
             dT3p := GD1 * FT4 / (kM1 + FT4);
-            vpt10 := alpha31 / beta31;
+            vpt10 := gainOfPeripheralT3;
             pt1(vpt10, tpt15, x5, dT3p, T3p);
             {Equifinal approximation: T3p := alpha31 * dT3p / beta31;}
             FT3 := T3p / (1 + k30 * TBG);
@@ -393,6 +406,8 @@ begin
 end;
 
 procedure simulate; {Creates and starts simulation thread}
+const
+  SECONDS_PER_DAY = 86400;
 begin
   SetStatusBarPanel0('   0', IntToStr(nmax));
   graphready := false;
@@ -401,6 +416,7 @@ begin
   SetLength(gResultMatrix, nmax, RES_MAX_COLS);
   Notice.ShowOnTop;
   haltsim := false;
+  f := 1 / SECONDS_PER_DAY; {Frequency of circadian rhythm of TRH secretion}
   SimCS := TCriticalSection.Create;
   if assigned(SimThread) then
     SimThread.Execute
