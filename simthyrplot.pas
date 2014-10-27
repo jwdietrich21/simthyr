@@ -184,7 +184,7 @@ begin
   end;
   if (ValuesPlot.FLine1 = nil) or (ValuesPlot.Fline2 = nil) then
   begin
-    bell;
+    ShowMemoryError;
     exit;
   end;
   ValuesPlot.Fline1.BeginUpdate;
@@ -492,7 +492,7 @@ begin
   if gSelectedChart = nil then
     bell
   else
-    bell;  {this function is not yet implemented}
+    ShowImplementationMessage;  {this function is not yet implemented}
 end;
 
 procedure TValuesPlot.FullScaleButton2Click(Sender: TObject);

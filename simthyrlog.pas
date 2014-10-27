@@ -155,7 +155,7 @@ begin
         end;
 
       WriteDIFFile(doc, theFileName, theCode);
-      if theCode <> 0 then bell;
+      if theCode <> 0 then ShowSaveError;
     finally
       doc.Free;
     end;
@@ -187,7 +187,7 @@ begin
     end;
   end
   else
-    bell;
+    ShowSaveError;
 end;
 
 procedure TSimThyrLogWindow.ValuesGridGetCellHint(Sender: TObject; ACol,
