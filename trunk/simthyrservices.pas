@@ -61,7 +61,9 @@ procedure writeaMemoLine(theMemo: TMemo; theString: Str255);
 procedure SetFileName(theForm: TForm; const FileName: string);
 procedure ShowImplementationMessage;
 procedure ShowFormatMessage;
-
+procedure ShowVersionError;
+procedure ShowSaveError;
+procedure ShowMemoryError;
 
 implementation
 
@@ -263,7 +265,6 @@ begin
 
 end;
 
-
 procedure SetFileName(theForm: TForm; const FileName: string);
 {sets the title of a window to file name}
 begin
@@ -284,6 +285,23 @@ begin
   ShowMessage(FORMAT_MESSAGE);
 end;
 
+procedure ShowVersionError;
+begin
+  bell;
+  MessageDlg(VERSION_MESSAGE, mtError, [mbOK], 0);
+end;
+
+procedure ShowSaveError;
+begin
+  bell;
+  MessageDlg(SAVE_ERROR_MESSAGE, mtError, [mbOK], 0);
+end;
+
+procedure ShowMemoryError;
+begin
+  bell;
+  MessageDlg(INSUFFICIENT_MEMORY_MESSAGE, mtError, [mbOK], 0);
+end;
 
 end.
 

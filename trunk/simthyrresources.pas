@@ -31,6 +31,7 @@ const
   WAIT_TITLE = 'Simulation running...';
 
   IMPLEMENTATION_MESSAGE = 'This function is not implemented in this version of SimThyr.';
+  VERSION_MESSAGE = 'This scenario file has a file version that is not supported by SimThyr';
   FORMAT_MESSAGE = 'Please check your input.';
   SAVE_ERROR_MESSAGE = 'Error saving the file';
   PREFERENCES_READ_ERROR_MESSAGE = 'Preferences could not be read. Please check access rights of your user or home folder';

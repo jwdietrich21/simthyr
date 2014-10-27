@@ -415,10 +415,10 @@ begin
       theFilterIndex := theFilterIndex + 1;
   {$ENDIF}{may be removed in future versions}
     case theFilterIndex of
-      1: bell;  {unimplemented}
+      1: ShowImplementationMessage;  {unimplemented}
       2: ReadScenario(theFileName, theVersion);
     end;
-  if (theVersion <> '') and (theVersion <> '10.0') then bell;
+  if (theVersion <> '') and (theVersion <> '10.0') then ShowVersionError;
   end;
 end;
 

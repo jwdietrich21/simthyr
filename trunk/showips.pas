@@ -96,7 +96,7 @@ begin
       else
         IPSForm.Image1.Picture.SaveToFile(theFileName);
     except
-      bell;
+      ShowSaveError;
     end;
 end;
 

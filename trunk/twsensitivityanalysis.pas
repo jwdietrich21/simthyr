@@ -444,7 +444,7 @@ var
   theImage: TFPImageBitmap;
 begin
   if SensitivityMap = nil then
-    bell
+    ShowSaveError
   else
   begin
     theStream := nil;
