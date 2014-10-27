@@ -14,7 +14,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.2.4.0'
+  LCLVersion = '1.2.6.0'
   object PlotPanel: TPanel
     Left = 48
     Height = 289

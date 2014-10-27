@@ -39,6 +39,7 @@ uses
 {$R *.res}
 
 begin
+  // ReturnNilIfGrowHeapFails := true;
   {$IFDEF debug}
   if FileExists('heaptrace.trc') then
     DeleteFile('heaptrace.trc');
