@@ -76,7 +76,7 @@ type
     PlotPanel: TPanel;
     LegendFrame: TShape;
     StatusBar1: TStatusBar;
-    CheckGrid: TStringGrid;
+    CheckGrid: TStringGrid; // normally invisible grid for debugging purposes
     StrucParCombo1: TComboBox;
     StrucParCombo2: TComboBox;
     DependentParCombo: TComboBox;
@@ -139,7 +139,8 @@ begin
   result := content[1, 1];
   for i := 1 to TWS_RESOLUTION + 1 do
   for j := 1 to TWS_RESOLUTION + 1 do // beginning with 1 to allow for matrix size of 1
-    if content[i, j] < result then result := content[i, j];
+    if not isNan(content[i, j]) and (content[i, j] < result) then
+      result := content[i, j];
 end;
 
 function TSensitivityMatrix.GetMax: real;
@@ -149,7 +150,7 @@ begin
   result := content[1, 1];
   for i := 1 to TWS_RESOLUTION + 1 do
   for j := 1 to TWS_RESOLUTION + 1 do // beginning with 1 to allow for matrix size of 1
-    if content[i, j] > result then result := content[i, j];
+    if not isNan(content[i, j]) and (content[i, j] > result) then result := content[i, j];
 end;
 
 function TSensitivityMatrix.GetMean: real;
@@ -689,7 +690,10 @@ begin
     LegendMinLabel.Caption := '0';
     LegendMaxLabel.Caption := '0';
   end;
-  AZ := minResult + (maxResult - minResult) * (AY - ext.a.y) /(ext.b.y - ext.a.y);
+  if isNan(minResult) or isNaN(maxResult) then
+    AZ := NaN
+  else
+    AZ := minResult + (maxResult - minResult) * (AY - ext.a.y) /(ext.b.y - ext.a.y);
 end;
 
 procedure TTWSensitivityAnalysisForm.SetStandardStrucParBoundaries(factor1, factor2: real);
