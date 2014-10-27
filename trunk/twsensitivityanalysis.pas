@@ -23,16 +23,17 @@ uses
   Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Spin, ComCtrls,
   ColorBox, Buttons, Grids, Clipbrd, Menus, TAChartUtils, TANavigation, Math,
   TADrawerSVG, TADrawUtils, TADrawerCanvas, TALegendPanel, TATools, LCLVersion,
-  FPimage, SimThyrTypes, SimThyrServices, UnitConverter,
+  FPimage, SimThyrTypes, SimThyrServices, SimThyrResources, UnitConverter,
   SimThyrPrediction, Sensitivityanalysis;
 
 type
+  TMatrixArray = array[0..TWS_RESOLUTION + 1, 0..TWS_RESOLUTION + 1] of real;
 
   { TSensitivityMatrix }
 
   TSensitivityMatrix = class(TObject)
   public
-    content: array[0..TWS_RESOLUTION + 1, 0..TWS_RESOLUTION + 1] of real;
+    content: TMatrixArray;
     constructor create;
     destructor destroy; override;
     procedure ClearContent;
@@ -167,7 +168,10 @@ end;
 constructor TSensitivityMatrix.create;
 begin
   inherited create;
-  ClearContent;
+  if length(content) = 0 then
+    MessageDlg(INSUFFICIENT_MEMORY_MESSAGE, mtError, [mbOK], 0)
+  else
+    ClearContent;
 end;
 
 destructor TSensitivityMatrix.destroy;

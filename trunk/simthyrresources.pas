@@ -35,6 +35,7 @@ const
   SAVE_ERROR_MESSAGE = 'Error saving the file';
   PREFERENCES_READ_ERROR_MESSAGE = 'Preferences could not be read. Please check access rights of your user or home folder';
   PREFERENCES_SAVE_ERROR_MESSAGE = 'The preferences could not be saved permanently, however, they are valid for this session';
+  INSUFFICIENT_MEMORY_MESSAGE = 'This machine has not enough free memory to perform this function';
 
   EXAMPLE_STRING = 'Example: ';
   NEGATIVE_VALUES_HINT = 'Negative values represent virtual solutions delivered by equilibrium polynomials.';
