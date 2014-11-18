@@ -1,12 +1,14 @@
+{ This is an automatically generated lazarus resource file }
+
 LazarusResources.Add('TSplashScreen','FORMDATA',[
   'TPF0'#13'TSplashScreen'#12'SplashScreen'#6'Cursor'#7#10'crAppStart'#4'Left'#3
-  +'u'#2#6'Height'#3#22#1#3'Top'#3#142#0#5'Width'#3#175#1#21'HorzScrollBar.Visi'
+  +#138#1#6'Height'#3'*'#1#3'Top'#3'V'#1#5'Width'#3#187#1#21'HorzScrollBar.Visi'
   +'ble'#8#21'VertScrollBar.Visible'#8#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0
   +#7'Anchors'#11#0#11'BorderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#11'Bor'
   +'derStyle'#7#8'bsDialog'#11'BorderWidth'#2#1#7'Caption'#6#10'SimThyr...'#12
-  +'ClientHeight'#3#22#1#11'ClientWidth'#3#175#1#5'Color'#4#230#230#230#0#8'OnC'
+  +'ClientHeight'#3'*'#1#11'ClientWidth'#3#187#1#5'Color'#4#230#230#230#0#8'OnC'
   +'reate'#7#10'FormCreate'#8'Position'#7#14'poScreenCenter'#13'ShowInTaskBar'#7
-  +#7'stNever'#10'LCLVersion'#6#7'1.2.2.0'#7'Visible'#9#0#6'TImage'#6'Image1'#4
+  +#7'stNever'#10'LCLVersion'#6#7'1.2.6.0'#7'Visible'#9#0#6'TImage'#6'Image1'#4
   +'Left'#2#16#6'Height'#3#210#0#3'Top'#2#16#5'Width'#3#141#1#8'AutoSize'#9#7'O'
   +'nClick'#7#11'Image1Click'#12'Picture.Data'#10'(:'#0#0#7'TBitmap'#28':'#0#0
   +'BMVL'#1#0#0#0#0#0'6'#4#0#0'('#0#0#0#141#1#0#0#210#0#0#0#1#0#8#0#1#0#0#0' H'
@@ -575,29 +577,29 @@ LazarusResources.Add('TSplashScreen','FORMDATA',[
   +'^'#0#0#4'+'#128'V'#172#12#255#1#129#2'V'#134#0#7'V'#1'+3'#0#0#0#188#0#1'+'#2
   +#129#1#171#6#255#2#129#1#128#196#0#0#0#191#0#1'+'#5#255#1#172#199#0#0#1#11'T'
   +'ransparent'#9#0#0#6'TLabel'#12'VersionLabel'#4'Left'#2#17#6'Height'#2#13#3
-  ,'Top'#2'h'#5'Width'#2'E'#7'Caption'#6#13'Version x.y.z'#11'Font.Height'#2#245
+  ,'Top'#2'h'#5'Width'#2';'#7'Caption'#6#13'Version x.y.z'#11'Font.Height'#2#245
   +#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TL'
   +'abel'#15'CopyrightLabel1'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#130#0#5'Widt'
-  +'h'#2'Q'#7'Caption'#6#16#194#169' 1994 '#226#128#147' 2014'#11'Font.Height'#2
+  +'h'#2'G'#7'Caption'#6#16#194#169' 1994 '#226#128#147' 2014'#11'Font.Height'#2
   +#245#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6
   +'TLabel'#15'CopyrightLabel2'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#144#0#5'Wi'
-  +'dth'#2'E'#7'Caption'#6#14'J. W. Dietrich'#11'Font.Height'#2#245#10'Font.Pit'
+  +'dth'#2'@'#7'Caption'#6#14'J. W. Dietrich'#11'Font.Height'#2#245#10'Font.Pit'
   +'ch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#15'Co'
-  +'pyrightLabel3'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#168#0#5'Width'#2'm'#7'C'
+  +'pyrightLabel3'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#168#0#5'Width'#2'^'#7'C'
   +'aption'#6#20'In Cooperation with:'#11'Font.Height'#2#245#10'Font.Pitch'#7#10
   +'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#15'CopyrightLa'
-  +'bel4'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#194#0#5'Width'#3#147#0#7'Caption'
+  +'bel4'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#194#0#5'Width'#3#131#0#7'Caption'
   +#6#25'Klinikum der LMU M'#195#188'nchen'#11'Font.Height'#2#245#10'Font.Pitch'
   +#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#15'Copyri'
-  +'ghtLabel5'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#208#0#5'Width'#3#134#0#7'Ca'
-  +'ption'#6#25'Universit'#195#164'tsklinikum Ulm'#11'Font.Height'#2#245#10'Fon'
-  +'t.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'
-  +#15'CopyrightLabel6'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#222#0#5'Width'#3
-  +#135#0#7'Caption'#6#24'Ruhr-Universit'#195#164't Bochum'#11'Font.Height'#2
-  +#245#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6
-  +'TLabel'#15'CopyrightLabel7'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#236#0#5'Wi'
-  +'dth'#3#191#0#7'Caption'#6'#Universit'#195#164'tsklinikum Bergmannsheil'#11
-  +'Font.Height'#2#245#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'Par'
-  +'entFont'#8#0#0#6'TTimer'#6'Timer1'#8'Interval'#3#208#7#7'OnTimer'#7#11'Time'
-  +'r1Timer'#4'left'#3'P'#1#3'top'#3#240#0#0#0#0
+  +'ghtLabel5'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#208#0#5'Width'#2'r'#7'Capti'
+  +'on'#6#25'Universit'#195#164'tsklinikum Ulm'#11'Font.Height'#2#245#10'Font.P'
+  +'itch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#15
+  +'CopyrightLabel6'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#222#0#5'Width'#2'v'#7
+  +'Caption'#6#24'Ruhr-Universit'#195#164't Bochum'#11'Font.Height'#2#245#10'Fo'
+  +'nt.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'
+  +#15'CopyrightLabel7'#4'Left'#2#17#6'Height'#2#13#3'Top'#3#236#0#5'Width'#3
+  +#165#0#7'Caption'#6'#Universit'#195#164'tsklinikum Bergmannsheil'#11'Font.He'
+  +'ight'#2#245#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'
+  +#8#0#0#6'TTimer'#6'Timer1'#8'Interval'#3#208#7#7'OnTimer'#7#11'Timer1Timer'#4
+  +'left'#3'P'#1#3'top'#3#240#0#0#0#0
 ]);

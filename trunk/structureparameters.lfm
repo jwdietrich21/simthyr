@@ -554,8 +554,8 @@ object StructureParameters: TStructureParameters
     end
     object Label31: TLabel
       Left = 448
-      Height = 34
-      Top = 272
+      Height = 18
+      Top = 288
       Width = 133
       AutoSize = False
       Caption = 'Dissociation constants:'
