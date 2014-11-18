@@ -1,8 +1,8 @@
 object AboutModelForm: TAboutModelForm
-  Left = 440
-  Height = 741
-  Top = 134
-  Width = 559
+  Left = 498
+  Height = 699
+  Top = 180
+  Width = 575
   HorzScrollBar.Page = 1
   HorzScrollBar.Visible = False
   VertScrollBar.Page = 1
@@ -12,8 +12,8 @@ object AboutModelForm: TAboutModelForm
   Anchors = []
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'About the model'
-  ClientHeight = 741
-  ClientWidth = 559
+  ClientHeight = 699
+  ClientWidth = 575
   Color = clWhite
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
@@ -153,12 +153,12 @@ object AboutModelForm: TAboutModelForm
     0000
   }
   Position = poScreenCenter
-  LCLVersion = '1.2.2.0'
+  LCLVersion = '1.2.6.0'
   object Label1: TLabel
     Left = 56
-    Height = 16
+    Height = 13
     Top = 96
-    Width = 77
+    Width = 69
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -169,7 +169,7 @@ object AboutModelForm: TAboutModelForm
     Left = 56
     Height = 48
     Top = 16
-    Width = 446
+    Width = 462
     Anchors = [akTop, akLeft, akRight]
     Caption = 'This simulation is based on version 10 of the MiMe-NoCoDI model of thyrotropic feedback control proposed by Dietrich et al. 1997 and subsequently.'
     Font.Quality = fqAntialiased
@@ -178,10 +178,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 290
-    Height = 16
+    Left = 364
+    Height = 13
     Top = 64
-    Width = 212
+    Width = 154
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -196,9 +196,9 @@ object AboutModelForm: TAboutModelForm
   end
   object Memo1: TMemo
     Left = 56
-    Height = 569
+    Height = 527
     Top = 120
-    Width = 446
+    Width = 462
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.InnerBorder = 5
     Color = clWhite
@@ -271,4 +271,4 @@ object AboutModelForm: TAboutModelForm
     TabOrder = 1
     WantReturns = False
   end
-end
+end

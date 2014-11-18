@@ -1,8 +1,8 @@
 object AboutWindow: TAboutWindow
-  Left = 406
+  Left = 297
   Height = 400
-  Top = 301
-  Width = 480
+  Top = 348
+  Width = 498
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   AlphaBlend = True
@@ -11,17 +11,17 @@ object AboutWindow: TAboutWindow
   BorderStyle = bsSingle
   Caption = 'About SimThyr'
   ClientHeight = 400
-  ClientWidth = 480
+  ClientWidth = 498
   Color = clWhite
   Font.Pitch = fpVariable
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.2.4.0'
+  LCLVersion = '1.2.6.0'
   Visible = True
   object OKButton: TButton
-    Left = 215
+    Left = 224
     Height = 25
     Top = 358
     Width = 75
@@ -31,7 +31,7 @@ object AboutWindow: TAboutWindow
     TabOrder = 0
   end
   object Tabs: TPageControl
-    Left = 23
+    Left = 32
     Height = 328
     Top = 16
     Width = 433
@@ -41,8 +41,8 @@ object AboutWindow: TAboutWindow
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Version'
-      ClientHeight = 289
-      ClientWidth = 427
+      ClientHeight = 302
+      ClientWidth = 425
       object Image1: TImage
         Left = 9
         Height = 216
@@ -523,7 +523,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 92
-        Width = 69
+        Width = 59
         Caption = 'Version x.y.z'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -534,7 +534,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 118
-        Width = 81
+        Width = 71
         Caption = '© 1994 – 2014'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -545,7 +545,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 132
-        Width = 69
+        Width = 64
         Caption = 'J. W. Dietrich'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -556,7 +556,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 156
-        Width = 109
+        Width = 94
         Caption = 'In Cooperation with:'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -567,7 +567,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 182
-        Width = 147
+        Width = 131
         Caption = 'Klinikum der LMU München'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -578,7 +578,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 196
-        Width = 134
+        Width = 114
         Caption = 'Universitätsklinikum Ulm'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -589,7 +589,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 210
-        Width = 135
+        Width = 118
         Caption = 'Ruhr-Universität Bochum'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -600,7 +600,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 224
-        Width = 191
+        Width = 165
         Caption = 'Universitätsklinikum Bergmannsheil'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -612,7 +612,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 252
-        Width = 168
+        Width = 143
         Caption = 'simthyr.medical-cybernetics.de'
         Font.Color = clNavy
         Font.Height = -11
@@ -626,7 +626,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 266
-        Width = 74
+        Width = 61
         Caption = 'simthyr.sf.net'
         Font.Color = clNavy
         Font.Height = -11
@@ -638,8 +638,8 @@ object AboutWindow: TAboutWindow
     end
     object TabSheet2: TTabSheet
       Caption = 'Additional Information'
-      ClientHeight = 289
-      ClientWidth = 427
+      ClientHeight = 302
+      ClientWidth = 425
       object Memo1: TMemo
         Left = 26
         Height = 248
@@ -651,13 +651,13 @@ object AboutWindow: TAboutWindow
     end
     object TabSheet3: TTabSheet
       Caption = 'Acknowledgement'
-      ClientHeight = 289
-      ClientWidth = 427
+      ClientHeight = 302
+      ClientWidth = 425
       object Label3: TLabel
         Left = 25
-        Height = 16
+        Height = 13
         Top = 8
-        Width = 333
+        Width = 275
         Caption = 'SimThyr uses the following third party resources:'
         Font.Pitch = fpVariable
         Font.Style = [fsBold]
@@ -667,18 +667,18 @@ object AboutWindow: TAboutWindow
       end
       object Label4: TLabel
         Left = 25
-        Height = 16
+        Height = 13
         Top = 31
-        Width = 196
+        Width = 149
         Caption = 'Silk icon set 1.3 by Mark James'
         ParentColor = False
       end
       object Label5: TLabel
         Cursor = crHandPoint
         Left = 25
-        Height = 16
+        Height = 13
         Top = 47
-        Width = 282
+        Width = 206
         Caption = 'http://www.famfamfam.com/lab/icons/silk/'
         Font.Color = clNavy
         Font.Pitch = fpVariable
@@ -688,18 +688,18 @@ object AboutWindow: TAboutWindow
       end
       object Label6: TLabel
         Left = 25
-        Height = 16
+        Height = 13
         Top = 70
-        Width = 118
+        Width = 89
         Caption = 'Tango Icon Library'
         ParentColor = False
       end
       object Label7: TLabel
         Cursor = crHandPoint
         Left = 25
-        Height = 16
+        Height = 13
         Top = 86
-        Width = 314
+        Width = 235
         Caption = 'http://tango.freedesktop.org/Tango_Icon_Library'
         Font.Color = clNavy
         Font.Pitch = fpVariable
@@ -709,18 +709,18 @@ object AboutWindow: TAboutWindow
       end
       object Label8: TLabel
         Left = 25
-        Height = 16
+        Height = 13
         Top = 109
-        Width = 250
+        Width = 185
         Caption = 'VersionSupport unit by Mike Thompson'
         ParentColor = False
       end
       object Label9: TLabel
         Cursor = crHandPoint
         Left = 25
-        Height = 16
+        Height = 13
         Top = 125
-        Width = 371
+        Width = 273
         Caption = 'http://www.lazarus.freepascal.org/index.php/topic,13957'
         Font.Color = clNavy
         Font.Pitch = fpVariable
@@ -730,9 +730,9 @@ object AboutWindow: TAboutWindow
       end
       object Label10: TLabel
         Left = 25
-        Height = 16
+        Height = 13
         Top = 196
-        Width = 204
+        Width = 179
         Caption = 'Scientific and technical advise:'
         Font.Pitch = fpVariable
         Font.Style = [fsBold]
@@ -772,18 +772,18 @@ object AboutWindow: TAboutWindow
       end
       object Label14: TLabel
         Left = 24
-        Height = 16
+        Height = 13
         Top = 148
-        Width = 107
+        Width = 84
         Caption = 'PUMA Repository'
         ParentColor = False
       end
       object Label15: TLabel
         Cursor = crHandPoint
         Left = 24
-        Height = 16
+        Height = 13
         Top = 163
-        Width = 191
+        Width = 134
         Caption = 'http://puma-repository.sf.net'
         Font.Color = clNavy
         Font.Pitch = fpVariable
@@ -794,8 +794,8 @@ object AboutWindow: TAboutWindow
     end
     object TabSheet4: TTabSheet
       Caption = 'Links'
-      ClientHeight = 289
-      ClientWidth = 427
+      ClientHeight = 302
+      ClientWidth = 425
       object Image2: TImage
         Cursor = crHandPoint
         Left = 33
