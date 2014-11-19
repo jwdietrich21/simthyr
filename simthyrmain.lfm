@@ -1309,8 +1309,16 @@ object SimThyrToolbar: TSimThyrToolbar
       object Divider_3_3: TMenuItem
         Caption = '-'
       end
+      object EquiDiagItem: TMenuItem
+        Caption = 'Equilibrium Diagram...'
+        ShortCut = 4165
+        OnClick = EquiDiagItemClick
+      end
+      object Divider_3_4: TMenuItem
+        Caption = '-'
+      end
       object OWSensitivityAnalysisItem: TMenuItem
-        Caption = 'One-Way Sensitivity Analysis'
+        Caption = 'One-Way Sensitivity Analysis...'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
           2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
@@ -1348,11 +1356,11 @@ object SimThyrToolbar: TSimThyrToolbar
           FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
         }
         ImageIndex = 18
-        ShortCut = 4165
+        ShortCut = 4145
         OnClick = OWSensitivityAnalysisItemClick
       end
       object TWSensitivityAnalysisItem: TMenuItem
-        Caption = 'Two-Way Sensitivity Analysis'
+        Caption = 'Two-Way Sensitivity Analysis...'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
           20000000000000040000640000006400000000000000000000004B544C005F6A
@@ -1394,7 +1402,7 @@ object SimThyrToolbar: TSimThyrToolbar
         OnClick = TWSensitivityAnalysisItemClick
       end
       object TornadoPlotItem: TMenuItem
-        Caption = 'Tornado Plot'
+        Caption = 'Tornado Plot...'
         Bitmap.Data = {
           36040000424D3604000000000000360000002800000010000000100000000100
           2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
@@ -1435,7 +1443,7 @@ object SimThyrToolbar: TSimThyrToolbar
         ShortCut = 4180
         OnClick = TornadoPlotItemClick
       end
-      object Divider_3_4: TMenuItem
+      object Divider_3_5: TMenuItem
         Caption = '-'
       end
       object AboutModelItem: TMenuItem

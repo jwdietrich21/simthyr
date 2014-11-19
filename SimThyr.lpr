@@ -3,7 +3,7 @@ program SimThyr;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.3.2 }
+{ Version 3.4.0 }
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -28,7 +28,7 @@ uses
   Splash, AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
   SimOptions, VersionSupport, ScenarioHandler, HandlePreferences,
   HandleNotifier, Sensitivityanalysis, tornado, DIFSupport, help,
-  SimThyrResources, unitconverter, TWSensitivityanalysis
+  SimThyrResources, unitconverter, TWSensitivityanalysis, equilibriumdiagram
   {$IFDEF debug}
   , SysUtils
   {$ENDIF}
@@ -137,6 +137,9 @@ begin
   Application.CreateForm(TTWSensitivityAnalysisForm, TWSensitivityAnalysisForm);
   TWSensitivityAnalysisForm.Hide;
   TWSensitivityAnalysisForm.AlphaBlend := false;
+  Application.CreateForm(TEquilibriumDiagramForm, EquilibriumDiagramForm);
+  EquilibriumDiagramForm.Hide;
+  EquilibriumDiagramForm.AlphaBlend := false;
   Application.CreateForm(TTornadoPlotForm, TornadoPlotForm);
   TornadoPlotForm.Hide;
   TornadoPlotForm.AlphaBlend := false;
