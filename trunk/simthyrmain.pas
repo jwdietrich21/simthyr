@@ -3,7 +3,7 @@ unit SimThyrMain;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.3.2 }
+{ Version 3.4.0 }
 
 { (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
@@ -24,8 +24,9 @@ uses
   SimOptions, SimThyrServices, LaunchDialog, ShowIPS, Simulator, Printers,
   ComCtrls, LCLIntf, ExtDlgs, SimThyrLog, SimThyrPlot, AboutDialog,
   ShowAboutModel, StructureParameters, SimThyrPrediction, Sensitivityanalysis,
-  TWSensitivityanalysis, tornado, help, ScenarioHandler, HandlePreferences,
-  HandleNotifier, LCLProc, StdCtrls, LCLVersion, VersionSupport;
+  TWSensitivityanalysis, tornado, Equilibriumdiagram, help, ScenarioHandler,
+  HandlePreferences, HandleNotifier, LCLProc, StdCtrls, LCLVersion,
+  VersionSupport;
 
 type
 
@@ -48,6 +49,8 @@ type
     EditUndo1:    TEditUndo;
     FileMenu:     TMenuItem;
     IdleTimer1:   TIdleTimer;
+    Divider_3_4: TMenuItem;
+    EquiDiagItem: TMenuItem;
     ToolbarImageList:   TImageList;
     SimThyrLabel: TLabel;
     MacAboutItem: TMenuItem;
@@ -60,7 +63,7 @@ type
     Divider_1_3:  TMenuItem;
     Divider_1_2:  TMenuItem;
     AboutModelItem: TMenuItem;
-    Divider_3_4:  TMenuItem;
+    Divider_3_5:  TMenuItem;
     ChangeParItem: TMenuItem;
     IPSItem:      TMenuItem;
     LogItem:      TMenuItem;
@@ -132,6 +135,7 @@ type
     procedure CloseMenuItemClick(Sender: TObject);
     procedure CopyMenuItemClick(Sender: TObject);
     procedure CopyToolButtonClick(Sender: TObject);
+    procedure EquiDiagItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -226,7 +230,8 @@ begin
   SimThyrToolbar.AddOptItem.ShortCut := ShortCut(VK_LCL_COMMA, modifierKey + [ssShift]);
   SimThyrToolbar.PredEqItem.ShortCut := ShortCut(VK_L, modifierKey);
   SimThyrToolbar.ChangeParItem.ShortCut := ShortCut(VK_M, modifierKey);
-  SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut := ShortCut(VK_E, modifierKey);
+  SimThyrToolbar.EquiDiagItem.ShortCut := ShortCut(VK_E, modifierKey); ;
+  SimThyrToolbar.OWSensitivityAnalysisItem.ShortCut := ShortCut(VK_1, modifierKey);
   SimThyrToolbar.TWSensitivityAnalysisItem.ShortCut := ShortCut(VK_2, modifierKey);
   SimThyrToolbar.TornadoPlotItem.ShortCut := ShortCut(VK_T, modifierKey);
   SimThyrToolbar.IPSItem.ShortCut := ShortCut(VK_I, modifierKey);
@@ -377,6 +382,11 @@ end;
 procedure TSimThyrToolbar.CopyToolButtonClick(Sender: TObject);
 begin
   CopyMenuItemClick(Sender);
+end;
+
+procedure TSimThyrToolbar.EquiDiagItemClick(Sender: TObject);
+begin
+  EquilibriumDiagramForm.Show;
 end;
 
 procedure TSimThyrToolbar.IPSItemClick(Sender: TObject);
