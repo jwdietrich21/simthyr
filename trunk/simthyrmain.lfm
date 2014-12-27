@@ -13,7 +13,7 @@ object SimThyrToolbar: TSimThyrToolbar
   AutoSize = True
   BorderStyle = bsToolWindow
   Caption = 'SimThyr'
-  ClientHeight = 53
+  ClientHeight = 73
   ClientWidth = 687
   DefaultMonitor = dmMainForm
   DockSite = True
@@ -546,10 +546,10 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SimThyrLabel: TLabel
-    Left = 606
+    Left = 605
     Height = 16
     Top = 5
-    Width = 50
+    Width = 51
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'SimThyr'

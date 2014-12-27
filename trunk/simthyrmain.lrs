@@ -6,7 +6,7 @@ LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   +' the simulation.'#3'Top'#2'l'#5'Width'#3#175#2#21'HorzScrollBar.Visible'#8
   +#21'VertScrollBar.Visible'#8#5'Align'#7#5'alTop'#10'AlphaBlend'#9#15'AlphaBl'
   +'endValue'#2#0#7'Anchors'#11#0#8'AutoSize'#9#11'BorderStyle'#7#12'bsToolWind'
-  +'ow'#7'Caption'#6#7'SimThyr'#12'ClientHeight'#2'5'#11'ClientWidth'#3#175#2#14
+  +'ow'#7'Caption'#6#7'SimThyr'#12'ClientHeight'#2'I'#11'ClientWidth'#3#175#2#14
   +'DefaultMonitor'#7#10'dmMainForm'#8'DockSite'#9#9'Icon.Data'#10#154'$'#0#0
   +#150'$'#0#0#0#0#1#0#8#0'  '#2#0#1#0#1#0'0'#1#0#0#134#0#0#0#16#16#2#0#1#0#1#0
   +#176#0#0#0#182#1#0#0'  '#16#0#1#0#4#0#232#2#0#0'f'#2#0#0#16#16#16#0#1#0#4#0
@@ -406,7 +406,7 @@ LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   +'ToolButton'#17'TornadoPlotButton'#4'Left'#3#186#1#4'Hint'#6#12'Tornado plot'
   +#3'Top'#2#2#7'Caption'#6#17'TornadoPlotButton'#10'ImageIndex'#2#20#7'OnClick'
   +#7#20'TornadoPlotItemClick'#14'ParentShowHint'#8#8'ShowHint'#9#0#0#0#6'TLabe'
-  +'l'#12'SimThyrLabel'#4'Left'#3'^'#2#6'Height'#2#16#3'Top'#2#5#5'Width'#2'2'#9
+  +'l'#12'SimThyrLabel'#4'Left'#3']'#2#6'Height'#2#16#3'Top'#2#5#5'Width'#2'3'#9
   +'Alignment'#7#14'taRightJustify'#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Capti'
   +'on'#6#7'SimThyr'#10'Font.Color'#7#6'clGray'#11'Font.Height'#2#243#11'Parent'
   +'Color'#8#10'ParentFont'#8#0#0#9'TMainMenu'#9'MainMenu1'#6'Images'#7#16'Tool'
