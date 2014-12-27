@@ -156,9 +156,9 @@ object AboutModelForm: TAboutModelForm
   LCLVersion = '1.2.6.0'
   object Label1: TLabel
     Left = 56
-    Height = 13
+    Height = 16
     Top = 96
-    Width = 69
+    Width = 77
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -178,10 +178,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 364
-    Height = 13
+    Left = 306
+    Height = 16
     Top = 64
-    Width = 154
+    Width = 212
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -271,4 +271,4 @@ object AboutModelForm: TAboutModelForm
     TabOrder = 1
     WantReturns = False
   end
-end
+end
