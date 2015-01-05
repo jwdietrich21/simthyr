@@ -5,9 +5,9 @@ unit Simulator;
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2014 }
+{ (c) J. W. Dietrich, 1994 - 2015 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2013 }
+{ (c) Ruhr University of Bochum 2005 - 2015 }
 
 { This unit implements the main simulation methods }
 
@@ -27,7 +27,6 @@ uses
   SimThyrPlot, SimThyrPrediction, HandleNotifier, UnitConverter;
 
 const
-  HOURS_PER_DAY = 24;
   THREE_FIFTH = 3 / 5; { optimization for speed }
 
 type
@@ -183,6 +182,8 @@ begin
  end;
 
  procedure SimHypothalamus(const inv_hpd: real);
+ { Simulator module for hypothalamic function }
+ { invoked by TSimulationThread }
  var
    circadianControl: real;
  begin
@@ -198,6 +199,8 @@ begin
  end;
 
  procedure SimPituitary(const gainOfTSH: real; const ultrashortFeebackGain: real);
+ { Simulator module for pituitary gland }
+ { invoked by TSimulationThread }
  begin
    T3n := T3z / (1 + k31 * IBS);
    T3R := GR * T3n / (dR + T3n);
@@ -215,6 +218,8 @@ begin
  end;
 
  procedure SimThyroidGland(const gainOfT4: real);
+ { Simulator module for thyroid gland }
+ { invoked by TSimulationThread }
  begin
    dT4 := GT * TSH / (dT + TSH);
    vpt10 := gainOfT4;
@@ -225,6 +230,8 @@ begin
  end;
 
  procedure SimCentralDeiodination(const gainOfCentralT3: real);
+ { Simulator module for central deiodination }
+ { invoked by TSimulationThread }
  begin
    dT3z := GD2 * FT4 / (kM2 + FT4);
    vpt10 := gainOfCentralT3;
@@ -234,6 +241,8 @@ begin
  end;
 
  procedure SimPeripheralDeiodination(const gainOfPeripheralT3: real);
+ { Simulator module for peripheral deiodination }
+ { invoked by TSimulationThread }
  begin
    dT3p := GD1 * FT4 / (kM1 + FT4);
    vpt10 := gainOfPeripheralT3;
@@ -347,7 +356,7 @@ var
   ultrashortFeebackGain: real;
   gainOfTSH, gainOfT4, gainOfCentralT3, gainOfPeripheralT3: real;
 begin
-  inv_hpd := 1 / HOURS_PER_DAY; { optimization for speed: }
+  inv_hpd := 1 / HoursPerDay; { optimization for speed: }
   inv_nmax := 1 / nmax;         { on most processors multiplications are }
   inv_UTRH := 1 / UTRH;         { faster than divisions }
   ultrashortFeebackGain := alphaS2 / betaS2;

@@ -5,7 +5,7 @@ unit DIFSupport;
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2014 }
+{ (c) J. W. Dietrich, 1994 - 2015 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
 { (c) Ruhr University of Bochum 2005 - 2013 }
 
@@ -152,4 +152,4 @@ begin
 end;
 
 end.
-
+

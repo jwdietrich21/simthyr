@@ -5,9 +5,9 @@ program SimThyr;
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2014 }
+{ (c) J. W. Dietrich, 1994 - 2015 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2014 }
+{ (c) Ruhr University of Bochum 2005 - 2015 }
 
 { This is the main project file }
 
@@ -91,7 +91,7 @@ begin
     Hide;
     Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 32;
     Height := Screen.Height - Top - 100;
-    width := trunc(1.3 * Height * Image1.Width / Image1.Height);
+    width := trunc(Height * Image1.Width / Image1.Height);
     AlphaBlend := false;
   end;
   Application.CreateForm(TSimThyrLogWindow, SimThyrLogWindow);
