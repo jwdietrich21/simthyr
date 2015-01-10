@@ -14,8 +14,10 @@ unit Simulator;
 { Source code released under the BSD License }
 { See http://simthyr.sourceforge.net for details }
 
-{$mode objfpc}{$R+}
+{$mode objfpc}
+{$R+}
 {$define UseCThreads}
+{$ASSERTIONS ON}
 
 interface
 
@@ -27,10 +29,13 @@ uses
   SimThyrPlot, SimThyrPrediction, HandleNotifier, UnitConverter;
 
 const
+  kError101 = 'Runtime error: Negative parameter(s)';
+  kError102 = 'Runtime error: Parameter(s) out of range';
   THREE_FIFTH = 3 / 5; { optimization for speed }
+  MAX_DEAD = 300;
 
 type
-  TQueue_xt = array[0..300] of real;
+  TQueue_xt = array[0..MAX_DEAD] of real;
   TSimulationThread = class(TThread)
   public
     procedure Pause;
@@ -67,6 +72,7 @@ implementation
   var
    f: real;
  begin
+  assert((vpt >= 0) and (tpt >=0), kError101);
   f := exp(-delt / tpt);
   ya := f * x0 + vpt * (1 - f) * xe;
   x0 := ya;
@@ -78,6 +84,7 @@ implementation
   var
    i: integer;
  begin
+  assert((nt >= 0) and (nt <= MAX_DEAD), kError101);
   pt0 := xt[nt];
   if nt > 1 then
    begin
@@ -98,6 +105,7 @@ implementation
   var
    i: integer;
  begin
+  assert((nt >= 0) and (nt <= MAX_DEAD), kError101);
   for i := 0 to nt do
    begin
     xt[i] := xe;
@@ -108,6 +116,7 @@ implementation
  function cycles (var n: longint; n_text: str255): integer;
  {determines number of loops from given simulation time ("cycles" in old SimThyr versions)}
  begin
+  assert(n >= 0, kError101);
   if ((pos('d', n_text) > 0) or (pos('T', n_text) > 0)) then
    factor := 86400
   else if ((pos('h', n_text) > 0) or (pos('St', n_text) > 0)) then
@@ -126,6 +135,7 @@ function rnorm (mean, sd: real): real;
  var
   u1, u2: real;
 begin
+  assert(sd >= 0, kError101);
   u1 := random;
   u2 := random;
   rnorm := mean * abs(1 + sqrt(-2 * (ln(u1))) * cos(2 * pi * u2) * sd);
@@ -134,6 +144,7 @@ begin
  function getgauss (sigma: real): real;
  {controllable function to calculate random numbers of a normal distribution}
  begin
+  assert(sigma >= 0, kError101);
   if noiseflag then
    begin
     getgauss := rnorm(1, sigma);
@@ -187,6 +198,7 @@ begin
  var
    circadianControl: real;
  begin
+   assert(inv_hpd >= 0, kError101);
    omega := 2 * pi * f; {Angular frequency}
    chi := 2 * pi * inv_hpd * 5;
    if circadianflag then
@@ -202,6 +214,7 @@ begin
  { Simulator module for pituitary gland }
  { invoked by TSimulationThread }
  begin
+   assert((gainOfTSH >= 0) and (ultrashortFeebackGain >= 0), kError101);
    T3n := T3z / (1 + k31 * IBS);
    T3R := GR * T3n / (dR + T3n);
    dTSH := gH * TRH / ((dH + TRH) * (1 + LS * T3R) * (1 + SS * TSHz / (DS + TSHz)));
@@ -221,6 +234,7 @@ begin
  { Simulator module for thyroid gland }
  { invoked by TSimulationThread }
  begin
+   assert(gainOfT4 >= 0, kError101);
    dT4 := GT * TSH / (dT + TSH);
    vpt10 := gainOfT4;
    pt1(vpt10, tpt13, x3, dT4, T4);
@@ -233,6 +247,7 @@ begin
  { Simulator module for central deiodination }
  { invoked by TSimulationThread }
  begin
+   assert(gainOfCentralT3 >= 0, kError101);
    dT3z := GD2 * FT4 / (kM2 + FT4);
    vpt10 := gainOfCentralT3;
    pt1(vpt10, tpt14, x4, dT3z, T3z);
@@ -244,6 +259,7 @@ begin
  { Simulator module for peripheral deiodination }
  { invoked by TSimulationThread }
  begin
+   assert(gainOfPeripheralT3 >= 0, kError101);
    dT3p := GD1 * FT4 / (kM1 + FT4);
    vpt10 := gainOfPeripheralT3;
    pt1(vpt10, tpt15, x5, dT3p, T3p);
