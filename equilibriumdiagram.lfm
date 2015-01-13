@@ -1,11 +1,11 @@
 object EquilibriumDiagramForm: TEquilibriumDiagramForm
-  Left = 309
-  Height = 479
-  Top = 182
-  Width = 744
+  Left = 265
+  Height = 471
+  Top = 177
+  Width = 742
   Caption = 'Equilibrium Diagram'
-  ClientHeight = 479
-  ClientWidth = 744
+  ClientHeight = 471
+  ClientWidth = 742
   Color = clWhite
   Constraints.MaxHeight = 800
   Constraints.MaxWidth = 800
@@ -13,31 +13,34 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
   Constraints.MinWidth = 600
   OnCreate = FormCreate
   LCLVersion = '1.2.6.0'
-  object Panel1: TPanel
+  object MainPanel: TPanel
     Left = 48
-    Height = 311
+    Height = 303
     Top = 32
-    Width = 424
+    Width = 443
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 20
     BorderStyle = bsSingle
-    Caption = 'Panel1'
-    ClientHeight = 307
-    ClientWidth = 420
+    Caption = 'MainPanel'
+    ClientHeight = 299
+    ClientWidth = 439
     TabOrder = 0
-    object Chart1: TChart
+    object EquilibriumChart: TChart
       Cursor = crCross
       Left = 8
-      Height = 289
+      Height = 281
       Hint = 'Drag with mouse to zoom'
       Top = 10
-      Width = 404
+      Width = 423
       AxisList = <      
         item
           Grid.Color = clSilver
           Grid.Style = psDash
           Marks.LabelFont.Height = -11
           Minors = <>
+          Range.Max = 1
+          Range.UseMax = True
+          Range.UseMin = True
           Title.LabelFont.Height = -11
           Title.LabelFont.Orientation = 900
           Title.Visible = True
@@ -48,6 +51,9 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
           Alignment = calBottom
           Marks.LabelFont.Height = -11
           Minors = <>
+          Range.Max = 1
+          Range.UseMax = True
+          Range.UseMin = True
           Title.LabelFont.Height = -11
           Title.Visible = True
           Title.Caption = 'Concentration 1'
@@ -67,7 +73,10 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       ParentColor = False
       ParentShowHint = False
       ShowHint = True
-      object Chart1LineSeries1: TLineSeries
+      object EquilibriumChartLineSeries1: TLineSeries
+        LinePen.Color = clBlue
+      end
+      object EquilibriumChartLineSeries2: TLineSeries
         LinePen.Color = clRed
       end
     end
@@ -125,17 +134,17 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     Hint = 'Drag to select the part of the plot to be displayed.'
     Top = 72
     Width = 23
-    Chart = Chart1
+    Chart = EquilibriumChart
     LogicalExtentPen.Color = clMaroon
     MiniMap = True
   end
   object ResetButton: TSpeedButton
-    AnchorSideBottom.Control = Panel1
+    AnchorSideBottom.Control = MainPanel
     AnchorSideBottom.Side = asrBottom
     Left = 16
     Height = 22
     Hint = 'Reset to default boundaries'
-    Top = 321
+    Top = 313
     Width = 23
     Anchors = [akLeft, akBottom]
     Glyph.Data = {
@@ -179,21 +188,21 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     ParentShowHint = False
   end
   object GroupBox1: TGroupBox
-    Left = 480
-    Height = 309
+    Left = 502
+    Height = 301
     Top = 32
-    Width = 242
+    Width = 218
     Anchors = [akTop, akRight, akBottom]
     Caption = 'Structure Parameters'
-    ClientHeight = 291
-    ClientWidth = 238
+    ClientHeight = 283
+    ClientWidth = 214
     TabOrder = 2
-    object StrucParCombo1: TComboBox
+    object SParCombo1: TComboBox
       Left = 8
       Height = 21
       Hint = 'Select a structure parameter to be modified here.'
       Top = 20
-      Width = 221
+      Width = 197
       Anchors = [akTop, akLeft, akRight]
       ArrowKeysTraverseList = False
       ItemHeight = 13
@@ -221,26 +230,31 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'TBG (nmol/l)'
         'TBPA (µmol/l)'
       )
+      OnChange = SParCombo1Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
       Text = 'Select structure parameter...'
     end
-    object StrucParTrackBar1: TTrackBar
+    object SParTrackBar1: TTrackBar
       Left = 8
       Height = 38
+      Hint = 'Change the magnitude of the selected structure parameter here.'
       Top = 49
       Width = 196
+      OnChange = SParTrackBar1Change
       Position = 0
       TickMarks = tmTopLeft
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 1
     end
-    object StrucParCombo2: TComboBox
+    object SParCombo2: TComboBox
       Left = 8
       Height = 21
       Hint = 'Select a structure parameter to be modified here.'
       Top = 118
-      Width = 221
+      Width = 197
       Anchors = [akTop, akLeft, akRight]
       ArrowKeysTraverseList = False
       ItemHeight = 13
@@ -268,26 +282,31 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'TBG (nmol/l)'
         'TBPA (µmol/l)'
       )
+      OnChange = SParCombo2Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
       Text = 'Select structure parameter...'
     end
-    object StrucParTrackBar2: TTrackBar
+    object SParTrackBar2: TTrackBar
       Left = 8
       Height = 38
+      Hint = 'Change the magnitude of the selected structure parameter here.'
       Top = 147
       Width = 196
+      OnChange = SParTrackBar2Change
       Position = 0
       TickMarks = tmTopLeft
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 3
     end
-    object StrucParCombo3: TComboBox
+    object SParCombo3: TComboBox
       Left = 8
       Height = 21
       Hint = 'Select a structure parameter to be modified here.'
       Top = 214
-      Width = 221
+      Width = 197
       Anchors = [akTop, akLeft, akRight]
       ArrowKeysTraverseList = False
       ItemHeight = 13
@@ -315,37 +334,42 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'TBG (nmol/l)'
         'TBPA (µmol/l)'
       )
+      OnChange = SParCombo3Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
       Text = 'Select structure parameter...'
     end
-    object StrucParTrackBar3: TTrackBar
+    object SParTrackBar3: TTrackBar
       Left = 8
       Height = 38
+      Hint = 'Change the magnitude of the selected structure parameter here.'
       Top = 243
       Width = 196
+      OnChange = SParTrackBar3Change
       Position = 0
       TickMarks = tmTopLeft
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 5
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
     Height = 23
-    Top = 456
-    Width = 744
+    Top = 448
+    Width = 742
     Panels = <>
   end
   object GroupBox2: TGroupBox
     Left = 48
     Height = 86
-    Top = 359
-    Width = 675
+    Top = 351
+    Width = 673
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Behavioural Parameters'
     ClientHeight = 68
-    ClientWidth = 671
+    ClientWidth = 669
     TabOrder = 4
     object MinSpinEdit1: TFloatSpinEdit
       Left = 8
@@ -358,13 +382,14 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Increment = 1
       MaxValue = 100
       MinValue = 0
+      OnChange = MinSpinEdit1Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
       Value = 0
     end
     object MaxSpinEdit1: TFloatSpinEdit
-      Left = 457
+      Left = 455
       Height = 21
       Hint = 'Maximum of selected structure parameter'
       Top = 7
@@ -374,17 +399,18 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Increment = 1
       MaxValue = 1000
       MinValue = 0
+      OnChange = MaxSpinEdit1Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
       Value = 0
     end
-    object BehParCombo1: TComboBox
+    object BParCombo1: TComboBox
       Left = 88
       Height = 21
       Hint = 'Select the first dependent behavioural parameter whose response to be investigated here.'
       Top = 9
-      Width = 358
+      Width = 356
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
       ItemHeight = 13
@@ -392,12 +418,11 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Items.Strings = (
         'Select parameter 1 (x axis)...'
         'TSH'
-        'TT4'
         'FT4'
-        'TT3'
         'FT3'
         'cT3'
       )
+      OnChange = BParCombo1Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
@@ -414,17 +439,18 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Increment = 1
       MaxValue = 100
       MinValue = 0
+      OnChange = MinSpinEdit2Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 3
       Value = 0
     end
-    object BehParCombo2: TComboBox
+    object BParCombo2: TComboBox
       Left = 88
       Height = 21
       Hint = 'Select the second dependent behavioural parameter whose response to be investigated here.'
       Top = 41
-      Width = 358
+      Width = 356
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
       ItemHeight = 13
@@ -432,19 +458,18 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Items.Strings = (
         'Select parameter 2 (y axis)...'
         'TSH'
-        'TT4'
         'FT4'
-        'TT3'
         'FT3'
         'cT3'
       )
+      OnChange = BParCombo2Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
       Text = 'Select parameter 2 (y axis)...'
     end
     object MaxSpinEdit2: TFloatSpinEdit
-      Left = 457
+      Left = 455
       Height = 21
       Hint = 'Maximum of selected structure parameter'
       Top = 39
@@ -454,31 +479,40 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Increment = 1
       MaxValue = 1000
       MinValue = 0
+      OnChange = MaxSpinEdit2Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 5
       Value = 0
     end
     object xColorBox: TColorBox
-      Left = 541
+      Left = 539
       Height = 22
+      Hint = 'Select the color of the selected curve here.'
       Top = 7
       Width = 121
       DefaultColorColor = clRed
       Selected = clBlue
       Anchors = [akTop, akRight]
       ItemHeight = 16
+      OnChange = xColorBoxChange
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 6
     end
     object yColorBox: TColorBox
-      Left = 541
+      Left = 539
       Height = 22
+      Hint = 'Select the color of the selected curve here.'
       Top = 38
       Width = 121
       DefaultColorColor = clBlue
       Selected = clRed
       Anchors = [akTop, akRight]
       ItemHeight = 16
+      OnChange = yColorBoxChange
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 7
     end
   end

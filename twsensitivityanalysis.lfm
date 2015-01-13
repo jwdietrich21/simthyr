@@ -1,7 +1,7 @@
 object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
-  Left = 276
+  Left = 340
   Height = 476
-  Top = 179
+  Top = 254
   Width = 712
   Caption = 'Two-Way Sensitivity Analysis'
   ClientHeight = 476

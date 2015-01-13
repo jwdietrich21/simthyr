@@ -1,7 +1,7 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TIPSForm','FORMDATA',[
-  'TPF0'#8'TIPSForm'#7'IPSForm'#4'Left'#3#3#1#6'Height'#3#130#2#3'Top'#3#143#0#5
+  'TPF0'#8'TIPSForm'#7'IPSForm'#4'Left'#3'F'#1#6'Height'#3#130#2#3'Top'#2'u'#5
   +'Width'#3#244#1#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0#7'Anchors'#11#5'akT'
   +'op'#8'akBottom'#0#7'Caption'#6#3'IPS'#12'ClientHeight'#3#130#2#11'ClientWid'
   +'th'#3#244#1#5'Color'#7#7'clWhite'#10'OnActivate'#7#12'FormActivate'#8'OnCre'
