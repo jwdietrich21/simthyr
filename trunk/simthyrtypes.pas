@@ -21,6 +21,15 @@ interface
 uses
   Classes, SysUtils, Forms, Graphics, TAGraph, UnitConverter;
 
+type
+ TableCell = TPoint;
+ Str3 = string[3];
+ Str13 = string[13];
+ Str255 = string[255];
+ tResultMatrix = array of array of real;               {matrix with simulated values}
+ tmode = (integerMode, realMode);
+ tBParameter = (iItem, tItem, TRHItem, pTSHItem, TSHItem, TT4Item, FT4Item, TT3Item, FT3Item, cT3Item);
+
 const
 
  kNUL = char(0);           {Special ASCII characters}
@@ -42,16 +51,18 @@ const
  DEC_POINT = '.';
  DEC_COMMA = ',';
 
- i_pos = 0;               {positions of simulated variables in}
- t_pos = 1;               {several arrays and in result matrix}
- TRH_pos = 2;
- pTSH_pos = 3;
- TSH_pos = 4;
- TT4_pos = 5;
- FT4_pos = 6;
- TT3_pos = 7;
- FT3_pos = 8;
- cT3_pos = 9;
+ TEST_ITEM = TRHItem;     // 2
+
+ i_pos = integer(iItem);               {positions of simulated variables in}
+ t_pos = integer(tItem);               {several arrays and in result matrix}
+ TRH_pos = integer(TRHItem);
+ pTSH_pos = integer(pTSHItem);
+ TSH_pos = integer(TSHItem);
+ TT4_pos = integer(TT4Item);
+ FT4_pos = integer(FT4Item);
+ TT3_pos = integer(TT3Item);
+ FT3_pos = integer(FT3Item);
+ cT3_pos = integer(cT3Item);
 
  T4_MOLAR_MASS = 776.87; {molar mass of T4}
  T3_MOLAR_MASS = 650.97; {molar mass of T3}
@@ -62,13 +73,7 @@ const
  TWS_RESOLUTION = 91; {Resolution for two-way sensitivity analysis}
 
 type
- TableCell = TPoint;
- Str3 = string[3];
- Str13 = string[13];
- Str255 = string[255];
- tResultMatrix = array of array of real;               {matrix with simulated values}
  tResultContent = array[0..RES_MAX_COLS-1] of Str255;
- tmode = (integerMode, realMode);
 
 var
  nmax_old, tmax, tt, gridrows: integer;
