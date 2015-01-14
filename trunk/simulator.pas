@@ -29,8 +29,6 @@ uses
   SimThyrPlot, SimThyrPrediction, HandleNotifier, UnitConverter;
 
 const
-  kError101 = 'Runtime error: Negative parameter(s)';
-  kError102 = 'Runtime error: Parameter(s) out of range';
   THREE_FIFTH = 3 / 5; { optimization for speed }
   MAX_DEAD = 300;
 
@@ -56,7 +54,7 @@ function cycles (var n: longint; n_text: str255): integer;
 procedure InitSimulationControl;
 procedure SimHypothalamus(const inv_hpd: real);
 procedure SimPituitary(const gainOfTSH: real; const ultrashortFeebackGain: real);
-procedure SimThyroidGland(const gainOfT4: real);
+procedure SimThyroidGland(const gainOfT4: real; memory: boolean);
 procedure SimCentralDeiodination(const gainOfCentralT3: real);
 procedure SimPeripheralDeiodination(const gainOfPeripheralT3: real);
 procedure SetBaseVariables;
@@ -230,16 +228,21 @@ begin
    TSH := pt0(xt2, nt2, TSH);
  end;
 
- procedure SimThyroidGland(const gainOfT4: real);
+ procedure SimThyroidGland(const gainOfT4: real; memory: boolean);
  { Simulator module for thyroid gland }
  { invoked by TSimulationThread }
  begin
    assert(gainOfT4 >= 0, kError101);
    dT4 := GT * TSH / (dT + TSH);
-   vpt10 := gainOfT4;
-   pt1(vpt10, tpt13, x3, dT4, T4);
-   {Equifinal approximation: T4 := alphaT * dT4 / betaT;}
-   T4 := pt0(xt3, nt3, T4);
+   if memory then begin
+     vpt10 := gainOfT4;
+     pt1(vpt10, tpt13, x3, dT4, T4);
+     {Equifinal approximation: T4 := alphaT * dT4 / betaT;}
+     T4 := pt0(xt3, nt3, T4);
+   end
+   else
+     {Equifinal approximation for equilibrium diagram}
+     T4 := gainOfT4 * dT4;
    FT4 := T4 / (1 + k41 * TBG + k42 * TBPA);
  end;
 
@@ -425,7 +428,7 @@ begin
 {Pituitary:}
             SimPituitary(gainOfTSH, ultrashortFeebackGain);
 {Thyroid:}
-            SimThyroidGland(gainOfT4);
+            SimThyroidGland(gainOfT4, true);
 {5'-Deiodinase type II (central):}
             SimCentralDeiodination(gainOfCentralT3);
 {5'-Deiodinase type I (peripheral):}

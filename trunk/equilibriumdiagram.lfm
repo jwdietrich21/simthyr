@@ -1,7 +1,7 @@
 object EquilibriumDiagramForm: TEquilibriumDiagramForm
-  Left = 265
+  Left = 248
   Height = 471
-  Top = 177
+  Top = 186
   Width = 742
   Caption = 'Equilibrium Diagram'
   ClientHeight = 471
@@ -403,7 +403,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
-      Value = 0
+      Value = 10
     end
     object BParCombo1: TComboBox
       Left = 88
@@ -416,17 +416,17 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
-        'Select parameter 1 (x axis)...'
-        'TSH'
-        'FT4'
-        'FT3'
-        'cT3'
+        'Select characteristic curve 1 (x axis)...'
+        'Pituitary response (TSH concentration)'
+        'Thyroid response (FT4 concentration)'
+        'Peripheral deiodination (FT3 concentration)'
+        'Central deiodination (cT3 concentration)'
       )
       OnChange = BParCombo1Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
-      Text = 'Select parameter 1 (x axis)...'
+      Text = 'Select characteristic curve 1 (x axis)...'
     end
     object MinSpinEdit2: TFloatSpinEdit
       Left = 8
@@ -456,17 +456,17 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
-        'Select parameter 2 (y axis)...'
-        'TSH'
-        'FT4'
-        'FT3'
-        'cT3'
+        'Select characteristic curve 2 (y axis)...'
+        'Pituitary response (TSH concentration)'
+        'Thyroid response (FT4 concentration)'
+        'Peripheral deiodination (FT3 concentration)'
+        'Central deiodination (cT3 concentration)'
       )
       OnChange = BParCombo2Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
-      Text = 'Select parameter 2 (y axis)...'
+      Text = 'Select characteristic curve 2 (y axis)...'
     end
     object MaxSpinEdit2: TFloatSpinEdit
       Left = 455
@@ -483,7 +483,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       ParentShowHint = False
       ShowHint = True
       TabOrder = 5
-      Value = 0
+      Value = 10
     end
     object xColorBox: TColorBox
       Left = 539
