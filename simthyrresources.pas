@@ -58,6 +58,11 @@ const
   FT3_LABEL = 'Serum free T3';
   C_T3_LABEL = 'Central T3';
 
+  kError101 = 'Runtime error: Negative parameter(s)';
+  kError102 = 'Runtime error: Parameter(s) out of range';
+  kError103 = 'Runtime error: min > max';
+  kError104 = 'Runtime error: max = 0';
+
 implementation
 
 end.
