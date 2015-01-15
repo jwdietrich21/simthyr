@@ -96,6 +96,9 @@ var
   gSelectedBParameter1, gSelectedBParameter2: tBParameter;
   gMinBPar1, gMaxBPar1, gMinBPar2, gMaxBPar2, gSpinFactor: real;
   gResponseCurve1, gResponseCurve2: tResponseCurve;
+  gFT4conversionFactor, gFT3conversionFactor: real;
+  gcT3conversionFactor: real;
+
 
 implementation
 
@@ -119,6 +122,31 @@ begin
   end;
 end;
 
+function SimSubsystemResponse1(bParameter1, bParameter2: tBParameter;
+  min, max: real; var conversionFactor1, conversionFactor2: real): tResponseCurve;
+begin
+  case bParameter2 of
+    TSHItem:
+    begin
+
+    end;
+    FT4Item:
+    begin
+      conversionFactor1 := 1;
+      conversionFactor2 := gFT4conversionFactor;
+      Result := SimThyroidResponse(min, max);
+    end;
+    FT3Item:
+    begin
+
+    end;
+    cT3Item:
+    begin
+
+    end;
+  end;
+end;
+
 { TEquilibriumDiagramForm }
 
 procedure TEquilibriumDiagramForm.DrawDummyEquilibriumPlot;
@@ -137,15 +165,13 @@ end;
 procedure TEquilibriumDiagramForm.DrawDiagram(empty: boolean);
 var
   i, j: integer;
-  FT4conversionFactor, FT3conversionFactor: real;
-  cT3conversionFactor: real;
   ConversionFactor1, ConversionFactor2: real;
 begin
-  FT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
+  gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
     gParameterUnit[FT4_pos]);
-  FT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
+  gFT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
     gParameterUnit[FT3_pos]);
-  cT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
+  gcT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
     gParameterUnit[cT3_pos]);
   {If line series exists it is cleared and recreated to support foundations of redrawing}
   if FLine[1] <> nil then
@@ -169,31 +195,14 @@ begin
   begin
     gMinBPar1 := MinSpinEdit1.Value / gSpinFactor;
     gMaxBPar1 := MaxSpinEdit1.Value / gSpinFactor;
-    case gSelectedBParameter1 of
-      TSHItem:
-      begin
-
-      end;
-      FT4Item:
-      begin
-        gResponseCurve1   := SimThyroidResponse(gMinBPar1, gMaxBPar1);
-        conversionFactor1 := 1;
-        conversionFactor2 := FT4conversionFactor;
-      end;
-      FT3Item:
-      begin
-
-      end;
-      cT3Item:
-      begin
-
-      end;
-    end;
+    gResponseCurve1 := SimSubsystemResponse1(gSelectedBParameter2, gSelectedBParameter1, gMinBPar1,
+      gMaxBPar1, ConversionFactor1, ConversionFactor2);
     for j := 0 to MAX_I do
     begin
       FLine[1].AddXY(gResponseCurve1.input[j] * conversionFactor1,
         gResponseCurve1.output[j] * conversionFactor2, '',
         xColorBox.Selected);
+      Fline[1].SeriesColor := xColorBox.Selected;
     end;
   end;
   for i := 0 to MAX_SERIES - 1 do
@@ -301,13 +310,15 @@ end;
 
 procedure TEquilibriumDiagramForm.xColorBoxChange(Sender: TObject);
 begin
-  EquilibriumChartLineSeries1.SeriesColor := xColorBox.Selected;
+  Fline[1].SeriesColor := xColorBox.Selected;
+  //EquilibriumChartLineSeries1.SeriesColor := xColorBox.Selected;
   DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.yColorBoxChange(Sender: TObject);
 begin
-  EquilibriumChartLineSeries2.SeriesColor := yColorBox.Selected;
+  Fline[1].SeriesColor := xColorBox.Selected;
+  //EquilibriumChartLineSeries2.SeriesColor := yColorBox.Selected;
   DrawDiagram(False);
 end;
 
