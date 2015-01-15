@@ -71,6 +71,7 @@ type
     Divider_3_3:  TMenuItem;
     Divide_3_1: TMenuItem;
     AddOptItem: TMenuItem;
+    EquilibriumDiagramButton: TToolButton;
     ToolButton5: TToolButton;
     OWSensitivityAnalysisButton: TToolButton;
     TWSensitivityAnalysisButton: TToolButton;
@@ -136,6 +137,7 @@ type
     procedure CopyMenuItemClick(Sender: TObject);
     procedure CopyToolButtonClick(Sender: TObject);
     procedure EquiDiagItemClick(Sender: TObject);
+    procedure EquilibriumDiagramButtonClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -385,6 +387,11 @@ begin
 end;
 
 procedure TSimThyrToolbar.EquiDiagItemClick(Sender: TObject);
+begin
+  EquilibriumDiagramForm.Show;
+end;
+
+procedure TSimThyrToolbar.EquilibriumDiagramButtonClick(Sender: TObject);
 begin
   EquilibriumDiagramForm.Show;
 end;
