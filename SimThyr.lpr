@@ -12,6 +12,7 @@ program SimThyr;
 { This is the main project file }
 
 { Source code released under the BSD License }
+{ See http://simthyr.sourceforge.net for details }
 
 {$mode objfpc}{$H+}{$R+}
 {$define UseCThreads}
