@@ -55,8 +55,8 @@ procedure InitSimulationControl;
 procedure SimHypothalamus(const inv_hpd: real);
 procedure SimPituitary(const gainOfTSH: real; const ultrashortFeebackGain: real);
 procedure SimThyroidGland(const gainOfT4: real; memory: boolean);
-procedure SimCentralDeiodination(const gainOfCentralT3: real);
-procedure SimPeripheralDeiodination(const gainOfPeripheralT3: real);
+procedure SimCentralDeiodination(const gainOfCentralT3: real; memory: boolean);
+procedure SimPeripheralDeiodination(const gainOfPeripheralT3: real; memory: boolean);
 procedure SetBaseVariables;
 procedure StandardValues;
 procedure InitSimulation;
@@ -246,27 +246,35 @@ begin
    FT4 := T4 / (1 + k41 * TBG + k42 * TBPA);
  end;
 
- procedure SimCentralDeiodination(const gainOfCentralT3: real);
+ procedure SimCentralDeiodination(const gainOfCentralT3: real; memory: boolean);
  { Simulator module for central deiodination }
  { invoked by TSimulationThread }
  begin
    assert(gainOfCentralT3 >= 0, kError101);
    dT3z := GD2 * FT4 / (kM2 + FT4);
-   vpt10 := gainOfCentralT3;
-   pt1(vpt10, tpt14, x4, dT3z, T3z);
-   {Equifinal approximation: T3z := alpha32 * dT3z / beta32;}
-   T3z := pt0(xt4, nt4, T3z);
+   if memory then begin
+     vpt10 := gainOfCentralT3;
+     pt1(vpt10, tpt14, x4, dT3z, T3z);
+     T3z := pt0(xt4, nt4, T3z);
+   end
+   else
+     {Equifinal approximation: T3z := alpha32 * dT3z / beta32;}
+     T3z := gainOfCentralT3 * dT3z;
  end;
 
- procedure SimPeripheralDeiodination(const gainOfPeripheralT3: real);
+ procedure SimPeripheralDeiodination(const gainOfPeripheralT3: real; memory: boolean);
  { Simulator module for peripheral deiodination }
  { invoked by TSimulationThread }
  begin
    assert(gainOfPeripheralT3 >= 0, kError101);
    dT3p := GD1 * FT4 / (kM1 + FT4);
-   vpt10 := gainOfPeripheralT3;
-   pt1(vpt10, tpt15, x5, dT3p, T3p);
-   {Equifinal approximation: T3p := alpha31 * dT3p / beta31;}
+   if memory then begin
+     vpt10 := gainOfPeripheralT3;
+     pt1(vpt10, tpt15, x5, dT3p, T3p);
+   end
+   else
+     {Equifinal approximation: T3p := alpha31 * dT3p / beta31;}
+     T3p := gainOfPeripheralT3 * dT3p;
    FT3 := T3p / (1 + k30 * TBG);
  end;
 
@@ -430,9 +438,9 @@ begin
 {Thyroid:}
             SimThyroidGland(gainOfT4, true);
 {5'-Deiodinase type II (central):}
-            SimCentralDeiodination(gainOfCentralT3);
+            SimCentralDeiodination(gainOfCentralT3, true);
 {5'-Deiodinase type I (peripheral):}
-            SimPeripheralDeiodination(gainOfPeripheralT3);
+            SimPeripheralDeiodination(gainOfPeripheralT3, true);
             i := i + 1;
 {Load:}
             if (i > i1) and testflag then

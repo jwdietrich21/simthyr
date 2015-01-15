@@ -87,14 +87,15 @@ type
     { public declarations }
   end;
 
+  tParamVector = array[0..MAX_I] of extended;
   tResponseCurve = record
-    input, output: array[0..MAX_I] of extended;
+    input, output: tParamVector;
   end;
 
 var
   EquilibriumDiagramForm: TEquilibriumDiagramForm;
   gSelectedBParameter1, gSelectedBParameter2: tBParameter;
-  gMinBPar1, gMaxBPar1, gMinBPar2, gMaxBPar2, gSpinFactor: real;
+  gSpinFactor: real;
   gResponseCurve1, gResponseCurve2: tResponseCurve;
   gFT4conversionFactor, gFT3conversionFactor: real;
   gcT3conversionFactor: real;
@@ -102,49 +103,98 @@ var
 
 implementation
 
-function SimThyroidResponse(min, max: real): tResponseCurve;
+function SimThyroidResponse(TSHVector: tParamVector): tParamVector;
+{ Simulate response of thyroid subsystem to vector with TSH values }
 var
   i: integer;
   interval: real;
-  T4conversionFactor, gainOfT4: real;
+  gainOfT4: real;
 begin
-  assert((min >= 0) and (max >= 0), kError101);
-  assert(max > min, kError103);
-  assert(max > 0, kError104);
-  interval := (max - min) / max_i;
   gainOfT4 := alphaT / betaT;
   for i := 0 to MAX_I do
   begin
-    TSH := min + i * interval;
-    SimThyroidGland(gainOfT4, False);
-    Result.input[i]  := TSH;
-    Result.output[i] := FT4;
+    TSH := TSHVector[i];
+    SimThyroidGland(gainOfT4, false);
+    Result[i] := FT4;
+  end;
+end;
+
+function SimPDeiodinaseResponse(FT4Vector: tParamVector): tParamVector;
+{ Simulate response of peripheral deiodinases to T4 vector }
+var
+  i: integer;
+  interval: real;
+  gainOfPeripheralT3: real;
+begin
+  gainOfPeripheralT3 := alpha31 / beta31;
+  for i := 0 to MAX_I do
+  begin
+    FT4 := FT4Vector[i];
+    SimPeripheralDeiodination(gainOfPeripheralT3, false);
+    Result[i] := FT3;
+  end;
+end;
+
+function SimCDeiodinaseResponse(FT4Vector: tParamVector): tParamVector;
+{ Simulate response of central type 2 deiodinase to T4 vector }
+var
+  i: integer;
+  interval: real;
+  gainOfCentralT3: real;
+begin
+  gainOfCentralT3 := alpha32 / beta32;
+  for i := 0 to MAX_I do
+  begin
+    FT4 := FT4Vector[i];
+    SimCentralDeiodination(gainOfCentralT3, false);
+    Result[i] := T3z;
   end;
 end;
 
 function SimSubsystemResponse1(bParameter1, bParameter2: tBParameter;
   min, max: real; var conversionFactor1, conversionFactor2: real): tResponseCurve;
+{ Simulate response of first subsystem }
+var
+  i: integer;
+  interval: real;
+  inputVector: tParamVector;
 begin
+  assert((min >= 0) and (max >= 0), kError101);
+  assert(max > min, kError103);
+  assert(max > 0, kError104);
+  interval := (max - min) / MAX_I;
+  for i := 0 to MAX_I do
+  begin
+    TSH := min + i * interval;
+    inputVector[i] := TSH;
+  end;
   case bParameter2 of
     TSHItem:
     begin
-
+      Result.output := inputVector;
     end;
     FT4Item:
     begin
       conversionFactor1 := 1;
       conversionFactor2 := gFT4conversionFactor;
-      Result := SimThyroidResponse(min, max);
+      Result.output := SimThyroidResponse(inputVector);
     end;
     FT3Item:
     begin
-
+      conversionFactor1 := 1;
+      conversionFactor2 := gFT3conversionFactor;
+      Result.output := SimPDeiodinaseResponse(SimThyroidResponse(inputVector));
     end;
     cT3Item:
     begin
-
+      conversionFactor1 := 1;
+      conversionFactor2 := gFT3conversionFactor;
+      Result.output := SimCDeiodinaseResponse(SimThyroidResponse(inputVector));
     end;
+    otherwise
+      Result.output := inputVector;
   end;
+  Result.input := inputVector;
 end;
 
 { TEquilibriumDiagramForm }
@@ -165,6 +215,7 @@ end;
 procedure TEquilibriumDiagramForm.DrawDiagram(empty: boolean);
 var
   i, j: integer;
+  MinBPar1, MaxBPar1, MinBPar2, MaxBPar2: real;
   ConversionFactor1, ConversionFactor2: real;
 begin
   gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
@@ -193,10 +244,10 @@ begin
     DrawDummyEquilibriumPlot
   else
   begin
-    gMinBPar1 := MinSpinEdit1.Value / gSpinFactor;
-    gMaxBPar1 := MaxSpinEdit1.Value / gSpinFactor;
-    gResponseCurve1 := SimSubsystemResponse1(gSelectedBParameter2, gSelectedBParameter1, gMinBPar1,
-      gMaxBPar1, ConversionFactor1, ConversionFactor2);
+    MinBPar1 := MinSpinEdit1.Value / gSpinFactor;
+    MaxBPar1 := MaxSpinEdit1.Value / gSpinFactor;
+    gResponseCurve1 := SimSubsystemResponse1(gSelectedBParameter2, gSelectedBParameter1, MinBPar1,
+      MaxBPar1, ConversionFactor1, ConversionFactor2);
     for j := 0 to MAX_I do
     begin
       FLine[1].AddXY(gResponseCurve1.input[j] * conversionFactor1,
@@ -228,6 +279,9 @@ begin
     gSelectedBParameter1 := cT3Item
   else
     gSelectedBParameter1 := IItem;
+  xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
+  if BParCombo2.ItemIndex = 0 then
+    BParCombo2.ItemIndex := 1;  // set to useful initial value
   DrawDiagram(False);
 end;
 
@@ -244,6 +298,9 @@ begin
     gSelectedBParameter2 := cT3Item
   else
     gSelectedBParameter2 := IItem;
+  yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
+  if BParCombo1.ItemIndex = 0 then
+    BParCombo1.ItemIndex := 1;  // set to useful initial value
   DrawDiagram(False);
 end;
 
