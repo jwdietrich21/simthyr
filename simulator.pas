@@ -210,7 +210,7 @@ begin
 
  procedure SimPituitary(const gainOfTSH: real; const ultrashortFeebackGain: real);
  { Simulator module for pituitary gland }
- { invoked by TSimulationThread }
+ { invoked by TSimulationThread and from Equilibriumdiagram unit }
  begin
    assert((gainOfTSH >= 0) and (ultrashortFeebackGain >= 0), kError101);
    T3n := T3z / (1 + k31 * IBS);
@@ -230,7 +230,7 @@ begin
 
  procedure SimThyroidGland(const gainOfT4: real; memory: boolean);
  { Simulator module for thyroid gland }
- { invoked by TSimulationThread }
+ { invoked by TSimulationThread and from Equilibriumdiagram unit  }
  begin
    assert(gainOfT4 >= 0, kError101);
    dT4 := GT * TSH / (dT + TSH);
@@ -248,7 +248,7 @@ begin
 
  procedure SimCentralDeiodination(const gainOfCentralT3: real; memory: boolean);
  { Simulator module for central deiodination }
- { invoked by TSimulationThread }
+ { invoked by TSimulationThread and from Equilibriumdiagram unit  }
  begin
    assert(gainOfCentralT3 >= 0, kError101);
    dT3z := GD2 * FT4 / (kM2 + FT4);
@@ -264,7 +264,7 @@ begin
 
  procedure SimPeripheralDeiodination(const gainOfPeripheralT3: real; memory: boolean);
  { Simulator module for peripheral deiodination }
- { invoked by TSimulationThread }
+ { invoked by TSimulationThread and from Equilibriumdiagram unit  }
  begin
    assert(gainOfPeripheralT3 >= 0, kError101);
    dT3p := GD1 * FT4 / (kM1 + FT4);

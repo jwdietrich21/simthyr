@@ -61,6 +61,7 @@ type
     ResetButton:   TSpeedButton;
     StatusBar1:    TStatusBar;
     yColorBox:     TColorBox;
+    procedure GetBParameters;
     procedure DrawDummyEquilibriumPlot;
     procedure DrawDiagram(empty: boolean);
     procedure BParCombo1Change(Sender: TObject);
@@ -163,33 +164,73 @@ begin
   assert(max > min, kError103);
   assert(max > 0, kError104);
   interval := (max - min) / MAX_I;
-  for i := 0 to MAX_I do
-  begin
-    TSH := min + i * interval;
-    inputVector[i] := TSH;
+  case bParameter1 of // input
+    TSHItem:
+    begin
+      conversionFactor1 := 1;
+      for i := 0 to MAX_I do
+      begin
+        TSH := min + i * interval;
+        inputVector[i] := TSH;
+      end;
+    end;
+    FT4Item:
+    begin
+      conversionFactor1 := gFT4conversionFactor;
+      for i := 0 to MAX_I do
+      begin
+        FT4 := min + i * interval;
+        inputVector[i] := FT4 / conversionFactor1;
+      end;
+    end;
+    otherwise
+    begin
+      fillchar(InputVector, sizeof(InputVector), 0);
+    end;
   end;
-  case bParameter2 of
+  case bParameter2 of // output
+    IItem:
+    begin
+      Result.output := inputVector;
+    end;
     TSHItem:
     begin
       Result.output := inputVector;
     end;
     FT4Item:
     begin
-      conversionFactor1 := 1;
       conversionFactor2 := gFT4conversionFactor;
       Result.output := SimThyroidResponse(inputVector);
     end;
     FT3Item:
     begin
-      conversionFactor1 := 1;
-      conversionFactor2 := gFT3conversionFactor;
-      Result.output := SimPDeiodinaseResponse(SimThyroidResponse(inputVector));
+      case bParameter1 of
+        TSHItem:
+        begin
+          conversionFactor2 := gFT3conversionFactor;
+          Result.output := SimPDeiodinaseResponse(SimThyroidResponse(inputVector));
+        end;
+        FT4Item:
+        begin
+          conversionFactor2 := gFT3conversionFactor;
+          Result.output := SimPDeiodinaseResponse(inputVector);
+        end;
+      end;
     end;
     cT3Item:
     begin
-      conversionFactor1 := 1;
-      conversionFactor2 := gFT3conversionFactor;
-      Result.output := SimCDeiodinaseResponse(SimThyroidResponse(inputVector));
+      case bParameter1 of
+        TSHItem:
+        begin
+          conversionFactor2 := gFT3conversionFactor;
+          Result.output := SimCDeiodinaseResponse(SimThyroidResponse(inputVector));
+        end;
+        FT4Item:
+        begin
+          conversionFactor2 := gFT3conversionFactor;
+          Result.output := SimCDeiodinaseResponse(inputVector);
+        end;
+      end;
     end;
     otherwise
       Result.output := inputVector;
@@ -198,6 +239,30 @@ begin
 end;
 
 { TEquilibriumDiagramForm }
+
+procedure TEquilibriumDiagramForm.GetBParameters;
+begin
+  if pos('TSH', BParCombo1.Text) > 0 then
+    gSelectedBParameter1 := TSHItem
+  else if pos('FT4', BParCombo1.Text) > 0 then
+    gSelectedBParameter1 := FT4Item
+  else if pos('FT3', BParCombo1.Text) > 0 then
+    gSelectedBParameter1 := FT3Item
+  else if pos('cT3', BParCombo1.Text) > 0 then
+    gSelectedBParameter1 := cT3Item
+  else
+    gSelectedBParameter1 := IItem;
+  if pos('TSH', BParCombo2.Text) > 0 then
+    gSelectedBParameter2 := TSHItem
+  else if pos('FT4', BParCombo2.Text) > 0 then
+    gSelectedBParameter2 := FT4Item
+  else if pos('FT3', BParCombo2.Text) > 0 then
+    gSelectedBParameter2 := FT3Item
+  else if pos('cT3', BParCombo2.Text) > 0 then
+    gSelectedBParameter2 := cT3Item
+  else
+    gSelectedBParameter2 := IItem;
+end;
 
 procedure TEquilibriumDiagramForm.DrawDummyEquilibriumPlot;
 {Draws an empty plot}
@@ -218,6 +283,7 @@ var
   MinBPar1, MaxBPar1, MinBPar2, MaxBPar2: real;
   ConversionFactor1, ConversionFactor2: real;
 begin
+  GetBParameters;
   gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
     gParameterUnit[FT4_pos]);
   gFT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
@@ -246,8 +312,10 @@ begin
   begin
     MinBPar1 := MinSpinEdit1.Value / gSpinFactor;
     MaxBPar1 := MaxSpinEdit1.Value / gSpinFactor;
-    gResponseCurve1 := SimSubsystemResponse1(gSelectedBParameter2, gSelectedBParameter1, MinBPar1,
-      MaxBPar1, ConversionFactor1, ConversionFactor2);
+    MinBPar2 := MinSpinEdit2.Value / gSpinFactor;
+    MaxBPar2 := MaxSpinEdit2.Value / gSpinFactor;
+    gResponseCurve1 := SimSubsystemResponse1(gSelectedBParameter2, gSelectedBParameter1, MinBPar2,
+      MaxBPar2, ConversionFactor1, ConversionFactor2);
     for j := 0 to MAX_I do
     begin
       FLine[1].AddXY(gResponseCurve1.input[j] * conversionFactor1,
@@ -269,16 +337,7 @@ end;
 procedure TEquilibriumDiagramForm.BParCombo1Change(Sender: TObject);
 { Get selected behavioural parameter #1 }
 begin
-  if pos('TSH', BParCombo1.Text) > 0 then
-    gSelectedBParameter1 := TSHItem
-  else if pos('FT4', BParCombo1.Text) > 0 then
-    gSelectedBParameter1 := FT4Item
-  else if pos('FT3', BParCombo1.Text) > 0 then
-    gSelectedBParameter1 := FT3Item
-  else if pos('cT3', BParCombo1.Text) > 0 then
-    gSelectedBParameter1 := cT3Item
-  else
-    gSelectedBParameter1 := IItem;
+  GetBParameters;
   xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
   if BParCombo2.ItemIndex = 0 then
     BParCombo2.ItemIndex := 1;  // set to useful initial value
@@ -288,16 +347,7 @@ end;
 procedure TEquilibriumDiagramForm.BParCombo2Change(Sender: TObject);
 { Get selected behavioural parameter #2 }
 begin
-  if pos('TSH', BParCombo2.Text) > 0 then
-    gSelectedBParameter2 := TSHItem
-  else if pos('FT4', BParCombo2.Text) > 0 then
-    gSelectedBParameter2 := FT4Item
-  else if pos('FT3', BParCombo2.Text) > 0 then
-    gSelectedBParameter2 := FT3Item
-  else if pos('cT3', BParCombo2.Text) > 0 then
-    gSelectedBParameter2 := cT3Item
-  else
-    gSelectedBParameter2 := IItem;
+  GetBParameters;
   yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
   if BParCombo1.ItemIndex = 0 then
     BParCombo1.ItemIndex := 1;  // set to useful initial value
