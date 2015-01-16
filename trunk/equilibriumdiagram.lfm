@@ -183,6 +183,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       FF00FFFFFF00A465341DA7693A9FA76A3ADEA56736F6A76939E5A76A3ABCA465
       3453A4653405FFFFFF00FFFFFF00FFFFFF00A4653479A4653410
     }
+    Visible = False
     OnClick = ResetButtonClick
     ShowHint = True
     ParentShowHint = False

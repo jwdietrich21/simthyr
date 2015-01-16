@@ -137,13 +137,28 @@ LazarusResources.Add('TEquilibriumDiagramForm','FORMDATA',[
   +#212#177#147#255#185#135'_'#244#165'g7'#240#164'e4X'#255#255#255#0#164'f5f'
   +#164'e4'#255#164'e4'#15#255#255#255#0#255#255#255#0#255#255#255#0#164'e4'#29
   +#167'i:'#159#167'j:'#222#165'g6'#246#167'i9'#229#167'j:'#188#164'e4S'#164'e4'
-  +#5#255#255#255#0#255#255#255#0#255#255#255#0#164'e4y'#164'e4'#16#7'OnClick'#7
-  +#16'ResetButtonClick'#8'ShowHint'#9#14'ParentShowHint'#8#0#0#9'TGroupBox'#9
-  +'GroupBox1'#4'Left'#3#246#1#6'Height'#3'-'#1#3'Top'#2' '#5'Width'#3#218#0#7
-  +'Anchors'#11#5'akTop'#7'akRight'#8'akBottom'#0#7'Caption'#6#20'Structure Par'
-  +'ameters'#12'ClientHeight'#3#27#1#11'ClientWidth'#3#214#0#8'TabOrder'#2#2#0#9
-  +'TComboBox'#10'SParCombo1'#4'Left'#2#8#6'Height'#2#21#4'Hint'#6'1Select a st'
-  +'ructure parameter to be modified here.'#3'Top'#2#20#5'Width'#3#197#0#7'Anch'
+  +#5#255#255#255#0#255#255#255#0#255#255#255#0#164'e4y'#164'e4'#16#7'Visible'#8
+  +#7'OnClick'#7#16'ResetButtonClick'#8'ShowHint'#9#14'ParentShowHint'#8#0#0#9
+  +'TGroupBox'#9'GroupBox1'#4'Left'#3#246#1#6'Height'#3'-'#1#3'Top'#2' '#5'Widt'
+  +'h'#3#218#0#7'Anchors'#11#5'akTop'#7'akRight'#8'akBottom'#0#7'Caption'#6#20
+  +'Structure Parameters'#12'ClientHeight'#3#27#1#11'ClientWidth'#3#214#0#8'Tab'
+  +'Order'#2#2#0#9'TComboBox'#10'SParCombo1'#4'Left'#2#8#6'Height'#2#21#4'Hint'
+  +#6'1Select a structure parameter to be modified here.'#3'Top'#2#20#5'Width'#3
+  +#197#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#21'ArrowKeysTraverseLis'
+  +'t'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6#29'Select s'
+  +'tructure parameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol'
+  +'/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11
+  +'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l'
+  +')'#6#12'LS (l/'#194#181'mol)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT'
+  +' (/s)'#6#12'beta31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'TBPA ('
+  +#194#181'mol/l)'#0#8'OnChange'#7#16'SParCombo1Change'#14'ParentShowHint'#8#8
+  +'ShowHint'#9#8'TabOrder'#2#0#4'Text'#6#29'Select structure parameter...'#0#0
+  +#9'TTrackBar'#13'SParTrackBar1'#4'Left'#2#8#6'Height'#2'&'#4'Hint'#6'>Change'
+  +' the magnitude of the selected structure parameter here.'#3'Top'#2'1'#5'Wid'
+  +'th'#3#196#0#8'OnChange'#7#19'SParTrackBar1Change'#8'Position'#2#0#9'TickMar'
+  +'ks'#7#9'tmTopLeft'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#0#0#9
+  +'TComboBox'#10'SParCombo2'#4'Left'#2#8#6'Height'#2#21#4'Hint'#6'1Select a st'
+  +'ructure parameter to be modified here.'#3'Top'#2'v'#5'Width'#3#197#0#7'Anch'
   +'ors'#11#5'akTop'#6'akLeft'#7'akRight'#0#21'ArrowKeysTraverseList'#8#10'Item'
   +'Height'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6#29'Select structure par'
   +'ameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM'
@@ -151,98 +166,83 @@ LazarusResources.Add('TEquilibriumDiagramForm','FORMDATA',[
   +')'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS'
   +' (l/'#194#181'mol)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'#6#12
   +'beta31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mo'
-  +'l/l)'#0#8'OnChange'#7#16'SParCombo1Change'#14'ParentShowHint'#8#8'ShowHint'
-  +#9#8'TabOrder'#2#0#4'Text'#6#29'Select structure parameter...'#0#0#9'TTrackB'
-  +'ar'#13'SParTrackBar1'#4'Left'#2#8#6'Height'#2'&'#4'Hint'#6'>Change the magn'
-  +'itude of the selected structure parameter here.'#3'Top'#2'1'#5'Width'#3#196
-  +#0#8'OnChange'#7#19'SParTrackBar1Change'#8'Position'#2#0#9'TickMarks'#7#9'tm'
-  +'TopLeft'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#0#0#9'TComboBox'
-  +#10'SParCombo2'#4'Left'#2#8#6'Height'#2#21#4'Hint'#6'1Select a structure par'
-  +'ameter to be modified here.'#3'Top'#2'v'#5'Width'#3#197#0#7'Anchors'#11#5'a'
-  +'kTop'#6'akLeft'#7'akRight'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13
-  +#9'ItemIndex'#2#0#13'Items.Strings'#1#6#29'Select structure parameter...'#6
-  +#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6
-  +#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/m'
-  +'U)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181
-  +'mol)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'#6#12'beta31 (/Ms)'
-  +#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnCh'
-  +'ange'#7#16'SParCombo2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'
-  +#2#2#4'Text'#6#29'Select structure parameter...'#0#0#9'TTrackBar'#13'SParTra'
-  +'ckBar2'#4'Left'#2#8#6'Height'#2'&'#4'Hint'#6'>Change the magnitude of the s'
-  +'elected structure parameter here.'#3'Top'#3#147#0#5'Width'#3#196#0#8'OnChan'
-  +'ge'#7#19'SParTrackBar2Change'#8'Position'#2#0#9'TickMarks'#7#9'tmTopLeft'#14
-  +'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#0#0#9'TComboBox'#10'SParCom'
-  +'bo3'#4'Left'#2#8#6'Height'#2#21#4'Hint'#6'1Select a structure parameter to '
-  +'be modified here.'#3'Top'#3#214#0#5'Width'#3#197#0#7'Anchors'#11#5'akTop'#6
-  +'akLeft'#7'akRight'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9'Item'
-  +'Index'#2#0#13'Items.Strings'#1#6#29'Select structure parameter...'#6#12'GD1'
-  +' (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT'
-  +' (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6
-  +#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6
-  +#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'#6#12'beta31 (/Ms)'#6#12'b'
-  +'eta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7
-  +#16'SParCombo3Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'T'
-  +'ext'#6#29'Select structure parameter...'#0#0#9'TTrackBar'#13'SParTrackBar3'
-  +#4'Left'#2#8#6'Height'#2'&'#4'Hint'#6'>Change the magnitude of the selected '
-  +'structure parameter here.'#3'Top'#3#243#0#5'Width'#3#196#0#8'OnChange'#7#19
-  +'SParTrackBar3Change'#8'Position'#2#0#9'TickMarks'#7#9'tmTopLeft'#14'ParentS'
-  +'howHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#0#0#0#10'TStatusBar'#10'StatusBar1'
-  +#4'Left'#2#0#6'Height'#2#23#3'Top'#3#192#1#5'Width'#3#230#2#6'Panels'#14#0#0
-  +#0#9'TGroupBox'#9'GroupBox2'#4'Left'#2'0'#6'Height'#2'V'#3'Top'#3'_'#1#5'Wid'
-  +'th'#3#161#2#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#7'Caption'#6#22
-  +'Behavioural Parameters'#12'ClientHeight'#2'D'#11'ClientWidth'#3#157#2#8'Tab'
-  +'Order'#2#4#0#14'TFloatSpinEdit'#12'MinSpinEdit1'#4'Left'#2#8#6'Height'#2#21
-  +#4'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2#7#5'Width'#2
-  ,'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'
-  +#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'
-  +#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'MinSpinEdit1Change'#14'ParentShowHin'
-  +'t'#8#8'ShowHint'#9#8'TabOrder'#2#0#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#14'TF'
-  +'loatSpinEdit'#12'MaxSpinEdit1'#4'Left'#3#199#1#6'Height'#2#21#4'Hint'#6'''M'
-  +'aximum of selected structure parameter'#3'Top'#2#7#5'Width'#2'H'#7'Anchors'
-  +#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0#0#0#0
-  +#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8'MinValue'#5#0#0#0#0#0#0
-  +#0#0#0#0#8'OnChange'#7#18'MaxSpinEdit1Change'#14'ParentShowHint'#8#8'ShowHin'
-  +'t'#9#8'TabOrder'#2#1#5'Value'#5#0#0#0#0#0#0#0#160#2'@'#0#0#9'TComboBox'#10
-  +'BParCombo1'#4'Left'#2'X'#6'Height'#2#21#4'Hint'#6'XSelect the first depende'
-  +'nt behavioural parameter whose response to be investigated here.'#3'Top'#2#9
-  +#5'Width'#3'd'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKe'
-  +'ysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6
-  +')Select characteristic curve 1 (x axis)...'#6'&Pituitary response (TSH conc'
-  +'entration)'#6'$Thyroid response (FT4 concentration)'#6'+Peripheral deiodina'
-  +'tion (FT3 concentration)'#6'(Central deiodination (cT3 concentration)'#0#8
-  +'OnChange'#7#16'BParCombo1Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOr'
-  +'der'#2#2#4'Text'#6')Select characteristic curve 1 (x axis)...'#0#0#14'TFloa'
-  +'tSpinEdit'#12'MinSpinEdit2'#4'Left'#2#8#6'Height'#2#21#4'Hint'#6'''Minimum '
-  +'of selected structure parameter'#3'Top'#2''''#5'Width'#2'H'#7'Anchors'#11#6
-  +'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0#0#0#0#0#128
-  +#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0
-  +#0#8'OnChange'#7#18'MinSpinEdit2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8
-  +'TabOrder'#2#3#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#10'BParCombo2'
-  +#4'Left'#2'X'#6'Height'#2#21#4'Hint'#6'YSelect the second dependent behaviou'
-  +'ral parameter whose response to be investigated here.'#3'Top'#2')'#5'Width'
-  +#3'd'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKeysTravers'
-  +'eList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6')Select'
-  +' characteristic curve 2 (y axis)...'#6'&Pituitary response (TSH concentrati'
-  +'on)'#6'$Thyroid response (FT4 concentration)'#6'+Peripheral deiodination (F'
-  +'T3 concentration)'#6'(Central deiodination (cT3 concentration)'#0#8'OnChang'
-  +'e'#7#16'BParCombo2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4
-  +#4'Text'#6')Select characteristic curve 2 (y axis)...'#0#0#14'TFloatSpinEdit'
-  +#12'MaxSpinEdit2'#4'Left'#3#199#1#6'Height'#2#21#4'Hint'#6'''Maximum of sele'
-  +'cted structure parameter'#3'Top'#2''''#5'Width'#2'H'#7'Anchors'#11#7'akRigh'
-  +'t'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0#0#0#0#0#128#255
-  +'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8
-  +'OnChange'#7#18'MaxSpinEdit2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'Tab'
-  +'Order'#2#5#5'Value'#5#0#0#0#0#0#0#0#160#2'@'#0#0#9'TColorBox'#9'xColorBox'#4
-  +'Left'#3#27#2#6'Height'#2#22#4'Hint'#6',Select the color of the selected cur'
-  +'ve here.'#3'Top'#2#7#5'Width'#2'y'#17'DefaultColorColor'#7#5'clRed'#8'Selec'
-  +'ted'#7#6'clBlue'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8
-  +'OnChange'#7#15'xColorBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrd'
-  +'er'#2#6#0#0#9'TColorBox'#9'yColorBox'#4'Left'#3#27#2#6'Height'#2#22#4'Hint'
-  +#6',Select the color of the selected curve here.'#3'Top'#2'&'#5'Width'#2'y'
-  +#17'DefaultColorColor'#7#6'clBlue'#8'Selected'#7#5'clRed'#7'Anchors'#11#5'ak'
-  +'Top'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#15'yColorBoxChange'#14
-  +'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#7#0#0#0#25'TChartAxisTransfor'
-  +'mations'#25'ChartAxisTransformations1'#4'left'#2#8#3'top'#3#136#0#0#20'TLin'
-  +'earAxisTransform-ChartAxisTransformations1LinearAxisTransform1'#5'Scale'#5#0
-  +#136'Po'#9#204#188#140#215'?'#0#0#0#0
+  +'l/l)'#0#8'OnChange'#7#16'SParCombo2Change'#14'ParentShowHint'#8#8'ShowHint'
+  +#9#8'TabOrder'#2#2#4'Text'#6#29'Select structure parameter...'#0#0#9'TTrackB'
+  +'ar'#13'SParTrackBar2'#4'Left'#2#8#6'Height'#2'&'#4'Hint'#6'>Change the magn'
+  +'itude of the selected structure parameter here.'#3'Top'#3#147#0#5'Width'#3
+  +#196#0#8'OnChange'#7#19'SParTrackBar2Change'#8'Position'#2#0#9'TickMarks'#7#9
+  +'tmTopLeft'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#0#0#9'TComboB'
+  +'ox'#10'SParCombo3'#4'Left'#2#8#6'Height'#2#21#4'Hint'#6'1Select a structure'
+  +' parameter to be modified here.'#3'Top'#3#214#0#5'Width'#3#197#0#7'Anchors'
+  +#11#5'akTop'#6'akLeft'#7'akRight'#0#21'ArrowKeysTraverseList'#8#10'ItemHeigh'
+  +'t'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6#29'Select structure paramete'
+  +'r...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nm'
+  +'ol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9
+  +'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'
+  +#194#181'mol)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'#6#12'beta'
+  +'31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'
+  +#0#8'OnChange'#7#16'SParCombo3Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'T'
+  +'abOrder'#2#4#4'Text'#6#29'Select structure parameter...'#0#0#9'TTrackBar'#13
+  +'SParTrackBar3'#4'Left'#2#8#6'Height'#2'&'#4'Hint'#6'>Change the magnitude o'
+  +'f the selected structure parameter here.'#3'Top'#3#243#0#5'Width'#3#196#0#8
+  +'OnChange'#7#19'SParTrackBar3Change'#8'Position'#2#0#9'TickMarks'#7#9'tmTopL'
+  +'eft'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#0#0#0#10'TStatusBar'
+  +#10'StatusBar1'#4'Left'#2#0#6'Height'#2#23#3'Top'#3#192#1#5'Width'#3#230#2#6
+  +'Panels'#14#0#0#0#9'TGroupBox'#9'GroupBox2'#4'Left'#2'0'#6'Height'#2'V'#3'To'
+  +'p'#3'_'#1#5'Width'#3#161#2#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0
+  +#7'Caption'#6#22'Behavioural Parameters'#12'ClientHeight'#2'D'#11'ClientWidt'
+  +'h'#3#157#2#8'TabOrder'#2#4#0#14'TFloatSpinEdit'#12'MinSpinEdit1'#4'Left'#2#8
+  +#6'Height'#2#21#4'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2
+  ,#7#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4
+  +#9'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'
+  +#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'MinSpinEdit1Change'#14'P'
+  +'arentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#5'Value'#5#0#0#0#0#0#0#0#0#0
+  +#0#0#0#14'TFloatSpinEdit'#12'MaxSpinEdit1'#4'Left'#3#199#1#6'Height'#2#21#4
+  +'Hint'#6'''Maximum of selected structure parameter'#3'Top'#2#7#5'Width'#2'H'
+  +#7'Anchors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5
+  +#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8'MinValue'#5
+  +#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'MaxSpinEdit1Change'#14'ParentShowHint'
+  +#8#8'ShowHint'#9#8'TabOrder'#2#1#5'Value'#5#0#0#0#0#0#0#0#160#2'@'#0#0#9'TCo'
+  +'mboBox'#10'BParCombo1'#4'Left'#2'X'#6'Height'#2#21#4'Hint'#6'XSelect the fi'
+  +'rst dependent behavioural parameter whose response to be investigated here.'
+  +#3'Top'#2#9#5'Width'#3'd'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0
+  +#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.S'
+  +'trings'#1#6')Select characteristic curve 1 (x axis)...'#6'&Pituitary respon'
+  +'se (TSH concentration)'#6'$Thyroid response (FT4 concentration)'#6'+Periphe'
+  +'ral deiodination (FT3 concentration)'#6'(Central deiodination (cT3 concentr'
+  +'ation)'#0#8'OnChange'#7#16'BParCombo1Change'#14'ParentShowHint'#8#8'ShowHin'
+  +'t'#9#8'TabOrder'#2#2#4'Text'#6')Select characteristic curve 1 (x axis)...'#0
+  +#0#14'TFloatSpinEdit'#12'MinSpinEdit2'#4'Left'#2#8#6'Height'#2#21#4'Hint'#6
+  +'''Minimum of selected structure parameter'#3'Top'#2''''#5'Width'#2'H'#7'Anc'
+  +'hors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0
+  +#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0
+  +#0#0#0#0#0#0#0#8'OnChange'#7#18'MinSpinEdit2Change'#14'ParentShowHint'#8#8'S'
+  +'howHint'#9#8'TabOrder'#2#3#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'
+  +#10'BParCombo2'#4'Left'#2'X'#6'Height'#2#21#4'Hint'#6'YSelect the second dep'
+  +'endent behavioural parameter whose response to be investigated here.'#3'Top'
+  +#2')'#5'Width'#3'd'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'Ar'
+  +'rowKeysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.String'
+  +'s'#1#6')Select characteristic curve 2 (y axis)...'#6'&Pituitary response (T'
+  +'SH concentration)'#6'$Thyroid response (FT4 concentration)'#6'+Peripheral d'
+  +'eiodination (FT3 concentration)'#6'(Central deiodination (cT3 concentration'
+  +')'#0#8'OnChange'#7#16'BParCombo2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8
+  +'TabOrder'#2#4#4'Text'#6')Select characteristic curve 2 (y axis)...'#0#0#14
+  +'TFloatSpinEdit'#12'MaxSpinEdit2'#4'Left'#3#199#1#6'Height'#2#21#4'Hint'#6
+  +'''Maximum of selected structure parameter'#3'Top'#2''''#5'Width'#2'H'#7'Anc'
+  +'hors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0
+  +#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#250#8'@'#8'MinValue'#5#0#0#0
+  +#0#0#0#0#0#0#0#8'OnChange'#7#18'MaxSpinEdit2Change'#14'ParentShowHint'#8#8'S'
+  +'howHint'#9#8'TabOrder'#2#5#5'Value'#5#0#0#0#0#0#0#0#160#2'@'#0#0#9'TColorBo'
+  +'x'#9'xColorBox'#4'Left'#3#27#2#6'Height'#2#22#4'Hint'#6',Select the color o'
+  +'f the selected curve here.'#3'Top'#2#7#5'Width'#2'y'#17'DefaultColorColor'#7
+  +#5'clRed'#8'Selected'#7#6'clBlue'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'Ite'
+  +'mHeight'#2#16#8'OnChange'#7#15'xColorBoxChange'#14'ParentShowHint'#8#8'Show'
+  +'Hint'#9#8'TabOrder'#2#6#0#0#9'TColorBox'#9'yColorBox'#4'Left'#3#27#2#6'Heig'
+  +'ht'#2#22#4'Hint'#6',Select the color of the selected curve here.'#3'Top'#2
+  +'&'#5'Width'#2'y'#17'DefaultColorColor'#7#6'clBlue'#8'Selected'#7#5'clRed'#7
+  +'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#15'yCol'
+  +'orBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#7#0#0#0#25'TC'
+  +'hartAxisTransformations'#25'ChartAxisTransformations1'#4'left'#2#8#3'top'#3
+  +#136#0#0#20'TLinearAxisTransform-ChartAxisTransformations1LinearAxisTransfor'
+  +'m1'#5'Scale'#5#0#136'Po'#9#204#188#140#215'?'#0#0#0#0
 ]);
