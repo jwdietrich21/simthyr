@@ -104,6 +104,23 @@ var
 
 implementation
 
+function SimPituitaryResponse(T3zVector: tParamVector): tParamVector;
+{ Simulate response of thyroid subsystem to vector with TSH values }
+var
+  i: integer;
+  interval: real;
+  gainOfTSH, usFeedbackGain: real;
+begin
+  gainOfTSH := alphaS / betaS;
+  usFeedbackGain := alphaS2 / betaS2;
+  for i := 0 to MAX_I do
+  begin
+    T3z := T3zVector[i];
+    SimPituitary(gainOfTSH, usFeedbackGain, false);
+    Result[i] := TSH;
+  end;
+end;
+
 function SimThyroidResponse(TSHVector: tParamVector): tParamVector;
 { Simulate response of thyroid subsystem to vector with TSH values }
 var
@@ -158,11 +175,12 @@ function SimSubsystemResponse1(bParameter1, bParameter2: tBParameter;
 var
   i: integer;
   interval: real;
-  inputVector: tParamVector;
+  inputVector, emptyVector: tParamVector;
 begin
   assert((min >= 0) and (max >= 0), kError101);
   assert(max > min, kError103);
   assert(max > 0, kError104);
+  fillchar(emptyVector, sizeof(emptyVector), 0);
   interval := (max - min) / MAX_I;
   case bParameter1 of // input
     TSHItem:
@@ -185,17 +203,25 @@ begin
     end;
     otherwise
     begin
-      fillchar(InputVector, sizeof(InputVector), 0);
+      inputVector := emptyVector;
     end;
   end;
   case bParameter2 of // output
     IItem:
     begin
-      Result.output := inputVector;
+      Result.output := emptyVector
     end;
     TSHItem:
     begin
-      Result.output := inputVector; //  to be completed...
+      case bParameter1 of
+        FT4Item:
+        begin;
+          conversionFactor2 := 1;
+          Result.output := SimPituitaryResponse(SimCDeiodinaseResponse(inputVector));
+        end;
+        otherwise
+          Result.output := emptyVector;
+      end;
     end;
     FT4Item:
     begin
@@ -205,6 +231,8 @@ begin
           conversionFactor2 := gFT4conversionFactor;
           Result.output := SimThyroidResponse(inputVector);
         end;
+        otherwise
+          Result.output := emptyVector;
       end;
     end;
     FT3Item:
@@ -220,6 +248,8 @@ begin
           conversionFactor2 := gFT3conversionFactor;
           Result.output := SimPDeiodinaseResponse(inputVector);
         end;
+        otherwise
+          Result.output := emptyVector;
       end;
     end;
     cT3Item:
@@ -235,10 +265,12 @@ begin
           conversionFactor2 := gFT3conversionFactor;
           Result.output := SimCDeiodinaseResponse(inputVector);
         end;
+        otherwise
+          Result.output := emptyVector;
       end;
     end;
     otherwise
-      Result.output := inputVector;
+      Result.output := emptyVector;
   end;
   Result.input := inputVector;
 end;
