@@ -30,7 +30,7 @@ uses
 
 const
   THREE_FIFTH = 3 / 5; { optimization for speed }
-  MAX_DEAD = 300;
+  MAX_DEAD = 300;      { maximum queue length for dead-time interval element }
 
 type
   TQueue_xt = array[0..MAX_DEAD] of real;
@@ -53,7 +53,7 @@ var
 function cycles (var n: longint; n_text: str255): integer;
 procedure InitSimulationControl;
 procedure SimHypothalamus(const inv_hpd: real);
-procedure SimPituitary(const gainOfTSH: real; const ultrashortFeebackGain: real);
+procedure SimPituitary(const gainOfTSH: real; const ultrashortFeedbackGain: real; memory: boolean);
 procedure SimThyroidGland(const gainOfT4: real; memory: boolean);
 procedure SimCentralDeiodination(const gainOfCentralT3: real; memory: boolean);
 procedure SimPeripheralDeiodination(const gainOfPeripheralT3: real; memory: boolean);
@@ -208,24 +208,33 @@ begin
    TRH := TRH * getgauss(0.5); {Noise}
  end;
 
- procedure SimPituitary(const gainOfTSH: real; const ultrashortFeebackGain: real);
+ procedure SimPituitary(const gainOfTSH: real; const ultrashortFeedbackGain: real; memory: boolean);
  { Simulator module for pituitary gland }
  { invoked by TSimulationThread and from Equilibriumdiagram unit }
  begin
-   assert((gainOfTSH >= 0) and (ultrashortFeebackGain >= 0), kError101);
+   assert((gainOfTSH >= 0) and (ultrashortFeedbackGain >= 0), kError101);
    T3n := T3z / (1 + k31 * IBS);
    T3R := GR * T3n / (dR + T3n);
    dTSH := gH * TRH / ((dH + TRH) * (1 + LS * T3R) * (1 + SS * TSHz / (DS + TSHz)));
    {differential quotient of secretory rate only, no degradation}
-   {Equifinal approximation: TSHz := (alphaS2 / betaS2) * dTSH;}
-   vpt10 := ultrashortFeebackGain;
-   pt1(vpt10, tpt16, x6, dTSH, TSHz);
-   TSHz := pt0(xt22, nt22, TSHz); {pituitary TSH for Brokken-Wiersinga-Prummel loop}
-   {optional: TSHz := TSHz * getgauss(0.2); {Noise}}
    vpt10 := gainOfTSH;
-   pt1(vpt10, tpt12, x2, dTSH, TSH);
-   {Equifinal approximation: TSH := alphaS * dTSH / betaS;}
-   TSH := pt0(xt2, nt2, TSH);
+   if memory then
+     begin
+       {Equifinal approximation: TSHz := (alphaS2 / betaS2) * dTSH;}
+       vpt10 := ultrashortFeedbackGain;
+       pt1(vpt10, tpt16, x6, dTSH, TSHz);
+       TSHz := pt0(xt22, nt22, TSHz); {pituitary TSH for Brokken-Wiersinga-Prummel loop}
+       {optional: TSHz := TSHz * getgauss(0.2); {Noise}}
+       pt1(vpt10, tpt12, x2, dTSH, TSH);
+       {Equifinal approximation: TSH := alphaS * dTSH / betaS;}
+       TSH := pt0(xt2, nt2, TSH);
+     end
+   else
+     begin
+       {Equifinal approximation for equilibrium diagram}
+       TSHz := ultrashortFeedbackGain * dTSH;
+       TSH := gainOfTSH * dTSH;
+     end;
  end;
 
  procedure SimThyroidGland(const gainOfT4: real; memory: boolean);
@@ -434,7 +443,7 @@ begin
 {Hypothalamus:}
             SimHypothalamus(inv_hpd);
 {Pituitary:}
-            SimPituitary(gainOfTSH, ultrashortFeebackGain);
+            SimPituitary(gainOfTSH, ultrashortFeebackGain, true);
 {Thyroid:}
             SimThyroidGland(gainOfT4, true);
 {5'-Deiodinase type II (central):}
