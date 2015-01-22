@@ -195,12 +195,17 @@ begin
     end;
     TSHItem:
     begin
-      Result.output := inputVector;
+      Result.output := inputVector; //  to be completed...
     end;
     FT4Item:
     begin
-      conversionFactor2 := gFT4conversionFactor;
-      Result.output := SimThyroidResponse(inputVector);
+      case bParameter1 of
+        TSHItem:
+        begin
+          conversionFactor2 := gFT4conversionFactor;
+          Result.output := SimThyroidResponse(inputVector);
+        end;
+      end;
     end;
     FT3Item:
     begin
