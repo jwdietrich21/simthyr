@@ -22,13 +22,14 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, TAGraph, TASources, TASeries, TATransformations,
-  TANavigation, LResources, Forms, Controls, Graphics, Dialogs, Buttons,
-  ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, SimThyrTypes,
-  SimThyrResources, Simulator, UnitConverter;
+  TANavigation, TATools, TAStyles, LResources, Forms, Controls, Graphics,
+  Dialogs, Buttons, ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Math,
+  SimThyrTypes, SimThyrResources, Simulator, SimThyrServices, UnitConverter;
 
 const
   MAX_SERIES = 2;
   MAX_I      = 100;
+  MAX_PIT    = 13;
 
 type
 
@@ -38,8 +39,6 @@ type
     EquilibriumChart: TChart;
     EquilibriumChartLineSeries1: TLineSeries;
     EquilibriumChartLineSeries2: TLineSeries;
-    ChartAxisTransformations1: TChartAxisTransformations;
-    ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform;
     ChartNavPanel1: TChartNavPanel;
     GroupBox2:     TGroupBox;
     MaxSpinEdit1:  TFloatSpinEdit;
@@ -92,6 +91,7 @@ type
   tResponseCurve = record
     input, output: tParamVector;
   end;
+  tTSHSamples = array[0..MAX_PIT - 1] of extended;
 
 var
   EquilibriumDiagramForm: TEquilibriumDiagramForm;
@@ -107,17 +107,25 @@ implementation
 function SimPituitaryResponse(T3zVector: tParamVector): tParamVector;
 { Simulate response of thyroid subsystem to vector with TSH values }
 var
-  i: integer;
+  i, j: integer;
   interval: real;
   gainOfTSH, usFeedbackGain: real;
+  TSHSamples: tTSHSamples;
 begin
   gainOfTSH := alphaS / betaS;
   usFeedbackGain := alphaS2 / betaS2;
   for i := 0 to MAX_I do
   begin
     T3z := T3zVector[i];
-    SimPituitary(gainOfTSH, usFeedbackGain, false);
-    Result[i] := TSH;
+    { Take multiple samples and ... }
+    for j := 0 to MAX_PIT - 1 do
+    begin
+      SimPituitary(gainOfTSH, usFeedbackGain, false);
+      TSHSamples[j] := TSH;
+    end;
+    { calculate mean of samples in equilibrium without transient results }
+    { to compensate for oscillations resulting from ultrashort feedback }
+    Result[i] := mean(TSHSamples[3..MAX_PIT-1]);
   end;
 end;
 
@@ -169,7 +177,7 @@ begin
   end;
 end;
 
-function SimSubsystemResponse1(bParameter1, bParameter2: tBParameter;
+function SimSubsystemResponse(bParameter1, bParameter2: tBParameter;
   min, max: real; var conversionFactor1, conversionFactor2: real): tResponseCurve;
 { Simulate response of first subsystem }
 var
@@ -178,11 +186,11 @@ var
   inputVector, emptyVector: tParamVector;
 begin
   assert((min >= 0) and (max >= 0), kError101);
-  assert(max > min, kError103);
+  assert(max >= min, kError103);
   assert(max > 0, kError104);
   fillchar(emptyVector, sizeof(emptyVector), 0);
   interval := (max - min) / MAX_I;
-  case bParameter1 of // input
+  case bParameter1 of // input (independent parameter)
     TSHItem:
     begin
       conversionFactor1 := 1;
@@ -201,12 +209,21 @@ begin
         inputVector[i] := FT4 / conversionFactor1;
       end;
     end;
+    cT3Item:
+    begin
+      conversionFactor1 := gFT3conversionFactor;
+      for i := 0 to MAX_I do
+      begin
+        T3z := min + i * interval;
+        inputVector[i] := T3z / conversionFactor1;
+      end;
+    end;
     otherwise
     begin
       inputVector := emptyVector;
     end;
   end;
-  case bParameter2 of // output
+  case bParameter2 of // output (dependent parameter)
     IItem:
     begin
       Result.output := emptyVector
@@ -219,6 +236,11 @@ begin
           conversionFactor2 := 1;
           Result.output := SimPituitaryResponse(SimCDeiodinaseResponse(inputVector));
         end;
+        cT3Item:
+        begin;
+          conversionFactor2 := 1;
+          Result.output := SimPituitaryResponse(inputVector);
+        end;
         otherwise
           Result.output := emptyVector;
       end;
@@ -230,6 +252,11 @@ begin
         begin
           conversionFactor2 := gFT4conversionFactor;
           Result.output := SimThyroidResponse(inputVector);
+        end;
+        cT3Item:
+        begin
+          conversionFactor2 := gFT4conversionFactor;
+          Result.output := SimThyroidResponse(SimPituitaryResponse(inputVector));
         end;
         otherwise
           Result.output := emptyVector;
@@ -247,6 +274,11 @@ begin
         begin
           conversionFactor2 := gFT3conversionFactor;
           Result.output := SimPDeiodinaseResponse(inputVector);
+        end;
+        cT3Item:
+        begin
+          conversionFactor2 := gFT3conversionFactor;
+          Result.output := SimPDeiodinaseResponse(SimThyroidResponse(SimPituitaryResponse(inputVector)));
         end;
         otherwise
           Result.output := emptyVector;
@@ -351,15 +383,28 @@ begin
     MaxBPar1 := MaxSpinEdit1.Value / gSpinFactor;
     MinBPar2 := MinSpinEdit2.Value / gSpinFactor;
     MaxBPar2 := MaxSpinEdit2.Value / gSpinFactor;
-    gResponseCurve1 := SimSubsystemResponse1(gSelectedBParameter2, gSelectedBParameter1, MinBPar2,
+    gResponseCurve1 := SimSubsystemResponse(gSelectedBParameter2, gSelectedBParameter1, MinBPar2,
       MaxBPar2, ConversionFactor1, ConversionFactor2);
     for j := 0 to MAX_I do
     begin
-      FLine[1].AddXY(gResponseCurve1.input[j] * conversionFactor1,
+      FLine[0].AddXY(gResponseCurve1.input[j] * conversionFactor1,
         gResponseCurve1.output[j] * conversionFactor2, '',
         xColorBox.Selected);
-      Fline[1].SeriesColor := xColorBox.Selected;
+      Fline[0].SeriesColor := xColorBox.Selected;
     end;
+    gResponseCurve2 := SimSubsystemResponse(gSelectedBParameter1, gSelectedBParameter2, MinBPar1,
+    MaxBPar1, ConversionFactor1, ConversionFactor2);
+    {for j := 0 to MAX_I do
+    begin
+      FLine[1].AddXY(gResponseCurve1.output[j] * conversionFactor2,
+        gResponseCurve1.input[j] * conversionFactor1, '',
+        yColorBox.Selected);
+      Fline[1].SeriesColor := yColorBox.Selected;
+    end; }
+    EquilibriumChart.LeftAxis.Range.UseMin := false;
+    EquilibriumChart.LeftAxis.Range.UseMax := false;
+    EquilibriumChart.BottomAxis.Range.UseMin := false;
+    EquilibriumChart.BottomAxis.Range.UseMax := false;
   end;
   for i := 0 to MAX_SERIES - 1 do
     FLine[i].EndUpdate;
@@ -399,21 +444,45 @@ end;
 
 procedure TEquilibriumDiagramForm.MaxSpinEdit1Change(Sender: TObject);
 begin
+  if MaxSpinEdit1.Value < MinSpinEdit1.Value then
+  {adapts boundaries to avoid negative intervals}
+  begin
+    bell;
+    MaxSpinEdit1.Value := MinSpinEdit1.Value;
+  end;
   DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.MaxSpinEdit2Change(Sender: TObject);
 begin
+  if MaxSpinEdit2.Value < MinSpinEdit2.Value then
+  {adapts boundaries to avoid negative intervals}
+  begin
+    bell;
+    MaxSpinEdit2.Value := MinSpinEdit2.Value;
+  end;
   DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.MinSpinEdit1Change(Sender: TObject);
 begin
+  if MaxSpinEdit1.Value < MinSpinEdit1.Value then
+  {adapts boundaries to avoid negative intervals}
+  begin
+    bell;
+    MinSpinEdit1.Value := MaxSpinEdit1.Value;
+  end;
   DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.MinSpinEdit2Change(Sender: TObject);
 begin
+  if MaxSpinEdit2.Value < MinSpinEdit2.Value then
+  {adapts boundaries to avoid negative intervals}
+  begin
+    bell;
+    MinSpinEdit2.Value := MaxSpinEdit2.Value;
+  end;
   DrawDiagram(False);
 end;
 

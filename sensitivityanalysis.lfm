@@ -174,7 +174,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ClientWidth = 453
     TabOrder = 6
     object MinSpinEdit: TFloatSpinEdit
-      Left = 12
+      Left = 8
       Height = 21
       Hint = 'Minimum of selected structure parameter'
       Top = 2

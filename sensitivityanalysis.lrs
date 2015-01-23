@@ -57,7 +57,7 @@ LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
   +'TabOrder'#2#5#0#0#9'TGroupBox'#9'GroupBox1'#4'Left'#2'0'#6'Height'#2'2'#3'T'
   +'op'#3'A'#1#5'Width'#3#201#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0
   +#7'Caption'#6#21'Independent parameter'#12'ClientHeight'#2' '#11'ClientWidth'
-  +#3#197#1#8'TabOrder'#2#6#0#14'TFloatSpinEdit'#11'MinSpinEdit'#4'Left'#2#12#6
+  +#3#197#1#8'TabOrder'#2#6#0#14'TFloatSpinEdit'#11'MinSpinEdit'#4'Left'#2#8#6
   +'Height'#2#21#4'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2#2
   +#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9
   +'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8

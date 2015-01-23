@@ -1,7 +1,7 @@
 object EquilibriumDiagramForm: TEquilibriumDiagramForm
-  Left = 248
+  Left = 239
   Height = 471
-  Top = 186
+  Top = 160
   Width = 742
   Caption = 'Equilibrium Diagram'
   ClientHeight = 471
@@ -30,7 +30,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Left = 8
       Height = 281
       Hint = 'Drag with mouse to zoom'
-      Top = 10
+      Top = 8
       Width = 423
       AxisList = <      
         item
@@ -380,7 +380,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
-      Increment = 1
+      Increment = 0.5
       MaxValue = 100
       MinValue = 0
       OnChange = MinSpinEdit1Change
@@ -397,7 +397,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
-      Increment = 1
+      Increment = 0.5
       MaxValue = 1000
       MinValue = 0
       OnChange = MaxSpinEdit1Change
@@ -433,11 +433,11 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Left = 8
       Height = 21
       Hint = 'Minimum of selected structure parameter'
-      Top = 39
+      Top = 38
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
-      Increment = 1
+      Increment = 0.5
       MaxValue = 100
       MinValue = 0
       OnChange = MinSpinEdit2Change
@@ -477,7 +477,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
-      Increment = 1
+      Increment = 0.5
       MaxValue = 1000
       MinValue = 0
       OnChange = MaxSpinEdit2Change
@@ -515,13 +515,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       ParentShowHint = False
       ShowHint = True
       TabOrder = 7
-    end
-  end
-  object ChartAxisTransformations1: TChartAxisTransformations
-    left = 8
-    top = 136
-    object ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform
-      Scale = 1E-12
     end
   end
 end
