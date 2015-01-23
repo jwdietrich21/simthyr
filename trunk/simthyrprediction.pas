@@ -64,7 +64,7 @@ begin
   TRHe := 0;                   {mol/l		exogeniously applied TRH}
   TRHi := TRHs;                {ng/l		endogenious TRH, according to Rondeel et al. 1988}
   TRHi := TRHi * UTRH;         {mol/l}
-  TRH0 := TRHi + TRHe;  {mol/l		portal total TRH concentration}
+  TRH0 := TRHi + TRHe;         {mol/l		portal total TRH concentration}
 end;
 
 procedure PredictEquilibrium;
