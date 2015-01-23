@@ -37,9 +37,9 @@ type
 
   TEquilibriumDiagramForm = class(TForm)
     EquilibriumChart: TChart;
+    ChartNavPanel1: TChartNavPanel;
     EquilibriumChartLineSeries1: TLineSeries;
     EquilibriumChartLineSeries2: TLineSeries;
-    ChartNavPanel1: TChartNavPanel;
     GroupBox2:     TGroupBox;
     MaxSpinEdit1:  TFloatSpinEdit;
     MaxSpinEdit2:  TFloatSpinEdit;
@@ -335,14 +335,20 @@ end;
 
 procedure TEquilibriumDiagramForm.DrawDummyEquilibriumPlot;
 {Draws an empty plot}
+var
+  i: integer;
 begin
   EquilibriumChart.LeftAxis.Title.Caption   := 'Concentration 2';
   EquilibriumChart.BottomAxis.Title.Caption := 'Concentration 1';
-  ;
   with FLine[0] do
   begin
     AddXY(0, 0, '', clBlack);
     AddXY(100, 0, '', clBlack);
+  end;
+  with FLine[1] do
+  begin
+    AddXY(0, 0, '', clBlack);
+    AddXY(0, 100, '', clBlack);
   end;
 end;
 
@@ -351,6 +357,7 @@ var
   i, j: integer;
   MinBPar1, MaxBPar1, MinBPar2, MaxBPar2: real;
   ConversionFactor1, ConversionFactor2: real;
+  max_x: real;
 begin
   GetBParameters;
   gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
@@ -371,6 +378,8 @@ begin
       ShowPoints  := False;
       Pointer.Brush.Color := clBlack;
       SeriesColor := clBlack;
+      LinePen.Mode := pmCopy;
+      LineType := ltFromPrevious;
     end;
     EquilibriumChart.AddSeries(FLine[i]);
     FLine[i].BeginUpdate;
@@ -383,6 +392,10 @@ begin
     MaxBPar1 := MaxSpinEdit1.Value / gSpinFactor;
     MinBPar2 := MinSpinEdit2.Value / gSpinFactor;
     MaxBPar2 := MaxSpinEdit2.Value / gSpinFactor;
+    EquilibriumChart.LeftAxis.Range.UseMin := false;
+    EquilibriumChart.LeftAxis.Range.UseMax := false;
+    EquilibriumChart.BottomAxis.Range.UseMin := false;
+    EquilibriumChart.BottomAxis.Range.UseMax := false;
     gResponseCurve1 := SimSubsystemResponse(gSelectedBParameter2, gSelectedBParameter1, MinBPar2,
       MaxBPar2, ConversionFactor1, ConversionFactor2);
     for j := 0 to MAX_I do
@@ -394,20 +407,19 @@ begin
     end;
     gResponseCurve2 := SimSubsystemResponse(gSelectedBParameter1, gSelectedBParameter2, MinBPar1,
     MaxBPar1, ConversionFactor1, ConversionFactor2);
-    {for j := 0 to MAX_I do
+    for j := 0 to MAX_I do
     begin
-      FLine[1].AddXY(gResponseCurve1.output[j] * conversionFactor2,
-        gResponseCurve1.input[j] * conversionFactor1, '',
+      FLine[1].AddXY(gResponseCurve2.output[j] * conversionFactor2,
+        gResponseCurve2.input[j] * conversionFactor1, '',
         yColorBox.Selected);
       Fline[1].SeriesColor := yColorBox.Selected;
-    end; }
-    EquilibriumChart.LeftAxis.Range.UseMin := false;
-    EquilibriumChart.LeftAxis.Range.UseMax := false;
-    EquilibriumChart.BottomAxis.Range.UseMin := false;
-    EquilibriumChart.BottomAxis.Range.UseMax := false;
+    end;
   end;
   for i := 0 to MAX_SERIES - 1 do
     FLine[i].EndUpdate;
+  max_x := max(MaxValue(gResponseCurve1.input) * conversionFactor1,
+    MaxValue(gResponseCurve2.output) * conversionFactor2);
+  if MaxSpinEdit2.Value < max_x then MaxSpinEdit2.Value := max_x;
 end;
 
 procedure TEquilibriumDiagramForm.FormCreate(Sender: TObject);
