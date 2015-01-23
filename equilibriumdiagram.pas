@@ -23,8 +23,9 @@ interface
 uses
   Classes, SysUtils, FileUtil, TAGraph, TASources, TASeries, TATransformations,
   TANavigation, TATools, TAStyles, LResources, Forms, Controls, Graphics,
-  Dialogs, Buttons, ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Math,
-  SimThyrTypes, SimThyrResources, Simulator, SimThyrServices, UnitConverter;
+  Dialogs, Buttons, ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus,
+  Math, SimThyrTypes, SimThyrResources, Simulator, SimThyrServices,
+  UnitConverter;
 
 const
   MAX_SERIES = 2;
@@ -36,6 +37,12 @@ type
   { TEquilibriumDiagramForm }
 
   TEquilibriumDiagramForm = class(TForm)
+    CopyItem: TMenuItem;
+    CutItem: TMenuItem;
+    Divider1: TMenuItem;
+    PasteItem: TMenuItem;
+    PopupMenu1: TPopupMenu;
+    SParEdit1: TEdit;
     EquilibriumChart: TChart;
     ChartNavPanel1: TChartNavPanel;
     EquilibriumChartLineSeries1: TLineSeries;
@@ -50,9 +57,12 @@ type
     BParCombo2:    TComboBox;
     SParCombo2:    TComboBox;
     SParCombo3:    TComboBox;
+    SParEdit2: TEdit;
+    SParEdit3: TEdit;
     SParTrackBar1: TTrackBar;
     SParTrackBar2: TTrackBar;
     SParTrackBar3: TTrackBar;
+    UndoItem: TMenuItem;
     xColorBox:     TColorBox;
     FullScaleButton1: TSpeedButton;
     GroupBox1:     TGroupBox;
@@ -60,7 +70,15 @@ type
     ResetButton:   TSpeedButton;
     StatusBar1:    TStatusBar;
     yColorBox:     TColorBox;
+    procedure CopyItemClick(Sender: TObject);
+    procedure CopyChart;
+    procedure FormActivate(Sender: TObject);
     procedure GetBParameters;
+    procedure SParEdit1Change(Sender: TObject);
+    procedure SParEdit2Change(Sender: TObject);
+    procedure SParEdit3Change(Sender: TObject);
+    procedure UpdateEditsfromTrackBars;
+    procedure UpdateTrackBarsfromEdits;
     procedure DrawDummyEquilibriumPlot;
     procedure DrawDiagram(empty: boolean);
     procedure BParCombo1Change(Sender: TObject);
@@ -333,6 +351,89 @@ begin
     gSelectedBParameter2 := IItem;
 end;
 
+procedure TEquilibriumDiagramForm.SParEdit1Change(Sender: TObject);
+begin
+  UpdateTrackBarsfromEdits;
+end;
+
+procedure TEquilibriumDiagramForm.SParEdit2Change(Sender: TObject);
+begin
+  UpdateTrackBarsfromEdits;
+end;
+
+procedure TEquilibriumDiagramForm.SParEdit3Change(Sender: TObject);
+begin
+  UpdateTrackBarsfromEdits;
+end;
+
+procedure TEquilibriumDiagramForm.FormActivate(Sender: TObject);
+begin
+  UpdateEditsfromTrackBars;
+end;
+
+procedure TEquilibriumDiagramForm.CopyItemClick(Sender: TObject);
+begin
+  CopyChart;
+end;
+
+procedure TEquilibriumDiagramForm.CopyChart;
+var
+  {$IFDEF UNIX}
+  theImage: TPortableNetworkGraphic;
+  {$ELSE}
+  theImage: TBitMap;
+  {$ENDIF}
+  theWidth, theHeight: integer;
+begin
+  if EquilibriumChart = nil then
+    bell
+  else
+  begin
+    {Chart1.CopyToClipboardBitmap doesn't work on Mac OS X}
+    {$IFDEF UNIX}
+    theImage := TPortableNetworkGraphic.Create;
+    try
+      theWidth := EquilibriumChart.Width;
+      theHeight := EquilibriumChart.Height;
+      theImage.Width := theWidth;
+      theImage.Height := theHeight;
+      EquilibriumChart.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas);
+      Clipboard.Assign(theImage);
+    finally
+      theImage.Free;
+    end;
+    {$ELSE}
+    EquilibriumChart.CopyToClipboardBitmap;
+    {$ENDIF}
+  end;
+end;
+
+procedure TEquilibriumDiagramForm.UpdateEditsfromTrackBars;
+begin
+  SParEdit1.Text := IntToStr(SParTrackBar1.Position);
+  SParEdit2.Text := IntToStr(SParTrackBar2.Position);
+  SParEdit3.Text := IntToStr(SParTrackBar3.Position);
+end;
+
+procedure TEquilibriumDiagramForm.UpdateTrackBarsfromEdits;
+begin
+  if (StrToFloatDef(SParEdit1.Text, NaN) >= SParTrackBar1.Min) and
+    (StrToFloatDef(SParEdit1.Text, NaN) <= SParTrackBar1.Max) then
+    SParTrackBar1.Position := trunc(StrToFloatDef(SParEdit1.Text, 0))
+  else
+    SParTrackBar1.Position := SParTrackBar1.Min;
+  if (StrToFloatDef(SParEdit2.Text, NaN) >= SParTrackBar2.Min) and
+    (StrToFloatDef(SParEdit2.Text, NaN) <= SParTrackBar2.Max) then
+    SParTrackBar2.Position := trunc(StrToFloatDef(SParEdit2.Text, 0))
+  else
+    SParTrackBar2.Position := SParTrackBar2.Min;
+  if (StrToFloatDef(SParEdit3.Text, NaN) >= SParTrackBar3.Min) and
+    (StrToFloatDef(SParEdit3.Text, NaN) <= SParTrackBar3.Max) then
+    SParTrackBar3.Position := trunc(StrToFloatDef(SParEdit3.Text, 0))
+  else
+    SParTrackBar3.Position := SParTrackBar3.Min;
+end;
+
 procedure TEquilibriumDiagramForm.DrawDummyEquilibriumPlot;
 {Draws an empty plot}
 var
@@ -420,11 +521,16 @@ begin
   max_x := max(MaxValue(gResponseCurve1.input) * conversionFactor1,
     MaxValue(gResponseCurve2.output) * conversionFactor2);
   if MaxSpinEdit2.Value < max_x then MaxSpinEdit2.Value := max_x;
+  if gSelectedBParameter1 <> IItem then
+    EquilibriumChart.LeftAxis.Title.Caption := BParCombo1.Caption;
+  if gSelectedBParameter2 <> IItem then
+    EquilibriumChart.BottomAxis.Title.Caption := BParCombo2.Caption;
 end;
 
 procedure TEquilibriumDiagramForm.FormCreate(Sender: TObject);
 begin
   gSpinFactor := 1;
+  UpdateEditsfromTrackBars;
   DrawDiagram(True);
 end;
 
@@ -520,16 +626,19 @@ end;
 
 procedure TEquilibriumDiagramForm.SParTrackBar1Change(Sender: TObject);
 begin
+  UpdateEditsfromTrackBars;
   DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.SParTrackBar2Change(Sender: TObject);
 begin
+  UpdateEditsfromTrackBars;
   DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.SParTrackBar3Change(Sender: TObject);
 begin
+  UpdateEditsfromTrackBars;
   DrawDiagram(False);
 end;
 
@@ -550,4 +659,4 @@ end;
 initialization
   {$I equilibriumdiagram.lrs}
 
-end.
+end.
