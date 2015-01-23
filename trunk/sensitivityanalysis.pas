@@ -76,6 +76,7 @@ type
     procedure CheckGroup1ItemClick(Sender: TObject; Index: integer);
     procedure CopyItemClick(Sender: TObject);
     procedure cT3ColorBoxChange(Sender: TObject);
+    procedure CutItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FT3ColorBoxChange(Sender: TObject);
@@ -83,6 +84,7 @@ type
     procedure FullScaleButton1Click(Sender: TObject);
     procedure MaxSpinEditChange(Sender: TObject);
     procedure MinSpinEditChange(Sender: TObject);
+    procedure PasteItemClick(Sender: TObject);
     procedure ResetButtonClick(Sender: TObject);
     procedure StrucParComboChange(Sender: TObject);
     procedure TSHColorBoxChange(Sender: TObject);
@@ -90,6 +92,7 @@ type
     procedure SaveChart;
     procedure TT3ColorBoxChange(Sender: TObject);
     procedure TT4ColorBoxChange(Sender: TObject);
+    procedure UndoItemClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -797,6 +800,11 @@ begin
   DrawOWSensitivityPlot(False);
 end;
 
+procedure TSensitivityAnalysisForm.CutItemClick(Sender: TObject);
+begin
+
+end;
+
 procedure TSensitivityAnalysisForm.FormActivate(Sender: TObject);
 begin
   if Screen.Width < SensitivityAnalysisForm.Left + SensitivityAnalysisForm.Width then
@@ -833,6 +841,11 @@ begin
   gMinXPar := MinSpinEdit.Value / gSpinFactor;
   gMaxXPar := MaxSpinEdit.Value / gSpinFactor;
   DrawOWSensitivityPlot(False);
+end;
+
+procedure TSensitivityAnalysisForm.PasteItemClick(Sender: TObject);
+begin
+
 end;
 
 procedure TSensitivityAnalysisForm.ResetButtonClick(Sender: TObject);
@@ -950,6 +963,11 @@ end;
 procedure TSensitivityAnalysisForm.TT4ColorBoxChange(Sender: TObject);
 begin
   DrawOWSensitivityPlot(False);
+end;
+
+procedure TSensitivityAnalysisForm.UndoItemClick(Sender: TObject);
+begin
+
 end;
 
 initialization
