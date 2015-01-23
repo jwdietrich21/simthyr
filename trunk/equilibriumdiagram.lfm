@@ -1,7 +1,7 @@
 object EquilibriumDiagramForm: TEquilibriumDiagramForm
-  Left = 239
+  Left = 219
   Height = 471
-  Top = 160
+  Top = 118
   Width = 742
   Caption = 'Equilibrium Diagram'
   ClientHeight = 471
@@ -74,10 +74,8 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       ParentShowHint = False
       ShowHint = True
       object EquilibriumChartLineSeries1: TLineSeries
-        LinePen.Color = clBlue
       end
       object EquilibriumChartLineSeries2: TLineSeries
-        LinePen.Color = clRed
       end
     end
   end
@@ -444,7 +442,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       ParentShowHint = False
       ShowHint = True
       TabOrder = 3
-      Value = 0
+      Value = 0.5
     end
     object BParCombo2: TComboBox
       Left = 88
