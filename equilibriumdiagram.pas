@@ -518,9 +518,14 @@ begin
   end;
   for i := 0 to MAX_SERIES - 1 do
     FLine[i].EndUpdate;
-  max_x := max(MaxValue(gResponseCurve1.input) * conversionFactor1,
-    MaxValue(gResponseCurve2.output) * conversionFactor2);
-  if MaxSpinEdit2.Value < max_x then MaxSpinEdit2.Value := max_x;
+  if isNaN(conversionFactor1) or isNaN(conversionFactor2) then
+    max_x := NaN
+  else
+    begin
+      max_x := max(MaxValue(gResponseCurve1.input) * conversionFactor1,
+      MaxValue(gResponseCurve2.output) * conversionFactor2);
+      if MaxSpinEdit2.Value < max_x then MaxSpinEdit2.Value := max_x;
+    end;
   if gSelectedBParameter1 <> IItem then
     EquilibriumChart.LeftAxis.Title.Caption := BParCombo1.Caption;
   if gSelectedBParameter2 <> IItem then
@@ -659,4 +664,4 @@ end;
 initialization
   {$I equilibriumdiagram.lrs}
 
-end.
+end.

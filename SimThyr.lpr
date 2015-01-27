@@ -24,12 +24,13 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, SimThyrMain, Controls, TAChartLazarusPkg, fpvectorialpkg, SimThyrPlot,
-  LaunchDialog, simthyrlog, SimThyrTypes, SimThyrServices, ShowIPS, Simulator,
-  Splash, AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
-  SimOptions, VersionSupport, ScenarioHandler, HandlePreferences,
-  HandleNotifier, Sensitivityanalysis, tornado, DIFSupport, help,
-  SimThyrResources, unitconverter, TWSensitivityanalysis, equilibriumdiagram
+  Forms, SimThyrMain, Controls, TAChartLazarusPkg, fpvectorialpkg, math,
+  SimThyrPlot, LaunchDialog, simthyrlog, SimThyrTypes, SimThyrServices, ShowIPS,
+  Simulator, Splash, AboutDialog, ShowAboutModel, SimThyrPrediction,
+  StructureParameters, SimOptions, VersionSupport, ScenarioHandler,
+  HandlePreferences, HandleNotifier, Sensitivityanalysis, tornado, DIFSupport,
+  help, SimThyrResources, unitconverter, TWSensitivityanalysis,
+  equilibriumdiagram
   {$IFDEF debug}
   , SysUtils
   {$ENDIF}
@@ -56,6 +57,8 @@ begin
     SplashScreen.AlphaBlendValue := 200;
     Application.ProcessMessages;
   end;
+  SetExceptionMask([exInvalidOp, exDenormalized, exZeroDivide,
+                   exOverflow, exUnderflow, exPrecision]);
   gStartup := true;
   runcommand := false;
   simready := true;
