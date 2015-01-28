@@ -25,7 +25,7 @@ uses
   TANavigation, TATools, TAStyles, LResources, Forms, Controls, Graphics,
   Dialogs, Buttons, ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus,
   Math, SimThyrTypes, SimThyrResources, Simulator, SimThyrServices,
-  UnitConverter;
+  UnitConverter, Sensitivityanalysis;
 
 const
   MAX_SERIES = 2;
@@ -330,23 +330,23 @@ end;
 
 procedure TEquilibriumDiagramForm.GetBParameters;
 begin
-  if pos('TSH', BParCombo1.Text) > 0 then
+  if pos(LowerCase('TSH'), LowerCase(BParCombo1.Text)) > 0 then
     gSelectedBParameter1 := TSHItem
-  else if pos('FT4', BParCombo1.Text) > 0 then
+  else if pos(LowerCase('FT4'), LowerCase(BParCombo1.Text)) > 0 then
     gSelectedBParameter1 := FT4Item
-  else if pos('FT3', BParCombo1.Text) > 0 then
+  else if pos(LowerCase('FT3'), LowerCase(BParCombo1.Text)) > 0 then
     gSelectedBParameter1 := FT3Item
-  else if pos('cT3', BParCombo1.Text) > 0 then
+  else if pos(LowerCase('cT3'), LowerCase(BParCombo1.Text)) > 0 then
     gSelectedBParameter1 := cT3Item
   else
     gSelectedBParameter1 := IItem;
-  if pos('TSH', BParCombo2.Text) > 0 then
+  if pos(LowerCase('TSH'), LowerCase(BParCombo2.Text)) > 0 then
     gSelectedBParameter2 := TSHItem
-  else if pos('FT4', BParCombo2.Text) > 0 then
+  else if pos(LowerCase('FT4'), LowerCase(BParCombo2.Text)) > 0 then
     gSelectedBParameter2 := FT4Item
-  else if pos('FT3', BParCombo2.Text) > 0 then
+  else if pos(LowerCase('FT3'), LowerCase(BParCombo2.Text)) > 0 then
     gSelectedBParameter2 := FT3Item
-  else if pos('cT3', BParCombo2.Text) > 0 then
+  else if pos(LowerCase('cT3'), LowerCase(BParCombo2.Text)) > 0 then
     gSelectedBParameter2 := cT3Item
   else
     gSelectedBParameter2 := IItem;
@@ -617,20 +617,142 @@ end;
 
 procedure TEquilibriumDiagramForm.SParCombo1Change(Sender: TObject);
 begin
-  DrawDiagram(False);
-  if pos('GD1', SParCombo1.Text) > 0 then
-    gSelectedSParameter1 := GD1Item  // to be completed...
+  if pos(LowerCase('GD1'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := GD1Item
+  else if pos(LowerCase('GD2'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := GD2Item
+  else if pos(LowerCase('KM1'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := KM1Item
+  else if pos(LowerCase('KM2'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := KM2Item
+  else if pos(LowerCase('GT'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := GTItem
+  else if pos(LowerCase('DT'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := DTItem
+  else if pos(LowerCase('GH'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := GHItem
+  else if pos(LowerCase('DH'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := DHItem
+  else if pos(LowerCase('SS'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := SSItem
+  else if pos(LowerCase('DS'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := DSItem
+  else if pos(LowerCase('GR'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := GRItem
+  else if pos(LowerCase('DR'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := DRItem
+  else if pos(LowerCase('LS'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := LSItem
+  else if pos(LowerCase('betaS'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := betaSItem
+  else if pos(LowerCase('betaS2'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := betaS2Item
+  else if pos(LowerCase('betaT'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := betaTItem
+  else if pos(LowerCase('beta31'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := beta31Item
+  else if pos(LowerCase('beta32'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := beta32Item
+  else if pos(LowerCase('TBG'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := TBGItem
+  else if pos(LowerCase('TBPA'), LowerCase(SParCombo1.Text)) > 0 then
+    gSelectedSParameter1 := TBPAItem
   else
     gSelectedSParameter1 := NullItem;
+  DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo2Change(Sender: TObject);
 begin
+  if pos(LowerCase('GD1'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := GD1Item
+  else if pos(LowerCase('GD2'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := GD2Item
+  else if pos(LowerCase('KM1'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := KM1Item
+  else if pos(LowerCase('KM2'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := KM2Item
+  else if pos(LowerCase('GT'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := GTItem
+  else if pos(LowerCase('DT'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := DTItem
+  else if pos(LowerCase('GH'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := GHItem
+  else if pos(LowerCase('DH'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := DHItem
+  else if pos(LowerCase('SS'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := SSItem
+  else if pos(LowerCase('DS'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := DSItem
+  else if pos(LowerCase('GR'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := GRItem
+  else if pos(LowerCase('DR'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := DRItem
+  else if pos(LowerCase('LS'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := LSItem
+  else if pos(LowerCase('betaS'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := betaSItem
+  else if pos(LowerCase('betaS2'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := betaS2Item
+  else if pos(LowerCase('betaT'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := betaTItem
+  else if pos(LowerCase('beta31'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := beta31Item
+  else if pos(LowerCase('beta32'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := beta32Item
+  else if pos(LowerCase('TBG'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := TBGItem
+  else if pos(LowerCase('TBPA'), LowerCase(SParCombo2.Text)) > 0 then
+    gSelectedSParameter2 := TBPAItem
+  else
+    gSelectedSParameter2 := NullItem;
   DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo3Change(Sender: TObject);
 begin
+  if pos(LowerCase('GD1'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := GD1Item
+  else if pos(LowerCase('GD2'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := GD2Item
+  else if pos(LowerCase('KM1'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := KM1Item
+  else if pos(LowerCase('KM2'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := KM2Item
+  else if pos(LowerCase('GT'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := GTItem
+  else if pos(LowerCase('DT'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := DTItem
+  else if pos(LowerCase('GH'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := GHItem
+  else if pos(LowerCase('DH'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := DHItem
+  else if pos(LowerCase('SS'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := SSItem
+  else if pos(LowerCase('DS'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := DSItem
+  else if pos(LowerCase('GR'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := GRItem
+  else if pos(LowerCase('DR'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := DRItem
+  else if pos(LowerCase('LS'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := LSItem
+  else if pos(LowerCase('betaS'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := betaSItem
+  else if pos(LowerCase('betaS2'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := betaS2Item
+  else if pos(LowerCase('betaT'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := betaTItem
+  else if pos(LowerCase('beta31'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := beta31Item
+  else if pos(LowerCase('beta32'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := beta32Item
+  else if pos(LowerCase('TBG'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := TBGItem
+  else if pos(LowerCase('TBPA'), LowerCase(SParCombo3.Text)) > 0 then
+    gSelectedSParameter3 := TBPAItem
+  else
+    gSelectedSParameter3 := NullItem;
   DrawDiagram(False);
 end;
 
