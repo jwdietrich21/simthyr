@@ -26,9 +26,13 @@ type
  Str3 = string[3];
  Str13 = string[13];
  Str255 = string[255];
- tResultMatrix = array of array of real;               {matrix with simulated values}
+ tResultMatrix = array of array of real;      {matrix with simulated values}
  tmode = (integerMode, realMode);
- tBParameter = (iItem, tItem, TRHItem, pTSHItem, TSHItem, TT4Item, FT4Item, TT3Item, FT3Item, cT3Item);
+ tBParameter = (iItem, tItem, TRHItem, pTSHItem, TSHItem, TT4Item, FT4Item,
+   TT3Item, FT3Item, cT3Item);
+ tSParameter = (NullItem, GD1Item, GD2Item, KM1Item, KM2Item, GTItem, DTItem,
+   GHItem, DHItem, SSItem, DSItem, GRItem, DRItem, LSItem, betaSItem,
+   betaS2Item, betaTItem, beta31Item, beta32Item, TBGItem, TBPAItem);
 
 const
 
