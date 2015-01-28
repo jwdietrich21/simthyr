@@ -92,7 +92,7 @@ var
   factor, i0, i1: longint;
   graphready, append: boolean;
   ValuesPlot: TValuesPlot;
-  gr_nummer, antwort, antwort_p: string[4];
+  gr_nummer: string[4];
 
 function AsTime(x: real): TDateTime;
 function FormattedTime(x: real): Str255;

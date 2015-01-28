@@ -187,7 +187,6 @@ end;
 procedure TSimulationSettings.CancelButtonClick(Sender: TObject);
 begin
   runcommand := false;
-  antwort := 'nein';
   SimulationSettings.Close;
 end;
 
