@@ -73,6 +73,7 @@ type
     procedure CopyItemClick(Sender: TObject);
     procedure CopyChart;
     procedure FormActivate(Sender: TObject);
+    procedure SetStandardStrucParBoundaries;
     procedure GetBParameters;
     procedure SParEdit1Change(Sender: TObject);
     procedure SParEdit2Change(Sender: TObject);
@@ -115,13 +116,22 @@ var
   EquilibriumDiagramForm: TEquilibriumDiagramForm;
   gSelectedBParameter1, gSelectedBParameter2: tBParameter;
   gSelectedSParameter1, gSelectedSParameter2, gSelectedSParameter3: tSParameter;
-  gSpinFactor: real;
+  gMinSPar1, gMaxSPar1, gMinSPar2, gMaxSPar2, gMinSPar3, gMaxSPar3: real;
+  gSpinFactor, gTrackFactor1, gTrackFactor2, gTrackFactor3: real;
   gResponseCurve1, gResponseCurve2: tResponseCurve;
   gFT4conversionFactor, gFT3conversionFactor: real;
   gcT3conversionFactor: real;
 
 
 implementation
+
+procedure UpdateStrucPar(theParameter: tSParameter; theValue: real);
+begin
+  case theParameter of
+    GD1Item: GD1 := theValue;
+    GD2Item: GD2 := theValue;  // to be continued ...
+  end;
+end;
 
 function SimPituitaryResponse(T3zVector: tParamVector): tParamVector;
 { Simulate response of thyroid subsystem to vector with TSH values }
@@ -328,6 +338,38 @@ end;
 
 { TEquilibriumDiagramForm }
 
+procedure TEquilibriumDiagramForm.SetStandardStrucParBoundaries;
+var
+  tempMinS, tempMaxS: real; {necessary to hinder Windows from altering the globals}
+begin
+  case gSelectedSParameter1 of
+    GD1Item:
+    begin
+      gTrackFactor1 := GD1_FACTOR;
+      gMinSPar1 := GD1 / 3;
+      gMaxSPar1 := GD1 * 3;
+    end;
+    GD2Item:
+    begin
+      gTrackFactor1 := GD2_FACTOR;
+      gMinSPar1 := GD2 / 3;
+      gMaxSPar1 := GD2 * 3;
+    end;                                 // to be continued ...
+    otherwise
+    begin
+      gTrackFactor1 := 1;
+      gMinSPar1 := 0;
+      gMaxSPar1 := 50;
+    end;
+  end;
+  tempMinS := gMinSPar1;
+  tempMaxS := gMaxSPar1;
+  SParTrackBar1.Min := trunc(tempMinS * gTrackFactor1);
+  SParTrackBar1.Max := trunc(tempMaxS * gTrackFactor1);
+  gMinSPar1 := tempMinS;
+  gMaxSPar1 := tempMaxS;
+end;
+
 procedure TEquilibriumDiagramForm.GetBParameters;
 begin
   if pos(LowerCase('TSH'), LowerCase(BParCombo1.Text)) > 0 then
@@ -355,21 +397,33 @@ end;
 procedure TEquilibriumDiagramForm.SParEdit1Change(Sender: TObject);
 begin
   UpdateTrackBarsfromEdits;
+  SaveStrucPars;
+  UpdateEditsfromTrackBars;
+  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1);
+  DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.SParEdit2Change(Sender: TObject);
 begin
   UpdateTrackBarsfromEdits;
+  SaveStrucPars;
+  UpdateEditsfromTrackBars;
+  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2);
+  DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.SParEdit3Change(Sender: TObject);
 begin
   UpdateTrackBarsfromEdits;
+  SaveStrucPars;
+  UpdateEditsfromTrackBars;
+  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3);
+  DrawDiagram(False);
 end;
 
 procedure TEquilibriumDiagramForm.FormActivate(Sender: TObject);
 begin
-  UpdateEditsfromTrackBars;
+  //UpdateEditsfromTrackBars;
 end;
 
 procedure TEquilibriumDiagramForm.CopyItemClick(Sender: TObject);
@@ -617,6 +671,7 @@ end;
 
 procedure TEquilibriumDiagramForm.SParCombo1Change(Sender: TObject);
 begin
+  SaveStrucPars;
   if pos(LowerCase('GD1'), LowerCase(SParCombo1.Text)) > 0 then
     gSelectedSParameter1 := GD1Item
   else if pos(LowerCase('GD2'), LowerCase(SParCombo1.Text)) > 0 then
@@ -659,11 +714,15 @@ begin
     gSelectedSParameter1 := TBPAItem
   else
     gSelectedSParameter1 := NullItem;
+  SetStandardStrucParBoundaries;
+  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1);
   DrawDiagram(False);
+  RestoreStrucPars;
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo2Change(Sender: TObject);
 begin
+  SaveStrucPars;
   if pos(LowerCase('GD1'), LowerCase(SParCombo2.Text)) > 0 then
     gSelectedSParameter2 := GD1Item
   else if pos(LowerCase('GD2'), LowerCase(SParCombo2.Text)) > 0 then
@@ -706,11 +765,15 @@ begin
     gSelectedSParameter2 := TBPAItem
   else
     gSelectedSParameter2 := NullItem;
+  SetStandardStrucParBoundaries;
+  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2);
   DrawDiagram(False);
+  RestoreStrucPars;
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo3Change(Sender: TObject);
 begin
+  SaveStrucPars;
   if pos(LowerCase('GD1'), LowerCase(SParCombo3.Text)) > 0 then
     gSelectedSParameter3 := GD1Item
   else if pos(LowerCase('GD2'), LowerCase(SParCombo3.Text)) > 0 then
@@ -753,25 +816,37 @@ begin
     gSelectedSParameter3 := TBPAItem
   else
     gSelectedSParameter3 := NullItem;
+  SetStandardStrucParBoundaries;
+  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3);
   DrawDiagram(False);
+  RestoreStrucPars;
 end;
 
 procedure TEquilibriumDiagramForm.SParTrackBar1Change(Sender: TObject);
 begin
+  SaveStrucPars;
   UpdateEditsfromTrackBars;
+  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1);
   DrawDiagram(False);
+  RestoreStrucPars;
 end;
 
 procedure TEquilibriumDiagramForm.SParTrackBar2Change(Sender: TObject);
 begin
+  SaveStrucPars;
   UpdateEditsfromTrackBars;
+  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2);
   DrawDiagram(False);
+  RestoreStrucPars;
 end;
 
 procedure TEquilibriumDiagramForm.SParTrackBar3Change(Sender: TObject);
 begin
+  SaveStrucPars;
   UpdateEditsfromTrackBars;
+  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3);
   DrawDiagram(False);
+  RestoreStrucPars;
 end;
 
 procedure TEquilibriumDiagramForm.xColorBoxChange(Sender: TObject);
