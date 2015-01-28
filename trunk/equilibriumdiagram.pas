@@ -114,6 +114,7 @@ type
 var
   EquilibriumDiagramForm: TEquilibriumDiagramForm;
   gSelectedBParameter1, gSelectedBParameter2: tBParameter;
+  gSelectedSParameter1, gSelectedSParameter2, gSelectedSParameter3: tSParameter;
   gSpinFactor: real;
   gResponseCurve1, gResponseCurve2: tResponseCurve;
   gFT4conversionFactor, gFT3conversionFactor: real;
@@ -617,6 +618,10 @@ end;
 procedure TEquilibriumDiagramForm.SParCombo1Change(Sender: TObject);
 begin
   DrawDiagram(False);
+  if pos('GD1', SParCombo1.Text) > 0 then
+    gSelectedSParameter1 := GD1Item  // to be completed...
+  else
+    gSelectedSParameter1 := NullItem;
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo2Change(Sender: TObject);
@@ -663,5 +668,8 @@ end;
 
 initialization
   {$I equilibriumdiagram.lrs}
+  gSelectedSParameter1 := NullItem;
+  gSelectedSParameter2 := NullItem;
+  gSelectedSParameter2 := NullItem;
 
 end.
