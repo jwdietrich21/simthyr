@@ -35,7 +35,11 @@ const
   KM2_FACTOR = 1e9;
   DT_FACTOR = 1;
   LS_FACTOR = 1e-6;
+  GH_FACTOR = 1;
   DH_FACTOR = 1e9;
+  SS_FACTOR = 1;
+  DS_FACTOR = 1;
+  GR_FACTOR = 1;
   DR_FACTOR = 1e12;
   BETAT_FACTOR = 1e6;
   TBG_FACTOR = 1e9;

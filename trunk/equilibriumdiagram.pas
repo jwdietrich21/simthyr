@@ -129,7 +129,21 @@ procedure UpdateStrucPar(theParameter: tSParameter; theValue: real);
 begin
   case theParameter of
     GD1Item: GD1 := theValue;
-    GD2Item: GD2 := theValue;  // to be continued ...
+    GD2Item: GD2 := theValue;
+    KM1Item: kM1 := theValue;
+    KM2Item: kM2 := theValue;
+    GTItem: GT := theValue;
+    DTItem: DT := theValue;
+    GHItem: GH:= theValue;
+    DHItem: DH := theValue;
+    SSItem: SS := theValue;
+    DSItem: DS:= theValue;
+    GRItem: GR := theValue;
+    DRItem: DR := theValue;
+    LSItem: LS:= theValue;
+    betaTItem: betaT := theValue;
+    TBGItem: TBG := theValue;
+    TBPAItem: TBPA := theValue;
   end;
 end;
 
@@ -354,7 +368,91 @@ begin
       gTrackFactor1 := GD2_FACTOR;
       gMinSPar1 := GD2 / 3;
       gMaxSPar1 := GD2 * 3;
-    end;                                 // to be continued ...
+    end;
+    KM1Item:
+    begin
+      gTrackFactor1 := kM1_FACTOR;
+      gMinSPar1 := kM1 / 3;
+      gMaxSPar1 := kM1 * 3;
+    end;
+    KM2Item:
+    begin
+      gTrackFactor1 := KM2_FACTOR;
+      gMinSPar1 := KM2 / 3;
+      gMaxSPar1 := KM2 * 3;
+    end;
+    GTItem:
+    begin
+      gTrackFactor1 := GT_FACTOR;
+      gMinSPar1 := GT / 3;
+      gMaxSPar1 := GT * 3;
+    end;
+    DTItem:
+    begin
+      gTrackFactor1 := DT_FACTOR;
+      gMinSPar1 := DT / 3;
+      gMaxSPar1 := DT * 3;
+    end;
+    GHItem:
+    begin
+      gTrackFactor1 := GH_FACTOR;
+      gMinSPar1 := GH / 3;
+      gMaxSPar1 := GH * 3;
+    end;
+    DHItem:
+    begin
+      gTrackFactor1 := DH_FACTOR;
+      gMinSPar1 := DH / 3;
+      gMaxSPar1 := DH * 3;
+    end;
+    SSItem:
+    begin
+      gTrackFactor1 := SS_FACTOR;
+      gMinSPar1 := SS / 3;
+      gMaxSPar1 := SS * 3;
+    end;
+    DSItem:
+    begin
+      gTrackFactor1 := DS_FACTOR;
+      gMinSPar1 := DS / 3;
+      gMaxSPar1 := DS * 3;
+    end;
+    GRItem:
+    begin
+      gTrackFactor1 := GR_FACTOR;
+      gMinSPar1 := GR / 3;
+      gMaxSPar1 := GR * 3;
+    end;
+    DRItem:
+    begin
+      gTrackFactor1 := DR_FACTOR;
+      gMinSPar1 := DR / 3;
+      gMaxSPar1 := DR * 3;
+    end;
+    LSItem:
+    begin
+      gTrackFactor1 := LS_FACTOR;
+      gMinSPar1 := LS / 3;
+      gMaxSPar1 := LS * 3;
+    end;
+    betaTItem:
+    begin
+      gTrackFactor1 := betaT_FACTOR;
+      gMinSPar1 := betaT / 3;
+      gMaxSPar1 := betaT * 3;
+    end;
+    TBGItem:
+    begin
+      gTrackFactor1 := TBG_FACTOR;
+      gMinSPar1 := TBG / 3;
+      gMaxSPar1 := TBG * 3;
+    end;
+    TBPAItem:
+    begin
+      gTrackFactor1 := TBPA_FACTOR;
+      gMinSPar1 := TBPA / 3;
+      gMaxSPar1 := TBPA * 3;
+    end;
     otherwise
     begin
       gTrackFactor1 := 1;
@@ -698,16 +796,8 @@ begin
     gSelectedSParameter1 := DRItem
   else if pos(LowerCase('LS'), LowerCase(SParCombo1.Text)) > 0 then
     gSelectedSParameter1 := LSItem
-  else if pos(LowerCase('betaS'), LowerCase(SParCombo1.Text)) > 0 then
-    gSelectedSParameter1 := betaSItem
-  else if pos(LowerCase('betaS2'), LowerCase(SParCombo1.Text)) > 0 then
-    gSelectedSParameter1 := betaS2Item
   else if pos(LowerCase('betaT'), LowerCase(SParCombo1.Text)) > 0 then
     gSelectedSParameter1 := betaTItem
-  else if pos(LowerCase('beta31'), LowerCase(SParCombo1.Text)) > 0 then
-    gSelectedSParameter1 := beta31Item
-  else if pos(LowerCase('beta32'), LowerCase(SParCombo1.Text)) > 0 then
-    gSelectedSParameter1 := beta32Item
   else if pos(LowerCase('TBG'), LowerCase(SParCombo1.Text)) > 0 then
     gSelectedSParameter1 := TBGItem
   else if pos(LowerCase('TBPA'), LowerCase(SParCombo1.Text)) > 0 then
@@ -749,16 +839,8 @@ begin
     gSelectedSParameter2 := DRItem
   else if pos(LowerCase('LS'), LowerCase(SParCombo2.Text)) > 0 then
     gSelectedSParameter2 := LSItem
-  else if pos(LowerCase('betaS'), LowerCase(SParCombo2.Text)) > 0 then
-    gSelectedSParameter2 := betaSItem
-  else if pos(LowerCase('betaS2'), LowerCase(SParCombo2.Text)) > 0 then
-    gSelectedSParameter2 := betaS2Item
   else if pos(LowerCase('betaT'), LowerCase(SParCombo2.Text)) > 0 then
     gSelectedSParameter2 := betaTItem
-  else if pos(LowerCase('beta31'), LowerCase(SParCombo2.Text)) > 0 then
-    gSelectedSParameter2 := beta31Item
-  else if pos(LowerCase('beta32'), LowerCase(SParCombo2.Text)) > 0 then
-    gSelectedSParameter2 := beta32Item
   else if pos(LowerCase('TBG'), LowerCase(SParCombo2.Text)) > 0 then
     gSelectedSParameter2 := TBGItem
   else if pos(LowerCase('TBPA'), LowerCase(SParCombo2.Text)) > 0 then
@@ -800,16 +882,8 @@ begin
     gSelectedSParameter3 := DRItem
   else if pos(LowerCase('LS'), LowerCase(SParCombo3.Text)) > 0 then
     gSelectedSParameter3 := LSItem
-  else if pos(LowerCase('betaS'), LowerCase(SParCombo3.Text)) > 0 then
-    gSelectedSParameter3 := betaSItem
-  else if pos(LowerCase('betaS2'), LowerCase(SParCombo3.Text)) > 0 then
-    gSelectedSParameter3 := betaS2Item
   else if pos(LowerCase('betaT'), LowerCase(SParCombo3.Text)) > 0 then
     gSelectedSParameter3 := betaTItem
-  else if pos(LowerCase('beta31'), LowerCase(SParCombo3.Text)) > 0 then
-    gSelectedSParameter3 := beta31Item
-  else if pos(LowerCase('beta32'), LowerCase(SParCombo3.Text)) > 0 then
-    gSelectedSParameter3 := beta32Item
   else if pos(LowerCase('TBG'), LowerCase(SParCombo3.Text)) > 0 then
     gSelectedSParameter3 := TBGItem
   else if pos(LowerCase('TBPA'), LowerCase(SParCombo3.Text)) > 0 then
@@ -869,4 +943,4 @@ initialization
   gSelectedSParameter2 := NullItem;
   gSelectedSParameter2 := NullItem;
 
-end.
+end.
