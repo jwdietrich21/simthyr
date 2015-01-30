@@ -1,7 +1,7 @@
 object EquilibriumDiagramForm: TEquilibriumDiagramForm
-  Left = 257
+  Left = 228
   Height = 471
-  Top = 122
+  Top = 126
   Width = 742
   Caption = 'Equilibrium Diagram'
   ClientHeight = 471
@@ -416,7 +416,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Anchors = [akRight, akBottom]
       DecimalPlaces = 3
       Increment = 0.5
-      MaxValue = 1000
+      MaxValue = 20000
       MinValue = 0
       OnChange = MaxSpinEdit1Change
       ParentShowHint = False
@@ -438,7 +438,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'Select characteristic curve 1 (x axis)...'
         'Pituitary response (TSH concentration)'
         'Thyroid response (FT4 concentration)'
-        'Peripheral deiodination (FT3 concentration)'
         'Central deiodination (cT3 concentration)'
       )
       OnChange = BParCombo1Change
@@ -478,7 +477,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'Select characteristic curve 2 (y axis)...'
         'Pituitary response (TSH concentration)'
         'Thyroid response (FT4 concentration)'
-        'Peripheral deiodination (FT3 concentration)'
         'Central deiodination (cT3 concentration)'
       )
       OnChange = BParCombo2Change
@@ -496,7 +494,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Anchors = [akRight, akBottom]
       DecimalPlaces = 3
       Increment = 0.5
-      MaxValue = 1000
+      MaxValue = 20000
       MinValue = 0
       OnChange = MaxSpinEdit2Change
       ParentShowHint = False
