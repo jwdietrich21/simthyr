@@ -121,6 +121,7 @@ var
   gResponseCurve1, gResponseCurve2: tResponseCurve;
   gFT4conversionFactor, gFT3conversionFactor: real;
   gcT3conversionFactor: real;
+  gUOM1, gUOM2: string;
 
 
 implementation
@@ -691,25 +692,55 @@ end;
 procedure TEquilibriumDiagramForm.GetBParameters;
 begin
   if pos(LowerCase('TSH'), LowerCase(BParCombo1.Text)) > 0 then
-    gSelectedBParameter1 := TSHItem
+    begin
+      gSelectedBParameter1 := TSHItem;
+      gUOM1 := gParameterUnit[TSH_pos];
+    end
   else if pos(LowerCase('FT4'), LowerCase(BParCombo1.Text)) > 0 then
-    gSelectedBParameter1 := FT4Item
+    begin
+      gSelectedBParameter1 := FT4Item;
+      gUOM1 := gParameterUnit[FT4_pos];
+    end
   else if pos(LowerCase('FT3'), LowerCase(BParCombo1.Text)) > 0 then
-    gSelectedBParameter1 := FT3Item
+    begin
+      gSelectedBParameter1 := FT3Item;
+      gUOM1 := gParameterUnit[FT3_pos];
+    end
   else if pos(LowerCase('cT3'), LowerCase(BParCombo1.Text)) > 0 then
-    gSelectedBParameter1 := cT3Item
+    begin
+      gSelectedBParameter1 := cT3Item;
+      gUOM1 := gParameterUnit[cT3_pos];
+    end
   else
-    gSelectedBParameter1 := IItem;
+    begin
+      gSelectedBParameter1 := IItem;
+      gUOM1 := '';
+    end;
   if pos(LowerCase('TSH'), LowerCase(BParCombo2.Text)) > 0 then
-    gSelectedBParameter2 := TSHItem
+    begin
+      gSelectedBParameter2 := TSHItem;
+      gUOM2 := gParameterUnit[TSH_pos];
+    end
   else if pos(LowerCase('FT4'), LowerCase(BParCombo2.Text)) > 0 then
-    gSelectedBParameter2 := FT4Item
+    begin
+      gSelectedBParameter2 := FT4Item;
+      gUOM2 := gParameterUnit[FT4_pos];
+    end
   else if pos(LowerCase('FT3'), LowerCase(BParCombo2.Text)) > 0 then
-    gSelectedBParameter2 := FT3Item
+    begin
+      gSelectedBParameter2 := FT3Item;
+      gUOM2 := gParameterUnit[FT3_pos];
+    end
   else if pos(LowerCase('cT3'), LowerCase(BParCombo2.Text)) > 0 then
-    gSelectedBParameter2 := cT3Item
+    begin
+      gSelectedBParameter2 := cT3Item;
+      gUOM2 := gParameterUnit[cT3_pos];
+    end
   else
-    gSelectedBParameter2 := IItem;
+    begin
+      gSelectedBParameter2 := IItem;
+      gUOM2 := '';
+    end;
 end;
 
 procedure TEquilibriumDiagramForm.SParEdit1Change(Sender: TObject);
@@ -832,8 +863,17 @@ var
   MinBPar1, MaxBPar1, MinBPar2, MaxBPar2: real;
   ConversionFactor1, ConversionFactor2: real;
   max_x: real;
+  UOM1, UOM2: string;
 begin
   GetBParameters;
+  if gUOM1 <> '' then
+    UOM1 := ' / ' + gUOM1
+  else
+    UOM1 := '';
+  if gUOM2 <> '' then
+    UOM2 := ' / ' + gUOM2
+  else
+    UOM2 := '';
   gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
     gParameterUnit[FT4_pos]);
   gFT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
@@ -896,7 +936,7 @@ begin
   else
     begin
       max_x := max(MaxValue(gResponseCurve1.input) * conversionFactor1,
-      MaxValue(gResponseCurve2.output) * conversionFactor2);
+        MaxValue(gResponseCurve2.output) * conversionFactor2);
       if MaxSpinEdit2.Value < max_x then MaxSpinEdit2.Value := max_x;
     end;
   if gSelectedBParameter1 <> IItem then
@@ -946,6 +986,7 @@ begin
     bell;
     MaxSpinEdit1.Value := MinSpinEdit1.Value;
   end;
+  if MaxSpinEdit1.Value = 0 then MaxSpinEdit1.Value := 0.1;
   DrawDiagram(False);
 end;
 
@@ -957,6 +998,7 @@ begin
     bell;
     MaxSpinEdit2.Value := MinSpinEdit2.Value;
   end;
+  if MaxSpinEdit2.Value = 0 then MaxSpinEdit2.Value := 0.1;
   DrawDiagram(False);
 end;
 
@@ -995,6 +1037,9 @@ begin
   SParTrackBar3.Position := 0;
   RestoreStrucPars;
   SetStandardStrucParBoundaries;
+  MaxSpinEdit1.Value := 10;
+  MaxSpinEdit2.Value := 10;
+  FullScaleButton1Click(Sender);
   DrawDiagram(False);
 end;
 
