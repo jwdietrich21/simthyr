@@ -398,7 +398,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 3
-      Increment = 0.5
+      Increment = 0.01
       MaxValue = 100
       MinValue = 0
       OnChange = MinSpinEdit1Change
@@ -415,7 +415,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 3
-      Increment = 0.5
+      Increment = 0.01
       MaxValue = 20000
       MinValue = 0
       OnChange = MaxSpinEdit1Change
@@ -454,7 +454,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 3
-      Increment = 0.5
+      Increment = 0.01
       MaxValue = 100
       MinValue = 0
       OnChange = MinSpinEdit2Change
@@ -493,7 +493,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 3
-      Increment = 0.5
+      Increment = 0.01
       MaxValue = 20000
       MinValue = 0
       OnChange = MaxSpinEdit2Change

@@ -717,7 +717,7 @@ begin
   DrawOWSensitivityPlot(false); // adapts one-way sensitivity analysis
   {DrawTornadoPlot; // tornado plot not affected since it displays percentages}
   TWSensitivityAnalysisForm.Rescale2DMap; // rescales two-way sensitivity analysis
-  EquilibriumDiagramForm.DrawDiagram(false); // adapts equilibrium diagram
+  EquilibriumDiagramForm.DrawDiagram(true, false); // adapts equilibrium diagram
   SavePreferences;
   PreferencesDialog.Close;
 end;
