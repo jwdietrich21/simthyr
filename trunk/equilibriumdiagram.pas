@@ -81,7 +81,7 @@ type
     procedure UpdateEditsfromTrackBars;
     procedure UpdateTrackBarsfromEdits;
     procedure DrawDummyEquilibriumPlot;
-    procedure DrawDiagram(empty: boolean);
+    procedure DrawDiagram(autoBounds, empty: boolean);
     procedure BParCombo1Change(Sender: TObject);
     procedure BParCombo2Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -117,6 +117,7 @@ var
   gSelectedBParameter1, gSelectedBParameter2: tBParameter;
   gSelectedSParameter1, gSelectedSParameter2, gSelectedSParameter3: tSParameter;
   gMinSPar1, gMaxSPar1, gMinSPar2, gMaxSPar2, gMinSPar3, gMaxSPar3: real;
+  gMidSPar1, gMidSPar2, gMidSPar3: real;
   gSpinFactor, gTrackFactor1, gTrackFactor2, gTrackFactor3: real;
   gResponseCurve1, gResponseCurve2: tResponseCurve;
   gFT4conversionFactor, gFT3conversionFactor: real;
@@ -355,7 +356,7 @@ end;
 
 procedure TEquilibriumDiagramForm.SetStandardStrucParBoundaries;
 var
-  tempMinS, tempMaxS: real; {necessary to hinder Windows from altering the globals}
+  tempMinS, tempMaxS, tempMidS: real; {necessary to hinder Windows from altering the globals}
 begin
   case gSelectedSParameter1 of
     GD1Item:
@@ -363,106 +364,124 @@ begin
       gTrackFactor1 := GD1_FACTOR;
       gMinSPar1 := GD1 / 3;
       gMaxSPar1 := GD1 * 3;
+      gMidSPar1 := GD1;
     end;
     GD2Item:
     begin
       gTrackFactor1 := GD2_FACTOR;
       gMinSPar1 := GD2 / 3;
       gMaxSPar1 := GD2 * 3;
+      gMidSPar1 := GD2;
     end;
     KM1Item:
     begin
       gTrackFactor1 := kM1_FACTOR;
       gMinSPar1 := kM1 / 3;
       gMaxSPar1 := kM1 * 3;
+      gMidSPar1 := kM1;
     end;
     KM2Item:
     begin
       gTrackFactor1 := KM2_FACTOR;
-      gMinSPar1 := KM2 / 3;
-      gMaxSPar1 := KM2 * 3;
+      gMinSPar1 := kM2 / 3;
+      gMaxSPar1 := kM2 * 3;
+      gMidSPar1 := kM2;
     end;
     GTItem:
     begin
       gTrackFactor1 := GT_FACTOR;
       gMinSPar1 := GT / 3;
       gMaxSPar1 := GT * 3;
+      gMidSPar1 := GT;
     end;
     DTItem:
     begin
       gTrackFactor1 := DT_FACTOR;
       gMinSPar1 := DT / 3;
       gMaxSPar1 := DT * 3;
+      gMidSPar1 := DT;
     end;
     GHItem:
     begin
       gTrackFactor1 := GH_FACTOR;
       gMinSPar1 := GH / 3;
       gMaxSPar1 := GH * 3;
+      gMidSPar1 := GH;
     end;
     DHItem:
     begin
       gTrackFactor1 := DH_FACTOR;
       gMinSPar1 := DH / 3;
       gMaxSPar1 := DH * 3;
+      gMidSPar1 := DH;
     end;
     SSItem:
     begin
       gTrackFactor1 := SS_FACTOR;
       gMinSPar1 := SS / 3;
       gMaxSPar1 := SS * 3;
+      gMidSPar1 := SS;
     end;
     DSItem:
     begin
       gTrackFactor1 := DS_FACTOR;
       gMinSPar1 := DS / 3;
       gMaxSPar1 := DS * 3;
+      gMidSPar1 := DS;
     end;
     GRItem:
     begin
       gTrackFactor1 := GR_FACTOR;
       gMinSPar1 := GR / 3;
       gMaxSPar1 := GR * 3;
+      gMidSPar1 := GR;
     end;
     DRItem:
     begin
       gTrackFactor1 := DR_FACTOR;
       gMinSPar1 := DR / 3;
       gMaxSPar1 := DR * 3;
+      gMidSPar1 := DR;
     end;
     LSItem:
     begin
       gTrackFactor1 := LS_FACTOR;
       gMinSPar1 := LS / 3;
       gMaxSPar1 := LS * 3;
+      gMidSPar1 := LS;
     end;
     betaTItem:
     begin
       gTrackFactor1 := betaT_FACTOR;
       gMinSPar1 := betaT / 3;
       gMaxSPar1 := betaT * 3;
+      gMidSPar1 := betaT;
     end;
     TBGItem:
     begin
       gTrackFactor1 := TBG_FACTOR;
       gMinSPar1 := TBG / 3;
       gMaxSPar1 := TBG * 3;
+      gMidSPar1 := TBG;
     end;
     TBPAItem:
     begin
       gTrackFactor1 := TBPA_FACTOR;
       gMinSPar1 := TBPA / 3;
       gMaxSPar1 := TBPA * 3;
+      gMidSPar1 := TBPA;
     end;
     otherwise
     begin
       gTrackFactor1 := 1;
       gMinSPar1 := 0;
       gMaxSPar1 := 50;
+      gMidSPar1 := 25;
     end;
   end;
   tempMinS := gMinSPar1;
   tempMaxS := gMaxSPar1;
+  tempMidS := gMidSPar1;
   SParTrackBar1.Min := trunc(tempMinS * gTrackFactor1);
   SParTrackBar1.Max := trunc(tempMaxS * gTrackFactor1);
   gMinSPar1 := tempMinS;
@@ -473,106 +492,124 @@ begin
       gTrackFactor2 := GD1_FACTOR;
       gMinSPar2 := GD1 / 3;
       gMaxSPar2 := GD1 * 3;
+      gMidSPar2 := GD1;
     end;
     GD2Item:
     begin
       gTrackFactor2 := GD2_FACTOR;
       gMinSPar2 := GD2 / 3;
       gMaxSPar2 := GD2 * 3;
+      gMidSPar2 := GD2;
     end;
     KM1Item:
     begin
       gTrackFactor2 := kM1_FACTOR;
       gMinSPar2 := kM1 / 3;
       gMaxSPar2 := kM1 * 3;
+      gMidSPar2 := kM1;
     end;
     KM2Item:
     begin
       gTrackFactor2 := KM2_FACTOR;
       gMinSPar2 := KM2 / 3;
       gMaxSPar2 := KM2 * 3;
+      gMidSPar2 := kM2;
     end;
     GTItem:
     begin
       gTrackFactor2 := GT_FACTOR;
       gMinSPar2 := GT / 3;
       gMaxSPar2 := GT * 3;
+      gMidSPar2 := GT;
     end;
     DTItem:
     begin
       gTrackFactor2 := DT_FACTOR;
       gMinSPar2 := DT / 3;
       gMaxSPar2 := DT * 3;
+      gMidSPar2 := DT;
     end;
     GHItem:
     begin
       gTrackFactor2 := GH_FACTOR;
       gMinSPar2 := GH / 3;
       gMaxSPar2 := GH * 3;
+      gMidSPar2 := GH;
     end;
     DHItem:
     begin
       gTrackFactor2 := DH_FACTOR;
       gMinSPar2 := DH / 3;
       gMaxSPar2 := DH * 3;
+      gMidSPar2 := DH;
     end;
     SSItem:
     begin
       gTrackFactor2 := SS_FACTOR;
       gMinSPar2 := SS / 3;
       gMaxSPar2 := SS * 3;
+      gMidSPar2 := SS;
     end;
     DSItem:
     begin
       gTrackFactor2 := DS_FACTOR;
       gMinSPar2 := DS / 3;
       gMaxSPar2 := DS * 3;
+      gMidSPar2 := DS;
     end;
     GRItem:
     begin
       gTrackFactor2 := GR_FACTOR;
       gMinSPar2 := GR / 3;
       gMaxSPar2 := GR * 3;
+      gMidSPar2 := GR;
     end;
     DRItem:
     begin
       gTrackFactor2 := DR_FACTOR;
       gMinSPar2 := DR / 3;
       gMaxSPar2 := DR * 3;
+      gMidSPar2 := DR;
     end;
     LSItem:
     begin
       gTrackFactor2 := LS_FACTOR;
       gMinSPar2 := LS / 3;
       gMaxSPar2 := LS * 3;
+      gMidSPar2 := LS;
     end;
     betaTItem:
     begin
       gTrackFactor2 := betaT_FACTOR;
       gMinSPar2 := betaT / 3;
       gMaxSPar2 := betaT * 3;
+      gMidSPar2 := betaT;
     end;
     TBGItem:
     begin
       gTrackFactor2 := TBG_FACTOR;
       gMinSPar2 := TBG / 3;
       gMaxSPar2 := TBG * 3;
+      gMidSPar2 := TBG;
     end;
     TBPAItem:
     begin
       gTrackFactor2 := TBPA_FACTOR;
       gMinSPar2 := TBPA / 3;
       gMaxSPar2 := TBPA * 3;
+      gMidSPar2 := TBPA;
     end;
     otherwise
     begin
       gTrackFactor2 := 1;
       gMinSPar2 := 0;
       gMaxSPar2 := 50;
+      gMidSPar2 := 25;
     end;
   end;
   tempMinS := gMinSPar2;
   tempMaxS := gMaxSPar2;
+  tempMidS := gMidSPar2;
   SParTrackBar2.Min := trunc(tempMinS * gTrackFactor2);
   SParTrackBar2.Max := trunc(tempMaxS * gTrackFactor2);
   gMinSPar2 := tempMinS;
@@ -583,106 +620,124 @@ begin
       gTrackFactor3 := GD1_FACTOR;
       gMinSPar3 := GD1 / 3;
       gMaxSPar3 := GD1 * 3;
+      gMidSPar3 := GD1
     end;
     GD2Item:
     begin
       gTrackFactor3 := GD2_FACTOR;
       gMinSPar3 := GD2 / 3;
       gMaxSPar3 := GD2 * 3;
+      gMidSPar3 := GD2
     end;
     KM1Item:
     begin
       gTrackFactor3 := kM1_FACTOR;
       gMinSPar3 := kM1 / 3;
       gMaxSPar3 := kM1 * 3;
+      gMidSPar3 := kM1;
     end;
     KM2Item:
     begin
       gTrackFactor3 := KM2_FACTOR;
       gMinSPar3 := KM2 / 3;
       gMaxSPar3 := KM2 * 3;
+      gMidSPar3 := kM2;
     end;
     GTItem:
     begin
       gTrackFactor3 := GT_FACTOR;
       gMinSPar3 := GT / 3;
       gMaxSPar3 := GT * 3;
+      gMidSPar3 := GT;
     end;
     DTItem:
     begin
       gTrackFactor3 := DT_FACTOR;
       gMinSPar3 := DT / 3;
       gMaxSPar3 := DT * 3;
+      gMidSPar3 := DT;
     end;
     GHItem:
     begin
       gTrackFactor3 := GH_FACTOR;
       gMinSPar3 := GH / 3;
       gMaxSPar3 := GH * 3;
+      gMidSPar3 := GH;
     end;
     DHItem:
     begin
       gTrackFactor3 := DH_FACTOR;
       gMinSPar3 := DH / 3;
       gMaxSPar3 := DH * 3;
+      gMidSPar3 := DH;
     end;
     SSItem:
     begin
       gTrackFactor3 := SS_FACTOR;
       gMinSPar3 := SS / 3;
       gMaxSPar3 := SS * 3;
+      gMidSPar3 := SS;
     end;
     DSItem:
     begin
       gTrackFactor3 := DS_FACTOR;
       gMinSPar3 := DS / 3;
       gMaxSPar3 := DS * 3;
+      gMidSPar3 := DS;
     end;
     GRItem:
     begin
       gTrackFactor3 := GR_FACTOR;
       gMinSPar3 := GR / 3;
       gMaxSPar3 := GR * 3;
+      gMidSPar3 := GR;
     end;
     DRItem:
     begin
       gTrackFactor3 := DR_FACTOR;
       gMinSPar3 := DR / 3;
       gMaxSPar3 := DR * 3;
+      gMidSPar3 := DR;
     end;
     LSItem:
     begin
       gTrackFactor3 := LS_FACTOR;
       gMinSPar3 := LS / 3;
       gMaxSPar3 := LS * 3;
+      gMidSPar3 := LS;
     end;
     betaTItem:
     begin
       gTrackFactor3 := betaT_FACTOR;
       gMinSPar3 := betaT / 3;
       gMaxSPar3 := betaT * 3;
+      gMidSPar3 := betaT;
     end;
     TBGItem:
     begin
       gTrackFactor3 := TBG_FACTOR;
       gMinSPar3 := TBG / 3;
       gMaxSPar3 := TBG * 3;
+      gMidSPar3 := TBG;
     end;
     TBPAItem:
     begin
       gTrackFactor3 := TBPA_FACTOR;
       gMinSPar3 := TBPA / 3;
       gMaxSPar3 := TBPA * 3;
+      gMidSPar3 := TBPA;
     end;
     otherwise
     begin
       gTrackFactor3 := 1;
       gMinSPar3 := 0;
       gMaxSPar3 := 50;
+      gMidSPar3 := 25;
     end;
   end;
   tempMinS := gMinSPar3;
   tempMaxS := gMaxSPar3;
+  tempMidS := gMidSPar3;
   SParTrackBar3.Min := trunc(tempMinS * gTrackFactor3);
   SParTrackBar3.Max := trunc(tempMaxS * gTrackFactor3);
   gMinSPar3 := tempMinS;
@@ -749,7 +804,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1);
-  DrawDiagram(False);
+  DrawDiagram(true, false);
 end;
 
 procedure TEquilibriumDiagramForm.SParEdit2Change(Sender: TObject);
@@ -758,7 +813,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2);
-  DrawDiagram(False);
+  DrawDiagram(true, false);
 end;
 
 procedure TEquilibriumDiagramForm.SParEdit3Change(Sender: TObject);
@@ -767,7 +822,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3);
-  DrawDiagram(False);
+  DrawDiagram(true, false);
 end;
 
 procedure TEquilibriumDiagramForm.FormActivate(Sender: TObject);
@@ -857,7 +912,7 @@ begin
   end;
 end;
 
-procedure TEquilibriumDiagramForm.DrawDiagram(empty: boolean);
+procedure TEquilibriumDiagramForm.DrawDiagram(autoBounds, empty: boolean);
 var
   i, j: integer;
   MinBPar1, MaxBPar1, MinBPar2, MaxBPar2: real;
@@ -906,10 +961,10 @@ begin
     MaxBPar1 := MaxSpinEdit1.Value / gSpinFactor;
     MinBPar2 := MinSpinEdit2.Value / gSpinFactor;
     MaxBPar2 := MaxSpinEdit2.Value / gSpinFactor;
-    EquilibriumChart.LeftAxis.Range.UseMin := false;
-    EquilibriumChart.LeftAxis.Range.UseMax := false;
-    EquilibriumChart.BottomAxis.Range.UseMin := false;
-    EquilibriumChart.BottomAxis.Range.UseMax := false;
+    EquilibriumChart.LeftAxis.Range.UseMin := true;
+    EquilibriumChart.LeftAxis.Range.UseMax := true;
+    EquilibriumChart.BottomAxis.Range.UseMin := true;
+    EquilibriumChart.BottomAxis.Range.UseMax := true;
     gResponseCurve1 := SimSubsystemResponse(gSelectedBParameter2, gSelectedBParameter1, MinBPar2,
       MaxBPar2, ConversionFactor1, ConversionFactor2);
     for j := 0 to MAX_I do
@@ -937,7 +992,8 @@ begin
     begin
       max_x := max(MaxValue(gResponseCurve1.input) * conversionFactor1,
         MaxValue(gResponseCurve2.output) * conversionFactor2);
-      if MaxSpinEdit2.Value < max_x then MaxSpinEdit2.Value := max_x;
+      if autoBounds and (MaxSpinEdit2.Value < max_x) then
+        MaxSpinEdit2.Value := max_x;
     end;
   if gSelectedBParameter1 <> IItem then
     EquilibriumChart.LeftAxis.Title.Caption := BParCombo1.Caption;
@@ -949,7 +1005,7 @@ procedure TEquilibriumDiagramForm.FormCreate(Sender: TObject);
 begin
   gSpinFactor := 1;
   UpdateEditsfromTrackBars;
-  DrawDiagram(True);
+  DrawDiagram(true, true);
 end;
 
 procedure TEquilibriumDiagramForm.BParCombo1Change(Sender: TObject);
@@ -959,7 +1015,7 @@ begin
   xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
   if BParCombo2.ItemIndex = 0 then
     BParCombo2.ItemIndex := 1;  // set to useful initial value
-  DrawDiagram(False);
+  DrawDiagram(true, false);
 end;
 
 procedure TEquilibriumDiagramForm.BParCombo2Change(Sender: TObject);
@@ -969,7 +1025,7 @@ begin
   yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
   if BParCombo1.ItemIndex = 0 then
     BParCombo1.ItemIndex := 1;  // set to useful initial value
-  DrawDiagram(False);
+  DrawDiagram(true, false);
 end;
 
 procedure TEquilibriumDiagramForm.FullScaleButton1Click(Sender: TObject);
@@ -987,7 +1043,7 @@ begin
     MaxSpinEdit1.Value := MinSpinEdit1.Value;
   end;
   if MaxSpinEdit1.Value = 0 then MaxSpinEdit1.Value := 0.1;
-  DrawDiagram(False);
+  DrawDiagram(false, false);
 end;
 
 procedure TEquilibriumDiagramForm.MaxSpinEdit2Change(Sender: TObject);
@@ -999,7 +1055,7 @@ begin
     MaxSpinEdit2.Value := MinSpinEdit2.Value;
   end;
   if MaxSpinEdit2.Value = 0 then MaxSpinEdit2.Value := 0.1;
-  DrawDiagram(False);
+  DrawDiagram(false, false);
 end;
 
 procedure TEquilibriumDiagramForm.MinSpinEdit1Change(Sender: TObject);
@@ -1010,7 +1066,7 @@ begin
     bell;
     MinSpinEdit1.Value := MaxSpinEdit1.Value;
   end;
-  DrawDiagram(False);
+  DrawDiagram(false, false);
 end;
 
 procedure TEquilibriumDiagramForm.MinSpinEdit2Change(Sender: TObject);
@@ -1021,7 +1077,7 @@ begin
     bell;
     MinSpinEdit2.Value := MaxSpinEdit2.Value;
   end;
-  DrawDiagram(False);
+  DrawDiagram(false, false);
 end;
 
 procedure TEquilibriumDiagramForm.ResetButtonClick(Sender: TObject);
@@ -1037,10 +1093,12 @@ begin
   SParTrackBar3.Position := 0;
   RestoreStrucPars;
   SetStandardStrucParBoundaries;
+  MinSpinEdit1.Value := 0;
+  MinSpinEdit2.Value := 0.3;
   MaxSpinEdit1.Value := 10;
   MaxSpinEdit2.Value := 10;
   FullScaleButton1Click(Sender);
-  DrawDiagram(False);
+  DrawDiagram(true, false);
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo1Change(Sender: TObject);
@@ -1082,7 +1140,7 @@ begin
     gSelectedSParameter1 := NullItem;
   SetStandardStrucParBoundaries;
   UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1);
-  DrawDiagram(False);
+  DrawDiagram(true, false);
   RestoreStrucPars;
 end;
 
@@ -1125,7 +1183,7 @@ begin
     gSelectedSParameter2 := NullItem;
   SetStandardStrucParBoundaries;
   UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2);
-  DrawDiagram(False);
+  DrawDiagram(true, false);
   RestoreStrucPars;
 end;
 
@@ -1168,7 +1226,7 @@ begin
     gSelectedSParameter3 := NullItem;
   SetStandardStrucParBoundaries;
   UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3);
-  DrawDiagram(False);
+  DrawDiagram(true, false);
   RestoreStrucPars;
 end;
 
@@ -1177,7 +1235,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1);
-  DrawDiagram(False);
+  DrawDiagram(true, false);
   RestoreStrucPars;
 end;
 
@@ -1186,7 +1244,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2);
-  DrawDiagram(False);
+  DrawDiagram(true, false);
   RestoreStrucPars;
 end;
 
@@ -1195,7 +1253,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3);
-  DrawDiagram(False);
+  DrawDiagram(true, false);
   RestoreStrucPars;
 end;
 
@@ -1203,14 +1261,14 @@ procedure TEquilibriumDiagramForm.xColorBoxChange(Sender: TObject);
 begin
   Fline[1].SeriesColor := xColorBox.Selected;
   //EquilibriumChartLineSeries1.SeriesColor := xColorBox.Selected;
-  DrawDiagram(False);
+  DrawDiagram(true, false);
 end;
 
 procedure TEquilibriumDiagramForm.yColorBoxChange(Sender: TObject);
 begin
   Fline[1].SeriesColor := xColorBox.Selected;
   //EquilibriumChartLineSeries2.SeriesColor := yColorBox.Selected;
-  DrawDiagram(False);
+  DrawDiagram(true, false);
 end;
 
 initialization
