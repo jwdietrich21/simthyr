@@ -224,7 +224,7 @@ end;
 
 function SimSubsystemResponse(bParameter1, bParameter2: tBParameter;
   min, max: real; var conversionFactor1, conversionFactor2: real): tResponseCurve;
-{ Simulate response of first subsystem }
+{ Simulate response of a subsystem of the feedbck loop }
 var
   i: integer;
   interval: real;
@@ -355,6 +355,7 @@ end;
 { TEquilibriumDiagramForm }
 
 procedure TEquilibriumDiagramForm.SetStandardStrucParBoundaries;
+{ sets boundaries and positions of trackbars according to selected parameter }
 var
   tempMinS, tempMaxS, tempMidS: real; {necessary to hinder Windows from altering the globals}
 begin
@@ -476,7 +477,7 @@ begin
       gTrackFactor1 := 1;
       gMinSPar1 := 0;
       gMaxSPar1 := 50;
-      gMidSPar1 := 25;
+      gMidSPar1 := 0;
     end;
   end;
   tempMinS := gMinSPar1;
@@ -484,6 +485,7 @@ begin
   tempMidS := gMidSPar1;
   SParTrackBar1.Min := trunc(tempMinS * gTrackFactor1);
   SParTrackBar1.Max := trunc(tempMaxS * gTrackFactor1);
+  SParTrackBar1.Position := trunc(tempMidS * gTrackFactor1);
   gMinSPar1 := tempMinS;
   gMaxSPar1 := tempMaxS;
   case gSelectedSParameter2 of
@@ -604,7 +606,7 @@ begin
       gTrackFactor2 := 1;
       gMinSPar2 := 0;
       gMaxSPar2 := 50;
-      gMidSPar2 := 25;
+      gMidSPar2 := 0;
     end;
   end;
   tempMinS := gMinSPar2;
@@ -612,6 +614,7 @@ begin
   tempMidS := gMidSPar2;
   SParTrackBar2.Min := trunc(tempMinS * gTrackFactor2);
   SParTrackBar2.Max := trunc(tempMaxS * gTrackFactor2);
+  SParTrackBar2.Position := trunc(tempMidS * gTrackFactor2);
   gMinSPar2 := tempMinS;
   gMaxSPar2 := tempMaxS;
   case gSelectedSParameter3 of
@@ -732,7 +735,7 @@ begin
       gTrackFactor3 := 1;
       gMinSPar3 := 0;
       gMaxSPar3 := 50;
-      gMidSPar3 := 25;
+      gMidSPar3 := 0;
     end;
   end;
   tempMinS := gMinSPar3;
@@ -740,11 +743,13 @@ begin
   tempMidS := gMidSPar3;
   SParTrackBar3.Min := trunc(tempMinS * gTrackFactor3);
   SParTrackBar3.Max := trunc(tempMaxS * gTrackFactor3);
+  SParTrackBar3.Position := trunc(tempMidS * gTrackFactor3);
   gMinSPar3 := tempMinS;
   gMaxSPar3 := tempMaxS;
 end;
 
 procedure TEquilibriumDiagramForm.GetBParameters;
+{ Get behavioural parameters to be inspected }
 begin
   if pos(LowerCase('TSH'), LowerCase(BParCombo1.Text)) > 0 then
     begin
@@ -1081,6 +1086,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.ResetButtonClick(Sender: TObject);
+{ reset to standard values }
 begin
   SParCombo1.ItemIndex := 0;
   SParCombo2.ItemIndex := 0;
@@ -1102,6 +1108,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo1Change(Sender: TObject);
+{ read selected structure parameter }
 begin
   SaveStrucPars;
   if pos(LowerCase('GD1'), LowerCase(SParCombo1.Text)) > 0 then
@@ -1145,6 +1152,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo2Change(Sender: TObject);
+{ read selected structure parameter }
 begin
   SaveStrucPars;
   if pos(LowerCase('GD1'), LowerCase(SParCombo2.Text)) > 0 then
@@ -1188,6 +1196,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo3Change(Sender: TObject);
+{ read selected structure parameter }
 begin
   SaveStrucPars;
   if pos(LowerCase('GD1'), LowerCase(SParCombo3.Text)) > 0 then
@@ -1277,4 +1286,4 @@ initialization
   gSelectedSParameter2 := NullItem;
   gSelectedSParameter2 := NullItem;
 
-end.
+end.
