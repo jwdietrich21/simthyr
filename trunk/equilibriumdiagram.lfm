@@ -349,6 +349,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Width = 44
       MaxLength = 15
       OnChange = SParEdit1Change
+      ReadOnly = True
       TabOrder = 6
       Text = 'SParEdit1'
     end
@@ -358,6 +359,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Top = 147
       Width = 44
       OnChange = SParEdit2Change
+      ReadOnly = True
       TabOrder = 7
       Text = 'SParEdit2'
     end
@@ -367,6 +369,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Top = 243
       Width = 44
       OnChange = SParEdit3Change
+      ReadOnly = True
       TabOrder = 8
       Text = 'SParEdit3'
     end
