@@ -28,9 +28,10 @@ uses
   UnitConverter, Sensitivityanalysis;
 
 const
-  MAX_SERIES = 2;
-  MAX_I      = 100;
-  MAX_PIT    = 13;
+  MAX_SERIES  = 2;
+  MAX_I       = 100;
+  MAX_PIT     = 13;
+  TRACK_RATIO = 10;
 
 type
 
@@ -483,9 +484,9 @@ begin
   tempMinS := gMinSPar1;
   tempMaxS := gMaxSPar1;
   tempMidS := gMidSPar1;
-  SParTrackBar1.Min := trunc(tempMinS * gTrackFactor1);
-  SParTrackBar1.Max := trunc(tempMaxS * gTrackFactor1);
-  SParTrackBar1.Position := trunc(tempMidS * gTrackFactor1);
+  SParTrackBar1.Min := trunc(tempMinS * gTrackFactor1 * TRACK_RATIO);
+  SParTrackBar1.Max := trunc(tempMaxS * gTrackFactor1 * TRACK_RATIO);
+  SParTrackBar1.Position := trunc(tempMidS * gTrackFactor1 * TRACK_RATIO);
   gMinSPar1 := tempMinS;
   gMaxSPar1 := tempMaxS;
   case gSelectedSParameter2 of
@@ -612,9 +613,9 @@ begin
   tempMinS := gMinSPar2;
   tempMaxS := gMaxSPar2;
   tempMidS := gMidSPar2;
-  SParTrackBar2.Min := trunc(tempMinS * gTrackFactor2);
-  SParTrackBar2.Max := trunc(tempMaxS * gTrackFactor2);
-  SParTrackBar2.Position := trunc(tempMidS * gTrackFactor2);
+  SParTrackBar2.Min := trunc(tempMinS * gTrackFactor2 * TRACK_RATIO);
+  SParTrackBar2.Max := trunc(tempMaxS * gTrackFactor2 * TRACK_RATIO);
+  SParTrackBar2.Position := trunc(tempMidS * gTrackFactor2 * TRACK_RATIO);
   gMinSPar2 := tempMinS;
   gMaxSPar2 := tempMaxS;
   case gSelectedSParameter3 of
@@ -741,9 +742,9 @@ begin
   tempMinS := gMinSPar3;
   tempMaxS := gMaxSPar3;
   tempMidS := gMidSPar3;
-  SParTrackBar3.Min := trunc(tempMinS * gTrackFactor3);
-  SParTrackBar3.Max := trunc(tempMaxS * gTrackFactor3);
-  SParTrackBar3.Position := trunc(tempMidS * gTrackFactor3);
+  SParTrackBar3.Min := trunc(tempMinS * gTrackFactor3 * TRACK_RATIO);
+  SParTrackBar3.Max := trunc(tempMaxS * gTrackFactor3 * TRACK_RATIO);
+  SParTrackBar3.Position := trunc(tempMidS * gTrackFactor3 * TRACK_RATIO);
   gMinSPar3 := tempMinS;
   gMaxSPar3 := tempMaxS;
 end;
@@ -808,7 +809,7 @@ begin
   UpdateTrackBarsfromEdits;
   SaveStrucPars;
   UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1);
+  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
   DrawDiagram(true, false);
 end;
 
@@ -817,7 +818,7 @@ begin
   UpdateTrackBarsfromEdits;
   SaveStrucPars;
   UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2);
+  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2 / TRACK_RATIO);
   DrawDiagram(true, false);
 end;
 
@@ -826,7 +827,7 @@ begin
   UpdateTrackBarsfromEdits;
   SaveStrucPars;
   UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3);
+  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3 / TRACK_RATIO);
   DrawDiagram(true, false);
 end;
 
@@ -874,26 +875,26 @@ end;
 
 procedure TEquilibriumDiagramForm.UpdateEditsfromTrackBars;
 begin
-  SParEdit1.Text := IntToStr(SParTrackBar1.Position);
-  SParEdit2.Text := IntToStr(SParTrackBar2.Position);
-  SParEdit3.Text := IntToStr(SParTrackBar3.Position);
+  SParEdit1.Text := FloatToStr(SParTrackBar1.Position / TRACK_RATIO);
+  SParEdit2.Text := FloatToStr(SParTrackBar2.Position / TRACK_RATIO);
+  SParEdit3.Text := FloatToStr(SParTrackBar3.Position / TRACK_RATIO);
 end;
 
 procedure TEquilibriumDiagramForm.UpdateTrackBarsfromEdits;
 begin
-  if (StrToFloatDef(SParEdit1.Text, NaN) >= SParTrackBar1.Min) and
-    (StrToFloatDef(SParEdit1.Text, NaN) <= SParTrackBar1.Max) then
-    SParTrackBar1.Position := trunc(StrToFloatDef(SParEdit1.Text, 0))
+  if (StrToFloatDef(SParEdit1.Text, NaN) * TRACK_RATIO >= SParTrackBar1.Min) and
+    (StrToFloatDef(SParEdit1.Text, NaN) * TRACK_RATIO <= SParTrackBar1.Max) then
+    SParTrackBar1.Position := trunc(StrToFloatDef(SParEdit1.Text, 0) * TRACK_RATIO)
   else
     SParTrackBar1.Position := SParTrackBar1.Min;
-  if (StrToFloatDef(SParEdit2.Text, NaN) >= SParTrackBar2.Min) and
-    (StrToFloatDef(SParEdit2.Text, NaN) <= SParTrackBar2.Max) then
-    SParTrackBar2.Position := trunc(StrToFloatDef(SParEdit2.Text, 0))
+  if (StrToFloatDef(SParEdit2.Text, NaN) * TRACK_RATIO >= SParTrackBar2.Min) and
+    (StrToFloatDef(SParEdit2.Text, NaN) * TRACK_RATIO <= SParTrackBar2.Max) then
+    SParTrackBar2.Position := trunc(StrToFloatDef(SParEdit2.Text, 0) * TRACK_RATIO)
   else
     SParTrackBar2.Position := SParTrackBar2.Min;
-  if (StrToFloatDef(SParEdit3.Text, NaN) >= SParTrackBar3.Min) and
-    (StrToFloatDef(SParEdit3.Text, NaN) <= SParTrackBar3.Max) then
-    SParTrackBar3.Position := trunc(StrToFloatDef(SParEdit3.Text, 0))
+  if (StrToFloatDef(SParEdit3.Text, NaN) * TRACK_RATIO >= SParTrackBar3.Min) and
+    (StrToFloatDef(SParEdit3.Text, NaN) * TRACK_RATIO <= SParTrackBar3.Max) then
+    SParTrackBar3.Position := trunc(StrToFloatDef(SParEdit3.Text, 0) * TRACK_RATIO)
   else
     SParTrackBar3.Position := SParTrackBar3.Min;
 end;
@@ -1146,7 +1147,7 @@ begin
   else
     gSelectedSParameter1 := NullItem;
   SetStandardStrucParBoundaries;
-  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1);
+  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
   DrawDiagram(true, false);
   RestoreStrucPars;
 end;
@@ -1190,7 +1191,7 @@ begin
   else
     gSelectedSParameter2 := NullItem;
   SetStandardStrucParBoundaries;
-  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2);
+  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2 / TRACK_RATIO);
   DrawDiagram(true, false);
   RestoreStrucPars;
 end;
@@ -1234,7 +1235,7 @@ begin
   else
     gSelectedSParameter3 := NullItem;
   SetStandardStrucParBoundaries;
-  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3);
+  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3 / TRACK_RATIO);
   DrawDiagram(true, false);
   RestoreStrucPars;
 end;
@@ -1243,7 +1244,7 @@ procedure TEquilibriumDiagramForm.SParTrackBar1Change(Sender: TObject);
 begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1);
+  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
   DrawDiagram(true, false);
   RestoreStrucPars;
 end;
@@ -1252,7 +1253,7 @@ procedure TEquilibriumDiagramForm.SParTrackBar2Change(Sender: TObject);
 begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2);
+  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2 / TRACK_RATIO);
   DrawDiagram(true, false);
   RestoreStrucPars;
 end;
@@ -1261,7 +1262,7 @@ procedure TEquilibriumDiagramForm.SParTrackBar3Change(Sender: TObject);
 begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3);
+  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3 / TRACK_RATIO);
   DrawDiagram(true, false);
   RestoreStrucPars;
 end;
@@ -1286,4 +1287,4 @@ initialization
   gSelectedSParameter2 := NullItem;
   gSelectedSParameter2 := NullItem;
 
-end.
+end.
