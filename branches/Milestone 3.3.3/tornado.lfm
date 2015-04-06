@@ -14,7 +14,7 @@ object TornadoPlotForm: TTornadoPlotForm
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.2.2.0'
+  LCLVersion = '1.2.6.0'
   Visible = True
   object CheckGroup1: TCheckGroup
     Left = 440

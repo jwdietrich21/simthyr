@@ -27,9 +27,9 @@ object SimulationSettings: TSimulationSettings
   LCLVersion = '1.2.6.0'
   object Label1: TLabel
     Left = 96
-    Height = 13
+    Height = 16
     Top = 16
-    Width = 241
+    Width = 288
     Caption = 'Simulation of thyrotropic feedback control:'
     Font.Style = [fsBold]
     ParentColor = False
@@ -45,16 +45,16 @@ object SimulationSettings: TSimulationSettings
     BorderSpacing.Top = 1
     BorderSpacing.Right = 1
     BorderSpacing.Bottom = 1
-    ClientHeight = 62
-    ClientWidth = 527
+    ClientHeight = 73
+    ClientWidth = 523
     Color = clWhite
     ParentColor = False
     TabOrder = 0
     object RunTimeEdit: TEdit
       Left = 78
-      Height = 21
+      Height = 22
       Hint = 'Enter a numeric value for duration of simulation'
-      Top = 14
+      Top = 17
       Width = 80
       Alignment = taRightJustify
       Anchors = [akLeft]
@@ -66,10 +66,10 @@ object SimulationSettings: TSimulationSettings
     end
     object RunSecondsRadio: TRadioButton
       Left = 192
-      Height = 17
+      Height = 18
       Hint = 'Designate the number entered in the left as seconds.'
-      Top = 14
-      Width = 60
+      Top = 17
+      Width = 72
       Anchors = [akLeft]
       Caption = 'Seconds'
       OnChange = RunSecondsRadioChange
@@ -79,10 +79,10 @@ object SimulationSettings: TSimulationSettings
     end
     object RunMinutesRadio: TRadioButton
       Left = 334
-      Height = 17
+      Height = 18
       Hint = 'Designate the number entered in the left as minutes.'
-      Top = 14
-      Width = 55
+      Top = 17
+      Width = 70
       Anchors = [akLeft]
       Caption = 'Minutes'
       OnChange = RunMinutesRadioChange
@@ -92,10 +92,10 @@ object SimulationSettings: TSimulationSettings
     end
     object RunHoursRadio: TRadioButton
       Left = 192
-      Height = 17
+      Height = 18
       Hint = 'Designate the number entered in the left as hours.'
-      Top = 36
-      Width = 46
+      Top = 43
+      Width = 58
       Anchors = [akLeft]
       Caption = 'Hours'
       OnChange = RunHoursRadioChange
@@ -105,10 +105,10 @@ object SimulationSettings: TSimulationSettings
     end
     object RunDaysRadio: TRadioButton
       Left = 334
-      Height = 17
+      Height = 18
       Hint = 'Designate the number entered in the left as days.'
-      Top = 36
-      Width = 42
+      Top = 43
+      Width = 51
       Anchors = [akLeft]
       Caption = 'Days'
       Checked = True
@@ -130,8 +130,8 @@ object SimulationSettings: TSimulationSettings
     BorderSpacing.Top = 1
     BorderSpacing.Right = 1
     BorderSpacing.Bottom = 1
-    ClientHeight = 102
-    ClientWidth = 527
+    ClientHeight = 113
+    ClientWidth = 523
     Color = clWhite
     ParentColor = False
     ParentShowHint = False
@@ -139,10 +139,10 @@ object SimulationSettings: TSimulationSettings
     TabOrder = 1
     object TestOffRadio: TRadioButton
       Left = 192
-      Height = 17
+      Height = 18
       Hint = 'No test signal'
       Top = 8
-      Width = 32
+      Width = 40
       Caption = 'Off'
       Checked = True
       ParentShowHint = False
@@ -152,10 +152,10 @@ object SimulationSettings: TSimulationSettings
     end
     object TestTRHRadio: TRadioButton
       Left = 270
-      Height = 17
+      Height = 18
       Hint = 'Simulates TRH test'
       Top = 8
-      Width = 77
+      Width = 96
       Caption = '200 µg TRH'
       OnChange = TestTRHRadioChange
       ParentShowHint = False
@@ -164,10 +164,10 @@ object SimulationSettings: TSimulationSettings
     end
     object TestTBGRadio: TRadioButton
       Left = 380
-      Height = 17
+      Height = 18
       Hint = 'Simulates a rise in thyroxine binding globulin level, e. g. in pregnancy'
       Top = 8
-      Width = 82
+      Width = 102
       Caption = '50% TBG rise'
       OnChange = TestTBGRadioChange
       ParentShowHint = False
@@ -176,9 +176,9 @@ object SimulationSettings: TSimulationSettings
     end
     object TestTimeEdit: TEdit
       Left = 78
-      Height = 21
+      Height = 22
       Hint = 'Enter a numeric value for begin of test signal'
-      Top = 44
+      Top = 49
       Width = 80
       Alignment = taRightJustify
       Anchors = [akLeft]
@@ -190,7 +190,7 @@ object SimulationSettings: TSimulationSettings
     object TestRadioGroup: TRadioGroup
       Left = 177
       Height = 64
-      Top = 32
+      Top = 39
       Width = 327
       Anchors = [akLeft]
       AutoFill = True
@@ -203,8 +203,8 @@ object SimulationSettings: TSimulationSettings
       ChildSizing.ShrinkVertical = crsScaleChilds
       ChildSizing.Layout = cclLeftToRightThenTopToBottom
       ChildSizing.ControlsPerLine = 2
-      ClientHeight = 46
-      ClientWidth = 323
+      ClientHeight = 57
+      ClientWidth = 319
       Columns = 2
       Items.Strings = (
         'Seconds'
@@ -500,18 +500,18 @@ object SimulationSettings: TSimulationSettings
   end
   object Label2: TLabel
     Left = 96
-    Height = 13
+    Height = 16
     Top = 64
-    Width = 71
+    Width = 98
     Caption = 'Simulated time:'
     ParentColor = False
     OnClick = Label2Click
   end
   object Label3: TLabel
     Left = 96
-    Height = 13
+    Height = 16
     Top = 184
-    Width = 92
+    Width = 127
     Caption = 'Optional test signal:'
     ParentColor = False
     OnClick = Label2Click

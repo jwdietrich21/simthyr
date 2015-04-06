@@ -3,11 +3,11 @@ unit SimThyrMain;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 3.3.2 }
+{ Version 3.3.3 (Gaia) }
 
-{ (c) J. W. Dietrich, 1994 - 2014 }
+{ (c) J. W. Dietrich, 1994 - 2015 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2014 }
+{ (c) Ruhr University of Bochum 2005 - 2015 }
 
 { This unit provides global GUI functions, toolbar and menubar handling }
 

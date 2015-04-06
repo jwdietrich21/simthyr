@@ -312,7 +312,7 @@ object SimThyrLogWindow: TSimThyrLogWindow
   object ValuesGrid: TStringGrid
     Cursor = crIBeam
     Left = 0
-    Height = 271
+    Height = 279
     Hint = 'Simulated behavioural parameters of thyroid homeostasis'
     Top = 0
     Width = 688
@@ -380,9 +380,9 @@ object SimThyrLogWindow: TSimThyrLogWindow
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
+    Height = 15
     Hint = 'Number of iterations and time resolution'
-    Top = 271
+    Top = 279
     Width = 688
     Panels = <    
       item
@@ -438,4 +438,4 @@ object SimThyrLogWindow: TSimThyrLogWindow
       Enabled = False
     end
   end
-end
+end
