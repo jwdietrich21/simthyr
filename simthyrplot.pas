@@ -3,11 +3,11 @@ unit SimThyrPlot;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.0 (Merlion) }
+{ Version 3.3.2 }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2013 }
 
 { This unit plots values }
 
@@ -92,7 +92,7 @@ var
   factor, i0, i1: longint;
   graphready, append: boolean;
   ValuesPlot: TValuesPlot;
-  gr_nummer: string[4];
+  gr_nummer, antwort, antwort_p: string[4];
 
 function AsTime(x: real): TDateTime;
 function FormattedTime(x: real): Str255;

@@ -3,11 +3,11 @@ unit SimThyrResources;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.0 (Merlion) }
+{ Version 3.3.2 }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2014 }
 
 { This unit provides URLs and global strings for other SimThyr units }
 
@@ -57,11 +57,6 @@ const
   TT3_LABEL = 'Serum total T3';
   FT3_LABEL = 'Serum free T3';
   C_T3_LABEL = 'Central T3';
-
-  kError101 = 'Runtime error: Negative parameter(s)';
-  kError102 = 'Runtime error: Parameter(s) out of range';
-  kError103 = 'Runtime error: min > max';
-  kError104 = 'Runtime error: max = 0';
 
 implementation
 

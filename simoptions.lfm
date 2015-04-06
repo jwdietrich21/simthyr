@@ -2,7 +2,7 @@ object SimOptionsDlg: TSimOptionsDlg
   Left = 438
   Height = 190
   Top = 449
-  Width = 420
+  Width = 341
   ActiveControl = TRHEdit
   AlphaBlend = True
   AlphaBlendValue = 0
@@ -10,10 +10,8 @@ object SimOptionsDlg: TSimOptionsDlg
   BorderStyle = bsDialog
   Caption = 'Additional Simulation Options'
   ClientHeight = 190
-  ClientWidth = 420
+  ClientWidth = 341
   Color = clWhite
-  Constraints.MinHeight = 190
-  Constraints.MinWidth = 420
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
@@ -48,7 +46,7 @@ object SimOptionsDlg: TSimOptionsDlg
     TabOrder = 1
   end
   object OKButton: TButton
-    Left = 327
+    Left = 248
     Height = 25
     Top = 148
     Width = 75
@@ -59,7 +57,7 @@ object SimOptionsDlg: TSimOptionsDlg
     TabOrder = 2
   end
   object CancelButton: TButton
-    Left = 239
+    Left = 160
     Height = 25
     Top = 148
     Width = 75

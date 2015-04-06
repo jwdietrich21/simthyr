@@ -3,11 +3,11 @@ unit SimThyrPrediction;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.0 (Merlion) }
+{ Version 3.3.2 }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2013 }
 
 { This unit implements a window showing predicted equilibrium values }
 
@@ -64,7 +64,7 @@ begin
   TRHe := 0;                   {mol/l		exogeniously applied TRH}
   TRHi := TRHs;                {ng/l		endogenious TRH, according to Rondeel et al. 1988}
   TRHi := TRHi * UTRH;         {mol/l}
-  TRH0 := TRHi + TRHe;         {mol/l		portal total TRH concentration}
+  TRH0 := TRHi + TRHe;  {mol/l		portal total TRH concentration}
 end;
 
 procedure PredictEquilibrium;

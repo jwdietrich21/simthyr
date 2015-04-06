@@ -3,11 +3,11 @@ unit Sensitivityanalysis;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.0 (Merlion) }
+{ Version 3.3.2 }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2013 }
 
 { This unit implements sensitivity analysis }
 
@@ -35,11 +35,7 @@ const
   KM2_FACTOR = 1e9;
   DT_FACTOR = 1;
   LS_FACTOR = 1e-6;
-  GH_FACTOR = 1;
   DH_FACTOR = 1e9;
-  SS_FACTOR = 1;
-  DS_FACTOR = 1;
-  GR_FACTOR = 1;
   DR_FACTOR = 1e12;
   BETAT_FACTOR = 1e6;
   TBG_FACTOR = 1e9;
@@ -80,7 +76,6 @@ type
     procedure CheckGroup1ItemClick(Sender: TObject; Index: integer);
     procedure CopyItemClick(Sender: TObject);
     procedure cT3ColorBoxChange(Sender: TObject);
-    procedure CutItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FT3ColorBoxChange(Sender: TObject);
@@ -88,7 +83,6 @@ type
     procedure FullScaleButton1Click(Sender: TObject);
     procedure MaxSpinEditChange(Sender: TObject);
     procedure MinSpinEditChange(Sender: TObject);
-    procedure PasteItemClick(Sender: TObject);
     procedure ResetButtonClick(Sender: TObject);
     procedure StrucParComboChange(Sender: TObject);
     procedure TSHColorBoxChange(Sender: TObject);
@@ -96,7 +90,6 @@ type
     procedure SaveChart;
     procedure TT3ColorBoxChange(Sender: TObject);
     procedure TT4ColorBoxChange(Sender: TObject);
-    procedure UndoItemClick(Sender: TObject);
   private
     { private declarations }
   public
@@ -132,15 +125,6 @@ procedure SetStandardStrucParBoundaries(factor1, factor2: real);
 {sets the initial boundaries to useful values}
 var
   tempMinX, tempMaxX: real; {necessary to hinder Windows from altering the globals}
-
-  procedure SetSpinEdits;
-  begin
-    SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
-    SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
-    gMinXPar := tempMinX;
-    gMaxXPar := tempMaxX;
-  end;
-
 begin
   case SensitivityAnalysisForm.StrucParCombo.ItemIndex of
     0:
@@ -156,7 +140,10 @@ begin
       gMaxXPar := GD1 * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / GD1_FACTOR;
     end;
@@ -167,7 +154,10 @@ begin
       gMaxXPar := GD2 * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / GD2_FACTOR;
     end;
@@ -178,7 +168,10 @@ begin
       gMaxXPar := kM1 * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / KM1_FACTOR;
     end;
@@ -189,7 +182,10 @@ begin
       gMaxXPar := kM2 * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / KM2_FACTOR;
     end;
@@ -200,7 +196,10 @@ begin
       gMaxXPar := GT * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / GT_FACTOR;
     end;
@@ -211,7 +210,10 @@ begin
       gMaxXPar := DT * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
     end;
@@ -222,7 +224,10 @@ begin
       gMaxXPar := GH * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
     end;
@@ -233,7 +238,10 @@ begin
       gMaxXPar := DH * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DH_FACTOR;
     end;
@@ -244,7 +252,10 @@ begin
       gMaxXPar := SS * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
     end;
@@ -255,7 +266,10 @@ begin
       gMaxXPar := DS * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
     end;
@@ -266,7 +280,10 @@ begin
       gMaxXPar := GR * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
     end;
@@ -277,7 +294,10 @@ begin
       gMaxXPar := DR * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DR_FACTOR;
     end;
@@ -288,7 +308,10 @@ begin
       gMaxXPar := LS * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / LS_FACTOR;
     end;
@@ -299,7 +322,10 @@ begin
       gMaxXPar := betaS * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
     end;
@@ -310,7 +336,10 @@ begin
       gMaxXPar := betaS2 * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
     end;
@@ -321,7 +350,10 @@ begin
       gMaxXPar := betaT * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
     end;
@@ -332,7 +364,10 @@ begin
       gMaxXPar := beta31 * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
     end;
@@ -343,7 +378,10 @@ begin
       gMaxXPar := beta32 * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / DT_FACTOR;
     end;
@@ -354,7 +392,10 @@ begin
       gMaxXPar := TBG * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / TBG_FACTOR;
     end;
@@ -365,7 +406,10 @@ begin
       gMaxXPar := TBPA * 3;
       tempMinX := gMinXPar;
       tempMaxX := gMaxXPar;
-      SetSpinEdits;
+      SensitivityAnalysisForm.MinSpinEdit.Value := tempMinX * gSpinFactor;
+      SensitivityAnalysisForm.MaxSpinEdit.Value := tempMaxX * gSpinFactor;
+      gMinXPar := tempMinX;
+      gMaxXPar := tempMaxX;
       SensitivityAnalysisForm.ChartAxisTransformations1LinearAxisTransform1.Scale :=
         1 / TBPA_FACTOR;
     end
@@ -753,11 +797,6 @@ begin
   DrawOWSensitivityPlot(False);
 end;
 
-procedure TSensitivityAnalysisForm.CutItemClick(Sender: TObject);
-begin
-
-end;
-
 procedure TSensitivityAnalysisForm.FormActivate(Sender: TObject);
 begin
   if Screen.Width < SensitivityAnalysisForm.Left + SensitivityAnalysisForm.Width then
@@ -787,18 +826,13 @@ begin
     MinSpinEdit.Value then
     {adapts boundaries to avoid negative intervals}
   begin
-    { don't ring bell here to avoid sound after change of Structure Parameter }
+    bell;
     MaxSpinEdit.Value :=
       MinSpinEdit.Value;
   end;
   gMinXPar := MinSpinEdit.Value / gSpinFactor;
   gMaxXPar := MaxSpinEdit.Value / gSpinFactor;
   DrawOWSensitivityPlot(False);
-end;
-
-procedure TSensitivityAnalysisForm.PasteItemClick(Sender: TObject);
-begin
-
 end;
 
 procedure TSensitivityAnalysisForm.ResetButtonClick(Sender: TObject);
@@ -916,11 +950,6 @@ end;
 procedure TSensitivityAnalysisForm.TT4ColorBoxChange(Sender: TObject);
 begin
   DrawOWSensitivityPlot(False);
-end;
-
-procedure TSensitivityAnalysisForm.UndoItemClick(Sender: TObject);
-begin
-
 end;
 
 initialization

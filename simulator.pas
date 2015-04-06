@@ -3,21 +3,19 @@ unit Simulator;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.0 (Merlion) }
+{ Version 3.3.2 }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2013 }
 
 { This unit implements the main simulation methods }
 
 { Source code released under the BSD License }
 { See http://simthyr.sourceforge.net for details }
 
-{$mode objfpc}
-{$R+}
+{$mode objfpc}{$R+}
 {$define UseCThreads}
-{$ASSERTIONS ON}
 
 interface
 
@@ -28,12 +26,8 @@ uses
   Classes, Forms, SyncObjs, SysUtils, SimThyrTypes, SimThyrResources, SimThyrServices, SimThyrLog,
   SimThyrPlot, SimThyrPrediction, HandleNotifier, UnitConverter;
 
-const
-  THREE_FIFTH = 3 / 5; { optimization for speed }
-  MAX_DEAD = 300;      { maximum queue length for dead-time interval element }
-
 type
-  TQueue_xt = array[0..MAX_DEAD] of real;
+  TQueue_xt = array[0..300] of real;
   TSimulationThread = class(TThread)
   public
     procedure Pause;
@@ -52,11 +46,6 @@ var
 
 function cycles (var n: longint; n_text: str255): integer;
 procedure InitSimulationControl;
-procedure SimHypothalamus(const inv_hpd: real);
-procedure SimPituitary(const gainOfTSH: real; const ultrashortFeedbackGain: real; memory: boolean);
-procedure SimThyroidGland(const gainOfT4: real; memory: boolean);
-procedure SimCentralDeiodination(const gainOfCentralT3: real; memory: boolean);
-procedure SimPeripheralDeiodination(const gainOfPeripheralT3: real; memory: boolean);
 procedure SetBaseVariables;
 procedure StandardValues;
 procedure InitSimulation;
@@ -70,7 +59,6 @@ implementation
   var
    f: real;
  begin
-  assert((vpt >= 0) and (tpt >=0), kError101);
   f := exp(-delt / tpt);
   ya := f * x0 + vpt * (1 - f) * xe;
   x0 := ya;
@@ -82,7 +70,6 @@ implementation
   var
    i: integer;
  begin
-  assert((nt >= 0) and (nt <= MAX_DEAD), kError101);
   pt0 := xt[nt];
   if nt > 1 then
    begin
@@ -103,7 +90,6 @@ implementation
   var
    i: integer;
  begin
-  assert((nt >= 0) and (nt <= MAX_DEAD), kError101);
   for i := 0 to nt do
    begin
     xt[i] := xe;
@@ -114,7 +100,6 @@ implementation
  function cycles (var n: longint; n_text: str255): integer;
  {determines number of loops from given simulation time ("cycles" in old SimThyr versions)}
  begin
-  assert(n >= 0, kError101);
   if ((pos('d', n_text) > 0) or (pos('T', n_text) > 0)) then
    factor := 86400
   else if ((pos('h', n_text) > 0) or (pos('St', n_text) > 0)) then
@@ -133,7 +118,6 @@ function rnorm (mean, sd: real): real;
  var
   u1, u2: real;
 begin
-  assert(sd >= 0, kError101);
   u1 := random;
   u2 := random;
   rnorm := mean * abs(1 + sqrt(-2 * (ln(u1))) * cos(2 * pi * u2) * sd);
@@ -142,7 +126,6 @@ begin
  function getgauss (sigma: real): real;
  {controllable function to calculate random numbers of a normal distribution}
  begin
-  assert(sigma >= 0, kError101);
   if noiseflag then
    begin
     getgauss := rnorm(1, sigma);
@@ -188,103 +171,6 @@ begin
   T3n := T3z / (1 + k31 * IBS);
   T3R := GR * T3n / (DR + T3n);	{Calculated from physiological initial values for T3z}
   gH := dTSH * (DH + TRH0) * (1 + LS * T3R) * (1 + Ss * alphaS2 * dTSH / (betaS2 * DS + alphaS2 * dTSH)) / TRH0;   {Max. ungebremste Sekretionsleitung der Hypophyse; Näherungswert: 817 mU/s}
- end;
-
- procedure SimHypothalamus(const inv_hpd: real);
- { Simulator module for hypothalamic function }
- { invoked by TSimulationThread }
- var
-   circadianControl: real;
- begin
-   assert(inv_hpd >= 0, kError101);
-   omega := 2 * pi * f; {Angular frequency}
-   chi := 2 * pi * inv_hpd * 5;
-   if circadianflag then
-     circadianControl := cos(omega * t - chi)
-   else
-     circadianControl := 0;
-   TRHi := TRH1 + THREE_FIFTH * TRHs * circadianControl * UTRH;
-   TRH := TRHi + TRHe; {Total TRH is sum of internal and external TRH}
-   TRH := TRH * getgauss(0.5); {Noise}
- end;
-
- procedure SimPituitary(const gainOfTSH: real; const ultrashortFeedbackGain: real; memory: boolean);
- { Simulator module for pituitary gland }
- { invoked by TSimulationThread and from Equilibriumdiagram unit }
- begin
-   assert((gainOfTSH >= 0) and (ultrashortFeedbackGain >= 0), kError101);
-   T3n := T3z / (1 + k31 * IBS);
-   T3R := GR * T3n / (dR + T3n);
-   dTSH := gH * TRH / ((dH + TRH) * (1 + LS * T3R) * (1 + SS * TSHz / (DS + TSHz)));
-   {differential quotient of secretory rate only, no degradation}
-   vpt10 := gainOfTSH;
-   if memory then
-     begin
-       {Equifinal approximation: TSHz := (alphaS2 / betaS2) * dTSH;}
-       vpt10 := ultrashortFeedbackGain;
-       pt1(vpt10, tpt16, x6, dTSH, TSHz);
-       TSHz := pt0(xt22, nt22, TSHz); {pituitary TSH for Brokken-Wiersinga-Prummel loop}
-       {optional: TSHz := TSHz * getgauss(0.2); {Noise}}
-       pt1(vpt10, tpt12, x2, dTSH, TSH);
-       {Equifinal approximation: TSH := alphaS * dTSH / betaS;}
-       TSH := pt0(xt2, nt2, TSH);
-     end
-   else
-     begin
-       {Equifinal approximation for equilibrium diagram}
-       TSHz := ultrashortFeedbackGain * dTSH;
-       TSH := gainOfTSH * dTSH;
-     end;
- end;
-
- procedure SimThyroidGland(const gainOfT4: real; memory: boolean);
- { Simulator module for thyroid gland }
- { invoked by TSimulationThread and from Equilibriumdiagram unit  }
- begin
-   assert(gainOfT4 >= 0, kError101);
-   dT4 := GT * TSH / (dT + TSH);
-   if memory then begin
-     vpt10 := gainOfT4;
-     pt1(vpt10, tpt13, x3, dT4, T4);
-     {Equifinal approximation: T4 := alphaT * dT4 / betaT;}
-     T4 := pt0(xt3, nt3, T4);
-   end
-   else
-     {Equifinal approximation for equilibrium diagram}
-     T4 := gainOfT4 * dT4;
-   FT4 := T4 / (1 + k41 * TBG + k42 * TBPA);
- end;
-
- procedure SimCentralDeiodination(const gainOfCentralT3: real; memory: boolean);
- { Simulator module for central deiodination }
- { invoked by TSimulationThread and from Equilibriumdiagram unit  }
- begin
-   assert(gainOfCentralT3 >= 0, kError101);
-   dT3z := GD2 * FT4 / (kM2 + FT4);
-   if memory then begin
-     vpt10 := gainOfCentralT3;
-     pt1(vpt10, tpt14, x4, dT3z, T3z);
-     T3z := pt0(xt4, nt4, T3z);
-   end
-   else
-     {Equifinal approximation: T3z := alpha32 * dT3z / beta32;}
-     T3z := gainOfCentralT3 * dT3z;
- end;
-
- procedure SimPeripheralDeiodination(const gainOfPeripheralT3: real; memory: boolean);
- { Simulator module for peripheral deiodination }
- { invoked by TSimulationThread and from Equilibriumdiagram unit  }
- begin
-   assert(gainOfPeripheralT3 >= 0, kError101);
-   dT3p := GD1 * FT4 / (kM1 + FT4);
-   if memory then begin
-     vpt10 := gainOfPeripheralT3;
-     pt1(vpt10, tpt15, x5, dT3p, T3p);
-   end
-   else
-     {Equifinal approximation: T3p := alpha31 * dT3p / beta31;}
-     T3p := gainOfPeripheralT3 * dT3p;
-   FT3 := T3p / (1 + k30 * TBG);
  end;
 
  procedure StandardValues;
@@ -384,15 +270,19 @@ begin
 end;
 
 procedure TSimulationThread.Execute; {Main simulation thread}
+const
+  HOURS_PER_DAY = 24;
+  THREE_FIFTH = 3 / 5; { optimization for speed }
 var
   theContents: tResultContent;
+  circadianControl: real;
   nmaxString, iString: string;
   T4conversionFactor, T3conversionFactor: real;
   inv_hpd, inv_nmax, inv_UTRH: real;
   ultrashortFeebackGain: real;
   gainOfTSH, gainOfT4, gainOfCentralT3, gainOfPeripheralT3: real;
 begin
-  inv_hpd := 1 / HoursPerDay; { optimization for speed: }
+  inv_hpd := 1 / HOURS_PER_DAY; { optimization for speed: }
   inv_nmax := 1 / nmax;         { on most processors multiplications are }
   inv_UTRH := 1 / UTRH;         { faster than divisions }
   ultrashortFeebackGain := alphaS2 / betaS2;
@@ -441,15 +331,48 @@ begin
               SimThyrLogWindow.ProgressBar1.Position := 100;
             t := t + delt;
 {Hypothalamus:}
-            SimHypothalamus(inv_hpd);
+            omega := 2 * pi * f; {Angular frequency}
+            chi := 2 * pi * inv_hpd * 5;
+            if circadianflag then
+              circadianControl := cos(omega * t - chi)
+            else
+              circadianControl := 0;
+            TRHi := TRH1 + THREE_FIFTH * TRHs * circadianControl * UTRH;
+            TRH := TRHi + TRHe; {Total TRH is sum of internal and external TRH}
+            TRH := TRH * getgauss(0.5); {Noise}
 {Pituitary:}
-            SimPituitary(gainOfTSH, ultrashortFeebackGain, true);
+            T3n := T3z / (1 + k31 * IBS);
+            T3R := GR * T3n / (dR + T3n);
+            dTSH := gH * TRH / ((dH + TRH) * (1 + LS * T3R) * (1 + SS * TSHz / (DS + TSHz)));
+            {differential quotient of secretory rate only, no degradation}
+	    {Equifinal approximation: TSHz := (alphaS2 / betaS2) * dTSH;}
+            vpt10 := ultrashortFeebackGain;
+            pt1(vpt10, tpt16, x6, dTSH, TSHz);
+            TSHz := pt0(xt22, nt22, TSHz); {pituitary TSH for Brokken-Wiersinga-Prummel loop}
+            {optional: TSHz := TSHz * getgauss(0.2); {Noise}}
+            vpt10 := gainOfTSH;
+            pt1(vpt10, tpt12, x2, dTSH, TSH);
+	    {Equifinal approximation: TSH := alphaS * dTSH / betaS;}
+            TSH := pt0(xt2, nt2, TSH);
 {Thyroid:}
-            SimThyroidGland(gainOfT4, true);
+            dT4 := GT * TSH / (dT + TSH);
+            vpt10 := gainOfT4;
+            pt1(vpt10, tpt13, x3, dT4, T4);
+	    {Equifinal approximation: T4 := alphaT * dT4 / betaT;}
+            T4 := pt0(xt3, nt3, T4);
+            FT4 := T4 / (1 + k41 * TBG + k42 * TBPA);
 {5'-Deiodinase type II (central):}
-            SimCentralDeiodination(gainOfCentralT3, true);
+            dT3z := GD2 * FT4 / (kM2 + FT4);
+            vpt10 := gainOfCentralT3;
+            pt1(vpt10, tpt14, x4, dT3z, T3z);
+            {Equifinal approximation: T3z := alpha32 * dT3z / beta32;}
+            T3z := pt0(xt4, nt4, T3z);
 {5'-Deiodinase type I (peripheral):}
-            SimPeripheralDeiodination(gainOfPeripheralT3, true);
+            dT3p := GD1 * FT4 / (kM1 + FT4);
+            vpt10 := gainOfPeripheralT3;
+            pt1(vpt10, tpt15, x5, dT3p, T3p);
+            {Equifinal approximation: T3p := alpha31 * dT3p / beta31;}
+            FT3 := T3p / (1 + k30 * TBG);
             i := i + 1;
 {Load:}
             if (i > i1) and testflag then

@@ -3,11 +3,11 @@ unit SimOptions;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.0 (Merlion) }
+{ Version 3.3.2 }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2012 }
 
 { This unit supports a small dialog with additional simulation settings }
 
@@ -137,4 +137,4 @@ initialization
   {$I simoptions.lrs}
 
 end.
-
+

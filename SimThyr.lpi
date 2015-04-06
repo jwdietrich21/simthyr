@@ -12,9 +12,11 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <MajorVersionNr Value="4"/>
-      <BuildNr Value="585"/>
-      <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2015 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
+      <MajorVersionNr Value="3"/>
+      <MinorVersionNr Value="3"/>
+      <RevisionNr Value="2"/>
+      <BuildNr Value="477"/>
+      <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 3.3.2" LegalCopyright="1994-2014 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 3.3.2"/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
@@ -43,12 +45,12 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="166">
+    <Units Count="157">
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyr"/>
-        <EditorIndex Value="27"/>
+        <EditorIndex Value="26"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="2"/>
@@ -62,10 +64,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
-        <EditorIndex Value="26"/>
+        <EditorIndex Value="25"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="18" Y="2"/>
+        <CursorPos X="1" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -123,7 +125,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="2"/>
-        <UsageCount Value="200"/>
+        <UsageCount Value="174"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit6>
@@ -137,7 +139,7 @@
         <EditorIndex Value="13"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="43" Y="2"/>
+        <CursorPos X="60" Y="4"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -218,12 +220,7 @@
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="105" Y="21"/>
-        <ExtraEditorCount Value="1"/>
-        <ExtraEditor1>
-          <TopLine Value="4"/>
-          <CursorPos X="2" Y="20"/>
-        </ExtraEditor1>
+        <CursorPos X="1" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit16>
@@ -234,7 +231,7 @@
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="2" Y="2"/>
+        <CursorPos X="1" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit17>
@@ -263,7 +260,7 @@
         <EditorIndex Value="12"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="3" Y="2"/>
+        <CursorPos X="52" Y="4"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -374,10 +371,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AboutDialog"/>
-        <EditorIndex Value="24"/>
+        <EditorIndex Value="23"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="170"/>
-        <CursorPos X="35" Y="170"/>
+        <TopLine Value="1"/>
+        <CursorPos X="34" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -389,10 +386,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Splash"/>
-        <EditorIndex Value="22"/>
+        <EditorIndex Value="21"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="21" Y="2"/>
+        <CursorPos X="1" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -428,10 +425,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ShowAboutModel"/>
-        <EditorIndex Value="23"/>
+        <EditorIndex Value="22"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="37"/>
-        <CursorPos X="92" Y="53"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -583,10 +580,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="StructureParameters"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="15"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos X="63" Y="7"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -689,7 +687,7 @@
         <EditorIndex Value="10"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos X="3" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -712,7 +710,7 @@
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos X="72" Y="31"/>
         <ExtraEditorCount Value="1"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -727,7 +725,7 @@
         <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="2" Y="2"/>
+        <CursorPos X="68" Y="30"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="1">
           <Item0 X="1" Y="540" ID="8"/>
@@ -892,7 +890,7 @@
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <TopLine Value="27"/>
-          <CursorPos X="3" Y="384"/>
+          <CursorPos X="12" Y="37"/>
         </ExtraEditor1>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -944,8 +942,8 @@
         <EditorIndex Value="20"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="46" Y="10"/>
-        <UsageCount Value="200"/>
+        <CursorPos X="1" Y="2"/>
+        <UsageCount Value="199"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit98>
@@ -1018,7 +1016,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="2"/>
-        <UsageCount Value="192"/>
+        <UsageCount Value="150"/>
         <Loaded Value="True"/>
       </Unit107>
       <Unit108>
@@ -1050,11 +1048,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="help"/>
-        <EditorIndex Value="25"/>
+        <EditorIndex Value="24"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="10" Y="2"/>
-        <UsageCount Value="170"/>
+        <CursorPos X="1" Y="2"/>
+        <UsageCount Value="128"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit111>
@@ -1080,7 +1078,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="2"/>
-        <UsageCount Value="160"/>
+        <UsageCount Value="118"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit114>
@@ -1219,8 +1217,8 @@
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="5" Y="2"/>
-        <UsageCount Value="130"/>
+        <CursorPos X="1" Y="2"/>
+        <UsageCount Value="88"/>
         <Loaded Value="True"/>
       </Unit132>
       <Unit133>
@@ -1230,8 +1228,8 @@
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="19" Y="1"/>
-        <UsageCount Value="123"/>
+        <CursorPos X="1" Y="2"/>
+        <UsageCount Value="81"/>
         <Loaded Value="True"/>
       </Unit133>
       <Unit134>
@@ -1257,7 +1255,7 @@
           <TopLine Value="1105"/>
           <CursorPos X="67" Y="1127"/>
         </ExtraEditor1>
-        <UsageCount Value="119"/>
+        <UsageCount Value="77"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit135>
@@ -1395,8 +1393,8 @@
       <Unit153>
         <Filename Value="../../../../../../../lazarus/lcl/interfaces/win32/win32callback.inc"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1029"/>
-        <CursorPos X="1" Y="1048"/>
+        <TopLine Value="2605"/>
+        <CursorPos X="1" Y="2634"/>
         <UsageCount Value="10"/>
       </Unit153>
       <Unit154>
@@ -1419,215 +1417,131 @@
         <Filename Value="../../../../../../../lazarus/components/tachart/tacustomseries.pas"/>
         <UnitName Value="TACustomSeries"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="172"/>
-        <CursorPos X="14" Y="189"/>
+        <TopLine Value="643"/>
+        <CursorPos X="1" Y="662"/>
         <UsageCount Value="10"/>
       </Unit156>
-      <Unit157>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="EquilibriumDiagramForm"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="Equilibriumdiagram"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="21"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="19" Y="22"/>
-        <ExtraEditorCount Value="1"/>
-        <ExtraEditor1>
-          <TopLine Value="112"/>
-          <CursorPos X="26" Y="126"/>
-        </ExtraEditor1>
-        <UsageCount Value="62"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit157>
-      <Unit158>
-        <Filename Value="../../../../../../../lazarus/components/tachart/taseries.pas"/>
-        <UnitName Value="TASeries"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="604"/>
-        <CursorPos X="1" Y="623"/>
-        <UsageCount Value="10"/>
-      </Unit158>
-      <Unit159>
-        <Filename Value="../../../../../../../lazarus/components/tachart/tachartaxis.pas"/>
-        <UnitName Value="TAChartAxis"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1154"/>
-        <CursorPos X="1" Y="1173"/>
-        <UsageCount Value="10"/>
-      </Unit159>
-      <Unit160>
-        <Filename Value="../../../../../../../lazarus/lcl/include/customform.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="2164"/>
-        <CursorPos X="1" Y="2183"/>
-        <UsageCount Value="10"/>
-      </Unit160>
-      <Unit161>
-        <Filename Value="../../../../../../../lazarus/components/tachart/tagraph.pas"/>
-        <UnitName Value="TAGraph"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1745"/>
-        <CursorPos X="3" Y="1749"/>
-        <UsageCount Value="10"/>
-      </Unit161>
-      <Unit162>
-        <Filename Value="../../../../../../../lazarus/fpc/2.6.4/source/rtl/objpas/math.pp"/>
-        <UnitName Value="math"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1792"/>
-        <CursorPos X="4" Y="1798"/>
-        <UsageCount Value="10"/>
-      </Unit162>
-      <Unit163>
-        <Filename Value="../../../../../../../lazarus/lcl/stdctrls.pp"/>
-        <UnitName Value="StdCtrls"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="750"/>
-        <CursorPos X="18" Y="772"/>
-        <UsageCount Value="10"/>
-      </Unit163>
-      <Unit164>
-        <Filename Value="../../../../../../../lazarus/lcl/controls.pp"/>
-        <UnitName Value="Controls"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="148"/>
-        <CursorPos X="30" Y="168"/>
-        <UsageCount Value="10"/>
-      </Unit164>
-      <Unit165>
-        <Filename Value="../../../../../../../lazarus/lcl/lcltype.pp"/>
-        <UnitName Value="LCLType"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="47"/>
-        <CursorPos X="56" Y="53"/>
-        <UsageCount Value="10"/>
-      </Unit165>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1247" Column="80" TopLine="1226"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="782" Column="19" TopLine="765"/>
       </Position1>
       <Position2>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1256" Column="80" TopLine="1226"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="937" Column="19" TopLine="920"/>
       </Position2>
       <Position3>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1261" Column="47" TopLine="1229"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="874" Column="5" TopLine="855"/>
       </Position3>
       <Position4>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1265" Column="80" TopLine="1233"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="829" Column="5" TopLine="811"/>
       </Position4>
       <Position5>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="62" Column="34" TopLine="45"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="814" Column="5" TopLine="807"/>
       </Position5>
       <Position6>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="878" Column="31" TopLine="859"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="736" Column="32" TopLine="719"/>
       </Position6>
       <Position7>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="888" Column="45" TopLine="869"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="910" Column="5" TopLine="891"/>
       </Position7>
       <Position8>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="892" Column="50" TopLine="868"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="874" Column="5" TopLine="856"/>
       </Position8>
       <Position9>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="829" Column="5" TopLine="811"/>
       </Position9>
       <Position10>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="899" Column="49" TopLine="862"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="937" Column="19" TopLine="920"/>
       </Position10>
       <Position11>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1020" Column="17" TopLine="1017"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="736" Column="32" TopLine="718"/>
       </Position11>
       <Position12>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="806" Column="61" TopLine="776"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="814" Column="5" TopLine="795"/>
       </Position12>
       <Position13>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="799" Column="1" TopLine="776"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="635" Column="5" TopLine="617"/>
       </Position13>
       <Position14>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="3" Column="75" TopLine="1"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="755" Column="5" TopLine="736"/>
       </Position14>
       <Position15>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="367" Column="27" TopLine="335"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="705" Column="5" TopLine="687"/>
       </Position15>
       <Position16>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="381" Column="27" TopLine="353"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="755" Column="5" TopLine="737"/>
       </Position16>
       <Position17>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="395" Column="27" TopLine="384"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="2" Column="1" TopLine="1"/>
       </Position17>
       <Position18>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="399" Column="33" TopLine="384"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="62" Column="36" TopLine="37"/>
       </Position18>
       <Position19>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="626" Column="35" TopLine="609"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="418" Column="35" TopLine="400"/>
       </Position19>
       <Position20>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="31" Column="31" TopLine="1"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="421" Column="73" TopLine="400"/>
       </Position20>
       <Position21>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="624" Column="30" TopLine="614"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="476" Column="5" TopLine="458"/>
       </Position21>
       <Position22>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="622" Column="36" TopLine="614"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="64" Column="27" TopLine="36"/>
       </Position22>
       <Position23>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="625" Column="38" TopLine="614"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="495" Column="5" TopLine="477"/>
       </Position23>
       <Position24>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="626" Column="28" TopLine="614"/>
+        <Filename Value="showips.pas"/>
+        <Caret Line="99" Column="7" TopLine="77"/>
       </Position24>
       <Position25>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="35" Column="15" TopLine="1"/>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="114" Column="7" TopLine="93"/>
       </Position25>
       <Position26>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="366" Column="41" TopLine="351"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="829" Column="5" TopLine="799"/>
       </Position26>
       <Position27>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="363" Column="44" TopLine="351"/>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <Caret Line="447" Column="5" TopLine="429"/>
       </Position27>
       <Position28>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="364" Column="38" TopLine="349"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="782" Column="19" TopLine="765"/>
       </Position28>
       <Position29>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="35" Column="18" TopLine="1"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="2" Column="1" TopLine="1"/>
       </Position29>
       <Position30>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="368" Column="38" TopLine="336"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="87" Column="44" TopLine="65"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
@@ -1652,6 +1566,7 @@ end;"/>
     </CodeGeneration>
     <Linking>
       <Debugging>
+        <GenerateDebugInfo Value="False"/>
         <StripSymbols Value="True"/>
       </Debugging>
       <LinkSmart Value="True"/>
@@ -1671,55 +1586,55 @@ end;"/>
     </Other>
   </CompilerOptions>
   <Debugging>
-    <BreakPoints Count="1">
+    <Watches Count="16">
       <Item1>
-        <Kind Value="bpkData"/>
-        <WatchData Value="MaxSpinEdit2.Value"/>
-        <WatchScope Value="wpsGlobal"/>
-        <WatchKind Value="wpkWrite"/>
-        <InitialEnabled Value="False"/>
-      </Item1>
-    </BreakPoints>
-    <Watches Count="13">
-      <Item1>
-        <Expression Value="InputVector"/>
+        <Expression Value="T4"/>
       </Item1>
       <Item2>
-        <Expression Value="FT4Vector"/>
+        <Expression Value="FT3"/>
       </Item2>
       <Item3>
-        <Expression Value="T3zVector"/>
+        <Expression Value="T3p"/>
       </Item3>
       <Item4>
         <Expression Value="T3z"/>
       </Item4>
       <Item5>
-        <Expression Value="TSHSamples"/>
+        <Expression Value="FT4"/>
       </Item5>
       <Item6>
-        <Expression Value="gSelectedBParameter1"/>
+        <Expression Value="betaT"/>
       </Item6>
       <Item7>
-        <Expression Value="gSelectedBParameter2"/>
+        <Expression Value="gMinXPar"/>
       </Item7>
       <Item8>
-        <Expression Value="gResponseCurve1"/>
+        <Expression Value="gMaxXPar"/>
       </Item8>
       <Item9>
-        <Expression Value="gResponseCurve2"/>
+        <Expression Value="SensitivityMatrix.content"/>
       </Item9>
       <Item10>
-        <Expression Value="conversionFactor1"/>
+        <Expression Value="theMatrix"/>
       </Item10>
       <Item11>
-        <Expression Value="conversionFactor2"/>
+        <Expression Value="GD1"/>
       </Item11>
       <Item12>
-        <Expression Value="MinBPar1"/>
+        <Expression Value="GD2"/>
       </Item12>
       <Item13>
-        <Expression Value="MaxBPar1"/>
+        <Expression Value="FT41"/>
       </Item13>
+      <Item14>
+        <Expression Value="FT4conversionFactor"/>
+      </Item14>
+      <Item15>
+        <Expression Value="gMinYPar"/>
+      </Item15>
+      <Item16>
+        <Expression Value="SensitivityMatrix"/>
+      </Item16>
     </Watches>
     <Exceptions Count="3">
       <Item1>

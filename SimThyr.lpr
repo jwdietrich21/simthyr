@@ -3,16 +3,15 @@ program SimThyr;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.0 (Merlion) }
+{ Version 3.3.2 }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2014 }
 
 { This is the main project file }
 
 { Source code released under the BSD License }
-{ See http://simthyr.sourceforge.net for details }
 
 {$mode objfpc}{$H+}{$R+}
 {$define UseCThreads}
@@ -24,13 +23,12 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, SimThyrMain, Controls, TAChartLazarusPkg, fpvectorialpkg, math,
-  SimThyrPlot, LaunchDialog, simthyrlog, SimThyrTypes, SimThyrServices, ShowIPS,
-  Simulator, Splash, AboutDialog, ShowAboutModel, SimThyrPrediction,
-  StructureParameters, SimOptions, VersionSupport, ScenarioHandler,
-  HandlePreferences, HandleNotifier, Sensitivityanalysis, tornado, DIFSupport,
-  help, SimThyrResources, unitconverter, TWSensitivityanalysis,
-  equilibriumdiagram
+  Forms, SimThyrMain, Controls, TAChartLazarusPkg, fpvectorialpkg, SimThyrPlot,
+  LaunchDialog, simthyrlog, SimThyrTypes, SimThyrServices, ShowIPS, Simulator,
+  Splash, AboutDialog, ShowAboutModel, SimThyrPrediction, StructureParameters,
+  SimOptions, VersionSupport, ScenarioHandler, HandlePreferences,
+  HandleNotifier, Sensitivityanalysis, tornado, DIFSupport, help,
+  SimThyrResources, unitconverter, TWSensitivityanalysis
   {$IFDEF debug}
   , SysUtils
   {$ENDIF}
@@ -57,8 +55,6 @@ begin
     SplashScreen.AlphaBlendValue := 200;
     Application.ProcessMessages;
   end;
-  SetExceptionMask([exInvalidOp, exDenormalized, exZeroDivide,
-                   exOverflow, exUnderflow, exPrecision]);
   gStartup := true;
   runcommand := false;
   simready := true;
@@ -95,7 +91,7 @@ begin
     Hide;
     Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 32;
     Height := Screen.Height - Top - 100;
-    width := trunc(Height * Image1.Width / Image1.Height);
+    width := trunc(1.3 * Height * Image1.Width / Image1.Height);
     AlphaBlend := false;
   end;
   Application.CreateForm(TSimThyrLogWindow, SimThyrLogWindow);
@@ -141,9 +137,6 @@ begin
   Application.CreateForm(TTWSensitivityAnalysisForm, TWSensitivityAnalysisForm);
   TWSensitivityAnalysisForm.Hide;
   TWSensitivityAnalysisForm.AlphaBlend := false;
-  Application.CreateForm(TEquilibriumDiagramForm, EquilibriumDiagramForm);
-  EquilibriumDiagramForm.Hide;
-  EquilibriumDiagramForm.AlphaBlend := false;
   Application.CreateForm(TTornadoPlotForm, TornadoPlotForm);
   TornadoPlotForm.Hide;
   TornadoPlotForm.AlphaBlend := false;

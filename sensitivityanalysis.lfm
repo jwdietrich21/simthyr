@@ -1,40 +1,40 @@
 object SensitivityAnalysisForm: TSensitivityAnalysisForm
-  Left = 270
-  Height = 400
-  Top = 374
-  Width = 752
+  Left = 319
+  Height = 405
+  Top = 201
+  Width = 755
   AlphaBlendValue = 0
   Anchors = [akTop, akLeft, akBottom]
   Caption = 'One-Way Sensitivity Analysis'
-  ClientHeight = 400
-  ClientWidth = 752
+  ClientHeight = 405
+  ClientWidth = 755
   Color = clWhite
   Constraints.MinHeight = 400
   Constraints.MinWidth = 600
   OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.2.2.0'
   Visible = True
   object Panel1: TPanel
     Left = 48
-    Height = 281
+    Height = 286
     Top = 32
-    Width = 456
+    Width = 459
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 20
     BorderStyle = bsSingle
     Caption = 'Panel1'
-    ClientHeight = 281
-    ClientWidth = 456
+    ClientHeight = 286
+    ClientWidth = 459
     TabOrder = 0
     object Chart1: TChart
       Cursor = crCross
       Left = 8
-      Height = 263
+      Height = 268
       Hint = 'Drag with mouse to zoom'
       Top = 10
-      Width = 440
+      Width = 443
       AxisList = <      
         item
           Grid.Color = clSilver
@@ -80,8 +80,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   end
   object CheckGroup1: TCheckGroup
     AnchorSideTop.Side = asrBottom
-    Left = 518
-    Height = 280
+    Left = 522
+    Height = 285
     Hint = 'Select the behavioural parameter that servers as dependent variable here.'
     Top = 32
     Width = 203
@@ -97,7 +97,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 258
+    ClientHeight = 263
     ClientWidth = 195
     Items.Strings = (
       'TSH'
@@ -117,7 +117,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     }
   end
   object TSHColorBox: TColorBox
-    Left = 598
+    Left = 601
     Height = 20
     Top = 64
     Width = 113
@@ -129,7 +129,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 2
   end
   object FT4ColorBox: TColorBox
-    Left = 598
+    Left = 601
     Height = 20
     Top = 150
     Width = 113
@@ -141,7 +141,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 3
   end
   object FT3ColorBox: TColorBox
-    Left = 598
+    Left = 601
     Height = 20
     Top = 235
     Width = 113
@@ -153,7 +153,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 4
   end
   object cT3ColorBox: TColorBox
-    Left = 598
+    Left = 601
     Height = 20
     Top = 277
     Width = 113
@@ -167,15 +167,15 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object GroupBox1: TGroupBox
     Left = 48
     Height = 50
-    Top = 321
-    Width = 457
+    Top = 326
+    Width = 460
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Independent parameter'
     ClientHeight = 28
-    ClientWidth = 449
+    ClientWidth = 452
     TabOrder = 6
     object MinSpinEdit: TFloatSpinEdit
-      Left = 8
+      Left = 12
       Height = 16
       Hint = 'Minimum of selected structure parameter'
       Top = 3
@@ -192,7 +192,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Value = 0
     end
     object MaxSpinEdit: TFloatSpinEdit
-      Left = 365
+      Left = 368
       Height = 16
       Hint = 'Maximum of selected structure parameter'
       Top = 3
@@ -213,7 +213,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
       Top = 1
-      Width = 243
+      Width = 246
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
       ItemHeight = 0
@@ -251,8 +251,8 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   object StatusBar1: TStatusBar
     Left = 0
     Height = 15
-    Top = 385
-    Width = 752
+    Top = 390
+    Width = 755
     Panels = <>
   end
   object FullScaleButton1: TSpeedButton
@@ -303,7 +303,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ParentShowHint = False
   end
   object TT4ColorBox: TColorBox
-    Left = 598
+    Left = 601
     Height = 20
     Top = 107
     Width = 113
@@ -315,7 +315,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     TabOrder = 8
   end
   object TT3ColorBox: TColorBox
-    Left = 598
+    Left = 601
     Height = 20
     Top = 192
     Width = 113
@@ -342,7 +342,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Left = 16
     Height = 22
     Hint = 'Reset to default boundaries'
-    Top = 291
+    Top = 296
     Width = 23
     Anchors = [akLeft, akBottom]
     Glyph.Data = {
@@ -398,7 +398,6 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     object UndoItem: TMenuItem
       Caption = 'Undo'
       Enabled = False
-      OnClick = UndoItemClick
     end
     object Divider1: TMenuItem
       Caption = '-'
@@ -406,7 +405,6 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     object CutItem: TMenuItem
       Caption = 'Cut'
       Enabled = False
-      OnClick = CutItemClick
     end
     object CopyItem: TMenuItem
       Caption = 'Copy'
@@ -415,7 +413,6 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     object PasteItem: TMenuItem
       Caption = 'Paste'
       Enabled = False
-      OnClick = PasteItemClick
     end
   end
 end
