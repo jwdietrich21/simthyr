@@ -8,13 +8,13 @@ LazarusResources.Add('TSimOptionsDlg','FORMDATA',[
   +'ns'#12'ClientHeight'#3#190#0#11'ClientWidth'#3'U'#1#5'Color'#7#7'clWhite'#8
   +'OnCreate'#7#10'FormCreate'#6'OnShow'#7#8'FormShow'#8'Position'#7#14'poScree'
   +'nCenter'#10'LCLVersion'#6#7'1.2.6.0'#7'Visible'#9#0#9'TCheckBox'#13'NoiseCh'
-  +'eckBox'#4'Left'#2' '#6'Height'#2#17#4'Hint'#6'&Use noise at the level of hy'
-  +'pothalamus'#3'Top'#2'8'#5'Width'#2'k'#7'Caption'#6#17'Superimpose noise'#7
-  +'Checked'#9#8'OnChange'#7#19'NoiseCheckBoxChange'#14'ParentShowHint'#8#8'Sho'
-  +'wHint'#9#5'State'#7#9'cbChecked'#8'TabOrder'#2#0#0#0#9'TCheckBox'#15'Previe'
-  +'wCheckBox'#4'Left'#2' '#6'Height'#2#17#4'Hint'#6'_Use the calculated equili'
-  +'brium values as shown in the preview palette as initial hormone levels'#3'T'
-  +'op'#2'P'#5'Width'#3#246#0#7'Caption'#6'1Use calculated equilibrium values a'
+  +'eckBox'#4'Left'#2' '#6'Height'#2#18#4'Hint'#6'&Use noise at the level of hy'
+  +'pothalamus'#3'Top'#2'8'#5'Width'#3#140#0#7'Caption'#6#17'Superimpose noise'
+  +#7'Checked'#9#8'OnChange'#7#19'NoiseCheckBoxChange'#14'ParentShowHint'#8#8'S'
+  +'howHint'#9#5'State'#7#9'cbChecked'#8'TabOrder'#2#0#0#0#9'TCheckBox'#15'Prev'
+  +'iewCheckBox'#4'Left'#2' '#6'Height'#2#18#4'Hint'#6'_Use the calculated equi'
+  +'librium values as shown in the preview palette as initial hormone levels'#3
+  +'Top'#2'P'#5'Width'#3'F'#1#7'Caption'#6'1Use calculated equilibrium values a'
   +'s start values'#7'Checked'#9#8'OnChange'#7#21'PreviewCheckBoxChange'#14'Par'
   +'entShowHint'#8#8'ShowHint'#9#5'State'#7#9'cbChecked'#8'TabOrder'#2#1#0#0#7
   +'TButton'#8'OKButton'#4'Left'#3#248#0#6'Height'#2#25#3'Top'#3#148#0#5'Width'
@@ -23,12 +23,12 @@ LazarusResources.Add('TSimOptionsDlg','FORMDATA',[
   +'on'#4'Left'#3#160#0#6'Height'#2#25#3'Top'#3#148#0#5'Width'#2'K'#7'Anchors'
   +#11#7'akRight'#8'akBottom'#0#6'Cancel'#9#7'Caption'#6#6'Cancel'#7'OnClick'#7
   +#17'CancelButtonClick'#8'TabOrder'#2#3#0#0#5'TEdit'#7'TRHEdit'#4'Left'#3#152
-  +#0#6'Height'#2#21#3'Top'#2#16#5'Width'#2'P'#8'TabOrder'#2#4#4'Text'#6#7'TRHE'
-  +'dit'#0#0#6'TLabel'#6'Label1'#4'Left'#2' '#6'Height'#2#13#3'Top'#2#21#5'Widt'
-  +'h'#2'Q'#7'Caption'#6#15'Mean TRH level:'#11'ParentColor'#8#0#0#6'TLabel'#6
-  +'Label2'#4'Left'#3#240#0#6'Height'#2#13#3'Top'#2#21#5'Width'#2#19#7'Caption'
+  +#0#6'Height'#2#22#3'Top'#2#16#5'Width'#2'P'#8'TabOrder'#2#4#4'Text'#6#7'TRHE'
+  +'dit'#0#0#6'TLabel'#6'Label1'#4'Left'#2' '#6'Height'#2#16#3'Top'#2#21#5'Widt'
+  +'h'#2'e'#7'Caption'#6#15'Mean TRH level:'#11'ParentColor'#8#0#0#6'TLabel'#6
+  +'Label2'#4'Left'#3#240#0#6'Height'#2#16#3'Top'#2#21#5'Width'#2#27#7'Caption'
   +#6#4'ng/l'#11'ParentColor'#8#0#0#9'TCheckBox'#17'CircadianCheckBox'#4'Left'#2
-  +' '#6'Height'#2#17#3'Top'#2'h'#5'Width'#3#222#0#7'Caption'#6'*Simulate circa'
-  +'dian rhythm of TRH secretion'#7'Checked'#9#8'OnChange'#7#23'CircadianCheckB'
-  +'oxChange'#5'State'#7#9'cbChecked'#8'TabOrder'#2#5#0#0#0
-]);
+  +' '#6'Height'#2#18#3'Top'#2'h'#5'Width'#3'&'#1#7'Caption'#6'*Simulate circad'
+  +'ian rhythm of TRH secretion'#7'Checked'#9#8'OnChange'#7#23'CircadianCheckBo'
+  +'xChange'#5'State'#7#9'cbChecked'#8'TabOrder'#2#5#0#0#0
+]);

@@ -14,7 +14,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.2.2.0'
+  LCLVersion = '1.2.6.0'
   Visible = True
   object Panel1: TPanel
     Left = 48
