@@ -586,7 +586,7 @@ LazarusResources.Add('TAboutWindow','FORMDATA',[
   +'y.z'#11'Font.Height'#2#245#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8
   +#10'ParentFont'#8#0#0#6'TLabel'#15'CopyrightLabel1'#4'Left'#2#17#6'Height'#2
   +#13#3'Top'#2'v'#5'Width'#2'G'#7'Caption'#6#16#194#169' 1994 '#226#128#147' 2'
-  +'014'#11'Font.Height'#2#245#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8
+  +'015'#11'Font.Height'#2#245#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8
   +#10'ParentFont'#8#0#0#6'TLabel'#15'CopyrightLabel2'#4'Left'#2#17#6'Height'#2
   +#13#3'Top'#3#132#0#5'Width'#2'@'#7'Caption'#6#14'J. W. Dietrich'#11'Font.Hei'
   +'ght'#2#245#10'Font.Pitch'#7#10'fpVariable'#11'ParentColor'#8#10'ParentFont'
