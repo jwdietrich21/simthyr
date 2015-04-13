@@ -1,4 +1,4 @@
-Copyright (c) 1994-2014, Dr. Johannes W. Dietrich, M.D., Klinikum der Universitaet Muenchen, Universitaetsklinikum Ulm, and Universitaetsklinikum Bergmannsheil, Ruhr-Universitaet Bochum.
+Copyright (c) 1994-2015, Dr. Johannes W. Dietrich, M.D., Klinikum der Universitaet Muenchen, Universitaetsklinikum Ulm, and Universitaetsklinikum Bergmannsheil, Ruhr-Universitaet Bochum.
 
 All rights reserved.
 
@@ -16,7 +16,7 @@ We have invested a lot of time and effort in creating SimThyr, please cite it wh
 
 In order to cite SimThyr in publications use:
 
-* J. W. Dietrich (1994-2014). SimThyr, a simulator of thyrotropic feedback control. URL http://simthyr.sf.net.
+* J. W. Dietrich (1994-2015). SimThyr, a simulator of thyrotropic feedback control. URL http://simthyr.sf.net.
 
 Additionally you might want to cite one of the following papers:
 
@@ -33,4 +33,6 @@ Additionally you might want to cite one of the following papers:
 6. Hoermann R, Midgley JE, Larisch R, Dietrich JW (2013). Is pituitary TSH an adequate measure of thyroid hormone-controlled homoeostasis during thyroxine treatment? Eur J Endocrinol. 168(2):271-80. doi 10.1530/EJE-12-0819. PMID 23184912.
 
 7. Midgley JE, Hoermann R, Larisch R, Dietrich JW (2013). Physiological states and functional relation between thyrotropin and free thyroxine in thyroid health and disease: in vivo and in silico data suggest a hierarchical model. J Clin Pathol. 2013 Apr;66(4):335-42. doi: 10.1136/jclinpath-2012-201213. PMID 23423518.
+
+8. Hoermann R, Midgley JE, Larisch R, Dietrich JW. Integration of Peripheral and Glandular Regulation of Triiodothyronine Production by Thyrotropin in Untreated and Thyroxine-Treated Subjects. Horm Metab Res. 2015 Mar 6. PMID 25750078.
 
