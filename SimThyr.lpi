@@ -45,7 +45,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="158">
+    <Units Count="148">
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -1099,118 +1099,81 @@
         <UsageCount Value="10"/>
       </Unit116>
       <Unit117>
-        <Filename Value="../../../../lazarus/lcl/include/toolbutton.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="954"/>
-        <UsageCount Value="10"/>
-      </Unit117>
-      <Unit118>
-        <Filename Value="../../../../lazarus/lcl/interfaces/win32/win32callback.inc"/>
+        <Filename Value="/lazarus/lcl/interfaces/win32/win32callback.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="2714"/>
         <CursorPos X="1" Y="2736"/>
         <UsageCount Value="10"/>
-      </Unit118>
-      <Unit119>
-        <Filename Value="../../../../lazarus/lcl/include/customform.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="190"/>
-        <CursorPos X="1" Y="219"/>
-        <UsageCount Value="10"/>
-      </Unit119>
-      <Unit120>
-        <Filename Value="../../../../lazarus/lcl/include/application.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1077"/>
-        <CursorPos X="1" Y="1095"/>
-        <UsageCount Value="10"/>
-      </Unit120>
-      <Unit121>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutilsh.inc"/>
+      </Unit117>
+      <Unit118>
+        <Filename Value="/lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutilsh.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="23"/>
         <CursorPos X="26" Y="41"/>
         <UsageCount Value="10"/>
-      </Unit121>
-      <Unit122>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutil.inc"/>
+      </Unit118>
+      <Unit119>
+        <Filename Value="/lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutil.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="91"/>
         <CursorPos X="10" Y="109"/>
         <UsageCount Value="10"/>
-      </Unit122>
-      <Unit123>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/win/sysutils.pp"/>
+      </Unit119>
+      <Unit120>
+        <Filename Value="/lazarus/fpc/2.6.2/source/rtl/win/sysutils.pp"/>
         <UnitName Value="sysutils"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1105"/>
         <CursorPos X="28" Y="1108"/>
         <UsageCount Value="10"/>
-      </Unit123>
-      <Unit124>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/packages/fcl-xml/src/xmlread.pp"/>
+      </Unit120>
+      <Unit121>
+        <Filename Value="/lazarus/fpc/2.6.2/source/packages/fcl-xml/src/xmlread.pp"/>
         <UnitName Value="XMLRead"/>
         <WindowIndex Value="0"/>
         <TopLine Value="34"/>
         <CursorPos X="45" Y="44"/>
         <UsageCount Value="10"/>
-      </Unit124>
-      <Unit125>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/packages/fcl-xml/src/dom.pp"/>
+      </Unit121>
+      <Unit122>
+        <Filename Value="/lazarus/fpc/2.6.2/source/packages/fcl-xml/src/dom.pp"/>
         <UnitName Value="DOM"/>
         <WindowIndex Value="0"/>
         <TopLine Value="207"/>
         <CursorPos X="23" Y="224"/>
         <UsageCount Value="10"/>
-      </Unit125>
-      <Unit126>
-        <Filename Value="../../../../lazarus/lcl/grids.pas"/>
-        <UnitName Value="Grids"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="3544"/>
-        <CursorPos X="1" Y="3562"/>
-        <UsageCount Value="10"/>
-      </Unit126>
-      <Unit127>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/inc/objpash.inc"/>
+      </Unit122>
+      <Unit123>
+        <Filename Value="/lazarus/fpc/2.6.2/source/rtl/inc/objpash.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="177"/>
         <CursorPos X="22" Y="194"/>
         <UsageCount Value="10"/>
-      </Unit127>
-      <Unit128>
-        <Filename Value="../../../../lazarus/components/tachart/taintervalsources.pas"/>
+      </Unit123>
+      <Unit124>
+        <Filename Value="/lazarus/components/tachart/taintervalsources.pas"/>
         <UnitName Value="TAIntervalSources"/>
         <WindowIndex Value="0"/>
         <TopLine Value="391"/>
         <CursorPos X="1" Y="409"/>
         <UsageCount Value="10"/>
-      </Unit128>
-      <Unit129>
-        <Filename Value="../../../../lazarus/lcl/forms.pp"/>
+      </Unit124>
+      <Unit125>
+        <Filename Value="/lazarus/lcl/forms.pp"/>
         <UnitName Value="Forms"/>
         <WindowIndex Value="0"/>
         <TopLine Value="33"/>
         <CursorPos X="3" Y="46"/>
         <UsageCount Value="10"/>
-      </Unit129>
-      <Unit130>
-        <Filename Value="../../../../lazarus/lcl/lclclasses.pp"/>
-        <UnitName Value="LCLClasses"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="19"/>
-        <CursorPos X="10" Y="32"/>
-        <UsageCount Value="10"/>
-      </Unit130>
-      <Unit131>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/objpas/classes/classesh.inc"/>
+      </Unit125>
+      <Unit126>
+        <Filename Value="/lazarus/fpc/2.6.2/source/rtl/objpas/classes/classesh.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1595"/>
         <CursorPos X="14" Y="1610"/>
         <UsageCount Value="10"/>
-      </Unit131>
-      <Unit132>
+      </Unit126>
+      <Unit127>
         <Filename Value="simthyrresources.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrResources"/>
@@ -1220,8 +1183,8 @@
         <CursorPos X="11" Y="2"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
-      </Unit132>
-      <Unit133>
+      </Unit127>
+      <Unit128>
         <Filename Value="unitconverter.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitConverter"/>
@@ -1231,15 +1194,8 @@
         <CursorPos X="1" Y="2"/>
         <UsageCount Value="83"/>
         <Loaded Value="True"/>
-      </Unit133>
-      <Unit134>
-        <Filename Value="../../../../lazarus/lcl/include/control.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="3225"/>
-        <CursorPos X="1" Y="3239"/>
-        <UsageCount Value="11"/>
-      </Unit134>
-      <Unit135>
+      </Unit128>
+      <Unit129>
         <Filename Value="twsensitivityanalysis.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="TWSensitivityAnalysisForm"/>
@@ -1258,177 +1214,148 @@
         <UsageCount Value="79"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
-      </Unit135>
-      <Unit136>
-        <Filename Value="../../../../lazarus/fpc/2.6.4/source/rtl/inc/objpash.inc"/>
+      </Unit129>
+      <Unit130>
+        <Filename Value="/lazarus/fpc/2.6.4/source/rtl/inc/objpash.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="178"/>
         <CursorPos X="23" Y="192"/>
         <UsageCount Value="10"/>
-      </Unit136>
-      <Unit137>
+      </Unit130>
+      <Unit131>
         <Filename Value="/Developer/lazarus/components/tachart/tafuncseries.pas"/>
         <UnitName Value="TAFuncSeries"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1586"/>
         <CursorPos X="1" Y="1602"/>
         <UsageCount Value="11"/>
-      </Unit137>
-      <Unit138>
-        <Filename Value="../../../../lazarus/fpc/2.6.4/source/rtl/objpas/math.pp"/>
+      </Unit131>
+      <Unit132>
+        <Filename Value="/lazarus/fpc/2.6.4/source/rtl/objpas/math.pp"/>
         <UnitName Value="math"/>
         <WindowIndex Value="0"/>
         <TopLine Value="405"/>
         <CursorPos X="10" Y="419"/>
         <UsageCount Value="10"/>
-      </Unit138>
-      <Unit139>
+      </Unit132>
+      <Unit133>
         <Filename Value="/Developer/lazarus/lcl/lclversion.pas"/>
         <UnitName Value="LCLVersion"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="3" Y="35"/>
         <UsageCount Value="10"/>
-      </Unit139>
-      <Unit140>
-        <Filename Value="../../../../lazarus/fpc/2.6.4/source/packages/fcl-xml/src/dom.pp"/>
+      </Unit133>
+      <Unit134>
+        <Filename Value="/lazarus/fpc/2.6.4/source/packages/fcl-xml/src/dom.pp"/>
         <UnitName Value="DOM"/>
         <WindowIndex Value="0"/>
         <TopLine Value="245"/>
         <CursorPos X="14" Y="265"/>
         <UsageCount Value="10"/>
-      </Unit140>
-      <Unit141>
+      </Unit134>
+      <Unit135>
         <Filename Value="/Developer/lazarus/lcl/graphics.pp"/>
         <UnitName Value="Graphics"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1515"/>
         <CursorPos X="3" Y="1533"/>
         <UsageCount Value="10"/>
-      </Unit141>
-      <Unit142>
+      </Unit135>
+      <Unit136>
         <Filename Value="/Developer/lazarus/components/tachart/tadrawersvg.pas"/>
         <UnitName Value="TADrawerSVG"/>
         <WindowIndex Value="0"/>
         <TopLine Value="51"/>
         <CursorPos X="3" Y="21"/>
         <UsageCount Value="11"/>
-      </Unit142>
-      <Unit143>
+      </Unit136>
+      <Unit137>
         <Filename Value="/Developer/lazarus/components/tachart/tadrawutils.pas"/>
         <UnitName Value="TADrawUtils"/>
         <WindowIndex Value="0"/>
         <TopLine Value="44"/>
         <CursorPos X="3" Y="62"/>
         <UsageCount Value="11"/>
-      </Unit143>
-      <Unit144>
+      </Unit137>
+      <Unit138>
         <Filename Value="/usr/local/share/fpcsrc/packages/fcl-image/src/fpimage.pp"/>
         <UnitName Value="FPimage"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="13" Y="16"/>
         <UsageCount Value="10"/>
-      </Unit144>
-      <Unit145>
+      </Unit138>
+      <Unit139>
         <Filename Value="/Developer/lazarus/components/fpvectorial/fpvectorial.pas"/>
         <UnitName Value="fpvectorial"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
         <UsageCount Value="10"/>
-      </Unit145>
-      <Unit146>
-        <Filename Value="../../../../lazarus/components/tachart/tacustomsource.pas"/>
+      </Unit139>
+      <Unit140>
+        <Filename Value="/lazarus/components/tachart/tacustomsource.pas"/>
         <UnitName Value="TACustomSource"/>
         <WindowIndex Value="0"/>
         <TopLine Value="677"/>
         <CursorPos X="1" Y="698"/>
         <UsageCount Value="10"/>
-      </Unit146>
-      <Unit147>
+      </Unit140>
+      <Unit141>
         <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/sysutils/sysstr.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="801"/>
         <CursorPos X="3" Y="804"/>
         <UsageCount Value="10"/>
-      </Unit147>
-      <Unit148>
-        <Filename Value="../../../../../../../lazarus/components/tachart/tacustomsource.pas"/>
-        <UnitName Value="TACustomSource"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="672"/>
-        <CursorPos X="1" Y="698"/>
-        <UsageCount Value="10"/>
-      </Unit148>
-      <Unit149>
-        <Filename Value="../../../../../../../lazarus/lcl/include/customcombobox.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="157"/>
-        <CursorPos X="1" Y="175"/>
-        <UsageCount Value="10"/>
-      </Unit149>
-      <Unit150>
-        <Filename Value="../../../../../../../lazarus/lcl/include/control.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="2083"/>
-        <CursorPos X="1" Y="2100"/>
-        <UsageCount Value="10"/>
-      </Unit150>
-      <Unit151>
-        <Filename Value="../../../../../../../lazarus/lcl/include/wincontrol.inc"/>
+      </Unit141>
+      <Unit142>
+        <Filename Value="/lazarus/lcl/include/wincontrol.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="5310"/>
         <CursorPos X="1" Y="5327"/>
         <UsageCount Value="10"/>
-      </Unit151>
-      <Unit152>
-        <Filename Value="../../../../../../../lazarus/lcl/lclmessageglue.pas"/>
+      </Unit142>
+      <Unit143>
+        <Filename Value="/lazarus/lcl/lclmessageglue.pas"/>
         <UnitName Value="LCLMessageGlue"/>
         <WindowIndex Value="0"/>
         <TopLine Value="125"/>
         <CursorPos X="1" Y="144"/>
         <UsageCount Value="10"/>
-      </Unit152>
-      <Unit153>
-        <Filename Value="../../../../../../../lazarus/lcl/interfaces/win32/win32callback.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="2605"/>
-        <CursorPos X="1" Y="2634"/>
-        <UsageCount Value="10"/>
-      </Unit153>
-      <Unit154>
-        <Filename Value="../../../../../../../lazarus/components/tachart/tatypes.pas"/>
+      </Unit143>
+      <Unit144>
+        <Filename Value="/lazarus/components/tachart/tatypes.pas"/>
         <UnitName Value="TATypes"/>
         <WindowIndex Value="0"/>
         <TopLine Value="551"/>
         <CursorPos X="1" Y="570"/>
         <UsageCount Value="10"/>
-      </Unit154>
-      <Unit155>
-        <Filename Value="../../../../../../../lazarus/lcl/interfaces/win32/win32wsstdctrls.pp"/>
+      </Unit144>
+      <Unit145>
+        <Filename Value="/lazarus/lcl/interfaces/win32/win32wsstdctrls.pp"/>
         <UnitName Value="Win32WSStdCtrls"/>
         <WindowIndex Value="0"/>
         <TopLine Value="467"/>
         <CursorPos X="1" Y="485"/>
         <UsageCount Value="10"/>
-      </Unit155>
-      <Unit156>
-        <Filename Value="../../../../../../../lazarus/components/tachart/tacustomseries.pas"/>
+      </Unit145>
+      <Unit146>
+        <Filename Value="/lazarus/components/tachart/tacustomseries.pas"/>
         <UnitName Value="TACustomSeries"/>
         <WindowIndex Value="0"/>
         <TopLine Value="643"/>
         <CursorPos X="1" Y="662"/>
         <UsageCount Value="10"/>
-      </Unit156>
-      <Unit157>
-        <Filename Value="../../../../../../../../../lazarus/lcl/interfacebase.pp"/>
+      </Unit146>
+      <Unit147>
+        <Filename Value="/lazarus/lcl/interfacebase.pp"/>
         <UnitName Value="InterfaceBase"/>
         <WindowIndex Value="0"/>
         <TopLine Value="31"/>
         <CursorPos X="3" Y="51"/>
         <UsageCount Value="10"/>
-      </Unit157>
+      </Unit147>
     </Units>
     <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
@@ -1584,8 +1511,8 @@ end;"/>
       <CompilerMessages>
         <UseMsgFile Value="True"/>
       </CompilerMessages>
-      <CustomOptions Value="-k-macosx_version_min -k10.4
--XR/Developer/SDKs/MacOSX10.4u.sdk/"/>
+      <CustomOptions Value="//-k-macosx_version_min //-k10.4
+//-XR/Developer/SDKs/MacOSX10.4u.sdk/"/>
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
