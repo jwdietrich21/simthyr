@@ -3,11 +3,11 @@ unit ShowAboutModel;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.0 (Merlion) }
+{ Version 3.3.3 (Gaia) }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2013 }
 
 { This unit draws a window with additional information and references }
 
@@ -72,4 +72,4 @@ initialization
   {$I showaboutmodel.lrs}
 
 end.
-
+

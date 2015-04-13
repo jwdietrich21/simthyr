@@ -3,11 +3,11 @@ unit HandlePreferences;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.0 (Merlion) }
+{ Version 3.3.3 (Gaia) }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2014 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2013 }
 
 { This unit handles global application preferences }
 
@@ -22,7 +22,7 @@ uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, SimThyrTypes, SimThyrResources, SimThyrServices, UnitConverter,
   SimThyrLog, SimThyrPlot, Sensitivityanalysis, tornado, TWSensitivityanalysis,
-  Equilibriumdiagram, SimThyrPrediction, DOM, XMLRead, XMLWrite
+  SimThyrPrediction, DOM, XMLRead, XMLWrite
   {$IFDEF win32}
   , Windows
   {$ELSE}
@@ -717,7 +717,6 @@ begin
   DrawOWSensitivityPlot(false); // adapts one-way sensitivity analysis
   {DrawTornadoPlot; // tornado plot not affected since it displays percentages}
   TWSensitivityAnalysisForm.Rescale2DMap; // rescales two-way sensitivity analysis
-  EquilibriumDiagramForm.DrawDiagram(true, false); // adapts equilibrium diagram
   SavePreferences;
   PreferencesDialog.Close;
 end;
