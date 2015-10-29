@@ -20,15 +20,22 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls;
+  ExtCtrls, EditBtn;
 
 type
 
   { TAnnotationForm }
 
   TAnnotationForm = class(TForm)
+    ModelTermsEdit: TLabeledEdit;
+    ModifiedTimeEdit: TEdit;
+    ModifiedLabel: TLabel;
     CreatorsMemo: TMemo;
     CreatorsLabel: TLabel;
+    CreatedDateEdit: TDateEdit;
+    CreatedLabel: TLabel;
+    CreatedTimeEdit: TEdit;
+    ModifiedDateEdit: TDateEdit;
     SpeciesLabel: TLabel;
     SpeciesCombo: TComboBox;
     ReferenceEdit: TLabeledEdit;
