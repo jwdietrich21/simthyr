@@ -30,7 +30,7 @@ uses
   StructureParameters, SimOptions, VersionSupport, ScenarioHandler,
   HandlePreferences, HandleNotifier, Sensitivityanalysis, tornado, DIFSupport,
   help, SimThyrResources, unitconverter, TWSensitivityanalysis,
-  equilibriumdiagram
+  equilibriumdiagram, MIRIAMForm
   {$IFDEF debug}
   , SysUtils
   {$ENDIF}
@@ -127,6 +127,8 @@ begin
   Notice := TNotice.Create(SimThyrLogWindow);
   Notice.Hide;
   Notice.NoticeLabel.Caption := WAIT_TITLE;
+  Application.CreateForm(TAnnotationForm, AnnotationForm);
+  AnnotationForm.Hide;
   Application.CreateForm(TSimulationSettings, SimulationSettings);
   SimThyrToolbar.Show;
   ValuesPlot.show;
