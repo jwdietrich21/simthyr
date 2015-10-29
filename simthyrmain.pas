@@ -26,7 +26,7 @@ uses
   ShowAboutModel, StructureParameters, SimThyrPrediction, Sensitivityanalysis,
   TWSensitivityanalysis, tornado, Equilibriumdiagram, help, ScenarioHandler,
   HandlePreferences, HandleNotifier, LCLProc, StdCtrls, LCLVersion,
-  VersionSupport;
+  VersionSupport, MIRIAMForm;
 
 type
 
@@ -51,6 +51,7 @@ type
     IdleTimer1:   TIdleTimer;
     Divider_3_4: TMenuItem;
     EquiDiagItem: TMenuItem;
+    AnnotationItem: TMenuItem;
     ToolbarImageList:   TImageList;
     SimThyrLabel: TLabel;
     MacAboutItem: TMenuItem;
@@ -133,6 +134,7 @@ type
     SaveDialog1:  TSaveDialog;
     UndoMenuItem: TMenuItem;
     procedure AboutModelItemClick(Sender: TObject);
+    procedure AnnotationItemClick(Sender: TObject);
     procedure CloseMenuItemClick(Sender: TObject);
     procedure CopyMenuItemClick(Sender: TObject);
     procedure CopyToolButtonClick(Sender: TObject);
@@ -346,6 +348,11 @@ end;
 procedure TSimThyrToolbar.AboutModelItemClick(Sender: TObject);
 begin
   AboutModelForm.Show;
+end;
+
+procedure TSimThyrToolbar.AnnotationItemClick(Sender: TObject);
+begin
+  AnnotationForm.Show;
 end;
 
 procedure TSimThyrToolbar.CopyMenuItemClick(Sender: TObject);
