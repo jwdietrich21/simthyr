@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, EditBtn;
+  ExtCtrls, EditBtn, SimThyrTypes;
 
 type
 
@@ -42,6 +42,7 @@ type
     ModelNameEdit: TLabeledEdit;
     OKButton: TButton;
     ScrollBox1: TScrollBox;
+    procedure FormShow(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
   private
     { private declarations }
@@ -59,8 +60,21 @@ implementation
 { TAnnotationForm }
 
 procedure TAnnotationForm.OKButtonClick(Sender: TObject);
+var
+  TimeCreated, TimeModified: TDateTime;
 begin
+  gActiveModel.Name := ModelNameEdit.Text;
+  gActiveModel.Reference := ReferenceEdit.Text;
+  gActiveModel.Creators := CreatorsMemo.Lines.Text;
+  gActiveModel.Created := CreatedDateEdit.Date; // + CreatedTimeEdit.Text;
+  gActiveModel.LastModified := ModifiedDateEdit.Date; // + ModifiedTimeEdit.Text;
+  gActiveModel.Terms := ModelTermsEdit.Text;
   Close;
+end;
+
+procedure TAnnotationForm.FormShow(Sender: TObject);
+begin
+
 end;
 
 end.
