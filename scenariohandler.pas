@@ -46,6 +46,16 @@ begin
             if NodeName = 'modelversion' then
               modelVersion := NodeValue;
           end;
+      RootNode := Doc.DocumentElement.FindNode('MIRIAM');
+      if assigned(RootNode) then
+      begin
+        gActiveModel.Name := NodeContent(RootNode, 'Name');
+        gActiveModel.Reference := NodeContent(RootNode, 'Reference');
+        gActiveModel.Creators := NodeContent(RootNode, 'Creators');
+        gActiveModel.Created := StrToDateTime(NodeContent(RootNode, 'Created'));{ TODO -oJ. W. D. : Replace with StrToDateTimeDef }
+        gActiveModel.LastModified := StrToDateTime(NodeContent(RootNode, 'LastModified')); { TODO -oJ. W. D. : Replace with StrToDateTimeDef }
+        gActiveModel.Terms := NodeContent(RootNode, 'Terms');
+      end;
       if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
       begin
         RootNode := Doc.DocumentElement.FindNode('strucpars');
@@ -105,6 +115,15 @@ begin
     TDOMElement(RootNode).SetAttribute('modelversion', '10.0');
     Doc.Appendchild(RootNode);
     RootNode := Doc.DocumentElement;
+
+    ElementNode := Doc.CreateElement('MIRIAM');
+    ElementNode.AppendChild(SimpleNode(Doc, 'Name', gActiveModel.Name));
+    ElementNode.AppendChild(SimpleNode(Doc, 'Reference', gActiveModel.Reference));
+    ElementNode.AppendChild(SimpleNode(Doc, 'Creators', gActiveModel.Creators));
+    ElementNode.AppendChild(SimpleNode(Doc, 'Created', DateTimeToStr(gActiveModel.Created)));
+    ElementNode.AppendChild(SimpleNode(Doc, 'LastModified', DateTimeToStr(gActiveModel.LastModified)));
+    ElementNode.AppendChild(SimpleNode(Doc, 'Terms', gActiveModel.Terms));
+    RootNode.AppendChild(ElementNode);
 
     ElementNode := Doc.CreateElement('strucpars');
 

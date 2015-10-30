@@ -33,6 +33,14 @@ type
  tSParameter = (NullItem, GD1Item, GD2Item, KM1Item, KM2Item, GTItem, DTItem,
    GHItem, DHItem, SSItem, DSItem, GRItem, DRItem, LSItem, betaSItem,
    betaS2Item, betaTItem, beta31Item, beta32Item, TBGItem, TBPAItem);
+ tModel = record
+   Name: String; // MIRIAM 1
+   Reference: String; // MIRIAM 2
+   Creators: String; // MIRIAM 3
+   Created: TDateTime; // MIRIAM 4
+   LastModified: TDateTime; // MIRIAM 4
+   Terms: String // MIRIAM 5
+ end;
 
 const
 
@@ -113,6 +121,7 @@ var
  tmax_text, tmax_unit, i1_text, i1_unit: str255;
  gNumberFormat, gDateTimeFormat: String;
  gLastActiveCustomForm: TForm;
+ gActiveModel: TModel;
 
 implementation
 
