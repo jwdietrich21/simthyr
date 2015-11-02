@@ -20,15 +20,17 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, EditBtn, SimThyrTypes;
+  ExtCtrls, EditBtn, LCLIntf, SimThyrTypes;
 
 type
 
   { TAnnotationForm }
 
   TAnnotationForm = class(TForm)
+    MIRIAMLogo: TImage;
     ModelTermsLabel: TLabel;
     ModelTermsEdit: TEdit;
+    BottomPanel: TPanel;
     ReferenceLabel: TLabel;
     ReferenceEdit: TEdit;
     ModelNameLabel: TLabel;
@@ -45,7 +47,9 @@ type
     SpeciesCombo: TComboBox;
     OKButton: TButton;
     ScrollBox1: TScrollBox;
+    TitleLabel: TLabel;
     procedure FormShow(Sender: TObject);
+    procedure MIRIAMLogoClick(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
   private
     { private declarations }
@@ -83,6 +87,11 @@ begin
   CreatedDateEdit.Date := gActiveModel.Created;
   ModifiedDateEdit.Date := gActiveModel.LastModified;
   ModelTermsEdit.Text := gActiveModel.Terms;
+end;
+
+procedure TAnnotationForm.MIRIAMLogoClick(Sender: TObject);
+begin
+  OpenURL('http://www.ebi.ac.uk/miriam/main/');
 end;
 
 end.

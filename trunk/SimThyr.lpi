@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="608"/>
+      <BuildNr Value="609"/>
       <Attributes pvaDebug="True" pvaPreRelease="True"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2015 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
     </VersionInfo>
@@ -44,7 +44,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="167">
+    <Units Count="168">
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -322,7 +322,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AboutDialog"/>
         <EditorIndex Value="31"/>
-        <CursorPos X="35" Y="170"/>
+        <TopLine Value="154"/>
+        <CursorPos X="10" Y="161"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -845,7 +846,7 @@
         <UnitName Value="DIFSupport"/>
         <EditorIndex Value="12"/>
         <CursorPos Y="2"/>
-        <UsageCount Value="199"/>
+        <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit107>
       <Unit108>
@@ -874,7 +875,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="32"/>
         <CursorPos X="10" Y="2"/>
-        <UsageCount Value="177"/>
+        <UsageCount Value="179"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit111>
@@ -894,7 +895,7 @@
         <Filename Value="todo.txt"/>
         <IsPartOfProject Value="True"/>
         <CursorPos Y="2"/>
-        <UsageCount Value="167"/>
+        <UsageCount Value="169"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit114>
@@ -1006,7 +1007,7 @@
         <UnitName Value="SimThyrResources"/>
         <EditorIndex Value="8"/>
         <CursorPos X="5" Y="2"/>
-        <UsageCount Value="137"/>
+        <UsageCount Value="139"/>
         <Loaded Value="True"/>
       </Unit132>
       <Unit133>
@@ -1015,7 +1016,7 @@
         <UnitName Value="UnitConverter"/>
         <EditorIndex Value="9"/>
         <CursorPos X="19"/>
-        <UsageCount Value="130"/>
+        <UsageCount Value="132"/>
         <Loaded Value="True"/>
       </Unit133>
       <Unit134>
@@ -1039,7 +1040,7 @@
           <TopLine Value="1105"/>
           <CursorPos X="67" Y="1127"/>
         </ExtraEditor1>
-        <UsageCount Value="126"/>
+        <UsageCount Value="128"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit135>
@@ -1180,7 +1181,7 @@
           <TopLine Value="112"/>
           <CursorPos X="26" Y="126"/>
         </ExtraEditor1>
-        <UsageCount Value="69"/>
+        <UsageCount Value="71"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit157>
@@ -1241,101 +1242,108 @@
         <UnitName Value="MIRIAMForm"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="18"/>
-        <TopLine Value="53"/>
-        <CursorPos X="52" Y="63"/>
-        <UsageCount Value="26"/>
+        <CursorPos X="95" Y="28"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit166>
+      <Unit167>
+        <Filename Value="/Developer/lazarus 1.4.2/lcl/lclintf.pas"/>
+        <UnitName Value="LCLIntf"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="63"/>
+        <CursorPos X="10" Y="80"/>
+        <UsageCount Value="10"/>
+      </Unit167>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="52" Column="33" TopLine="20"/>
+        <Caret Line="56" Column="33" TopLine="20"/>
       </Position1>
       <Position2>
-        <Filename Value="miriamform.pas"/>
-        <Caret Line="53" Column="33" TopLine="20"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="2"/>
       </Position2>
       <Position3>
-        <Filename Value="miriamform.pas"/>
-        <Caret Line="54" Column="33" TopLine="20"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="557" Column="26" TopLine="539"/>
       </Position3>
       <Position4>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="55" Column="33" TopLine="20"/>
+        <Caret Line="68" Column="44" TopLine="32"/>
       </Position4>
       <Position5>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="54" Column="33" TopLine="20"/>
+        <Caret Line="63" Column="16" TopLine="37"/>
       </Position5>
       <Position6>
-        <Filename Value="miriamform.pas"/>
-        <Caret Line="55" Column="33" TopLine="20"/>
-      </Position6>
-      <Position7>
-        <Filename Value="miriamform.pas"/>
-        <Caret Line="56" Column="33" TopLine="20"/>
-      </Position7>
-      <Position8>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="2"/>
-      </Position8>
-      <Position9>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="557" Column="26" TopLine="539"/>
-      </Position9>
-      <Position10>
-        <Filename Value="miriamform.pas"/>
-        <Caret Line="68" Column="44" TopLine="32"/>
-      </Position10>
-      <Position11>
-        <Filename Value="miriamform.pas"/>
-        <Caret Line="63" Column="16" TopLine="37"/>
-      </Position11>
-      <Position12>
         <Filename Value="scenariohandler.pas"/>
         <Caret Line="115" Column="75" TopLine="100"/>
-      </Position12>
-      <Position13>
+      </Position6>
+      <Position7>
         <Filename Value="scenariohandler.pas"/>
         <Caret Line="55" Column="35" TopLine="29"/>
-      </Position13>
-      <Position14>
+      </Position7>
+      <Position8>
         <Filename Value="scenariohandler.pas"/>
         <Caret Line="50" Column="18" TopLine="41"/>
+      </Position8>
+      <Position9>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="52" Column="18" TopLine="35"/>
+      </Position9>
+      <Position10>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="50" Column="7" TopLine="32"/>
+      </Position10>
+      <Position11>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="55" Column="7" TopLine="33"/>
+      </Position11>
+      <Position12>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="67" Column="28" TopLine="39"/>
+      </Position12>
+      <Position13>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="77" Column="3" TopLine="45"/>
+      </Position13>
+      <Position14>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="78" TopLine="45"/>
       </Position14>
       <Position15>
         <Filename Value="scenariohandler.pas"/>
-        <Caret Line="52" Column="18" TopLine="35"/>
+        <Caret Line="57" Column="7" TopLine="32"/>
       </Position15>
       <Position16>
-        <Filename Value="scenariohandler.pas"/>
-        <Caret Line="50" Column="7" TopLine="32"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="2"/>
       </Position16>
       <Position17>
-        <Filename Value="scenariohandler.pas"/>
-        <Caret Line="55" Column="7" TopLine="33"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="83" Column="3" TopLine="48"/>
       </Position17>
       <Position18>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="67" Column="28" TopLine="39"/>
+        <Caret Line="82" Column="3" TopLine="47"/>
       </Position18>
       <Position19>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="77" Column="3" TopLine="45"/>
+        <Caret Line="83" Column="3" TopLine="48"/>
       </Position19>
       <Position20>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="78" TopLine="45"/>
+        <Caret Line="84" Column="3" TopLine="49"/>
       </Position20>
       <Position21>
-        <Filename Value="scenariohandler.pas"/>
-        <Caret Line="57" Column="7" TopLine="32"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="83" Column="3" TopLine="48"/>
       </Position21>
       <Position22>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="2"/>
+        <Caret Line="84" Column="3" TopLine="49"/>
       </Position22>
       <Position23>
         <Filename Value="miriamform.pas"/>
@@ -1343,31 +1351,31 @@
       </Position23>
       <Position24>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="82" Column="3" TopLine="47"/>
+        <Caret Line="84" Column="3" TopLine="49"/>
       </Position24>
       <Position25>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="83" Column="3" TopLine="48"/>
+        <Caret Line="63" Column="52"/>
       </Position25>
       <Position26>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="84" Column="3" TopLine="49"/>
+        <Caret Line="64" Column="52" TopLine="30"/>
       </Position26>
       <Position27>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="83" Column="3" TopLine="48"/>
+        <Caret Line="59" Column="96" TopLine="31"/>
       </Position27>
       <Position28>
-        <Filename Value="miriamform.pas"/>
-        <Caret Line="84" Column="3" TopLine="49"/>
+        <Filename Value="aboutdialog.pas"/>
+        <Caret Line="161" Column="10" TopLine="154"/>
       </Position28>
       <Position29>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="83" Column="3" TopLine="48"/>
+        <Caret Line="69" Column="83" TopLine="63"/>
       </Position29>
       <Position30>
         <Filename Value="miriamform.pas"/>
-        <Caret Line="84" Column="3" TopLine="49"/>
+        <Caret Line="30" Column="88"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
