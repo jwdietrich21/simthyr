@@ -27,7 +27,12 @@ type
   { TAnnotationForm }
 
   TAnnotationForm = class(TForm)
-    ModelTermsEdit: TLabeledEdit;
+    ModelTermsLabel: TLabel;
+    ModelTermsEdit: TEdit;
+    ReferenceLabel: TLabel;
+    ReferenceEdit: TEdit;
+    ModelNameLabel: TLabel;
+    ModelNameEdit: TEdit;
     ModifiedTimeEdit: TEdit;
     ModifiedLabel: TLabel;
     CreatorsMemo: TMemo;
@@ -38,8 +43,6 @@ type
     ModifiedDateEdit: TDateEdit;
     SpeciesLabel: TLabel;
     SpeciesCombo: TComboBox;
-    ReferenceEdit: TLabeledEdit;
-    ModelNameEdit: TLabeledEdit;
     OKButton: TButton;
     ScrollBox1: TScrollBox;
     procedure FormShow(Sender: TObject);
@@ -74,7 +77,12 @@ end;
 
 procedure TAnnotationForm.FormShow(Sender: TObject);
 begin
-
+  ModelNameEdit.Text := gActiveModel.Name;
+  ReferenceEdit.Text := gActiveModel.Reference;
+  CreatorsMemo.Lines.Text := gActiveModel.Creators;
+  CreatedDateEdit.Date := gActiveModel.Created;
+  ModifiedDateEdit.Date := gActiveModel.LastModified;
+  ModelTermsEdit.Text := gActiveModel.Terms;
 end;
 
 end.
