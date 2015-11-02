@@ -141,7 +141,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     OKButton: TButton;
-    Label1: TLabel;
+    TitleLabel: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     procedure FormActivate(Sender: TObject);
