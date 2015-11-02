@@ -1,7 +1,7 @@
 object AnnotationForm: TAnnotationForm
-  Left = 285
+  Left = 304
   Height = 400
-  Top = 176
+  Top = 353
   Width = 600
   Caption = 'Model Annotation'
   ClientHeight = 400
@@ -28,54 +28,6 @@ object AnnotationForm: TAnnotationForm
     Color = clDefault
     ParentColor = False
     TabOrder = 0
-    object ModelNameEdit: TLabeledEdit
-      Left = 152
-      Height = 21
-      Hint = 'Preferred name of the model (MIRIAM 1)'
-      Top = 16
-      Width = 384
-      Anchors = [akTop, akLeft, akRight]
-      EditLabel.AnchorSideTop.Control = ModelNameEdit
-      EditLabel.AnchorSideTop.Side = asrCenter
-      EditLabel.AnchorSideRight.Control = ModelNameEdit
-      EditLabel.AnchorSideBottom.Control = ModelNameEdit
-      EditLabel.AnchorSideBottom.Side = asrBottom
-      EditLabel.Left = 87
-      EditLabel.Height = 13
-      EditLabel.Top = 20
-      EditLabel.Width = 58
-      EditLabel.Caption = 'Model name'
-      EditLabel.ParentColor = False
-      LabelPosition = lpLeft
-      LabelSpacing = 7
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 0
-    end
-    object ReferenceEdit: TLabeledEdit
-      Left = 152
-      Height = 21
-      Hint = 'A citation of the reference description with which the model is associated (MIRIAM 2)'
-      Top = 48
-      Width = 384
-      Anchors = [akTop, akLeft, akRight]
-      EditLabel.AnchorSideTop.Control = ReferenceEdit
-      EditLabel.AnchorSideTop.Side = asrCenter
-      EditLabel.AnchorSideRight.Control = ReferenceEdit
-      EditLabel.AnchorSideBottom.Control = ReferenceEdit
-      EditLabel.AnchorSideBottom.Side = asrBottom
-      EditLabel.Left = 63
-      EditLabel.Height = 13
-      EditLabel.Top = 52
-      EditLabel.Width = 82
-      EditLabel.Caption = 'Model Reference'
-      EditLabel.ParentColor = False
-      LabelPosition = lpLeft
-      LabelSpacing = 7
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 1
-    end
     object SpeciesCombo: TComboBox
       Left = 152
       Height = 21
@@ -96,9 +48,6 @@ object AnnotationForm: TAnnotationForm
         'Felis silvestris silvestris (European wildcat, NCBI Taxonomy ID 463207)'
         'Oryctolagus cuniculus cuniculus (rabbit, NCBI Taxonomy ID 568996)'
         ''
-        ''
-        ''
-        ''
       )
       ParentShowHint = False
       ShowHint = True
@@ -106,7 +55,7 @@ object AnnotationForm: TAnnotationForm
       Text = 'Homo sapiens (NCBI Taxonomy ID 9606)'
     end
     object SpeciesLabel: TLabel
-      Left = 96
+      Left = 8
       Height = 13
       Top = 83
       Width = 38
@@ -126,7 +75,7 @@ object AnnotationForm: TAnnotationForm
       TabOrder = 3
     end
     object CreatorsLabel: TLabel
-      Left = 47
+      Left = 8
       Height = 13
       Top = 112
       Width = 71
@@ -152,7 +101,7 @@ object AnnotationForm: TAnnotationForm
       TabOrder = 4
     end
     object CreatedLabel: TLabel
-      Left = 78
+      Left = 8
       Height = 13
       Top = 182
       Width = 49
@@ -188,7 +137,7 @@ object AnnotationForm: TAnnotationForm
       TabOrder = 6
     end
     object ModifiedLabel: TLabel
-      Left = 72
+      Left = 8
       Height = 13
       Top = 210
       Width = 52
@@ -206,29 +155,58 @@ object AnnotationForm: TAnnotationForm
       ShowHint = True
       TabOrder = 7
     end
-    object ModelTermsEdit: TLabeledEdit
+    object ModelNameEdit: TEdit
+      Left = 152
+      Height = 21
+      Hint = 'Preferred name of the model (MIRIAM 1)'
+      Top = 16
+      Width = 384
+      Anchors = [akTop, akLeft, akRight]
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object ModelNameLabel: TLabel
+      Left = 8
+      Height = 13
+      Top = 21
+      Width = 60
+      Caption = 'Model Name'
+      ParentColor = False
+    end
+    object ReferenceEdit: TEdit
+      Left = 152
+      Height = 21
+      Hint = 'A citation of the reference description with which the model is associated (MIRIAM 2)'
+      Top = 48
+      Width = 384
+      Anchors = [akTop, akLeft, akRight]
+      TabOrder = 1
+    end
+    object ReferenceLabel: TLabel
+      Left = 8
+      Height = 13
+      Top = 52
+      Width = 82
+      Caption = 'Model Reference'
+      ParentColor = False
+    end
+    object ModelTermsEdit: TEdit
       Left = 152
       Height = 21
       Hint = 'Terms of distribution (MIRIAM 5)'
-      Top = 255
+      Top = 240
       Width = 384
       Anchors = [akTop, akLeft, akRight]
-      EditLabel.AnchorSideTop.Control = ModelTermsEdit
-      EditLabel.AnchorSideTop.Side = asrCenter
-      EditLabel.AnchorSideRight.Control = ModelTermsEdit
-      EditLabel.AnchorSideBottom.Control = ModelTermsEdit
-      EditLabel.AnchorSideBottom.Side = asrBottom
-      EditLabel.Left = 49
-      EditLabel.Height = 13
-      EditLabel.Top = 259
-      EditLabel.Width = 96
-      EditLabel.Caption = 'Terms of Distribution'
-      EditLabel.ParentColor = False
-      LabelPosition = lpLeft
-      LabelSpacing = 7
-      ParentShowHint = False
-      ShowHint = True
       TabOrder = 8
+    end
+    object ModelTermsLabel: TLabel
+      Left = 8
+      Height = 13
+      Top = 243
+      Width = 99
+      Caption = 'Terms of Distirubtion:'
+      ParentColor = False
     end
   end
   object OKButton: TButton
