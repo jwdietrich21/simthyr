@@ -434,6 +434,7 @@ begin
   begin
     theFileName    := OpenDialog1.FileName;
     theFilterIndex := OpenDialog1.FilterIndex;
+    theVersion := '';
   {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
     if (lcl_major < 2) and (lcl_minor < 2) then
       theFilterIndex := theFilterIndex + 1;

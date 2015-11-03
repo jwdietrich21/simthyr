@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, SimThyrTypes, SimThyrResources, SimThyrServices, UnitConverter,
-  SimThyrLog, SimThyrPlot, Sensitivityanalysis, tornado, TWSensitivityanalysis,
+  SimThyrLog, SimThyrPlot, Sensitivityanalysis, TWSensitivityanalysis,
   Equilibriumdiagram, SimThyrPrediction, DOM, XMLRead, XMLWrite
   {$IFDEF win32}
   , Windows

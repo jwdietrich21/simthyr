@@ -14,7 +14,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.4.4.0'
   object PlotPanel: TPanel
     Left = 48
     Height = 288
@@ -149,7 +149,6 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Anchors = [akTop, akLeft, akRight, akBottom]
       Color = clWhite
       DoubleBuffered = True
-      ParentColor = False
       ParentShowHint = False
       PopupMenu = PopupMenu1
       ShowHint = True
@@ -195,7 +194,6 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       )
       Anchors = [akTop, akRight, akBottom]
       Color = clNone
-      ParentColor = False
       object LegendColorMapSeries: TColorMapSeries
         ColorSource = ColourSource
         Interpolate = True
