@@ -85,7 +85,7 @@ type
     UndoItem: TMenuItem;
     procedure CalculateSensitivityMatrix(var theMatrix: TSensitivityMatrix;
       const ymax: real; const ymin: real; const xmax: real; const xmin: real);
-    procedure CalculateMatrixWithCoordinates(theMatrix: TSensitivityMatrix);
+    procedure CalculateMatrixWithCoordinates;
     procedure CheckToggleBoxChange(Sender: TObject);
     procedure CopyChart;
     procedure MaxSpinEdit1Change(Sender: TObject);
@@ -168,10 +168,7 @@ end;
 constructor TSensitivityMatrix.create;
 begin
   inherited create;
-  if length(content) = 0 then
-    MessageDlg(INSUFFICIENT_MEMORY_MESSAGE, mtError, [mbOK], 0)
-  else
-    ClearContent;
+  ClearContent;
 end;
 
 destructor TSensitivityMatrix.destroy;
@@ -380,8 +377,7 @@ begin
   Cursor := oldCursor;
 end;
 
-procedure TTWSensitivityAnalysisForm.CalculateMatrixWithCoordinates(theMatrix:
-  TSensitivityMatrix);
+procedure TTWSensitivityAnalysisForm.CalculateMatrixWithCoordinates;
 var
   xmin, xmax, ymin, ymax: real;
 begin
@@ -580,7 +576,7 @@ begin
   gMaxXPar := MaxSpinEdit1.Value / gSpinFactor;
   SensitivityMapColorMapSeries.Extent.XMin := MinSpinEdit1.Value;
     SensitivityMapColorMapSeries.Extent.XMax := MaxSpinEdit1.Value;
-  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  CalculateMatrixWithCoordinates;
   with SensitivityMatrix do
     PopulateColourSource(GetMin, GetMean, GetMax);
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
@@ -600,7 +596,7 @@ begin
   gMaxYPar := MaxSpinEdit2.Value / gSpinFactor;
   SensitivityMapColorMapSeries.Extent.YMin := MinSpinEdit2.Value;
     SensitivityMapColorMapSeries.Extent.YMax := MaxSpinEdit2.Value;
-  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  CalculateMatrixWithCoordinates;
   with SensitivityMatrix do
     PopulateColourSource(GetMin, GetMean, GetMax);
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
@@ -620,7 +616,7 @@ begin
   gMaxXPar := MaxSpinEdit1.Value / gSpinFactor;
   SensitivityMapColorMapSeries.Extent.XMin := MinSpinEdit1.Value;
     SensitivityMapColorMapSeries.Extent.XMax := MaxSpinEdit1.Value;
-  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  CalculateMatrixWithCoordinates;
   with SensitivityMatrix do
     PopulateColourSource(GetMin, GetMean, GetMax);
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
@@ -640,7 +636,7 @@ begin
   gMaxYPar := MaxSpinEdit2.Value / gSpinFactor;
   SensitivityMapColorMapSeries.Extent.YMin := MinSpinEdit2.Value;
     SensitivityMapColorMapSeries.Extent.YMax := MaxSpinEdit2.Value;
-  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  CalculateMatrixWithCoordinates;
   with SensitivityMatrix do
     PopulateColourSource(GetMin, GetMean, GetMax);
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
@@ -649,7 +645,7 @@ end;
 procedure TTWSensitivityAnalysisForm.ResetButtonClick(Sender: TObject);
 begin
   SetStandardStrucParBoundaries(1 / 3, 3);
-  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  CalculateMatrixWithCoordinates;
   with SensitivityMatrix do
     PopulateColourSource(GetMin, GetMean, GetMax);
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
@@ -675,13 +671,12 @@ procedure TTWSensitivityAnalysisForm.LegendColorMapSeriesCalculate(const AX,
   AY: Double; out AZ: Double);
 var
   ext: TDoubleRect;
-  minResult, meanResult, maxResult: real;
+  minResult, maxResult: real;
 begin
   ext := LegendMap.GetFullExtent;
   with SensitivityMatrix do
   begin
     minResult := GetMin;
-    meanResult := GetMean;
     maxResult := GetMax;
   end;
   if maxResult > minResult then
@@ -1283,7 +1278,7 @@ begin
       MinSpinEdit2.Value := tempMinY * gSpinFactor;
       MaxSpinEdit2.Value := tempMaxX * gSpinFactor;
       gMinYPar := tempMinY;
-      gMaxYPar := tempMaxY;
+      gMaxYPar := tempMaxX;
       {ChartAxisTransformations1LinearAxisTransform2.Scale :=
         1 / DH_FACTOR; }
     end
@@ -1324,7 +1319,7 @@ end;
 procedure TTWSensitivityAnalysisForm.DependentParComboChange(Sender: TObject);
 begin
   SensitivityMap.Title.Text.Text := DependentParCombo.Text;
-  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  CalculateMatrixWithCoordinates;
   with SensitivityMatrix do
     PopulateColourSource(GetMin, GetMean, GetMax);
   SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
@@ -1332,7 +1327,7 @@ end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton3ColorChanged(Sender: TObject);
 begin
-  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  CalculateMatrixWithCoordinates;
   with SensitivityMatrix do
     PopulateColourSource(GetMin, GetMean, GetMax);
   ColouriseLegend;
@@ -1342,7 +1337,7 @@ end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton2ColorChanged(Sender: TObject);
 begin
-  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  CalculateMatrixWithCoordinates;
   with SensitivityMatrix do
     PopulateColourSource(GetMin, GetMean, GetMax);
   ColouriseLegend;
@@ -1352,7 +1347,7 @@ end;
 
 procedure TTWSensitivityAnalysisForm.ColorButton1ColorChanged(Sender: TObject);
 begin
-  CalculateMatrixWithCoordinates(SensitivityMatrix);
+  CalculateMatrixWithCoordinates;
   with SensitivityMatrix do
     PopulateColourSource(GetMin, GetMean, GetMax);
   ColouriseLegend;
@@ -1407,7 +1402,7 @@ begin
     StrucParCombo1.Enabled := false; {fixes error #8}
     SetBottomAxisCaption;
     SetStandardStrucParBoundaries(1 / 3, 3);
-    CalculateMatrixWithCoordinates(SensitivityMatrix);
+    CalculateMatrixWithCoordinates;
     with SensitivityMatrix do
       PopulateColourSource(GetMin, GetMean, GetMax);
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
@@ -1422,7 +1417,7 @@ begin
     StrucParCombo2.Enabled := false; {fixes error #8}
     SetLeftAxisCaption;
     SetStandardStrucParBoundaries(1 / 3, 3);
-    CalculateMatrixWithCoordinates(SensitivityMatrix);
+    CalculateMatrixWithCoordinates;
     with SensitivityMatrix do
       PopulateColourSource(GetMin, GetMean, GetMax);
     SensitivityMap.Invalidate;  {forces redrawing in some operating systems}
@@ -1455,7 +1450,7 @@ procedure TTWSensitivityAnalysisForm.Rescale2DMap;
 begin
   if (StrucParCombo1.Text <> '') and (StrucParCombo1.Text <> '') then
   begin
-    CalculateMatrixWithCoordinates(SensitivityMatrix);
+    CalculateMatrixWithCoordinates;
     with SensitivityMatrix do
       PopulateColourSource(GetMin, GetMean, GetMax);
     ColouriseLegend;

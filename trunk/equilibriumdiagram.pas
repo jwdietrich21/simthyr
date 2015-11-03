@@ -1161,6 +1161,7 @@ procedure TEquilibriumDiagramForm.SParCombo1Change(Sender: TObject);
 { read selected structure parameter }
 begin
   SaveStrucPars;
+  SParTrackBar1.Enabled := false;
   if pos(LowerCase('GD1'), LowerCase(SParCombo1.Text)) > 0 then
     gSelectedSParameter1 := GD1Item
   else if pos(LowerCase('GD2'), LowerCase(SParCombo1.Text)) > 0 then
@@ -1199,12 +1200,15 @@ begin
   UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
   DrawDiagram(true, false);
   RestoreStrucPars;
+  if gSelectedSParameter1 <> NullItem then
+    SParTrackBar1.Enabled := true;
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo2Change(Sender: TObject);
 { read selected structure parameter }
 begin
   SaveStrucPars;
+  SParTrackBar2.Enabled := false;
   if pos(LowerCase('GD1'), LowerCase(SParCombo2.Text)) > 0 then
     gSelectedSParameter2 := GD1Item
   else if pos(LowerCase('GD2'), LowerCase(SParCombo2.Text)) > 0 then
@@ -1243,12 +1247,15 @@ begin
   UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2 / TRACK_RATIO);
   DrawDiagram(true, false);
   RestoreStrucPars;
+  if gSelectedSParameter2 <> NullItem then
+    SParTrackBar2.Enabled := true;
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo3Change(Sender: TObject);
 { read selected structure parameter }
 begin
   SaveStrucPars;
+  SParTrackBar3.Enabled := false;
   if pos(LowerCase('GD1'), LowerCase(SParCombo3.Text)) > 0 then
     gSelectedSParameter3 := GD1Item
   else if pos(LowerCase('GD2'), LowerCase(SParCombo3.Text)) > 0 then
@@ -1287,6 +1294,8 @@ begin
   UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3 / TRACK_RATIO);
   DrawDiagram(true, false);
   RestoreStrucPars;
+  if gSelectedSParameter3 <> NullItem then
+    SParTrackBar3.Enabled := true;
 end;
 
 procedure TEquilibriumDiagramForm.SParTrackBar1Change(Sender: TObject);

@@ -239,6 +239,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       OnChange = SParTrackBar1Change
       Position = 0
       TickMarks = tmTopLeft
+      Enabled = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
@@ -288,6 +289,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       OnChange = SParTrackBar2Change
       Position = 0
       TickMarks = tmTopLeft
+      Enabled = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 3
@@ -337,6 +339,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       OnChange = SParTrackBar3Change
       Position = 0
       TickMarks = tmTopLeft
+      Enabled = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 5
