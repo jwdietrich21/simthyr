@@ -19,7 +19,7 @@ unit ScenarioHandler;
 interface
 
 uses
-  Classes, SysUtils, DateUtils, DOM, XMLRead, XMLWrite,
+  Classes, SysUtils, DateUtils, DOM, XMLRead, XMLWrite, Forms,
   SimThyrTypes, SimThyrServices;
 
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
@@ -33,14 +33,14 @@ var
   i: integer;
   Doc: TXMLDocument;
   RootNode: TDOMNode;
-  oldFormatSettings: TFormatSettings;
+  oldSep: Char;
   standardDate: TDateTime;
 begin
   if FileExists(theFileName) then
-  oldFormatSettings := DefaultFormatSettings;
+  oldSep := DefaultFormatSettings.DecimalSeparator;
+  DefaultFormatSettings.DecimalSeparator := kPERIOD;
   begin
     try
-      DefaultFormatSettings.ShortDateFormat := ISO_8601_DATE_FORMAT;
       standardDate := EncodeDateTime(1904, 01, 01, 00, 00, 00, 00);
       Doc := TXMLDocument.Create();
       ReadXMLFile(Doc, theFileName);
@@ -59,8 +59,10 @@ begin
         gActiveModel.Reference := NodeContent(RootNode, 'Reference');
         gActiveModel.Species := NodeContent(RootNode, 'Species');
         gActiveModel.Creators := NodeContent(RootNode, 'Creators');
-        gActiveModel.Created := StrToDateTimeDef(NodeContent(RootNode, 'Created'), standardDate);{ TODO -oJ. W. D. : Debug Conversion Error }
-        gActiveModel.LastModified := StrToDateTimeDef(NodeContent(RootNode, 'LastModified'), standardDate); { TODO -oJ. W. D. : Debug Conversion Error }
+        if not TryXMLDateTime2DateTime(NodeContent(RootNode, 'Created'), gActiveModel.Created) then
+          gActiveModel.Created := standardDate;
+        if not TryXMLDateTime2DateTime(NodeContent(RootNode, 'LastModified'), gActiveModel.LastModified) then
+          gActiveModel.LastModified := standardDate;
         gActiveModel.Terms := NodeContent(RootNode, 'Terms');
       end;
       if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
@@ -105,7 +107,7 @@ begin
       Doc.Free;
     end;
   end;
-  DefaultFormatSettings := oldFormatSettings;
+  DefaultFormatSettings.DecimalSeparator := oldSep;
 end;
 
 procedure SaveScenario(theFileName: string); {saves scenario as XML file}
