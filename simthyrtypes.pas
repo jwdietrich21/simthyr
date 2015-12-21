@@ -85,6 +85,8 @@ const
 
  TWS_RESOLUTION = 91; {Resolution for two-way sensitivity analysis}
 
+ ISO_8601_DATE_FORMAT = 'YYYY-MM-DD';
+
 type
  tResultContent = array[0..RES_MAX_COLS-1] of Str255;
 
