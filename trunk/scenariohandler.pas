@@ -19,7 +19,8 @@ unit ScenarioHandler;
 interface
 
 uses
-  Classes, SysUtils, DOM, XMLRead, XMLWrite, SimThyrTypes, SimThyrServices;
+  Classes, SysUtils, DateUtils, DOM, XMLRead, XMLWrite,
+  SimThyrTypes, SimThyrServices;
 
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
 procedure SaveScenario(theFileName: string);
@@ -32,10 +33,15 @@ var
   i: integer;
   Doc: TXMLDocument;
   RootNode: TDOMNode;
+  oldFormatSettings: TFormatSettings;
+  standardDate: TDateTime;
 begin
   if FileExists(theFileName) then
+  oldFormatSettings := DefaultFormatSettings;
   begin
     try
+      DefaultFormatSettings.ShortDateFormat := ISO_8601_DATE_FORMAT;
+      standardDate := EncodeDateTime(1904, 01, 01, 00, 00, 00, 00);
       Doc := TXMLDocument.Create();
       ReadXMLFile(Doc, theFileName);
       RootNode := Doc.DocumentElement;
@@ -53,8 +59,8 @@ begin
         gActiveModel.Reference := NodeContent(RootNode, 'Reference');
         gActiveModel.Species := NodeContent(RootNode, 'Species');
         gActiveModel.Creators := NodeContent(RootNode, 'Creators');
-        gActiveModel.Created := StrToDateTime(NodeContent(RootNode, 'Created'));{ TODO -oJ. W. D. : Replace with StrToDateTimeDef }
-        gActiveModel.LastModified := StrToDateTime(NodeContent(RootNode, 'LastModified')); { TODO -oJ. W. D. : Replace with StrToDateTimeDef }
+        gActiveModel.Created := StrToDateTimeDef(NodeContent(RootNode, 'Created'), standardDate);{ TODO -oJ. W. D. : Debug Conversion Error }
+        gActiveModel.LastModified := StrToDateTimeDef(NodeContent(RootNode, 'LastModified'), standardDate); { TODO -oJ. W. D. : Debug Conversion Error }
         gActiveModel.Terms := NodeContent(RootNode, 'Terms');
       end;
       if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
@@ -99,6 +105,7 @@ begin
       Doc.Free;
     end;
   end;
+  DefaultFormatSettings := oldFormatSettings;
 end;
 
 procedure SaveScenario(theFileName: string); {saves scenario as XML file}
@@ -106,6 +113,7 @@ var
   oldSep: Char;
   Doc: TXMLDocument;
   RootNode, ElementNode: TDOMNode;
+  theDate: AnsiString;
 begin
   oldSep := DefaultFormatSettings.DecimalSeparator;
   DefaultFormatSettings.DecimalSeparator := kPERIOD;
@@ -122,8 +130,10 @@ begin
     ElementNode.AppendChild(SimpleNode(Doc, 'Reference', gActiveModel.Reference));
     ElementNode.AppendChild(SimpleNode(Doc, 'Species', gActiveModel.Species));
     ElementNode.AppendChild(SimpleNode(Doc, 'Creators', gActiveModel.Creators));
-    ElementNode.AppendChild(SimpleNode(Doc, 'Created', DateTimeToStr(gActiveModel.Created)));
-    ElementNode.AppendChild(SimpleNode(Doc, 'LastModified', DateTimeToStr(gActiveModel.LastModified)));
+    DateTimeToString(theDate, ISO_8601_DATE_FORMAT, gActiveModel.Created);
+    ElementNode.AppendChild(SimpleNode(Doc, 'Created', theDate));
+    DateTimeToString(theDate, ISO_8601_DATE_FORMAT, gActiveModel.LastModified);
+    ElementNode.AppendChild(SimpleNode(Doc, 'LastModified', theDate));
     ElementNode.AppendChild(SimpleNode(Doc, 'Terms', gActiveModel.Terms));
     RootNode.AppendChild(ElementNode);
 
