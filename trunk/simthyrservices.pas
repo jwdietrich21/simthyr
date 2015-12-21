@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, Grids, StdCtrls, Dialogs, Forms, SimThyrTypes,
-  SimThyrResources, UnitConverter, DOM, XMLRead, FileUtil
+  SimThyrResources, UnitConverter, DOM, XMLRead, FileUtil, DateUtils
       {$IFDEF win32}
   , Windows, Win32Proc
   {$ELSE}
@@ -50,7 +50,8 @@ function YosemiteORNewer: Boolean;
 procedure bell;
 function EncodeGreek(theString: string): string;
 function DecodeGreek(theString: string): string;
-function NodeContent(theRoot: TDOMNode; Name: string): string;
+function XMLDateTime2DateTime(const XMLDateTime: String): TDateTime;
+function TryXMLDateTime2DateTime(const S: ShortString; out Value: TDateTime): Boolean;     function NodeContent(theRoot: TDOMNode; Name: string): string;
 procedure VarFromNode(theRoot: TDOMNode; Name: string; var theVar: real);
 function SimpleNode(Doc: TXMLDocument; Name, Value: string): TDOMNode;
 procedure ClearResultContents(var theContents: tResultContent);
@@ -156,6 +157,34 @@ function DecodeGreek(theString: string): string;
 {decodes ASCII substitution sequence for greek mu letter}
 begin
   result := UTF8Decode(StringReplace(theString, 'mc', PrefixLabel[4], [rfReplaceAll, rfIgnoreCase]));
+end;
+
+function XMLDateTime2DateTime(const XMLDateTime: String): TDateTime;
+{ adapted from a suggestion by Luiz Americo Pereira Camara }
+var
+  DateOnly: String;
+  TPos: Integer;
+begin
+  TPos := Pos('T', XMLDateTime);
+  if TPos <> 0 then
+    DateOnly := Copy(XMLDateTime, 1, TPos - 1)
+  else
+    DateOnly := XMLDateTime;
+  Result := ScanDateTime(LeftStr(ISO_8601_DATE_FORMAT, 10), DateOnly);
+end;
+
+function TryXMLDateTime2DateTime(const S: ShortString; out Value: TDateTime): Boolean;
+var
+  DateOnly: String;
+  TPos: Integer;
+begin
+  result := true;
+  try
+    value := XMLDateTime2DateTime(s);
+  except
+    on EConvertError do
+      result:=false
+  end;
 end;
 
 function NodeContent(theRoot: TDOMNode; Name: string): string;
