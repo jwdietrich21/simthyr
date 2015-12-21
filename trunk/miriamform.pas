@@ -27,9 +27,9 @@ type
   { TAnnotationForm }
 
   TAnnotationForm = class(TForm)
+    ModelTermsCombo: TComboBox;
     MIRIAMLogo: TImage;
     ModelTermsLabel: TLabel;
-    ModelTermsEdit: TEdit;
     BottomPanel: TPanel;
     ReferenceLabel: TLabel;
     ReferenceEdit: TEdit;
@@ -72,10 +72,11 @@ var
 begin
   gActiveModel.Name := ModelNameEdit.Text;
   gActiveModel.Reference := ReferenceEdit.Text;
+  gActiveModel.Species := SpeciesCombo.Text;
   gActiveModel.Creators := CreatorsMemo.Lines.Text;
   gActiveModel.Created := CreatedDateEdit.Date; // + CreatedTimeEdit.Text;
   gActiveModel.LastModified := ModifiedDateEdit.Date; // + ModifiedTimeEdit.Text;
-  gActiveModel.Terms := ModelTermsEdit.Text;
+  gActiveModel.Terms := ModelTermsCombo.Text;
   Close;
 end;
 
@@ -83,10 +84,11 @@ procedure TAnnotationForm.FormShow(Sender: TObject);
 begin
   ModelNameEdit.Text := gActiveModel.Name;
   ReferenceEdit.Text := gActiveModel.Reference;
+  SpeciesCombo.Text := gActiveModel.Species;
   CreatorsMemo.Lines.Text := gActiveModel.Creators;
   CreatedDateEdit.Date := gActiveModel.Created;
   ModifiedDateEdit.Date := gActiveModel.LastModified;
-  ModelTermsEdit.Text := gActiveModel.Terms;
+  ModelTermsCombo.Text := gActiveModel.Terms;
 end;
 
 procedure TAnnotationForm.MIRIAMLogoClick(Sender: TObject);
