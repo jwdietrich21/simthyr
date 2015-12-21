@@ -51,6 +51,7 @@ begin
       begin
         gActiveModel.Name := NodeContent(RootNode, 'Name');
         gActiveModel.Reference := NodeContent(RootNode, 'Reference');
+        gActiveModel.Species := NodeContent(RootNode, 'Species');
         gActiveModel.Creators := NodeContent(RootNode, 'Creators');
         gActiveModel.Created := StrToDateTime(NodeContent(RootNode, 'Created'));{ TODO -oJ. W. D. : Replace with StrToDateTimeDef }
         gActiveModel.LastModified := StrToDateTime(NodeContent(RootNode, 'LastModified')); { TODO -oJ. W. D. : Replace with StrToDateTimeDef }
@@ -119,6 +120,7 @@ begin
     ElementNode := Doc.CreateElement('MIRIAM');
     ElementNode.AppendChild(SimpleNode(Doc, 'Name', gActiveModel.Name));
     ElementNode.AppendChild(SimpleNode(Doc, 'Reference', gActiveModel.Reference));
+    ElementNode.AppendChild(SimpleNode(Doc, 'Species', gActiveModel.Species));
     ElementNode.AppendChild(SimpleNode(Doc, 'Creators', gActiveModel.Creators));
     ElementNode.AppendChild(SimpleNode(Doc, 'Created', DateTimeToStr(gActiveModel.Created)));
     ElementNode.AppendChild(SimpleNode(Doc, 'LastModified', DateTimeToStr(gActiveModel.LastModified)));
