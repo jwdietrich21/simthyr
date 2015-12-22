@@ -2488,6 +2488,7 @@ object SimThyrToolbar: TSimThyrToolbar
     top = 40
   end
   object ApplicationProperties1: TApplicationProperties
+    Title = 'SimThyr'
     OnIdle = HandleIdle
     left = 256
     top = 40

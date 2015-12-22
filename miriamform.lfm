@@ -109,16 +109,6 @@ object AnnotationForm: TAnnotationForm
       Caption = 'Created at'
       ParentColor = False
     end
-    object CreatedTimeEdit: TEdit
-      Left = 280
-      Height = 21
-      Hint = 'Date and time of creation (MIRIAM 4)'
-      Top = 176
-      Width = 112
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 5
-    end
     object ModifiedDateEdit: TDateEdit
       Left = 152
       Height = 21
@@ -134,7 +124,7 @@ object AnnotationForm: TAnnotationForm
       MaxLength = 0
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 6
+      TabOrder = 5
     end
     object ModifiedLabel: TLabel
       Left = 8
@@ -144,16 +134,6 @@ object AnnotationForm: TAnnotationForm
       Alignment = taRightJustify
       Caption = 'Modified at'
       ParentColor = False
-    end
-    object ModifiedTimeEdit: TEdit
-      Left = 280
-      Height = 21
-      Hint = 'Date and time of modification (MIRIAM 4)'
-      Top = 207
-      Width = 112
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 7
     end
     object ModelNameEdit: TEdit
       Left = 152
@@ -245,7 +225,87 @@ object AnnotationForm: TAnnotationForm
         'Open Publication License'
         'Commercial'
       )
+      TabOrder = 6
+    end
+    object CreatedHourSpinEdit: TSpinEdit
+      Left = 280
+      Height = 21
+      Top = 176
+      Width = 45
+      MaxValue = 23
+      TabOrder = 7
+    end
+    object CreatedMinuteSpinEdit: TSpinEdit
+      Left = 341
+      Height = 21
+      Top = 176
+      Width = 45
+      MaxValue = 59
       TabOrder = 8
+    end
+    object CreatedSecondSpinEdit: TSpinEdit
+      Left = 402
+      Height = 21
+      Top = 176
+      Width = 45
+      MaxValue = 59
+      TabOrder = 9
+    end
+    object ModifiedHourSpinEdit: TSpinEdit
+      Left = 280
+      Height = 21
+      Top = 207
+      Width = 45
+      MaxValue = 23
+      TabOrder = 10
+    end
+    object ModifiedMinuteSpinEdit: TSpinEdit
+      Left = 341
+      Height = 21
+      Top = 207
+      Width = 45
+      MaxValue = 59
+      TabOrder = 11
+    end
+    object ModifiedSecondSpinEdit: TSpinEdit
+      Left = 402
+      Height = 21
+      Top = 207
+      Width = 45
+      MaxValue = 59
+      TabOrder = 12
+    end
+    object CreatedColonHM: TLabel
+      Left = 332
+      Height = 13
+      Top = 182
+      Width = 3
+      Caption = ':'
+      ParentColor = False
+    end
+    object CreatedColonMS: TLabel
+      Left = 392
+      Height = 13
+      Top = 182
+      Width = 3
+      Caption = ':'
+      ParentColor = False
+    end
+    object ModifiedColonHM: TLabel
+      Left = 332
+      Height = 13
+      Top = 210
+      Width = 3
+      Caption = ':'
+      ParentColor = False
+    end
+    object ModifiedColonMS: TLabel
+      Left = 392
+      Height = 13
+      Top = 210
+      Width = 3
+      Caption = ':'
+      ParentColor = False
     end
   end
   object TitleLabel: TLabel
