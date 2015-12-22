@@ -20,13 +20,17 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, EditBtn, LCLIntf, SimThyrTypes;
+  ExtCtrls, EditBtn, LCLIntf, Spin, DateUtils, SimThyrTypes;
 
 type
 
   { TAnnotationForm }
 
   TAnnotationForm = class(TForm)
+    CreatedColonHM: TLabel;
+    CreatedColonMS: TLabel;
+    ModifiedColonMS: TLabel;
+    ModifiedColonHM: TLabel;
     ModelTermsCombo: TComboBox;
     MIRIAMLogo: TImage;
     ModelTermsLabel: TLabel;
@@ -35,18 +39,22 @@ type
     ReferenceEdit: TEdit;
     ModelNameLabel: TLabel;
     ModelNameEdit: TEdit;
-    ModifiedTimeEdit: TEdit;
     ModifiedLabel: TLabel;
     CreatorsMemo: TMemo;
     CreatorsLabel: TLabel;
     CreatedDateEdit: TDateEdit;
     CreatedLabel: TLabel;
-    CreatedTimeEdit: TEdit;
     ModifiedDateEdit: TDateEdit;
     SpeciesLabel: TLabel;
     SpeciesCombo: TComboBox;
     OKButton: TButton;
     ScrollBox1: TScrollBox;
+    CreatedHourSpinEdit: TSpinEdit;
+    CreatedMinuteSpinEdit: TSpinEdit;
+    CreatedSecondSpinEdit: TSpinEdit;
+    ModifiedHourSpinEdit: TSpinEdit;
+    ModifiedMinuteSpinEdit: TSpinEdit;
+    ModifiedSecondSpinEdit: TSpinEdit;
     TitleLabel: TLabel;
     procedure FormShow(Sender: TObject);
     procedure MIRIAMLogoClick(Sender: TObject);
@@ -74,8 +82,12 @@ begin
   gActiveModel.Reference := ReferenceEdit.Text;
   gActiveModel.Species := SpeciesCombo.Text;
   gActiveModel.Creators := CreatorsMemo.Lines.Text;
-  gActiveModel.Created := CreatedDateEdit.Date; // + CreatedTimeEdit.Text;
-  gActiveModel.LastModified := ModifiedDateEdit.Date; // + ModifiedTimeEdit.Text;
+  gActiveModel.Created := CreatedDateEdit.Date;
+  TimeCreated := EncodeDateTime(1900, 1, 1, CreatedHourSpinEdit.Value, CreatedMinuteSpinEdit.Value, CreatedSecondSpinEdit.Value, 0);
+  ReplaceTime(gActiveModel.Created, TimeCreated);
+  gActiveModel.LastModified := ModifiedDateEdit.Date;
+  TimeModified := EncodeDateTime(1900, 1, 1, ModifiedHourSpinEdit.Value, ModifiedMinuteSpinEdit.Value, ModifiedSecondSpinEdit.Value, 0);
+  ReplaceTime(gActiveModel.LastModified, TimeModified);
   gActiveModel.Terms := ModelTermsCombo.Text;
   Close;
 end;
@@ -87,7 +99,13 @@ begin
   SpeciesCombo.Text := gActiveModel.Species;
   CreatorsMemo.Lines.Text := gActiveModel.Creators;
   CreatedDateEdit.Date := gActiveModel.Created;
+  CreatedHourSpinEdit.Value := HourOf(gActiveModel.Created);
+  CreatedMinuteSpinEdit.Value := MinuteOf(gActiveModel.Created);
+  CreatedSecondSpinEdit.Value := SecondOf(gActiveModel.Created);
   ModifiedDateEdit.Date := gActiveModel.LastModified;
+  ModifiedHourSpinEdit.Value := HourOf(gActiveModel.LastModified);
+  ModifiedMinuteSpinEdit.Value := MinuteOf(gActiveModel.LastModified);
+  ModifiedSecondSpinEdit.Value := SecondOf(gActiveModel.LastModified);
   ModelTermsCombo.Text := gActiveModel.Terms;
 end;
 

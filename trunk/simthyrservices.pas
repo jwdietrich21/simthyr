@@ -1,18 +1,18 @@
 unit SimThyrServices;
 
-{ SimThyr Project }
-{ A numerical simulator of thyrotropic feedback control }
+ { SimThyr Project }
+ { A numerical simulator of thyrotropic feedback control }
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
-{ (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+ { (c) J. W. Dietrich, 1994 - 2015 }
+ { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
+ { (c) Ruhr University of Bochum 2005 - 2015 }
 
 { This unit provides some global functions }
 
-{ Source code released under the BSD License }
-{ See http://simthyr.sourceforge.net for details }
+ { Source code released under the BSD License }
+ { See http://simthyr.sourceforge.net for details }
 
 {$mode objfpc}{$R+}
 
@@ -31,13 +31,13 @@ uses
   {$ENDIF}  ;
 
 const
-  iuSystemScript = -1;
-  iuCurrentScript = -2;
-  iuWordSelectTable = 0;
-  iuWordWrapTable = 1;
+  iuSystemScript     = -1;
+  iuCurrentScript    = -2;
+  iuWordSelectTable  = 0;
+  iuWordWrapTable    = 1;
   iuNumberPartsTable = 2;
-  iuUnTokenTable = 3;
-  iuWhiteSpaceList = 4;
+  iuUnTokenTable     = 3;
+  iuWhiteSpaceList   = 4;
 
 type
   tSaveMode = (TimeSeries, Plot);
@@ -46,12 +46,13 @@ var
   gSaveMode: tSaveMode;
 
 function OSVersion: Str255;
-function YosemiteORNewer: Boolean;
+function YosemiteORNewer: boolean;
 procedure bell;
 function EncodeGreek(theString: string): string;
 function DecodeGreek(theString: string): string;
-function XMLDateTime2DateTime(const XMLDateTime: String): TDateTime;
-function TryXMLDateTime2DateTime(const S: ShortString; out Value: TDateTime): Boolean;     function NodeContent(theRoot: TDOMNode; Name: string): string;
+function XMLDateTime2DateTime(const XMLDateTime: string): TDateTime;
+function TryXMLDateTime2DateTime(const S: ShortString; out Value: TDateTime): boolean;
+function NodeContent(theRoot: TDOMNode; Name: string): string;
 procedure VarFromNode(theRoot: TDOMNode; Name: string; var theVar: real);
 function SimpleNode(Doc: TXMLDocument; Name, Value: string): TDOMNode;
 procedure ClearResultContents(var theContents: tResultContent);
@@ -110,25 +111,26 @@ begin
   {$ENDIF}
 end;
 
-function YosemiteORNewer: Boolean;
-{ returns true, if this app runs on Mac OS X 10.10 Yosemite or newer }
+function YosemiteORNewer: boolean;
+  { returns true, if this app runs on Mac OS X 10.10 Yosemite or newer }
   {$IFDEF LCLcarbon}
 var
   Major, Minor, Bugfix: SInt32;
   theError: SInt16;
   {$ENDIF}
 begin
-  result := false;
+  Result   := False;
   {$IFDEF LCLcarbon}
   theError := Gestalt(gestaltSystemVersionMinor, Minor);
   if TheError = 0 then
     if Minor >= 10 then
-      result := true;
+      Result := True;
   {$ENDIF}
 end;
 
 procedure bell; {platform-independent implementation of acustical warning}
-var s:longint;
+var
+  s: longint;
 begin
   {$IFDEF win32}
   MessageBeep(0);
@@ -145,45 +147,55 @@ begin
 end;
 
 function EncodeGreek(theString: string): string;
-{encodes greek mu letter as ASCII substitution sequence}
+  {encodes greek mu letter as ASCII substitution sequence}
 var
   theFlags: TReplaceFlags;
 begin
   theFlags := [rfReplaceAll, rfIgnoreCase];
-  Result := StringReplace(theString, #194#181, 'mc', theFlags);
+  Result   := StringReplace(theString, #194#181, 'mc', theFlags);
 end;
 
 function DecodeGreek(theString: string): string;
-{decodes ASCII substitution sequence for greek mu letter}
+  {decodes ASCII substitution sequence for greek mu letter}
 begin
-  result := UTF8Decode(StringReplace(theString, 'mc', PrefixLabel[4], [rfReplaceAll, rfIgnoreCase]));
+  Result := UTF8Decode(StringReplace(theString, 'mc', PrefixLabel[4],
+    [rfReplaceAll, rfIgnoreCase]));
 end;
 
-function XMLDateTime2DateTime(const XMLDateTime: String): TDateTime;
-{ adapted from a suggestion by Luiz Americo Pereira Camara }
+function XMLDateTime2DateTime(const XMLDateTime: string): TDateTime;
+  { adapted and expanded from a suggestion by Luiz Americo Pereira Camara }
 var
-  DateOnly: String;
-  TPos: Integer;
+  DateOnly, TimeOnly: string;
+  theDate, theTime: TDateTime;
+  TPos: integer;
 begin
   TPos := Pos('T', XMLDateTime);
   if TPos <> 0 then
-    DateOnly := Copy(XMLDateTime, 1, TPos - 1)
+  begin
+    DateOnly := Copy(XMLDateTime, 1, TPos - 1);
+    TimeOnly := Copy(XMLDateTime, TPos + 1, Length(XMLDateTime));
+    theDate  := ScanDateTime(LeftStr(ISO_8601_DATE_FORMAT, 10), DateOnly);
+    theTime  := ScanDateTime(RightStr(ISO_8601_DATE_FORMAT, 8), TimeOnly);
+    Result   := theDate + theTime;
+  end
   else
+  begin
     DateOnly := XMLDateTime;
-  Result := ScanDateTime(LeftStr(ISO_8601_DATE_FORMAT, 10), DateOnly);
+    Result   := ScanDateTime(LeftStr(ISO_8601_DATE_FORMAT, 10), DateOnly);
+  end;
 end;
 
-function TryXMLDateTime2DateTime(const S: ShortString; out Value: TDateTime): Boolean;
+function TryXMLDateTime2DateTime(const S: ShortString; out Value: TDateTime): boolean;
 var
-  DateOnly: String;
-  TPos: Integer;
+  DateOnly: string;
+  TPos:     integer;
 begin
-  result := true;
+  Result := True;
   try
-    value := XMLDateTime2DateTime(s);
+    Value := XMLDateTime2DateTime(s);
   except
     on EConvertError do
-      result:=false
+      Result := False
   end;
 end;
 
@@ -191,11 +203,11 @@ function NodeContent(theRoot: TDOMNode; Name: string): string;
   {supports XML routines, gets the contents of a node in a file}
 var
   theNode: TDOMNode;
-  theText: String;
+  theText: string;
 begin
   if assigned(theRoot) then
-    begin
-      theNode := theRoot.FindNode(Name);
+  begin
+    theNode := theRoot.FindNode(Name);
     if assigned(theNode) then
     begin
       try
@@ -215,10 +227,10 @@ end;
 procedure VarFromNode(theRoot: TDOMNode; Name: string; var theVar: real);
 {supports XML routines}
 var
-  oldSep: char;
+  oldSep:    char;
   theString: string;
 begin
-  oldSep := DefaultFormatSettings.DecimalSeparator;
+  oldSep    := DefaultFormatSettings.DecimalSeparator;
   DefaultFormatSettings.DecimalSeparator := kPERIOD;
   theString := NodeContent(theRoot, Name);
   if theString <> 'NA' then
@@ -333,4 +345,3 @@ begin
 end;
 
 end.
-
