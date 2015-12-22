@@ -10,7 +10,7 @@ object AnnotationForm: TAnnotationForm
   Constraints.MinHeight = 300
   Constraints.MinWidth = 400
   OnShow = FormShow
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.4.2.0'
   object ScrollBox1: TScrollBox
     Left = 16
     Height = 272
@@ -35,7 +35,7 @@ object AnnotationForm: TAnnotationForm
       Top = 80
       Width = 394
       Anchors = [akTop, akLeft, akRight]
-      ItemHeight = 13
+      ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
         'Homo sapiens (NCBI Taxonomy ID 9606)'
@@ -56,9 +56,9 @@ object AnnotationForm: TAnnotationForm
     end
     object SpeciesLabel: TLabel
       Left = 8
-      Height = 13
+      Height = 16
       Top = 83
-      Width = 38
+      Width = 47
       Alignment = taRightJustify
       Caption = 'Species'
       ParentColor = False
@@ -76,16 +76,16 @@ object AnnotationForm: TAnnotationForm
     end
     object CreatorsLabel: TLabel
       Left = 8
-      Height = 13
+      Height = 16
       Top = 112
-      Width = 71
+      Width = 96
       Alignment = taRightJustify
       Caption = 'Model Creators'
       ParentColor = False
     end
     object CreatedDateEdit: TDateEdit
       Left = 152
-      Height = 21
+      Height = 22
       Hint = 'Date and time of creation (MIRIAM 4)'
       Top = 176
       Width = 103
@@ -102,16 +102,16 @@ object AnnotationForm: TAnnotationForm
     end
     object CreatedLabel: TLabel
       Left = 8
-      Height = 13
+      Height = 16
       Top = 182
-      Width = 49
+      Width = 65
       Alignment = taRightJustify
       Caption = 'Created at'
       ParentColor = False
     end
     object ModifiedDateEdit: TDateEdit
       Left = 152
-      Height = 21
+      Height = 22
       Hint = 'Date and time of modification (MIRIAM 4)'
       Top = 207
       Width = 103
@@ -128,16 +128,16 @@ object AnnotationForm: TAnnotationForm
     end
     object ModifiedLabel: TLabel
       Left = 8
-      Height = 13
+      Height = 16
       Top = 210
-      Width = 52
+      Width = 71
       Alignment = taRightJustify
       Caption = 'Modified at'
       ParentColor = False
     end
     object ModelNameEdit: TEdit
       Left = 152
-      Height = 21
+      Height = 22
       Hint = 'Preferred name of the model (MIRIAM 1)'
       Top = 16
       Width = 394
@@ -148,15 +148,15 @@ object AnnotationForm: TAnnotationForm
     end
     object ModelNameLabel: TLabel
       Left = 8
-      Height = 13
+      Height = 16
       Top = 21
-      Width = 60
+      Width = 79
       Caption = 'Model Name'
       ParentColor = False
     end
     object ReferenceEdit: TEdit
       Left = 152
-      Height = 21
+      Height = 22
       Hint = 'A citation of the reference description with which the model is associated (MIRIAM 2)'
       Top = 48
       Width = 394
@@ -165,17 +165,17 @@ object AnnotationForm: TAnnotationForm
     end
     object ReferenceLabel: TLabel
       Left = 8
-      Height = 13
+      Height = 16
       Top = 52
-      Width = 82
+      Width = 104
       Caption = 'Model Reference'
       ParentColor = False
     end
     object ModelTermsLabel: TLabel
       Left = 8
-      Height = 13
+      Height = 16
       Top = 243
-      Width = 99
+      Width = 140
       Caption = 'Terms of Distirubtion:'
       ParentColor = False
     end
@@ -185,7 +185,7 @@ object AnnotationForm: TAnnotationForm
       Top = 240
       Width = 394
       Anchors = [akTop, akLeft, akRight]
-      ItemHeight = 13
+      ItemHeight = 0
       Items.Strings = (
         'Public Domain (“No Rights Reserved”, CC 0)'
         'Creative Commons Attributions License 1.0 (CC BY 1.0)'
@@ -224,95 +224,97 @@ object AnnotationForm: TAnnotationForm
         'Open Content License'
         'Open Publication License'
         'Commercial'
+        ''
+        ''
       )
       TabOrder = 6
     end
     object CreatedHourSpinEdit: TSpinEdit
       Left = 280
-      Height = 21
-      Top = 176
+      Height = 16
+      Top = 180
       Width = 45
       MaxValue = 23
       TabOrder = 7
     end
     object CreatedMinuteSpinEdit: TSpinEdit
       Left = 341
-      Height = 21
-      Top = 176
+      Height = 16
+      Top = 180
       Width = 45
       MaxValue = 59
       TabOrder = 8
     end
     object CreatedSecondSpinEdit: TSpinEdit
       Left = 402
-      Height = 21
-      Top = 176
+      Height = 16
+      Top = 180
       Width = 45
       MaxValue = 59
       TabOrder = 9
     end
     object ModifiedHourSpinEdit: TSpinEdit
       Left = 280
-      Height = 21
-      Top = 207
+      Height = 16
+      Top = 211
       Width = 45
       MaxValue = 23
       TabOrder = 10
     end
     object ModifiedMinuteSpinEdit: TSpinEdit
       Left = 341
-      Height = 21
-      Top = 207
+      Height = 16
+      Top = 211
       Width = 45
       MaxValue = 59
       TabOrder = 11
     end
     object ModifiedSecondSpinEdit: TSpinEdit
       Left = 402
-      Height = 21
-      Top = 207
+      Height = 16
+      Top = 211
       Width = 45
       MaxValue = 59
       TabOrder = 12
     end
     object CreatedColonHM: TLabel
       Left = 332
-      Height = 13
+      Height = 16
       Top = 182
-      Width = 3
+      Width = 4
       Caption = ':'
       ParentColor = False
     end
     object CreatedColonMS: TLabel
       Left = 392
-      Height = 13
+      Height = 16
       Top = 182
-      Width = 3
+      Width = 4
       Caption = ':'
       ParentColor = False
     end
     object ModifiedColonHM: TLabel
       Left = 332
-      Height = 13
+      Height = 16
       Top = 210
-      Width = 3
+      Width = 4
       Caption = ':'
       ParentColor = False
     end
     object ModifiedColonMS: TLabel
       Left = 392
-      Height = 13
+      Height = 16
       Top = 210
-      Width = 3
+      Width = 4
       Caption = ':'
       ParentColor = False
     end
   end
   object TitleLabel: TLabel
     Left = 24
-    Height = 13
+    Height = 16
     Top = 16
-    Width = 177
+    Width = 213
     Caption = 'MIRIAM-compliant annotations:'
     Font.Style = [fsBold]
     ParentColor = False
