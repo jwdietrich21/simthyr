@@ -20,17 +20,16 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, EditBtn, LCLIntf, Spin, DateUtils, SimThyrTypes;
+  ExtCtrls, EditBtn, LCLIntf, Spin, MaskEdit, DateUtils, StrUtils,
+  SimThyrTypes, SimThyrServices;
 
 type
 
   { TAnnotationForm }
 
   TAnnotationForm = class(TForm)
-    CreatedColonHM: TLabel;
-    CreatedColonMS: TLabel;
-    ModifiedColonMS: TLabel;
-    ModifiedColonHM: TLabel;
+    CreatedTimeEdit: TEdit;
+    ModifiedTimeEdit: TEdit;
     ModelTermsCombo: TComboBox;
     MIRIAMLogo: TImage;
     ModelTermsLabel: TLabel;
@@ -49,12 +48,6 @@ type
     SpeciesCombo: TComboBox;
     OKButton: TButton;
     ScrollBox1: TScrollBox;
-    CreatedHourSpinEdit: TSpinEdit;
-    CreatedMinuteSpinEdit: TSpinEdit;
-    CreatedSecondSpinEdit: TSpinEdit;
-    ModifiedHourSpinEdit: TSpinEdit;
-    ModifiedMinuteSpinEdit: TSpinEdit;
-    ModifiedSecondSpinEdit: TSpinEdit;
     TitleLabel: TLabel;
     procedure FormShow(Sender: TObject);
     procedure MIRIAMLogoClick(Sender: TObject);
@@ -62,6 +55,7 @@ type
   private
     { private declarations }
   public
+    procedure ShowDatesAndTimes;
     { public declarations }
   end;
 
@@ -77,19 +71,69 @@ implementation
 procedure TAnnotationForm.OKButtonClick(Sender: TObject);
 var
   TimeCreated, TimeModified: TDateTime;
+  theHour, theMinute, theSecond: integer;
+  ConvError: boolean;
 begin
+  ConvError := false;
   gActiveModel.Name := ModelNameEdit.Text;
   gActiveModel.Reference := ReferenceEdit.Text;
   gActiveModel.Species := SpeciesCombo.Text;
   gActiveModel.Creators := CreatorsMemo.Lines.Text;
   gActiveModel.Created := CreatedDateEdit.Date;
-  TimeCreated := EncodeDateTime(1900, 1, 1, CreatedHourSpinEdit.Value, CreatedMinuteSpinEdit.Value, CreatedSecondSpinEdit.Value, 0);
+  if not tryStrToInt(ExtractDelimited(1, CreatedTimeEdit.Text, [':', '.']), theHour) then
+  begin
+    bell;
+    ConvError := true;
+    theHour := 0;
+  end;
+  if not tryStrToInt(ExtractDelimited(2, CreatedTimeEdit.Text, [':', '.']), theMinute) then
+  begin
+    bell;
+    ConvError := true;
+    theMinute := 0;
+  end;
+  if not tryStrToInt(ExtractDelimited(3, CreatedTimeEdit.Text, [':', '.']), theSecond) then
+  begin
+    bell;
+    ConvError := true;
+    theSecond := 0;
+  end;
+  TimeCreated := EncodeDateTime(1900, 1, 1, theHour, theMinute, theSecond, 0);
   ReplaceTime(gActiveModel.Created, TimeCreated);
   gActiveModel.LastModified := ModifiedDateEdit.Date;
-  TimeModified := EncodeDateTime(1900, 1, 1, ModifiedHourSpinEdit.Value, ModifiedMinuteSpinEdit.Value, ModifiedSecondSpinEdit.Value, 0);
+  if not tryStrToInt(ExtractDelimited(1, ModifiedTimeEdit.Text, [':', '.']), theHour) then
+  begin
+    bell;
+    ConvError := true;
+    theHour := 0;
+  end;
+  if not tryStrToInt(ExtractDelimited(2, ModifiedTimeEdit.Text, [':', '.']), theMinute) then
+  begin
+    bell;
+    ConvError := true;
+    theMinute := 0;
+  end;
+  if not tryStrToInt(ExtractDelimited(3, ModifiedTimeEdit.Text, [':', '.']), theSecond) then
+  begin
+    bell;
+    ConvError := true;
+    theSecond := 0;
+  end;
+  TimeModified := EncodeDateTime(1900, 1, 1, theHour, theMinute, theSecond, 0);
   ReplaceTime(gActiveModel.LastModified, TimeModified);
   gActiveModel.Terms := ModelTermsCombo.Text;
-  Close;
+  if ConvError then
+    ShowDatesAndTimes
+  else
+    Close;
+end;
+
+procedure TAnnotationForm.ShowDatesAndTimes;
+begin
+  CreatedDateEdit.Date := gActiveModel.Created;
+  CreatedTimeEdit.Text := TimeToStr(gActiveModel.Created);
+  ModifiedDateEdit.Date := gActiveModel.LastModified;
+  ModifiedTimeEdit.Text := TimeToStr(gActiveModel.LastModified);
 end;
 
 procedure TAnnotationForm.FormShow(Sender: TObject);
@@ -98,14 +142,7 @@ begin
   ReferenceEdit.Text := gActiveModel.Reference;
   SpeciesCombo.Text := gActiveModel.Species;
   CreatorsMemo.Lines.Text := gActiveModel.Creators;
-  CreatedDateEdit.Date := gActiveModel.Created;
-  CreatedHourSpinEdit.Value := HourOf(gActiveModel.Created);
-  CreatedMinuteSpinEdit.Value := MinuteOf(gActiveModel.Created);
-  CreatedSecondSpinEdit.Value := SecondOf(gActiveModel.Created);
-  ModifiedDateEdit.Date := gActiveModel.LastModified;
-  ModifiedHourSpinEdit.Value := HourOf(gActiveModel.LastModified);
-  ModifiedMinuteSpinEdit.Value := MinuteOf(gActiveModel.LastModified);
-  ModifiedSecondSpinEdit.Value := SecondOf(gActiveModel.LastModified);
+  ShowDatesAndTimes;
   ModelTermsCombo.Text := gActiveModel.Terms;
 end;
 
