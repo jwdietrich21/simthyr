@@ -10,7 +10,7 @@ object AnnotationForm: TAnnotationForm
   Constraints.MinHeight = 300
   Constraints.MinWidth = 400
   OnShow = FormShow
-  LCLVersion = '1.4.2.0'
+  LCLVersion = '1.4.4.0'
   object ScrollBox1: TScrollBox
     Left = 16
     Height = 272
@@ -124,7 +124,7 @@ object AnnotationForm: TAnnotationForm
       MaxLength = 0
       ParentShowHint = False
       ShowHint = True
-      TabOrder = 5
+      TabOrder = 6
     end
     object ModifiedLabel: TLabel
       Left = 8
@@ -227,87 +227,23 @@ object AnnotationForm: TAnnotationForm
         ''
         ''
       )
-      TabOrder = 6
-    end
-    object CreatedHourSpinEdit: TSpinEdit
-      Left = 280
-      Height = 16
-      Top = 180
-      Width = 45
-      MaxValue = 23
-      TabOrder = 7
-    end
-    object CreatedMinuteSpinEdit: TSpinEdit
-      Left = 341
-      Height = 16
-      Top = 180
-      Width = 45
-      MaxValue = 59
       TabOrder = 8
     end
-    object CreatedSecondSpinEdit: TSpinEdit
-      Left = 402
-      Height = 16
-      Top = 180
-      Width = 45
-      MaxValue = 59
-      TabOrder = 9
-    end
-    object ModifiedHourSpinEdit: TSpinEdit
+    object CreatedTimeEdit: TEdit
       Left = 280
-      Height = 16
-      Top = 211
-      Width = 45
-      MaxValue = 23
-      TabOrder = 10
+      Height = 22
+      Top = 176
+      Width = 80
+      TabOrder = 5
+      Text = '00:00:00'
     end
-    object ModifiedMinuteSpinEdit: TSpinEdit
-      Left = 341
-      Height = 16
-      Top = 211
-      Width = 45
-      MaxValue = 59
-      TabOrder = 11
-    end
-    object ModifiedSecondSpinEdit: TSpinEdit
-      Left = 402
-      Height = 16
-      Top = 211
-      Width = 45
-      MaxValue = 59
-      TabOrder = 12
-    end
-    object CreatedColonHM: TLabel
-      Left = 332
-      Height = 16
-      Top = 182
-      Width = 4
-      Caption = ':'
-      ParentColor = False
-    end
-    object CreatedColonMS: TLabel
-      Left = 392
-      Height = 16
-      Top = 182
-      Width = 4
-      Caption = ':'
-      ParentColor = False
-    end
-    object ModifiedColonHM: TLabel
-      Left = 332
-      Height = 16
-      Top = 210
-      Width = 4
-      Caption = ':'
-      ParentColor = False
-    end
-    object ModifiedColonMS: TLabel
-      Left = 392
-      Height = 16
-      Top = 210
-      Width = 4
-      Caption = ':'
-      ParentColor = False
+    object ModifiedTimeEdit: TEdit
+      Left = 280
+      Height = 22
+      Top = 207
+      Width = 80
+      TabOrder = 7
+      Text = '00:00:00'
     end
   end
   object TitleLabel: TLabel
