@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, DateUtils, DOM, XMLRead, XMLWrite, Forms,
-  SimThyrTypes, SimThyrServices;
+  SimThyrTypes, SimThyrServices, MiriamForm;
 
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
 procedure SaveScenario(theFileName: string);
@@ -107,6 +107,8 @@ begin
       Doc.Free;
     end;
   end;
+  if AnnotationForm.Visible then
+    AnnotationForm.ShowAnnotation;
   DefaultFormatSettings.DecimalSeparator := oldSep;
 end;
 

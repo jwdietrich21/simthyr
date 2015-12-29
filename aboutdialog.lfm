@@ -18,7 +18,7 @@ object AboutWindow: TAboutWindow
   OnKeyDown = FormKeyDown
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.4.4.0'
   Visible = True
   object OKButton: TButton
     Left = 224
@@ -1281,7 +1281,7 @@ object AboutWindow: TAboutWindow
       object Label3: TLabel
         Left = 25
         Height = 13
-        Top = 8
+        Top = 10
         Width = 275
         Caption = 'SimThyr uses the following third party resources:'
         Font.Pitch = fpVariable
@@ -1293,7 +1293,7 @@ object AboutWindow: TAboutWindow
       object Label4: TLabel
         Left = 25
         Height = 13
-        Top = 31
+        Top = 33
         Width = 149
         Caption = 'Silk icon set 1.3 by Mark James'
         ParentColor = False
@@ -1302,7 +1302,7 @@ object AboutWindow: TAboutWindow
         Cursor = crHandPoint
         Left = 25
         Height = 13
-        Top = 47
+        Top = 49
         Width = 206
         Caption = 'http://www.famfamfam.com/lab/icons/silk/'
         Font.Color = clNavy
@@ -1314,7 +1314,7 @@ object AboutWindow: TAboutWindow
       object Label6: TLabel
         Left = 25
         Height = 13
-        Top = 70
+        Top = 72
         Width = 89
         Caption = 'Tango Icon Library'
         ParentColor = False
@@ -1323,7 +1323,7 @@ object AboutWindow: TAboutWindow
         Cursor = crHandPoint
         Left = 25
         Height = 13
-        Top = 86
+        Top = 88
         Width = 235
         Caption = 'http://tango.freedesktop.org/Tango_Icon_Library'
         Font.Color = clNavy
@@ -1335,7 +1335,7 @@ object AboutWindow: TAboutWindow
       object Label8: TLabel
         Left = 25
         Height = 13
-        Top = 109
+        Top = 111
         Width = 185
         Caption = 'VersionSupport unit by Mike Thompson'
         ParentColor = False
@@ -1344,7 +1344,7 @@ object AboutWindow: TAboutWindow
         Cursor = crHandPoint
         Left = 25
         Height = 13
-        Top = 125
+        Top = 127
         Width = 273
         Caption = 'http://www.lazarus.freepascal.org/index.php/topic,13957'
         Font.Color = clNavy
@@ -1356,7 +1356,7 @@ object AboutWindow: TAboutWindow
       object Label10: TLabel
         Left = 25
         Height = 13
-        Top = 196
+        Top = 198
         Width = 179
         Caption = 'Scientific and technical advise:'
         Font.Pitch = fpVariable
@@ -1368,7 +1368,7 @@ object AboutWindow: TAboutWindow
       object Label11: TLabel
         Left = 25
         Height = 16
-        Top = 220
+        Top = 222
         Width = 368
         AutoSize = False
         Caption = 'Ulla Mitzdorf, C. Renate Pickardt, Martin Adler'
@@ -1378,7 +1378,7 @@ object AboutWindow: TAboutWindow
       object Label12: TLabel
         Left = 25
         Height = 16
-        Top = 236
+        Top = 238
         Width = 368
         AutoSize = False
         Caption = 'Matthias Holzer, Phil Hess, Martin R. Fischer,'
@@ -1388,7 +1388,7 @@ object AboutWindow: TAboutWindow
       object Label13: TLabel
         Left = 25
         Height = 16
-        Top = 252
+        Top = 254
         Width = 368
         AutoSize = False
         Caption = 'Rudolf Hörmann, John E. Midgley'
@@ -1398,7 +1398,7 @@ object AboutWindow: TAboutWindow
       object Label14: TLabel
         Left = 24
         Height = 13
-        Top = 148
+        Top = 150
         Width = 84
         Caption = 'PUMA Repository'
         ParentColor = False
@@ -1407,7 +1407,7 @@ object AboutWindow: TAboutWindow
         Cursor = crHandPoint
         Left = 24
         Height = 13
-        Top = 163
+        Top = 165
         Width = 134
         Caption = 'http://puma-repository.sf.net'
         Font.Color = clNavy
@@ -1426,7 +1426,7 @@ object AboutWindow: TAboutWindow
         Left = 33
         Height = 44
         Hint = 'Klinikum Innenstadt der Ludwig-Maximilians-Universität München'
-        Top = 28
+        Top = 31
         Width = 130
         OnClick = Image2Click
         ParentShowHint = False
@@ -1466,7 +1466,7 @@ object AboutWindow: TAboutWindow
         Left = 217
         Height = 32
         Hint = 'Universitätsklinikum Ulm'
-        Top = 36
+        Top = 39
         Width = 136
         OnClick = Image3Click
         ParentShowHint = False
@@ -1499,7 +1499,7 @@ object AboutWindow: TAboutWindow
         Left = 33
         Height = 34
         Hint = 'Ruhr-Universität Bochum'
-        Top = 140
+        Top = 143
         Width = 130
         OnClick = Image4Click
         ParentShowHint = False
@@ -1545,7 +1545,7 @@ object AboutWindow: TAboutWindow
         Left = 33
         Height = 42
         Hint = 'Berufsgenossenschaftliches Universitätsklinikum Bergmannsheil'
-        Top = 84
+        Top = 87
         Width = 130
         OnClick = Image5Click
         ParentShowHint = False
@@ -1599,7 +1599,7 @@ object AboutWindow: TAboutWindow
         Left = 217
         Height = 40
         Hint = 'INSTRUCT AG'
-        Top = 86
+        Top = 89
         Width = 136
         OnClick = Image6Click
         ParentShowHint = False
@@ -1867,7 +1867,7 @@ object AboutWindow: TAboutWindow
       object StaticText1: TStaticText
         Left = 33
         Height = 17
-        Top = 4
+        Top = 7
         Width = 177
         Caption = 'Sponsors and Supporters:'
         Font.Pitch = fpVariable
@@ -1878,7 +1878,7 @@ object AboutWindow: TAboutWindow
       object StaticText2: TStaticText
         Left = 33
         Height = 17
-        Top = 196
+        Top = 199
         Width = 132
         Caption = 'Developed with:'
         Font.Pitch = fpVariable
@@ -1891,7 +1891,7 @@ object AboutWindow: TAboutWindow
         Left = 33
         Height = 56
         Hint = 'Free Pascal'
-        Top = 228
+        Top = 231
         Width = 130
         OnClick = Image7Click
         ParentShowHint = False
@@ -1933,7 +1933,7 @@ object AboutWindow: TAboutWindow
         Left = 217
         Height = 48
         Hint = 'Lazarus'
-        Top = 234
+        Top = 237
         Width = 48
         OnClick = Image8Click
         ParentShowHint = False
@@ -2101,7 +2101,7 @@ object AboutWindow: TAboutWindow
         Left = 273
         Height = 48
         Hint = 'TextWrangler'
-        Top = 234
+        Top = 237
         Width = 48
         OnClick = Image9Click
         ParentShowHint = False
@@ -2263,7 +2263,7 @@ object AboutWindow: TAboutWindow
         Left = 329
         Height = 48
         Hint = 'Versions'
-        Top = 234
+        Top = 237
         Width = 48
         OnClick = Image10Click
         ParentShowHint = False
@@ -2351,7 +2351,7 @@ object AboutWindow: TAboutWindow
         Left = 273
         Height = 48
         Hint = 'Cornerstone'
-        Top = 180
+        Top = 183
         Width = 48
         OnClick = Image11Click
         ParentShowHint = False
@@ -2521,7 +2521,7 @@ object AboutWindow: TAboutWindow
         Left = 217
         Height = 48
         Hint = 'Xcode'
-        Top = 180
+        Top = 183
         Width = 48
         OnClick = Image12Click
         ParentShowHint = False
@@ -2698,7 +2698,7 @@ object AboutWindow: TAboutWindow
         Left = 329
         Height = 48
         Hint = 'PUMA Repository'
-        Top = 180
+        Top = 183
         Width = 48
         OnClick = Image13Click
         ParentShowHint = False

@@ -56,6 +56,7 @@ type
     { private declarations }
   public
     procedure ShowDatesAndTimes;
+    procedure ShowAnnotation;
     { public declarations }
   end;
 
@@ -136,7 +137,7 @@ begin
   ModifiedTimeEdit.Text := TimeToStr(gActiveModel.LastModified);
 end;
 
-procedure TAnnotationForm.FormShow(Sender: TObject);
+procedure TAnnotationForm.ShowAnnotation;
 begin
   ModelNameEdit.Text := gActiveModel.Name;
   ReferenceEdit.Text := gActiveModel.Reference;
@@ -144,6 +145,11 @@ begin
   CreatorsMemo.Lines.Text := gActiveModel.Creators;
   ShowDatesAndTimes;
   ModelTermsCombo.Text := gActiveModel.Terms;
+end;
+
+procedure TAnnotationForm.FormShow(Sender: TObject);
+begin
+  ShowAnnotation;
 end;
 
 procedure TAnnotationForm.MIRIAMLogoClick(Sender: TObject);
