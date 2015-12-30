@@ -83,9 +83,14 @@ const
  UTRH = 2.76E-12; {Conversion factor ng/l -> mol/l (TRH; MW=362) [Jackson 1987]}
  UTSH = 1e-3;     {Dummy conversion factor for TSH}
 
+ SECONDS_PER_MINUTE = 60;
+ SECONDS_PER_HOUR = SECONDS_PER_MINUTE * 60;
+ SECONDS_PER_DAY = SECONDS_PER_HOUR * 24;
+ SECONDS_PER_WEEK = SECONDS_PER_DAY * 7;
+
  TWS_RESOLUTION = 91; {Resolution for two-way sensitivity analysis}
 
- ISO_8601_DATE_FORMAT = 'YYYY-MM-DD"T"hh:nn:ss';
+ ISO_8601_DATE_FORMAT = 'YYYY-MM-DD"T"hh:nn:ss'; {Date/time format in XML representation}
 
 type
  tResultContent = array[0..RES_MAX_COLS-1] of Str255;

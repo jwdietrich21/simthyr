@@ -1,18 +1,18 @@
 unit LaunchDialog;
 
-{ SimThyr Project }
-{ A numerical simulator of thyrotropic feedback control }
+ { SimThyr Project }
+ { A numerical simulator of thyrotropic feedback control }
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
-{ (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+ { (c) J. W. Dietrich, 1994 - 2015 }
+ { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
+ { (c) Ruhr University of Bochum 2005 - 2015 }
 
 { This unit delivers the launch dialog with simulation settings }
 
-{ Source code released under the BSD License }
-{ See http://simthyr.sourceforge.net for details }
+ { Source code released under the BSD License }
+ { See http://simthyr.sourceforge.net for details }
 
 {$mode objfpc}{$R+}
 
@@ -21,39 +21,38 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, ExtCtrls, ActnList, types, LCLType, SimThyrTypes, SimThyrServices,
-  SimThyrPlot, SimThyrLog, StructureParameters, Simulator, SimOptions;
+  VersionSupport, SimThyrPlot, SimThyrLog, StructureParameters, Simulator,
+  SimOptions;
 
 type
 
   { TSimulationSettings }
 
   TSimulationSettings = class(TForm)
-    ParsButton: TButton;
-    TestRadioGroup: TRadioGroup;
+    SimThyrLabel: TLabel;
+    TestTimeUnit: TComboBox;
+    RunTimeUnit: TComboBox;
+    ParsButton:  TButton;
     TestTimeEdit: TEdit;
-    OptButton: TButton;
+    OptButton:   TButton;
     StartButton: TButton;
     CancelButton: TButton;
-    Image1: TImage;
-    Image2: TImage;
-    Image3: TImage;
-    Label2: TLabel;
-    Label3: TLabel;
+    Image1:      TImage;
+    Image2:      TImage;
+    Image3:      TImage;
+    Label2:      TLabel;
+    Label3:      TLabel;
     RunTimeEdit: TEdit;
-    GroupBox1: TGroupBox;
-    GroupBox2: TGroupBox;
-    Label1: TLabel;
-    RunSecondsRadio: TRadioButton;
-    RunMinutesRadio: TRadioButton;
-    RunHoursRadio: TRadioButton;
-    RunDaysRadio: TRadioButton;
+    GroupBox1:   TGroupBox;
+    GroupBox2:   TGroupBox;
+    Label1:      TLabel;
     TestOffRadio: TRadioButton;
     TestTRHRadio: TRadioButton;
     TestTBGRadio: TRadioButton;
-    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure OptButtonClick(Sender: TObject);
     procedure OptButtonKeyPress(Sender: TObject; var Key: char);
-    procedure OptButtonKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure OptButtonKeyUp(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure ParsButtonClick(Sender: TObject);
     procedure RadioGroup1Click(Sender: TObject);
     procedure StartButtonClick(Sender: TObject);
@@ -62,7 +61,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDeactivate(Sender: TObject);
     procedure FormMouseWheelUp(Sender: TObject; Shift: TShiftState;
-      MousePos: TPoint; var Handled: Boolean);
+      MousePos: TPoint; var Handled: boolean);
     procedure FormShow(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure Label2Click(Sender: TObject);
@@ -74,14 +73,13 @@ type
     procedure TestTRHRadioChange(Sender: TObject);
     procedure TestSignalTimesButtonClick(Sender: TObject);
     procedure CheckGroup1Click(Sender: TObject);
-    procedure TestTRHRadioKeyUp(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
+    procedure TestTRHRadioKeyUp(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure RunTimeEditChange(Sender: TObject);
   private
     { private declarations }
   public
     { public declarations }
-  end; 
+  end;
 
 var
   SimulationSettings: TSimulationSettings;
@@ -100,48 +98,46 @@ begin
   i1_text := TestTimeEdit.Text;   {begin of load}
   try
     tmax := StrToInt(tmax_text);
-    tt := StrToInt(i1_text);
+    tt   := StrToInt(i1_text);
   except
     on E: EConvertError do
     begin
       ShowFormatMessage;
       RunTimeEdit.SetFocus;
       tmax := 0;
-      tt := 0;
+      tt   := 0;
     end
     else
     begin
       bell;
       RunTimeEdit.SetFocus;
       tmax := 0;
-      tt := 0;
+      tt   := 0;
     end;
   end;
   if (tmax > 0) then
   begin
-    if RunDaysRadio.Checked then
-      tmax_unit := 'd'
-    else if RunHoursRadio.Checked then
+    if RunTimeUnit.Caption = 'Hours' then
       tmax_unit := 'h'
-    else if RunMinutesRadio.Checked then
-      tmax_unit := 'm'
-    else if RunSecondsRadio.Checked then
-        tmax_unit := 's'
-    else tmax_unit := '';
-    if TestRadioGroup.ItemIndex = 0 then
-      i1_unit := 's'
-    else if TestRadioGroup.ItemIndex = 1 then
-      i1_unit := 'm'
-    else if TestRadioGroup.ItemIndex = 2 then
+    else if RunTimeUnit.Caption = 'Days' then
+      tmax_unit := 'd'
+    else if RunTimeUnit.Caption = 'Weeks' then
+      tmax_unit := 'w'
+    else
+      tmax_unit := '';
+    if TestTimeUnit.Caption = 'Hours' then
       i1_unit := 'h'
-    else if TestRadioGroup.ItemIndex = 3 then
-        i1_unit := 'd'
-    else i1_unit := '';
-    graphready := false;
-    runcommand := true;
+    else if TestTimeUnit.Caption = 'Days' then
+      i1_unit := 'd'
+    else if TestTimeUnit.Caption = 'Weeks' then
+      i1_unit := 'w'
+    else
+      i1_unit := '';
+    graphready := False;
+    runcommand := True;
     SimulationSettings.Close;
     nmax := nmax_old + cycles(tmax, tmax_unit);
-    i1 := nmax_old + cycles(tt, i1_unit);
+    i1   := nmax_old + cycles(tt, i1_unit);
     SetStatusBarPanel0('   ' + IntToStr(nmax_old) + ':', IntToStr(nmax));
     SimThyrLogWindow.StatusBar1.Panels[1].Text := '   DeltaT:' + FloatToStr(delt) + ' s';
     application.ProcessMessages;
@@ -154,22 +150,22 @@ begin
   SimOptionsDlg.ShowOnTop;
 end;
 
-procedure TSimulationSettings.FormKeyDown(Sender: TObject; var Key: Word;
+procedure TSimulationSettings.FormKeyDown(Sender: TObject; var Key: word;
   Shift: TShiftState);
 begin
-   if (Key = VK_D) and ((ssCtrl in Shift) or (ssMeta in Shift)) then
-   begin
-     ;
-   end;
+  if (Key = VK_D) and ((ssCtrl in Shift) or (ssMeta in Shift)) then
+  begin
+    ;
+  end;
 end;
 
 procedure TSimulationSettings.OptButtonKeyPress(Sender: TObject; var Key: char);
 begin
-   ;
+  ;
 end;
 
-procedure TSimulationSettings.OptButtonKeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TSimulationSettings.OptButtonKeyUp(Sender: TObject;
+  var Key: word; Shift: TShiftState);
 begin
 
 end;
@@ -186,46 +182,43 @@ end;
 
 procedure TSimulationSettings.CancelButtonClick(Sender: TObject);
 begin
-  runcommand := false;
+  runcommand := False;
   SimulationSettings.Close;
 end;
 
 procedure TSimulationSettings.EnableTestUIElements(enable: boolean);
 begin
-  TestTimeEdit.Enabled := enable;
-  TestRadioGroup.Enabled := enable;
+  TestTimeEdit.Enabled   := enable;
+  TestTimeUnit.Enabled := enable;
 end;
 
 procedure TSimulationSettings.FormCreate(Sender: TObject);
 begin
+  SimThyrLabel.Caption := 'SimThyr ' + GetFileVersion;
   BringToFront;
-  RunDaysRadio.left := RunMinutesRadio.left;
-  RunHoursRadio.left := RunSecondsRadio.left;
-  TestOffRadio.left := RunSecondsRadio.left; {Adapts to oddities on different platforms}
   if (testflag or tbgflag) then
   begin
-    EnableTestUIElements(true);
+    EnableTestUIElements(True);
   end
   else
   begin
-    EnableTestUIElements(false);
+    EnableTestUIElements(False);
   end;
-  if RunDaysRadio.Checked then
-    tmax_unit := 'd'
-  else if RunHoursRadio.Checked then
+  if RunTimeUnit.Caption = 'Hours' then
     tmax_unit := 'h'
-  else if RunMinutesRadio.Checked then
-    tmax_unit := 'm'
-  else if RunSecondsRadio.Checked then
-      tmax_unit := 's'
-  else tmax_unit := '';
+  else if RunTimeUnit.Caption = 'Days' then
+    tmax_unit := 'd'
+  else if RunTimeUnit.Caption = 'Weeks' then
+    tmax_unit := 'w'
+  else
+    tmax_unit := '';
   if YosemiteORNewer then
-    begin
-      StartButton.Height := 22;
-      CancelButton.Height := 22;
-      OptButton.Height := 22;
-      ParsButton.Height := 22;
-    end;
+  begin
+    StartButton.Height  := 22;
+    CancelButton.Height := 22;
+    OptButton.Height    := 22;
+    ParsButton.Height   := 22;
+  end;
 end;
 
 procedure TSimulationSettings.FormDeactivate(Sender: TObject);
@@ -234,7 +227,7 @@ begin
 end;
 
 procedure TSimulationSettings.FormMouseWheelUp(Sender: TObject;
-  Shift: TShiftState; MousePos: TPoint; var Handled: Boolean);
+  Shift: TShiftState; MousePos: TPoint; var Handled: boolean);
 begin
 
 end;
@@ -277,37 +270,37 @@ end;
 
 procedure TSimulationSettings.TestTBGRadioChange(Sender: TObject);
 begin
-  if TestTBGRadio.checked then
+  if TestTBGRadio.Checked then
   begin
-    testflag := false;
-    tbgflag := true;
-    EnableTestUIElements(true);
+    testflag := False;
+    tbgflag  := True;
+    EnableTestUIElements(True);
   end
   else
   begin
-    tbgflag := false;
-    if TestTRHRadio.checked then
-      EnableTestUIElements(true)
+    tbgflag := False;
+    if TestTRHRadio.Checked then
+      EnableTestUIElements(True)
     else
-      EnableTestUIElements(false);
+      EnableTestUIElements(False);
   end;
 end;
 
 procedure TSimulationSettings.TestTRHRadioChange(Sender: TObject);
 begin
-  if TestTRHRadio.checked then
+  if TestTRHRadio.Checked then
   begin
-    testflag := true;
-    tbgflag := false;
-    EnableTestUIElements(true);
+    testflag := True;
+    tbgflag  := False;
+    EnableTestUIElements(True);
   end
   else
   begin
-    testflag := false;
-    if TestTBGRadio.checked then
-      EnableTestUIElements(true)
+    testflag := False;
+    if TestTBGRadio.Checked then
+      EnableTestUIElements(True)
     else
-      EnableTestUIElements(false);
+      EnableTestUIElements(False);
   end;
 end;
 
@@ -321,8 +314,8 @@ begin
 
 end;
 
-procedure TSimulationSettings.TestTRHRadioKeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TSimulationSettings.TestTRHRadioKeyUp(Sender: TObject;
+  var Key: word; Shift: TShiftState);
 begin
 
 end;

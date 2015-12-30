@@ -49,6 +49,7 @@ type
     OKButton: TButton;
     ScrollBox1: TScrollBox;
     TitleLabel: TLabel;
+    procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure MIRIAMLogoClick(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
@@ -150,6 +151,14 @@ end;
 procedure TAnnotationForm.FormShow(Sender: TObject);
 begin
   ShowAnnotation;
+end;
+
+procedure TAnnotationForm.FormCreate(Sender: TObject);
+begin
+  if YosemiteORNewer then
+  begin
+    OKButton.Height  := 22;
+  end;
 end;
 
 procedure TAnnotationForm.MIRIAMLogoClick(Sender: TObject);

@@ -115,12 +115,14 @@ implementation
  {determines number of loops from given simulation time ("cycles" in old SimThyr versions)}
  begin
   assert(n >= 0, kError101);
-  if ((pos('d', n_text) > 0) or (pos('T', n_text) > 0)) then
-   factor := 86400
+  if pos('w', n_text) > 0 then
+   factor := SECONDS_PER_WEEK
+  else if ((pos('d', n_text) > 0) or (pos('T', n_text) > 0)) then
+   factor := SECONDS_PER_DAY
   else if ((pos('h', n_text) > 0) or (pos('St', n_text) > 0)) then
-   factor := 3600
+   factor := SECONDS_PER_HOUR
   else if pos('m', n_text) > 0 then
-   factor := 60
+   factor := SECONDS_PER_MINUTE
   else if pos('s', n_text) > 0 then
    factor := 1
   else
