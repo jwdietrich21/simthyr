@@ -9,6 +9,7 @@ object AnnotationForm: TAnnotationForm
   Color = clNone
   Constraints.MinHeight = 300
   Constraints.MinWidth = 400
+  OnCreate = FormCreate
   OnShow = FormShow
   LCLVersion = '1.4.4.0'
   object ScrollBox1: TScrollBox
