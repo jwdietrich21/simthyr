@@ -9,7 +9,7 @@ unit Equilibriumdiagram;
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
 { (c) Ruhr University of Bochum 2005 - 2015 }
 
-{ This unit implements an equilibrium diagram }
+{ This unit implements an equilibrium diagram or nullcline plot }
 
 { Source code released under the BSD License }
 { See http://simthyr.sourceforge.net for details }
@@ -22,10 +22,11 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, TAGraph, TASources, TASeries, TATransformations,
-  TANavigation, TATools, TAStyles, LResources, Forms, Controls, Graphics,
-  Dialogs, Buttons, ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus,
-  Math, SimThyrTypes, SimThyrResources, Simulator, SimThyrServices,
-  UnitConverter, Sensitivityanalysis;
+  TANavigation, TATools, TAStyles, TAChartListbox, TAChartExtentLink,
+  TAChartImageList, LResources, Forms, Controls, Graphics, Dialogs, Buttons,
+  ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus, ComboEx, Math,
+  SimThyrTypes, SimThyrResources, Simulator, SimThyrServices, UnitConverter,
+  Sensitivityanalysis;
 
 const
   MAX_SERIES   = 2;
@@ -39,6 +40,10 @@ type
   { TEquilibriumDiagramForm }
 
   TEquilibriumDiagramForm = class(TForm)
+    ChartLogAxisTransformation: TChartAxisTransformations;
+    ChartLogAxisTransformationLogarithmAxisTransform1: TLogarithmAxisTransform;
+    LogBox1: TCheckBox;
+    LogBox2: TCheckBox;
     CopyItem: TMenuItem;
     CutItem: TMenuItem;
     Divider1: TMenuItem;
@@ -75,6 +80,8 @@ type
     procedure CopyItemClick(Sender: TObject);
     procedure CopyChart;
     procedure FormActivate(Sender: TObject);
+    procedure LogBox1Change(Sender: TObject);
+    procedure LogBox2Change(Sender: TObject);
     procedure SetStandardStrucParBoundaries;
     procedure GetBParameters;
     procedure SParEdit1Change(Sender: TObject);
@@ -837,6 +844,22 @@ begin
   //UpdateEditsfromTrackBars;
 end;
 
+procedure TEquilibriumDiagramForm.LogBox1Change(Sender: TObject);
+begin
+  if LogBox1.Checked then
+    EquilibriumChart.AxisList[0].Transformations := ChartLogAxisTransformation
+  else
+    EquilibriumChart.AxisList[0].Transformations := nil;
+end;
+
+procedure TEquilibriumDiagramForm.LogBox2Change(Sender: TObject);
+begin
+  if LogBox2.Checked then
+    EquilibriumChart.AxisList[1].Transformations := ChartLogAxisTransformation
+  else
+    EquilibriumChart.AxisList[1].Transformations := nil;
+end;
+
 procedure TEquilibriumDiagramForm.CopyItemClick(Sender: TObject);
 begin
   CopyChart;
@@ -955,6 +978,11 @@ begin
       Pointer.Brush.Color := clBlack;
       SeriesColor := clBlack;
       LinePen.Mode := pmCopy;
+      LinePen.Style := psSolid;
+      LinePen.Cosmetic := true;
+      LinePen.EndCap := pecRound;
+      LinePen.JoinStyle := pjsRound;
+      LinePen.Width := 2;
       LineType := ltFromPrevious;
     end;
     EquilibriumChart.AddSeries(FLine[i]);
