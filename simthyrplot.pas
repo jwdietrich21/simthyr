@@ -23,7 +23,8 @@ uses
   ExtCtrls, StdCtrls, ComCtrls, ColorBox, Buttons, Menus, TAGraph, TATools,
   TASeries, TATransformations, DateUtils, Math, SimThyrTypes, SimThyrResources,
   SimThyrServices, HandleNotifier, Clipbrd, TAIntervalSources, TADrawerSVG,
-  TADrawUtils, TADrawerCanvas, TAStyles, TANavigation, LCLVersion;
+  TADrawUtils, TADrawerCanvas, TAStyles, TANavigation, LCLVersion, Types,
+  StrUtils;
 
 type
 
@@ -35,6 +36,10 @@ type
     Chart2: TChart;
     ChartNavPanel1: TChartNavPanel;
     ChartNavPanel2: TChartNavPanel;
+    ChartToolset1: TChartToolset;
+    ChartToolset1DataPointClickTool1: TDataPointClickTool;
+    ChartToolset2: TChartToolset;
+    ChartToolset2DataPointClickTool1: TDataPointClickTool;
     ColorButton1: TColorButton;
     ColorListBox1: TColorListBox;
     ColorListBox2: TColorListBox;
@@ -59,6 +64,10 @@ type
     procedure AddTitleButtonClick(Sender: TObject);
     procedure Chart1Click(Sender: TObject);
     procedure Chart2Click(Sender: TObject);
+    procedure ChartToolset1DataPointClickTool1PointClick(ATool: TChartTool;
+      APoint: TPoint);
+    procedure ChartToolset2DataPointClickTool1PointClick(ATool: TChartTool;
+      APoint: TPoint);
     procedure ColorBox1Change(Sender: TObject);
     procedure ColorBox2Change(Sender: TObject);
     procedure ColorButton1Click(Sender: TObject);
@@ -294,6 +303,44 @@ begin
   PlotPanel2.Color := clHighlight;
 end;
 
+procedure TValuesPlot.ChartToolset1DataPointClickTool1PointClick(
+  ATool: TChartTool; APoint: TPoint);
+var
+  theTitle, theUnit: String;
+  x, y: Double;
+begin
+  theTitle := ExtractDelimited(1, Chart1.LeftAxis.Title.Caption, [':']);
+  theUnit := ExtractDelimited(2, Chart1.LeftAxis.Title.Caption, [':']);
+  with ATool as TDatapointClickTool do
+    if (Series is TLineSeries) then
+      with TLineSeries(Series) do begin
+        x := GetXValue(PointIndex);
+        y := GetYValue(PointIndex);
+        Statusbar1.SimpleText := Format('%s = %f%s', [theTitle, y, theUnit]);
+      end
+    else
+      Statusbar1.SimpleText := '';
+end;
+
+procedure TValuesPlot.ChartToolset2DataPointClickTool1PointClick(
+  ATool: TChartTool; APoint: TPoint);
+var
+  theTitle, theUnit: String;
+  x, y: Double;
+begin
+  theTitle := ExtractDelimited(1, Chart2.LeftAxis.Title.Caption, [':']);
+  theUnit := ExtractDelimited(2, Chart2.LeftAxis.Title.Caption, [':']);
+  with ATool as TDatapointClickTool do
+    if (Series is TLineSeries) then
+      with TLineSeries(Series) do begin
+        x := GetXValue(PointIndex);
+        y := GetYValue(PointIndex);
+        Statusbar1.SimpleText := Format('%s = %f%s', [theTitle, y, theUnit]);
+      end
+    else
+      Statusbar1.SimpleText := '';
+end;
+
 procedure TValuesPlot.ColorBox2Change(Sender: TObject);
 begin
   DrawPlot(not graphready);
@@ -353,12 +400,12 @@ begin
   ComboBox2.ItemIndex := 4;
   ColorListBox1.Selected := gDefaultColors[4];
   ColorListBox2.Selected := gDefaultColors[6];
-  ValuesPlot.Chart1.Title.Visible := False;
-  ValuesPlot.Chart2.Title.Visible := False;
-  ValuesPlot.Chart1.LeftAxis.Title.Caption :=
+  Chart1.Title.Visible := False;
+  Chart2.Title.Visible := False;
+  Chart1.LeftAxis.Title.Caption :=
     gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' +
     gParameterUnit[ComboBox1.ItemIndex + 2];
-  ValuesPlot.Chart2.LeftAxis.Title.Caption :=
+  Chart2.LeftAxis.Title.Caption :=
     gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' +
     gParameterUnit[ComboBox2.ItemIndex + 2];
   DrawPlot(True);

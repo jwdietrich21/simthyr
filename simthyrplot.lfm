@@ -311,7 +311,7 @@ object ValuesPlot: TValuesPlot
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.6.0.4'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -406,9 +406,9 @@ object ValuesPlot: TValuesPlot
         Title.Text.Strings = (
           'Title'
         )
+        Toolset = ChartToolset1
         Anchors = [akTop, akLeft, akRight]
         Color = clWhite
-        ParentColor = False
         ParentShowHint = False
         PopupMenu = PopupMenu1
         ShowHint = True
@@ -563,9 +563,9 @@ object ValuesPlot: TValuesPlot
         Title.Text.Strings = (
           'Title'
         )
+        Toolset = ChartToolset2
         Anchors = [akTop, akLeft, akRight]
         Color = clWhite
-        ParentColor = False
         ParentShowHint = False
         PopupMenu = PopupMenu1
         ShowHint = True
@@ -728,6 +728,22 @@ object ValuesPlot: TValuesPlot
     object DeleteItem: TMenuItem
       Caption = 'Delete'
       Enabled = False
+    end
+  end
+  object ChartToolset1: TChartToolset
+    left = 233
+    top = 110
+    object ChartToolset1DataPointClickTool1: TDataPointClickTool
+      Shift = [ssLeft]
+      OnPointClick = ChartToolset1DataPointClickTool1PointClick
+    end
+  end
+  object ChartToolset2: TChartToolset
+    left = 233
+    top = 312
+    object ChartToolset2DataPointClickTool1: TDataPointClickTool
+      Shift = [ssLeft]
+      OnPointClick = ChartToolset2DataPointClickTool1PointClick
     end
   end
 end

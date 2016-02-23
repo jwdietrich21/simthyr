@@ -66,6 +66,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Title.Text.Strings = (
         'TAChart'
       )
+      Toolset = ChartToolset1
       Anchors = [akTop, akLeft, akRight, akBottom]
       Color = clWhite
       ParentShowHint = False
@@ -414,6 +415,14 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Caption = 'Paste'
       Enabled = False
       OnClick = PasteItemClick
+    end
+  end
+  object ChartToolset1: TChartToolset
+    left = 245
+    top = 174
+    object ChartToolset1DataPointClickTool1: TDataPointClickTool
+      Shift = [ssLeft]
+      OnPointClick = ChartToolset1DataPointClickTool1PointClick
     end
   end
 end

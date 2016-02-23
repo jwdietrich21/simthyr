@@ -71,6 +71,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Title.Text.Strings = (
         'TAChart'
       )
+      Toolset = ChartToolset1
       Anchors = [akTop, akLeft, akRight, akBottom]
       Color = clWhite
       ParentShowHint = False
@@ -562,16 +563,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       TabOrder = 9
     end
   end
-  object SetPointButton: TSpeedButton
-    Left = 16
-    Height = 22
-    Hint = 'Show predicted equilibrium point (aka set point)'
-    Top = 118
-    Width = 23
-    OnClick = SetPointButtonClick
-    ShowHint = True
-    ParentShowHint = False
-  end
   object PopupMenu1: TPopupMenu
     left = 376
     top = 536
@@ -600,6 +591,14 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     top = 168
     object ChartLogAxisTransformationLogarithmAxisTransform1: TLogarithmAxisTransform
       Base = 10
+    end
+  end
+  object ChartToolset1: TChartToolset
+    left = 232
+    top = 168
+    object ChartToolset1DataPointClickTool1: TDataPointClickTool
+      Shift = [ssLeft]
+      OnPointClick = ChartToolset1DataPointClickTool1PointClick
     end
   end
 end
