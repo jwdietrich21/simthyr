@@ -5,9 +5,9 @@ unit Equilibriumdiagram;
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2016 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2016 }
 
 { This unit implements an equilibrium diagram or nullcline plot }
 
@@ -44,6 +44,7 @@ type
     ChartLogAxisTransformationLogarithmAxisTransform1: TLogarithmAxisTransform;
     ChartToolset1: TChartToolset;
     ChartToolset1DataPointClickTool1: TDataPointClickTool;
+    ChartToolset1ZoomDragTool1: TZoomDragTool;
     LogBox1: TCheckBox;
     LogBox2: TCheckBox;
     CopyItem: TMenuItem;

@@ -5,9 +5,9 @@ unit Sensitivityanalysis;
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2016 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2016 }
 
 { This unit implements sensitivity analysis }
 
@@ -57,6 +57,8 @@ type
     ChartNavPanel1: TChartNavPanel;
     ChartToolset1: TChartToolset;
     ChartToolset1DataPointClickTool1: TDataPointClickTool;
+    ChartToolset1ZoomDragTool1: TZoomDragTool;
+    ChartToolset1ZoomMouseWheelTool1: TZoomMouseWheelTool;
     CheckGroup1: TCheckGroup;
     ResetButton: TSpeedButton;
     TT4ColorBox: TColorBox;

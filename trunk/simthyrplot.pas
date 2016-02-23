@@ -5,9 +5,9 @@ unit SimThyrPlot;
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2016 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2016 }
 
 { This unit plots values }
 
@@ -38,8 +38,12 @@ type
     ChartNavPanel2: TChartNavPanel;
     ChartToolset1: TChartToolset;
     ChartToolset1DataPointClickTool1: TDataPointClickTool;
+    ChartToolset1ZoomDragTool1: TZoomDragTool;
+    ChartToolset1ZoomMouseWheelTool1: TZoomMouseWheelTool;
     ChartToolset2: TChartToolset;
     ChartToolset2DataPointClickTool1: TDataPointClickTool;
+    ChartToolset2PanMouseWheelTool1: TPanMouseWheelTool;
+    ChartToolset2ZoomDragTool1: TZoomDragTool;
     ColorButton1: TColorButton;
     ColorListBox1: TColorListBox;
     ColorListBox2: TColorListBox;
