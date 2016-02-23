@@ -478,7 +478,7 @@ end;
 procedure TSimThyrToolbar.PredEqItemClick(Sender: TObject);
 begin
   PredictEquilibrium;
-  ShowPredictedValues;
+  ShowPredictedValues(true);
 end;
 
 procedure TSimThyrToolbar.PredictionItemClick(Sender: TObject);

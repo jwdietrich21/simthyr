@@ -14,7 +14,7 @@ object TornadoPlotForm: TTornadoPlotForm
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.6.0.4'
   Visible = True
   object CheckGroup1: TCheckGroup
     Left = 440
@@ -145,6 +145,7 @@ object TornadoPlotForm: TTornadoPlotForm
         item
           Grid.Visible = False
           TickLength = 0
+          Arrow.Inverted = True
           Inverted = True
           Marks.Distance = 7
           Marks.Format = '%2:s'
@@ -177,7 +178,6 @@ object TornadoPlotForm: TTornadoPlotForm
       )
       Anchors = [akTop, akLeft, akRight, akBottom]
       Color = clWhite
-      ParentColor = False
       ParentShowHint = False
       PopupMenu = PopupMenu1
       ShowHint = True

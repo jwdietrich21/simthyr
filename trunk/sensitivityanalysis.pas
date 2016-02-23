@@ -473,7 +473,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[0] then
   begin
     {TSH}
-    FLine[1].AddXY(xPar, TSH1 * gParameterFactor[TSH_pos], '',
+    FLine[1].AddXY(xPar, gActiveModel.Equilibrium.TSH1 * gParameterFactor[TSH_pos], '',
       SensitivityAnalysisForm.TSHColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'TSH' + ': ' + gParameterUnit[TSH_pos];
@@ -483,7 +483,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[1] then
   begin
     {TT4}
-    FLine[5].AddXY(xPar, T41 * TT4conversionFactor, '',
+    FLine[5].AddXY(xPar, gActiveModel.Equilibrium.T41 * TT4conversionFactor, '',
       SensitivityAnalysisForm.TT4ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'TT4' + ': ' + gParameterUnit[TT4_pos];
@@ -493,7 +493,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[2] then
   begin
     {FT4}
-    FLine[2].AddXY(xPar, FT41 * FT4conversionFactor, '',
+    FLine[2].AddXY(xPar, gActiveModel.Equilibrium.FT41 * FT4conversionFactor, '',
       SensitivityAnalysisForm.FT4ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'FT4' + ': ' + gParameterUnit[FT4_pos];
@@ -503,7 +503,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[3] then
   begin
     {TT3}
-    FLine[6].AddXY(xPar, T31 * TT3conversionFactor, '',
+    FLine[6].AddXY(xPar, gActiveModel.Equilibrium.T31 * TT3conversionFactor, '',
       SensitivityAnalysisForm.TT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'TT3' + ': ' + gParameterUnit[TT3_pos];
@@ -513,7 +513,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[4] then
   begin
     {FT3}
-    FLine[3].AddXY(xPar, FT31 * FT3conversionFactor, '',
+    FLine[3].AddXY(xPar, gActiveModel.Equilibrium.FT31 * FT3conversionFactor, '',
       SensitivityAnalysisForm.FT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'FT3' + ': ' + gParameterUnit[FT3_pos];
@@ -523,7 +523,7 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[5] then
   begin
     {cT3}
-    FLine[4].AddXY(xPar, T3z1 * cT3conversionFactor, '',
+    FLine[4].AddXY(xPar, gActiveModel.Equilibrium.T3z1 * cT3conversionFactor, '',
       SensitivityAnalysisForm.cT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'cT3' + ': ' + gParameterUnit[cT3_pos];

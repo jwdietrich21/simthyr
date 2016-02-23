@@ -713,7 +713,7 @@ begin
   ValuesPlot.UpdateTimeAxes; // adapts time-series plot
   ValuesPlot.ComboBox1Change(Sender);
   ValuesPlot.ComboBox2Change(Sender);
-  ShowPredictedValues; // adapts prediction window
+  ShowPredictedValues(false); // adapts prediction window
   DrawOWSensitivityPlot(false); // adapts one-way sensitivity analysis
   {DrawTornadoPlot; // tornado plot not affected since it displays percentages}
   TWSensitivityAnalysisForm.Rescale2DMap; // rescales two-way sensitivity analysis

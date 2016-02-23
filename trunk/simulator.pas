@@ -168,7 +168,7 @@ begin
  begin
   dTSH := 0.001;               {mU/s		Inhibited production rate [calculated according to D'Angelo 1976, Okuno 1979 and Greenspan 1997]}
 {InitialValues:}
-  TRHs := 2500;                {ng/l, endogenious TRH, according to Rondeel et al. 1988}
+  gActiveModel.Equilibrium.TRHs := 2500;                {ng/l, endogenious TRH, according to Rondeel et al. 1988}
   TRH := TRH0;
   TSH := 2;                    {mU/l		from reference value}
   TSHz := 4;                   {Mittlerer Wert}
@@ -205,7 +205,7 @@ begin
      circadianControl := cos(omega * t - chi)
    else
      circadianControl := 0;
-   TRHi := TRH1 + THREE_FIFTH * TRHs * circadianControl * UTRH;
+   TRHi := gActiveModel.Equilibrium.TRH1 + THREE_FIFTH * gActiveModel.Equilibrium.TRHs * circadianControl * UTRH;
    TRH := TRHi + TRHe; {Total TRH is sum of internal and external TRH}
    TRH := TRH * getgauss(0.5); {Noise}
  end;
@@ -510,13 +510,13 @@ begin
   PredictEquilibrium;                        {predicted values}
   if previewflag and (i <= 1) then
    begin                                     {use calculated equilibrium values}
-    TSH := TSH1;
-    FT4 := FT41;
+    TSH := gActiveModel.Equilibrium.TSH1;
+    FT4 := gActiveModel.Equilibrium.FT41;
     T4 := FT4 * (1 + k41 * TBG + k42 * TBPA);
-    FT3 := FT31;
+    FT3 := gActiveModel.Equilibrium.FT31;
     T3p := FT3 * (1 + k30 * TBG);
-    T3z := T3z1;
-    T3R := T3R1;
+    T3z := gActiveModel.Equilibrium.T3z1;
+    T3R := gActiveModel.Equilibrium.T3R1;
     x2 := TSH;
     x3 := T4;
     x4 := T3z;
@@ -530,7 +530,7 @@ begin
     xt4 := InitialValues(xt4, nt4 + 1, T3z);
   end;
 
-  ShowPredictedValues;
+  ShowPredictedValues(false);
   GridRows := nmax + 1;
   SimThyrLogWindow.ValuesGrid.RowCount := GridRows;
   SimThyrLogWindow.Show;

@@ -11,7 +11,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
   Constraints.MinWidth = 600
   OnActivate = FormActivate
   OnCreate = FormCreate
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.0.4'
   object MainPanel: TPanel
     Left = 48
     Height = 301
@@ -561,6 +561,16 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       OnChange = LogBox2Change
       TabOrder = 9
     end
+  end
+  object SetPointButton: TSpeedButton
+    Left = 16
+    Height = 22
+    Hint = 'Show predicted equilibrium point (aka set point)'
+    Top = 118
+    Width = 23
+    OnClick = SetPointButtonClick
+    ShowHint = True
+    ParentShowHint = False
   end
   object PopupMenu1: TPopupMenu
     left = 376
