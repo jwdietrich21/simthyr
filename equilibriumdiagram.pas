@@ -26,7 +26,7 @@ uses
   TAChartImageList, LResources, Forms, Controls, Graphics, Dialogs, Buttons,
   ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus, ComboEx, Math,
   SimThyrTypes, SimThyrResources, Simulator, SimThyrServices, UnitConverter,
-  Sensitivityanalysis;
+  SimThyrPrediction, Sensitivityanalysis;
 
 const
   MAX_SERIES   = 2;
@@ -69,6 +69,7 @@ type
     SParTrackBar1: TTrackBar;
     SParTrackBar2: TTrackBar;
     SParTrackBar3: TTrackBar;
+    SetPointButton: TSpeedButton;
     UndoItem: TMenuItem;
     xColorBox:     TColorBox;
     FullScaleButton1: TSpeedButton;
@@ -82,6 +83,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure LogBox1Change(Sender: TObject);
     procedure LogBox2Change(Sender: TObject);
+    procedure SetPointButtonClick(Sender: TObject);
     procedure SetStandardStrucParBoundaries;
     procedure GetBParameters;
     procedure SParEdit1Change(Sender: TObject);
@@ -108,6 +110,7 @@ type
     procedure SParTrackBar3Change(Sender: TObject);
     procedure xColorBoxChange(Sender: TObject);
     procedure yColorBoxChange(Sender: TObject);
+    procedure ShowSetPoint(Sender: TObject);
   private
     { private declarations }
     FLine: array[0..MAX_SERIES - 1] of TLineSeries;
@@ -860,6 +863,11 @@ begin
     EquilibriumChart.AxisList[1].Transformations := nil;
 end;
 
+procedure TEquilibriumDiagramForm.SetPointButtonClick(Sender: TObject);
+begin
+  ShowSetPoint(Sender);
+end;
+
 procedure TEquilibriumDiagramForm.CopyItemClick(Sender: TObject);
 begin
   CopyChart;
@@ -1366,6 +1374,13 @@ begin
   Fline[1].SeriesColor := xColorBox.Selected;
   //EquilibriumChartLineSeries2.SeriesColor := yColorBox.Selected;
   DrawDiagram(true, false);
+end;
+
+procedure TEquilibriumDiagramForm.ShowSetPoint(Sender: TObject);
+begin
+  PredictEquilibrium;
+  ShowPredictedValues(false);
+  Show;
 end;
 
 initialization

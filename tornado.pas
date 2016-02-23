@@ -133,37 +133,37 @@ begin
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'TSH' + scaleIndicator;
-      ResponseVariable := TSH1;
+      ResponseVariable := gActiveModel.Equilibrium.TSH1;
     end;
     2:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'TT4' + scaleIndicator;
-      ResponseVariable := T41;
+      ResponseVariable := gActiveModel.Equilibrium.T41;
     end;
     3:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'FT4' + scaleIndicator;
-      ResponseVariable := FT41;
+      ResponseVariable := gActiveModel.Equilibrium.FT41;
     end;
     4:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'TT3' + scaleIndicator;
-      ResponseVariable := T31;
+      ResponseVariable := gActiveModel.Equilibrium.T31;
     end;
     5:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'FT3' + scaleIndicator;
-      ResponseVariable := FT31;
+      ResponseVariable := gActiveModel.Equilibrium.FT31;
     end;
     6:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'cT3' + scaleIndicator;
-      ResponseVariable := T3z1; {cT3}
+      ResponseVariable := gActiveModel.Equilibrium.T3z1; {cT3}
     end;
   end;
 end;

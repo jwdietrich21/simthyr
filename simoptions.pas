@@ -83,7 +83,7 @@ begin
   temp_noiseflag := noiseflag;
   temp_previewflag := previewflag;
   temp_circadianflag := circadianflag;
-  TRHEdit.Text := FloatToStrF(TRHs, ffGeneral, 5, 2);
+  TRHEdit.Text := FloatToStrF(gActiveModel.Equilibrium.TRHs, ffGeneral, 5, 2);
   CheckNoise;
   CheckPreview;
   CheckCircadian;
@@ -129,7 +129,7 @@ begin
   noiseflag := temp_noiseflag;
   previewflag := temp_previewflag;
   circadianflag := temp_circadianflag;
-  TRHs := StrToFloat(TRHEdit.Text);
+  gActiveModel.Equilibrium.TRHs := StrToFloat(TRHEdit.Text);
   SimOptionsDlg.Close;
 end;
 
