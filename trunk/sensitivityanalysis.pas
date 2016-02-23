@@ -22,9 +22,9 @@ uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, Spin, Buttons, ExtCtrls, ColorBox, ComCtrls, TAGraph, TASources,
   TATools, TASeries, TATransformations, TAStyles, TALegendPanel, SimThyrTypes,
-  SimThyrServices, SimThyrPrediction, Clipbrd, Menus, LCLVersion,
+  SimThyrServices, SimThyrPrediction, Clipbrd, Menus, LCLVersion, StrUtils,
   TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas, TANavigation,
-  UnitConverter;
+  UnitConverter, Types;
 
 const
   MAX_SERIES = 8;
@@ -55,6 +55,8 @@ type
     ChartAxisTransformations1: TChartAxisTransformations;
     ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform;
     ChartNavPanel1: TChartNavPanel;
+    ChartToolset1: TChartToolset;
+    ChartToolset1DataPointClickTool1: TDataPointClickTool;
     CheckGroup1: TCheckGroup;
     ResetButton: TSpeedButton;
     TT4ColorBox: TColorBox;
@@ -76,6 +78,8 @@ type
     Panel1: TPanel;
     StatusBar1: TStatusBar;
     StrucParCombo: TComboBox;
+    procedure ChartToolset1DataPointClickTool1PointClick(ATool: TChartTool;
+      APoint: TPoint);
     procedure CheckGroup1Click(Sender: TObject);
     procedure CheckGroup1ItemClick(Sender: TObject; Index: integer);
     procedure CopyItemClick(Sender: TObject);
@@ -738,6 +742,25 @@ procedure TSensitivityAnalysisForm.CheckGroup1Click(Sender: TObject);
 begin
   DrawOWSensitivityPlot(False);
 end;
+
+procedure TSensitivityAnalysisForm.ChartToolset1DataPointClickTool1PointClick(
+  ATool: TChartTool; APoint: TPoint);
+var
+  theTitle, theUnit: String;
+  x, y: Double;
+  begin
+    theTitle := ExtractDelimited(1, Chart1.LeftAxis.Title.Caption, [':']);
+    theUnit := ExtractDelimited(2, Chart1.LeftAxis.Title.Caption, [':']);
+    with ATool as TDatapointClickTool do
+      if (Series is TLineSeries) then
+        with TLineSeries(Series) do begin
+          x := GetXValue(PointIndex);
+          y := GetYValue(PointIndex);
+          Statusbar1.SimpleText := Format('%s = %f%s', [theTitle, y, theUnit]);
+        end
+      else
+        Statusbar1.SimpleText := '';
+  end;
 
 procedure TSensitivityAnalysisForm.CheckGroup1ItemClick(Sender: TObject;
   Index: integer);

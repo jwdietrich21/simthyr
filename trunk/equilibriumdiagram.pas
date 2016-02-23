@@ -26,7 +26,7 @@ uses
   TAChartImageList, LResources, Forms, Controls, Graphics, Dialogs, Buttons,
   ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus, ComboEx, Math,
   SimThyrTypes, SimThyrResources, Simulator, SimThyrServices, UnitConverter,
-  SimThyrPrediction, Sensitivityanalysis;
+  SimThyrPrediction, Sensitivityanalysis, Types;
 
 const
   MAX_SERIES   = 2;
@@ -42,6 +42,8 @@ type
   TEquilibriumDiagramForm = class(TForm)
     ChartLogAxisTransformation: TChartAxisTransformations;
     ChartLogAxisTransformationLogarithmAxisTransform1: TLogarithmAxisTransform;
+    ChartToolset1: TChartToolset;
+    ChartToolset1DataPointClickTool1: TDataPointClickTool;
     LogBox1: TCheckBox;
     LogBox2: TCheckBox;
     CopyItem: TMenuItem;
@@ -69,7 +71,6 @@ type
     SParTrackBar1: TTrackBar;
     SParTrackBar2: TTrackBar;
     SParTrackBar3: TTrackBar;
-    SetPointButton: TSpeedButton;
     UndoItem: TMenuItem;
     xColorBox:     TColorBox;
     FullScaleButton1: TSpeedButton;
@@ -78,12 +79,13 @@ type
     ResetButton:   TSpeedButton;
     StatusBar1:    TStatusBar;
     yColorBox:     TColorBox;
+    procedure ChartToolset1DataPointClickTool1PointClick(ATool: TChartTool;
+      APoint: TPoint);
     procedure CopyItemClick(Sender: TObject);
     procedure CopyChart;
     procedure FormActivate(Sender: TObject);
     procedure LogBox1Change(Sender: TObject);
     procedure LogBox2Change(Sender: TObject);
-    procedure SetPointButtonClick(Sender: TObject);
     procedure SetStandardStrucParBoundaries;
     procedure GetBParameters;
     procedure SParEdit1Change(Sender: TObject);
@@ -110,7 +112,6 @@ type
     procedure SParTrackBar3Change(Sender: TObject);
     procedure xColorBoxChange(Sender: TObject);
     procedure yColorBoxChange(Sender: TObject);
-    procedure ShowSetPoint(Sender: TObject);
   private
     { private declarations }
     FLine: array[0..MAX_SERIES - 1] of TLineSeries;
@@ -863,14 +864,27 @@ begin
     EquilibriumChart.AxisList[1].Transformations := nil;
 end;
 
-procedure TEquilibriumDiagramForm.SetPointButtonClick(Sender: TObject);
-begin
-  ShowSetPoint(Sender);
-end;
-
 procedure TEquilibriumDiagramForm.CopyItemClick(Sender: TObject);
 begin
   CopyChart;
+end;
+
+procedure TEquilibriumDiagramForm.ChartToolset1DataPointClickTool1PointClick(
+  ATool: TChartTool; APoint: TPoint);
+const
+  theLegend = 'Selected point on isocline';
+var
+  x, y: Double;
+begin
+  with ATool as TDatapointClickTool do
+    if (Series is TLineSeries) then
+      with TLineSeries(Series) do begin
+        x := GetXValue(PointIndex);
+        y := GetYValue(PointIndex);
+        Statusbar1.SimpleText := Format('%s: x = %f, y = %f', [theLegend, x, y]);
+      end
+    else
+      Statusbar1.SimpleText := '';
 end;
 
 procedure TEquilibriumDiagramForm.CopyChart;
@@ -1374,13 +1388,6 @@ begin
   Fline[1].SeriesColor := xColorBox.Selected;
   //EquilibriumChartLineSeries2.SeriesColor := yColorBox.Selected;
   DrawDiagram(true, false);
-end;
-
-procedure TEquilibriumDiagramForm.ShowSetPoint(Sender: TObject);
-begin
-  PredictEquilibrium;
-  ShowPredictedValues(false);
-  Show;
 end;
 
 initialization
