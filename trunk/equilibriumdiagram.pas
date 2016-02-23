@@ -866,6 +866,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.CopyChart;
+{ copy chart to clipboard }
 var
   {$IFDEF UNIX}
   theImage: TPortableNetworkGraphic;

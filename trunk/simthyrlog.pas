@@ -107,7 +107,6 @@ end;
 
 procedure TSimThyrLogWindow.InitGrid; {initializes empty table}
 begin
-  ValuesGrid.RowCount := 1;
   GridRows := RES_BLANK_ROWS;
   ValuesGrid.RowCount := GridRows;
   ValuesGrid.Tag := 0;

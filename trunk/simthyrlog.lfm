@@ -307,7 +307,7 @@ object SimThyrLogWindow: TSimThyrLogWindow
     AC418CC3AC418CC3AC41CCE3AC41CDF3AC41EFFFAC41FFFFAC41
   }
   OnActivate = FormActivate
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.4.4.0'
   Visible = True
   object ValuesGrid: TStringGrid
     Cursor = crIBeam
