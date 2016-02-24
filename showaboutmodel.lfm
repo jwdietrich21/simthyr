@@ -153,12 +153,12 @@ object AboutModelForm: TAboutModelForm
     0000
   }
   Position = poScreenCenter
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.0.4'
   object Label1: TLabel
     Left = 56
-    Height = 16
+    Height = 13
     Top = 96
-    Width = 77
+    Width = 69
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -178,10 +178,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 306
-    Height = 16
+    Left = 364
+    Height = 13
     Top = 64
-    Width = 212
+    Width = 154
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -271,6 +271,21 @@ object AboutModelForm: TAboutModelForm
       'Thyroxine-Treated Subjects. Hormone and Metabolic Research, '
       '47(9):674-80. PMID: 25750078 doi: 10.1055/s-0034-1398616.'
       ''
+      '13. Midgley JE, Larisch R, Dietrich JW, Hoermann R. (2015).'
+      'Variation in the biochemical response to l-thyroxine therapy and '
+      'relationship with peripheral thyroid hormone conversion efficiency. '
+      'Endocr Connect. 2015 Dec;4(4):196-205. doi: 10.1530/EC-150056. '
+      'PMID 26335522.'
+      ''
+      '14. Dietrich JW, Midgley JE, Larisch R, Hoermann R. (2015).'
+      'Of rats and men: thyroid homeostasis in rodents and human beings. '
+      'Lancet Diabetes Endocrinol. 2015 Dec;3(12):932-3. '
+      'doi: 10.1016/S2213-8587(15)00421-0. PMID 26590684.'
+      ''
+      '15. Hoermann R, Midgley JE, Larisch R, Dietrich JW. (2015).'
+      'Homeostatic Control of the Thyroid-Pituitary Axis: Perspectives for'
+      'Diagnosis and Treatment. Front Endocrinol (Lausanne). 2015 '
+      'Nov 20;6:177. doi: 10.3389/fendo.2015.00177. PMID 26635726.'
     )
     OnChange = Memo1Change
     ReadOnly = True
