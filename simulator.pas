@@ -219,14 +219,16 @@ begin
    T3R := GR * T3n / (dR + T3n);
    dTSH := gH * TRH / ((dH + TRH) * (1 + LS * T3R) * (1 + SS * TSHz / (DS + TSHz)));
    {differential quotient of secretory rate only, no degradation}
-   vpt10 := gainOfTSH;
    if memory then
      begin
+       {Simulation variant with first order memory elements}
+       {used for normal simulation run}
        {Equifinal approximation: TSHz := (alphaS2 / betaS2) * dTSH;}
        vpt10 := ultrashortFeedbackGain;
        pt1(vpt10, tpt16, x6, dTSH, TSHz);
        TSHz := pt0(xt22, nt22, TSHz); {pituitary TSH for Brokken-Wiersinga-Prummel loop}
-       {optional: TSHz := TSHz * getgauss(0.2); {Noise}}
+       {optional: TSHz := TSHz * getgauss(0.2); {additional Noise}}
+       vpt10 := gainOfTSH;
        pt1(vpt10, tpt12, x2, dTSH, TSH);
        {Equifinal approximation: TSH := alphaS * dTSH / betaS;}
        TSH := pt0(xt2, nt2, TSH);

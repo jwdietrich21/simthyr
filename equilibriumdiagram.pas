@@ -31,7 +31,7 @@ uses
 const
   MAX_SERIES   = 2;
   MAX_I        = 100;
-  MAX_PIT      = 13;
+  MAX_PIT      = 130;
   TRACK_RATIO  = 10;
   SPLAY_FACTOR = 5;
 
@@ -184,7 +184,7 @@ begin
     end;
     { calculate mean of samples in equilibrium without transient results }
     { to compensate for oscillations resulting from ultrashort feedback }
-    Result[i] := mean(TSHSamples[3..MAX_PIT-1]);
+    Result[i] := mean(TSHSamples[26..MAX_PIT-1]);
   end;
 end;
 
@@ -1380,14 +1380,12 @@ end;
 procedure TEquilibriumDiagramForm.xColorBoxChange(Sender: TObject);
 begin
   Fline[1].SeriesColor := xColorBox.Selected;
-  //EquilibriumChartLineSeries1.SeriesColor := xColorBox.Selected;
   DrawDiagram(true, false);
 end;
 
 procedure TEquilibriumDiagramForm.yColorBoxChange(Sender: TObject);
 begin
   Fline[1].SeriesColor := xColorBox.Selected;
-  //EquilibriumChartLineSeries2.SeriesColor := yColorBox.Selected;
   DrawDiagram(true, false);
 end;
 
