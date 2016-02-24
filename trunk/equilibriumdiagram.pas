@@ -136,6 +136,7 @@ var
   gResponseCurve1, gResponseCurve2: tResponseCurve;
   gFT4conversionFactor, gFT3conversionFactor: real;
   gcT3conversionFactor: real;
+  TRH1: real; // storage for TRH concentration from previous simulation run
   gUOM1, gUOM2: string;
 
 
@@ -248,6 +249,8 @@ begin
   assert(max >= min, kError103);
   assert(max > 0, kError104);
   fillchar(emptyVector, sizeof(emptyVector), 0);
+  TRH1 := TRH; // remember TRH concentration from previous simulation run
+  TRH := TRH0; // and set TRH concentration to standard value
   interval := (max - min) / MAX_I;
   case bParameter1 of // input (independent parameter)
     TSHItem:
@@ -364,6 +367,7 @@ begin
       Result.output := emptyVector;
   end;
   Result.input := inputVector;
+  TRH := TRH1; // restore simulated TRH concentration
 end;
 
 { TEquilibriumDiagramForm }
