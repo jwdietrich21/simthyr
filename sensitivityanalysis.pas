@@ -28,8 +28,8 @@ uses
 
 const
   MAX_SERIES = 8;
-  GD1_FACTOR = 1e9; {these factors allow to provide for metric prefixes}
-  GD2_FACTOR = 1e15;
+  GD1_FACTOR = 1e9;  {These factors allow to provide for metric prefixes.}
+  GD2_FACTOR = 1e15; {They are used in sensitivity analysis and for nullclines.}
   GT_FACTOR = 1e12;
   KM1_FACTOR = 1e9;
   KM2_FACTOR = 1e9;

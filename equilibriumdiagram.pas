@@ -29,11 +29,12 @@ uses
   SimThyrPrediction, Sensitivityanalysis, Types;
 
 const
-  MAX_SERIES   = 2;
-  MAX_I        = 100;
-  MAX_PIT      = 130;
-  TRACK_RATIO  = 10;
-  SPLAY_FACTOR = 5;
+  MAX_SERIES   = 2;   // number of isoclines to draw
+  MAX_I        = 100; // maximum size of tParamVector for tResponseCurve
+  MAX_PIT      = 130; // number of iterations to get pituitary nullcline
+  FIRST_VALUE  = 26;  // first value to use as representative for equilibrium
+  TRACK_RATIO  = 10;  // ratio to translate from paramter to track bar position
+  SPLAY_FACTOR = 5;   // splay of trackbars for structure parameters
 
 type
 
@@ -143,6 +144,7 @@ var
 implementation
 
 procedure UpdateStrucPar(theParameter: tSParameter; theValue: real);
+{ updates structure parameters after track bars have been changed }
 begin
   case theParameter of
     GD1Item: GD1 := theValue;
@@ -151,13 +153,13 @@ begin
     KM2Item: kM2 := theValue;
     GTItem: GT := theValue;
     DTItem: DT := theValue;
-    GHItem: GH:= theValue;
+    GHItem: GH := theValue;
     DHItem: DH := theValue;
     SSItem: SS := theValue;
-    DSItem: DS:= theValue;
+    DSItem: DS := theValue;
     GRItem: GR := theValue;
     DRItem: DR := theValue;
-    LSItem: LS:= theValue;
+    LSItem: LS := theValue;
     betaTItem: betaT := theValue;
     TBGItem: TBG := theValue;
     TBPAItem: TBPA := theValue;
@@ -165,10 +167,9 @@ begin
 end;
 
 function SimPituitaryResponse(T3zVector: tParamVector): tParamVector;
-{ Simulate response of thyroid subsystem to vector with TSH values }
+{ Simulate response of pituitary subsystem to vector with cT3 values }
 var
   i, j: integer;
-  interval: real;
   gainOfTSH, usFeedbackGain: real;
   TSHSamples: tTSHSamples;
 begin
@@ -185,7 +186,7 @@ begin
     end;
     { calculate mean of samples in equilibrium without transient results }
     { to compensate for oscillations resulting from ultrashort feedback }
-    Result[i] := mean(TSHSamples[26..MAX_PIT-1]);
+    Result[i] := mean(TSHSamples[FIRST_VALUE..MAX_PIT-1]);
   end;
 end;
 
@@ -193,7 +194,6 @@ function SimThyroidResponse(TSHVector: tParamVector): tParamVector;
 { Simulate response of thyroid subsystem to vector with TSH values }
 var
   i: integer;
-  interval: real;
   gainOfT4: real;
 begin
   gainOfT4 := alphaT / betaT;
@@ -209,7 +209,6 @@ function SimPDeiodinaseResponse(FT4Vector: tParamVector): tParamVector;
 { Simulate response of peripheral deiodinases to T4 vector }
 var
   i: integer;
-  interval: real;
   gainOfPeripheralT3: real;
 begin
   gainOfPeripheralT3 := alpha31 / beta31;
@@ -225,7 +224,6 @@ function SimCDeiodinaseResponse(FT4Vector: tParamVector): tParamVector;
 { Simulate response of central type 2 deiodinase to T4 vector }
 var
   i: integer;
-  interval: real;
   gainOfCentralT3: real;
 begin
   gainOfCentralT3 := alpha32 / beta32;
@@ -245,7 +243,7 @@ var
   interval: real;
   inputVector, emptyVector: tParamVector;
 begin
-  assert((min >= 0) and (max >= 0), kError101);
+  assert(min >= 0, kError101);
   assert(max >= min, kError103);
   assert(max > 0, kError104);
   fillchar(emptyVector, sizeof(emptyVector), 0);
@@ -762,7 +760,7 @@ begin
   SParTrackBar3.Min := trunc(tempMinS * gTrackFactor3 * TRACK_RATIO);
   SParTrackBar3.Max := trunc(tempMaxS * gTrackFactor3 * TRACK_RATIO);
   SParTrackBar3.Position := trunc(tempMidS * gTrackFactor3 * TRACK_RATIO);
-  gMinSPar3 := tempMinS;
+  gMinSPar3 := tempMinS; // avoids certain Windows-specific problems
   gMaxSPar3 := tempMaxS;
 end;
 
@@ -854,6 +852,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.LogBox1Change(Sender: TObject);
+{ log-transform axis 0, if required }
 begin
   if LogBox1.Checked then
     EquilibriumChart.AxisList[0].Transformations := ChartLogAxisTransformation
@@ -862,6 +861,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.LogBox2Change(Sender: TObject);
+{ log-transform axis 1, if required }
 begin
   if LogBox2.Checked then
     EquilibriumChart.AxisList[1].Transformations := ChartLogAxisTransformation
@@ -976,17 +976,8 @@ var
   MinBPar1, MaxBPar1, MinBPar2, MaxBPar2: real;
   ConversionFactor1, ConversionFactor2: real;
   max_x: real;
-  UOM1, UOM2: string;
 begin
   GetBParameters;
-  if gUOM1 <> '' then
-    UOM1 := ' / ' + gUOM1
-  else
-    UOM1 := '';
-  if gUOM2 <> '' then
-    UOM2 := ' / ' + gUOM2
-  else
-    UOM2 := '';
   gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
     gParameterUnit[FT4_pos]);
   gFT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
@@ -1074,6 +1065,13 @@ end;
 procedure TEquilibriumDiagramForm.BParCombo1Change(Sender: TObject);
 { Get selected behavioural parameter #1 }
 begin
+  if BParCombo2.ItemIndex = 0 then
+    begin // set to useful initial value
+      if BParCombo1.ItemIndex = 1 then
+        BParCombo2.ItemIndex := 2
+      else
+        BParCombo2.ItemIndex := 1;
+    end;
   GetBParameters;
   case gSelectedBParameter1 of
     TSHItem:
@@ -1100,14 +1098,20 @@ begin
     end;
   end;
   xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
-  if BParCombo2.ItemIndex = 0 then
-    BParCombo2.ItemIndex := 1;  // set to useful initial value
+  yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
   DrawDiagram(true, false);
 end;
 
 procedure TEquilibriumDiagramForm.BParCombo2Change(Sender: TObject);
 { Get selected behavioural parameter #2 }
 begin
+  if BParCombo1.ItemIndex = 0 then
+    begin // set to useful initial value
+      if BParCombo2.ItemIndex = 1 then
+        BParCombo1.ItemIndex := 2
+      else
+        BParCombo1.ItemIndex := 1;
+    end;
   GetBParameters;
   case gSelectedBParameter2 of
     TSHItem:
@@ -1133,9 +1137,8 @@ begin
         MaxSpinEdit1.Value := 6;
     end;
   end;
+  xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
   yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
-  if BParCombo1.ItemIndex = 0 then
-    BParCombo1.ItemIndex := 1;  // set to useful initial value
   DrawDiagram(true, false);
 end;
 
