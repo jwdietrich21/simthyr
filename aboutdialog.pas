@@ -24,10 +24,11 @@ uses
   SimThyrServices, VersionSupport, DOS, HandlePreferences
   {$IFDEF win32}
   , Windows, Win32Proc
-  {$ELSE}
+  {$ENDIF}
     {$IFDEF LCLCarbon}
   , MacOSAll
     {$ENDIF}
+  {$IFDEF UNIX}
   , Unix
   {$ENDIF}  , types;
 

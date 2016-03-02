@@ -21,12 +21,13 @@ interface
 uses
   Classes, SysUtils, Grids, StdCtrls, Dialogs, Forms, SimThyrTypes,
   SimThyrResources, UnitConverter, DOM, XMLRead, FileUtil, DateUtils
-      {$IFDEF win32}
+  {$IFDEF WINDOWS}
   , Windows, Win32Proc
-  {$ELSE}
-    {$IFDEF LCLCarbon}
+  {$ENDIF}
+  {$IFDEF LCLCarbon}
   , MacOSAll
-    {$ENDIF}
+  {$ENDIF}
+  {$IFDEF UNIX}
   , Unix
   {$ENDIF}  ;
 
@@ -132,7 +133,7 @@ procedure bell; {platform-independent implementation of acustical warning}
 var
   s: longint;
 begin
-  {$IFDEF win32}
+  {$IFDEF WINDOWS}
   MessageBeep(0);
   {$ELSE}
     {$IFDEF LCLCarbon}
