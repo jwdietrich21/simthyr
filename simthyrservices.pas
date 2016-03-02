@@ -102,8 +102,16 @@ begin
     OSVersion := 'Windows Vista '
   else if WindowsVersion = wv7 then
     OSVersion := 'Windows 7 '
-  //else if WindowsVersion = wv8 then   // for future LCL versions
-  //  OSVersion := 'Windows 8 '
+  {$if FPC_FULlVERSION >= 30000} {Free Pascal 3.0 or newer}
+  else if WindowsVersion = wv8 then
+    OSVersion := 'Windows 8 '
+  else if WindowsVersion = wv8_1 then
+    OSVersion := 'Windows 8.1 '
+  else if WindowsVersion = wv10 then
+    OSVersion := 'Windows '
+  else if WindowsVersion = wvLater then
+    OSVersion := 'Windows '
+  {$ENDIF}
   else
     OSVersion := 'Windows ';
   {$ENDIF}
