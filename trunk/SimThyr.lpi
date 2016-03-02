@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="664"/>
+      <BuildNr Value="665"/>
       <Attributes pvaDebug="True" pvaPreRelease="True"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2016 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
     </VersionInfo>
@@ -44,7 +44,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="182">
+    <Units Count="179">
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -213,8 +213,10 @@
         <Filename Value="simthyrservices.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrServices"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="11"/>
-        <CursorPos Y="2"/>
+        <TopLine Value="123"/>
+        <CursorPos X="13" Y="148"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit17>
@@ -338,8 +340,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AboutDialog"/>
         <EditorIndex Value="31"/>
-        <TopLine Value="157"/>
-        <CursorPos X="46" Y="10"/>
+        <CursorPos X="11" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -378,8 +379,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ShowAboutModel"/>
         <EditorIndex Value="30"/>
-        <TopLine Value="19"/>
-        <CursorPos X="46" Y="10"/>
+        <CursorPos X="5" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -626,7 +626,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HandlePreferences"/>
         <EditorIndex Value="15"/>
-        <CursorPos Y="2"/>
+        <TopLine Value="112"/>
+        <CursorPos X="26" Y="123"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="1">
           <Item0 Y="540" ID="8"/>
@@ -756,12 +757,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Sensitivityanalysis"/>
-        <EditorIndex Value="1"/>
-        <CursorPos X="2" Y="2"/>
+        <EditorIndex Value="25"/>
+        <CursorPos X="75" Y="5"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="25"/>
-          <CursorPos X="75" Y="5"/>
+          <EditorIndex Value="1"/>
+          <CursorPos X="2" Y="2"/>
         </ExtraEditor1>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -929,90 +930,90 @@
         <UsageCount Value="10"/>
       </Unit116>
       <Unit117>
-        <Filename Value="../../../../lazarus/lcl/include/toolbutton.inc"/>
+        <Filename Value="//vs-chs01/lazarus/lcl/include/toolbutton.inc"/>
         <CursorPos Y="954"/>
         <UsageCount Value="10"/>
       </Unit117>
       <Unit118>
-        <Filename Value="../../../../lazarus/lcl/interfaces/win32/win32callback.inc"/>
+        <Filename Value="//vs-chs01/lazarus/lcl/interfaces/win32/win32callback.inc"/>
         <TopLine Value="2714"/>
         <CursorPos Y="2736"/>
         <UsageCount Value="10"/>
       </Unit118>
       <Unit119>
-        <Filename Value="../../../../lazarus/lcl/include/customform.inc"/>
+        <Filename Value="//vs-chs01/lazarus/lcl/include/customform.inc"/>
         <TopLine Value="190"/>
         <CursorPos Y="219"/>
         <UsageCount Value="10"/>
       </Unit119>
       <Unit120>
-        <Filename Value="../../../../lazarus/lcl/include/application.inc"/>
+        <Filename Value="//vs-chs01/lazarus/lcl/include/application.inc"/>
         <TopLine Value="1077"/>
         <CursorPos Y="1095"/>
         <UsageCount Value="10"/>
       </Unit120>
       <Unit121>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutilsh.inc"/>
+        <Filename Value="//vs-chs01/lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutilsh.inc"/>
         <TopLine Value="23"/>
         <CursorPos X="26" Y="41"/>
         <UsageCount Value="10"/>
       </Unit121>
       <Unit122>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutil.inc"/>
+        <Filename Value="//vs-chs01/lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutil.inc"/>
         <TopLine Value="91"/>
         <CursorPos X="10" Y="109"/>
         <UsageCount Value="10"/>
       </Unit122>
       <Unit123>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/win/sysutils.pp"/>
+        <Filename Value="//vs-chs01/lazarus/fpc/2.6.2/source/rtl/win/sysutils.pp"/>
         <TopLine Value="1105"/>
         <CursorPos X="28" Y="1108"/>
         <UsageCount Value="10"/>
       </Unit123>
       <Unit124>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/packages/fcl-xml/src/xmlread.pp"/>
+        <Filename Value="//vs-chs01/lazarus/fpc/2.6.2/source/packages/fcl-xml/src/xmlread.pp"/>
         <TopLine Value="34"/>
         <CursorPos X="45" Y="44"/>
         <UsageCount Value="10"/>
       </Unit124>
       <Unit125>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/packages/fcl-xml/src/dom.pp"/>
+        <Filename Value="//vs-chs01/lazarus/fpc/2.6.2/source/packages/fcl-xml/src/dom.pp"/>
         <TopLine Value="207"/>
         <CursorPos X="23" Y="224"/>
         <UsageCount Value="10"/>
       </Unit125>
       <Unit126>
-        <Filename Value="../../../../lazarus/lcl/grids.pas"/>
+        <Filename Value="//vs-chs01/lazarus/lcl/grids.pas"/>
         <TopLine Value="3544"/>
         <CursorPos Y="3562"/>
         <UsageCount Value="10"/>
       </Unit126>
       <Unit127>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/inc/objpash.inc"/>
+        <Filename Value="//vs-chs01/lazarus/fpc/2.6.2/source/rtl/inc/objpash.inc"/>
         <TopLine Value="177"/>
         <CursorPos X="22" Y="194"/>
         <UsageCount Value="10"/>
       </Unit127>
       <Unit128>
-        <Filename Value="../../../../lazarus/components/tachart/taintervalsources.pas"/>
+        <Filename Value="//vs-chs01/lazarus/components/tachart/taintervalsources.pas"/>
         <TopLine Value="391"/>
         <CursorPos Y="409"/>
         <UsageCount Value="10"/>
       </Unit128>
       <Unit129>
-        <Filename Value="../../../../lazarus/lcl/forms.pp"/>
+        <Filename Value="//vs-chs01/lazarus/lcl/forms.pp"/>
         <TopLine Value="33"/>
         <CursorPos X="3" Y="46"/>
         <UsageCount Value="10"/>
       </Unit129>
       <Unit130>
-        <Filename Value="../../../../lazarus/lcl/lclclasses.pp"/>
+        <Filename Value="//vs-chs01/lazarus/lcl/lclclasses.pp"/>
         <TopLine Value="19"/>
         <CursorPos X="10" Y="32"/>
         <UsageCount Value="10"/>
       </Unit130>
       <Unit131>
-        <Filename Value="../../../../lazarus/fpc/2.6.2/source/rtl/objpas/classes/classesh.inc"/>
+        <Filename Value="//vs-chs01/lazarus/fpc/2.6.2/source/rtl/objpas/classes/classesh.inc"/>
         <TopLine Value="1595"/>
         <CursorPos X="14" Y="1610"/>
         <UsageCount Value="10"/>
@@ -1036,7 +1037,7 @@
         <Loaded Value="True"/>
       </Unit133>
       <Unit134>
-        <Filename Value="../../../../lazarus/lcl/include/control.inc"/>
+        <Filename Value="//vs-chs01/lazarus/lcl/include/control.inc"/>
         <TopLine Value="3225"/>
         <CursorPos Y="3239"/>
         <UsageCount Value="11"/>
@@ -1048,19 +1049,19 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="TWSensitivityanalysis"/>
-        <EditorIndex Value="3"/>
-        <CursorPos Y="2"/>
+        <EditorIndex Value="26"/>
+        <CursorPos X="36" Y="8"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="26"/>
-          <CursorPos X="36" Y="8"/>
+          <EditorIndex Value="3"/>
+          <CursorPos Y="2"/>
         </ExtraEditor1>
         <UsageCount Value="150"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit135>
       <Unit136>
-        <Filename Value="../../../../lazarus/fpc/2.6.4/source/rtl/inc/objpash.inc"/>
+        <Filename Value="//vs-chs01/lazarus/fpc/2.6.4/source/rtl/inc/objpash.inc"/>
         <TopLine Value="178"/>
         <CursorPos X="23" Y="192"/>
         <UsageCount Value="10"/>
@@ -1072,7 +1073,7 @@
         <UsageCount Value="11"/>
       </Unit137>
       <Unit138>
-        <Filename Value="../../../../lazarus/fpc/2.6.4/source/rtl/objpas/math.pp"/>
+        <Filename Value="//vs-chs01/lazarus/fpc/2.6.4/source/rtl/objpas/math.pp"/>
         <TopLine Value="405"/>
         <CursorPos X="10" Y="419"/>
         <UsageCount Value="10"/>
@@ -1083,7 +1084,7 @@
         <UsageCount Value="10"/>
       </Unit139>
       <Unit140>
-        <Filename Value="../../../../lazarus/fpc/2.6.4/source/packages/fcl-xml/src/dom.pp"/>
+        <Filename Value="//vs-chs01/lazarus/fpc/2.6.4/source/packages/fcl-xml/src/dom.pp"/>
         <TopLine Value="245"/>
         <CursorPos X="14" Y="265"/>
         <UsageCount Value="10"/>
@@ -1116,7 +1117,7 @@
         <UsageCount Value="10"/>
       </Unit145>
       <Unit146>
-        <Filename Value="../../../../lazarus/components/tachart/tacustomsource.pas"/>
+        <Filename Value="//vs-chs01/lazarus/components/tachart/tacustomsource.pas"/>
         <TopLine Value="677"/>
         <CursorPos Y="698"/>
         <UsageCount Value="10"/>
@@ -1128,55 +1129,55 @@
         <UsageCount Value="10"/>
       </Unit147>
       <Unit148>
-        <Filename Value="../../../../../../../lazarus/components/tachart/tacustomsource.pas"/>
+        <Filename Value="//lazarus/components/tachart/tacustomsource.pas"/>
         <TopLine Value="672"/>
         <CursorPos Y="698"/>
         <UsageCount Value="10"/>
       </Unit148>
       <Unit149>
-        <Filename Value="../../../../../../../lazarus/lcl/include/customcombobox.inc"/>
+        <Filename Value="//lazarus/lcl/include/customcombobox.inc"/>
         <TopLine Value="157"/>
         <CursorPos Y="175"/>
         <UsageCount Value="10"/>
       </Unit149>
       <Unit150>
-        <Filename Value="../../../../../../../lazarus/lcl/include/control.inc"/>
+        <Filename Value="//lazarus/lcl/include/control.inc"/>
         <TopLine Value="2083"/>
         <CursorPos Y="2100"/>
         <UsageCount Value="10"/>
       </Unit150>
       <Unit151>
-        <Filename Value="../../../../../../../lazarus/lcl/include/wincontrol.inc"/>
+        <Filename Value="//lazarus/lcl/include/wincontrol.inc"/>
         <TopLine Value="5310"/>
         <CursorPos Y="5327"/>
         <UsageCount Value="10"/>
       </Unit151>
       <Unit152>
-        <Filename Value="../../../../../../../lazarus/lcl/lclmessageglue.pas"/>
+        <Filename Value="//lazarus/lcl/lclmessageglue.pas"/>
         <TopLine Value="125"/>
         <CursorPos Y="144"/>
         <UsageCount Value="10"/>
       </Unit152>
       <Unit153>
-        <Filename Value="../../../../../../../lazarus/lcl/interfaces/win32/win32callback.inc"/>
+        <Filename Value="//lazarus/lcl/interfaces/win32/win32callback.inc"/>
         <TopLine Value="1029"/>
         <CursorPos Y="1048"/>
         <UsageCount Value="10"/>
       </Unit153>
       <Unit154>
-        <Filename Value="../../../../../../../lazarus/components/tachart/tatypes.pas"/>
+        <Filename Value="//lazarus/components/tachart/tatypes.pas"/>
         <TopLine Value="551"/>
         <CursorPos Y="570"/>
         <UsageCount Value="10"/>
       </Unit154>
       <Unit155>
-        <Filename Value="../../../../../../../lazarus/lcl/interfaces/win32/win32wsstdctrls.pp"/>
+        <Filename Value="//lazarus/lcl/interfaces/win32/win32wsstdctrls.pp"/>
         <TopLine Value="467"/>
         <CursorPos Y="485"/>
         <UsageCount Value="10"/>
       </Unit155>
       <Unit156>
-        <Filename Value="../../../../../../../lazarus/components/tachart/tacustomseries.pas"/>
+        <Filename Value="//lazarus/components/tachart/tacustomseries.pas"/>
         <TopLine Value="172"/>
         <CursorPos X="14" Y="189"/>
         <UsageCount Value="10"/>
@@ -1188,7 +1189,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Equilibriumdiagram"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="28"/>
         <CursorPos Y="2"/>
         <ExtraEditorCount Value="2"/>
@@ -1207,49 +1207,49 @@
         <LoadedDesigner Value="True"/>
       </Unit157>
       <Unit158>
-        <Filename Value="../../../../../../../lazarus/components/tachart/taseries.pas"/>
+        <Filename Value="//lazarus/components/tachart/taseries.pas"/>
         <TopLine Value="604"/>
         <CursorPos Y="623"/>
         <UsageCount Value="10"/>
       </Unit158>
       <Unit159>
-        <Filename Value="../../../../../../../lazarus/components/tachart/tachartaxis.pas"/>
+        <Filename Value="//lazarus/components/tachart/tachartaxis.pas"/>
         <TopLine Value="1154"/>
         <CursorPos Y="1173"/>
         <UsageCount Value="10"/>
       </Unit159>
       <Unit160>
-        <Filename Value="../../../../../../../lazarus/lcl/include/customform.inc"/>
+        <Filename Value="//lazarus/lcl/include/customform.inc"/>
         <TopLine Value="2164"/>
         <CursorPos Y="2183"/>
         <UsageCount Value="10"/>
       </Unit160>
       <Unit161>
-        <Filename Value="../../../../../../../lazarus/components/tachart/tagraph.pas"/>
+        <Filename Value="//lazarus/components/tachart/tagraph.pas"/>
         <TopLine Value="1745"/>
         <CursorPos X="3" Y="1749"/>
         <UsageCount Value="10"/>
       </Unit161>
       <Unit162>
-        <Filename Value="../../../../../../../lazarus/fpc/2.6.4/source/rtl/objpas/math.pp"/>
+        <Filename Value="//lazarus/fpc/2.6.4/source/rtl/objpas/math.pp"/>
         <TopLine Value="1792"/>
         <CursorPos X="4" Y="1798"/>
         <UsageCount Value="10"/>
       </Unit162>
       <Unit163>
-        <Filename Value="../../../../../../../lazarus/lcl/stdctrls.pp"/>
+        <Filename Value="//lazarus/lcl/stdctrls.pp"/>
         <TopLine Value="750"/>
         <CursorPos X="18" Y="772"/>
         <UsageCount Value="10"/>
       </Unit163>
       <Unit164>
-        <Filename Value="../../../../../../../lazarus/lcl/controls.pp"/>
+        <Filename Value="//lazarus/lcl/controls.pp"/>
         <TopLine Value="148"/>
         <CursorPos X="30" Y="168"/>
         <UsageCount Value="10"/>
       </Unit164>
       <Unit165>
-        <Filename Value="../../../../../../../lazarus/lcl/lcltype.pp"/>
+        <Filename Value="//lazarus/lcl/lcltype.pp"/>
         <TopLine Value="47"/>
         <CursorPos X="56" Y="53"/>
         <UsageCount Value="10"/>
@@ -1276,227 +1276,204 @@
         <UsageCount Value="10"/>
       </Unit167>
       <Unit168>
-        <Filename Value="../../../../../../../../lazarus/fpc/2.6.4/source/rtl/inc/objpash.inc"/>
+        <Filename Value="//lazarus/fpc/2.6.4/source/rtl/inc/objpash.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="174"/>
         <CursorPos X="29" Y="192"/>
         <UsageCount Value="10"/>
       </Unit168>
       <Unit169>
-        <Filename Value="../../../../../../../../lazarus/fpc/2.6.4/source/rtl/inc/objpas.inc"/>
+        <Filename Value="//lazarus/fpc/2.6.4/source/rtl/inc/objpas.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="265"/>
         <CursorPos X="9" Y="267"/>
         <UsageCount Value="10"/>
       </Unit169>
       <Unit170>
-        <Filename Value="../../../../../../../../lazarus/lcl/stdctrls.pp"/>
-        <UnitName Value="StdCtrls"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="392"/>
-        <CursorPos X="54" Y="449"/>
-        <UsageCount Value="10"/>
-      </Unit170>
-      <Unit171>
-        <Filename Value="../../../../../../../../lazarus/fpc/2.6.4/source/rtl/objpas/sysutils/datih.inc"/>
+        <Filename Value="//lazarus/fpc/2.6.4/source/rtl/objpas/sysutils/datih.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="148"/>
         <CursorPos X="26" Y="176"/>
         <UsageCount Value="10"/>
-      </Unit171>
-      <Unit172>
-        <Filename Value="../../../../../../../../lazarus/fpc/2.6.4/source/rtl/objpas/sysutils/dati.inc"/>
+      </Unit170>
+      <Unit171>
+        <Filename Value="//lazarus/fpc/2.6.4/source/rtl/objpas/sysutils/dati.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1378"/>
         <CursorPos X="26" Y="1380"/>
         <UsageCount Value="10"/>
-      </Unit172>
-      <Unit173>
-        <Filename Value="../../../../../../../../lazarus/fpc/2.6.4/source/rtl/objpas/sysutils/sysinth.inc"/>
+      </Unit171>
+      <Unit172>
+        <Filename Value="//lazarus/fpc/2.6.4/source/rtl/objpas/sysutils/sysinth.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="39"/>
         <CursorPos X="42" Y="57"/>
         <UsageCount Value="10"/>
-      </Unit173>
-      <Unit174>
-        <Filename Value="../../../../../../../../lazarus/lcl/forms.pp"/>
+      </Unit172>
+      <Unit173>
+        <Filename Value="//lazarus/lcl/forms.pp"/>
         <UnitName Value="Forms"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="594"/>
         <CursorPos X="15" Y="612"/>
         <UsageCount Value="10"/>
-      </Unit174>
-      <Unit175>
-        <Filename Value="../../../../../../../../lazarus/fpc/2.6.4/source/rtl/objpas/dateutil.inc"/>
+      </Unit173>
+      <Unit174>
+        <Filename Value="//lazarus/fpc/2.6.4/source/rtl/objpas/dateutil.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2439"/>
         <CursorPos X="3" Y="2453"/>
         <UsageCount Value="10"/>
-      </Unit175>
-      <Unit176>
+      </Unit174>
+      <Unit175>
         <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/strutils.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="152"/>
         <CursorPos X="82" Y="169"/>
         <UsageCount Value="10"/>
-      </Unit176>
-      <Unit177>
+      </Unit175>
+      <Unit176>
         <Filename Value="/usr/local/share/fpcsrc/rtl/inc/systemh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1072"/>
         <CursorPos X="11" Y="1089"/>
         <UsageCount Value="10"/>
-      </Unit177>
-      <Unit178>
-        <Filename Value="../../../../../../../../lazarus/lcl/include/customform.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2058"/>
-        <CursorPos Y="2076"/>
-        <UsageCount Value="10"/>
-      </Unit178>
-      <Unit179>
-        <Filename Value="../../../../../../../../lazarus/components/tachart/tacustomseries.pas"/>
-        <UnitName Value="TACustomSeries"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="204"/>
-        <CursorPos X="14" Y="221"/>
-        <UsageCount Value="10"/>
-      </Unit179>
-      <Unit180>
-        <Filename Value="../../../../../../../../lazarus/fpc/3.0.0/source/packages/rtl-objpas/src/inc/strutils.pp"/>
+      </Unit176>
+      <Unit177>
+        <Filename Value="//lazarus/fpc/3.0.0/source/packages/rtl-objpas/src/inc/strutils.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="151"/>
         <CursorPos X="82" Y="169"/>
         <UsageCount Value="10"/>
-      </Unit180>
-      <Unit181>
-        <Filename Value="../../../../../../../../lazarus/fpc/3.0.0/source/rtl/objpas/sysutils/sysstrh.inc"/>
+      </Unit177>
+      <Unit178>
+        <Filename Value="//lazarus/fpc/3.0.0/source/rtl/objpas/sysutils/sysstrh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="226"/>
         <CursorPos X="3" Y="244"/>
         <UsageCount Value="10"/>
-      </Unit181>
+      </Unit178>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1027" Column="20" TopLine="1011"/>
+        <Caret Line="267" TopLine="238"/>
       </Position1>
       <Position2>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="182" Column="19" TopLine="169"/>
+        <Caret Line="268" TopLine="238"/>
       </Position2>
       <Position3>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="258" Column="12" TopLine="238"/>
+        <Caret Line="267" TopLine="238"/>
       </Position3>
       <Position4>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="259" Column="17" TopLine="238"/>
+        <Caret Line="245" Column="46" TopLine="222"/>
       </Position4>
       <Position5>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="258" Column="34" TopLine="238"/>
+        <Caret Line="659" Column="34" TopLine="640"/>
       </Position5>
       <Position6>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="259" TopLine="238"/>
+        <Caret Line="874" Column="12" TopLine="856"/>
       </Position6>
       <Position7>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="264" TopLine="238"/>
+        <Caret Line="979" Column="5" TopLine="960"/>
       </Position7>
       <Position8>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="265" TopLine="238"/>
+        <Caret Line="978" Column="22" TopLine="965"/>
       </Position8>
       <Position9>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="267" TopLine="238"/>
+        <Caret Line="979" Column="9" TopLine="965"/>
       </Position9>
       <Position10>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="268" TopLine="238"/>
+        <Caret Line="982" Column="12" TopLine="965"/>
       </Position10>
       <Position11>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="267" TopLine="238"/>
+        <Caret Line="983" Column="26" TopLine="965"/>
       </Position11>
       <Position12>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="245" Column="46" TopLine="222"/>
+        <Caret Line="985" Column="9" TopLine="965"/>
       </Position12>
       <Position13>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="659" Column="34" TopLine="640"/>
+        <Caret Line="141" Column="8" TopLine="123"/>
       </Position13>
       <Position14>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="874" Column="12" TopLine="856"/>
+        <Caret Line="773" Column="12" TopLine="743"/>
       </Position14>
       <Position15>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="979" Column="5" TopLine="960"/>
+        <Caret Line="778" Column="12" TopLine="748"/>
       </Position15>
       <Position16>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="978" Column="22" TopLine="965"/>
+        <Caret Line="783" Column="12" TopLine="753"/>
       </Position16>
       <Position17>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="979" Column="9" TopLine="965"/>
+        <Caret Line="788" Column="12" TopLine="758"/>
       </Position17>
       <Position18>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="982" Column="12" TopLine="965"/>
+        <Caret Line="793" Column="12" TopLine="763"/>
       </Position18>
       <Position19>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="983" Column="26" TopLine="965"/>
+        <Caret Line="979" Column="9" TopLine="949"/>
       </Position19>
       <Position20>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="985" Column="9" TopLine="965"/>
+        <Caret Line="982" Column="12" TopLine="952"/>
       </Position20>
       <Position21>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="141" Column="8" TopLine="123"/>
+        <Caret Line="983" Column="26" TopLine="953"/>
       </Position21>
       <Position22>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="773" Column="12" TopLine="743"/>
+        <Caret Line="1101" Column="86" TopLine="1088"/>
       </Position22>
       <Position23>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="778" Column="12" TopLine="748"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="2"/>
       </Position23>
       <Position24>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="783" Column="12" TopLine="753"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="24" Column="3" TopLine="11"/>
       </Position24>
       <Position25>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="788" Column="12" TopLine="758"/>
+        <Filename Value="aboutdialog.pas"/>
+        <Caret Line="10" Column="46" TopLine="157"/>
       </Position25>
       <Position26>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="793" Column="12" TopLine="763"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="2"/>
       </Position26>
       <Position27>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="979" Column="9" TopLine="949"/>
+        <Filename Value="aboutdialog.pas"/>
+        <Caret Line="27" Column="27" TopLine="12"/>
       </Position27>
       <Position28>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="982" Column="12" TopLine="952"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="35" Column="22" TopLine="11"/>
       </Position28>
       <Position29>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="983" Column="26" TopLine="953"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="83" Column="34" TopLine="68"/>
       </Position29>
       <Position30>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1101" Column="86" TopLine="1088"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="2" Column="9"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
