@@ -61,6 +61,7 @@ type
     ChartToolset1ZoomMouseWheelTool1: TZoomMouseWheelTool;
     CheckGroup1: TCheckGroup;
     ResetButton: TSpeedButton;
+    TableButton: TSpeedButton;
     TT4ColorBox: TColorBox;
     Divider1: TMenuItem;
     CutItem: TMenuItem;
@@ -543,7 +544,7 @@ end;
 procedure DrawOWSensitivityPlot(empty: boolean);
 {Plots sensitivity analysis results}
 const
-  max_i = 100;
+  max_i = 100; // resolution of curves
 var
   i: integer;
   interval: real;
