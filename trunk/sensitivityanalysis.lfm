@@ -426,6 +426,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
     }
+    Visible = False
     OnClick = TableButtonClick
     ShowCaption = False
     ShowHint = True

@@ -307,12 +307,12 @@ object SimThyrLogWindow: TSimThyrLogWindow
     AC418CC3AC418CC3AC41CCE3AC41CDF3AC41EFFFAC41FFFFAC41
   }
   OnActivate = FormActivate
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.0.4'
   Visible = True
   object ValuesGrid: TStringGrid
     Cursor = crIBeam
     Left = 0
-    Height = 279
+    Height = 271
     Hint = 'Simulated behavioural parameters of thyroid homeostasis'
     Top = 0
     Width = 688
@@ -380,9 +380,9 @@ object SimThyrLogWindow: TSimThyrLogWindow
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
+    Height = 23
     Hint = 'Number of iterations and time resolution'
-    Top = 279
+    Top = 271
     Width = 688
     Panels = <    
       item
