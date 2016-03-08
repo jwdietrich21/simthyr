@@ -21,10 +21,10 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, Spin, Buttons, ExtCtrls, ColorBox, ComCtrls, TAGraph, TASources,
-  TATools, TASeries, TATransformations, TAStyles, TALegendPanel, SimThyrTypes,
-  SimThyrServices, SimThyrPrediction, Clipbrd, Menus, LCLVersion, Grids,
-  StrUtils, TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas,
-  TANavigation, UnitConverter, Types;
+  TATools, TASeries, TATransformations, TAStyles, TALegendPanel, Clipbrd, Menus,
+  LCLVersion, Grids, StrUtils, TAIntervalSources, TADrawerSVG, TADrawUtils,
+  TADrawerCanvas, TANavigation, SimThyrTypes, SimThyrServices,
+  SimThyrPrediction, UnitConverter, Types;
 
 const
   MAX_SERIES = 8;
@@ -44,6 +44,13 @@ const
   BETAT_FACTOR = 1e6;
   TBG_FACTOR = 1e9;
   TBPA_FACTOR = 1e6;
+  PAR_COL = 0;
+  TSH_COL = 1;
+  TT4_COL = 2;
+  FT4_COL = 3;
+  TT3_COL = 4;
+  FT3_COL = 5;
+  cT3_COL = 6;
 
 type
 
@@ -124,8 +131,9 @@ var
   SensitivityAnalysisForm: TSensitivityAnalysisForm;
   StoredParameters: TStoredParameters;
   FLine: array[0..MAX_SERIES] of TLineSeries;
-  SeriesCount: integer;
   gMinXPar, gMaxXPar, gSpinFactor: real;
+  gSensitivityMatrix: tResultMatrix;
+  gCurLine: integer;
 
 procedure SaveStrucPars;
 procedure RestoreStrucPars;
@@ -470,6 +478,7 @@ end;
 procedure DrawCurves(xPar: real);
 {Draws the curves in dependence from the independent parameter xPar}
 var
+  SeriesCount: integer;
   FT4conversionFactor, FT3conversionFactor: real;
   TT4conversionFactor, TT3conversionFactor, cT3conversionFactor: real;
 begin
@@ -479,10 +488,13 @@ begin
   TT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l', gParameterUnit[TT3_pos]);
   FT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l', gParameterUnit[FT3_pos]);
   cT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l', gParameterUnit[cT3_pos]);
+  gSensitivityMatrix[gCurLine, PAR_COL] := xPar;
   if SensitivityAnalysisForm.CheckGroup1.Checked[0] then
   begin
     {TSH}
-    FLine[1].AddXY(xPar, gActiveModel.Equilibrium.TSH1 * gParameterFactor[TSH_pos], '',
+    gSensitivityMatrix[gCurLine, TSH_COL] :=
+      gActiveModel.Equilibrium.TSH1 * gParameterFactor[TSH_pos];
+    FLine[1].AddXY(xPar, gSensitivityMatrix[gCurLine, TSH_COL], '',
       SensitivityAnalysisForm.TSHColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'TSH' + ': ' + gParameterUnit[TSH_pos];
@@ -492,7 +504,9 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[1] then
   begin
     {TT4}
-    FLine[5].AddXY(xPar, gActiveModel.Equilibrium.T41 * TT4conversionFactor, '',
+    gSensitivityMatrix[gCurLine, TT4_COL] :=
+      gActiveModel.Equilibrium.T41 * TT4conversionFactor;
+    FLine[5].AddXY(xPar, gSensitivityMatrix[gCurLine, TT4_COL], '',
       SensitivityAnalysisForm.TT4ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'TT4' + ': ' + gParameterUnit[TT4_pos];
@@ -502,7 +516,9 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[2] then
   begin
     {FT4}
-    FLine[2].AddXY(xPar, gActiveModel.Equilibrium.FT41 * FT4conversionFactor, '',
+    gSensitivityMatrix[gCurLine, FT4_COL] :=
+      gActiveModel.Equilibrium.FT41 * FT4conversionFactor;
+    FLine[2].AddXY(xPar, gSensitivityMatrix[gCurLine, FT4_COL], '',
       SensitivityAnalysisForm.FT4ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'FT4' + ': ' + gParameterUnit[FT4_pos];
@@ -512,7 +528,9 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[3] then
   begin
     {TT3}
-    FLine[6].AddXY(xPar, gActiveModel.Equilibrium.T31 * TT3conversionFactor, '',
+    gSensitivityMatrix[gCurLine, TT3_COL] :=
+      gActiveModel.Equilibrium.T31 * TT3conversionFactor;
+    FLine[6].AddXY(xPar, gSensitivityMatrix[gCurLine, TT3_COL], '',
       SensitivityAnalysisForm.TT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'TT3' + ': ' + gParameterUnit[TT3_pos];
@@ -522,7 +540,9 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[4] then
   begin
     {FT3}
-    FLine[3].AddXY(xPar, gActiveModel.Equilibrium.FT31 * FT3conversionFactor, '',
+    gSensitivityMatrix[gCurLine, FT3_COL] :=
+      gActiveModel.Equilibrium.FT31 * FT3conversionFactor;
+    FLine[3].AddXY(xPar, gSensitivityMatrix[gCurLine, FT3_COL], '',
       SensitivityAnalysisForm.FT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'FT3' + ': ' + gParameterUnit[FT3_pos];
@@ -532,7 +552,9 @@ begin
   if SensitivityAnalysisForm.CheckGroup1.Checked[5] then
   begin
     {cT3}
-    FLine[4].AddXY(xPar, gActiveModel.Equilibrium.T3z1 * cT3conversionFactor, '',
+    gSensitivityMatrix[gCurLine, cT3_COL] :=
+      gActiveModel.Equilibrium.T3z1 * cT3conversionFactor;
+    FLine[4].AddXY(xPar, gSensitivityMatrix[gCurLine, cT3_COL], '',
       SensitivityAnalysisForm.cT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
       'cT3' + ': ' + gParameterUnit[cT3_pos];
@@ -541,6 +563,113 @@ begin
   end;
   if SeriesCount > 1 then
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameters';
+  inc(gCurLine);
+end;
+
+procedure FillCheckGrid;
+var
+  i, SeriesCount: integer;
+begin
+  SeriesCount := 0;
+  SensitivityAnalysisForm.CheckGrid.Clean;
+  GridRows := 2;
+  if gCurLine > GridRows then
+    SensitivityAnalysisForm.CheckGrid.RowCount := gCurLine + 1
+  else
+    SensitivityAnalysisForm.CheckGrid.RowCount := GridRows;
+  SensitivityAnalysisForm.CheckGrid.Cells[0, 0] := 'n';
+  for i := 1 to gCurLine do
+  begin
+    SensitivityAnalysisForm.CheckGrid.Cells[0, i] := IntToStr(i);
+  end;
+  if SensitivityAnalysisForm.StrucParCombo.ItemIndex > 0 then
+    begin
+      SensitivityAnalysisForm.CheckGrid.Cells[1, 0] :=
+      SensitivityAnalysisForm.StrucParCombo.Caption;
+      for i := 1 to gCurLine do
+        SensitivityAnalysisForm.CheckGrid.Cells[1, i] :=
+          FloatToStrF(gSensitivityMatrix[i - 1, PAR_COL], ffGeneral, 4, 0);
+    end
+  else
+    SensitivityAnalysisForm.CheckGrid.Cells[1, 0] := '';
+  if SensitivityAnalysisForm.CheckGroup1.Checked[0] then
+  begin
+    {TSH}
+    Inc(SeriesCount);
+    if SeriesCount > SensitivityAnalysisForm.CheckGrid.ColCount - 2 then
+      SensitivityAnalysisForm.CheckGrid.ColCount := SeriesCount + 2;
+    SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, 0] := 'TSH';
+    for i := 1 to gCurLine do
+    begin
+      SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, i] :=
+        FloatToStrF(gSensitivityMatrix[i - 1, TSH_COL], ffGeneral, 4, 0);
+    end;
+  end;
+  if SensitivityAnalysisForm.CheckGroup1.Checked[1] then
+  begin
+    {TT4}
+    Inc(SeriesCount);
+    if SeriesCount > SensitivityAnalysisForm.CheckGrid.ColCount - 2 then
+      SensitivityAnalysisForm.CheckGrid.ColCount := SeriesCount + 2;
+    SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, 0] := 'TT4';
+    for i := 1 to gCurLine do
+    begin
+      SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, i] :=
+        FloatToStrF(gSensitivityMatrix[i - 1, TT4_COL], ffGeneral, 4, 0);
+    end;
+  end;
+  if SensitivityAnalysisForm.CheckGroup1.Checked[2] then
+  begin
+    {FT4}
+    Inc(SeriesCount);
+    if SeriesCount > SensitivityAnalysisForm.CheckGrid.ColCount - 2 then
+      SensitivityAnalysisForm.CheckGrid.ColCount := SeriesCount + 2;
+    SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, 0] := 'FT4';
+    for i := 1 to gCurLine do
+    begin
+      SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, i] :=
+        FloatToStrF(gSensitivityMatrix[i - 1, FT4_COL], ffGeneral, 4, 0);
+    end;
+   end;
+  if SensitivityAnalysisForm.CheckGroup1.Checked[3] then
+  begin
+    {TT3}
+    Inc(SeriesCount);
+    if SeriesCount > SensitivityAnalysisForm.CheckGrid.ColCount - 2 then
+      SensitivityAnalysisForm.CheckGrid.ColCount := SeriesCount + 2;
+    SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, 0] := 'TT3';
+    for i := 1 to gCurLine do
+    begin
+      SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, i] :=
+        FloatToStrF(gSensitivityMatrix[i - 1, TT3_COL], ffGeneral, 4, 0);
+    end;
+  end;
+  if SensitivityAnalysisForm.CheckGroup1.Checked[4] then
+  begin
+    {FT3}
+    Inc(SeriesCount);
+    if SeriesCount > SensitivityAnalysisForm.CheckGrid.ColCount - 2 then
+      SensitivityAnalysisForm.CheckGrid.ColCount := SeriesCount + 2;
+    SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, 0] := 'FT3';
+    for i := 1 to gCurLine do
+    begin
+      SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, i] :=
+        FloatToStrF(gSensitivityMatrix[i - 1, FT3_COL], ffGeneral, 4, 0);
+    end;
+  end;
+  if SensitivityAnalysisForm.CheckGroup1.Checked[5] then
+  begin
+    {cT3}
+    Inc(SeriesCount);
+    if SeriesCount > SensitivityAnalysisForm.CheckGrid.ColCount - 2 then
+      SensitivityAnalysisForm.CheckGrid.ColCount := SeriesCount + 2;
+    SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, 0] := 'cT3';
+    for i := 1 to gCurLine do
+    begin
+      SensitivityAnalysisForm.CheckGrid.Cells[SeriesCount + 1, i] :=
+        FloatToStrF(gSensitivityMatrix[i - 1, cT3_COL], ffGeneral, 4, 0);
+    end;
+  end;
 end;
 
 procedure DrawOWSensitivityPlot(empty: boolean);
@@ -551,6 +680,9 @@ var
   i: integer;
   interval: real;
 begin
+  SetLength(gSensitivityMatrix, 0, 7);     // empty matrix
+  SetLength(gSensitivityMatrix, max_i + 1, 7); // and create new matrix of correct size
+  gCurLine := 0;
   {If line series exists it is cleared and recreated to support foundations of redrawing}
   if FLine[1] <> nil then
     SensitivityAnalysisForm.Chart1.ClearSeries;
@@ -708,6 +840,7 @@ begin
   end;
   for i := 0 to MAX_SERIES do
     FLine[i].EndUpdate;
+  FillCheckGrid;
 end;
 
 { TSensitivityAnalysisForm }
