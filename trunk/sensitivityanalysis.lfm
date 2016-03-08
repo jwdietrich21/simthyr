@@ -25,14 +25,15 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     AutoEdit = False
     AutoFillColumns = True
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goDblClickAutoSize, goSmoothScroll]
+    RowCount = 13
     TabOrder = 11
     Visible = False
     ColWidths = (
       64
-      89
-      89
-      89
-      91
+      85
+      85
+      85
+      86
     )
   end
   object Panel1: TPanel
@@ -330,7 +331,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Anchors = [akTop, akRight]
     ItemHeight = 16
     OnChange = TT4ColorBoxChange
-    TabOrder = 8
+    TabOrder = 7
   end
   object TT3ColorBox: TColorBox
     Left = 598
@@ -342,7 +343,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Anchors = [akTop, akRight]
     ItemHeight = 16
     OnChange = TT3ColorBoxChange
-    TabOrder = 9
+    TabOrder = 8
   end
   object ChartNavPanel1: TChartNavPanel
     Left = 16
@@ -446,6 +447,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
     }
     OnClick = TableButtonClick
+    ShowCaption = False
     ShowHint = True
     ParentShowHint = False
   end

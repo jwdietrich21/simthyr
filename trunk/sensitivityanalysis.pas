@@ -852,7 +852,16 @@ end;
 
 procedure TSensitivityAnalysisForm.TableButtonClick(Sender: TObject);
 begin
-
+  if not CheckGrid.Visible then
+  begin
+    CheckGrid.Visible := true;
+    Chart1.Visible := false;
+  end
+  else
+  begin
+    CheckGrid.Visible := false;
+    Chart1.Visible := true;
+  end;
 end;
 
 procedure TSensitivityAnalysisForm.TSHColorBoxChange(Sender: TObject);
