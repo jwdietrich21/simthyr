@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="669"/>
+      <BuildNr Value="670"/>
       <Attributes pvaDebug="True" pvaPreRelease="True"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2016 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
     </VersionInfo>
@@ -757,7 +757,8 @@
         <UnitName Value="Sensitivityanalysis"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="25"/>
-        <CursorPos Y="2"/>
+        <TopLine Value="722"/>
+        <CursorPos X="95" Y="735"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="1"/>
@@ -1321,121 +1322,121 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="982" Column="12" TopLine="965"/>
+        <Caret Line="985" Column="9" TopLine="965"/>
       </Position1>
       <Position2>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="983" Column="26" TopLine="965"/>
+        <Caret Line="141" Column="8" TopLine="123"/>
       </Position2>
       <Position3>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="985" Column="9" TopLine="965"/>
+        <Caret Line="773" Column="12" TopLine="743"/>
       </Position3>
       <Position4>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="141" Column="8" TopLine="123"/>
+        <Caret Line="778" Column="12" TopLine="748"/>
       </Position4>
       <Position5>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="773" Column="12" TopLine="743"/>
+        <Caret Line="783" Column="12" TopLine="753"/>
       </Position5>
       <Position6>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="778" Column="12" TopLine="748"/>
+        <Caret Line="788" Column="12" TopLine="758"/>
       </Position6>
       <Position7>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="783" Column="12" TopLine="753"/>
+        <Caret Line="793" Column="12" TopLine="763"/>
       </Position7>
       <Position8>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="788" Column="12" TopLine="758"/>
+        <Caret Line="979" Column="9" TopLine="949"/>
       </Position8>
       <Position9>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="793" Column="12" TopLine="763"/>
+        <Caret Line="982" Column="12" TopLine="952"/>
       </Position9>
       <Position10>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="979" Column="9" TopLine="949"/>
+        <Caret Line="983" Column="26" TopLine="953"/>
       </Position10>
       <Position11>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="982" Column="12" TopLine="952"/>
+        <Caret Line="1101" Column="86" TopLine="1088"/>
       </Position11>
       <Position12>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="983" Column="26" TopLine="953"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="2"/>
       </Position12>
       <Position13>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1101" Column="86" TopLine="1088"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="24" Column="3" TopLine="11"/>
       </Position13>
       <Position14>
-        <Filename Value="simthyrservices.pas"/>
+        <Filename Value="handlepreferences.pas"/>
         <Caret Line="2"/>
       </Position14>
       <Position15>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="24" Column="3" TopLine="11"/>
-      </Position15>
-      <Position16>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="2"/>
-      </Position16>
-      <Position17>
         <Filename Value="aboutdialog.pas"/>
         <Caret Line="27" Column="27" TopLine="12"/>
+      </Position15>
+      <Position16>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="35" Column="22" TopLine="11"/>
+      </Position16>
+      <Position17>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="83" Column="34" TopLine="68"/>
       </Position17>
       <Position18>
         <Filename Value="simthyrservices.pas"/>
-        <Caret Line="35" Column="22" TopLine="11"/>
+        <Caret Line="2" Column="24"/>
       </Position18>
       <Position19>
         <Filename Value="simthyrservices.pas"/>
-        <Caret Line="83" Column="34" TopLine="68"/>
+        <Caret Line="103" Column="25" TopLine="92"/>
       </Position19>
       <Position20>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="2" Column="24"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Column="94"/>
       </Position20>
       <Position21>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="103" Column="25" TopLine="92"/>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="953" TopLine="921"/>
       </Position21>
       <Position22>
         <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Column="94"/>
+        <Caret Line="188" TopLine="188"/>
       </Position22>
       <Position23>
         <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="953" TopLine="921"/>
+        <Caret Line="86" TopLine="86"/>
       </Position23>
       <Position24>
         <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="188" TopLine="188"/>
       </Position24>
       <Position25>
         <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="86" TopLine="86"/>
+        <Caret Line="922" Column="51" TopLine="922"/>
       </Position25>
       <Position26>
         <Filename Value="sensitivityanalysis.pas"/>
       </Position26>
       <Position27>
         <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="922" Column="51" TopLine="922"/>
+        <Caret Line="683" TopLine="650"/>
       </Position27>
       <Position28>
         <Filename Value="sensitivityanalysis.pas"/>
+        <Caret Line="2"/>
       </Position28>
       <Position29>
         <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="683" TopLine="650"/>
+        <Caret Line="852" Column="100" TopLine="843"/>
       </Position29>
       <Position30>
         <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="2"/>
+        <Caret Line="724" Column="3" TopLine="721"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

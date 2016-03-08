@@ -22,9 +22,9 @@ uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, Spin, Buttons, ExtCtrls, ColorBox, ComCtrls, TAGraph, TASources,
   TATools, TASeries, TATransformations, TAStyles, TALegendPanel, SimThyrTypes,
-  SimThyrServices, SimThyrPrediction, Clipbrd, Menus, LCLVersion, StrUtils,
-  TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas, TANavigation,
-  UnitConverter, Types;
+  SimThyrServices, SimThyrPrediction, Clipbrd, Menus, LCLVersion, Grids,
+  StrUtils, TAIntervalSources, TADrawerSVG, TADrawUtils, TADrawerCanvas,
+  TANavigation, UnitConverter, Types;
 
 const
   MAX_SERIES = 8;
@@ -59,6 +59,7 @@ type
     ChartToolset1DataPointClickTool1: TDataPointClickTool;
     ChartToolset1ZoomDragTool1: TZoomDragTool;
     ChartToolset1ZoomMouseWheelTool1: TZoomMouseWheelTool;
+    CheckGrid: TStringGrid;
     CheckGroup1: TCheckGroup;
     ResetButton: TSpeedButton;
     TableButton: TSpeedButton;
@@ -98,6 +99,7 @@ type
     procedure PasteItemClick(Sender: TObject);
     procedure ResetButtonClick(Sender: TObject);
     procedure StrucParComboChange(Sender: TObject);
+    procedure TableButtonClick(Sender: TObject);
     procedure TSHColorBoxChange(Sender: TObject);
     procedure CopyChart;
     procedure SaveChart;
@@ -846,6 +848,11 @@ begin
     DrawOWSensitivityPlot(False);
     SensitivityAnalysisForm.StrucParCombo.Enabled := true;
   end;
+end;
+
+procedure TSensitivityAnalysisForm.TableButtonClick(Sender: TObject);
+begin
+
 end;
 
 procedure TSensitivityAnalysisForm.TSHColorBoxChange(Sender: TObject);
