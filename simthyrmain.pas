@@ -52,6 +52,7 @@ type
     Divider_3_4: TMenuItem;
     EquiDiagItem: TMenuItem;
     AnnotationItem: TMenuItem;
+    SavePictureDialog2: TSavePictureDialog;
     ToolbarImageList:   TImageList;
     SimThyrLabel: TLabel;
     MacAboutItem: TMenuItem;
@@ -579,6 +580,14 @@ begin
         i := SimThyrLogWindow.ValuesGrid.ColCount;
         j := SimThyrLogWindow.ValuesGrid.RowCount;
         SimThyrLogWindow.ValuesGrid.Selection := Rect(1,1,i,j);
+      end
+  else if (((theForm = SensitivityAnalysisForm) or ((theForm = SimThyrToolbar) and
+      (gLastActiveCustomForm = SensitivityAnalysisForm))) and
+      SensitivityAnalysisForm.CheckGrid.Visible) then
+      begin
+        i := SensitivityAnalysisForm.CheckGrid.ColCount;
+        j := SensitivityAnalysisForm.CheckGrid.RowCount;
+        SensitivityAnalysisForm.CheckGrid.Selection := Rect(1,1,i,j);
       end
   else if (theForm = Prediction) or ((theForm = SimThyrToolbar) and
       (gLastActiveCustomForm = Prediction)) then

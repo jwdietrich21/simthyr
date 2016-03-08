@@ -121,72 +121,11 @@ procedure TSimThyrLogWindow.SaveGrid(theFileName: String; theDelimiter: Char);
 {saves the contents of the log window}
 {file type and, where applicable, delimiter are defined by variable theDelimiter}
 var
-  theString: String;
-  r, c: integer;
-  theContents: TStringList;
-  doc: TDIFDocument;
   theCode: integer;
 begin
-  if theDelimiter = 'd' then
-  begin {DIF file handling}
-    theCode := 0;
+  SaveGridToFile(SimThyrLogWindow.ValuesGrid, theFileName, theDelimiter, theCode);
+  if theCode = 0 then
     SetFileName(SimThyrLogWindow, theFileName);
-    try
-      doc := TDIFDocument.Create;
-      doc.SetHead('SimThyr');
-
-      doc.NewTuple;
-      theString := '';
-      for c := 1 to SimThyrLogWindow.ValuesGrid.ColCount - 1 do
-      begin
-        theString := SimThyrLogWindow.ValuesGrid.Cells[c, 0];
-        Doc.AppendCell(theString);
-      end;
-      for r := 1 to SimThyrLogWindow.ValuesGrid.RowCount - 1 do
-        begin
-          doc.NewTuple;
-          theString := '';
-          for c := 1 to SimThyrLogWindow.ValuesGrid.ColCount - 1 do
-            begin
-              theString := SimThyrLogWindow.ValuesGrid.Cells[c, r];
-              Doc.AppendCell(theString);
-            end;
-        end;
-
-      WriteDIFFile(doc, theFileName, theCode);
-      if theCode <> 0 then ShowSaveError;
-    finally
-      doc.Free;
-    end;
-  end
-  else if theDelimiter <> ' ' then {tab delimited and CSV files}
-  begin
-    theContents := TStringList.Create;
-    SetFileName(SimThyrLogWindow, theFileName);
-    theString := '';
-    for c := 1 to SimThyrLogWindow.ValuesGrid.ColCount - 1 do
-      theString := theString + SimThyrLogWindow.ValuesGrid.Cells[c, 0] + theDelimiter;
-    theContents.Add(theString);
-    for r := 1 to SimThyrLogWindow.ValuesGrid.RowCount - 1 do
-    begin
-      theString := '';
-      for c := 1 to SimThyrLogWindow.ValuesGrid.ColCount - 1 do
-        theString := theString + SimThyrLogWindow.ValuesGrid.Cells[c, r] + theDelimiter;
-      theContents.Add(theString);
-    end;
-    try
-      try
-        theContents.SaveToFile(theFileName);
-      except
-        on Ex: EFCreateError do
-        ShowMessage(SAVE_ERROR_MESSAGE);
-      end;
-    finally
-    theContents.Free;
-    end;
-  end
-  else
-    ShowSaveError;
 end;
 
 procedure TSimThyrLogWindow.ValuesGridGetCellHint(Sender: TObject; ACol,

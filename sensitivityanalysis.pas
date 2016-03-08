@@ -110,6 +110,7 @@ type
     procedure TSHColorBoxChange(Sender: TObject);
     procedure CopyChart;
     procedure SaveChart;
+    procedure SaveGrid(theFileName: String; theDelimiter: Char);
     procedure TT3ColorBoxChange(Sender: TObject);
     procedure TT4ColorBoxChange(Sender: TObject);
     procedure UndoItemClick(Sender: TObject);
@@ -1052,11 +1053,12 @@ begin
   else
   begin
     theStream := nil;
-    SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
-    if SimThyrToolbar.SavePictureDialog1.Execute then
+    SimThyrToolbar.SavePictureDialog2.FilterIndex := 2;
+    SimThyrToolbar.SavePictureDialog2.FileName := '';
+    if SimThyrToolbar.SavePictureDialog2.Execute then
       try
-        theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
-        theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
+        theFileName    := SimThyrToolbar.SavePictureDialog2.FileName;
+        theFilterIndex := SimThyrToolbar.SavePictureDialog2.FilterIndex;
          {$IFDEF LCLcarbon}{compensates for a bug in older versions of carbon widgetset}
            if (lcl_major < 2) and (lcl_minor < 2) then
              theFilterIndex := theFilterIndex + 1;
@@ -1075,12 +1077,27 @@ begin
              with Chart1 do
                Draw(theDrawer, Rect(0, 0, Width, Height));
            end;
+        9: SaveGrid(theFileName, 't');
+        10: SaveGrid(theFilename, 'c');
+        11: SaveGrid(theFileName, 'd');
         otherwise bell;
         end;
       finally
         if theStream <> nil then theStream.Free;
       end;
   end;
+end;
+
+procedure TSensitivityAnalysisForm.SaveGrid(theFileName: String;
+  theDelimiter: Char);
+{saves the contents of the table of values}
+{file type and, where applicable, delimiter are defined by variable theDelimiter}
+var
+  theCode: integer;
+begin
+  SaveGridToFile(CheckGrid, theFileName, theDelimiter, theCode);
+  if theCode = 0 then
+    SetFileName(self, theFileName);
 end;
 
 procedure TSensitivityAnalysisForm.TT3ColorBoxChange(Sender: TObject);

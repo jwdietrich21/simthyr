@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, Grids, StdCtrls, Dialogs, Forms, SimThyrTypes,
-  SimThyrResources, UnitConverter, DOM, XMLRead, FileUtil, DateUtils
+  SimThyrResources, UnitConverter, DIFSupport, DOM, XMLRead, FileUtil, DateUtils
   {$IFDEF WINDOWS}
   , Windows, Win32Proc
   {$ENDIF}
@@ -59,6 +59,8 @@ function SimpleNode(Doc: TXMLDocument; Name, Value: string): TDOMNode;
 procedure ClearResultContents(var theContents: tResultContent);
 procedure writeaTableCell(theTable: TStringGrid; theCell: TableCell; theString: Str255);
 procedure writeTableCells(theTable: TStringGrid; theContents: tResultContent);
+procedure SaveGridToFile(theTable: TStringGrid; theFileName: string;
+  theDelimiter: char; var ReturnCode: integer);
 procedure SetStatusBarPanel0(curr, max: string);
 procedure writeaMemoLine(theMemo: TMemo; theString: Str255);
 procedure SetFileName(theForm: TForm; const FileName: string);
@@ -102,7 +104,7 @@ begin
     OSVersion := 'Windows Vista '
   else if WindowsVersion = wv7 then
     OSVersion := 'Windows 7 '
-  {$if FPC_FULlVERSION >= 30000} {Free Pascal 3.0 or newer}
+  {$if FPC_FULlVERSION >= 30000}{Free Pascal 3.0 or newer}
   else if WindowsVersion = wv8 then
     OSVersion := 'Windows 8 '
   else if WindowsVersion = wv8_1 then
@@ -293,6 +295,87 @@ begin
     writeaTableCell(theTable, theCell, theString);
   end;
 end;
+
+procedure SaveGridToFile(theTable: TStringGrid; theFileName: string;
+  theDelimiter: char; var ReturnCode: integer);
+ {saves the contents of a string grid}
+ {file type and, where applicable, delimiter are defined by variable theDelimiter}
+var
+  theString: string;
+  r, c:    integer;
+  theContents: TStringList;
+  doc:     TDIFDocument;
+  theCode: integer;
+begin
+  if theDelimiter = 'd' then
+  begin {DIF file handling}
+    theCode := 0;
+    try
+      doc := TDIFDocument.Create;
+      doc.SetHead('SimThyr');
+
+      doc.NewTuple;
+      theString := '';
+      for c := 1 to theTable.ColCount - 1 do
+      begin
+        theString := theTable.Cells[c, 0];
+        Doc.AppendCell(theString);
+      end;
+      for r := 1 to theTable.RowCount - 1 do
+      begin
+        doc.NewTuple;
+        theString := '';
+        for c := 1 to theTable.ColCount - 1 do
+        begin
+          theString := theTable.Cells[c, r];
+          Doc.AppendCell(theString);
+        end;
+      end;
+
+      WriteDIFFile(doc, theFileName, theCode);
+      if theCode <> 0 then
+        ShowSaveError;
+    finally
+      doc.Free;
+      ReturnCode := theCode;
+    end;
+  end
+  else if theDelimiter <> ' ' then {tab delimited and CSV files}
+  begin
+    ReturnCode := 0;
+    theContents := TStringList.Create;
+    theString   := '';
+    for c := 1 to theTable.ColCount - 1 do
+      theString := theString + theTable.Cells[c, 0] + theDelimiter;
+    theContents.Add(theString);
+    for r := 1 to theTable.RowCount - 1 do
+    begin
+      theString := '';
+      for c := 1 to theTable.ColCount - 1 do
+        theString := theString + theTable.Cells[c, r] + theDelimiter;
+      theContents.Add(theString);
+    end;
+    try
+      try
+        theContents.SaveToFile(theFileName);
+      except
+        on Ex: EFCreateError do
+          begin
+            ShowMessage(SAVE_ERROR_MESSAGE);
+            ReturnCode := -2;
+          end;
+      end;
+    finally
+      theContents.Free;
+    end;
+  end
+  else
+  begin
+    ShowSaveError;
+    ReturnCode := -1;
+  end;
+end;
+
 
 procedure SetStatusBarPanel0(curr, max: string);
 {updates progress indicator in status bar}

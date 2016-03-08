@@ -1,9 +1,9 @@
 object SimThyrToolbar: TSimThyrToolbar
   Left = 264
-  Height = 73
+  Height = 75
   Hint = 'Please use the icons to load or save settings and to start or stop the simulation.'
   Top = 108
-  Width = 687
+  Width = 538
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   Align = alTop
@@ -13,8 +13,8 @@ object SimThyrToolbar: TSimThyrToolbar
   AutoSize = True
   BorderStyle = bsToolWindow
   Caption = 'SimThyr'
-  ClientHeight = 73
-  ClientWidth = 687
+  ClientHeight = 55
+  ClientWidth = 538
   DefaultMonitor = dmMainForm
   DockSite = True
   Icon.Data = {
@@ -316,14 +316,14 @@ object SimThyrToolbar: TSimThyrToolbar
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.0.4'
   Visible = True
   WindowState = wsMaximized
   object ToolBar1: TToolBar
     Left = 0
     Height = 26
     Top = 0
-    Width = 687
+    Width = 538
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 0
@@ -561,10 +561,10 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SimThyrLabel: TLabel
-    Left = 605
+    Left = 457
     Height = 16
     Top = 5
-    Width = 51
+    Width = 50
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'SimThyr'
@@ -2482,7 +2482,7 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SavePictureDialog1: TSavePictureDialog
-    Filter = 'Grafik (*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif)|*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif|Bitmaps (*.bmp)|*.bmp|Pixmap (*.xpm)|*.xpm|Portable Network Graphic (*.png)|*.png|Portable PixMap (*.pbm;*.pgm;*.ppm)|*.pbm;*.pgm;*.ppm|Joint Picture Expert Group (*.jpg;*.jpeg;*.jpe;*.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Tagged Image File Format (*.tif;*.tiff)|*.tif;*.tiff|Scalable Vector Graphic|*.svg|Alle Dateien (*)|*'
+    Filter = 'Graphics (*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif)|*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif|Bitmaps (*.bmp)|*.bmp|Pixmap (*.xpm)|*.xpm|Portable Network Graphic (*.png)|*.png|Portable PixMap (*.pbm;*.pgm;*.ppm)|*.pbm;*.pgm;*.ppm|Joint Picture Expert Group (*.jpg;*.jpeg;*.jpe;*.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Tagged Image File Format (*.tif;*.tiff)|*.tif;*.tiff|Scalable Vector Graphic|*.svg|All files (*)|*'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
     left = 816
     top = 40
@@ -2496,6 +2496,13 @@ object SimThyrToolbar: TSimThyrToolbar
   object IdleTimer1: TIdleTimer
     OnTimer = IdleTimer1Timer
     left = 168
+    top = 40
+  end
+  object SavePictureDialog2: TSavePictureDialog
+    DefaultExt = '.png'
+    Filter = 'Graphics (*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif)|*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif|Bitmaps (*.bmp)|*.bmp|Pixmap (*.xpm)|*.xpm|Portable Network Graphic (*.png)|*.png|Portable PixMap (*.pbm;*.pgm;*.ppm)|*.pbm;*.pgm;*.ppm|Joint Picture Expert Group (*.jpg;*.jpeg;*.jpe;*.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Tagged Image File Format (*.tif;*.tiff)|*.tif;*.tiff|Scalable Vector Graphic|*.svg|Values (tab delimited)|*.tsv|Values (CSV)|*.csv|Values (DIF)|*.dtf|All files (*)|*'
+    Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
+    left = 904
     top = 40
   end
 end
