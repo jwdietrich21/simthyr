@@ -676,7 +676,7 @@ end;
 procedure DrawOWSensitivityPlot(empty: boolean);
 {Plots sensitivity analysis results}
 const
-  max_i = 100; // resolution of curves
+  max_i = 1000; // resolution of curves
 var
   i: integer;
   interval: real;
