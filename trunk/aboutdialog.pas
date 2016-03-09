@@ -21,7 +21,8 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, Buttons, StdCtrls, LCLIntf, ComCtrls, SimThyrTypes, SimThyrResources,
-  SimThyrServices, VersionSupport, DOS, HandlePreferences
+  SimThyrServices, VersionSupport, DOS, HandlePreferences, Sensitivityanalysis,
+  TWSensitivityanalysis
   {$IFDEF win32}
   , Windows, Win32Proc
   {$ENDIF}
@@ -171,6 +172,14 @@ begin
     AboutWindow.Memo1.Lines.Add('');
     AboutWindow.Memo1.Lines.Add('Preferences file: ' + GetPreferencesFile);
     gExtendedInfo := true;
+    if not gPigMode and
+      (MessageDlg('Start developer mode?', mtConfirmation, [mbCancel, mbYes], 0)
+      = mrYes) then
+    begin
+      gPigMode := true;
+      SensitivityAnalysisForm.TableButton.Visible := true;
+      TWSensitivityAnalysisForm.CheckToggleBox.Visible := true;
+    end;
   end
   else if (key = 87) and ((ssMeta in Shift) or (ssCtrl in Shift)) then
     self.Close;

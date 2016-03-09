@@ -1,6 +1,6 @@
 object Prediction: TPrediction
   Left = 922
-  Height = 177
+  Height = 187
   Top = 145
   Width = 350
   AlphaBlend = True
@@ -8,7 +8,7 @@ object Prediction: TPrediction
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSizeToolWin
   Caption = 'Prediction'
-  ClientHeight = 177
+  ClientHeight = 187
   ClientWidth = 350
   Color = clWhite
   Icon.Data = {
@@ -310,7 +310,7 @@ object Prediction: TPrediction
   Visible = True
   object PredictionMemo: TMemo
     Left = 16
-    Height = 148
+    Height = 158
     Hint = 'This window displays predicted values for hormone levels from a closed-loop model. Negative values are virtual solutions that result from the system''s equations.  Only the positive solution is possible in a biological sense.'
     Top = 16
     Width = 318

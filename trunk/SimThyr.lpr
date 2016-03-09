@@ -49,6 +49,7 @@ begin
   {$ENDIF}
   Application.Initialize;
   splashflag := true; {for debugging}
+  gPigMode := false;
   showSettingsAtStartup := true;
   if splashflag then begin
     SplashScreen := TSplashScreen.Create(nil);

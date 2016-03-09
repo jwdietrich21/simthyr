@@ -108,7 +108,7 @@ var
  T4UnitFactor, T3UnitFactor: array[0..MAXFACTORS - 1] of real;
  gLabel: array[1..3] of Str255;
  gMessage: array[1..3] of Str255;
- gStartup: boolean;
+ gStartup, gPigMode: boolean;
  delt: real;
  testflag, tbgflag, signalflag, previewflag, noiseflag, circadianflag: boolean;
  haltsim, runcommand, simready, splashflag, showSettingsAtStartup: boolean;
