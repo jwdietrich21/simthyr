@@ -41,7 +41,7 @@ object AboutWindow: TAboutWindow
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Version'
-      ClientHeight = 300
+      ClientHeight = 302
       ClientWidth = 425
       object Image1: TImage
         Left = 9
@@ -1148,7 +1148,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 92
-        Width = 63
+        Width = 59
         Caption = 'Version x.y.z'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -1159,7 +1159,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 118
-        Width = 73
+        Width = 71
         Caption = '© 1994 – 2016'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -1170,7 +1170,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 132
-        Width = 67
+        Width = 64
         Caption = 'J. W. Dietrich'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -1181,7 +1181,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 156
-        Width = 107
+        Width = 94
         Caption = 'In Cooperation with:'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -1192,7 +1192,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 182
-        Width = 142
+        Width = 131
         Caption = 'Klinikum der LMU München'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -1203,7 +1203,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 196
-        Width = 127
+        Width = 114
         Caption = 'Universitätsklinikum Ulm'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -1214,7 +1214,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 210
-        Width = 129
+        Width = 118
         Caption = 'Ruhr-Universität Bochum'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -1225,7 +1225,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 224
-        Width = 184
+        Width = 165
         Caption = 'Universitätsklinikum Bergmannsheil'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -1237,7 +1237,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 252
-        Width = 156
+        Width = 143
         Caption = 'simthyr.medical-cybernetics.de'
         Font.Color = clNavy
         Font.Height = -11
@@ -1251,7 +1251,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 266
-        Width = 69
+        Width = 61
         Caption = 'simthyr.sf.net'
         Font.Color = clNavy
         Font.Height = -11
@@ -1263,26 +1263,28 @@ object AboutWindow: TAboutWindow
     end
     object TabSheet2: TTabSheet
       Caption = 'Additional Information'
-      ClientHeight = 289
-      ClientWidth = 427
+      ClientHeight = 302
+      ClientWidth = 425
       object Memo1: TMemo
         Left = 26
         Height = 248
         Top = 26
         Width = 361
+        OnKeyDown = FormKeyDown
+        ReadOnly = True
         ScrollBars = ssAutoVertical
         TabOrder = 0
       end
     end
     object TabSheet3: TTabSheet
       Caption = 'Acknowledgement'
-      ClientHeight = 289
-      ClientWidth = 427
+      ClientHeight = 302
+      ClientWidth = 425
       object Label3: TLabel
         Left = 25
-        Height = 16
+        Height = 13
         Top = 10
-        Width = 333
+        Width = 275
         Caption = 'SimThyr uses the following third party resources:'
         Font.Pitch = fpVariable
         Font.Style = [fsBold]
@@ -1292,18 +1294,18 @@ object AboutWindow: TAboutWindow
       end
       object Label4: TLabel
         Left = 25
-        Height = 16
+        Height = 13
         Top = 33
-        Width = 196
+        Width = 149
         Caption = 'Silk icon set 1.3 by Mark James'
         ParentColor = False
       end
       object Label5: TLabel
         Cursor = crHandPoint
         Left = 25
-        Height = 16
+        Height = 13
         Top = 49
-        Width = 282
+        Width = 206
         Caption = 'http://www.famfamfam.com/lab/icons/silk/'
         Font.Color = clNavy
         Font.Pitch = fpVariable
@@ -1313,18 +1315,18 @@ object AboutWindow: TAboutWindow
       end
       object Label6: TLabel
         Left = 25
-        Height = 16
+        Height = 13
         Top = 72
-        Width = 118
+        Width = 89
         Caption = 'Tango Icon Library'
         ParentColor = False
       end
       object Label7: TLabel
         Cursor = crHandPoint
         Left = 25
-        Height = 16
+        Height = 13
         Top = 88
-        Width = 314
+        Width = 235
         Caption = 'http://tango.freedesktop.org/Tango_Icon_Library'
         Font.Color = clNavy
         Font.Pitch = fpVariable
@@ -1334,18 +1336,18 @@ object AboutWindow: TAboutWindow
       end
       object Label8: TLabel
         Left = 25
-        Height = 16
+        Height = 13
         Top = 111
-        Width = 250
+        Width = 185
         Caption = 'VersionSupport unit by Mike Thompson'
         ParentColor = False
       end
       object Label9: TLabel
         Cursor = crHandPoint
         Left = 25
-        Height = 16
+        Height = 13
         Top = 127
-        Width = 371
+        Width = 273
         Caption = 'http://www.lazarus.freepascal.org/index.php/topic,13957'
         Font.Color = clNavy
         Font.Pitch = fpVariable
@@ -1355,9 +1357,9 @@ object AboutWindow: TAboutWindow
       end
       object Label10: TLabel
         Left = 25
-        Height = 16
+        Height = 13
         Top = 198
-        Width = 204
+        Width = 179
         Caption = 'Scientific and technical advise:'
         Font.Pitch = fpVariable
         Font.Style = [fsBold]
@@ -1397,18 +1399,18 @@ object AboutWindow: TAboutWindow
       end
       object Label14: TLabel
         Left = 24
-        Height = 16
+        Height = 13
         Top = 150
-        Width = 107
+        Width = 84
         Caption = 'PUMA Repository'
         ParentColor = False
       end
       object Label15: TLabel
         Cursor = crHandPoint
         Left = 24
-        Height = 16
+        Height = 13
         Top = 165
-        Width = 191
+        Width = 134
         Caption = 'http://puma-repository.sf.net'
         Font.Color = clNavy
         Font.Pitch = fpVariable
