@@ -311,7 +311,7 @@ object ValuesPlot: TValuesPlot
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.0.4'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -328,12 +328,12 @@ object ValuesPlot: TValuesPlot
     OnClick = Panel1Click
     object ComboBox1: TComboBox
       Left = 655
-      Height = 21
+      Height = 23
       Hint = 'Select a parameter to show in the plot on the left.'
-      Top = 15
+      Top = 14
       Width = 146
       Anchors = [akRight]
-      ItemHeight = 0
+      ItemHeight = 15
       Items.Strings = (
         'Portal TRH'
         'Pituitary TSH'
@@ -358,8 +358,8 @@ object ValuesPlot: TValuesPlot
       Width = 591
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
-      ClientHeight = 189
-      ClientWidth = 591
+      ClientHeight = 185
+      ClientWidth = 587
       Color = clWhite
       ParentColor = False
       TabOrder = 1
@@ -368,7 +368,7 @@ object ValuesPlot: TValuesPlot
         Height = 170
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 586
+        Width = 582
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -495,7 +495,7 @@ object ValuesPlot: TValuesPlot
     TabOrder = 1
   end
   object Panel2: TPanel
-    Left = 1
+    Left = 0
     Height = 200
     Hint = 'Select parameter'
     Top = 240
@@ -515,8 +515,8 @@ object ValuesPlot: TValuesPlot
       Width = 591
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
-      ClientHeight = 190
-      ClientWidth = 591
+      ClientHeight = 186
+      ClientWidth = 587
       Color = clWhite
       ParentColor = False
       TabOrder = 0
@@ -525,7 +525,7 @@ object ValuesPlot: TValuesPlot
         Height = 170
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 586
+        Width = 582
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -574,12 +574,12 @@ object ValuesPlot: TValuesPlot
     end
     object ComboBox2: TComboBox
       Left = 656
-      Height = 21
+      Height = 23
       Hint = 'Select a parameter to show in the plot on the left.'
-      Top = 15
+      Top = 14
       Width = 146
       Anchors = [akRight]
-      ItemHeight = 0
+      ItemHeight = 15
       Items.Strings = (
         'Portal TRH'
         'Pituitary TSH'
@@ -666,8 +666,8 @@ object ValuesPlot: TValuesPlot
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
-    Top = 427
+    Height = 23
+    Top = 419
     Width = 824
     Panels = <>
   end
@@ -687,7 +687,7 @@ object ValuesPlot: TValuesPlot
   end
   object TitleEdit: TEdit
     Left = 48
-    Height = 22
+    Height = 23
     Hint = 'You may enter a title that is shown on the top of every chart here.'
     Top = 10
     Width = 448
