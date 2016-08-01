@@ -45,7 +45,7 @@ type
     RunTimeEdit: TEdit;
     GroupBox1:   TGroupBox;
     GroupBox2:   TGroupBox;
-    Label1:      TLabel;
+    TitleLabel:      TLabel;
     TestOffRadio: TRadioButton;
     TestTRHRadio: TRadioButton;
     TestTBGRadio: TRadioButton;

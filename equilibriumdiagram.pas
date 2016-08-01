@@ -24,7 +24,7 @@ uses
   Classes, SysUtils, FileUtil, TAGraph, TASources, TASeries, TATransformations,
   TANavigation, TATools, TAStyles, TAChartListbox, TAChartExtentLink,
   TAChartImageList, LResources, Forms, Controls, Graphics, Dialogs, Buttons,
-  ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus, ComboEx, Math,
+  ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus, {ComboEx,} Math,
   SimThyrTypes, SimThyrResources, Simulator, SimThyrServices, UnitConverter,
   SimThyrPrediction, Sensitivityanalysis, Types;
 
@@ -1402,4 +1402,4 @@ initialization
   gSelectedSParameter2 := NullItem;
   gSelectedSParameter2 := NullItem;
 
-end.
+end.
