@@ -385,6 +385,9 @@ begin
   else if (theForm = TornadoPlotForm) or ((theForm = SimThyrToolbar) and
     (gLastActiveCustomForm = TornadoPlotForm)) then
     TornadoPlotForm.CopyTornado
+  else if (theForm = EquilibriumDiagramForm) or ((theForm = SimThyrToolbar) and
+    (gLastActiveCustomForm = EquilibriumDiagramForm)) then
+    EquilibriumDiagramForm.CopyChart
   else
     ActionList1.Actions[2].Execute;
 end;
@@ -530,6 +533,9 @@ begin
   else if (theForm = TornadoPlotForm) or ((theForm = SimThyrToolbar) and
       (gLastActiveCustomForm = TornadoPlotForm)) then
         TornadoPlotForm.SaveChart
+  else if (theForm = EquilibriumDiagramForm) or ((theForm = SimThyrToolbar) and
+      (gLastActiveCustomForm = EquilibriumDiagramForm)) then
+        EquilibriumDiagramForm.SaveChart
   else
     begin
       if (theForm = SimThyrLogWindow) or ((theForm = SimThyrToolbar) and
