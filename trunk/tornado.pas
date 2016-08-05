@@ -19,12 +19,12 @@ unit tornado;
 interface
 
 uses
-  SimThyrTypes, SimThyrResources, Classes, SysUtils, FileUtil, LResources,
-  Forms, Controls, Graphics, Dialogs, StdCtrls, ExtCtrls, ComCtrls, Menus,
-  TAGraph, TAStyles, TASeries, TASources, TATools, TATransformations, TALegend,
-  TALegendPanel, SimThyrServices, Sensitivityanalysis, SimThyrPrediction,
+  Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
+  StdCtrls, ExtCtrls, ComCtrls, Menus, TAGraph, TAStyles, TASeries, TASources,
+  TATools, TATransformations, TALegend, TALegendPanel,
   Clipbrd, Buttons, ColorBox, TADrawerSVG, TADrawUtils, TADrawerCanvas,
-  TANavigation, LCLVersion;
+  TANavigation, LCLVersion, SimThyrServices, Sensitivityanalysis, SimThyrTypes,
+  SimThyrResources, SimThyrPrediction;
 
 type
 

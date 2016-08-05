@@ -561,10 +561,10 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SimThyrLabel: TLabel
-    Left = 461
-    Height = 17
+    Left = 457
+    Height = 16
     Top = 5
-    Width = 46
+    Width = 50
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'SimThyr'

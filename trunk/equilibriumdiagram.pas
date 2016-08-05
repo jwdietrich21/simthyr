@@ -23,14 +23,15 @@ interface
 uses
   Classes, SysUtils, FileUtil, TAGraph, TASources, TASeries, TATransformations,
   TANavigation, TATools, TAStyles, TAChartListbox, TAChartExtentLink,
-  TAChartImageList, LResources, Forms, Controls, Graphics, Dialogs, Buttons,
+  TAChartImageList, TADrawerSVG, TADrawUtils, TADrawerCanvas, LResources,
+  Forms,Controls, Graphics, Dialogs, Buttons,
   ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus, {ComboEx,} Math,
   SimThyrTypes, SimThyrResources, Simulator, SimThyrServices, UnitConverter,
   SimThyrPrediction, Sensitivityanalysis, Types;
 
 const
   MAX_SERIES   = 2;   // number of isoclines to draw
-  MAX_I        = 100; // maximum size of tParamVector for tResponseCurve
+  MAX_I        = 100; // number of samples for tResponseCurve
   MAX_PIT      = 130; // number of iterations to get pituitary nullcline
   FIRST_VALUE  = 26;  // first value to use as representative for equilibrium
   TRACK_RATIO  = 10;  // ratio to translate from paramter to track bar position
@@ -85,6 +86,7 @@ type
       APoint: TPoint);
     procedure CopyItemClick(Sender: TObject);
     procedure CopyChart;
+    procedure SaveChart;
     procedure FormActivate(Sender: TObject);
     procedure LogBox1Change(Sender: TObject);
     procedure LogBox2Change(Sender: TObject);
@@ -143,6 +145,9 @@ var
 
 implementation
 
+uses
+  SimThyrMain;
+
 procedure UpdateStrucPar(theParameter: tSParameter; theValue: real);
 { updates structure parameters after track bars have been changed }
 begin
@@ -184,8 +189,8 @@ begin
       SimPituitary(gainOfTSH, usFeedbackGain, false);
       TSHSamples[j] := TSH;
     end;
-    { calculate mean of samples in equilibrium without transient results }
-    { to compensate for oscillations resulting from ultrashort feedback }
+    { ... calculate mean of samples in equilibrium in order to ... }
+    { ... compensate for oscillations resulting from ultrashort feedback }
     Result[i] := mean(TSHSamples[FIRST_VALUE..MAX_PIT-1]);
   end;
 end;
@@ -767,6 +772,7 @@ end;
 procedure TEquilibriumDiagramForm.GetBParameters;
 { Get behavioural parameters to be inspected }
 begin
+  { Get parameter for x axis: }
   if pos(LowerCase('TSH'), LowerCase(BParCombo1.Text)) > 0 then
     begin
       gSelectedBParameter1 := TSHItem;
@@ -792,6 +798,7 @@ begin
       gSelectedBParameter1 := IItem;
       gUOM1 := '';
     end;
+  { Get parameter for y axis: }
   if pos(LowerCase('TSH'), LowerCase(BParCombo2.Text)) > 0 then
     begin
       gSelectedBParameter2 := TSHItem;
@@ -821,6 +828,7 @@ end;
 
 procedure TEquilibriumDiagramForm.SParEdit1Change(Sender: TObject);
 begin
+  { Get numeric value for structure Parameter 1 }
   UpdateTrackBarsfromEdits;
   SaveStrucPars;
   UpdateEditsfromTrackBars;
@@ -830,6 +838,7 @@ end;
 
 procedure TEquilibriumDiagramForm.SParEdit2Change(Sender: TObject);
 begin
+  { Get numeric value for structure Parameter 2 }
   UpdateTrackBarsfromEdits;
   SaveStrucPars;
   UpdateEditsfromTrackBars;
@@ -839,6 +848,7 @@ end;
 
 procedure TEquilibriumDiagramForm.SParEdit3Change(Sender: TObject);
 begin
+  { Get numeric value for structure Parameter 3 }
   UpdateTrackBarsfromEdits;
   SaveStrucPars;
   UpdateEditsfromTrackBars;
@@ -849,6 +859,7 @@ end;
 procedure TEquilibriumDiagramForm.FormActivate(Sender: TObject);
 begin
   //UpdateEditsfromTrackBars;
+  gLastActiveCustomForm := EquilibriumDiagramForm;
 end;
 
 procedure TEquilibriumDiagramForm.LogBox1Change(Sender: TObject);
@@ -895,9 +906,9 @@ end;
 procedure TEquilibriumDiagramForm.CopyChart;
 { copy chart to clipboard }
 var
-  {$IFDEF UNIX}
+  {$IFDEF UNIX} {UNIXoids, i.e. macOS, Linux, Solaris etc.}
   theImage: TPortableNetworkGraphic;
-  {$ELSE}
+  {$ELSE} {Windows and similar operating systems }
   theImage: TBitMap;
   {$ENDIF}
   theWidth, theHeight: integer;
@@ -922,6 +933,49 @@ begin
     {$ELSE}
     EquilibriumChart.CopyToClipboardBitmap;
     {$ENDIF}
+  end;
+end;
+
+procedure TEquilibriumDiagramForm.SaveChart;
+var
+  theFileName:  string;
+  theFilterIndex: integer;
+  theStream: TFileStream;
+  theDrawer: IChartDrawer;
+begin
+  if EquilibriumChart = nil then
+    bell
+  else
+  begin
+    theStream := nil;
+    SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
+    if SimThyrToolbar.SavePictureDialog1.Execute then
+      try
+        theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
+        theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
+         {$IFDEF LCLcarbon}{compensates for a bug in older versions of carbon widgetset}
+           if (lcl_major < 2) and (lcl_minor < 2) then
+             theFilterIndex := theFilterIndex + 1;
+         {$ENDIF}
+        case theFilterIndex of
+        2: EquilibriumChart.SaveToBitmapFile(theFileName);
+        3: EquilibriumChart.SaveToFile(TPixmap, theFileName);
+        4: EquilibriumChart.SaveToFile(TPortableNetworkGraphic, theFileName);
+        5: EquilibriumChart.SaveToFile(TPortableAnyMapGraphic, theFileName);
+        6: EquilibriumChart.SaveToFile(TJPEGImage, theFileName);
+        7: EquilibriumChart.SaveToFile(TTIFFImage, theFileName);
+        8: begin
+             theStream := TFileStream.Create(theFileName, fmCreate);
+             theDrawer := TSVGDrawer.Create(theStream, true);
+             theDrawer.DoChartColorToFPColor := @ChartColorSysToFPColor;
+             with EquilibriumChart do
+               Draw(theDrawer, Rect(0, 0, Width, Height));
+           end;
+        otherwise bell;
+        end;
+      finally
+        if theStream <> nil then theStream.Free;
+      end;
   end;
 end;
 
@@ -952,7 +1006,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.DrawDummyEquilibriumPlot;
-{Draws an empty plot}
+{Draws an empty plot, e.g. at program start}
 var
   i: integer;
 begin
@@ -977,7 +1031,8 @@ var
   ConversionFactor1, ConversionFactor2: real;
   max_x: real;
 begin
-  GetBParameters;
+  GetBParameters; { read, which behavioural parameters have been selected }
+  { Recalculate conversion factors, to support change of UOM on the fly: }
   gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
     gParameterUnit[FT4_pos]);
   gFT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
@@ -1066,7 +1121,7 @@ procedure TEquilibriumDiagramForm.BParCombo1Change(Sender: TObject);
 { Get selected behavioural parameter #1 }
 begin
   if BParCombo2.ItemIndex = 0 then
-    begin // set to useful initial value
+    begin // set selections to useful initial values
       if BParCombo1.ItemIndex = 1 then
         BParCombo2.ItemIndex := 2
       else
@@ -1106,7 +1161,7 @@ procedure TEquilibriumDiagramForm.BParCombo2Change(Sender: TObject);
 { Get selected behavioural parameter #2 }
 begin
   if BParCombo1.ItemIndex = 0 then
-    begin // set to useful initial value
+    begin // set selections to useful initial values
       if BParCombo2.ItemIndex = 1 then
         BParCombo1.ItemIndex := 2
       else
@@ -1402,4 +1457,4 @@ initialization
   gSelectedSParameter2 := NullItem;
   gSelectedSParameter2 := NullItem;
 
-end.
+end.

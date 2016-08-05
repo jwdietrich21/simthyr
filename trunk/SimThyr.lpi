@@ -8,13 +8,12 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
-      <ActiveWindowIndexAtStart Value="0"/>
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="693"/>
+      <BuildNr Value="697"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2016 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -48,11 +47,9 @@
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="33"/>
+        <EditorIndex Value="34"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="93" Y="6"/>
+        <CursorPos X="76" Y="10"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -63,10 +60,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
-        <EditorIndex Value="32"/>
+        <EditorIndex Value="33"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="66" Y="2"/>
+        <TopLine Value="520"/>
+        <CursorPos X="32" Y="538"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -99,11 +96,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPlot"/>
-        <EditorIndex Value="16"/>
+        <EditorIndex Value="17"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos Y="2"/>
         <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+        </ExtraEditor1>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -115,9 +114,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPrediction"/>
-        <EditorIndex Value="22"/>
+        <EditorIndex Value="23"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="100" Y="23"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -130,9 +128,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="LaunchDialog"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="20"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="104" Y="18"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -175,7 +172,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrLog"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="13"/>
         <WindowIndex Value="1"/>
         <TopLine Value="102"/>
         <CursorPos X="3" Y="126"/>
@@ -198,17 +195,18 @@
         <Filename Value="simthyrtypes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrTypes"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="25" Y="2"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
-          <EditorIndex Value="4"/>
+          <EditorIndex Value="5"/>
           <WindowIndex Value="1"/>
-          <TopLine Value="1"/>
-          <CursorPos X="1" Y="2"/>
+          <CursorPos Y="2"/>
         </ExtraEditor1>
+        <ExtraEditor2>
+          <EditorIndex Value="-1"/>
+        </ExtraEditor2>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit16>
@@ -216,11 +214,14 @@
         <Filename Value="simthyrservices.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrServices"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="11"/>
         <WindowIndex Value="1"/>
         <TopLine Value="299"/>
         <CursorPos X="3" Y="310"/>
         <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+        </ExtraEditor1>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit17>
@@ -243,10 +244,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ShowIPS"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="19"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos Y="2"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -255,18 +255,17 @@
         <Filename Value="simulator.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Simulator"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="21"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="56" Y="7"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
-          <EditorIndex Value="3"/>
+          <EditorIndex Value="4"/>
           <WindowIndex Value="1"/>
-          <TopLine Value="1"/>
-          <CursorPos X="1" Y="2"/>
+          <CursorPos Y="2"/>
         </ExtraEditor1>
         <ExtraEditor2>
+          <EditorIndex Value="-1"/>
           <TopLine Value="210"/>
           <CursorPos X="17" Y="228"/>
         </ExtraEditor2>
@@ -346,10 +345,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AboutDialog"/>
-        <EditorIndex Value="30"/>
+        <EditorIndex Value="31"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -361,9 +359,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Splash"/>
-        <EditorIndex Value="28"/>
+        <EditorIndex Value="29"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="46" Y="10"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -389,9 +386,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ShowAboutModel"/>
-        <EditorIndex Value="29"/>
+        <EditorIndex Value="30"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="5" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -512,10 +508,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="StructureParameters"/>
-        <EditorIndex Value="21"/>
+        <EditorIndex Value="22"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -525,7 +520,7 @@
         <UnitName Value="CarbonGDIObjects"/>
         <WindowIndex Value="1"/>
         <TopLine Value="1724"/>
-        <CursorPos X="1" Y="1735"/>
+        <CursorPos Y="1735"/>
         <UsageCount Value="10"/>
       </Unit58>
       <Unit59>
@@ -600,10 +595,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimOptions"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="16"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -612,9 +606,8 @@
         <Filename Value="versionsupport.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="VersionSupport"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="14"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="63" Y="5"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -623,17 +616,20 @@
         <Filename Value="scenariohandler.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ScenarioHandler"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="10"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos X="10" Y="20"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
-          <EditorIndex Value="5"/>
+          <EditorIndex Value="6"/>
           <WindowIndex Value="1"/>
-          <TopLine Value="1"/>
           <CursorPos X="9" Y="2"/>
         </ExtraEditor1>
+        <ExtraEditor2>
+          <EditorIndex Value="-1"/>
+          <TopLine Value="19"/>
+          <CursorPos X="46" Y="28"/>
+        </ExtraEditor2>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit72>
@@ -644,13 +640,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HandlePreferences"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="15"/>
         <WindowIndex Value="1"/>
         <TopLine Value="517"/>
         <CursorPos X="73" Y="525"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="1">
-          <Item0 X="1" Y="540" ID="8"/>
+          <Item0 Y="540" ID="8"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -668,10 +664,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HandleNotifier"/>
-        <EditorIndex Value="23"/>
+        <EditorIndex Value="24"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
+        <CursorPos Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -779,18 +774,17 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Sensitivityanalysis"/>
-        <EditorIndex Value="24"/>
+        <EditorIndex Value="25"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="77" Y="662"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
-          <EditorIndex Value="0"/>
+          <EditorIndex Value="1"/>
           <WindowIndex Value="1"/>
-          <TopLine Value="1"/>
           <CursorPos X="2" Y="2"/>
         </ExtraEditor1>
         <ExtraEditor2>
+          <EditorIndex Value="-1"/>
           <TopLine Value="40"/>
           <CursorPos X="25" Y="48"/>
         </ExtraEditor2>
@@ -834,11 +828,9 @@
         <ComponentName Value="TornadoPlotForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="tornado"/>
-        <EditorIndex Value="26"/>
+        <EditorIndex Value="27"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="46" Y="10"/>
+        <CursorPos X="8" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -893,7 +885,7 @@
         <Filename Value="difsupport.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="DIFSupport"/>
-        <EditorIndex Value="11"/>
+        <EditorIndex Value="12"/>
         <WindowIndex Value="1"/>
         <TopLine Value="119"/>
         <CursorPos X="22" Y="146"/>
@@ -924,10 +916,8 @@
         <ComponentName Value="HelpWindow"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="help"/>
-        <EditorIndex Value="31"/>
+        <EditorIndex Value="32"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="46" Y="10"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -948,9 +938,10 @@
       <Unit114>
         <Filename Value="todo.txt"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit114>
       <Unit115>
@@ -1059,22 +1050,20 @@
         <Filename Value="simthyrresources.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrResources"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="22" Y="2"/>
-        <UsageCount Value="170"/>
+        <UsageCount Value="172"/>
         <Loaded Value="True"/>
       </Unit132>
       <Unit133>
         <Filename Value="unitconverter.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitConverter"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="9"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="15" Y="2"/>
-        <UsageCount Value="163"/>
+        <UsageCount Value="165"/>
         <Loaded Value="True"/>
       </Unit133>
       <Unit134>
@@ -1090,18 +1079,16 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="TWSensitivityanalysis"/>
-        <EditorIndex Value="25"/>
+        <EditorIndex Value="26"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
         <CursorPos X="29" Y="18"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="2"/>
+          <EditorIndex Value="3"/>
           <WindowIndex Value="1"/>
-          <TopLine Value="1"/>
-          <CursorPos X="1" Y="2"/>
+          <CursorPos Y="2"/>
         </ExtraEditor1>
-        <UsageCount Value="159"/>
+        <UsageCount Value="161"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit135>
@@ -1222,21 +1209,20 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Equilibriumdiagram"/>
-        <EditorIndex Value="27"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="28"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="33" Y="17"/>
+        <CursorPos X="14" Y="2"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
-          <EditorIndex Value="1"/>
           <WindowIndex Value="1"/>
-          <TopLine Value="1"/>
-          <CursorPos X="1" Y="2"/>
         </ExtraEditor1>
         <ExtraEditor2>
+          <EditorIndex Value="2"/>
           <WindowIndex Value="1"/>
+          <CursorPos Y="2"/>
         </ExtraEditor2>
-        <UsageCount Value="102"/>
+        <UsageCount Value="104"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit155>
@@ -1265,11 +1251,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MIRIAMForm"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="18"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="2"/>
-        <UsageCount Value="59"/>
+        <CursorPos X="20" Y="20"/>
+        <UsageCount Value="61"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit159>
@@ -1366,123 +1351,127 @@
         <UsageCount Value="10"/>
       </Unit174>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="140" Column="38" TopLine="113"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="34" Column="10" TopLine="22"/>
       </Position1>
       <Position2>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="349" Column="42" TopLine="336"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="128" Column="33" TopLine="98"/>
       </Position2>
       <Position3>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="23" Column="36" TopLine="7"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="182" Column="26" TopLine="152"/>
       </Position3>
       <Position4>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="113" Column="23" TopLine="95"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="189" Column="54" TopLine="159"/>
       </Position4>
       <Position5>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1096" Column="16" TopLine="1070"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="34" Column="10" TopLine="16"/>
       </Position5>
       <Position6>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="585" Column="22" TopLine="561"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="128" Column="33" TopLine="98"/>
       </Position6>
       <Position7>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="46" Column="15" TopLine="10"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="181" Column="44" TopLine="13"/>
       </Position7>
       <Position8>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="120" Column="29" TopLine="102"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="985" Column="17" TopLine="969"/>
       </Position8>
       <Position9>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="404" Column="3" TopLine="401"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1028" Column="44" TopLine="1006"/>
       </Position9>
       <Position10>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="62" Column="11" TopLine="44"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="10" Column="46"/>
       </Position10>
       <Position11>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1073" Column="88" TopLine="1071"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="525" Column="34" TopLine="515"/>
       </Position11>
       <Position12>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="113" Column="15" TopLine="95"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="88" Column="24" TopLine="78"/>
       </Position12>
       <Position13>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1087" Column="36" TopLine="1068"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="941" TopLine="923"/>
       </Position13>
       <Position14>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="555" Column="43" TopLine="497"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="978" Column="12" TopLine="947"/>
       </Position14>
       <Position15>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="525" Column="42" TopLine="513"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="948" Column="5" TopLine="929"/>
       </Position15>
       <Position16>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1056" Column="38" TopLine="1040"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="4" Column="79"/>
       </Position16>
       <Position17>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="89" Column="5" TopLine="72"/>
+        <Filename Value="tornado.pas"/>
+        <Caret Line="2" Column="8"/>
       </Position17>
       <Position18>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1095" Column="17" TopLine="1061"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1069" Column="49" TopLine="1043"/>
       </Position18>
       <Position19>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1084" Column="46" TopLine="1062"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="138" Column="14" TopLine="120"/>
       </Position19>
       <Position20>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="177" Column="9" TopLine="159"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1069" Column="49" TopLine="1040"/>
       </Position20>
       <Position21>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="174" Column="90" TopLine="156"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1070" Column="49" TopLine="1041"/>
       </Position21>
       <Position22>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="161" Column="17" TopLine="156"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1071" Column="49" TopLine="1042"/>
       </Position22>
       <Position23>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="189" Column="69" TopLine="165"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1072" Column="49" TopLine="1043"/>
       </Position23>
       <Position24>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="198" Column="60" TopLine="171"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1115" Column="14" TopLine="1085"/>
       </Position24>
       <Position25>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="174" Column="100" TopLine="155"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="138" Column="14" TopLine="120"/>
       </Position25>
       <Position26>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="685" Column="38" TopLine="680"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1069" Column="49" TopLine="1040"/>
       </Position26>
       <Position27>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="2" Column="1" TopLine="1"/>
+        <Caret Line="1070" Column="49" TopLine="1041"/>
       </Position27>
       <Position28>
-        <Filename Value="launchdialog.pas"/>
-        <Caret Line="18" Column="104" TopLine="1"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1071" Column="49" TopLine="1042"/>
       </Position28>
       <Position29>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="7" Column="56" TopLine="1"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1072" Column="49" TopLine="1043"/>
       </Position29>
+      <Position30>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1115" Column="14" TopLine="1085"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
@@ -1518,7 +1507,6 @@ end;"/>
     <Other>
       <CustomOptions Value="//-k-macosx_version_min //-k10.4
 //-XR/Developer/SDKs/MacOSX10.4u.sdk/"/>
-      <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
   <Debugging>
@@ -1551,5 +1539,4 @@ end;"/>
       </Item3>
     </Exceptions>
   </Debugging>
-  <EditorMacros Count="0"/>
 </CONFIG>
