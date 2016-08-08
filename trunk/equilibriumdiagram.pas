@@ -172,7 +172,7 @@ begin
 end;
 
 function SimPituitaryResponse(T3zVector: tParamVector): tParamVector;
-{ Simulate response of pituitary subsystem to vector with cT3 values }
+{ Simulate response of pituitary subsystem to a vector with cT3 values }
 var
   i, j: integer;
   gainOfTSH, usFeedbackGain: real;
@@ -242,7 +242,7 @@ end;
 
 function SimSubsystemResponse(bParameter1, bParameter2: tBParameter;
   min, max: real; var conversionFactor1, conversionFactor2: real): tResponseCurve;
-{ Simulate response of a subsystem of the feedbck loop }
+{ Prepare and dispatch calls to partial simulators of subsystems of the loop }
 var
   i: integer;
   interval: real;
@@ -251,7 +251,7 @@ begin
   assert(min >= 0, kError101);
   assert(max >= min, kError103);
   assert(max > 0, kError104);
-  fillchar(emptyVector, sizeof(emptyVector), 0);
+  fillchar(emptyVector, sizeof(emptyVector), 0); // empties vector
   TRH1 := TRH; // remember TRH concentration from previous simulation run
   TRH := TRH0; // and set TRH concentration to standard value
   interval := (max - min) / MAX_I;
@@ -770,7 +770,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.GetBParameters;
-{ Get behavioural parameters to be inspected }
+{ Check, which behavioural parameters are to be inspected }
 begin
   { Get parameter for x axis: }
   if pos(LowerCase('TSH'), LowerCase(BParCombo1.Text)) > 0 then
@@ -937,6 +937,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.SaveChart;
+{ Save chart to image file }
 var
   theFileName:  string;
   theFilterIndex: integer;
@@ -1025,6 +1026,9 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.DrawDiagram(autoBounds, empty: boolean);
+{ Main draw routine }
+{ autoBounds: procedure calculates bounds of plot from data, if TRUE }
+{ empty: decides if a dummy plot is drawn (TRUE) or a plot with data (FALSE) }
 var
   i, j: integer;
   MinBPar1, MaxBPar1, MinBPar2, MaxBPar2: real;
@@ -1441,14 +1445,12 @@ end;
 
 procedure TEquilibriumDiagramForm.xColorBoxChange(Sender: TObject);
 begin
-  Fline[1].SeriesColor := xColorBox.Selected;
-  DrawDiagram(true, false);
+  Fline[0].SeriesColor := xColorBox.Selected;
 end;
 
 procedure TEquilibriumDiagramForm.yColorBoxChange(Sender: TObject);
 begin
-  Fline[1].SeriesColor := xColorBox.Selected;
-  DrawDiagram(true, false);
+  Fline[1].SeriesColor := yColorBox.Selected;
 end;
 
 initialization
