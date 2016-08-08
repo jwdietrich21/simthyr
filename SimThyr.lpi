@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="697"/>
+      <BuildNr Value="699"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2016 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -1053,7 +1053,7 @@
         <EditorIndex Value="8"/>
         <WindowIndex Value="1"/>
         <CursorPos X="22" Y="2"/>
-        <UsageCount Value="172"/>
+        <UsageCount Value="173"/>
         <Loaded Value="True"/>
       </Unit132>
       <Unit133>
@@ -1063,7 +1063,7 @@
         <EditorIndex Value="9"/>
         <WindowIndex Value="1"/>
         <CursorPos X="15" Y="2"/>
-        <UsageCount Value="165"/>
+        <UsageCount Value="166"/>
         <Loaded Value="True"/>
       </Unit133>
       <Unit134>
@@ -1088,7 +1088,7 @@
           <WindowIndex Value="1"/>
           <CursorPos Y="2"/>
         </ExtraEditor1>
-        <UsageCount Value="161"/>
+        <UsageCount Value="162"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit135>
@@ -1212,7 +1212,7 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="28"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="14" Y="2"/>
+        <CursorPos X="12" Y="2"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
           <WindowIndex Value="1"/>
@@ -1222,7 +1222,7 @@
           <WindowIndex Value="1"/>
           <CursorPos Y="2"/>
         </ExtraEditor2>
-        <UsageCount Value="104"/>
+        <UsageCount Value="105"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit155>
@@ -1254,7 +1254,7 @@
         <EditorIndex Value="18"/>
         <WindowIndex Value="1"/>
         <CursorPos X="20" Y="20"/>
-        <UsageCount Value="61"/>
+        <UsageCount Value="62"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit159>
@@ -1354,123 +1354,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="34" Column="10" TopLine="22"/>
+        <Caret Line="1072" Column="49" TopLine="1043"/>
       </Position1>
       <Position2>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="128" Column="33" TopLine="98"/>
+        <Caret Line="1115" Column="14" TopLine="1085"/>
       </Position2>
       <Position3>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="182" Column="26" TopLine="152"/>
+        <Caret Line="138" Column="14" TopLine="120"/>
       </Position3>
       <Position4>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="189" Column="54" TopLine="159"/>
+        <Caret Line="1069" Column="49" TopLine="1040"/>
       </Position4>
       <Position5>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="34" Column="10" TopLine="16"/>
+        <Caret Line="1070" Column="49" TopLine="1041"/>
       </Position5>
       <Position6>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="128" Column="33" TopLine="98"/>
+        <Caret Line="1071" Column="49" TopLine="1042"/>
       </Position6>
       <Position7>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="181" Column="44" TopLine="13"/>
+        <Caret Line="1072" Column="49" TopLine="1043"/>
       </Position7>
       <Position8>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="985" Column="17" TopLine="969"/>
+        <Caret Line="1115" Column="14" TopLine="1085"/>
       </Position8>
       <Position9>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1028" Column="44" TopLine="1006"/>
+        <Caret Line="1452" Column="28" TopLine="1426"/>
       </Position9>
       <Position10>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="10" Column="46"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1028" Column="46" TopLine="1027"/>
       </Position10>
       <Position11>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="525" Column="34" TopLine="515"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1120" Column="14" TopLine="1090"/>
       </Position11>
       <Position12>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="88" Column="24" TopLine="78"/>
+        <Caret Line="1160" Column="14" TopLine="1140"/>
       </Position12>
       <Position13>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="941" TopLine="923"/>
+        <Caret Line="1200" Column="14" TopLine="1171"/>
       </Position13>
       <Position14>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="978" Column="12" TopLine="947"/>
+        <Caret Line="1218" Column="14" TopLine="1188"/>
       </Position14>
       <Position15>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="948" Column="5" TopLine="929"/>
+        <Caret Line="1230" Column="14" TopLine="1200"/>
       </Position15>
       <Position16>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="4" Column="79"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1241" Column="14" TopLine="1211"/>
       </Position16>
       <Position17>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="2" Column="8"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1252" Column="14" TopLine="1222"/>
       </Position17>
       <Position18>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1069" Column="49" TopLine="1043"/>
+        <Caret Line="1274" Column="14" TopLine="1244"/>
       </Position18>
       <Position19>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="138" Column="14" TopLine="120"/>
+        <Caret Line="1318" Column="14" TopLine="1289"/>
       </Position19>
       <Position20>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1069" Column="49" TopLine="1040"/>
+        <Caret Line="1365" Column="14" TopLine="1336"/>
       </Position20>
       <Position21>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1070" Column="49" TopLine="1041"/>
+        <Caret Line="1412" Column="14" TopLine="1383"/>
       </Position21>
       <Position22>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1071" Column="49" TopLine="1042"/>
+        <Caret Line="1423" Column="14" TopLine="1393"/>
       </Position22>
       <Position23>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1072" Column="49" TopLine="1043"/>
+        <Caret Line="1432" Column="14" TopLine="1402"/>
       </Position23>
       <Position24>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1115" Column="14" TopLine="1085"/>
+        <Caret Line="1441" Column="14" TopLine="1411"/>
       </Position24>
       <Position25>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="138" Column="14" TopLine="120"/>
+        <Caret Line="1448" Column="14" TopLine="1418"/>
       </Position25>
       <Position26>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1069" Column="49" TopLine="1040"/>
+        <Caret Line="1454" Column="14" TopLine="1424"/>
       </Position26>
       <Position27>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1070" Column="49" TopLine="1041"/>
+        <Caret Line="101" Column="26" TopLine="84"/>
       </Position27>
       <Position28>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1071" Column="49" TopLine="1042"/>
+        <Caret Line="836" Column="14" TopLine="806"/>
       </Position28>
       <Position29>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1072" Column="49" TopLine="1043"/>
+        <Caret Line="846" Column="14" TopLine="765"/>
       </Position29>
       <Position30>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1115" Column="14" TopLine="1085"/>
+        <Caret Line="856" Column="14" TopLine="826"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
