@@ -204,15 +204,15 @@ LazarusResources.Add('TEquilibriumDiagramForm','FORMDATA',[
   +'e'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7
   +#18'MinSpinEdit1Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#5
   +'Value'#5#0#0#0#0#0#0#0#0#0#0#7'Visible'#8#0#0#14'TFloatSpinEdit'#12'MaxSpin'
-  +'Edit1'#4'Left'#3#164#1#6'Height'#2#21#4'Hint'#6'''Maximum of selected struc'
+  +'Edit1'#4'Left'#3#215#1#6'Height'#2#21#4'Hint'#6'''Maximum of selected struc'
   +'ture parameter'#3'Top'#2#7#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBotto'
   +'m'#0#13'DecimalPlaces'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248'?'#8
-  +'MaxValue'#5#0#0#0#0#0#0'@'#156#13'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'On'
+  +'MaxValue'#5#0#0#0#0#0#0'P'#195#15'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'On'
   +'Change'#7#18'MaxSpinEdit1Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOr'
   +'der'#2#1#5'Value'#5#0#0#0#0#0#0#0#160#2'@'#7'Visible'#8#0#0#9'TComboBox'#10
   +'BParCombo1'#4'Left'#2'X'#6'Height'#2#21#4'Hint'#6'XSelect the first depende'
   +'nt behavioural parameter whose response to be investigated here.'#3'Top'#2#9
-  +#5'Width'#3'D'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKe'
+  +#5'Width'#3'x'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKe'
   +'ysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6
   +'"Select zero isocline 2 (y axis)...'#6'&Pituitary response (TSH concentrati'
   +'on)'#6'$Thyroid response (FT4 concentration)'#6'(Central deiodination (cT3 '
@@ -226,43 +226,35 @@ LazarusResources.Add('TEquilibriumDiagramForm','FORMDATA',[
   +'wHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#5'Value'#5#0#152#153#153#153#153#153
   +#153#253'?'#0#0#9'TComboBox'#10'BParCombo2'#4'Left'#2'X'#6'Height'#2#21#4'Hi'
   +'nt'#6'YSelect the second dependent behavioural parameter whose response to '
-  +'be investigated here.'#3'Top'#2')'#5'Width'#3'D'#1#7'Anchors'#11#6'akLeft'#7
+  +'be investigated here.'#3'Top'#2')'#5'Width'#3'x'#1#7'Anchors'#11#6'akLeft'#7
   +'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9'It'
   +'emIndex'#2#0#13'Items.Strings'#1#6'"Select zero isocline 1 (x axis)...'#6'&'
   +'Pituitary response (TSH concentration)'#6'$Thyroid response (FT4 concentrat'
   +'ion)'#6'(Central deiodination (cT3 concentration)'#6#0#0#8'OnChange'#7#16'B'
   +'ParCombo2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'
   +#6'"Select zero isocline 1 (x axis)...'#0#0#14'TFloatSpinEdit'#12'MaxSpinEdi'
-  +'t2'#4'Left'#3#164#1#6'Height'#2#21#4'Hint'#6'''Maximum of selected structur'
+  +'t2'#4'Left'#3#215#1#6'Height'#2#21#4'Hint'#6'''Maximum of selected structur'
   +'e parameter'#3'Top'#2'&'#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'
   +#0#13'DecimalPlaces'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248'?'#8'Ma'
-  +'xValue'#5#0#0#0#0#0#0'@'#156#13'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnCh'
+  +'xValue'#5#0#0#0#0#0#0'P'#195#15'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnCh'
   +'ange'#7#18'MaxSpinEdit2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrde'
   +'r'#2#5#5'Value'#5#0#0#0#0#0#0#0#160#2'@'#0#0#9'TColorBox'#9'xColorBox'#4'Le'
-  +'ft'#3#244#1#6'Height'#2#22#4'Hint'#6',Select the color of the selected curv'
-  +'e here.'#3'Top'#2#8#5'Width'#2'y'#17'DefaultColorColor'#7#5'clRed'#8'Select'
-  +'ed'#7#6'clBlue'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'O'
-  +'nChange'#7#15'xColorBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrde'
-  +'r'#2#6#0#0#9'TColorBox'#9'yColorBox'#4'Left'#3#244#1#6'Height'#2#22#4'Hint'
-  +#6',Select the color of the selected curve here.'#3'Top'#2'%'#5'Width'#2'y'
-  +#17'DefaultColorColor'#7#6'clBlue'#8'Selected'#7#5'clRed'#7'Anchors'#11#5'ak'
-  +'Top'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#15'yColorBoxChange'#14
-  +'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#7#0#0#9'TCheckBox'#7'LogBox1'
-  +#4'Left'#3'|'#2#6'Height'#2#17#3'Top'#2#9#5'Width'#2' '#7'Anchors'#11#5'akTo'
-  +'p'#7'akRight'#0#7'Caption'#6#3'log'#8'OnChange'#7#13'LogBox1Change'#8'TabOr'
-  +'der'#2#8#0#0#9'TCheckBox'#7'LogBox2'#4'Left'#3'|'#2#6'Height'#2#17#3'Top'#2
-  +')'#5'Width'#2' '#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Caption'#6#3'log'#8
-  +'OnChange'#7#13'LogBox2Change'#8'TabOrder'#2#9#0#0#0#10'TPopupMenu'#10'Popup'
-  +'Menu1'#4'left'#3'x'#1#3'top'#3#24#2#0#9'TMenuItem'#8'UndoItem'#7'Caption'#6
-  +#4'Undo'#7'Enabled'#8#0#0#9'TMenuItem'#8'Divider1'#7'Caption'#6#1'-'#0#0#9'T'
-  +'MenuItem'#7'CutItem'#7'Caption'#6#3'Cut'#7'Enabled'#8#0#0#9'TMenuItem'#8'Co'
-  +'pyItem'#7'Caption'#6#4'Copy'#7'OnClick'#7#13'CopyItemClick'#0#0#9'TMenuItem'
-  ,#9'PasteItem'#7'Caption'#6#5'Paste'#7'Enabled'#8#0#0#0#25'TChartAxisTransfor'
-  +'mations'#26'ChartLogAxisTransformation'#4'left'#3'`'#1#3'top'#3#168#0#0#23
-  +'TLogarithmAxisTransform1ChartLogAxisTransformationLogarithmAxisTransform1'#4
-  +'Base'#5#0#0#0#0#0#0#0#160#2'@'#0#0#0#13'TChartToolset'#13'ChartToolset1'#4
-  +'left'#3#232#0#3'top'#3#168#0#0#19'TDataPointClickTool ChartToolset1DataPoin'
-  +'tClickTool1'#5'Shift'#11#7'ssShift'#6'ssLeft'#0#12'OnPointClick'#7'*ChartTo'
-  +'olset1DataPointClickTool1PointClick'#0#0#13'TZoomDragTool'#26'ChartToolset1'
-  +'ZoomDragTool1'#5'Shift'#11#6'ssLeft'#0#0#0#0#0
+  +'ft'#3')'#2#6'Height'#2#22#4'Hint'#6',Select the color of the selected curve'
+  +' here.'#3'Top'#2#7#5'Width'#2'y'#17'DefaultColorColor'#7#5'clRed'#8'Selecte'
+  +'d'#7#6'clBlue'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'On'
+  +'Change'#7#15'xColorBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'
+  +#2#6#0#0#9'TColorBox'#9'yColorBox'#4'Left'#3')'#2#6'Height'#2#22#4'Hint'#6','
+  +'Select the color of the selected curve here.'#3'Top'#2'$'#5'Width'#2'y'#17
+  +'DefaultColorColor'#7#6'clBlue'#8'Selected'#7#5'clRed'#7'Anchors'#11#5'akTop'
+  +#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#15'yColorBoxChange'#14'Paren'
+  +'tShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#7#0#0#0#10'TPopupMenu'#10'PopupMen'
+  +'u1'#4'left'#3'x'#1#3'top'#3#24#2#0#9'TMenuItem'#8'UndoItem'#7'Caption'#6#4
+  +'Undo'#7'Enabled'#8#0#0#9'TMenuItem'#8'Divider1'#7'Caption'#6#1'-'#0#0#9'TMe'
+  +'nuItem'#7'CutItem'#7'Caption'#6#3'Cut'#7'Enabled'#8#0#0#9'TMenuItem'#8'Copy'
+  +'Item'#7'Caption'#6#4'Copy'#7'OnClick'#7#13'CopyItemClick'#0#0#9'TMenuItem'#9
+  +'PasteItem'#7'Caption'#6#5'Paste'#7'Enabled'#8#0#0#0#13'TChartToolset'#13'Ch'
+  +'artToolset1'#4'left'#3#232#0#3'top'#3#168#0#0#19'TDataPointClickTool ChartT'
+  +'oolset1DataPointClickTool1'#5'Shift'#11#7'ssShift'#6'ssLeft'#0#12'OnPointCl'
+  +'ick'#7'*ChartToolset1DataPointClickTool1PointClick'#0#0#13'TZoomDragTool'#26
+  +'ChartToolset1ZoomDragTool1'#5'Shift'#11#6'ssLeft'#0#0#0#0#0
 ]);

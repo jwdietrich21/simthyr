@@ -30,25 +30,22 @@ uses
   SimThyrPrediction, Sensitivityanalysis, Types;
 
 const
-  MAX_SERIES   = 2;   // number of isoclines to draw
-  MAX_I        = 100; // number of samples for tResponseCurve
-  MAX_PIT      = 130; // number of iterations to get pituitary nullcline
-  FIRST_VALUE  = 26;  // first value to use as representative for equilibrium
-  TRACK_RATIO  = 10;  // ratio to translate from paramter to track bar position
-  SPLAY_FACTOR = 5;   // splay of trackbars for structure parameters
+  MAX_SERIES   = 2;    // number of isoclines to draw
+  MAX_I        = 100;  // number of samples for tResponseCurve
+  MAX_PIT      = 130;  // number of iterations to get pituitary nullcline
+  FIRST_VALUE  = 26;   // first value to use as representative for equilibrium
+  TRACK_RATIO  = 10;   // ratio to translate from paramter to track bar position
+  SPLAY_FACTOR = 5;    // splay of trackbars for structure parameters
+  MIN_LOG_VAL  = 1e-2; // minimum value for logarithmic axes
 
 type
 
   { TEquilibriumDiagramForm }
 
   TEquilibriumDiagramForm = class(TForm)
-    ChartLogAxisTransformation: TChartAxisTransformations;
-    ChartLogAxisTransformationLogarithmAxisTransform1: TLogarithmAxisTransform;
     ChartToolset1: TChartToolset;
     ChartToolset1DataPointClickTool1: TDataPointClickTool;
     ChartToolset1ZoomDragTool1: TZoomDragTool;
-    LogBox1: TCheckBox;
-    LogBox2: TCheckBox;
     CopyItem: TMenuItem;
     CutItem: TMenuItem;
     Divider1: TMenuItem;
@@ -88,8 +85,6 @@ type
     procedure CopyChart;
     procedure SaveChart;
     procedure FormActivate(Sender: TObject);
-    procedure LogBox1Change(Sender: TObject);
-    procedure LogBox2Change(Sender: TObject);
     procedure SetStandardStrucParBoundaries;
     procedure GetBParameters;
     procedure SParEdit1Change(Sender: TObject);
@@ -137,6 +132,7 @@ var
   gMidSPar1, gMidSPar2, gMidSPar3: real;
   gSpinFactor, gTrackFactor1, gTrackFactor2, gTrackFactor3: real;
   gResponseCurve1, gResponseCurve2: tResponseCurve;
+  gEmptyVector: tParamVector;
   gFT4conversionFactor, gFT3conversionFactor: real;
   gcT3conversionFactor: real;
   TRH1: real; // storage for TRH concentration from previous simulation run
@@ -242,16 +238,15 @@ end;
 
 function SimSubsystemResponse(bParameter1, bParameter2: tBParameter;
   min, max: real; var conversionFactor1, conversionFactor2: real): tResponseCurve;
-{ Prepare and dispatch calls to partial simulators of subsystems of the loop }
+{ Prepare and dispatch calls to partial simulators of subsystems of the open loop }
 var
   i: integer;
   interval: real;
-  inputVector, emptyVector: tParamVector;
+  inputVector: tParamVector;
 begin
   assert(min >= 0, kError101);
   assert(max >= min, kError103);
   assert(max > 0, kError104);
-  fillchar(emptyVector, sizeof(emptyVector), 0); // empties vector
   TRH1 := TRH; // remember TRH concentration from previous simulation run
   TRH := TRH0; // and set TRH concentration to standard value
   interval := (max - min) / MAX_I;
@@ -285,13 +280,13 @@ begin
     end;
     otherwise
     begin
-      inputVector := emptyVector;
+      inputVector := gEmptyVector;
     end;
   end;
   case bParameter2 of // output (dependent parameter)
     IItem:
     begin
-      Result.output := emptyVector
+      Result.output := gEmptyVector
     end;
     TSHItem:
     begin
@@ -307,7 +302,7 @@ begin
           Result.output := SimPituitaryResponse(inputVector);
         end;
         otherwise
-          Result.output := emptyVector;
+          Result.output := gEmptyVector;
       end;
     end;
     FT4Item:
@@ -324,7 +319,7 @@ begin
           Result.output := SimThyroidResponse(SimPituitaryResponse(inputVector));
         end;
         otherwise
-          Result.output := emptyVector;
+          Result.output := gEmptyVector;
       end;
     end;
     FT3Item:
@@ -346,7 +341,7 @@ begin
           Result.output := SimPDeiodinaseResponse(SimThyroidResponse(SimPituitaryResponse(inputVector)));
         end;
         otherwise
-          Result.output := emptyVector;
+          Result.output := gEmptyVector;
       end;
     end;
     cT3Item:
@@ -363,11 +358,11 @@ begin
           Result.output := SimCDeiodinaseResponse(inputVector);
         end;
         otherwise
-          Result.output := emptyVector;
+          Result.output := gEmptyVector;
       end;
     end;
     otherwise
-      Result.output := emptyVector;
+      Result.output := gEmptyVector;
   end;
   Result.input := inputVector;
   TRH := TRH1; // restore simulated TRH concentration
@@ -862,25 +857,8 @@ begin
   gLastActiveCustomForm := EquilibriumDiagramForm;
 end;
 
-procedure TEquilibriumDiagramForm.LogBox1Change(Sender: TObject);
-{ log-transform axis 0, if required }
-begin
-  if LogBox1.Checked then
-    EquilibriumChart.AxisList[0].Transformations := ChartLogAxisTransformation
-  else
-    EquilibriumChart.AxisList[0].Transformations := nil;
-end;
-
-procedure TEquilibriumDiagramForm.LogBox2Change(Sender: TObject);
-{ log-transform axis 1, if required }
-begin
-  if LogBox2.Checked then
-    EquilibriumChart.AxisList[1].Transformations := ChartLogAxisTransformation
-  else
-    EquilibriumChart.AxisList[1].Transformations := nil;
-end;
-
 procedure TEquilibriumDiagramForm.CopyItemClick(Sender: TObject);
+{ Copy plot to clipboard }
 begin
   CopyChart;
 end;
@@ -1035,6 +1013,8 @@ var
   ConversionFactor1, ConversionFactor2: real;
   max_x: real;
 begin
+  ConversionFactor1 := 1;
+  ConversionFactor2 := 1;
   GetBParameters; { read, which behavioural parameters have been selected }
   { Recalculate conversion factors, to support change of UOM on the fly: }
   gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
@@ -1070,8 +1050,8 @@ begin
     DrawDummyEquilibriumPlot
   else
   begin
-    MinBPar1 := MinSpinEdit1.Value / gSpinFactor;
-    MaxBPar1 := MaxSpinEdit1.Value / gSpinFactor;
+    //MinBPar1 := MinSpinEdit1.Value / gSpinFactor;
+    //MaxBPar1 := MaxSpinEdit1.Value / gSpinFactor;
     MinBPar2 := MinSpinEdit2.Value / gSpinFactor;
     MaxBPar2 := MaxSpinEdit2.Value / gSpinFactor;
     EquilibriumChart.LeftAxis.Range.UseMin := true;
@@ -1087,8 +1067,13 @@ begin
         xColorBox.Selected);
       Fline[0].SeriesColor := xColorBox.Selected;
     end;
-    gResponseCurve2 := SimSubsystemResponse(gSelectedBParameter1, gSelectedBParameter2, MinBPar1,
-    MaxBPar1, ConversionFactor1, ConversionFactor2);
+    MinBPar1 := 0;
+    MaxBPar1 := MaxValue(gResponseCurve1.output);
+    if MaxBPar1 <> 0 then
+      gResponseCurve2 := SimSubsystemResponse(gSelectedBParameter1, gSelectedBParameter2, MinBPar1,
+      MaxBPar1, ConversionFactor1, ConversionFactor2)
+    else
+      gResponseCurve2.output := gEmptyVector;
     for j := 0 to MAX_I do
     begin
       FLine[1].AddXY(gResponseCurve2.output[j] * conversionFactor2,
@@ -1458,5 +1443,6 @@ initialization
   gSelectedSParameter1 := NullItem;
   gSelectedSParameter2 := NullItem;
   gSelectedSParameter2 := NullItem;
+  fillchar(gEmptyVector, sizeof(gEmptyVector), 0); // empties vector
 
 end.
