@@ -292,6 +292,8 @@ procedure TSimThyrToolbar.FormShow(Sender: TObject);
 {ensures that simulation setting are shown on top}
 begin
   { deprecated content has been removed }
+  SimThyrLabel.Left := Left + Width - SimThyrLabel.Width - 5;
+  SimThyrLabel.Top := Top + 5;
 end;
 
 procedure TSimThyrToolbar.HandleIdle(Sender: TObject; var Done: boolean);

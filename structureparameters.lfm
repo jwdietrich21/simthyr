@@ -45,8 +45,8 @@ object StructureParameters: TStructureParameters
   end
   object Tau0REdit: TEdit
     Left = 88
-    Height = 21
-    Top = 528
+    Height = 22
+    Top = 527
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 1
@@ -54,8 +54,8 @@ object StructureParameters: TStructureParameters
   end
   object Tau0SEdit: TEdit
     Left = 88
-    Height = 21
-    Top = 552
+    Height = 22
+    Top = 551
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 2
@@ -63,8 +63,8 @@ object StructureParameters: TStructureParameters
   end
   object Tau0S2Edit: TEdit
     Left = 88
-    Height = 21
-    Top = 576
+    Height = 22
+    Top = 575
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 3
@@ -72,8 +72,8 @@ object StructureParameters: TStructureParameters
   end
   object Tau0TEdit: TEdit
     Left = 312
-    Height = 21
-    Top = 552
+    Height = 22
+    Top = 551
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 4
@@ -81,8 +81,8 @@ object StructureParameters: TStructureParameters
   end
   object Tau03zEdit: TEdit
     Left = 312
-    Height = 21
-    Top = 576
+    Height = 22
+    Top = 575
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 5
@@ -90,45 +90,45 @@ object StructureParameters: TStructureParameters
   end
   object Label32: TLabel
     Left = 24
-    Height = 13
-    Top = 534
-    Width = 39
+    Height = 16
+    Top = 531
+    Width = 48
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 R:'
     ParentColor = False
   end
   object Label33: TLabel
     Left = 24
-    Height = 13
-    Top = 560
-    Width = 38
+    Height = 16
+    Top = 557
+    Width = 47
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 S:'
     ParentColor = False
   end
   object Label34: TLabel
     Left = 24
-    Height = 13
-    Top = 584
-    Width = 44
+    Height = 16
+    Top = 581
+    Width = 55
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 S2:'
     ParentColor = False
   end
   object Label35: TLabel
     Left = 256
-    Height = 13
-    Top = 560
-    Width = 38
+    Height = 16
+    Top = 557
+    Width = 48
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 T:'
     ParentColor = False
   end
   object Label36: TLabel
     Left = 256
-    Height = 13
-    Top = 584
-    Width = 42
+    Height = 16
+    Top = 581
+    Width = 56
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 3z:'
     ParentColor = False
@@ -146,9 +146,9 @@ object StructureParameters: TStructureParameters
   end
   object Label38: TLabel
     Left = 24
-    Height = 13
-    Top = 497
-    Width = 90
+    Height = 16
+    Top = 494
+    Width = 106
     Anchors = [akLeft, akBottom]
     Caption = 'Time constants:'
     Font.Style = [fsBold]
@@ -264,45 +264,45 @@ object StructureParameters: TStructureParameters
   end
   object Label51: TLabel
     Left = 176
-    Height = 13
-    Top = 534
-    Width = 5
+    Height = 16
+    Top = 531
+    Width = 7
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label52: TLabel
     Left = 176
-    Height = 13
-    Top = 560
-    Width = 5
+    Height = 16
+    Top = 557
+    Width = 7
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label53: TLabel
     Left = 176
-    Height = 13
-    Top = 584
-    Width = 5
+    Height = 16
+    Top = 581
+    Width = 7
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label54: TLabel
     Left = 400
-    Height = 13
-    Top = 560
-    Width = 5
+    Height = 16
+    Top = 557
+    Width = 7
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label55: TLabel
     Left = 400
-    Height = 13
-    Top = 584
-    Width = 5
+    Height = 16
+    Top = 581
+    Width = 7
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
@@ -326,233 +326,233 @@ object StructureParameters: TStructureParameters
     TabOrder = 0
     object Label72: TLabel
       Left = 576
-      Height = 13
+      Height = 16
       Top = 399
-      Width = 23
+      Width = 34
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label71: TLabel
       Left = 576
-      Height = 13
+      Height = 16
       Top = 375
-      Width = 23
+      Width = 34
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label70: TLabel
       Left = 576
-      Height = 13
+      Height = 16
       Top = 351
-      Width = 23
+      Width = 34
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label69: TLabel
       Left = 576
-      Height = 13
+      Height = 16
       Top = 327
-      Width = 23
+      Width = 34
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label68: TLabel
       Left = 576
-      Height = 13
+      Height = 16
       Top = 159
-      Width = 23
+      Width = 32
       Caption = 'mU/l'
       ParentColor = False
     end
     object Label67: TLabel
       Left = 576
-      Height = 13
+      Height = 16
       Top = 135
-      Width = 23
+      Width = 32
       Caption = 'l/mU'
       ParentColor = False
     end
     object Label66: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 181
-      Width = 23
+      Width = 34
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label65: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 253
-      Width = 23
+      Width = 32
       Caption = 'mU/l'
       ParentColor = False
     end
     object Label64: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 399
-      Width = 23
+      Width = 34
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label63: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 325
-      Width = 23
+      Width = 34
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label62: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 157
-      Width = 23
+      Width = 34
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label61: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 61
-      Width = 23
+      Width = 34
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label60: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 133
-      Width = 26
+      Width = 35
       Caption = 'mU/s'
       ParentColor = False
     end
     object Label59: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 373
-      Width = 26
+      Width = 37
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label58: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 301
-      Width = 26
+      Width = 37
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label57: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 229
-      Width = 26
+      Width = 37
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label56: TLabel
       Left = 360
-      Height = 13
+      Height = 16
       Top = 35
-      Width = 26
+      Width = 37
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label50: TLabel
       Left = 152
-      Height = 13
+      Height = 16
       Top = 399
-      Width = 10
+      Width = 13
       Caption = '/s'
       ParentColor = False
     end
     object Label49: TLabel
       Left = 152
-      Height = 13
+      Height = 16
       Top = 327
-      Width = 10
+      Width = 13
       Caption = '/s'
       ParentColor = False
     end
     object Label48: TLabel
       Left = 152
-      Height = 13
+      Height = 16
       Top = 255
-      Width = 10
+      Width = 13
       Caption = '/s'
       ParentColor = False
     end
     object Label47: TLabel
       Left = 152
-      Height = 13
+      Height = 16
       Top = 183
-      Width = 10
+      Width = 13
       Caption = '/s'
       ParentColor = False
     end
     object Label46: TLabel
       Left = 152
-      Height = 13
+      Height = 16
       Top = 135
-      Width = 10
+      Width = 13
       Caption = '/s'
       ParentColor = False
     end
     object Label45: TLabel
       Left = 154
-      Height = 13
+      Height = 16
       Top = 375
-      Width = 7
+      Width = 11
       Caption = '/l'
       ParentColor = False
     end
     object Label44: TLabel
       Left = 154
-      Height = 13
+      Height = 16
       Top = 303
-      Width = 7
+      Width = 11
       Caption = '/l'
       ParentColor = False
     end
     object Label43: TLabel
       Left = 154
-      Height = 13
+      Height = 16
       Top = 231
-      Width = 7
+      Width = 11
       Caption = '/l'
       ParentColor = False
     end
     object Label42: TLabel
       Left = 154
-      Height = 13
+      Height = 16
       Top = 159
-      Width = 7
+      Width = 11
       Caption = '/l'
       ParentColor = False
     end
     object Label39: TLabel
       Left = 154
-      Height = 13
+      Height = 16
       Top = 37
-      Width = 7
+      Width = 11
       Caption = '/l'
       ParentColor = False
     end
     object Label41: TLabel
       Left = 154
-      Height = 13
+      Height = 16
       Top = 111
-      Width = 7
+      Width = 11
       Caption = '/l'
       ParentColor = False
     end
     object Label40: TLabel
       Left = 154
-      Height = 13
+      Height = 16
       Top = 63
-      Width = 10
+      Width = 13
       Caption = '/s'
       ParentColor = False
     end
@@ -979,43 +979,112 @@ object StructureParameters: TStructureParameters
       Width = 109
       OnClick = TFCLogoClick
       Picture.Data = {
-        1754506F727461626C654E6574776F726B477261706869636804000089504E47
-        0D0A1A0A0000000D49484452000000520000003A08030000001455FE9E000003
-        00504C5445FFFFFF000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        00000000000B23B7E10000001974455874536F66747761726500477261706869
-        63436F6E766572746572355D48EE000000FE49444154789CEC960B0EC4200844
-        BDFFA567BB6B6B55062D68363196A4D60A3C7F880D4113A81AB7BCC8BD90F8CA
-        7CE664E2BEC8058208A74C04CADA24E02C68CD904C4819464A9F36311AA4CE21
-        1D1CC8E3C1354210072312A549F569444294A9C67B40DD2E91BF59DE08DC2588
-        4DA16A20CF70C8904120AF908944BE3232C2720B48930C8392D199788EA413CF
-        14E95D42CDDB4390F4F80E0791C6445A2366D5462A5A7DB7BA486598E5EE5AD3
-        065177335727B9B1619A7221F1676D4344E5740E009B99CE7BE9BC48A9F1DEE0
-        FF447A436879E42241B42FD2CB5C02D9F672E5F48E9383D975B1329F9C61DB39
-        7F684D7E0454891E1F000000FFFF0300FEA7C945D1067D990000000049454E44
-        AE426082
+        0A544A706567496D6167651A0D0000FFD8FFE000104A46494600010101004800
+        480000FFE100744578696600004D4D002A000000080004011A00050000000100
+        00003E011B000500000001000000460128000300000001000200008769000400
+        0000010000004E00000000000000480000000100000048000000010002A00200
+        040000000100000052A0030004000000010000003A00000000FFDB0043000202
+        0202020102020202020202030306040303030307050504060807080808070808
+        090A0D0B09090C0A08080B0F0B0C0D0E0E0E0E090B10110F0E110D0E0E0EFFDB
+        004301020202030303060404060E0908090E0E0E0E0E0E0E0E0E0E0E0E0E0E0E
+        0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E0E
+        0E0E0EFFC0001108003A005203012200021101031101FFC4001F000001050101
+        0101010100000000000000000102030405060708090A0BFFC400B51000020103
+        03020403050504040000017D0102030004110512213141061351610722711432
+        8191A1082342B1C11552D1F02433627282090A161718191A25262728292A3435
+        363738393A434445464748494A535455565758595A636465666768696A737475
+        767778797A838485868788898A92939495969798999AA2A3A4A5A6A7A8A9AAB2
+        B3B4B5B6B7B8B9BAC2C3C4C5C6C7C8C9CAD2D3D4D5D6D7D8D9DAE1E2E3E4E5E6
+        E7E8E9EAF1F2F3F4F5F6F7F8F9FAFFC4001F0100030101010101010101010000
+        000000000102030405060708090A0BFFC400B511000201020404030407050404
+        00010277000102031104052131061241510761711322328108144291A1B1C109
+        233352F0156272D10A162434E125F11718191A262728292A35363738393A4344
+        45464748494A535455565758595A636465666768696A737475767778797A8283
+        8485868788898A92939495969798999AA2A3A4A5A6A7A8A9AAB2B3B4B5B6B7B8
+        B9BAC2C3C4C5C6C7C8C9CAD2D3D4D5D6D7D8D9DAE2E3E4E5E6E7E8E9EAF2F3F4
+        F5F6F7F8F9FAFFDA000C03010002110311003F00FDFCA28A280296A5A969FA3F
+        87AFF57D5EFECB4AD26C6DDEE6F6F6F275860B68514B3C923B10A88AA092C480
+        0024D780FECD3E35F0778AFE0FF8A2DBC2FE2DF0CF892E6CFC77E25B9BB8B4AD
+        521BA7821BAF10EA935B48E236255268FF00791B1C075F997239AEEFC6BF193E
+        1E7803C556FE1ED7758D42FF00C5735A2DEA786BC37A1DEEBDAC8B46674178D6
+        1A7C335CADA798863372D188848550B866553F17FEC457DE02F813F026F7E197
+        89FC49E30D0758D7FC7B7AFA35C78E3E1EEADE12B7D45E4922B2B2B6B69B5186
+        3867BBB98ADA3B94B58E433E2575F2CF932357A347D87D4AAF34AD2BC6CBBFC5
+        7FBBF53D6C3FD59E5D5B9E569F3439577F8AFD3A7EABE7FA414514579C792145
+        14500145145001451450015F306ABFB50FC38F15FEC9DAD78D7E0378FF00E1FF
+        00C47F104DFD93A768B0417E2E22D3F52D6EEA2B0D24EA96F1BADC5AC1F69B88
+        CCC8CAB3AC714E150C89B2BA0FF8669F875FF431FED01FF87DBC61FF00CB4AF8
+        0347FF00825EFC1AFD9DBE1159FC52F0BC7F103E2C7C5DF05EABA078A22B89E6
+        6F364FEC9BFB7BDD4A1D2F4FB6550F3DDDBC5711436F70F3FEF1A0512A7CF290
+        0FA7FE1BF817C55F01F58BCFD9CBE10EA9E1FD7350D4FED3E33BBF885E31B697
+        55D4EDFED1718B9975E8AD9ADCDFDF5D5C652D2733DB79D6F05D86CB6958BECF
+        F1AFC59F1FE95FB305BF8B7C41E37FD943E34FC0EF17DDAE81ABF8EA1B39F4DF
+        0FF8720BA95EC0DCDDDB9BDD423D62D1EE644B69215B8B408C712C8B13CD7169
+        CFFC66FDACFE037ECE9FF050BF875E2FF1778EF4F97C29F15FE1AF957FAAE97F
+        F1354B1834DB97BAD1AF563B52D2FD92EC6A9ABC7E72A4C25786DF66C58E773E
+        5F77FB61FEC6DF15347F05FEC6BF00B5FF000FE8DE19F89FFDA3E19D4AE74BF0
+        D49A0E99E1CB1B9B79DE74822B88ADD1AFAF5E46B7B608AEAB7171E6C8B2955B
+        7B900FB03F671D03FE14FF00FC245FB31AEB7E20F14693F0FF004AD3350F09EA
+        FAD5E7DAEFA4D0F50FB54705BDD4D84533C177A7EA51224512451D9AD8282CE2
+        4DBECFE2CF897F0FFC07AEE91A778DFC65E1DF085C6A905C4FA7BEB37A9690CE
+        B0342B2812C8426E0678BE42DB98124021588F0BD1BC15A3FC54FDB8BE30FC41
+        7BCF16DBF8674FD2B47F0559DD68BE29D47495BFBED366D4EEAFE446B19E34B8
+        8237D563B3DCCC5A3BAB3BF88A218C99337E2A7EC63F0EFE2CEBBE1A935BF15F
+        C4EB4D334982ED7ECEDE2ABCD4E696599ADF6BAC9A84970215558A40CB1A0321
+        7425879601F3B1F571B0A6DE1E1193D2D776EAAFD3B5FAFF0091F69C2581E17C
+        462E9C739C555A54DA973385352B351972D9F3B6EEF96FEE756AE97BC93C3BF0
+        DF49F8A1FB517ED277BE2DF14FC60FF8927C40B3D2F49B4D13E29788345B3B3B
+        5FF846341BA31C76D637B0C23335D5C485B66E6690924F159FE1BF08FECD5E2D
+        9FC4EBA17C53F8E17117877C41FF0008F6B3733FC71F1A5B5BDA6AA6FA4D3C69
+        E66975258CDD9B98C208158C844F6AE14A5D5BB4BD1FECC5E06F0B7C36F1BFED
+        3BE0AF05697FD8BE19D3BE2AC1F63B3FB4CB3F95E67853C392BFCF2B339CBC8E
+        79638CE07000AEB6D7F670F871A5FF00C294F0F68BE1FF000FE9BF0AFE1879F7
+        DE1CF067F6609608B58FDDAD9EABE7331733DBA3EA27F79BCCB35F7DA19BCE86
+        392BBA9B938AE6567D6DAABFAD95FEE5E87C9E2E34235E6A849CA09BE5724A2D
+        ABE8DC54A4A2DADD294927A733DCE3F44F0558FC35FF0082927C3CD0BC35E24F
+        8A177A26B7F0D7C4F77A969FE24F887AD6BF6F2CF6BA8F86D2DE558F50BB9D63
+        9116EEE543205244AC0922BEAFAF957E29F83748F1C7FC14A3E0A693AD5E78AA
+        CAD62F867E30B857F0FF0089F50D1672E352F0AA80D358CF0C8C987398D98A12
+        14904AA91BBAFF00C2EF187807494F147C13F1778E6FB54D37CDBBD4BC19E2BF
+        13DE7882D7C5D1C704BE5D825C6A773249A64CD232ECBA86458D58E6786E1555
+        53DDCBB0181C54542588F6751EDCD1FDDF95E6A4DABEC9B872A6D734A31BC971
+        CE528EB6BAFC7EEFF827D1B45780697FB52FECFD77E1AD3AEF5AF8BBF0E3C0FA
+        C4D6D1C97DE1CF13F8A6C2C356D1E665064B4BCB669F7417313131C913728EAC
+        A7A515D13E11CF23271783A9A7F724FF001489FAC52FE65F79EFF451457CE9B1
+        F8E3F1E7FE08DDF08FE257C65BDF187C29F1FEA1F04E2D4AEE5B9D4F404D023D
+        4F4B89DC47816512CD6ED6B1EE12B98CBC880C816358510257CEDF053FE08DBE
+        15F18A9F1278D7E3BF882EFC3367E26D7745BDD2744F0C45637971FD9DA95EE9
+        A92C7752CF3A47BDED9262A607C2B18C1CE24AFDEDF1DDA78B6FFE0878CAC7C0
+        3AA58E89E3AB9D0EEE1F0E6A37A81A0B4BF681C5B4D202920289294620A3F00F
+        CADD0FC01FF04D5F82BF147E0AFC07F89FA4F8D3C43E15D53C2779E2FBB8745B
+        1D224791EDEFF4FBBBBD2F529A469208DB64AD656DE58DCDF24792B1B3303F71
+        95F0EE0311C2F8FCCAAE2630AD46749420EFCD352E752B7456D25ADF484B6FB5
+        CD3AD255E304B469EBF71F7CF803C01E0DF859F06FC3DF0FBE1F787B4FF0AF83
+        743B416DA669964A4242992C492C4B3C8CCCCEF2396791D99DD999893D851457
+        C39D278FF8A7F67AF805E39F1DDF78A7C6BF03FE0FF8C3C4F7BB3EDBABEB7E0D
+        B0BDBCB8D88B1A79934B133BED444419270AA00E00AC0FF864EFD963FE8DA7E0
+        07FE1BCD2FFF008C57BFD1401E5FE0AF821F05FE1AF8AAE35DF873F087E17F80
+        35B9ED1AD27D43C37E15B3D3AE2581991DA269218D58C65A3462A4E094538C81
+        5EA1451401FC747ED3BFF2927FDA17FECA5EBDFF00A71B8A28FDA77FE524FF00
+        B42FFD94BD7BFF004E371457FBB9C27FF223C17FD7AA7FFA4A3F30AFFC497AB3
+        FB17A28A2BFC233F4F0AF0EF047FC5BBF8D1E2FF0001EAFF00F12ED0FC4DE26B
+        AD73C04FF7ADA6FB4C2977A95979A7E6FB6FDBBFB4AFBC972774171980B25B4F
+        1DAFB8D61F893C31E1AF19782EF7C37E2FF0F687E2BF0EDE6CFB5E97AC584777
+        6B3EC759137C522B236D755619070CA08E40AFA0E1DFDFE256025F0D77187F85
+        B92E59A5B5E2F4EEE0E714E3CD75955D173763728AFE3A3FE1A77F694FFA385F
+        8E3FF85DEA3FFC7A8FF869DFDA53FE8E17E38FFE177A8FFF001EAFD7FF00E206
+        7FD477FE53FF00EDCF3FFB4FFBBF8FFC03FB17A2BF8E8FF869DFDA53FE8E17E3
+        8FFE177A8FFF001EA3FE1A77F694FF00A385F8E3FF0085DEA3FF00C7A8FF0088
+        19FF0051DFF94FFF00B70FED3FEEFE3FF00FEC5EB87F887F10FC35F0CBE1ADD7
+        893C4975FDE874BD2EDE48FEDFAE5E796F245A7D8C4EEBF68BD9BCB658A053BA
+        46E057F241FF000D3BFB4A7FD1C2FC71FF00C2EF51FF00E3D5FADFFF0004A8F1
+        3F897E2E78D3E2FF00893E2BF8875CF89DE22F097F657FC22BAA78B2FE4D56EB
+        42FB5A6A31DDFD8E5B8677B6F39228D64F2CAF98A8A1B214639F17E0F51CBF0F
+        53175B12EA469C5C9C54795C945376E6E695AF6B5ECEC38E60E6D4546D70F13F
+        FC12A35AF8B9F12BC43F15BC49F17FFE15E788BC69A9CFE21D53C2BFF08AA6A5
+        FD85737B235CCB63F6B4BE44B8F25E568BCE54559366E0A01C02BF6A28AD28FD
+        273C48A14E34A8660A108AB462A9516A29689272A6E4D25A5DB6FBB6F50792E0
+        DBBB86BEAFFCCFFFD9
       }
     end
     object ThyroidImage: TImage
@@ -1571,31 +1640,31 @@ object StructureParameters: TStructureParameters
     end
     object Label24: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 399
-      Width = 37
+      Width = 47
       Caption = 'Beta32:'
       ParentColor = False
     end
     object Label25: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 373
-      Width = 25
+      Width = 31
       Caption = 'GD2:'
       ParentColor = False
     end
     object Label26: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 399
-      Width = 25
+      Width = 32
       Caption = 'KM2:'
       ParentColor = False
     end
     object k30Edit: TEdit
       Left = 493
-      Height = 21
+      Height = 22
       Top = 320
       Width = 80
       TabOrder = 25
@@ -1603,7 +1672,7 @@ object StructureParameters: TStructureParameters
     end
     object k31Edit: TEdit
       Left = 493
-      Height = 21
+      Height = 22
       Top = 344
       Width = 80
       TabOrder = 26
@@ -1611,7 +1680,7 @@ object StructureParameters: TStructureParameters
     end
     object k41Edit: TEdit
       Left = 493
-      Height = 21
+      Height = 22
       Top = 368
       Width = 80
       TabOrder = 27
@@ -1619,7 +1688,7 @@ object StructureParameters: TStructureParameters
     end
     object k42Edit: TEdit
       Left = 493
-      Height = 21
+      Height = 22
       Top = 392
       Width = 80
       TabOrder = 28
@@ -1627,55 +1696,55 @@ object StructureParameters: TStructureParameters
     end
     object Label27: TLabel
       Left = 440
-      Height = 13
+      Height = 16
       Top = 327
-      Width = 22
+      Width = 29
       Caption = 'K30:'
       ParentColor = False
     end
     object Label28: TLabel
       Left = 440
-      Height = 13
+      Height = 16
       Top = 351
-      Width = 22
+      Width = 29
       Caption = 'K31:'
       ParentColor = False
     end
     object Label29: TLabel
       Left = 440
-      Height = 13
+      Height = 16
       Top = 375
-      Width = 22
+      Width = 29
       Caption = 'K41:'
       ParentColor = False
     end
     object Label30: TLabel
       Left = 440
-      Height = 13
+      Height = 16
       Top = 399
-      Width = 22
+      Width = 29
       Caption = 'K42:'
       ParentColor = False
     end
     object Label17: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 229
-      Width = 18
+      Width = 22
       Caption = 'GT:'
       ParentColor = False
     end
     object Label18: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 253
-      Width = 18
+      Width = 22
       Caption = 'DT:'
       ParentColor = False
     end
     object Alpha31Edit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 298
       Width = 80
       TabOrder = 8
@@ -1683,7 +1752,7 @@ object StructureParameters: TStructureParameters
     end
     object Beta31Edit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 322
       Width = 80
       TabOrder = 9
@@ -1691,7 +1760,7 @@ object StructureParameters: TStructureParameters
     end
     object GD1Edit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 298
       Width = 80
       TabOrder = 19
@@ -1699,7 +1768,7 @@ object StructureParameters: TStructureParameters
     end
     object KM1Edit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 322
       Width = 80
       TabOrder = 20
@@ -1707,39 +1776,39 @@ object StructureParameters: TStructureParameters
     end
     object Label19: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 303
-      Width = 42
+      Width = 57
       Caption = 'Alpha31:'
       ParentColor = False
     end
     object Label20: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 327
-      Width = 37
+      Width = 47
       Caption = 'Beta31:'
       ParentColor = False
     end
     object Label21: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 301
-      Width = 25
+      Width = 31
       Caption = 'GD1:'
       ParentColor = False
     end
     object Label22: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 325
-      Width = 22
+      Width = 28
       Caption = 'KM1'
       ParentColor = False
     end
     object Alpha32Edit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 370
       Width = 80
       TabOrder = 10
@@ -1747,7 +1816,7 @@ object StructureParameters: TStructureParameters
     end
     object Beta32Edit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 394
       Width = 80
       TabOrder = 11
@@ -1755,7 +1824,7 @@ object StructureParameters: TStructureParameters
     end
     object GD2Edit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 370
       Width = 80
       TabOrder = 21
@@ -1763,7 +1832,7 @@ object StructureParameters: TStructureParameters
     end
     object KM2Edit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 394
       Width = 80
       TabOrder = 22
@@ -1771,71 +1840,71 @@ object StructureParameters: TStructureParameters
     end
     object Label23: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 375
-      Width = 42
+      Width = 57
       Caption = 'Alpha32:'
       ParentColor = False
     end
     object Label8: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 159
-      Width = 43
+      Width = 55
       Caption = 'AlphaS2:'
       ParentColor = False
     end
     object Label9: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 183
-      Width = 38
+      Width = 46
       Caption = 'BetaS2:'
       ParentColor = False
     end
     object Label10: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 133
-      Width = 19
+      Width = 23
       Caption = 'GH:'
       ParentColor = False
     end
     object Label11: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 157
-      Width = 19
+      Width = 23
       Caption = 'DH:'
       ParentColor = False
     end
     object Label12: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 181
-      Width = 16
+      Width = 18
       Caption = 'LS:'
       ParentColor = False
     end
     object Label13: TLabel
       Left = 440
-      Height = 13
+      Height = 16
       Top = 135
-      Width = 17
+      Width = 18
       Caption = 'SS:'
       ParentColor = False
     end
     object Label14: TLabel
       Left = 440
-      Height = 13
+      Height = 16
       Top = 159
-      Width = 18
+      Width = 21
       Caption = 'DS:'
       ParentColor = False
     end
     object AlphaTEdit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 226
       Width = 80
       TabOrder = 6
@@ -1843,7 +1912,7 @@ object StructureParameters: TStructureParameters
     end
     object BetaTEdit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 250
       Width = 80
       TabOrder = 7
@@ -1851,7 +1920,7 @@ object StructureParameters: TStructureParameters
     end
     object GTEdit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 226
       Width = 80
       TabOrder = 17
@@ -1859,7 +1928,7 @@ object StructureParameters: TStructureParameters
     end
     object DTEdit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 250
       Width = 80
       TabOrder = 18
@@ -1867,23 +1936,23 @@ object StructureParameters: TStructureParameters
     end
     object Label15: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 231
-      Width = 37
+      Width = 48
       Caption = 'AlphaT:'
       ParentColor = False
     end
     object Label16: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 255
-      Width = 32
+      Width = 39
       Caption = 'BetaT:'
       ParentColor = False
     end
     object DREdit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 56
       Width = 80
       TabOrder = 13
@@ -1891,23 +1960,23 @@ object StructureParameters: TStructureParameters
     end
     object Label4: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 35
-      Width = 19
+      Width = 22
       Caption = 'GR:'
       ParentColor = False
     end
     object Label5: TLabel
       Left = 240
-      Height = 13
+      Height = 16
       Top = 61
-      Width = 19
+      Width = 22
       Caption = 'DR:'
       ParentColor = False
     end
     object AlphaSEdit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 106
       Width = 80
       TabOrder = 2
@@ -1915,7 +1984,7 @@ object StructureParameters: TStructureParameters
     end
     object BetaSEdit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 130
       Width = 80
       TabOrder = 3
@@ -1923,7 +1992,7 @@ object StructureParameters: TStructureParameters
     end
     object AlphaS2Edit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 154
       Width = 80
       TabOrder = 4
@@ -1931,7 +2000,7 @@ object StructureParameters: TStructureParameters
     end
     object BetaS2Edit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 178
       Width = 80
       TabOrder = 5
@@ -1939,7 +2008,7 @@ object StructureParameters: TStructureParameters
     end
     object GHEdit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 128
       Width = 80
       TabOrder = 14
@@ -1947,7 +2016,7 @@ object StructureParameters: TStructureParameters
     end
     object DHEdit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 152
       Width = 80
       TabOrder = 15
@@ -1955,7 +2024,7 @@ object StructureParameters: TStructureParameters
     end
     object LSEdit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 176
       Width = 80
       TabOrder = 16
@@ -1963,7 +2032,7 @@ object StructureParameters: TStructureParameters
     end
     object SSEdit: TEdit
       Left = 493
-      Height = 21
+      Height = 22
       Top = 128
       Width = 80
       TabOrder = 23
@@ -1971,7 +2040,7 @@ object StructureParameters: TStructureParameters
     end
     object DSEdit: TEdit
       Left = 493
-      Height = 21
+      Height = 22
       Top = 152
       Width = 80
       TabOrder = 24
@@ -1979,24 +2048,24 @@ object StructureParameters: TStructureParameters
     end
     object Label6: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 111
-      Width = 37
+      Width = 47
       Caption = 'AlphaS:'
       ParentColor = False
       OnClick = Label6Click
     end
     object Label7: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 135
-      Width = 32
+      Width = 38
       Caption = 'BetaS:'
       ParentColor = False
     end
     object GREdit: TEdit
       Left = 272
-      Height = 21
+      Height = 22
       Top = 32
       Width = 80
       TabOrder = 12
@@ -2004,9 +2073,9 @@ object StructureParameters: TStructureParameters
     end
     object TitleLabel: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 0
-      Width = 311
+      Width = 370
       Caption = 'Constant structure parameters of the feedback control:'
       Font.Style = [fsBold]
       ParentColor = False
@@ -2014,7 +2083,7 @@ object StructureParameters: TStructureParameters
     end
     object AlphaREdit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 32
       Width = 80
       TabOrder = 0
@@ -2022,7 +2091,7 @@ object StructureParameters: TStructureParameters
     end
     object BetaREdit: TEdit
       Left = 64
-      Height = 21
+      Height = 22
       Top = 58
       Width = 80
       TabOrder = 1
@@ -2030,17 +2099,17 @@ object StructureParameters: TStructureParameters
     end
     object Label2: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 37
-      Width = 38
+      Width = 48
       Caption = 'AlphaR:'
       ParentColor = False
     end
     object Label3: TLabel
       Left = 0
-      Height = 13
+      Height = 16
       Top = 63
-      Width = 33
+      Width = 39
       Caption = 'BetaR:'
       ParentColor = False
     end
