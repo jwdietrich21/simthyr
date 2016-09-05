@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, SimThyrTypes, SimThyrServices;
+  StdCtrls, ExtCtrls, SimThyrTypes, SimThyrServices;
 
 type
 
@@ -29,6 +29,7 @@ type
   TSimOptionsDlg = class(TForm)
     CancelButton: TButton;
     CircadianCheckBox: TCheckBox;
+    NeuronImage: TImage;
     Label1: TLabel;
     Label2: TLabel;
     TRHEdit: TEdit;
