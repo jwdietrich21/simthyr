@@ -417,7 +417,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Visible = False
     end
     object MaxSpinEdit1: TFloatSpinEdit
-      Left = 420
+      Left = 471
       Height = 21
       Hint = 'Maximum of selected structure parameter'
       Top = 7
@@ -425,7 +425,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Anchors = [akRight, akBottom]
       DecimalPlaces = 3
       Increment = 0.01
-      MaxValue = 20000
+      MaxValue = 100000
       MinValue = 0
       OnChange = MaxSpinEdit1Change
       ParentShowHint = False
@@ -439,7 +439,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Height = 21
       Hint = 'Select the first dependent behavioural parameter whose response to be investigated here.'
       Top = 9
-      Width = 324
+      Width = 376
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
       ItemHeight = 13
@@ -479,7 +479,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Height = 21
       Hint = 'Select the second dependent behavioural parameter whose response to be investigated here.'
       Top = 41
-      Width = 324
+      Width = 376
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
       ItemHeight = 13
@@ -498,7 +498,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Text = 'Select zero isocline 1 (x axis)...'
     end
     object MaxSpinEdit2: TFloatSpinEdit
-      Left = 420
+      Left = 471
       Height = 21
       Hint = 'Maximum of selected structure parameter'
       Top = 38
@@ -506,7 +506,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Anchors = [akRight, akBottom]
       DecimalPlaces = 3
       Increment = 0.01
-      MaxValue = 20000
+      MaxValue = 100000
       MinValue = 0
       OnChange = MaxSpinEdit2Change
       ParentShowHint = False
@@ -515,10 +515,10 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Value = 10
     end
     object xColorBox: TColorBox
-      Left = 500
+      Left = 553
       Height = 22
       Hint = 'Select the color of the selected curve here.'
-      Top = 8
+      Top = 7
       Width = 121
       DefaultColorColor = clRed
       Selected = clBlue
@@ -530,10 +530,10 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       TabOrder = 6
     end
     object yColorBox: TColorBox
-      Left = 500
+      Left = 553
       Height = 22
       Hint = 'Select the color of the selected curve here.'
-      Top = 37
+      Top = 36
       Width = 121
       DefaultColorColor = clBlue
       Selected = clRed
@@ -543,26 +543,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       ParentShowHint = False
       ShowHint = True
       TabOrder = 7
-    end
-    object LogBox1: TCheckBox
-      Left = 636
-      Height = 17
-      Top = 9
-      Width = 32
-      Anchors = [akTop, akRight]
-      Caption = 'log'
-      OnChange = LogBox1Change
-      TabOrder = 8
-    end
-    object LogBox2: TCheckBox
-      Left = 636
-      Height = 17
-      Top = 41
-      Width = 32
-      Anchors = [akTop, akRight]
-      Caption = 'log'
-      OnChange = LogBox2Change
-      TabOrder = 9
     end
   end
   object PopupMenu1: TPopupMenu
@@ -586,13 +566,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     object PasteItem: TMenuItem
       Caption = 'Paste'
       Enabled = False
-    end
-  end
-  object ChartLogAxisTransformation: TChartAxisTransformations
-    left = 352
-    top = 168
-    object ChartLogAxisTransformationLogarithmAxisTransform1: TLogarithmAxisTransform
-      Base = 10
     end
   end
   object ChartToolset1: TChartToolset
