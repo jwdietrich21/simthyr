@@ -24,7 +24,7 @@ uses
   Classes, SysUtils, FileUtil, TAGraph, TASources, TASeries, TATransformations,
   TANavigation, TATools, TAStyles, TAChartListbox, TAChartExtentLink,
   TAChartImageList, TADrawerSVG, TADrawUtils, TADrawerCanvas, LResources,
-  Forms,Controls, Graphics, Dialogs, Buttons,
+  Forms,Controls, Graphics, Dialogs, Buttons, LCLVersion,
   ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus, {ComboEx,} Math,
   SimThyrTypes, SimThyrResources, Simulator, SimThyrServices, UnitConverter,
   SimThyrPrediction, Sensitivityanalysis, Types;

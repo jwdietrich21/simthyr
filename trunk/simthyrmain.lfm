@@ -1,9 +1,9 @@
 object SimThyrToolbar: TSimThyrToolbar
   Left = 264
-  Height = 75
+  Height = 66
   Hint = 'Please use the icons to load or save settings and to start or stop the simulation.'
   Top = 108
-  Width = 538
+  Width = 894
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   Align = alTop
@@ -13,8 +13,8 @@ object SimThyrToolbar: TSimThyrToolbar
   AutoSize = True
   BorderStyle = bsToolWindow
   Caption = 'SimThyr'
-  ClientHeight = 55
-  ClientWidth = 538
+  ClientHeight = 66
+  ClientWidth = 894
   DefaultMonitor = dmMainForm
   DockSite = True
   Icon.Data = {
@@ -323,7 +323,7 @@ object SimThyrToolbar: TSimThyrToolbar
     Left = 0
     Height = 26
     Top = 0
-    Width = 538
+    Width = 894
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 0
@@ -561,10 +561,10 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SimThyrLabel: TLabel
-    Left = 457
+    Left = 824
     Height = 16
-    Top = 5
-    Width = 50
+    Top = 8
+    Width = 51
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'SimThyr'

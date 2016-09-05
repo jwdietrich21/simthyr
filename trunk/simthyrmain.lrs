@@ -1,12 +1,12 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
-  'TPF0'#15'TSimThyrToolbar'#14'SimThyrToolbar'#4'Left'#3#8#1#6'Height'#2'K'#4
+  'TPF0'#15'TSimThyrToolbar'#14'SimThyrToolbar'#4'Left'#3#8#1#6'Height'#2'B'#4
   +'Hint'#6'RPlease use the icons to load or save settings and to start or stop'
-  +' the simulation.'#3'Top'#2'l'#5'Width'#3#26#2#21'HorzScrollBar.Visible'#8#21
+  +' the simulation.'#3'Top'#2'l'#5'Width'#3'~'#3#21'HorzScrollBar.Visible'#8#21
   +'VertScrollBar.Visible'#8#5'Align'#7#5'alTop'#10'AlphaBlend'#9#15'AlphaBlend'
   +'Value'#2#0#7'Anchors'#11#0#8'AutoSize'#9#11'BorderStyle'#7#12'bsToolWindow'
-  +#7'Caption'#6#7'SimThyr'#12'ClientHeight'#2'7'#11'ClientWidth'#3#26#2#14'Def'
+  +#7'Caption'#6#7'SimThyr'#12'ClientHeight'#2'B'#11'ClientWidth'#3'~'#3#14'Def'
   +'aultMonitor'#7#10'dmMainForm'#8'DockSite'#9#9'Icon.Data'#10#154'$'#0#0#150
   +'$'#0#0#0#0#1#0#8#0'  '#2#0#1#0#1#0'0'#1#0#0#134#0#0#0#16#16#2#0#1#0#1#0#176
   +#0#0#0#182#1#0#0'  '#16#0#1#0#4#0#232#2#0#0'f'#2#0#0#16#16#16#0#1#0#4#0'('#1
@@ -341,7 +341,7 @@ LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   +#239#255#172'A'#255#255#172'A'#4'Menu'#7#9'MainMenu1'#10'OnActivate'#7#12'Fo'
   +'rmActivate'#8'OnCreate'#7#10'FormCreate'#6'OnShow'#7#8'FormShow'#10'LCLVers'
   +'ion'#6#7'1.6.0.4'#7'Visible'#9#11'WindowState'#7#11'wsMaximized'#0#8'TToolB'
-  +'ar'#8'ToolBar1'#4'Left'#2#0#6'Height'#2#26#3'Top'#2#0#5'Width'#3#26#2#7'Cap'
+  +'ar'#8'ToolBar1'#4'Left'#2#0#6'Height'#2#26#3'Top'#2#0#5'Width'#3'~'#3#7'Cap'
   +'tion'#6#8'ToolBar1'#6'Images'#7#16'ToolbarImageList'#8'TabOrder'#2#0#7'OnCl'
   +'ick'#7#13'ToolBar1Click'#0#11'TToolButton'#13'NewToolButton'#4'Left'#2#1#4
   +'Hint'#6#23'New simulation scenario'#3'Top'#2#2#7'Caption'#6#13'NewToolButto'
@@ -411,15 +411,15 @@ LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   +'rium diagram (nullclines)'#3'Top'#2#2#7'Caption'#6#24'EquilibriumDiagramBut'
   +'ton'#10'ImageIndex'#2#21#7'OnClick'#7#29'EquilibriumDiagramButtonClick'#14
   +'ParentShowHint'#8#8'ShowHint'#9#0#0#0#6'TLabel'#12'SimThyrLabel'#4'Left'#3
-  +#201#1#6'Height'#2#16#3'Top'#2#5#5'Width'#2'2'#9'Alignment'#7#14'taRightJust'
-  +'ify'#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Caption'#6#7'SimThyr'#10'Font.Co'
-  +'lor'#7#6'clGray'#11'Font.Height'#2#243#11'ParentColor'#8#10'ParentFont'#8#0
-  +#0#9'TMainMenu'#9'MainMenu1'#6'Images'#7#16'ToolbarImageList'#4'left'#3#216#1
-  +#3'top'#2'('#0#9'TMenuItem'#9'AppleMenu'#7'Caption'#6#3#239#163#191#0#9'TMen'
-  +'uItem'#12'MacAboutItem'#7'Caption'#6#13'About SimThyr'#7'OnClick'#7#14'Abou'
-  +'tItemClick'#0#0#9'TMenuItem'#11'Divider_0_1'#7'Caption'#6#1'-'#0#0#9'TMenuI'
-  +'tem'#18'MacPreferencesItem'#7'Caption'#6#14'Preferences'#226#128#166#11'Bit'
-  +'map.Data'#10':'#4#0#0'6'#4#0#0'BM6'#4#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#16#0#0#0
+  +'8'#3#6'Height'#2#16#3'Top'#2#8#5'Width'#2'3'#9'Alignment'#7#14'taRightJusti'
+  +'fy'#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Caption'#6#7'SimThyr'#10'Font.Col'
+  +'or'#7#6'clGray'#11'Font.Height'#2#243#11'ParentColor'#8#10'ParentFont'#8#0#0
+  +#9'TMainMenu'#9'MainMenu1'#6'Images'#7#16'ToolbarImageList'#4'left'#3#216#1#3
+  +'top'#2'('#0#9'TMenuItem'#9'AppleMenu'#7'Caption'#6#3#239#163#191#0#9'TMenuI'
+  +'tem'#12'MacAboutItem'#7'Caption'#6#13'About SimThyr'#7'OnClick'#7#14'AboutI'
+  +'temClick'#0#0#9'TMenuItem'#11'Divider_0_1'#7'Caption'#6#1'-'#0#0#9'TMenuIte'
+  +'m'#18'MacPreferencesItem'#7'Caption'#6#14'Preferences'#226#128#166#11'Bitma'
+  +'p.Data'#10':'#4#0#0'6'#4#0#0'BM6'#4#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#16#0#0#0
   +#16#0#0#0#1#0' '#0#0#0#0#0#0#4#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#135'J '
   +#0#135'J '#0#135'J '#0#135'J '#0#135'J '#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#135'J '#0#190#165#146
