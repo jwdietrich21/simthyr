@@ -29,6 +29,7 @@ type
   TStructureParameters = class(TForm)
     AlphaREdit: TEdit;
     BetaREdit: TEdit;
+    LiverImage: TImage;
     Label39: TLabel;
     Label40: TLabel;
     Label41: TLabel;
@@ -91,11 +92,11 @@ type
     Tau0S2Edit: TEdit;
     Tau0SEdit: TEdit;
     Tau0REdit: TEdit;
-    Image1: TImage;
-    Image2: TImage;
-    Image3: TImage;
-    Image4: TImage;
-    Image5: TImage;
+    TFCLogo: TImage;
+    ThyroidImage: TImage;
+    NeuronImage: TImage;
+    PituitaryImage: TImage;
+    NeuronImage2: TImage;
     k30Edit: TEdit;
     k31Edit: TEdit;
     k41Edit: TEdit;
@@ -153,7 +154,7 @@ type
     procedure CancelButtonClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure HandleStrucPars;
-    procedure Image1Click(Sender: TObject);
+    procedure TFCLogoClick(Sender: TObject);
     procedure Label31Click(Sender: TObject);
     procedure Label6Click(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
@@ -306,7 +307,7 @@ begin
   StructureParametersDlg.ShowModal;
 end;
 
-procedure TStructureParameters.Image1Click(Sender: TObject);
+procedure TStructureParameters.TFCLogoClick(Sender: TObject);
 begin
   {for future extensions}
 end;
