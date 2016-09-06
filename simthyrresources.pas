@@ -47,6 +47,9 @@ const
   DECREASE_STRING = 'decrease';
   INCREASE_STRING = 'increase';
 
+  ISOKLINE_1_STRING = 'Concentration 1';
+  ISOKLINE_2_STRING = 'Concentration 2';
+
   I_LABEL = 'i';
   TIME_LABEL = 'Time';
   TRH_LABEL = 'Portal TRH';
