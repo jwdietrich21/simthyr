@@ -94,9 +94,6 @@ begin
   with IPSForm do
   begin
     Hide;
-    Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 32;
-    Height := Screen.Height - Top - 100;
-    width := trunc(Height * Image1.Width / Image1.Height);
     AlphaBlend := false;
   end;
   Application.CreateForm(TSimThyrLogWindow, SimThyrLogWindow);
@@ -132,6 +129,7 @@ begin
   AnnotationForm.Hide;
   Application.CreateForm(TSimulationSettings, SimulationSettings);
   SimThyrToolbar.Show;
+  IPSForm.Show;
   ValuesPlot.show;
   if ValuesPlot.Left + ValuesPLot.Width >= Screen.Width then
     ValuesPlot.Left := Screen.Width - ValuesPLot.Width - 26;

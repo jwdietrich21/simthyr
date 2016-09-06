@@ -150,16 +150,16 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#8'Position'#7#14'poScreenCenter'#10'LCLVersio'
-  +'n'#6#7'1.6.0.4'#0#6'TLabel'#6'Label1'#4'Left'#2'8'#6'Height'#2#13#3'Top'#2
-  +'`'#5'Width'#2'E'#7'Caption'#6#11'References:'#12'Font.Quality'#7#13'fqAntia'
+  +'n'#6#7'1.6.0.4'#0#6'TLabel'#6'Label1'#4'Left'#2'8'#6'Height'#2#16#3'Top'#2
+  +'`'#5'Width'#2'M'#7'Caption'#6#11'References:'#12'Font.Quality'#7#13'fqAntia'
   +'liased'#10'Font.Style'#11#6'fsBold'#0#11'ParentColor'#8#10'ParentFont'#8#0#0
   +#11'TStaticText'#11'StaticText2'#4'Left'#2'8'#6'Height'#2'0'#3'Top'#2#16#5'W'
   +'idth'#3#206#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#7'Caption'#6#146
   +'This simulation is based on version 10 of the MiMe-NoCoDI model of thyrotro'
   +'pic feedback control proposed by Dietrich et al. 1997 and subsequently.'#12
   +'Font.Quality'#7#13'fqAntialiased'#10'ParentFont'#8#8'TabOrder'#2#0#0#0#6'TL'
-  +'abel'#6'Label2'#6'Cursor'#7#11'crHandPoint'#4'Left'#3'l'#1#6'Height'#2#13#3
-  +'Top'#2'@'#5'Width'#3#154#0#9'Alignment'#7#14'taRightJustify'#7'Anchors'#11#5
+  +'abel'#6'Label2'#6'Cursor'#7#11'crHandPoint'#4'Left'#3'2'#1#6'Height'#2#16#3
+  +'Top'#2'@'#5'Width'#3#212#0#9'Alignment'#7#14'taRightJustify'#7'Anchors'#11#5
   +'akTop'#7'akRight'#0#7'Caption'#6'!http://tfc.medical-cybernetics.de'#5'Colo'
   +'r'#7#8'clWindow'#10'Font.Color'#7#6'clNavy'#10'Font.Pitch'#7#10'fpVariable'
   +#12'Font.Quality'#7#13'fqAntialiased'#11'ParentColor'#8#10'ParentFont'#8#11
@@ -220,7 +220,11 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +'PMID 26590684.'#6#0#6';15. Hoermann R, Midgley JE, Larisch R, Dietrich JW. '
   +'(2015).'#6'CHomeostatic Control of the Thyroid-Pituitary Axis: Perspectives'
   +' for'#6';Diagnosis and Treatment. Front Endocrinol (Lausanne). 2015 '#6';No'
-  +'v 20;6:177. doi: 10.3389/fendo.2015.00177. PMID 26635726.'#0#8'OnChange'#7
-  +#11'Memo1Change'#8'ReadOnly'#9#10'ScrollBars'#7#10'ssAutoBoth'#8'TabOrder'#2
-  +#1#11'WantReturns'#8#0#0#0
+  +'v 20;6:177. doi: 10.3389/fendo.2015.00177. PMID 26635726.'#6#0#6'>16. Dietr'
+  +'ich JW, Landgrafe-Mende G, Wiora E, Chatzitomaris A, '#6'@Klein HH, Midgley'
+  +' JE, Hoermann R. (2016). Calculated Parameters '#6'Bof Thyroid Homeostasis:'
+  +' Emerging Tools for Differential Diagnosis '#6'Aand Clinical Research. Fron'
+  +'t Endocrinol (Lausanne). 2016 Jun 9;7:'#6'157. doi: 10.3389/fendo.2016.0005'
+  +'7. PMID 27375554.'#6#0#0#8'OnChange'#7#11'Memo1Change'#8'ReadOnly'#9#10'Scr'
+  +'ollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#1#11'WantReturns'#8#0#0#0
 ]);
