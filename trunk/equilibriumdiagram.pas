@@ -18,6 +18,10 @@ unit Equilibriumdiagram;
 {$H+}
 {$ASSERTIONS ON}
 
+{ Nomenclature: }
+{ BPars: Behavioural parameters (e.g. TSH, T4, T3) }
+{ SPars: Structure parameters (e.g. GT, GD, LS etc.) }
+
 interface
 
 uses
@@ -88,13 +92,14 @@ type
     procedure FormActivate(Sender: TObject);
     procedure SetStandardStrucParBoundaries;
     procedure GetBParameters;
+    procedure SetSpinEditBoundaries;
     procedure SParEdit1Change(Sender: TObject);
     procedure SParEdit2Change(Sender: TObject);
     procedure SParEdit3Change(Sender: TObject);
     procedure UpdateEditsfromTrackBars;
     procedure UpdateTrackBarsfromEdits;
     procedure DrawDummyEquilibriumPlot;
-    procedure DrawDiagram(autoBounds, empty: boolean);
+    procedure DrawDiagram(empty: boolean);
     procedure BParCombo1Change(Sender: TObject);
     procedure BParCombo2Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -138,6 +143,7 @@ var
   gcT3conversionFactor: real;
   TRH1: real; // storage for TRH concentration from previous simulation run
   gUOM1, gUOM2: string;
+  automatedSpin: boolean;
 
 
 implementation
@@ -301,15 +307,14 @@ begin
     end;
     TSHItem:
     begin
+      conversionFactor2 := 1;
       case bParameter1 of
         FT4Item:
         begin;
-          conversionFactor2 := 1;
           Result.output := SimPituitaryResponse(SimCDeiodinaseResponse(inputVector));
         end;
         cT3Item:
         begin;
-          conversionFactor2 := 1;
           Result.output := SimPituitaryResponse(inputVector);
         end;
         otherwise
@@ -318,15 +323,14 @@ begin
     end;
     FT4Item:
     begin
+      conversionFactor2 := gFT4conversionFactor;
       case bParameter1 of
         TSHItem:
         begin
-          conversionFactor2 := gFT4conversionFactor;
           Result.output := SimThyroidResponse(inputVector);
         end;
         cT3Item:
         begin
-          conversionFactor2 := gFT4conversionFactor;
           Result.output := SimThyroidResponse(SimPituitaryResponse(inputVector));
         end;
         otherwise
@@ -335,20 +339,18 @@ begin
     end;
     FT3Item:
     begin
+      conversionFactor2 := gFT3conversionFactor;
       case bParameter1 of
         TSHItem:
         begin
-          conversionFactor2 := gFT3conversionFactor;
           Result.output := SimPDeiodinaseResponse(SimThyroidResponse(inputVector));
         end;
         FT4Item:
         begin
-          conversionFactor2 := gFT3conversionFactor;
           Result.output := SimPDeiodinaseResponse(inputVector);
         end;
         cT3Item:
         begin
-          conversionFactor2 := gFT3conversionFactor;
           Result.output := SimPDeiodinaseResponse(SimThyroidResponse(SimPituitaryResponse(inputVector)));
         end;
         otherwise
@@ -357,15 +359,14 @@ begin
     end;
     cT3Item:
     begin
+      conversionFactor2 := gFT3conversionFactor;
       case bParameter1 of
         TSHItem:
         begin
-          conversionFactor2 := gFT3conversionFactor;
           Result.output := SimCDeiodinaseResponse(SimThyroidResponse(inputVector));
         end;
         FT4Item:
         begin
-          conversionFactor2 := gFT3conversionFactor;
           Result.output := SimCDeiodinaseResponse(inputVector);
         end;
         otherwise
@@ -832,6 +833,29 @@ begin
     end;
 end;
 
+procedure TEquilibriumDiagramForm.SetSpinEditBoundaries;
+begin
+  automatedSpin := true; // prevents control of spin boundaries by SpinEditChange handler
+  case gSelectedBParameter2 of
+    TSHItem:
+    begin
+      MinSpinEdit2.Value := gActiveModel.Equilibrium.TSH1 / SPLAY_FACTOR_B;
+      MaxSpinEdit2.Value := gActiveModel.Equilibrium.TSH1 * SPLAY_FACTOR_B;
+    end;
+    FT4Item:
+    begin
+      MinSpinEdit2.Value := gActiveModel.Equilibrium.FT41 / SPLAY_FACTOR_B * gFT4conversionFactor;
+      MaxSpinEdit2.Value := gActiveModel.Equilibrium.FT41 * SPLAY_FACTOR_B * gFT4conversionFactor;
+    end;
+    cT3Item:
+    begin
+      MinSpinEdit2.Value := gActiveModel.Equilibrium.T3z1 / SPLAY_FACTOR_B * gFT3conversionFactor;
+      MaxSpinEdit2.Value := gActiveModel.Equilibrium.T3z1 * SPLAY_FACTOR_B * gFT3conversionFactor;
+    end;
+  end;
+  automatedSpin := false;
+end;
+
 procedure TEquilibriumDiagramForm.SParEdit1Change(Sender: TObject);
 begin
   { Get numeric value for structure Parameter 1 }
@@ -839,7 +863,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
-  DrawDiagram(true, false);
+  DrawDiagram(false);
 end;
 
 procedure TEquilibriumDiagramForm.SParEdit2Change(Sender: TObject);
@@ -849,7 +873,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2 / TRACK_RATIO);
-  DrawDiagram(true, false);
+  DrawDiagram(false);
 end;
 
 procedure TEquilibriumDiagramForm.SParEdit3Change(Sender: TObject);
@@ -859,7 +883,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3 / TRACK_RATIO);
-  DrawDiagram(true, false);
+  DrawDiagram(false);
 end;
 
 procedure TEquilibriumDiagramForm.FormActivate(Sender: TObject);
@@ -1000,8 +1024,8 @@ procedure TEquilibriumDiagramForm.DrawDummyEquilibriumPlot;
 var
   i: integer;
 begin
-  EquilibriumChart.LeftAxis.Title.Caption   := 'Concentration 2';
-  EquilibriumChart.BottomAxis.Title.Caption := 'Concentration 1';
+  EquilibriumChart.LeftAxis.Title.Caption   := ISOKLINE_2_STRING;
+  EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_1_STRING;
   with FLine[0] do
   begin
     AddXY(0, 0, '', clBlack);
@@ -1014,7 +1038,7 @@ begin
   end;
 end;
 
-procedure TEquilibriumDiagramForm.DrawDiagram(autoBounds, empty: boolean);
+procedure TEquilibriumDiagramForm.DrawDiagram(empty: boolean);
 { Main draw routine }
 { autoBounds: procedure calculates bounds of plot from data, if TRUE }
 { empty: decides if a dummy plot is drawn (TRUE) or a plot with data (FALSE) }
@@ -1032,7 +1056,7 @@ begin
   {If line series exists it is cleared and recreated to support foundations of redrawing}
   if FLine[1] <> nil then
     EquilibriumChart.ClearSeries;
-  for i := 0 to MAX_SERIES - 1 do
+  for i := 0 to MAX_SERIES - 1 do {{ Prepare line series }}
   begin
     FLine[i] := TLineSeries.Create(EquilibriumChart);
     with FLine[i] do
@@ -1056,8 +1080,6 @@ begin
     DrawDummyEquilibriumPlot
   else
   begin
-    //MinBPar1 := MinSpinEdit1.Value / gSpinFactor;
-    //MaxBPar1 := MaxSpinEdit1.Value / gSpinFactor;
     MinBPar2 := MinSpinEdit2.Value / gSpinFactor;
     MaxBPar2 := MaxSpinEdit2.Value / gSpinFactor;
     EquilibriumChart.LeftAxis.Range.UseMin := true;
@@ -1090,18 +1112,13 @@ begin
   end;
   for i := 0 to MAX_SERIES - 1 do
     FLine[i].EndUpdate;
-  if isNaN(conversionFactor1) or isNaN(conversionFactor2) then
-    max_x := NaN
+  if gSelectedBParameter1 = IItem then
+    EquilibriumChart.LeftAxis.Title.Caption := ISOKLINE_2_STRING
   else
-    begin
-      max_x := max(MaxValue(gResponseCurve1.input) * conversionFactor1,
-        MaxValue(gResponseCurve2.output) * conversionFactor2);
-      if autoBounds and (MaxSpinEdit2.Value < max_x) then
-        MaxSpinEdit2.Value := max_x;
-    end;
-  if gSelectedBParameter1 <> IItem then
     EquilibriumChart.LeftAxis.Title.Caption := BParCombo1.Caption;
-  if gSelectedBParameter2 <> IItem then
+  if gSelectedBParameter2 = IItem then
+    EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_1_STRING
+  else
     EquilibriumChart.BottomAxis.Title.Caption := BParCombo2.Caption;
 end;
 
@@ -1109,7 +1126,7 @@ procedure TEquilibriumDiagramForm.FormCreate(Sender: TObject);
 begin
   gSpinFactor := 1;
   UpdateEditsfromTrackBars;
-  DrawDiagram(true, true);
+  DrawDiagram(true);
 end;
 
 procedure TEquilibriumDiagramForm.BParCombo1Change(Sender: TObject);
@@ -1124,42 +1141,10 @@ begin
     end;
   GetBParameters;
   RecalculateConversionFactors; { Adapt for change of UOM on the fly }
-  case gSelectedBParameter1 of
-    TSHItem:
-    begin
-      MinSpinEdit1.Value := 0; { TODO : adapt to UOM }
-      if gSelectedBParameter2 = FT4Item then
-        begin
-          MaxSpinEdit2.Value := gActiveModel.Equilibrium.FT41 * SPLAY_FACTOR_B * gFT4conversionFactor;
-          MinSpinEdit2.Value := gActiveModel.Equilibrium.FT41 / SPLAY_FACTOR_B * gFT4conversionFactor;
-        end
-      else if gSelectedBParameter2 = cT3Item then
-        begin
-          MaxSpinEdit2.Value := gActiveModel.Equilibrium.T3z1 * SPLAY_FACTOR_B * gFT3conversionFactor;
-          MinSpinEdit2.Value := gActiveModel.Equilibrium.T3z1 / SPLAY_FACTOR_B * gFT3conversionFactor;
-        end;
-    end;
-    FT4Item:
-    begin
-      MinSpinEdit1.Value := 0.3; { TODO : adapt to UOM }
-      MaxSpinEdit1.Value := 27;
-      if gSelectedBParameter2 = TSHItem then
-        begin
-          MaxSpinEdit2.Value := gActiveModel.Equilibrium.TSH1 * SPLAY_FACTOR_B;
-          MinSpinEdit2.Value := gActiveModel.Equilibrium.TSH1 / SPLAY_FACTOR_B;
-        end;
-    end;
-    cT3Item:
-    begin
-      MinSpinEdit1.Value := 100; { TODO : adapt to UOM }
-      MaxSpinEdit1.Value := 20000;
-      if gSelectedBParameter2 = TSHItem then
-        MaxSpinEdit2.Value := 6;
-    end;
-  end;
+  SetSpinEditBoundaries;
   xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
   yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
-  DrawDiagram(true, false);
+  DrawDiagram(false);
 end;
 
 procedure TEquilibriumDiagramForm.BParCombo2Change(Sender: TObject);
@@ -1173,30 +1158,10 @@ begin
         BParCombo1.ItemIndex := 1;
     end;
   GetBParameters;
-  case gSelectedBParameter2 of
-    TSHItem:
-    begin
-      MaxSpinEdit2.Value := gActiveModel.Equilibrium.TSH1 * SPLAY_FACTOR_B;
-      MinSpinEdit2.Value := gActiveModel.Equilibrium.TSH1 / SPLAY_FACTOR_B;
-    end;
-    FT4Item:
-    begin
-      MaxSpinEdit2.Value := gActiveModel.Equilibrium.FT41 * SPLAY_FACTOR_B * gFT4conversionFactor;
-      MinSpinEdit2.Value := gActiveModel.Equilibrium.FT41 / SPLAY_FACTOR_B * gFT4conversionFactor;
-      if gSelectedBParameter1 = TSHItem then
-        MaxSpinEdit1.Value := 10;
-    end;
-    cT3Item:
-    begin
-      MaxSpinEdit2.Value := gActiveModel.Equilibrium.T3z1 * SPLAY_FACTOR_B * gFT3conversionFactor;
-      MinSpinEdit2.Value := gActiveModel.Equilibrium.T3z1 / SPLAY_FACTOR_B * gFT3conversionFactor;
-      if gSelectedBParameter1 = TSHItem then
-        MaxSpinEdit1.Value := 6;
-    end;
-  end;
+  SetSpinEditBoundaries;
   xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
   yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
-  DrawDiagram(true, false);
+  DrawDiagram(false);
 end;
 
 procedure TEquilibriumDiagramForm.FullScaleButton1Click(Sender: TObject);
@@ -1207,48 +1172,60 @@ end;
 
 procedure TEquilibriumDiagramForm.MaxSpinEdit1Change(Sender: TObject);
 begin
-  if MaxSpinEdit1.Value < MinSpinEdit1.Value then
-  {adapts boundaries to avoid negative intervals}
-  begin
-    bell;
-    MaxSpinEdit1.Value := MinSpinEdit1.Value;
-  end;
-  if MaxSpinEdit1.Value = 0 then MaxSpinEdit1.Value := 0.1;
-  DrawDiagram(false, false);
+  if not automatedSpin then
+    begin
+      if MaxSpinEdit1.Value < MinSpinEdit1.Value then
+      {adapts boundaries to avoid negative intervals}
+      begin
+        bell;
+        MaxSpinEdit1.Value := MinSpinEdit1.Value;
+      end;
+      if MaxSpinEdit1.Value = 0 then MaxSpinEdit1.Value := 0.1;
+      DrawDiagram(false);
+    end;
 end;
 
 procedure TEquilibriumDiagramForm.MaxSpinEdit2Change(Sender: TObject);
 begin
-  if MaxSpinEdit2.Value < MinSpinEdit2.Value then
-  {adapts boundaries to avoid negative intervals}
-  begin
-    bell;
-    MaxSpinEdit2.Value := MinSpinEdit2.Value;
-  end;
-  if MaxSpinEdit2.Value = 0 then MaxSpinEdit2.Value := 0.1;
-  DrawDiagram(false, false);
+  if not automatedSpin then
+    begin
+      if MaxSpinEdit2.Value < MinSpinEdit2.Value then
+      {adapts boundaries to avoid negative intervals}
+      begin
+        bell;
+        MaxSpinEdit2.Value := MinSpinEdit2.Value;
+      end;
+      if MaxSpinEdit2.Value = 0 then MaxSpinEdit2.Value := 0.1;
+      DrawDiagram(false);
+    end;
 end;
 
 procedure TEquilibriumDiagramForm.MinSpinEdit1Change(Sender: TObject);
 begin
-  if MaxSpinEdit1.Value < MinSpinEdit1.Value then
-  {adapts boundaries to avoid negative intervals}
-  begin
-    bell;
-    MinSpinEdit1.Value := MaxSpinEdit1.Value;
-  end;
-  DrawDiagram(false, false);
+  if not automatedSpin then
+    begin
+      if MaxSpinEdit1.Value < MinSpinEdit1.Value then
+      {adapts boundaries to avoid negative intervals}
+      begin
+        bell;
+        MinSpinEdit1.Value := MaxSpinEdit1.Value;
+      end;
+      DrawDiagram(false);
+    end;
 end;
 
 procedure TEquilibriumDiagramForm.MinSpinEdit2Change(Sender: TObject);
 begin
-  if MaxSpinEdit2.Value < MinSpinEdit2.Value then
-  {adapts boundaries to avoid negative intervals}
-  begin
-    bell;
-    MinSpinEdit2.Value := MaxSpinEdit2.Value;
-  end;
-  DrawDiagram(false, false);
+  if not automatedSpin then
+    begin
+      if MaxSpinEdit2.Value < MinSpinEdit2.Value then
+      {adapts boundaries to avoid negative intervals}
+      begin
+        bell;
+        MinSpinEdit2.Value := MaxSpinEdit2.Value;
+      end;
+      DrawDiagram(false);
+    end;
 end;
 
 procedure TEquilibriumDiagramForm.ResetButtonClick(Sender: TObject);
@@ -1265,12 +1242,9 @@ begin
   SParTrackBar3.Position := 0;
   RestoreStrucPars;
   SetStandardStrucParBoundaries;
-  MinSpinEdit1.Value := 0;
-  MinSpinEdit2.Value := 0.3;
-  MaxSpinEdit1.Value := 10;
-  MaxSpinEdit2.Value := 10;
+  SetSpinEditBoundaries;
   FullScaleButton1Click(Sender);
-  DrawDiagram(true, false);
+  DrawDiagram(false);
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo1Change(Sender: TObject);
@@ -1314,7 +1288,7 @@ begin
     gSelectedSParameter1 := NullItem;
   SetStandardStrucParBoundaries;
   UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
-  DrawDiagram(true, false);
+  DrawDiagram(false);
   RestoreStrucPars;
   if gSelectedSParameter1 <> NullItem then
     SParTrackBar1.Enabled := true;
@@ -1361,7 +1335,7 @@ begin
     gSelectedSParameter2 := NullItem;
   SetStandardStrucParBoundaries;
   UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2 / TRACK_RATIO);
-  DrawDiagram(true, false);
+  DrawDiagram(false);
   RestoreStrucPars;
   if gSelectedSParameter2 <> NullItem then
     SParTrackBar2.Enabled := true;
@@ -1408,7 +1382,7 @@ begin
     gSelectedSParameter3 := NullItem;
   SetStandardStrucParBoundaries;
   UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3 / TRACK_RATIO);
-  DrawDiagram(true, false);
+  DrawDiagram(false);
   RestoreStrucPars;
   if gSelectedSParameter3 <> NullItem then
     SParTrackBar3.Enabled := true;
@@ -1419,7 +1393,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
-  DrawDiagram(true, false);
+  DrawDiagram(false);
   RestoreStrucPars;
 end;
 
@@ -1428,7 +1402,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2 / TRACK_RATIO);
-  DrawDiagram(true, false);
+  DrawDiagram(false);
   RestoreStrucPars;
 end;
 
@@ -1437,7 +1411,7 @@ begin
   SaveStrucPars;
   UpdateEditsfromTrackBars;
   UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3 / TRACK_RATIO);
-  DrawDiagram(true, false);
+  DrawDiagram(false);
   RestoreStrucPars;
 end;
 
@@ -1453,6 +1427,7 @@ end;
 
 initialization
   {$I equilibriumdiagram.lrs}
+  automatedSpin := false;
   gSelectedSParameter1 := NullItem;
   gSelectedSParameter2 := NullItem;
   gSelectedSParameter2 := NullItem;
