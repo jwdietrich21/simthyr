@@ -30,13 +30,14 @@ uses
   SimThyrPrediction, Sensitivityanalysis, Types;
 
 const
-  MAX_SERIES   = 2;    // number of isoclines to draw
-  MAX_I        = 100;  // number of samples for tResponseCurve
-  MAX_PIT      = 130;  // number of iterations to get pituitary nullcline
-  FIRST_VALUE  = 26;   // first value to use as representative for equilibrium
-  TRACK_RATIO  = 10;   // ratio to translate from paramter to track bar position
-  SPLAY_FACTOR = 5;    // splay of trackbars for structure parameters
-  MIN_LOG_VAL  = 1e-2; // minimum value for logarithmic axes
+  MAX_SERIES     = 2;    // number of isoclines to draw
+  MAX_I          = 100;  // number of samples for tResponseCurve
+  MAX_PIT        = 130;  // number of iterations to get pituitary nullcline
+  FIRST_VALUE    = 26;   // first value to use as representative for equilibrium
+  TRACK_RATIO    = 10;   // ratio to translate from paramter to track bar position
+  SPLAY_FACTOR_S = 5;    // splay of trackbars for structure parameters
+  SPLAY_FACTOR_B = 3;    // splay of behavioural parameters
+  MIN_LOG_VAL    = 1e-2; // minimum value for logarithmic axes
 
 type
 
@@ -236,6 +237,16 @@ begin
   end;
 end;
 
+procedure RecalculateConversionFactors;
+begin
+  gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
+    gParameterUnit[FT4_pos]);
+  gFT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
+    gParameterUnit[FT3_pos]);
+  gcT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
+    gParameterUnit[cT3_pos]);
+end;
+
 function SimSubsystemResponse(bParameter1, bParameter2: tBParameter;
   min, max: real; var conversionFactor1, conversionFactor2: real): tResponseCurve;
 { Prepare and dispatch calls to partial simulators of subsystems of the open loop }
@@ -379,113 +390,113 @@ begin
     GD1Item:
     begin
       gTrackFactor1 := GD1_FACTOR;
-      gMinSPar1 := GD1 / SPLAY_FACTOR;
-      gMaxSPar1 := GD1 * SPLAY_FACTOR;
+      gMinSPar1 := GD1 / SPLAY_FACTOR_S;
+      gMaxSPar1 := GD1 * SPLAY_FACTOR_S;
       gMidSPar1 := GD1;
     end;
     GD2Item:
     begin
       gTrackFactor1 := GD2_FACTOR;
-      gMinSPar1 := GD2 / SPLAY_FACTOR;
-      gMaxSPar1 := GD2 * SPLAY_FACTOR;
+      gMinSPar1 := GD2 / SPLAY_FACTOR_S;
+      gMaxSPar1 := GD2 * SPLAY_FACTOR_S;
       gMidSPar1 := GD2;
     end;
     KM1Item:
     begin
       gTrackFactor1 := kM1_FACTOR;
-      gMinSPar1 := kM1 / SPLAY_FACTOR;
-      gMaxSPar1 := kM1 * SPLAY_FACTOR;
+      gMinSPar1 := kM1 / SPLAY_FACTOR_S;
+      gMaxSPar1 := kM1 * SPLAY_FACTOR_S;
       gMidSPar1 := kM1;
     end;
     KM2Item:
     begin
       gTrackFactor1 := KM2_FACTOR;
-      gMinSPar1 := kM2 / SPLAY_FACTOR;
-      gMaxSPar1 := kM2 * SPLAY_FACTOR;
+      gMinSPar1 := kM2 / SPLAY_FACTOR_S;
+      gMaxSPar1 := kM2 * SPLAY_FACTOR_S;
       gMidSPar1 := kM2;
     end;
     GTItem:
     begin
       gTrackFactor1 := GT_FACTOR;
-      gMinSPar1 := GT / SPLAY_FACTOR;
-      gMaxSPar1 := GT * SPLAY_FACTOR;
+      gMinSPar1 := GT / SPLAY_FACTOR_S;
+      gMaxSPar1 := GT * SPLAY_FACTOR_S;
       gMidSPar1 := GT;
     end;
     DTItem:
     begin
       gTrackFactor1 := DT_FACTOR;
-      gMinSPar1 := DT / SPLAY_FACTOR;
-      gMaxSPar1 := DT * SPLAY_FACTOR;
+      gMinSPar1 := DT / SPLAY_FACTOR_S;
+      gMaxSPar1 := DT * SPLAY_FACTOR_S;
       gMidSPar1 := DT;
     end;
     GHItem:
     begin
       gTrackFactor1 := GH_FACTOR;
-      gMinSPar1 := GH / SPLAY_FACTOR;
-      gMaxSPar1 := GH * SPLAY_FACTOR;
+      gMinSPar1 := GH / SPLAY_FACTOR_S;
+      gMaxSPar1 := GH * SPLAY_FACTOR_S;
       gMidSPar1 := GH;
     end;
     DHItem:
     begin
       gTrackFactor1 := DH_FACTOR;
-      gMinSPar1 := DH / SPLAY_FACTOR;
-      gMaxSPar1 := DH * SPLAY_FACTOR;
+      gMinSPar1 := DH / SPLAY_FACTOR_S;
+      gMaxSPar1 := DH * SPLAY_FACTOR_S;
       gMidSPar1 := DH;
     end;
     SSItem:
     begin
       gTrackFactor1 := SS_FACTOR;
-      gMinSPar1 := SS / SPLAY_FACTOR;
-      gMaxSPar1 := SS * SPLAY_FACTOR;
+      gMinSPar1 := SS / SPLAY_FACTOR_S;
+      gMaxSPar1 := SS * SPLAY_FACTOR_S;
       gMidSPar1 := SS;
     end;
     DSItem:
     begin
       gTrackFactor1 := DS_FACTOR;
-      gMinSPar1 := DS / SPLAY_FACTOR;
-      gMaxSPar1 := DS * SPLAY_FACTOR;
+      gMinSPar1 := DS / SPLAY_FACTOR_S;
+      gMaxSPar1 := DS * SPLAY_FACTOR_S;
       gMidSPar1 := DS;
     end;
     GRItem:
     begin
       gTrackFactor1 := GR_FACTOR;
-      gMinSPar1 := GR / SPLAY_FACTOR;
-      gMaxSPar1 := GR * SPLAY_FACTOR;
+      gMinSPar1 := GR / SPLAY_FACTOR_S;
+      gMaxSPar1 := GR * SPLAY_FACTOR_S;
       gMidSPar1 := GR;
     end;
     DRItem:
     begin
       gTrackFactor1 := DR_FACTOR;
-      gMinSPar1 := DR / SPLAY_FACTOR;
-      gMaxSPar1 := DR * SPLAY_FACTOR;
+      gMinSPar1 := DR / SPLAY_FACTOR_S;
+      gMaxSPar1 := DR * SPLAY_FACTOR_S;
       gMidSPar1 := DR;
     end;
     LSItem:
     begin
       gTrackFactor1 := LS_FACTOR;
-      gMinSPar1 := LS / SPLAY_FACTOR;
-      gMaxSPar1 := LS * SPLAY_FACTOR;
+      gMinSPar1 := LS / SPLAY_FACTOR_S;
+      gMaxSPar1 := LS * SPLAY_FACTOR_S;
       gMidSPar1 := LS;
     end;
     betaTItem:
     begin
       gTrackFactor1 := betaT_FACTOR;
-      gMinSPar1 := betaT / SPLAY_FACTOR;
-      gMaxSPar1 := betaT * SPLAY_FACTOR;
+      gMinSPar1 := betaT / SPLAY_FACTOR_S;
+      gMaxSPar1 := betaT * SPLAY_FACTOR_S;
       gMidSPar1 := betaT;
     end;
     TBGItem:
     begin
       gTrackFactor1 := TBG_FACTOR;
-      gMinSPar1 := TBG / SPLAY_FACTOR;
-      gMaxSPar1 := TBG * SPLAY_FACTOR;
+      gMinSPar1 := TBG / SPLAY_FACTOR_S;
+      gMaxSPar1 := TBG * SPLAY_FACTOR_S;
       gMidSPar1 := TBG;
     end;
     TBPAItem:
     begin
       gTrackFactor1 := TBPA_FACTOR;
-      gMinSPar1 := TBPA / SPLAY_FACTOR;
-      gMaxSPar1 := TBPA * SPLAY_FACTOR;
+      gMinSPar1 := TBPA / SPLAY_FACTOR_S;
+      gMaxSPar1 := TBPA * SPLAY_FACTOR_S;
       gMidSPar1 := TBPA;
     end;
     otherwise
@@ -508,113 +519,113 @@ begin
     GD1Item:
     begin
       gTrackFactor2 := GD1_FACTOR;
-      gMinSPar2 := GD1 / SPLAY_FACTOR;
-      gMaxSPar2 := GD1 * SPLAY_FACTOR;
+      gMinSPar2 := GD1 / SPLAY_FACTOR_S;
+      gMaxSPar2 := GD1 * SPLAY_FACTOR_S;
       gMidSPar2 := GD1;
     end;
     GD2Item:
     begin
       gTrackFactor2 := GD2_FACTOR;
-      gMinSPar2 := GD2 / SPLAY_FACTOR;
-      gMaxSPar2 := GD2 * SPLAY_FACTOR;
+      gMinSPar2 := GD2 / SPLAY_FACTOR_S;
+      gMaxSPar2 := GD2 * SPLAY_FACTOR_S;
       gMidSPar2 := GD2;
     end;
     KM1Item:
     begin
       gTrackFactor2 := kM1_FACTOR;
-      gMinSPar2 := kM1 / SPLAY_FACTOR;
-      gMaxSPar2 := kM1 * SPLAY_FACTOR;
+      gMinSPar2 := kM1 / SPLAY_FACTOR_S;
+      gMaxSPar2 := kM1 * SPLAY_FACTOR_S;
       gMidSPar2 := kM1;
     end;
     KM2Item:
     begin
       gTrackFactor2 := KM2_FACTOR;
-      gMinSPar2 := KM2 / SPLAY_FACTOR;
-      gMaxSPar2 := KM2 * SPLAY_FACTOR;
+      gMinSPar2 := KM2 / SPLAY_FACTOR_S;
+      gMaxSPar2 := KM2 * SPLAY_FACTOR_S;
       gMidSPar2 := kM2;
     end;
     GTItem:
     begin
       gTrackFactor2 := GT_FACTOR;
-      gMinSPar2 := GT / SPLAY_FACTOR;
-      gMaxSPar2 := GT * SPLAY_FACTOR;
+      gMinSPar2 := GT / SPLAY_FACTOR_S;
+      gMaxSPar2 := GT * SPLAY_FACTOR_S;
       gMidSPar2 := GT;
     end;
     DTItem:
     begin
       gTrackFactor2 := DT_FACTOR;
-      gMinSPar2 := DT / SPLAY_FACTOR;
-      gMaxSPar2 := DT * SPLAY_FACTOR;
+      gMinSPar2 := DT / SPLAY_FACTOR_S;
+      gMaxSPar2 := DT * SPLAY_FACTOR_S;
       gMidSPar2 := DT;
     end;
     GHItem:
     begin
       gTrackFactor2 := GH_FACTOR;
-      gMinSPar2 := GH / SPLAY_FACTOR;
-      gMaxSPar2 := GH * SPLAY_FACTOR;
+      gMinSPar2 := GH / SPLAY_FACTOR_S;
+      gMaxSPar2 := GH * SPLAY_FACTOR_S;
       gMidSPar2 := GH;
     end;
     DHItem:
     begin
       gTrackFactor2 := DH_FACTOR;
-      gMinSPar2 := DH / SPLAY_FACTOR;
-      gMaxSPar2 := DH * SPLAY_FACTOR;
+      gMinSPar2 := DH / SPLAY_FACTOR_S;
+      gMaxSPar2 := DH * SPLAY_FACTOR_S;
       gMidSPar2 := DH;
     end;
     SSItem:
     begin
       gTrackFactor2 := SS_FACTOR;
-      gMinSPar2 := SS / SPLAY_FACTOR;
-      gMaxSPar2 := SS * SPLAY_FACTOR;
+      gMinSPar2 := SS / SPLAY_FACTOR_S;
+      gMaxSPar2 := SS * SPLAY_FACTOR_S;
       gMidSPar2 := SS;
     end;
     DSItem:
     begin
       gTrackFactor2 := DS_FACTOR;
-      gMinSPar2 := DS / SPLAY_FACTOR;
-      gMaxSPar2 := DS * SPLAY_FACTOR;
+      gMinSPar2 := DS / SPLAY_FACTOR_S;
+      gMaxSPar2 := DS * SPLAY_FACTOR_S;
       gMidSPar2 := DS;
     end;
     GRItem:
     begin
       gTrackFactor2 := GR_FACTOR;
-      gMinSPar2 := GR / SPLAY_FACTOR;
-      gMaxSPar2 := GR * SPLAY_FACTOR;
+      gMinSPar2 := GR / SPLAY_FACTOR_S;
+      gMaxSPar2 := GR * SPLAY_FACTOR_S;
       gMidSPar2 := GR;
     end;
     DRItem:
     begin
       gTrackFactor2 := DR_FACTOR;
-      gMinSPar2 := DR / SPLAY_FACTOR;
-      gMaxSPar2 := DR * SPLAY_FACTOR;
+      gMinSPar2 := DR / SPLAY_FACTOR_S;
+      gMaxSPar2 := DR * SPLAY_FACTOR_S;
       gMidSPar2 := DR;
     end;
     LSItem:
     begin
       gTrackFactor2 := LS_FACTOR;
-      gMinSPar2 := LS / SPLAY_FACTOR;
-      gMaxSPar2 := LS * SPLAY_FACTOR;
+      gMinSPar2 := LS / SPLAY_FACTOR_S;
+      gMaxSPar2 := LS * SPLAY_FACTOR_S;
       gMidSPar2 := LS;
     end;
     betaTItem:
     begin
       gTrackFactor2 := betaT_FACTOR;
-      gMinSPar2 := betaT / SPLAY_FACTOR;
-      gMaxSPar2 := betaT * SPLAY_FACTOR;
+      gMinSPar2 := betaT / SPLAY_FACTOR_S;
+      gMaxSPar2 := betaT * SPLAY_FACTOR_S;
       gMidSPar2 := betaT;
     end;
     TBGItem:
     begin
       gTrackFactor2 := TBG_FACTOR;
-      gMinSPar2 := TBG / SPLAY_FACTOR;
-      gMaxSPar2 := TBG * SPLAY_FACTOR;
+      gMinSPar2 := TBG / SPLAY_FACTOR_S;
+      gMaxSPar2 := TBG * SPLAY_FACTOR_S;
       gMidSPar2 := TBG;
     end;
     TBPAItem:
     begin
       gTrackFactor2 := TBPA_FACTOR;
-      gMinSPar2 := TBPA / SPLAY_FACTOR;
-      gMaxSPar2 := TBPA * SPLAY_FACTOR;
+      gMinSPar2 := TBPA / SPLAY_FACTOR_S;
+      gMaxSPar2 := TBPA * SPLAY_FACTOR_S;
       gMidSPar2 := TBPA;
     end;
     otherwise
@@ -637,113 +648,113 @@ begin
     GD1Item:
     begin
       gTrackFactor3 := GD1_FACTOR;
-      gMinSPar3 := GD1 / SPLAY_FACTOR;
-      gMaxSPar3 := GD1 * SPLAY_FACTOR;
+      gMinSPar3 := GD1 / SPLAY_FACTOR_S;
+      gMaxSPar3 := GD1 * SPLAY_FACTOR_S;
       gMidSPar3 := GD1
     end;
     GD2Item:
     begin
       gTrackFactor3 := GD2_FACTOR;
-      gMinSPar3 := GD2 / SPLAY_FACTOR;
-      gMaxSPar3 := GD2 * SPLAY_FACTOR;
+      gMinSPar3 := GD2 / SPLAY_FACTOR_S;
+      gMaxSPar3 := GD2 * SPLAY_FACTOR_S;
       gMidSPar3 := GD2
     end;
     KM1Item:
     begin
       gTrackFactor3 := kM1_FACTOR;
-      gMinSPar3 := kM1 / SPLAY_FACTOR;
-      gMaxSPar3 := kM1 * SPLAY_FACTOR;
+      gMinSPar3 := kM1 / SPLAY_FACTOR_S;
+      gMaxSPar3 := kM1 * SPLAY_FACTOR_S;
       gMidSPar3 := kM1;
     end;
     KM2Item:
     begin
       gTrackFactor3 := KM2_FACTOR;
-      gMinSPar3 := KM2 / SPLAY_FACTOR;
-      gMaxSPar3 := KM2 * SPLAY_FACTOR;
+      gMinSPar3 := KM2 / SPLAY_FACTOR_S;
+      gMaxSPar3 := KM2 * SPLAY_FACTOR_S;
       gMidSPar3 := kM2;
     end;
     GTItem:
     begin
       gTrackFactor3 := GT_FACTOR;
-      gMinSPar3 := GT / SPLAY_FACTOR;
-      gMaxSPar3 := GT * SPLAY_FACTOR;
+      gMinSPar3 := GT / SPLAY_FACTOR_S;
+      gMaxSPar3 := GT * SPLAY_FACTOR_S;
       gMidSPar3 := GT;
     end;
     DTItem:
     begin
       gTrackFactor3 := DT_FACTOR;
-      gMinSPar3 := DT / SPLAY_FACTOR;
-      gMaxSPar3 := DT * SPLAY_FACTOR;
+      gMinSPar3 := DT / SPLAY_FACTOR_S;
+      gMaxSPar3 := DT * SPLAY_FACTOR_S;
       gMidSPar3 := DT;
     end;
     GHItem:
     begin
       gTrackFactor3 := GH_FACTOR;
-      gMinSPar3 := GH / SPLAY_FACTOR;
-      gMaxSPar3 := GH * SPLAY_FACTOR;
+      gMinSPar3 := GH / SPLAY_FACTOR_S;
+      gMaxSPar3 := GH * SPLAY_FACTOR_S;
       gMidSPar3 := GH;
     end;
     DHItem:
     begin
       gTrackFactor3 := DH_FACTOR;
-      gMinSPar3 := DH / SPLAY_FACTOR;
-      gMaxSPar3 := DH * SPLAY_FACTOR;
+      gMinSPar3 := DH / SPLAY_FACTOR_S;
+      gMaxSPar3 := DH * SPLAY_FACTOR_S;
       gMidSPar3 := DH;
     end;
     SSItem:
     begin
       gTrackFactor3 := SS_FACTOR;
-      gMinSPar3 := SS / SPLAY_FACTOR;
-      gMaxSPar3 := SS * SPLAY_FACTOR;
+      gMinSPar3 := SS / SPLAY_FACTOR_S;
+      gMaxSPar3 := SS * SPLAY_FACTOR_S;
       gMidSPar3 := SS;
     end;
     DSItem:
     begin
       gTrackFactor3 := DS_FACTOR;
-      gMinSPar3 := DS / SPLAY_FACTOR;
-      gMaxSPar3 := DS * SPLAY_FACTOR;
+      gMinSPar3 := DS / SPLAY_FACTOR_S;
+      gMaxSPar3 := DS * SPLAY_FACTOR_S;
       gMidSPar3 := DS;
     end;
     GRItem:
     begin
       gTrackFactor3 := GR_FACTOR;
-      gMinSPar3 := GR / SPLAY_FACTOR;
-      gMaxSPar3 := GR * SPLAY_FACTOR;
+      gMinSPar3 := GR / SPLAY_FACTOR_S;
+      gMaxSPar3 := GR * SPLAY_FACTOR_S;
       gMidSPar3 := GR;
     end;
     DRItem:
     begin
       gTrackFactor3 := DR_FACTOR;
-      gMinSPar3 := DR / SPLAY_FACTOR;
-      gMaxSPar3 := DR * SPLAY_FACTOR;
+      gMinSPar3 := DR / SPLAY_FACTOR_S;
+      gMaxSPar3 := DR * SPLAY_FACTOR_S;
       gMidSPar3 := DR;
     end;
     LSItem:
     begin
       gTrackFactor3 := LS_FACTOR;
-      gMinSPar3 := LS / SPLAY_FACTOR;
-      gMaxSPar3 := LS * SPLAY_FACTOR;
+      gMinSPar3 := LS / SPLAY_FACTOR_S;
+      gMaxSPar3 := LS * SPLAY_FACTOR_S;
       gMidSPar3 := LS;
     end;
     betaTItem:
     begin
       gTrackFactor3 := betaT_FACTOR;
-      gMinSPar3 := betaT / SPLAY_FACTOR;
-      gMaxSPar3 := betaT * SPLAY_FACTOR;
+      gMinSPar3 := betaT / SPLAY_FACTOR_S;
+      gMaxSPar3 := betaT * SPLAY_FACTOR_S;
       gMidSPar3 := betaT;
     end;
     TBGItem:
     begin
       gTrackFactor3 := TBG_FACTOR;
-      gMinSPar3 := TBG / SPLAY_FACTOR;
-      gMaxSPar3 := TBG * SPLAY_FACTOR;
+      gMinSPar3 := TBG / SPLAY_FACTOR_S;
+      gMaxSPar3 := TBG * SPLAY_FACTOR_S;
       gMidSPar3 := TBG;
     end;
     TBPAItem:
     begin
       gTrackFactor3 := TBPA_FACTOR;
-      gMinSPar3 := TBPA / SPLAY_FACTOR;
-      gMaxSPar3 := TBPA * SPLAY_FACTOR;
+      gMinSPar3 := TBPA / SPLAY_FACTOR_S;
+      gMaxSPar3 := TBPA * SPLAY_FACTOR_S;
       gMidSPar3 := TBPA;
     end;
     otherwise
@@ -1017,12 +1028,7 @@ begin
   ConversionFactor2 := 1;
   GetBParameters; { read, which behavioural parameters have been selected }
   { Recalculate conversion factors, to support change of UOM on the fly: }
-  gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
-    gParameterUnit[FT4_pos]);
-  gFT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
-    gParameterUnit[FT3_pos]);
-  gcT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
-    gParameterUnit[cT3_pos]);
+  RecalculateConversionFactors;
   {If line series exists it is cleared and recreated to support foundations of redrawing}
   if FLine[1] <> nil then
     EquilibriumChart.ClearSeries;
@@ -1117,21 +1123,31 @@ begin
         BParCombo2.ItemIndex := 1;
     end;
   GetBParameters;
+  RecalculateConversionFactors; { Adapt for change of UOM on the fly }
   case gSelectedBParameter1 of
     TSHItem:
     begin
       MinSpinEdit1.Value := 0; { TODO : adapt to UOM }
       if gSelectedBParameter2 = FT4Item then
-        MaxSpinEdit1.Value := 10
-      else
-        MaxSpinEdit1.Value := 6;
+        begin
+          MaxSpinEdit2.Value := gActiveModel.Equilibrium.FT41 * SPLAY_FACTOR_B * gFT4conversionFactor;
+          MinSpinEdit2.Value := gActiveModel.Equilibrium.FT41 / SPLAY_FACTOR_B * gFT4conversionFactor;
+        end
+      else if gSelectedBParameter2 = cT3Item then
+        begin
+          MaxSpinEdit2.Value := gActiveModel.Equilibrium.T3z1 * SPLAY_FACTOR_B * gFT3conversionFactor;
+          MinSpinEdit2.Value := gActiveModel.Equilibrium.T3z1 / SPLAY_FACTOR_B * gFT3conversionFactor;
+        end;
     end;
     FT4Item:
     begin
       MinSpinEdit1.Value := 0.3; { TODO : adapt to UOM }
       MaxSpinEdit1.Value := 27;
       if gSelectedBParameter2 = TSHItem then
-        MaxSpinEdit2.Value := 10;
+        begin
+          MaxSpinEdit2.Value := gActiveModel.Equilibrium.TSH1 * SPLAY_FACTOR_B;
+          MinSpinEdit2.Value := gActiveModel.Equilibrium.TSH1 / SPLAY_FACTOR_B;
+        end;
     end;
     cT3Item:
     begin
@@ -1160,23 +1176,20 @@ begin
   case gSelectedBParameter2 of
     TSHItem:
     begin
-      MinSpinEdit1.Value := 0; { TODO : adapt to UOM }
-      if gSelectedBParameter2 = FT4Item then
-        MaxSpinEdit1.Value := 10
-      else
-        MaxSpinEdit1.Value := 6;
+      MaxSpinEdit2.Value := gActiveModel.Equilibrium.TSH1 * SPLAY_FACTOR_B;
+      MinSpinEdit2.Value := gActiveModel.Equilibrium.TSH1 / SPLAY_FACTOR_B;
     end;
     FT4Item:
     begin
-      MinSpinEdit2.Value := 0.3; { TODO : adapt to UOM }
-      MaxSpinEdit2.Value := 27;
+      MaxSpinEdit2.Value := gActiveModel.Equilibrium.FT41 * SPLAY_FACTOR_B * gFT4conversionFactor;
+      MinSpinEdit2.Value := gActiveModel.Equilibrium.FT41 / SPLAY_FACTOR_B * gFT4conversionFactor;
       if gSelectedBParameter1 = TSHItem then
         MaxSpinEdit1.Value := 10;
     end;
     cT3Item:
     begin
-      MinSpinEdit2.Value := 100; { TODO : adapt to UOM }
-      MaxSpinEdit2.Value := 20000;
+      MaxSpinEdit2.Value := gActiveModel.Equilibrium.T3z1 * SPLAY_FACTOR_B * gFT3conversionFactor;
+      MinSpinEdit2.Value := gActiveModel.Equilibrium.T3z1 / SPLAY_FACTOR_B * gFT3conversionFactor;
       if gSelectedBParameter1 = TSHItem then
         MaxSpinEdit1.Value := 6;
     end;
