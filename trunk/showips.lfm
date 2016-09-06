@@ -1,14 +1,14 @@
 object IPSForm: TIPSForm
   Left = 258
-  Height = 451
+  Height = 457
   Top = 200
-  Width = 471
+  Width = 350
   AlphaBlend = True
   AlphaBlendValue = 0
   Anchors = [akTop, akBottom]
   Caption = 'Information Processing Structure (IPS)'
-  ClientHeight = 451
-  ClientWidth = 471
+  ClientHeight = 457
+  ClientWidth = 350
   Color = clWhite
   OnActivate = FormActivate
   OnCreate = FormCreate
@@ -16,10 +16,10 @@ object IPSForm: TIPSForm
   Visible = True
   object Image1: TImage
     Left = 16
-    Height = 421
+    Height = 427
     Hint = 'The information processing structure (IPS) of this model'
     Top = 16
-    Width = 442
+    Width = 320
     AntialiasingMode = amOn
     Anchors = [akTop, akLeft, akRight, akBottom]
     AutoSize = True
@@ -4119,7 +4119,7 @@ object IPSForm: TIPSForm
     ShowHint = True
   end
   object PopupMenu1: TPopupMenu
-    left = 424
+    left = 320
     top = 24
     object UndoItem: TMenuItem
       Caption = 'Undo'

@@ -156,9 +156,9 @@ object AboutModelForm: TAboutModelForm
   LCLVersion = '1.6.0.4'
   object Label1: TLabel
     Left = 56
-    Height = 13
+    Height = 16
     Top = 96
-    Width = 69
+    Width = 77
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -178,10 +178,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 364
-    Height = 13
+    Left = 306
+    Height = 16
     Top = 64
-    Width = 154
+    Width = 212
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -286,6 +286,13 @@ object AboutModelForm: TAboutModelForm
       'Homeostatic Control of the Thyroid-Pituitary Axis: Perspectives for'
       'Diagnosis and Treatment. Front Endocrinol (Lausanne). 2015 '
       'Nov 20;6:177. doi: 10.3389/fendo.2015.00177. PMID 26635726.'
+      ''
+      '16. Dietrich JW, Landgrafe-Mende G, Wiora E, Chatzitomaris A, '
+      'Klein HH, Midgley JE, Hoermann R. (2016). Calculated Parameters '
+      'of Thyroid Homeostasis: Emerging Tools for Differential Diagnosis '
+      'and Clinical Research. Front Endocrinol (Lausanne). 2016 Jun 9;7:'
+      '57. doi: 10.3389/fendo.2016.00057. PMID 27375554.'
+      ''
     )
     OnChange = Memo1Change
     ReadOnly = True
