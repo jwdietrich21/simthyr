@@ -260,6 +260,7 @@ var
   i: integer;
   interval: real;
   inputVector: tParamVector;
+  conversionFactor: real;
 begin
   assert(min >= 0, kError101);
   assert(max >= min, kError103);
@@ -279,21 +280,29 @@ begin
     end;
     FT4Item:
     begin
-      conversionFactor1 := gFT4conversionFactor;
+      if isNaN(conversionFactor1) then
+        conversionFactor := 1
+      else
+        conversionFactor := gFT4conversionFactor;
       for i := 0 to MAX_I do
       begin
         FT4 := min + i * interval;
-        inputVector[i] := FT4 / conversionFactor1;
+        inputVector[i] := FT4 / conversionFactor;
       end;
+      conversionFactor1 := gFT4conversionFactor;
     end;
     cT3Item:
     begin
-      conversionFactor1 := gFT3conversionFactor;
+      if isNaN(conversionFactor1) then
+        conversionFactor := 1
+      else
+        conversionFactor := gFT3conversionFactor;
       for i := 0 to MAX_I do
       begin
         T3z := min + i * interval;
-        inputVector[i] := T3z / conversionFactor1;
+        inputVector[i] := T3z / conversionFactor;
       end;
+      conversionFactor1 := gFT3conversionFactor;
     end;
     otherwise
     begin
@@ -1097,6 +1106,7 @@ begin
     end;
     MinBPar1 := 0;
     MaxBPar1 := MaxValue(gResponseCurve1.output);
+    ConversionFactor1 := NaN; // signals to SimSubsystemResponse that input is native
     if MaxBPar1 <> 0 then
       gResponseCurve2 := SimSubsystemResponse(gSelectedBParameter1, gSelectedBParameter2, MinBPar1,
       MaxBPar1, ConversionFactor1, ConversionFactor2)
