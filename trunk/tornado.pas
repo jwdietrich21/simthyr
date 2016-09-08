@@ -49,8 +49,6 @@ type
     RadioGroup1: TRadioGroup;
     StatusBar1: TStatusBar;
     UndoItem: TMenuItem;
-    {function GetFileName(const AExt: String): String;  // for a future extension }
-    {procedure SaveAsSVG(Sender: TObject);  // for a future extension }
     procedure CheckGroup1Click(Sender: TObject);
     procedure CheckGroup1ItemClick(Sender: TObject; Index: integer);
     procedure DecreaseColorBoxChange(Sender: TObject);
@@ -713,7 +711,10 @@ begin
       theHeight := Chart1.Height;
       theImage.Width := theWidth;
       theImage.Height := theHeight;
-      Chart1.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas);
+      if (lcl_major < 2) and (lcl_minor < 4) then
+        Chart1.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas)
+      else
+        Chart1.PaintOnCanvas(theImage.canvas, rect(0, 0, theImage.Width, theImage.Height));
       Clipboard.Assign(theImage);
     finally
       theImage.Free;

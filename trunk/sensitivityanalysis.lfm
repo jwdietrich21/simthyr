@@ -14,7 +14,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.0.4'
   Visible = True
   object Panel1: TPanel
     Left = 48
@@ -74,7 +74,6 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       ShowHint = True
       object Chart1LineSeries1: TLineSeries
         LinePen.Color = clRed
-        Pointer.OverrideColor = [ocBrush]
       end
     end
   end

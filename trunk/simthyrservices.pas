@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, Grids, StdCtrls, Dialogs, Forms, SimThyrTypes,
-  SimThyrResources, UnitConverter, DIFSupport, DOM, XMLRead, FileUtil, DateUtils
+  SimThyrResources, UnitConverter, DIFSupport, DOM, FileUtil, DateUtils
   {$IFDEF WINDOWS}
   , Windows, Win32Proc
   {$ENDIF}
@@ -197,9 +197,6 @@ begin
 end;
 
 function TryXMLDateTime2DateTime(const S: ShortString; out Value: TDateTime): boolean;
-var
-  DateOnly: string;
-  TPos:     integer;
 begin
   Result := True;
   try

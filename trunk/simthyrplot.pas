@@ -458,7 +458,7 @@ begin
     bell
   else
   begin
-    {gSelectedChart.CopyToClipboardBitmap doesn't work on Mac OS X}
+    { gSelectedChart.CopyToClipboardBitmap doesn't work on Mac OS X }
     {$IFDEF UNIX}
     theImage := TPortableNetworkGraphic.Create;
     try
@@ -466,8 +466,11 @@ begin
       theHeight := gSelectedChart.Height;
       theImage.Width := theWidth;
       theImage.Height := theHeight;
-      gSelectedChart.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height),
-        theImage.canvas);
+      if (lcl_major < 2) and (lcl_minor < 4) then
+        gSelectedChart.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height),
+        theImage.canvas)
+      else
+        gSelectedChart.PaintOnCanvas(theImage.canvas, rect(0, 0, theImage.Width, theImage.Height));
       Clipboard.Assign(theImage);
     finally
       theImage.Free;

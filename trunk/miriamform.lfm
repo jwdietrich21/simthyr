@@ -11,7 +11,7 @@ object AnnotationForm: TAnnotationForm
   Constraints.MinWidth = 400
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.2.6.0'
+  LCLVersion = '1.6.0.4'
   object ScrollBox1: TScrollBox
     Left = 16
     Height = 272
@@ -59,7 +59,7 @@ object AnnotationForm: TAnnotationForm
       Left = 8
       Height = 16
       Top = 83
-      Width = 50
+      Width = 47
       Alignment = taRightJustify
       Caption = 'Species'
       ParentColor = False
@@ -79,7 +79,7 @@ object AnnotationForm: TAnnotationForm
       Left = 8
       Height = 16
       Top = 112
-      Width = 102
+      Width = 96
       Alignment = taRightJustify
       Caption = 'Model Creators'
       ParentColor = False
@@ -95,7 +95,6 @@ object AnnotationForm: TAnnotationForm
       CancelCaption = 'Cancel'
       DateOrder = doNone
       ButtonWidth = 23
-      CharCase = ecNormal
       NumGlyphs = 1
       MaxLength = 0
       ParentShowHint = False
@@ -106,7 +105,7 @@ object AnnotationForm: TAnnotationForm
       Left = 8
       Height = 16
       Top = 182
-      Width = 69
+      Width = 65
       Alignment = taRightJustify
       Caption = 'Created at'
       ParentColor = False
@@ -122,7 +121,6 @@ object AnnotationForm: TAnnotationForm
       CancelCaption = 'Cancel'
       DateOrder = doNone
       ButtonWidth = 23
-      CharCase = ecNormal
       NumGlyphs = 1
       MaxLength = 0
       ParentShowHint = False
@@ -133,7 +131,7 @@ object AnnotationForm: TAnnotationForm
       Left = 8
       Height = 16
       Top = 210
-      Width = 75
+      Width = 71
       Alignment = taRightJustify
       Caption = 'Modified at'
       ParentColor = False
@@ -153,7 +151,7 @@ object AnnotationForm: TAnnotationForm
       Left = 8
       Height = 16
       Top = 21
-      Width = 83
+      Width = 79
       Caption = 'Model Name'
       ParentColor = False
     end
@@ -170,7 +168,7 @@ object AnnotationForm: TAnnotationForm
       Left = 8
       Height = 16
       Top = 52
-      Width = 111
+      Width = 104
       Caption = 'Model Reference'
       ParentColor = False
     end
@@ -178,7 +176,7 @@ object AnnotationForm: TAnnotationForm
       Left = 8
       Height = 16
       Top = 243
-      Width = 149
+      Width = 140
       Caption = 'Terms of Distirubtion:'
       ParentColor = False
     end
@@ -655,4 +653,4 @@ object AnnotationForm: TAnnotationForm
       }
     end
   end
-end
+end
