@@ -449,7 +449,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'Pituitary response (TSH concentration)'
         'Thyroid response (FT4 concentration)'
         'Central deiodination (cT3 concentration)'
-        ''
       )
       OnChange = BParCombo1Change
       ParentShowHint = False
@@ -489,7 +488,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'Pituitary response (TSH concentration)'
         'Thyroid response (FT4 concentration)'
         'Central deiodination (cT3 concentration)'
-        ''
       )
       OnChange = BParCombo2Change
       ParentShowHint = False

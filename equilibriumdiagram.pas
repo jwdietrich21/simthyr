@@ -1151,12 +1151,23 @@ begin
       else
         BParCombo2.ItemIndex := 1;
     end;
-  GetBParameters;
-  RecalculateConversionFactors; { Adapt for change of UOM on the fly }
-  SetSpinEditBoundaries;
-  xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
-  yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
-  DrawDiagram(false);
+  if (BParCombo2.ItemIndex = 0) or (BParCombo2.ItemIndex = BParCombo1.ItemIndex) then
+    begin
+      DrawDiagram(true);
+      if BParCombo2.ItemIndex < BParCombo2.DropDownCount then
+        BParCombo2.ItemIndex := BParCombo2.ItemIndex + 1
+      else
+        BParCombo2.ItemIndex := 1;
+    end
+  else
+  begin
+    GetBParameters;
+    RecalculateConversionFactors; { Adapt for change of UOM on the fly }
+    SetSpinEditBoundaries;
+    xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
+    yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
+    DrawDiagram(false);
+  end;
 end;
 
 procedure TEquilibriumDiagramForm.BParCombo2Change(Sender: TObject);
@@ -1169,11 +1180,16 @@ begin
       else
         BParCombo1.ItemIndex := 1;
     end;
-  GetBParameters;
-  SetSpinEditBoundaries;
-  xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
-  yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
-  DrawDiagram(false);
+  if (BParCombo2.ItemIndex = 0) or (BParCombo2.ItemIndex = BParCombo1.ItemIndex) then
+    DrawDiagram(true)
+  else
+  begin
+    GetBParameters;
+    SetSpinEditBoundaries;
+    xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter1)];
+    yColorBox.Selected := gDefaultColors[integer(gSelectedBParameter2)];
+    DrawDiagram(false);
+  end;
 end;
 
 procedure TEquilibriumDiagramForm.FullScaleButton1Click(Sender: TObject);
