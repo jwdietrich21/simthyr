@@ -1024,7 +1024,10 @@ begin
       theHeight := Chart1.Height;
       theImage.Width := theWidth;
       theImage.Height := theHeight;
-      Chart1.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas);
+      if (lcl_major < 2) and (lcl_minor < 4) then
+        Chart1.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas)
+      else
+        Chart1.PaintOnCanvas(theImage.canvas, rect(0, 0, theImage.Width, theImage.Height));
       Clipboard.Assign(theImage);
     finally
       theImage.Free;

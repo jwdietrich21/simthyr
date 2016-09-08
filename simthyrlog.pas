@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   Grids, clipbrd, ComCtrls, ExtCtrls, Menus,
-  SimThyrTypes, SimThyrResources, SimThyrServices, DIFSupport;
+  SimThyrTypes, SimThyrServices, DIFSupport;
 
 type
 

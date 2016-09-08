@@ -144,7 +144,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure HandleIdle(Sender: TObject; var Done: boolean);
+    procedure HandleIdle(Sender: TObject);
     procedure HelpItemClick(Sender: TObject);
     procedure IdleTimer1Timer(Sender: TObject);
     procedure IPSItemClick(Sender: TObject);
@@ -296,7 +296,7 @@ begin
   SimThyrLabel.Top := Top + 5;
 end;
 
-procedure TSimThyrToolbar.HandleIdle(Sender: TObject; var Done: boolean);
+procedure TSimThyrToolbar.HandleIdle(Sender: TObject);
 {updates log window on Mac OS X}
 begin
   if simready then
@@ -306,8 +306,7 @@ begin
     SimThyrLogWindow.ValuesGrid.EndUpdate(True);
   {$ENDIF}
     application.ProcessMessages;
-  end
-  else;
+  end;
 end;
 
 procedure TSimThyrToolbar.HelpItemClick(Sender: TObject);
