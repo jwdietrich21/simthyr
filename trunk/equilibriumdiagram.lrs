@@ -9,10 +9,10 @@ LazarusResources.Add('TEquilibriumDiagramForm','FORMDATA',[
   +'LCLVersion'#6#7'1.6.0.4'#0#6'TPanel'#9'MainPanel'#4'Left'#2'0'#6'Height'#3
   +'-'#1#3'Top'#2' '#5'Width'#3#201#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRigh'
   +'t'#8'akBottom'#0#17'BorderSpacing.Top'#2#20#11'BorderStyle'#7#8'bsSingle'#7
-  +'Caption'#6#9'MainPanel'#12'ClientHeight'#3'-'#1#11'ClientWidth'#3#201#1#8'T'
+  +'Caption'#6#9'MainPanel'#12'ClientHeight'#3')'#1#11'ClientWidth'#3#197#1#8'T'
   +'abOrder'#2#0#0#6'TChart'#16'EquilibriumChart'#6'Cursor'#7#7'crCross'#4'Left'
-  +#2#8#6'Height'#3#27#1#4'Hint'#6#23'Drag with mouse to zoom'#3'Top'#2#8#5'Wid'
-  +'th'#3#185#1#8'AxisList'#14#1#10'Grid.Color'#7#8'clSilver'#10'Grid.Style'#7#6
+  +#2#8#6'Height'#3#23#1#4'Hint'#6#23'Drag with mouse to zoom'#3'Top'#2#8#5'Wid'
+  +'th'#3#181#1#8'AxisList'#14#1#10'Grid.Color'#7#8'clSilver'#10'Grid.Style'#7#6
   +'psDash'#22'Marks.LabelFont.Height'#2#245#12'Marks.Format'#6#6'%0:.2g'#11'Ma'
   +'rks.Style'#7#9'smsCustom'#6'Minors'#14#0#9'Range.Max'#5#0#0#0#0#0#0#0#128
   +#255'?'#12'Range.UseMax'#9#12'Range.UseMin'#9#22'Title.LabelFont.Height'#2
@@ -142,29 +142,29 @@ LazarusResources.Add('TEquilibriumDiagramForm','FORMDATA',[
   +#164'e4y'#164'e4'#16#7'OnClick'#7#16'ResetButtonClick'#8'ShowHint'#9#14'Pare'
   +'ntShowHint'#8#0#0#9'TGroupBox'#9'GroupBox1'#4'Left'#3#4#2#6'Height'#3'+'#1#3
   +'Top'#2' '#5'Width'#3#218#0#7'Anchors'#11#5'akTop'#7'akRight'#8'akBottom'#0#7
-  +'Caption'#6#20'Structure Parameters'#12'ClientHeight'#3#21#1#11'ClientWidth'
-  +#3#210#0#8'TabOrder'#2#2#0#9'TComboBox'#10'SParCombo1'#4'Left'#2#8#6'Height'
+  +'Caption'#6#20'Structure Parameters'#12'ClientHeight'#3#25#1#11'ClientWidth'
+  +#3#214#0#8'TabOrder'#2#2#0#9'TComboBox'#10'SParCombo1'#4'Left'#2#8#6'Height'
   +#2#21#4'Hint'#6'1Select a structure parameter to be modified here.'#3'Top'#2
-  +#20#5'Width'#3#194#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#21'ArrowK'
-  +'eysTraverseList'#8#10'ItemHeight'#2#0#9'ItemIndex'#2#0#13'Items.Strings'#1#6
-  +#29'Select structure parameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12
-  +'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (m'
-  +'U/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11
-  +'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaT (/s)'#6#12'TBG (nmol/l)'
-  +#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#16'SParCombo1Change'#14'Parent'
-  +'ShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#4'Text'#6#29'Select structure par'
-  +'ameter...'#0#0#9'TTrackBar'#13'SParTrackBar1'#4'Left'#2#8#6'Height'#2'&'#4
-  +'Hint'#6'>Change the magnitude of the selected structure parameter here.'#3
+  +#20#5'Width'#3#198#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#21'ArrowK'
+  +'eysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1
+  +#6#29'Select structure parameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6
+  +#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH'
+  +' (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6
+  +#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaT (/s)'#6#12'TBG (nmol/'
+  +'l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#16'SParCombo1Change'#14'Pa'
+  +'rentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#4'Text'#6#29'Select structure'
+  +' parameter...'#0#0#9'TTrackBar'#13'SParTrackBar1'#4'Left'#2#8#6'Height'#2'&'
+  +#4'Hint'#6'>Change the magnitude of the selected structure parameter here.'#3
   +'Top'#2'1'#5'Width'#3#144#0#3'Max'#2'2'#8'OnChange'#7#19'SParTrackBar1Change'
   +#8'Position'#2#0#9'TickMarks'#7#9'tmTopLeft'#7'Enabled'#8#14'ParentShowHint'
   +#8#8'ShowHint'#9#8'TabOrder'#2#1#0#0#9'TComboBox'#10'SParCombo2'#4'Left'#2#8
   +#6'Height'#2#21#4'Hint'#6'1Select a structure parameter to be modified here.'
-  +#3'Top'#2'v'#5'Width'#3#194#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0
-  +#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#0#9'ItemIndex'#2#0#13'Items.St'
-  +'rings'#1#6#29'Select structure parameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 (f'
-  +'mol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/'
-  +'l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR '
-  +'(mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaT (/s)'#6#12
+  +#3'Top'#2'v'#5'Width'#3#198#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0
+  +#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.S'
+  +'trings'#1#6#29'Select structure parameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 ('
+  +'fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU'
+  +'/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR'
+  +' (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaT (/s)'#6#12
   +'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#16'SParCombo2Cha'
   +'nge'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6#29'Select'
   +' structure parameter...'#0#0#9'TTrackBar'#13'SParTrackBar2'#4'Left'#2#8#6'H'
@@ -173,77 +173,77 @@ LazarusResources.Add('TEquilibriumDiagramForm','FORMDATA',[
   +'arTrackBar2Change'#8'Position'#2#0#9'TickMarks'#7#9'tmTopLeft'#7'Enabled'#8
   +#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#0#0#9'TComboBox'#10'SPar'
   +'Combo3'#4'Left'#2#8#6'Height'#2#21#4'Hint'#6'1Select a structure parameter '
-  +'to be modified here.'#3'Top'#3#214#0#5'Width'#3#194#0#7'Anchors'#11#5'akTop'
-  +#6'akLeft'#7'akRight'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#0#9'Ite'
-  +'mIndex'#2#0#13'Items.Strings'#1#6#29'Select structure parameter...'#6#12'GD'
-  +'1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'G'
-  +'T (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6
-  +#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6
-  +#10'betaT (/s)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'
-  +#7#16'SParCombo3Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4
-  +'Text'#6#29'Select structure parameter...'#0#0#9'TTrackBar'#13'SParTrackBar3'
-  +#4'Left'#2#8#6'Height'#2'&'#4'Hint'#6'>Change the magnitude of the selected '
-  +'structure parameter here.'#3'Top'#3#243#0#5'Width'#3#144#0#3'Max'#2'2'#8'On'
-  +'Change'#7#19'SParTrackBar3Change'#8'Position'#2#0#9'TickMarks'#7#9'tmTopLef'
-  +'t'#7'Enabled'#8#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#0#0#5'TE'
-  +'dit'#9'SParEdit1'#4'Left'#3#160#0#6'Height'#2#22#3'Top'#2'1'#5'Width'#2','#9
-  +'MaxLength'#2#15#8'OnChange'#7#15'SParEdit1Change'#8'ReadOnly'#9#8'TabOrder'
-  +#2#6#4'Text'#6#9'SParEdit1'#0#0#5'TEdit'#9'SParEdit2'#4'Left'#3#160#0#6'Heig'
-  +'ht'#2#22#3'Top'#3#147#0#5'Width'#2','#8'OnChange'#7#15'SParEdit2Change'#8'R'
-  +'eadOnly'#9#8'TabOrder'#2#7#4'Text'#6#9'SParEdit2'#0#0#5'TEdit'#9'SParEdit3'
-  +#4'Left'#3#160#0#6'Height'#2#22#3'Top'#3#243#0#5'Width'#2','#8'OnChange'#7#15
+  +'to be modified here.'#3'Top'#3#214#0#5'Width'#3#198#0#7'Anchors'#11#5'akTop'
+  +#6'akLeft'#7'akRight'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9'It'
+  +'emIndex'#2#0#13'Items.Strings'#1#6#29'Select structure parameter...'#6#12'G'
+  +'D1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11
+  +'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'
+  +#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'
+  +#6#10'betaT (/s)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChan'
+  +'ge'#7#16'SParCombo3Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2
+  +#4#4'Text'#6#29'Select structure parameter...'#0#0#9'TTrackBar'#13'SParTrack'
+  +'Bar3'#4'Left'#2#8#6'Height'#2'&'#4'Hint'#6'>Change the magnitude of the sel'
+  +'ected structure parameter here.'#3'Top'#3#243#0#5'Width'#3#144#0#3'Max'#2'2'
+  +#8'OnChange'#7#19'SParTrackBar3Change'#8'Position'#2#0#9'TickMarks'#7#9'tmTo'
+  +'pLeft'#7'Enabled'#8#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#0#0#5
+  +'TEdit'#9'SParEdit1'#4'Left'#3#160#0#6'Height'#2#21#3'Top'#2'1'#5'Width'#2','
+  +#9'MaxLength'#2#15#8'OnChange'#7#15'SParEdit1Change'#8'ReadOnly'#9#8'TabOrde'
+  +'r'#2#6#4'Text'#6#9'SParEdit1'#0#0#5'TEdit'#9'SParEdit2'#4'Left'#3#160#0#6'H'
+  +'eight'#2#21#3'Top'#3#147#0#5'Width'#2','#8'OnChange'#7#15'SParEdit2Change'#8
+  +'ReadOnly'#9#8'TabOrder'#2#7#4'Text'#6#9'SParEdit2'#0#0#5'TEdit'#9'SParEdit3'
+  +#4'Left'#3#160#0#6'Height'#2#21#3'Top'#3#243#0#5'Width'#2','#8'OnChange'#7#15
   +'SParEdit3Change'#8'ReadOnly'#9#8'TabOrder'#2#8#4'Text'#6#9'SParEdit3'#0#0#0
-  ,#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#15#3'Top'#3#198#1#5'W'
+  ,#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#23#3'Top'#3#190#1#5'W'
   +'idth'#3#244#2#6'Panels'#14#0#0#0#9'TGroupBox'#9'GroupBox2'#4'Left'#2'0'#6'H'
   +'eight'#2'V'#3'Top'#3']'#1#5'Width'#3#175#2#7'Anchors'#11#6'akLeft'#7'akRigh'
   +'t'#8'akBottom'#0#7'Caption'#6#22'Behavioural Parameters'#12'ClientHeight'#2
-  +'@'#11'ClientWidth'#3#167#2#8'TabOrder'#2#4#0#14'TFloatSpinEdit'#12'MinSpinE'
-  +'dit1'#4'Left'#2#8#6'Height'#2#16#4'Hint'#6'''Minimum of selected structure '
-  +'parameter'#3'Top'#2#8#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13
+  +'D'#11'ClientWidth'#3#171#2#8'TabOrder'#2#4#0#14'TFloatSpinEdit'#12'MinSpinE'
+  +'dit1'#4'Left'#2#8#6'Height'#2#21#4'Hint'#6'''Minimum of selected structure '
+  +'parameter'#3'Top'#2#7#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13
   +'DecimalPlaces'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248'?'#8'MaxValu'
   +'e'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7
   +#18'MinSpinEdit1Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#5
   +'Value'#5#0#0#0#0#0#0#0#0#0#0#7'Visible'#8#0#0#14'TFloatSpinEdit'#12'MaxSpin'
-  +'Edit1'#4'Left'#3#211#1#6'Height'#2#16#4'Hint'#6'''Maximum of selected struc'
-  +'ture parameter'#3'Top'#2#8#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBotto'
+  +'Edit1'#4'Left'#3#215#1#6'Height'#2#21#4'Hint'#6'''Maximum of selected struc'
+  +'ture parameter'#3'Top'#2#7#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBotto'
   +'m'#0#13'DecimalPlaces'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248'?'#8
   +'MaxValue'#5#0#0#0#0#0#0'P'#195#15'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'On'
   +'Change'#7#18'MaxSpinEdit1Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOr'
   +'der'#2#1#5'Value'#5#0#0#0#0#0#0#0#160#2'@'#7'Visible'#8#0#0#9'TComboBox'#10
   +'BParCombo1'#4'Left'#2'X'#6'Height'#2#21#4'Hint'#6'XSelect the first depende'
-  +'nt behavioural parameter whose response to be investigated here.'#3'Top'#2#5
-  +#5'Width'#3't'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKe'
-  +'ysTraverseList'#8#10'ItemHeight'#2#0#9'ItemIndex'#2#0#13'Items.Strings'#1#6
+  +'nt behavioural parameter whose response to be investigated here.'#3'Top'#2#9
+  +#5'Width'#3'x'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKe'
+  +'ysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6
   +'"Select zero isocline 2 (y axis)...'#6'&Pituitary response (TSH concentrati'
   +'on)'#6'$Thyroid response (FT4 concentration)'#6'(Central deiodination (cT3 '
   +'concentration)'#0#8'OnChange'#7#16'BParCombo1Change'#14'ParentShowHint'#8#8
   +'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6'"Select zero isocline 2 (y axis)...'#0
-  +#0#14'TFloatSpinEdit'#12'MinSpinEdit2'#4'Left'#2#8#6'Height'#2#16#4'Hint'#6
-  +'''Minimum of selected structure parameter'#3'Top'#2''''#5'Width'#2'H'#7'Anc'
-  +'hors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#3#9'Increment'#5#0#216
+  +#0#14'TFloatSpinEdit'#12'MinSpinEdit2'#4'Left'#2#8#6'Height'#2#21#4'Hint'#6
+  +'''Minimum of selected structure parameter'#3'Top'#2'&'#5'Width'#2'H'#7'Anch'
+  +'ors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#3#9'Increment'#5#0#216
   +#163'p='#10#215#163#248'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5
   +#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'MinSpinEdit2Change'#14'ParentShowHint'
   +#8#8'ShowHint'#9#8'TabOrder'#2#3#5'Value'#5#0#152#153#153#153#153#153#153#253
   +'?'#0#0#9'TComboBox'#10'BParCombo2'#4'Left'#2'X'#6'Height'#2#21#4'Hint'#6'YS'
   +'elect the second dependent behavioural parameter whose response to be inves'
-  +'tigated here.'#3'Top'#2'%'#5'Width'#3't'#1#7'Anchors'#11#6'akLeft'#7'akRigh'
-  +'t'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#0#9'ItemIndex'
-  +#2#0#13'Items.Strings'#1#6'"Select zero isocline 1 (x axis)...'#6'&Pituitary'
-  +' response (TSH concentration)'#6'$Thyroid response (FT4 concentration)'#6'('
-  +'Central deiodination (cT3 concentration)'#0#8'OnChange'#7#16'BParCombo2Chan'
-  +'ge'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6'"Select ze'
-  +'ro isocline 1 (x axis)...'#0#0#14'TFloatSpinEdit'#12'MaxSpinEdit2'#4'Left'#3
-  +#211#1#6'Height'#2#16#4'Hint'#6'''Maximum of selected structure parameter'#3
-  +'Top'#2''''#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'#0#13'DecimalP'
-  +'laces'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248'?'#8'MaxValue'#5#0#0
+  +'tigated here.'#3'Top'#2')'#5'Width'#3'x'#1#7'Anchors'#11#6'akLeft'#7'akRigh'
+  +'t'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9'ItemInde'
+  +'x'#2#0#13'Items.Strings'#1#6'"Select zero isocline 1 (x axis)...'#6'&Pituit'
+  +'ary response (TSH concentration)'#6'$Thyroid response (FT4 concentration)'#6
+  +'(Central deiodination (cT3 concentration)'#0#8'OnChange'#7#16'BParCombo2Cha'
+  +'nge'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6'"Select z'
+  +'ero isocline 1 (x axis)...'#0#0#14'TFloatSpinEdit'#12'MaxSpinEdit2'#4'Left'
+  +#3#215#1#6'Height'#2#21#4'Hint'#6'''Maximum of selected structure parameter'
+  +#3'Top'#2'&'#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'#0#13'Decimal'
+  +'Places'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248'?'#8'MaxValue'#5#0#0
   +#0#0#0#0'P'#195#15'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'Max'
   +'SpinEdit2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#5'Value'
-  +#5#0#0#0#0#0#0#0#160#2'@'#0#0#9'TColorBox'#9'xColorBox'#4'Left'#3'%'#2#6'Hei'
-  +'ght'#2#20#4'Hint'#6',Select the color of the selected curve here.'#3'Top'#2
+  +#5#0#0#0#0#0#0#0#160#2'@'#0#0#9'TColorBox'#9'xColorBox'#4'Left'#3')'#2#6'Hei'
+  +'ght'#2#22#4'Hint'#6',Select the color of the selected curve here.'#3'Top'#2
   +#7#5'Width'#2'y'#17'DefaultColorColor'#7#5'clRed'#8'Selected'#7#6'clBlue'#7
   +'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#15'xCol'
   +'orBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#6#0#0#9'TColo'
-  +'rBox'#9'yColorBox'#4'Left'#3'%'#2#6'Height'#2#20#4'Hint'#6',Select the colo'
+  +'rBox'#9'yColorBox'#4'Left'#3')'#2#6'Height'#2#22#4'Hint'#6',Select the colo'
   +'r of the selected curve here.'#3'Top'#2'$'#5'Width'#2'y'#17'DefaultColorCol'
   +'or'#7#6'clBlue'#8'Selected'#7#5'clRed'#7'Anchors'#11#5'akTop'#7'akRight'#0
   +#10'ItemHeight'#2#16#8'OnChange'#7#15'yColorBoxChange'#14'ParentShowHint'#8#8
