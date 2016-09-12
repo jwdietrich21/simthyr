@@ -281,7 +281,7 @@ begin
     FT4Item:
     begin
       if isNaN(conversionFactor1) then
-        conversionFactor := 1
+        conversionFactor := 1 // input is native
       else
         conversionFactor := gFT4conversionFactor;
       for i := 0 to MAX_I do
@@ -307,12 +307,14 @@ begin
     otherwise
     begin
       inputVector := gEmptyVector;
+      conversionFactor1 := NaN;
     end;
   end;
   case bParameter2 of // output (dependent parameter)
     IItem:
     begin
-      Result.output := gEmptyVector
+      Result.output := gEmptyVector;
+      conversionFactor2 := NaN
     end;
     TSHItem:
     begin
@@ -383,7 +385,10 @@ begin
       end;
     end;
     otherwise
+    begin
       Result.output := gEmptyVector;
+      conversionFactor2 := NaN;
+    end;
   end;
   Result.input := inputVector;
   TRH := TRH1; // restore simulated TRH concentration
@@ -1062,7 +1067,7 @@ begin
   ConversionFactor1 := 1;
   ConversionFactor2 := 1;
   GetBParameters; { read, which behavioural parameters have been selected }
-  { Recalculate conversion factors, to support change of UOM on the fly: }
+  { Recalculate conversion factors, in order to support change of UOM on the fly: }
   RecalculateConversionFactors;
   {If line series exists it is cleared and recreated to support foundations of redrawing}
   if FLine[1] <> nil then
@@ -1151,13 +1156,13 @@ begin
       else
         BParCombo2.ItemIndex := 1;
     end;
-  if (BParCombo2.ItemIndex = 0) or (BParCombo2.ItemIndex = BParCombo1.ItemIndex) then
+  if BParCombo2.ItemIndex = BParCombo1.ItemIndex then
     begin
-      DrawDiagram(true);
       if BParCombo2.ItemIndex < BParCombo2.DropDownCount then
         BParCombo2.ItemIndex := BParCombo2.ItemIndex + 1
       else
         BParCombo2.ItemIndex := 1;
+      DrawDiagram(false);
     end
   else
   begin

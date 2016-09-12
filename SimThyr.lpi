@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="723"/>
+      <BuildNr Value="724"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2016 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -1066,7 +1066,7 @@
         <EditorIndex Value="8"/>
         <WindowIndex Value="1"/>
         <CursorPos X="27" Y="2"/>
-        <UsageCount Value="187"/>
+        <UsageCount Value="189"/>
         <Loaded Value="True"/>
       </Unit132>
       <Unit133>
@@ -1077,7 +1077,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="301"/>
         <CursorPos X="3" Y="316"/>
-        <UsageCount Value="180"/>
+        <UsageCount Value="182"/>
         <Loaded Value="True"/>
       </Unit133>
       <Unit134>
@@ -1102,7 +1102,7 @@
           <WindowIndex Value="1"/>
           <CursorPos Y="2"/>
         </ExtraEditor1>
-        <UsageCount Value="176"/>
+        <UsageCount Value="178"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit135>
@@ -1230,8 +1230,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="28"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1142"/>
-        <CursorPos X="36" Y="1171"/>
+        <TopLine Value="1103"/>
+        <CursorPos Y="1122"/>
         <ExtraEditorCount Value="3"/>
         <ExtraEditor1>
           <WindowIndex Value="1"/>
@@ -1242,12 +1242,12 @@
           <CursorPos Y="2"/>
         </ExtraEditor2>
         <ExtraEditor3>
+          <IsVisibleTab Value="True"/>
           <EditorIndex Value="-1"/>
-          <WindowIndex Value="-1"/>
-          <TopLine Value="830"/>
-          <CursorPos X="16" Y="838"/>
+          <TopLine Value="300"/>
+          <CursorPos X="31" Y="317"/>
         </ExtraEditor3>
-        <UsageCount Value="119"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit155>
@@ -1280,7 +1280,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="8"/>
         <CursorPos X="52" Y="23"/>
-        <UsageCount Value="76"/>
+        <UsageCount Value="78"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit159>
@@ -1389,8 +1389,8 @@
         <Filename Value="../../../../../../../../lazarus/lcl/include/customcombobox.inc"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="180"/>
-        <CursorPos Y="187"/>
+        <TopLine Value="891"/>
+        <CursorPos Y="909"/>
         <UsageCount Value="10"/>
       </Unit176>
       <Unit177>
@@ -1404,124 +1404,124 @@
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="712" Column="22" TopLine="702"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position1>
       <Position2>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="135" Column="16" TopLine="133"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position2>
       <Position3>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="2"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position3>
       <Position4>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="135" Column="16" TopLine="133"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position4>
       <Position5>
-        <Filename Value="miriamform.pas"/>
-        <Caret Line="20" Column="20"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position5>
       <Position6>
-        <Filename Value="scenariohandler.pas"/>
-        <Caret Line="20" Column="10"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position6>
       <Position7>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="295" Column="61" TopLine="291"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position7>
       <Position8>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="299" Column="37" TopLine="299"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position8>
       <Position9>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="147" Column="41" TopLine="132"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position9>
       <Position10>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="445" Column="7" TopLine="430"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position10>
       <Position11>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="2" Column="20"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position11>
       <Position12>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="53" Column="53" TopLine="39"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position12>
       <Position13>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="714" Column="26" TopLine="700"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position13>
       <Position14>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="714" Column="89" TopLine="699"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position14>
       <Position15>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="2" Column="43"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position15>
       <Position16>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="900" TopLine="897"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position16>
       <Position17>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="2"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1126" Column="51" TopLine="1103"/>
       </Position17>
       <Position18>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1063" Column="25"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position18>
       <Position19>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="716" Column="37" TopLine="700"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position19>
       <Position20>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="952" Column="48" TopLine="924"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position20>
       <Position21>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1027" Column="14" TopLine="1013"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position21>
       <Position22>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="715" Column="16" TopLine="700"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position22>
       <Position23>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1027" Column="14" TopLine="1013"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position23>
       <Position24>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="473" Column="98" TopLine="455"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position24>
       <Position25>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="310" Column="3" TopLine="299"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1130" TopLine="1103"/>
       </Position25>
       <Position26>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="23" Column="53" TopLine="8"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1114" TopLine="1103"/>
       </Position26>
       <Position27>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="199" Column="87" TopLine="187"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1115" TopLine="1103"/>
       </Position27>
       <Position28>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="2" Column="21"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1116" TopLine="1103"/>
       </Position28>
       <Position29>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="24" Column="17" TopLine="9"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1117" TopLine="1103"/>
       </Position29>
       <Position30>
         <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1158" Column="19" TopLine="1140"/>
+        <Caret Line="1118" TopLine="1103"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
