@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="724"/>
+      <BuildNr Value="725"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2016 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -1231,7 +1231,7 @@
         <EditorIndex Value="28"/>
         <WindowIndex Value="1"/>
         <TopLine Value="1103"/>
-        <CursorPos Y="1122"/>
+        <CursorPos X="69" Y="1130"/>
         <ExtraEditorCount Value="3"/>
         <ExtraEditor1>
           <WindowIndex Value="1"/>
@@ -1242,8 +1242,8 @@
           <CursorPos Y="2"/>
         </ExtraEditor2>
         <ExtraEditor3>
-          <IsVisibleTab Value="True"/>
           <EditorIndex Value="-1"/>
+          <WindowIndex Value="-1"/>
           <TopLine Value="300"/>
           <CursorPos X="31" Y="317"/>
         </ExtraEditor3>

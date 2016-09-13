@@ -398,7 +398,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     ClientHeight = 68
     ClientWidth = 683
     TabOrder = 4
-    object MinSpinEdit1: TFloatSpinEdit
+    object yMinSpinEdit: TFloatSpinEdit
       Left = 8
       Height = 21
       Hint = 'Minimum of selected structure parameter'
@@ -409,14 +409,14 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Increment = 0.01
       MaxValue = 100
       MinValue = 0
-      OnChange = MinSpinEdit1Change
+      OnChange = yMinSpinEditChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
       Value = 0
       Visible = False
     end
-    object MaxSpinEdit1: TFloatSpinEdit
+    object yMaxSpinEdit: TFloatSpinEdit
       Left = 471
       Height = 21
       Hint = 'Maximum of selected structure parameter'
@@ -427,14 +427,14 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Increment = 0.01
       MaxValue = 100000
       MinValue = 0
-      OnChange = MaxSpinEdit1Change
+      OnChange = yMaxSpinEditChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
       Value = 10
       Visible = False
     end
-    object BParCombo1: TComboBox
+    object yBParCombo: TComboBox
       Left = 88
       Height = 21
       Hint = 'Select the first dependent behavioural parameter whose response to be investigated here.'
@@ -450,13 +450,13 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'Thyroid response (FT4 concentration)'
         'Central deiodination (cT3 concentration)'
       )
-      OnChange = BParCombo1Change
+      OnChange = yBParComboChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
       Text = 'Select zero isocline 2 (y axis)...'
     end
-    object MinSpinEdit2: TFloatSpinEdit
+    object xMinSpinEdit: TFloatSpinEdit
       Left = 8
       Height = 21
       Hint = 'Minimum of selected structure parameter'
@@ -467,17 +467,17 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Increment = 0.01
       MaxValue = 100
       MinValue = 0
-      OnChange = MinSpinEdit2Change
+      OnChange = xMinSpinEditChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 3
       Value = 0.3
     end
-    object BParCombo2: TComboBox
+    object xBParCombo: TComboBox
       Left = 88
       Height = 21
       Hint = 'Select the second dependent behavioural parameter whose response to be investigated here.'
-      Top = 41
+      Top = 40
       Width = 376
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
@@ -489,13 +489,13 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'Thyroid response (FT4 concentration)'
         'Central deiodination (cT3 concentration)'
       )
-      OnChange = BParCombo2Change
+      OnChange = xBParComboChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
       Text = 'Select zero isocline 1 (x axis)...'
     end
-    object MaxSpinEdit2: TFloatSpinEdit
+    object xMaxSpinEdit: TFloatSpinEdit
       Left = 471
       Height = 21
       Hint = 'Maximum of selected structure parameter'
@@ -506,13 +506,13 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Increment = 0.01
       MaxValue = 100000
       MinValue = 0
-      OnChange = MaxSpinEdit2Change
+      OnChange = xMaxSpinEditChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 5
       Value = 10
     end
-    object xColorBox: TColorBox
+    object yColorBox: TColorBox
       Left = 553
       Height = 22
       Hint = 'Select the color of the selected curve here.'
@@ -522,12 +522,12 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Selected = clBlue
       Anchors = [akTop, akRight]
       ItemHeight = 16
-      OnChange = xColorBoxChange
+      OnChange = yColorBoxChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 6
     end
-    object yColorBox: TColorBox
+    object xColorBox: TColorBox
       Left = 553
       Height = 22
       Hint = 'Select the color of the selected curve here.'
@@ -537,7 +537,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Selected = clRed
       Anchors = [akTop, akRight]
       ItemHeight = 16
-      OnChange = yColorBoxChange
+      OnChange = xColorBoxChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 7
