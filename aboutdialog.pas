@@ -269,7 +269,7 @@ begin
   AboutWindow.Memo1.Lines.Clear;
   AboutWindow.Memo1.Lines.Add('SimThyr ' + GetFileVersion);
   AboutWindow.Memo1.Lines.Add('');
-  AboutWindow.Memo1.Lines.Add('Licence: BSD');
+  AboutWindow.Memo1.Lines.Add('License: BSD');
   AboutWindow.Memo1.Lines.Add('');
   AboutWindow.Memo1.Lines.Add('File version: ' + GetFileVersion);
   AboutWindow.Memo1.Lines.Add('');
@@ -278,7 +278,7 @@ begin
   AboutWindow.Memo1.Lines.Add('Developed with Lazarus / Free Pascal');
   AboutWindow.Memo1.Lines.Add('Built for '+ GetTargetInfo);
   AboutWindow.Memo1.Lines.Add('with '+ GetCompilerInfo + ' on '+ GetCompiledDate);
-  AboutWindow.Memo1.Lines.Add('and using '+ GetLCLVersion + ' and ' + GetWidgetset);
+  AboutWindow.Memo1.Lines.Add('and using '+ GetLCLVersion + ' with ' + GetWidgetset);
   AboutWindow.Memo1.Lines.Add('');
   {$IFDEF LCLcarbon}
   theError := Gestalt(gestaltSystemVersionMajor, Major);
