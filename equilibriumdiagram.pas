@@ -54,6 +54,7 @@ type
     CopyItem: TMenuItem;
     CutItem: TMenuItem;
     Divider1: TMenuItem;
+    SParBoxSubLabel: TLabel;
     PasteItem: TMenuItem;
     PopupMenu1: TPopupMenu;
     SParEdit1: TEdit;
@@ -79,7 +80,7 @@ type
     UndoItem: TMenuItem;
     yColorBox:     TColorBox;
     FullScaleButton1: TSpeedButton;
-    GroupBox1:     TGroupBox;
+    SParGroupBox:     TGroupBox;
     MainPanel:     TPanel;
     ResetButton:   TSpeedButton;
     StatusBar1:    TStatusBar;
@@ -1267,6 +1268,9 @@ begin
   SParTrackBar1.Position := 0;
   SParTrackBar2.Position := 0;
   SParTrackBar3.Position := 0;
+  SParTrackBar1.Enabled := false;
+  SParTrackBar2.Enabled := false;
+  SParTrackBar2.Enabled := false;
   RestoreStrucPars;
   SetStandardStrucParBoundaries;
   SetSpinEditBoundaries;
