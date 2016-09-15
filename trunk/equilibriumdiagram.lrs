@@ -2,259 +2,265 @@
 
 LazarusResources.Add('TEquilibriumDiagramForm','FORMDATA',[
   'TPF0'#23'TEquilibriumDiagramForm'#22'EquilibriumDiagramForm'#4'Left'#3#228#0
-  +#6'Height'#3#213#1#3'Top'#2'~'#5'Width'#3#244#2#7'Caption'#6'$Equilibrium Di'
-  +'agram (Zero Isoclines)'#12'ClientHeight'#3#213#1#11'ClientWidth'#3#244#2#5
-  +'Color'#7#7'clWhite'#21'Constraints.MinHeight'#3'|'#1#20'Constraints.MinWidt'
-  +'h'#3'X'#2#10'OnActivate'#7#12'FormActivate'#8'OnCreate'#7#10'FormCreate'#10
-  +'LCLVersion'#6#7'1.6.0.4'#0#6'TPanel'#9'MainPanel'#4'Left'#2'0'#6'Height'#3
-  +'-'#1#3'Top'#2' '#5'Width'#3#201#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRigh'
-  +'t'#8'akBottom'#0#17'BorderSpacing.Top'#2#20#11'BorderStyle'#7#8'bsSingle'#7
-  +'Caption'#6#9'MainPanel'#12'ClientHeight'#3')'#1#11'ClientWidth'#3#197#1#8'T'
-  +'abOrder'#2#0#0#6'TChart'#16'EquilibriumChart'#6'Cursor'#7#7'crCross'#4'Left'
-  +#2#8#6'Height'#3#23#1#4'Hint'#6#23'Drag with mouse to zoom'#3'Top'#2#8#5'Wid'
-  +'th'#3#181#1#8'AxisList'#14#1#10'Grid.Color'#7#8'clSilver'#10'Grid.Style'#7#6
-  +'psDash'#22'Marks.LabelFont.Height'#2#245#12'Marks.Format'#6#6'%0:.2g'#11'Ma'
-  +'rks.Style'#7#9'smsCustom'#6'Minors'#14#0#9'Range.Max'#5#0#0#0#0#0#0#0#128
-  +#255'?'#12'Range.UseMax'#9#12'Range.UseMin'#9#22'Title.LabelFont.Height'#2
-  +#245#27'Title.LabelFont.Orientation'#3#132#3#13'Title.Visible'#9#13'Title.Ca'
-  +'ption'#6#15'Concentration 2'#0#1#10'Grid.Style'#7#7'psClear'#9'Alignment'#7
-  +#9'calBottom'#22'Marks.LabelFont.Height'#2#245#12'Marks.Format'#6#6'%0:.2g'
-  +#11'Marks.Style'#7#9'smsCustom'#6'Minors'#14#0#9'Range.Max'#5#0#0#0#0#0#0#0
-  +#128#255'?'#12'Range.UseMax'#9#12'Range.UseMin'#9#22'Title.LabelFont.Height'
-  +#2#245#13'Title.Visible'#9#13'Title.Caption'#6#15'Concentration 1'#0#0#9'Bac'
-  +'kColor'#7#7'clWhite'#11'Extent.XMax'#5#0#0#0#0#0#0#0#200#5'@'#16'Foot.Brush'
-  +'.Color'#7#9'clBtnFace'#15'Foot.Font.Color'#7#6'clBlue'#17'Legend.UseSidebar'
-  +#8#17'Title.Brush.Color'#7#9'clBtnFace'#16'Title.Font.Color'#7#6'clBlue'#18
-  +'Title.Text.Strings'#1#6#7'TAChart'#0#7'Toolset'#7#13'ChartToolset1'#7'Ancho'
-  +'rs'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#5'Color'#7#7'clWhite'#14
-  +'ParentShowHint'#8#9'PopupMenu'#7#10'PopupMenu1'#8'ShowHint'#9#0#11'TLineSer'
-  +'ies'#27'EquilibriumChartLineSeries1'#0#0#11'TLineSeries'#27'EquilibriumChar'
-  +'tLineSeries2'#0#0#0#0#12'TSpeedButton'#16'FullScaleButton1'#4'Left'#2#16#6
-  +'Height'#2#22#4'Hint'#6'3Full scale plot (drag with mouse over plot to zoom)'
-  +#3'Top'#2' '#5'Width'#2#23#17'BorderSpacing.Top'#2#20#10'Glyph.Data'#10':'#4
-  +#0#0'6'#4#0#0'BM6'#4#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#16#0#0#0#16#0#0#0#1#0' '#0
-  +#0#0#0#0#0#4#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#129#134#132#157#133#138
-  +#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133
-  +#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255
-  +#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#127#131#130
-  +#160#133#138#136#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
-  +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
-  +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
-  +#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255
-  +#164'e4'#255#164'e4'#255#164'e4'#255#250#251#251#255#250#251#251#255#252#252
-  +#253#255#253#252#252#255#164'e4'#255#164'e4'#255#164'e4'#255#164'e4'#255#255
-  +#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#164
-  +'e4'#255#164'e4'#255#249#250#250#255#249#249#249#255#249#250#249#255#251#251
-  +#251#255#251#251#252#255#251#251#252#255#164'e4'#255#164'e4'#255#164'e4'#255
-  +#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255
-  +#164'f6'#255#167'j;'#255#171'rF'#255#248#249#248#255#248#249#249#255#250#250
-  +#250#255#250#250#251#255#170'pC'#255#165'g7'#255#164'e4'#255#164'e4'#255#255
-  +#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'f5'#255#246
-  +#247#247#255#174'wL'#255#185#139'g'#255#201#166#139#255#247#248#248#255#249
-  +#249#249#255#209#181#158#255#189#145'o'#255#174'vK'#255#249#250#250#255#164
-  +'e4'#255#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#245
-  +#246#246#255#244#246#246#255#246#246#247#255#202#170#144#255#219#199#183#255
-  +#230#219#211#255#234#226#219#255#228#214#202#255#212#186#166#255#248#249#249
-  +#255#249#250#250#255#249#249#249#255#255#255#255#255#133#138#136#255#133#138
-  +#136#255#255#255#255#255#243#245#245#255#243#245#245#255#244#245#245#255#244
-  +#245#246#255#227#215#204#255#245#245#246#255#246#247#247#255#234#225#217#255
-  +#247#248#248#255#248#249#248#255#247#249#249#255#248#248#249#255#255#255#255
-  +#255#133#138#136#255#133#138#136#255#255#255#255#255#239#241#241#255#240#241
-  +#241#255#240#241#242#255#240#242#241#255#223#210#199#255#240#242#242#255#242
-  +#243#244#255#226#215#206#255#243#244#245#255#243#244#245#255#243#245#245#255
-  +#244#245#244#255#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255
-  +#255#239#240#240#255#239#240#240#255#239#241#241#255#207#180#160#255#216#199
-  +#185#255#224#211#201#255#226#215#205#255#220#203#189#255#207#180#159#255#242
-  ,#244#244#255#243#244#243#255#242#244#244#255#255#255#255#255#133#138#136#255
-  +#133#138#136#255#255#255#255#255#164'f5'#255#237#239#239#255#179#130'\'#255
-  +#195#159#131#255#207#182#162#255#238#240#240#255#240#242#241#255#204#176#153
-  +#255#192#152'z'#255#178#127'W'#255#241#243#243#255#165'g7'#255#255#255#255
-  +#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#165'g6'#255
-  +#170'pC'#255#180#132'_'#255#238#239#239#255#238#239#239#255#240#241#241#255
-  +#240#241#241#255#174'xN'#255#169'n@'#255#165'h8'#255#164'e4'#255#255#255#255
-  +#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#164'e4'#255
-  +#165'g6'#255#236#238#238#255#236#238#238#255#236#238#239#255#238#240#240#255
-  +#238#240#240#255#238#240#240#255#165'g6'#255#164'e4'#255#164'e4'#255#255#255
-  +#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'e4'#255#164'e4'
-  +#255#164'e4'#255#164'e4'#255#236#238#238#255#236#238#238#255#238#239#239#255
-  +#237#239#239#255#164'e4'#255#164'e4'#255#164'e4'#255#164'e4'#255#255#255#255
-  +#255#133#138#136#255#133#138#136#255#255#255#255#255#255#255#255#255#255#255
-  +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
-  +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
-  +#255#255#255#255#255#255#255#255#133#138#136#255#133#138#136#153#133#138#136
+  +#6'Height'#3#213#1#3'Top'#2'~'#5'Width'#3#244#2#13'ActiveControl'#7#10'yBPar'
+  +'Combo'#7'Caption'#6'$Equilibrium Diagram (Zero Isoclines)'#12'ClientHeight'
+  +#3#213#1#11'ClientWidth'#3#244#2#5'Color'#7#7'clWhite'#21'Constraints.MinHei'
+  +'ght'#3'|'#1#20'Constraints.MinWidth'#3'X'#2#10'OnActivate'#7#12'FormActivat'
+  +'e'#8'OnCreate'#7#10'FormCreate'#10'LCLVersion'#6#7'1.6.0.4'#0#6'TPanel'#9'M'
+  +'ainPanel'#4'Left'#2'0'#6'Height'#3'-'#1#3'Top'#2' '#5'Width'#3#201#1#7'Anch'
+  +'ors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#17'BorderSpacing.Top'#2
+  +#20#11'BorderStyle'#7#8'bsSingle'#7'Caption'#6#9'MainPanel'#12'ClientHeight'
+  +#3')'#1#11'ClientWidth'#3#197#1#8'TabOrder'#2#0#0#6'TChart'#16'EquilibriumCh'
+  +'art'#6'Cursor'#7#7'crCross'#4'Left'#2#8#6'Height'#3#23#1#4'Hint'#6#23'Drag '
+  +'with mouse to zoom'#3'Top'#2#8#5'Width'#3#181#1#8'AxisList'#14#1#10'Grid.Co'
+  +'lor'#7#8'clSilver'#10'Grid.Style'#7#6'psDash'#22'Marks.LabelFont.Height'#2
+  +#245#12'Marks.Format'#6#6'%0:.2g'#11'Marks.Style'#7#9'smsCustom'#6'Minors'#14
+  +#0#9'Range.Max'#5#0#0#0#0#0#0#0#128#255'?'#12'Range.UseMax'#9#12'Range.UseMi'
+  +'n'#9#22'Title.LabelFont.Height'#2#245#27'Title.LabelFont.Orientation'#3#132
+  +#3#13'Title.Visible'#9#13'Title.Caption'#6#15'Concentration 2'#0#1#10'Grid.S'
+  +'tyle'#7#7'psClear'#9'Alignment'#7#9'calBottom'#22'Marks.LabelFont.Height'#2
+  +#245#12'Marks.Format'#6#6'%0:.2g'#11'Marks.Style'#7#9'smsCustom'#6'Minors'#14
+  +#0#9'Range.Max'#5#0#0#0#0#0#0#0#128#255'?'#12'Range.UseMax'#9#12'Range.UseMi'
+  +'n'#9#22'Title.LabelFont.Height'#2#245#13'Title.Visible'#9#13'Title.Caption'
+  +#6#15'Concentration 1'#0#0#9'BackColor'#7#7'clWhite'#11'Extent.XMax'#5#0#0#0
+  +#0#0#0#0#200#5'@'#16'Foot.Brush.Color'#7#9'clBtnFace'#15'Foot.Font.Color'#7#6
+  +'clBlue'#17'Legend.UseSidebar'#8#17'Title.Brush.Color'#7#9'clBtnFace'#16'Tit'
+  +'le.Font.Color'#7#6'clBlue'#18'Title.Text.Strings'#1#6#7'TAChart'#0#7'Toolse'
+  +'t'#7#13'ChartToolset1'#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBott'
+  +'om'#0#5'Color'#7#7'clWhite'#14'ParentShowHint'#8#9'PopupMenu'#7#10'PopupMen'
+  +'u1'#8'ShowHint'#9#0#11'TLineSeries'#27'EquilibriumChartLineSeries1'#0#0#11
+  +'TLineSeries'#27'EquilibriumChartLineSeries2'#0#0#0#0#12'TSpeedButton'#16'Fu'
+  +'llScaleButton1'#4'Left'#2#16#6'Height'#2#22#4'Hint'#6'3Full scale plot (dra'
+  +'g with mouse over plot to zoom)'#3'Top'#2' '#5'Width'#2#23#17'BorderSpacing'
+  +'.Top'#2#20#10'Glyph.Data'#10':'#4#0#0'6'#4#0#0'BM6'#4#0#0#0#0#0#0'6'#0#0#0
+  +'('#0#0#0#16#0#0#0#16#0#0#0#1#0' '#0#0#0#0#0#0#4#0#0'd'#0#0#0'd'#0#0#0#0#0#0
+  +#0#0#0#0#0#129#134#132#157#133#138#136#255#133#138#136#255#133#138#136#255
+  +#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136
   +#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138
-  +#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133
-  +#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#153
-  +#7'OnClick'#7#21'FullScaleButton1Click'#8'ShowHint'#9#14'ParentShowHint'#8#0
-  +#0#14'TChartNavPanel'#14'ChartNavPanel1'#4'Left'#2#16#6'Height'#2#24#4'Hint'
-  +#6'4Drag to select the part of the plot to be displayed.'#3'Top'#2'H'#5'Widt'
-  +'h'#2#23#5'Chart'#7#16'EquilibriumChart'#22'LogicalExtentPen.Color'#7#8'clMa'
-  +'roon'#7'MiniMap'#9#0#0#12'TSpeedButton'#11'ResetButton'#24'AnchorSideBottom'
-  +'.Control'#7#9'MainPanel'#21'AnchorSideBottom.Side'#7#9'asrBottom'#4'Left'#2
-  +#16#6'Height'#2#22#4'Hint'#6'-Reset structure parameters to default values.'
-  +#3'Top'#3'7'#1#5'Width'#2#23#7'Anchors'#11#6'akLeft'#8'akBottom'#0#10'Glyph.'
-  +'Data'#10':'#4#0#0'6'#4#0#0'BM6'#4#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#16#0#0#0#16
-  +#0#0#0#1#0' '#0#0#0#0#0#0#4#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#255#255#255
-  +#0#164'e4'#162#164'e4'#1#255#255#255#0#255#255#255#0#164'e4'#5#164'e4S'#167
-  +'j:'#190#166'i8'#233#164'f5'#250#167'j:'#228#167'k;'#170#164'e4$'#255#255#255
-  +#0#255#255#255#0#255#255#255#0#255#255#255#0#164'e4'#255#165'g6'#147#255#255
-  +#255#0#164'e4T'#166'g7'#238#181#128'U'#243#206#166#132#255#216#182#151#255
-  +#219#185#153#255#211#172#138#255#194#148'm'#252#166'h8'#246#164'f5['#255#255
-  +#255#0#255#255#255#0#255#255#255#0#165'g7'#254#183#132'['#247#165'g6'#212#177
-  +'zN'#244#227#202#180#255#236#218#201#255#231#209#188#255#227#201#176#255#222
-  +#190#160#255#210#171#136#255#206#165#130#255#211#174#142#255#166'h8'#245#164
-  +'e4*'#255#255#255#0#255#255#255#0#166'h8'#253#241#228#216#255#212#178#149#254
-  +#244#233#224#255#243#232#221#255#237#220#204#255#210#173#143#254#176'xL'#245
-  +#165'f5'#251#166'i9'#255#166'i9'#254#169'm='#255#176'xL'#255#167'j:'#168#255
-  +#255#255#0#255#255#255#0#165'g7'#253#246#238#230#255#245#236#227#255#245#237
-  +#228#255#230#210#193#255#176'yM'#245#166'i8'#202#164'e46'#255#255#255#0#164
-  +'e4j'#169'k<'#237#182'|O'#255#167'j:'#254#165'h7'#250#255#255#255#0#255#255
-  +#255#0#164'f5'#252#246#238#230#255#235#215#196#255#234#217#201#255#164'e4'
-  +#254#164'e4j'#255#255#255#0#255#255#255#0#255#255#255#0#164'e4'#11#165'f5'
-  +#233#201#149'l'#141#183#127'S'#194#164'e4'#255#164'e4'#5#255#255#255#0#164'e'
-  +'4'#252#245#237#229#255#246#237#229#255#245#236#228#255#215#183#156#253#166
-  +'h7'#224#164'e4'#16#255#255#255#0#255#255#255#0#255#255#255#0#255#255#255#0
-  +#213#164'~'#26#205#153'r9'#164'e4'#252#164'e4'#12#255#255#255#0#164'e4'#249
-  +#164'e4'#254#164'e4'#254#164'e4'#253#164'e4'#252#164'e4'#251#164'e4'#185#164
-  +'e4'#29#164'e4'#24#164'e4'#24#164'e4'#24#164'e4'#24#164'e4'#24#164'e4'#28#255
-  +#255#255#0#255#255#255#0#164'e4'#13#255#255#255#0#255#255#255#0#255#255#255#0
-  +#255#255#255#0#255#255#255#0#255#255#255#0#164'e4'#160#164'e4'#255#173'tG'
-  +#248#175'wL'#247#175'wL'#247#175'xL'#247#164'e4'#255#164'e4'#8#255#255#255#0
-  +#164'e4'#252#179'yL~'#207#157'v+'#187#131'W'#19#164'e4'#2#255#255#255#0#255
-  +#255#255#0#164'e4'#4#166'h8'#196#208#172#143#250#246#238#231#255#242#230#219
-  +#255#246#238#230#255#166'j:'#251#164'e4'#9#255#255#255#0#164'e5'#254#167'j:'
-  +#251#199#145'h'#157#165'g7'#230#164'e4#'#255#255#255#0#255#255#255#0#255#255
-  +#255#0#164'e4`'#164'f5'#255#233#215#199#255#235#216#198#255#245#236#227#255
-  +#166'j:'#250#164'e4'#10#255#255#255#0#166'h8'#243#171'pA'#255#169'l<'#254#167
-  +'j:'#245#164'e4u'#164'e4'#25#164'e4E'#166'i8'#205#185#136'a'#245#235#219#205
-  +#255#245#235#226#255#246#238#230#255#246#238#230#255#167'j:'#250#164'e4'#11
-  +#255#255#255#0#167'i9'#155#192#144'i'#253#197#152'r'#255#168'k<'#255#164'f5'
-  ,#255#167'j:'#252#183#133']'#243#217#187#161#254#241#228#216#255#242#230#219
-  +#255#243#232#221#255#206#167#136#253#234#216#200#255#167'j:'#249#164'e4'#13
-  +#255#255#255#0#164'e4)'#166'i9'#245#211#173#140#255#220#189#157#255#221#190
-  +#161#255#229#203#180#255#233#211#191#255#238#221#204#255#240#226#213#255#231
-  +#210#191#255#175'wK'#245#165'g6'#192#171'qC'#247#164'f5'#252#164'e4'#14#255
-  +#255#255#0#255#255#255#0#164'e5P'#166'h8'#246#192#144'h'#250#211#176#143#255
-  +#223#194#168#255#222#193#168#255#212#177#147#255#185#135'_'#244#165'g7'#240
-  +#164'e4X'#255#255#255#0#164'f5f'#164'e4'#255#164'e4'#15#255#255#255#0#255#255
-  +#255#0#255#255#255#0#164'e4'#29#167'i:'#159#167'j:'#222#165'g6'#246#167'i9'
-  +#229#167'j:'#188#164'e4S'#164'e4'#5#255#255#255#0#255#255#255#0#255#255#255#0
-  +#164'e4y'#164'e4'#16#7'OnClick'#7#16'ResetButtonClick'#8'ShowHint'#9#14'Pare'
-  +'ntShowHint'#8#0#0#9'TGroupBox'#9'GroupBox1'#4'Left'#3#4#2#6'Height'#3'+'#1#3
-  +'Top'#2' '#5'Width'#3#218#0#7'Anchors'#11#5'akTop'#7'akRight'#8'akBottom'#0#7
-  +'Caption'#6#20'Structure Parameters'#12'ClientHeight'#3#23#1#11'ClientWidth'
-  +#3#214#0#8'TabOrder'#2#2#0#9'TComboBox'#10'SParCombo1'#4'Left'#2#8#6'Height'
-  +#2#23#4'Hint'#6'1Select a structure parameter to be modified here.'#3'Top'#2
-  +#20#5'Width'#3#198#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#21'ArrowK'
-  +'eysTraverseList'#8#10'ItemHeight'#2#15#9'ItemIndex'#2#0#13'Items.Strings'#1
-  +#6#29'Select structure parameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6
-  +#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH'
-  +' (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6
-  +#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaT (/s)'#6#12'TBG (nmol/'
-  +'l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#16'SParCombo1Change'#14'Pa'
-  +'rentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#4'Text'#6#29'Select structure'
-  +' parameter...'#0#0#9'TTrackBar'#13'SParTrackBar1'#4'Left'#2#8#6'Height'#2'&'
-  +#4'Hint'#6'>Change the magnitude of the selected structure parameter here.'#3
-  +'Top'#2'1'#5'Width'#3#144#0#3'Max'#2'2'#8'OnChange'#7#19'SParTrackBar1Change'
-  +#8'Position'#2#0#9'TickMarks'#7#9'tmTopLeft'#7'Enabled'#8#14'ParentShowHint'
-  +#8#8'ShowHint'#9#8'TabOrder'#2#1#0#0#9'TComboBox'#10'SParCombo2'#4'Left'#2#8
-  +#6'Height'#2#23#4'Hint'#6'1Select a structure parameter to be modified here.'
-  +#3'Top'#2'v'#5'Width'#3#198#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0
-  +#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#15#9'ItemIndex'#2#0#13'Items.S'
-  +'trings'#1#6#29'Select structure parameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 ('
-  +'fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU'
-  +'/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR'
-  +' (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaT (/s)'#6#12
-  +'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#16'SParCombo2Cha'
-  +'nge'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6#29'Select'
-  +' structure parameter...'#0#0#9'TTrackBar'#13'SParTrackBar2'#4'Left'#2#8#6'H'
-  +'eight'#2'&'#4'Hint'#6'>Change the magnitude of the selected structure param'
-  +'eter here.'#3'Top'#3#147#0#5'Width'#3#144#0#3'Max'#2'2'#8'OnChange'#7#19'SP'
-  +'arTrackBar2Change'#8'Position'#2#0#9'TickMarks'#7#9'tmTopLeft'#7'Enabled'#8
-  +#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#0#0#9'TComboBox'#10'SPar'
-  +'Combo3'#4'Left'#2#8#6'Height'#2#23#4'Hint'#6'1Select a structure parameter '
-  +'to be modified here.'#3'Top'#3#214#0#5'Width'#3#198#0#7'Anchors'#11#5'akTop'
-  +#6'akLeft'#7'akRight'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#15#9'It'
-  +'emIndex'#2#0#13'Items.Strings'#1#6#29'Select structure parameter...'#6#12'G'
-  +'D1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11
+  +#136#255#133#138#136#255#127#131#130#160#133#138#136#255#255#255#255#255#255
+  +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
+  +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
+  +#255#255#255#255#255#255#255#255#255#255#255#255#255#133#138#136#255#133#138
+  +#136#255#255#255#255#255#164'e4'#255#164'e4'#255#164'e4'#255#164'e4'#255#250
+  +#251#251#255#250#251#251#255#252#252#253#255#253#252#252#255#164'e4'#255#164
+  +'e4'#255#164'e4'#255#164'e4'#255#255#255#255#255#133#138#136#255#133#138#136
+  +#255#255#255#255#255#164'e4'#255#164'e4'#255#164'e4'#255#249#250#250#255#249
+  +#249#249#255#249#250#249#255#251#251#251#255#251#251#252#255#251#251#252#255
+  +#164'e4'#255#164'e4'#255#164'e4'#255#255#255#255#255#133#138#136#255#133#138
+  +#136#255#255#255#255#255#164'e4'#255#164'f6'#255#167'j;'#255#171'rF'#255#248
+  +#249#248#255#248#249#249#255#250#250#250#255#250#250#251#255#170'pC'#255#165
+  +'g7'#255#164'e4'#255#164'e4'#255#255#255#255#255#133#138#136#255#133#138#136
+  +#255#255#255#255#255#164'f5'#255#246#247#247#255#174'wL'#255#185#139'g'#255
+  +#201#166#139#255#247#248#248#255#249#249#249#255#209#181#158#255#189#145'o'
+  +#255#174'vK'#255#249#250#250#255#164'e4'#255#255#255#255#255#133#138#136#255
+  +#133#138#136#255#255#255#255#255#245#246#246#255#244#246#246#255#246#246#247
+  +#255#202#170#144#255#219#199#183#255#230#219#211#255#234#226#219#255#228#214
+  +#202#255#212#186#166#255#248#249#249#255#249#250#250#255#249#249#249#255#255
+  +#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#243#245#245#255
+  +#243#245#245#255#244#245#245#255#244#245#246#255#227#215#204#255#245#245#246
+  +#255#246#247#247#255#234#225#217#255#247#248#248#255#248#249#248#255#247#249
+  +#249#255#248#248#249#255#255#255#255#255#133#138#136#255#133#138#136#255#255
+  +#255#255#255#239#241#241#255#240#241#241#255#240#241#242#255#240#242#241#255
+  +#223#210#199#255#240#242#242#255#242#243#244#255#226#215#206#255#243#244#245
+  +#255#243#244#245#255#243#245#245#255#244#245#244#255#255#255#255#255#133#138
+  +#136#255#133#138#136#255#255#255#255#255#239#240#240#255#239#240#240#255#239
+  +#241#241#255#207#180#160#255#216#199#185#255#224#211#201#255#226#215#205#255
+  ,#220#203#189#255#207#180#159#255#242#244#244#255#243#244#243#255#242#244#244
+  +#255#255#255#255#255#133#138#136#255#133#138#136#255#255#255#255#255#164'f5'
+  +#255#237#239#239#255#179#130'\'#255#195#159#131#255#207#182#162#255#238#240
+  +#240#255#240#242#241#255#204#176#153#255#192#152'z'#255#178#127'W'#255#241
+  +#243#243#255#165'g7'#255#255#255#255#255#133#138#136#255#133#138#136#255#255
+  +#255#255#255#164'e4'#255#165'g6'#255#170'pC'#255#180#132'_'#255#238#239#239
+  +#255#238#239#239#255#240#241#241#255#240#241#241#255#174'xN'#255#169'n@'#255
+  +#165'h8'#255#164'e4'#255#255#255#255#255#133#138#136#255#133#138#136#255#255
+  +#255#255#255#164'e4'#255#164'e4'#255#165'g6'#255#236#238#238#255#236#238#238
+  +#255#236#238#239#255#238#240#240#255#238#240#240#255#238#240#240#255#165'g6'
+  +#255#164'e4'#255#164'e4'#255#255#255#255#255#133#138#136#255#133#138#136#255
+  +#255#255#255#255#164'e4'#255#164'e4'#255#164'e4'#255#164'e4'#255#236#238#238
+  +#255#236#238#238#255#238#239#239#255#237#239#239#255#164'e4'#255#164'e4'#255
+  +#164'e4'#255#164'e4'#255#255#255#255#255#133#138#136#255#133#138#136#255#255
+  +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
+  +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
+  +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#133#138
+  +#136#255#133#138#136#153#133#138#136#255#133#138#136#255#133#138#136#255#133
+  +#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255
+  +#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136#255#133#138#136
+  +#255#133#138#136#255#133#138#136#153#7'OnClick'#7#21'FullScaleButton1Click'#8
+  +'ShowHint'#9#14'ParentShowHint'#8#0#0#14'TChartNavPanel'#14'ChartNavPanel1'#4
+  +'Left'#2#16#6'Height'#2#24#4'Hint'#6'4Drag to select the part of the plot to'
+  +' be displayed.'#3'Top'#2'H'#5'Width'#2#23#5'Chart'#7#16'EquilibriumChart'#22
+  +'LogicalExtentPen.Color'#7#8'clMaroon'#7'MiniMap'#9#0#0#12'TSpeedButton'#11
+  +'ResetButton'#24'AnchorSideBottom.Control'#7#9'MainPanel'#21'AnchorSideBotto'
+  +'m.Side'#7#9'asrBottom'#4'Left'#2#16#6'Height'#2#22#4'Hint'#6'-Reset structu'
+  +'re parameters to default values.'#3'Top'#3'7'#1#5'Width'#2#23#7'Anchors'#11
+  +#6'akLeft'#8'akBottom'#0#10'Glyph.Data'#10':'#4#0#0'6'#4#0#0'BM6'#4#0#0#0#0#0
+  +#0'6'#0#0#0'('#0#0#0#16#0#0#0#16#0#0#0#1#0' '#0#0#0#0#0#0#4#0#0'd'#0#0#0'd'#0
+  +#0#0#0#0#0#0#0#0#0#0#255#255#255#0#164'e4'#162#164'e4'#1#255#255#255#0#255
+  +#255#255#0#164'e4'#5#164'e4S'#167'j:'#190#166'i8'#233#164'f5'#250#167'j:'#228
+  +#167'k;'#170#164'e4$'#255#255#255#0#255#255#255#0#255#255#255#0#255#255#255#0
+  +#164'e4'#255#165'g6'#147#255#255#255#0#164'e4T'#166'g7'#238#181#128'U'#243
+  +#206#166#132#255#216#182#151#255#219#185#153#255#211#172#138#255#194#148'm'
+  +#252#166'h8'#246#164'f5['#255#255#255#0#255#255#255#0#255#255#255#0#165'g7'
+  +#254#183#132'['#247#165'g6'#212#177'zN'#244#227#202#180#255#236#218#201#255
+  +#231#209#188#255#227#201#176#255#222#190#160#255#210#171#136#255#206#165#130
+  +#255#211#174#142#255#166'h8'#245#164'e4*'#255#255#255#0#255#255#255#0#166'h8'
+  +#253#241#228#216#255#212#178#149#254#244#233#224#255#243#232#221#255#237#220
+  +#204#255#210#173#143#254#176'xL'#245#165'f5'#251#166'i9'#255#166'i9'#254#169
+  +'m='#255#176'xL'#255#167'j:'#168#255#255#255#0#255#255#255#0#165'g7'#253#246
+  +#238#230#255#245#236#227#255#245#237#228#255#230#210#193#255#176'yM'#245#166
+  +'i8'#202#164'e46'#255#255#255#0#164'e4j'#169'k<'#237#182'|O'#255#167'j:'#254
+  +#165'h7'#250#255#255#255#0#255#255#255#0#164'f5'#252#246#238#230#255#235#215
+  +#196#255#234#217#201#255#164'e4'#254#164'e4j'#255#255#255#0#255#255#255#0#255
+  +#255#255#0#164'e4'#11#165'f5'#233#201#149'l'#141#183#127'S'#194#164'e4'#255
+  +#164'e4'#5#255#255#255#0#164'e4'#252#245#237#229#255#246#237#229#255#245#236
+  +#228#255#215#183#156#253#166'h7'#224#164'e4'#16#255#255#255#0#255#255#255#0
+  +#255#255#255#0#255#255#255#0#213#164'~'#26#205#153'r9'#164'e4'#252#164'e4'#12
+  +#255#255#255#0#164'e4'#249#164'e4'#254#164'e4'#254#164'e4'#253#164'e4'#252
+  +#164'e4'#251#164'e4'#185#164'e4'#29#164'e4'#24#164'e4'#24#164'e4'#24#164'e4'
+  +#24#164'e4'#24#164'e4'#28#255#255#255#0#255#255#255#0#164'e4'#13#255#255#255
+  +#0#255#255#255#0#255#255#255#0#255#255#255#0#255#255#255#0#255#255#255#0#164
+  +'e4'#160#164'e4'#255#173'tG'#248#175'wL'#247#175'wL'#247#175'xL'#247#164'e4'
+  +#255#164'e4'#8#255#255#255#0#164'e4'#252#179'yL~'#207#157'v+'#187#131'W'#19
+  +#164'e4'#2#255#255#255#0#255#255#255#0#164'e4'#4#166'h8'#196#208#172#143#250
+  +#246#238#231#255#242#230#219#255#246#238#230#255#166'j:'#251#164'e4'#9#255
+  +#255#255#0#164'e5'#254#167'j:'#251#199#145'h'#157#165'g7'#230#164'e4#'#255
+  +#255#255#0#255#255#255#0#255#255#255#0#164'e4`'#164'f5'#255#233#215#199#255
+  +#235#216#198#255#245#236#227#255#166'j:'#250#164'e4'#10#255#255#255#0#166'h8'
+  +#243#171'pA'#255#169'l<'#254#167'j:'#245#164'e4u'#164'e4'#25#164'e4E'#166'i8'
+  +#205#185#136'a'#245#235#219#205#255#245#235#226#255#246#238#230#255#246#238
+  +#230#255#167'j:'#250#164'e4'#11#255#255#255#0#167'i9'#155#192#144'i'#253#197
+  ,#152'r'#255#168'k<'#255#164'f5'#255#167'j:'#252#183#133']'#243#217#187#161
+  +#254#241#228#216#255#242#230#219#255#243#232#221#255#206#167#136#253#234#216
+  +#200#255#167'j:'#249#164'e4'#13#255#255#255#0#164'e4)'#166'i9'#245#211#173
+  +#140#255#220#189#157#255#221#190#161#255#229#203#180#255#233#211#191#255#238
+  +#221#204#255#240#226#213#255#231#210#191#255#175'wK'#245#165'g6'#192#171'qC'
+  +#247#164'f5'#252#164'e4'#14#255#255#255#0#255#255#255#0#164'e5P'#166'h8'#246
+  +#192#144'h'#250#211#176#143#255#223#194#168#255#222#193#168#255#212#177#147
+  +#255#185#135'_'#244#165'g7'#240#164'e4X'#255#255#255#0#164'f5f'#164'e4'#255
+  +#164'e4'#15#255#255#255#0#255#255#255#0#255#255#255#0#164'e4'#29#167'i:'#159
+  +#167'j:'#222#165'g6'#246#167'i9'#229#167'j:'#188#164'e4S'#164'e4'#5#255#255
+  +#255#0#255#255#255#0#255#255#255#0#164'e4y'#164'e4'#16#7'OnClick'#7#16'Reset'
+  +'ButtonClick'#8'ShowHint'#9#14'ParentShowHint'#8#0#0#9'TGroupBox'#12'SParGro'
+  +'upBox'#4'Left'#3#4#2#6'Height'#3'+'#1#4'Hint'#6#188'This selection provides'
+  +' an optional addition.'#13#10#13#10'It allows for studying the influenece o'
+  +'f '#13#10'certain structure parameters on homeostatic '#13#10'equilibria of'
+  +' the overall feedback control system.'#3'Top'#2' '#5'Width'#3#218#0#7'Ancho'
+  +'rs'#11#5'akTop'#7'akRight'#8'akBottom'#0#7'Caption'#6#20'Structure Paramete'
+  +'rs'#12'ClientHeight'#3#23#1#11'ClientWidth'#3#214#0#14'ParentShowHint'#8#8
+  +'ShowHint'#9#8'TabOrder'#2#2#0#9'TComboBox'#10'SParCombo1'#4'Left'#2#8#6'Hei'
+  +'ght'#2#23#4'Hint'#6'1Select a structure parameter to be modified here.'#3'T'
+  +'op'#2'$'#5'Width'#3#198#0#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#21
+  +'ArrowKeysTraverseList'#8#10'ItemHeight'#2#15#9'ItemIndex'#2#0#13'Items.Stri'
+  +'ngs'#1#6#29'Select structure parameter...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmo'
+  +'l/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'
+  +#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol'
+  +'/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaT (/s)'#6#12'TBG'
+  +' (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#16'SParCombo1Change'
+  +#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#4'Text'#6#29'Select stru'
+  +'cture parameter...'#0#0#9'TTrackBar'#13'SParTrackBar1'#4'Left'#2#8#6'Height'
+  +#2'&'#4'Hint'#6'>Change the magnitude of the selected structure parameter he'
+  +'re.'#3'Top'#2'A'#5'Width'#3#144#0#3'Max'#2'2'#8'OnChange'#7#19'SParTrackBar'
+  +'1Change'#8'Position'#2#0#9'TickMarks'#7#9'tmTopLeft'#7'Enabled'#8#14'Parent'
+  +'ShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#0#0#9'TComboBox'#10'SParCombo2'#4
+  +'Left'#2#8#6'Height'#2#23#4'Hint'#6'1Select a structure parameter to be modi'
+  +'fied here.'#3'Top'#2'}'#5'Width'#3#198#0#7'Anchors'#11#5'akTop'#6'akLeft'#7
+  +'akRight'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#15#9'ItemIndex'#2#0
+  +#13'Items.Strings'#1#6#29'Select structure parameter...'#6#12'GD1 (nmol/s)'#6
+  +#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9
+  +'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6
+  +#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'#6#10'betaT (/s)'
+  +#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#16'SParComb'
+  +'o2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6#29'S'
+  +'elect structure parameter...'#0#0#9'TTrackBar'#13'SParTrackBar2'#4'Left'#2#8
+  +#6'Height'#2'&'#4'Hint'#6'>Change the magnitude of the selected structure pa'
+  +'rameter here.'#3'Top'#3#154#0#5'Width'#3#144#0#3'Max'#2'2'#8'OnChange'#7#19
+  +'SParTrackBar2Change'#8'Position'#2#0#9'TickMarks'#7#9'tmTopLeft'#7'Enabled'
+  +#8#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#0#0#9'TComboBox'#10'SP'
+  +'arCombo3'#4'Left'#2#8#6'Height'#2#23#4'Hint'#6'1Select a structure paramete'
+  +'r to be modified here.'#3'Top'#3#212#0#5'Width'#3#198#0#7'Anchors'#11#5'akT'
+  +'op'#6'akLeft'#7'akRight'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#15#9
+  +'ItemIndex'#2#0#13'Items.Strings'#1#6#29'Select structure parameter...'#6#12
+  +'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11
   +'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'
   +#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6#12'LS (l/'#194#181'mol)'
   +#6#10'betaT (/s)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChan'
   +'ge'#7#16'SParCombo3Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2
   +#4#4'Text'#6#29'Select structure parameter...'#0#0#9'TTrackBar'#13'SParTrack'
   +'Bar3'#4'Left'#2#8#6'Height'#2'&'#4'Hint'#6'>Change the magnitude of the sel'
-  +'ected structure parameter here.'#3'Top'#3#243#0#5'Width'#3#144#0#3'Max'#2'2'
+  +'ected structure parameter here.'#3'Top'#3#241#0#5'Width'#3#144#0#3'Max'#2'2'
   +#8'OnChange'#7#19'SParTrackBar3Change'#8'Position'#2#0#9'TickMarks'#7#9'tmTo'
   +'pLeft'#7'Enabled'#8#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#0#0#5
-  +'TEdit'#9'SParEdit1'#4'Left'#3#160#0#6'Height'#2#23#3'Top'#2'1'#5'Width'#2','
+  +'TEdit'#9'SParEdit1'#4'Left'#3#160#0#6'Height'#2#23#3'Top'#2'A'#5'Width'#2','
   +#9'MaxLength'#2#15#8'OnChange'#7#15'SParEdit1Change'#8'ReadOnly'#9#8'TabOrde'
   +'r'#2#6#4'Text'#6#9'SParEdit1'#0#0#5'TEdit'#9'SParEdit2'#4'Left'#3#160#0#6'H'
-  +'eight'#2#23#3'Top'#3#147#0#5'Width'#2','#8'OnChange'#7#15'SParEdit2Change'#8
+  ,'eight'#2#23#3'Top'#3#151#0#5'Width'#2','#8'OnChange'#7#15'SParEdit2Change'#8
   +'ReadOnly'#9#8'TabOrder'#2#7#4'Text'#6#9'SParEdit2'#0#0#5'TEdit'#9'SParEdit3'
-  +#4'Left'#3#160#0#6'Height'#2#23#3'Top'#3#243#0#5'Width'#2','#8'OnChange'#7#15
-  +'SParEdit3Change'#8'ReadOnly'#9#8'TabOrder'#2#8#4'Text'#6#9'SParEdit3'#0#0#0
-  ,#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#23#3'Top'#3#190#1#5'W'
-  +'idth'#3#244#2#6'Panels'#14#0#0#0#9'TGroupBox'#9'GroupBox2'#4'Left'#2'0'#6'H'
-  +'eight'#2'V'#3'Top'#3']'#1#5'Width'#3#175#2#7'Anchors'#11#6'akLeft'#7'akRigh'
-  +'t'#8'akBottom'#0#7'Caption'#6#22'Behavioural Parameters'#12'ClientHeight'#2
+  +#4'Left'#3#160#0#6'Height'#2#23#3'Top'#3#241#0#5'Width'#2','#8'OnChange'#7#15
+  +'SParEdit3Change'#8'ReadOnly'#9#8'TabOrder'#2#8#4'Text'#6#9'SParEdit3'#0#0#6
+  +'TLabel'#15'SParBoxSubLabel'#4'Left'#2#8#6'Height'#2#15#3'Top'#2#2#5'Width'#3
+  +#163#0#7'Caption'#6' for dynamic sensitivity analysis'#11'ParentColor'#8#0#0
+  +#0#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#23#3'Top'#3#190#1#5
+  +'Width'#3#244#2#6'Panels'#14#0#0#0#9'TGroupBox'#9'GroupBox2'#4'Left'#2'0'#6
+  +'Height'#2'V'#3'Top'#3']'#1#5'Width'#3#175#2#7'Anchors'#11#6'akLeft'#7'akRig'
+  +'ht'#8'akBottom'#0#7'Caption'#6#22'Behavioural Parameters'#12'ClientHeight'#2
   +'B'#11'ClientWidth'#3#171#2#8'TabOrder'#2#4#0#14'TFloatSpinEdit'#12'yMinSpin'
   +'Edit'#4'Left'#2#8#6'Height'#2#23#4'Hint'#6'''Minimum of selected structure '
   +'parameter'#3'Top'#2#3#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13
   +'DecimalPlaces'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248'?'#8'MaxValu'
-  +'e'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0#128#0'<'#8'OnChange'
-  +#7#18'yMinSpinEditChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0
-  +#5'Value'#5#0#0#0#0#0#0#0#128#0'<'#7'Visible'#8#0#0#14'TFloatSpinEdit'#12'yM'
-  +'axSpinEdit'#4'Left'#3#215#1#6'Height'#2#23#4'Hint'#6'''Maximum of selected '
-  +'structure parameter'#3'Top'#2#3#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'ak'
-  +'Bottom'#0#13'DecimalPlaces'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248
-  +'?'#8'MaxValue'#5#0#0#0#0#0#0'P'#195#15'@'#8'MinValue'#5#0#0#0#0#0#0#0#128#0
-  +'<'#8'OnChange'#7#18'yMaxSpinEditChange'#14'ParentShowHint'#8#8'ShowHint'#9#8
-  +'TabOrder'#2#1#5'Value'#5#0#0#0#0#0#0#0#160#2'@'#7'Visible'#8#0#0#9'TComboBo'
-  +'x'#10'yBParCombo'#4'Left'#2'X'#6'Height'#2#23#4'Hint'#6'XSelect the first d'
-  +'ependent behavioural parameter whose response to be investigated here.'#3'T'
-  +'op'#2#5#5'Width'#3'x'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21
-  +'ArrowKeysTraverseList'#8#10'ItemHeight'#2#15#9'ItemIndex'#2#0#13'Items.Stri'
-  +'ngs'#1#6'"Select zero isocline 2 (y axis)...'#6'&Pituitary response (TSH co'
-  +'ncentration)'#6'$Thyroid response (FT4 concentration)'#6'(Central deiodinat'
-  +'ion (cT3 concentration)'#0#8'OnChange'#7#16'yBParComboChange'#14'ParentShow'
-  +'Hint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6'"Select zero isocline 2 (y '
-  +'axis)...'#0#0#14'TFloatSpinEdit'#12'xMinSpinEdit'#4'Left'#2#8#6'Height'#2#23
-  +#4'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2'"'#5'Width'#2
-  +'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#3#9'Increment'
-  +#5#0#216#163'p='#10#215#163#248'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'Mi'
-  +'nValue'#5#0#0#0#0#0#0#0#128#0'<'#8'OnChange'#7#18'xMinSpinEditChange'#14'Pa'
-  +'rentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#5'Value'#5#0#152#153#153#153
-  +#153#153#153#253'?'#0#0#9'TComboBox'#10'xBParCombo'#4'Left'#2'X'#6'Height'#2
-  +#23#4'Hint'#6'YSelect the second dependent behavioural parameter whose respo'
-  +'nse to be investigated here.'#3'Top'#2'$'#5'Width'#3'x'#1#7'Anchors'#11#6'a'
-  +'kLeft'#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2
-  +#15#9'ItemIndex'#2#0#13'Items.Strings'#1#6'"Select zero isocline 1 (x axis).'
-  +'..'#6'&Pituitary response (TSH concentration)'#6'$Thyroid response (FT4 con'
-  +'centration)'#6'(Central deiodination (cT3 concentration)'#0#8'OnChange'#7#16
-  +'xBParComboChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'
-  +#6'"Select zero isocline 1 (x axis)...'#0#0#14'TFloatSpinEdit'#12'xMaxSpinEd'
-  +'it'#4'Left'#3#215#1#6'Height'#2#23#4'Hint'#6'''Maximum of selected structur'
-  +'e parameter'#3'Top'#2'"'#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'
-  +#0#13'DecimalPlaces'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248'?'#8'Ma'
-  +'xValue'#5#0#0#0#0#0#0'P'#195#15'@'#8'MinValue'#5#0#0#0#0#0#0#0#128#0'<'#8'O'
-  +'nChange'#7#18'xMaxSpinEditChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabO'
-  +'rder'#2#5#5'Value'#5#0#0#0#0#0#0#0#160#2'@'#0#0#9'TColorBox'#9'yColorBox'#4
-  +'Left'#3')'#2#6'Height'#2#22#4'Hint'#6',Select the color of the selected cur'
-  +'ve here.'#3'Top'#2#7#5'Width'#2'y'#17'DefaultColorColor'#7#5'clRed'#8'Selec'
-  +'ted'#7#6'clBlue'#7'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8
-  +'OnChange'#7#15'yColorBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrd'
-  +'er'#2#6#0#0#9'TColorBox'#9'xColorBox'#4'Left'#3')'#2#6'Height'#2#22#4'Hint'
-  +#6',Select the color of the selected curve here.'#3'Top'#2'$'#5'Width'#2'y'
-  +#17'DefaultColorColor'#7#6'clBlue'#8'Selected'#7#5'clRed'#7'Anchors'#11#5'ak'
-  +'Top'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#15'xColorBoxChange'#14
-  +'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#7#0#0#0#10'TPopupMenu'#10'Pop'
-  +'upMenu1'#4'left'#3'x'#1#3'top'#3#24#2#0#9'TMenuItem'#8'UndoItem'#7'Caption'
-  +#6#4'Undo'#7'Enabled'#8#0#0#9'TMenuItem'#8'Divider1'#7'Caption'#6#1'-'#0#0#9
-  +'TMenuItem'#7'CutItem'#7'Caption'#6#3'Cut'#7'Enabled'#8#0#0#9'TMenuItem'#8'C'
-  +'opyItem'#7'Caption'#6#4'Copy'#7'OnClick'#7#13'CopyItemClick'#0#0#9'TMenuIte'
-  +'m'#9'PasteItem'#7'Caption'#6#5'Paste'#7'Enabled'#8#0#0#0#13'TChartToolset'
-  +#13'ChartToolset1'#4'left'#3#232#0#3'top'#3#168#0#0#19'TDataPointClickTool C'
-  +'hartToolset1DataPointClickTool1'#5'Shift'#11#7'ssShift'#6'ssLeft'#0#12'OnPo'
-  +'intClick'#7'*ChartToolset1DataPointClickTool1PointClick'#0#0#13'TZoomDragTo'
-  +'ol'#26'ChartToolset1ZoomDragTool1'#5'Shift'#11#6'ssLeft'#0#0#0#0#0
+  +'e'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7
+  +#18'yMinSpinEditChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#5
+  +'Value'#5#0#0#0#0#0#0#0#0#0#0#7'Visible'#8#0#0#14'TFloatSpinEdit'#12'yMaxSpi'
+  +'nEdit'#4'Left'#3#215#1#6'Height'#2#23#4'Hint'#6'''Maximum of selected struc'
+  +'ture parameter'#3'Top'#2#3#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBotto'
+  +'m'#0#13'DecimalPlaces'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248'?'#8
+  +'MaxValue'#5#0#0#0#0#0#0'P'#195#15'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'On'
+  +'Change'#7#18'yMaxSpinEditChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOr'
+  +'der'#2#1#5'Value'#5#0#0#0#0#0#0#0#160#2'@'#7'Visible'#8#0#0#9'TComboBox'#10
+  +'yBParCombo'#4'Left'#2'X'#6'Height'#2#23#4'Hint'#6'XSelect the first depende'
+  +'nt behavioural parameter whose response to be investigated here.'#3'Top'#2#5
+  +#5'Width'#3'x'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKe'
+  +'ysTraverseList'#8#10'ItemHeight'#2#15#9'ItemIndex'#2#0#13'Items.Strings'#1#6
+  +'"Select zero isocline 2 (y axis)...'#6'&Pituitary response (TSH concentrati'
+  +'on)'#6'$Thyroid response (FT4 concentration)'#6'(Central deiodination (cT3 '
+  +'concentration)'#0#8'OnChange'#7#16'yBParComboChange'#14'ParentShowHint'#8#8
+  +'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6'"Select zero isocline 2 (y axis)...'#0
+  +#0#14'TFloatSpinEdit'#12'xMinSpinEdit'#4'Left'#2#8#6'Height'#2#23#4'Hint'#6
+  +'''Minimum of selected structure parameter'#3'Top'#2'"'#5'Width'#2'H'#7'Anch'
+  +'ors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#3#9'Increment'#5#0#216
+  +#163'p='#10#215#163#248'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'MinValue'#5
+  +#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'xMinSpinEditChange'#14'ParentShowHint'
+  +#8#8'ShowHint'#9#8'TabOrder'#2#3#5'Value'#5#0#152#153#153#153#153#153#153#253
+  +'?'#0#0#9'TComboBox'#10'xBParCombo'#4'Left'#2'X'#6'Height'#2#23#4'Hint'#6'YS'
+  +'elect the second dependent behavioural parameter whose response to be inves'
+  +'tigated here.'#3'Top'#2'$'#5'Width'#3'x'#1#7'Anchors'#11#6'akLeft'#7'akRigh'
+  +'t'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#15#9'ItemInde'
+  +'x'#2#0#13'Items.Strings'#1#6'"Select zero isocline 1 (x axis)...'#6'&Pituit'
+  +'ary response (TSH concentration)'#6'$Thyroid response (FT4 concentration)'#6
+  +'(Central deiodination (cT3 concentration)'#0#8'OnChange'#7#16'xBParComboCha'
+  +'nge'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6'"Select z'
+  +'ero isocline 1 (x axis)...'#0#0#14'TFloatSpinEdit'#12'xMaxSpinEdit'#4'Left'
+  +#3#215#1#6'Height'#2#23#4'Hint'#6'''Maximum of selected structure parameter'
+  +#3'Top'#2'"'#5'Width'#2'H'#7'Anchors'#11#7'akRight'#8'akBottom'#0#13'Decimal'
+  +'Places'#2#3#9'Increment'#5#0#216#163'p='#10#215#163#248'?'#8'MaxValue'#5#0#0
+  +#0#0#0#0'P'#195#15'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'xMa'
+  +'xSpinEditChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#5'Value'
+  +#5#0#0#0#0#0#0#0#160#2'@'#0#0#9'TColorBox'#9'yColorBox'#4'Left'#3')'#2#6'Hei'
+  +'ght'#2#22#4'Hint'#6',Select the color of the selected curve here.'#3'Top'#2
+  +#7#5'Width'#2'y'#17'DefaultColorColor'#7#5'clRed'#8'Selected'#7#6'clBlue'#7
+  +'Anchors'#11#5'akTop'#7'akRight'#0#10'ItemHeight'#2#16#8'OnChange'#7#15'yCol'
+  +'orBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#6#0#0#9'TColo'
+  +'rBox'#9'xColorBox'#4'Left'#3')'#2#6'Height'#2#22#4'Hint'#6',Select the colo'
+  +'r of the selected curve here.'#3'Top'#2'$'#5'Width'#2'y'#17'DefaultColorCol'
+  +'or'#7#6'clBlue'#8'Selected'#7#5'clRed'#7'Anchors'#11#5'akTop'#7'akRight'#0
+  +#10'ItemHeight'#2#16#8'OnChange'#7#15'xColorBoxChange'#14'ParentShowHint'#8#8
+  +'ShowHint'#9#8'TabOrder'#2#7#0#0#0#10'TPopupMenu'#10'PopupMenu1'#4'left'#3'x'
+  +#1#3'top'#3#24#2#0#9'TMenuItem'#8'UndoItem'#7'Caption'#6#4'Undo'#7'Enabled'#8
+  +#0#0#9'TMenuItem'#8'Divider1'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#7'CutItem'#7
+  +'Caption'#6#3'Cut'#7'Enabled'#8#0#0#9'TMenuItem'#8'CopyItem'#7'Caption'#6#4
+  ,'Copy'#7'OnClick'#7#13'CopyItemClick'#0#0#9'TMenuItem'#9'PasteItem'#7'Captio'
+  +'n'#6#5'Paste'#7'Enabled'#8#0#0#0#13'TChartToolset'#13'ChartToolset1'#4'left'
+  +#3#232#0#3'top'#3#168#0#0#19'TDataPointClickTool ChartToolset1DataPointClick'
+  +'Tool1'#5'Shift'#11#7'ssShift'#6'ssLeft'#0#12'OnPointClick'#7'*ChartToolset1'
+  +'DataPointClickTool1PointClick'#0#0#13'TZoomDragTool'#26'ChartToolset1ZoomDr'
+  +'agTool1'#5'Shift'#11#6'ssLeft'#0#0#0#0#0
 ]);
