@@ -109,7 +109,7 @@ procedure TSimThyrLogWindow.InitGrid; {initializes empty table}
 begin
   GridRows := RES_BLANK_ROWS;
   ValuesGrid.RowCount := GridRows;
-  ValuesGrid.Tag := 0;
+  ValuesGrid.Tag := 1;
 end;
 
 procedure TSimThyrLogWindow.PopupMenu1Popup(Sender: TObject);
