@@ -97,6 +97,8 @@ type
     procedure SParEdit1Change(Sender: TObject);
     procedure SParEdit2Change(Sender: TObject);
     procedure SParEdit3Change(Sender: TObject);
+    function  StrucParsEnabled: boolean;
+    procedure UseStrucParsFromTrackBars;
     procedure UpdateEditsfromTrackBars;
     procedure UpdateTrackBarsfromEdits;
     procedure DrawDummyEquilibriumPlot;
@@ -148,10 +150,27 @@ var
   gUOM1, gUOM2: string;
   automatedSpin: boolean;
 
+procedure TrimMax(var aVector: tParamVector; const maxLimit: extended);
+
 implementation
 
 uses
   SimThyrMain;
+
+procedure TrimMax(var aVector: tParamVector; const maxLimit: extended);
+{ removes components of a vector that are greater than max }
+{ and replaces it by NaN }
+var
+  i: integer;
+begin
+  assert(maxLimit >= 0, kError101);
+  if not IsNan(maxLimit) then
+    for i := low(aVector) to high(aVector) do
+    begin
+      if aVector[i] > maxLimit then
+        aVector[i] := NaN;
+    end;
+end;
 
 procedure UpdateStrucPar(theParameter: tSParameter; theValue: real);
 { updates structure parameters after track bars have been changed }
@@ -1009,6 +1028,27 @@ begin
   end;
 end;
 
+function TEquilibriumDiagramForm.StrucParsEnabled: boolean;
+{ Check if dynamic sensititivy analysis is used }
+begin
+  result := false;
+  if SParTrackBar1.Enabled or SParTrackBar2.Enabled or SParTrackBar2.Enabled then
+    result := true;
+end;
+
+procedure TEquilibriumDiagramForm.UseStrucParsFromTrackBars;
+{ If dynamic sensitivity analysis is used, store standard structure parameters }
+{ and use parameters as provided via trackbars instead }
+begin
+  SaveStrucPars;
+  if SParTrackBar1.Enabled then
+    UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
+  if SParTrackBar2.Enabled then
+    UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2 / TRACK_RATIO);
+  if SParTrackBar3.Enabled then
+    UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3 / TRACK_RATIO);
+end;
+
 procedure TEquilibriumDiagramForm.UpdateEditsfromTrackBars;
 begin
   SParEdit1.Text := FloatToStr(SParTrackBar1.Position / TRACK_RATIO);
@@ -1061,78 +1101,87 @@ var
   MinBPar_x, MaxBPar_x, MinBPar_y, MaxBPar_y: real;
   ConversionFactor_x, ConversionFactor_y: real;
 begin
-  ConversionFactor_x := 1;
-  ConversionFactor_y := 1;
-  { Recalculate conversion factors, in order to support change of UOM on the fly: }
-  RecalculateConversionFactors;
-  {If line series exists it is cleared and recreated to support foundations of redrawing}
-  if FLine[1] <> nil then
-    EquilibriumChart.ClearSeries;
-  for i := 0 to MAX_SERIES - 1 do { Prepare line series }
-  begin
-    FLine[i] := TLineSeries.Create(EquilibriumChart);
-    with FLine[i] do
+  if StrucParsEnabled then
+    UseStrucParsFromTrackBars;
+  try
+    ConversionFactor_x := 1;
+    ConversionFactor_y := 1;
+    { Recalculate conversion factors, in order to support change of UOM on the fly: }
+    RecalculateConversionFactors;
+    {If line series exists it is cleared and recreated to support foundations of redrawing}
+    if FLine[1] <> nil then
+      EquilibriumChart.ClearSeries;
+    for i := 0 to MAX_SERIES - 1 do { Prepare line series }
     begin
-      ShowLines   := True;
-      ShowPoints  := False;
-      Pointer.Brush.Color := clBlack;
-      SeriesColor := clBlack;
-      LinePen.Mode := pmCopy;
-      LinePen.Style := psSolid;
-      LinePen.Cosmetic := true;
-      LinePen.EndCap := pecRound;
-      LinePen.JoinStyle := pjsRound;
-      LinePen.Width := 2;
-      LineType := ltFromPrevious;
+      FLine[i] := TLineSeries.Create(EquilibriumChart);
+      with FLine[i] do
+      begin
+        ShowLines   := True;
+        ShowPoints  := False;
+        Pointer.Brush.Color := clBlack;
+        SeriesColor := clBlack;
+        LinePen.Mode := pmCopy;
+        LinePen.Style := psSolid;
+        LinePen.Cosmetic := true;
+        LinePen.EndCap := pecRound;
+        LinePen.JoinStyle := pjsRound;
+        LinePen.Width := 2;
+        LineType := ltFromPrevious;
+      end;
+      EquilibriumChart.AddSeries(FLine[i]);
+      FLine[i].BeginUpdate;
     end;
-    EquilibriumChart.AddSeries(FLine[i]);
-    FLine[i].BeginUpdate;
-  end;
-  if empty then
-    DrawDummyEquilibriumPlot
-  else
-  begin
-    MinBPar_x := xMinSpinEdit.Value / gSpinFactor;
-    MaxBPar_x := xMaxSpinEdit.Value / gSpinFactor;
-    EquilibriumChart.LeftAxis.Range.UseMin := true;
-    EquilibriumChart.LeftAxis.Range.UseMax := true;
-    EquilibriumChart.BottomAxis.Range.UseMin := true;
-    EquilibriumChart.BottomAxis.Range.UseMax := true;
-    gResponseCurve1 := SimSubsystemResponse(gSelectedBParameter_x, gSelectedBParameter_y, MinBPar_x,
-      MaxBPar_x, ConversionFactor_x, ConversionFactor_y);
-    for j := 0 to MAX_I do
-    begin
-      FLine[0].AddXY(gResponseCurve1.input[j] * conversionFactor_x,
-        gResponseCurve1.output[j] * conversionFactor_y, '',
-        yColorBox.Selected);
-      Fline[0].SeriesColor := yColorBox.Selected;
-    end;
-    MinBPar_y := MinValue(gResponseCurve1.output) / 10;
-    MaxBPar_y := MaxValue(gResponseCurve1.output);
-    ConversionFactor_y := NaN; // signals to SimSubsystemResponse that input is native
-    if MaxBPar_y <> 0 then
-      gResponseCurve2 := SimSubsystemResponse(gSelectedBParameter_y, gSelectedBParameter_x, MinBPar_y,
-      MaxBPar_y, ConversionFactor_y, ConversionFactor_x)
+    if empty then
+      DrawDummyEquilibriumPlot
     else
-      gResponseCurve2.output := gEmptyVector;
-    for j := 0 to MAX_I do
     begin
-      FLine[1].AddXY(gResponseCurve2.output[j] * conversionFactor_x,
-        gResponseCurve2.input[j] * conversionFactor_y, '',
-        xColorBox.Selected);
+      MinBPar_x := xMinSpinEdit.Value / gSpinFactor;
+      MaxBPar_x := xMaxSpinEdit.Value / gSpinFactor;
+      EquilibriumChart.LeftAxis.Range.UseMin := true;
+      EquilibriumChart.LeftAxis.Range.UseMax := true;
+      EquilibriumChart.BottomAxis.Range.UseMin := true;
+      EquilibriumChart.BottomAxis.Range.UseMax := true;
+      gResponseCurve1 := SimSubsystemResponse(gSelectedBParameter_x, gSelectedBParameter_y, MinBPar_x,
+        MaxBPar_x, ConversionFactor_x, ConversionFactor_y);
+      for j := 0 to MAX_I do
+      begin
+        FLine[0].AddXY(gResponseCurve1.input[j] * conversionFactor_x,
+          gResponseCurve1.output[j] * conversionFactor_y, '',
+          yColorBox.Selected);
+      end;
+      Fline[0].SeriesColor := yColorBox.Selected;
+      MinBPar_y := MinValue(gResponseCurve1.output) / 10;
+      MaxBPar_y := MaxValue(gResponseCurve1.output);
+      ConversionFactor_y := NaN; // signals to SimSubsystemResponse that input is native
+      if MaxBPar_y <> 0 then
+        gResponseCurve2 := SimSubsystemResponse(gSelectedBParameter_y, gSelectedBParameter_x, MinBPar_y,
+        MaxBPar_y, ConversionFactor_y, ConversionFactor_x)
+      else
+        gResponseCurve2.output := gEmptyVector;
+      TrimMax(gResponseCurve2.output, MaxBPar_x / conversionFactor_x);
+      for j := 0 to MAX_I do
+      begin
+        if not isNaN(gResponseCurve2.output[j]) then
+        FLine[1].AddXY(gResponseCurve2.output[j] * conversionFactor_x,
+          gResponseCurve2.input[j] * conversionFactor_y, '',
+          xColorBox.Selected);
+      end;
       Fline[1].SeriesColor := xColorBox.Selected;
     end;
+    for i := 0 to MAX_SERIES - 1 do
+      FLine[i].EndUpdate;
+    if gSelectedBParameter_y = IItem then
+      EquilibriumChart.LeftAxis.Title.Caption := ISOKLINE_2_STRING
+    else
+      EquilibriumChart.LeftAxis.Title.Caption := yBParCombo.Caption;
+    if gSelectedBParameter_x = IItem then
+      EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_1_STRING
+    else
+      EquilibriumChart.BottomAxis.Title.Caption := xBParCombo.Caption;
+  finally
+    if StrucParsEnabled then
+      RestoreStrucPars;
   end;
-  for i := 0 to MAX_SERIES - 1 do
-    FLine[i].EndUpdate;
-  if gSelectedBParameter_y = IItem then
-    EquilibriumChart.LeftAxis.Title.Caption := ISOKLINE_2_STRING
-  else
-    EquilibriumChart.LeftAxis.Title.Caption := yBParCombo.Caption;
-  if gSelectedBParameter_x = IItem then
-    EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_1_STRING
-  else
-    EquilibriumChart.BottomAxis.Title.Caption := xBParCombo.Caption;
 end;
 
 procedure TEquilibriumDiagramForm.FormCreate(Sender: TObject);
@@ -1427,27 +1476,24 @@ end;
 
 procedure TEquilibriumDiagramForm.SParTrackBar1Change(Sender: TObject);
 begin
-  SaveStrucPars;
+  UseStrucParsFromTrackBars;
   UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
   DrawDiagram(false);
   RestoreStrucPars;
 end;
 
 procedure TEquilibriumDiagramForm.SParTrackBar2Change(Sender: TObject);
 begin
-  SaveStrucPars;
+  UseStrucParsFromTrackBars;
   UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2 / TRACK_RATIO);
   DrawDiagram(false);
   RestoreStrucPars;
 end;
 
 procedure TEquilibriumDiagramForm.SParTrackBar3Change(Sender: TObject);
 begin
-  SaveStrucPars;
+  UseStrucParsFromTrackBars;
   UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3 / TRACK_RATIO);
   DrawDiagram(false);
   RestoreStrucPars;
 end;

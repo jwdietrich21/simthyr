@@ -65,6 +65,7 @@ const
   kError102 = 'Runtime error: Parameter(s) out of range';
   kError103 = 'Runtime error: min > max';
   kError104 = 'Runtime error: max = 0';
+  kError105 = 'Runtime error: max = NaN';
 
 implementation
 
