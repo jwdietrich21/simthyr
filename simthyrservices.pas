@@ -281,7 +281,7 @@ var
   theCell: TableCell;
   theString: Str255;
 begin
-  theTable.Tag := theTable.Tag + 1;
+  theTable.Tag := theTable.Tag + 1; // stores last line
   if theTable.Tag > GridRows - 1 then
     theTable.RowCount := theTable.RowCount + 1;
   theCell.y := theTable.Tag;

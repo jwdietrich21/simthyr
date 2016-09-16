@@ -533,7 +533,7 @@ begin
   end;
 
   ShowPredictedValues(false);
-  GridRows := nmax + 1;
+  GridRows := nmax + 2;
   SimThyrLogWindow.ValuesGrid.RowCount := GridRows;
   SimThyrLogWindow.Show;
   ValuesPlot.ShowOnTop;
