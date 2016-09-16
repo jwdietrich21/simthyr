@@ -524,15 +524,15 @@ begin
 end;
 
 procedure RescaleParameters;
-{change scaling of simulated parameters after change of measurement units}
+{change scaling of simulated parameters after change of units of measurement}
 var j, k: integer;
 begin
   for j := 1 to length(gResultMatrix) do
     begin
-      SimThyrLogWindow.ValuesGrid.Cells[t_pos, j] := FormattedTime(gResultMatrix[j-1, t_pos]);
+      SimThyrLogWindow.ValuesGrid.Cells[t_pos, j + 1] := FormattedTime(gResultMatrix[j-1, t_pos]);
       for k := TRH_pos to cT3_pos do
       begin
-        SimThyrLogWindow.ValuesGrid.Cells[k, j] := FormatFloat(gNumberFormat, gResultMatrix[j-1, k] * gParameterFactor[k]);
+        SimThyrLogWindow.ValuesGrid.Cells[k, j + 1] := FormatFloat(gNumberFormat, gResultMatrix[j-1, k] * gParameterFactor[k]);
       end;
     end;
 end;
@@ -718,6 +718,7 @@ begin
   {DrawTornadoPlot; // tornado plot not affected since it displays percentages}
   TWSensitivityAnalysisForm.Rescale2DMap; // rescales two-way sensitivity analysis
   EquilibriumDiagramForm.DrawDiagram(false); // adapts equilibrium diagram
+  EquilibriumDiagramForm.ResetButtonClick(Sender); // "double drawing" necessary on Mac
   SavePreferences;
   PreferencesDialog.Close;
 end;
