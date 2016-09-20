@@ -107,50 +107,12 @@ var
   ValuesPlot: TValuesPlot;
   gr_nummer: string[4];
 
-function AsTime(x: real): TDateTime;
-function FormattedTime(x: real): Str255;
-
 procedure DrawPlot(empty: boolean);
 
 implementation
 
 uses
   SimThyrMain;
-
-function AsTime(x: real): TDateTime;
-  {Converts second values to TDateTime representation}
-var
-  r: longint;
-  y, m, d, h, n, s, ms, dy: word;
-  theTime, theDate: TDateTime;
-begin
-  y := 1900;                            {Take 1900 as standard year}
-  r := trunc(x);
-  dy := word(r div 86400);              {day of year}
-  if not TryEncodeDateDay(y, dy + 1, theDate) then {error in encoding?}
-  begin
-    theDate := 0;
-    bell;
-  end;
-  DecodeDateTime(theDate, y, m, d, h, n, s, ms);
-  r := r mod 86400;
-  h := word(r div 3600);
-  r := r mod 3600;
-  n := word(r div 60);
-  r := r mod 60;
-  s := word(r);
-  if not TryEncodeDateTime(y, m, d, h, n, s, 0, theTime) then {error in encoding?}
-  begin
-    theTime := 0;
-    bell;
-  end;
-  AsTime := theTime;
-end;
-
-function FormattedTime(x: real): Str255;   {Converts second values to a formatted time}
-begin
-  FormattedTime := FormatDateTime(gDateTimeFormat, AsTime(x));
-end;
 
 { TValuesPlot }
 
