@@ -525,16 +525,8 @@ end;
 
 procedure RescaleParameters;
 {change scaling of simulated parameters after change of units of measurement}
-var j, k: integer;
 begin
-  for j := 1 to length(gResultMatrix) do
-    begin
-      SimThyrLogWindow.ValuesGrid.Cells[t_pos, j + 1] := FormattedTime(gResultMatrix[j-1, t_pos]);
-      for k := TRH_pos to cT3_pos do
-      begin
-        SimThyrLogWindow.ValuesGrid.Cells[k, j + 1] := FormatFloat(gNumberFormat, gResultMatrix[j-1, k] * gParameterFactor[k]);
-      end;
-    end;
+  SimThyrLogWindow.RedrawGrid(nil);
 end;
 
 procedure SetTSHUnitCombo;
