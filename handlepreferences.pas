@@ -265,6 +265,7 @@ end;
 procedure SetUnits;
 {sets definitive units to the values of the interim units}
 begin
+  gParameterUnit[t_pos] := 'day h:m:s';
   gParameterUnit[TRH_pos] := 'ng/l';
   gParameterUnit[pTSH_pos] := InterimTSHUnit;
   gParameterUnit[TSH_pos] := gParameterUnit[pTSH_pos];

@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="747"/>
+      <BuildNr Value="748"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2016 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -99,7 +99,8 @@
         <UnitName Value="SimThyrPlot"/>
         <EditorIndex Value="17"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="2"/>
+        <TopLine Value="206"/>
+        <CursorPos X="5" Y="224"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
@@ -117,8 +118,8 @@
         <UnitName Value="SimThyrPrediction"/>
         <EditorIndex Value="23"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="52"/>
-        <CursorPos X="11" Y="65"/>
+        <TopLine Value="170"/>
+        <CursorPos X="7" Y="187"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -175,10 +176,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrLog"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="13"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="2"/>
+        <TopLine Value="94"/>
+        <CursorPos X="45" Y="108"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -653,13 +654,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HandlePreferences"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="15"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="80"/>
-        <CursorPos X="26" Y="529"/>
+        <TopLine Value="250"/>
+        <CursorPos X="38" Y="268"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="1">
-          <Item0 Y="532" ID="8"/>
+          <Item0 Y="533" ID="8"/>
         </Bookmarks>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1451,124 +1453,124 @@
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="322" Column="22" TopLine="307"/>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="126" Column="30" TopLine="110"/>
       </Position1>
       <Position2>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="323" Column="22" TopLine="307"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="530" Column="46" TopLine="517"/>
       </Position2>
       <Position3>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="587" Column="31" TopLine="572"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="532" Column="24" TopLine="517"/>
       </Position3>
       <Position4>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="588" Column="31" TopLine="572"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="1329" Column="51" TopLine="1308"/>
       </Position4>
       <Position5>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="535" Column="51" TopLine="517"/>
+        <Caret Line="723" Column="40" TopLine="703"/>
       </Position5>
       <Position6>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="530" Column="37" TopLine="517"/>
+        <Caret Line="720" TopLine="695"/>
       </Position6>
       <Position7>
-        <Filename Value="simthyrtypes.pas"/>
-        <Caret Line="126" Column="30" TopLine="110"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="721" TopLine="696"/>
       </Position7>
       <Position8>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="530" Column="46" TopLine="517"/>
+        <Caret Line="722" Column="26" TopLine="697"/>
       </Position8>
       <Position9>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="532" Column="24" TopLine="517"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="589" Column="26" TopLine="572"/>
       </Position9>
       <Position10>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1329" Column="51" TopLine="1308"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="305" Column="22" TopLine="287"/>
       </Position10>
       <Position11>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="723" Column="40" TopLine="703"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="587" Column="31" TopLine="569"/>
       </Position11>
       <Position12>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="720" TopLine="695"/>
+        <Caret Line="13" Column="97"/>
       </Position12>
       <Position13>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="721" TopLine="696"/>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="589" Column="26" TopLine="569"/>
       </Position13>
       <Position14>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="722" Column="26" TopLine="697"/>
+        <Filename Value="simthyrlog.pas"/>
+        <Caret Line="26" Column="24"/>
       </Position14>
       <Position15>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="589" Column="26" TopLine="572"/>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="515" Column="12" TopLine="496"/>
       </Position15>
       <Position16>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="305" Column="22" TopLine="287"/>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="439" Column="46" TopLine="422"/>
       </Position16>
       <Position17>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="587" Column="31" TopLine="569"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="535" Column="26" TopLine="517"/>
       </Position17>
       <Position18>
         <Filename Value="handlepreferences.pas"/>
-        <Caret Line="13" Column="97"/>
+        <Caret Line="534" Column="4" TopLine="514"/>
       </Position18>
       <Position19>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="589" Column="26" TopLine="569"/>
+        <Filename Value="simthyrlog.pas"/>
+        <Caret Line="105" Column="16" TopLine="87"/>
       </Position19>
       <Position20>
         <Filename Value="simthyrlog.pas"/>
-        <Caret Line="26" Column="24"/>
+        <Caret Line="43" Column="25" TopLine="32"/>
       </Position20>
       <Position21>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="515" Column="12" TopLine="496"/>
+        <Filename Value="simthyrlog.pas"/>
+        <Caret Line="120" Column="21" TopLine="92"/>
       </Position21>
       <Position22>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="439" Column="46" TopLine="422"/>
+        <Filename Value="simthyrlog.pas"/>
+        <Caret Line="101" Column="39" TopLine="94"/>
       </Position22>
       <Position23>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="535" Column="26" TopLine="517"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="466" Column="55" TopLine="371"/>
       </Position23>
       <Position24>
-        <Filename Value="handlepreferences.pas"/>
-        <Caret Line="534" Column="4" TopLine="514"/>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="64" Column="16" TopLine="46"/>
       </Position24>
       <Position25>
         <Filename Value="simthyrlog.pas"/>
-        <Caret Line="105" Column="16" TopLine="87"/>
+        <Caret Line="106" Column="13" TopLine="94"/>
       </Position25>
       <Position26>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="43" Column="25" TopLine="32"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="2"/>
       </Position26>
       <Position27>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="120" Column="21" TopLine="92"/>
+        <Filename Value="simthyrprediction.pas"/>
+        <Caret Line="65" Column="11" TopLine="52"/>
       </Position27>
       <Position28>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="101" Column="39" TopLine="94"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="529" Column="26" TopLine="80"/>
       </Position28>
       <Position29>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="466" Column="55" TopLine="371"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="274" Column="3" TopLine="256"/>
       </Position29>
       <Position30>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="64" Column="16" TopLine="46"/>
+        <Filename Value="handlepreferences.pas"/>
+        <Caret Line="268" Column="36" TopLine="256"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
