@@ -103,7 +103,7 @@ procedure TSimThyrLogWindow.RedrawGrid(Sender: TObject);
 var
   i, j, k: integer;
 begin
-  for i := TRH_pos to cT3_pos do
+  for i := t_pos to cT3_pos do
   begin
     ValuesGrid.Cells[i, 1] := gParameterUnit[i];
   end;
