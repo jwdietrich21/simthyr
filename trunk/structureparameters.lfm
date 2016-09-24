@@ -1953,8 +1953,11 @@ object StructureParameters: TStructureParameters
     object DREdit: TEdit
       Left = 272
       Height = 22
+      Hint = 'DR: Dissociation constant of central T3 at TR Beta (THR Beta) receptors'
       Top = 56
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 13
       Text = 'DREdit'
     end
@@ -2066,8 +2069,11 @@ object StructureParameters: TStructureParameters
     object GREdit: TEdit
       Left = 272
       Height = 22
+      Hint = 'GR: Gain of TR Beta (THR Beta) receptors'
       Top = 32
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 12
       Text = 'GREdit'
     end
@@ -2084,16 +2090,20 @@ object StructureParameters: TStructureParameters
     object AlphaREdit: TEdit
       Left = 64
       Height = 22
+      Hint = 'AlphaR: Dilution factor for TRH in peripheral blood  (reciprocal of apparent volume of distribution)'
       Top = 32
       Width = 80
+      ShowHint = True
       TabOrder = 0
       Text = 'AlphaREdit'
     end
     object BetaREdit: TEdit
       Left = 64
       Height = 22
+      Hint = 'BetaR: Clearance Exponent for TRH in peripheral blood (ln 2 / halflife)'
       Top = 58
       Width = 80
+      ShowHint = True
       TabOrder = 1
       Text = 'BetaREdit'
     end
