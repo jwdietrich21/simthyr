@@ -45,8 +45,8 @@ object StructureParameters: TStructureParameters
   end
   object Tau0REdit: TEdit
     Left = 88
-    Height = 22
-    Top = 527
+    Height = 21
+    Top = 528
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 1
@@ -54,8 +54,8 @@ object StructureParameters: TStructureParameters
   end
   object Tau0SEdit: TEdit
     Left = 88
-    Height = 22
-    Top = 551
+    Height = 21
+    Top = 552
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 2
@@ -63,8 +63,8 @@ object StructureParameters: TStructureParameters
   end
   object Tau0S2Edit: TEdit
     Left = 88
-    Height = 22
-    Top = 575
+    Height = 21
+    Top = 576
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 3
@@ -72,8 +72,8 @@ object StructureParameters: TStructureParameters
   end
   object Tau0TEdit: TEdit
     Left = 312
-    Height = 22
-    Top = 551
+    Height = 21
+    Top = 552
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 4
@@ -81,8 +81,8 @@ object StructureParameters: TStructureParameters
   end
   object Tau03zEdit: TEdit
     Left = 312
-    Height = 22
-    Top = 575
+    Height = 21
+    Top = 576
     Width = 80
     Anchors = [akLeft, akBottom]
     TabOrder = 5
@@ -90,45 +90,45 @@ object StructureParameters: TStructureParameters
   end
   object Label32: TLabel
     Left = 24
-    Height = 16
-    Top = 531
-    Width = 48
+    Height = 13
+    Top = 534
+    Width = 39
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 R:'
     ParentColor = False
   end
   object Label33: TLabel
     Left = 24
-    Height = 16
-    Top = 557
-    Width = 47
+    Height = 13
+    Top = 560
+    Width = 38
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 S:'
     ParentColor = False
   end
   object Label34: TLabel
     Left = 24
-    Height = 16
-    Top = 581
-    Width = 55
+    Height = 13
+    Top = 584
+    Width = 44
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 S2:'
     ParentColor = False
   end
   object Label35: TLabel
     Left = 256
-    Height = 16
-    Top = 557
-    Width = 48
+    Height = 13
+    Top = 560
+    Width = 38
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 T:'
     ParentColor = False
   end
   object Label36: TLabel
     Left = 256
-    Height = 16
-    Top = 581
-    Width = 56
+    Height = 13
+    Top = 584
+    Width = 42
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 3z:'
     ParentColor = False
@@ -146,9 +146,9 @@ object StructureParameters: TStructureParameters
   end
   object Label38: TLabel
     Left = 24
-    Height = 16
-    Top = 494
-    Width = 106
+    Height = 13
+    Top = 497
+    Width = 90
     Anchors = [akLeft, akBottom]
     Caption = 'Time constants:'
     Font.Style = [fsBold]
@@ -264,45 +264,45 @@ object StructureParameters: TStructureParameters
   end
   object Label51: TLabel
     Left = 176
-    Height = 16
-    Top = 531
-    Width = 7
+    Height = 13
+    Top = 534
+    Width = 5
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label52: TLabel
     Left = 176
-    Height = 16
-    Top = 557
-    Width = 7
+    Height = 13
+    Top = 560
+    Width = 5
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label53: TLabel
     Left = 176
-    Height = 16
-    Top = 581
-    Width = 7
+    Height = 13
+    Top = 584
+    Width = 5
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label54: TLabel
     Left = 400
-    Height = 16
-    Top = 557
-    Width = 7
+    Height = 13
+    Top = 560
+    Width = 5
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label55: TLabel
     Left = 400
-    Height = 16
-    Top = 581
-    Width = 7
+    Height = 13
+    Top = 584
+    Width = 5
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
@@ -326,233 +326,233 @@ object StructureParameters: TStructureParameters
     TabOrder = 0
     object Label72: TLabel
       Left = 576
-      Height = 16
+      Height = 13
       Top = 399
-      Width = 34
+      Width = 23
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label71: TLabel
       Left = 576
-      Height = 16
+      Height = 13
       Top = 375
-      Width = 34
+      Width = 23
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label70: TLabel
       Left = 576
-      Height = 16
+      Height = 13
       Top = 351
-      Width = 34
+      Width = 23
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label69: TLabel
       Left = 576
-      Height = 16
+      Height = 13
       Top = 327
-      Width = 34
+      Width = 23
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label68: TLabel
       Left = 576
-      Height = 16
+      Height = 13
       Top = 159
-      Width = 32
+      Width = 23
       Caption = 'mU/l'
       ParentColor = False
     end
     object Label67: TLabel
       Left = 576
-      Height = 16
+      Height = 13
       Top = 135
-      Width = 32
+      Width = 23
       Caption = 'l/mU'
       ParentColor = False
     end
     object Label66: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 181
-      Width = 34
+      Width = 23
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label65: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 253
-      Width = 32
+      Width = 23
       Caption = 'mU/l'
       ParentColor = False
     end
     object Label64: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 399
-      Width = 34
+      Width = 23
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label63: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 325
-      Width = 34
+      Width = 23
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label62: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 157
-      Width = 34
+      Width = 23
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label61: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 61
-      Width = 34
+      Width = 23
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label60: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 133
-      Width = 35
+      Width = 26
       Caption = 'mU/s'
       ParentColor = False
     end
     object Label59: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 373
-      Width = 37
+      Width = 26
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label58: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 301
-      Width = 37
+      Width = 26
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label57: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 229
-      Width = 37
+      Width = 26
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label56: TLabel
       Left = 360
-      Height = 16
+      Height = 13
       Top = 35
-      Width = 37
+      Width = 26
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label50: TLabel
       Left = 152
-      Height = 16
+      Height = 13
       Top = 399
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
     object Label49: TLabel
       Left = 152
-      Height = 16
+      Height = 13
       Top = 327
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
     object Label48: TLabel
       Left = 152
-      Height = 16
+      Height = 13
       Top = 255
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
     object Label47: TLabel
       Left = 152
-      Height = 16
+      Height = 13
       Top = 183
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
     object Label46: TLabel
       Left = 152
-      Height = 16
+      Height = 13
       Top = 135
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
     object Label45: TLabel
       Left = 154
-      Height = 16
+      Height = 13
       Top = 375
-      Width = 11
+      Width = 7
       Caption = '/l'
       ParentColor = False
     end
     object Label44: TLabel
       Left = 154
-      Height = 16
+      Height = 13
       Top = 303
-      Width = 11
+      Width = 7
       Caption = '/l'
       ParentColor = False
     end
     object Label43: TLabel
       Left = 154
-      Height = 16
+      Height = 13
       Top = 231
-      Width = 11
+      Width = 7
       Caption = '/l'
       ParentColor = False
     end
     object Label42: TLabel
       Left = 154
-      Height = 16
+      Height = 13
       Top = 159
-      Width = 11
+      Width = 7
       Caption = '/l'
       ParentColor = False
     end
     object Label39: TLabel
       Left = 154
-      Height = 16
+      Height = 13
       Top = 37
-      Width = 11
+      Width = 7
       Caption = '/l'
       ParentColor = False
     end
     object Label41: TLabel
       Left = 154
-      Height = 16
+      Height = 13
       Top = 111
-      Width = 11
+      Width = 7
       Caption = '/l'
       ParentColor = False
     end
     object Label40: TLabel
       Left = 154
-      Height = 16
+      Height = 13
       Top = 63
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
@@ -1640,31 +1640,31 @@ object StructureParameters: TStructureParameters
     end
     object Label24: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 399
-      Width = 47
+      Width = 37
       Caption = 'Beta32:'
       ParentColor = False
     end
     object Label25: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 373
-      Width = 31
+      Width = 25
       Caption = 'GD2:'
       ParentColor = False
     end
     object Label26: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 399
-      Width = 32
+      Width = 25
       Caption = 'KM2:'
       ParentColor = False
     end
     object k30Edit: TEdit
       Left = 493
-      Height = 22
+      Height = 21
       Top = 320
       Width = 80
       TabOrder = 25
@@ -1672,7 +1672,7 @@ object StructureParameters: TStructureParameters
     end
     object k31Edit: TEdit
       Left = 493
-      Height = 22
+      Height = 21
       Top = 344
       Width = 80
       TabOrder = 26
@@ -1680,7 +1680,7 @@ object StructureParameters: TStructureParameters
     end
     object k41Edit: TEdit
       Left = 493
-      Height = 22
+      Height = 21
       Top = 368
       Width = 80
       TabOrder = 27
@@ -1688,7 +1688,7 @@ object StructureParameters: TStructureParameters
     end
     object k42Edit: TEdit
       Left = 493
-      Height = 22
+      Height = 21
       Top = 392
       Width = 80
       TabOrder = 28
@@ -1696,71 +1696,77 @@ object StructureParameters: TStructureParameters
     end
     object Label27: TLabel
       Left = 440
-      Height = 16
+      Height = 13
       Top = 327
-      Width = 29
+      Width = 22
       Caption = 'K30:'
       ParentColor = False
     end
     object Label28: TLabel
       Left = 440
-      Height = 16
+      Height = 13
       Top = 351
-      Width = 29
+      Width = 22
       Caption = 'K31:'
       ParentColor = False
     end
     object Label29: TLabel
       Left = 440
-      Height = 16
+      Height = 13
       Top = 375
-      Width = 29
+      Width = 22
       Caption = 'K41:'
       ParentColor = False
     end
     object Label30: TLabel
       Left = 440
-      Height = 16
+      Height = 13
       Top = 399
-      Width = 29
+      Width = 22
       Caption = 'K42:'
       ParentColor = False
     end
     object Label17: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 229
-      Width = 22
+      Width = 18
       Caption = 'GT:'
       ParentColor = False
     end
     object Label18: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 253
-      Width = 22
+      Width = 18
       Caption = 'DT:'
       ParentColor = False
     end
     object Alpha31Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
+      Hint = 'Alpha31: Dilution factor for T3 in peripheral blood (reciprocal of apparent volume of distribution)'
       Top = 298
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 8
       Text = 'Alpha31Edit'
     end
     object Beta31Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
+      Hint = 'Beta31: Clearance Exponent for T3 in peripheral blood (ln 2 / halflife)'
       Top = 322
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 9
       Text = 'Beta31Edit'
     end
     object GD1Edit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Top = 298
       Width = 80
       TabOrder = 19
@@ -1768,7 +1774,7 @@ object StructureParameters: TStructureParameters
     end
     object KM1Edit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Top = 322
       Width = 80
       TabOrder = 20
@@ -1776,55 +1782,61 @@ object StructureParameters: TStructureParameters
     end
     object Label19: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 303
-      Width = 57
+      Width = 42
       Caption = 'Alpha31:'
       ParentColor = False
     end
     object Label20: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 327
-      Width = 47
+      Width = 37
       Caption = 'Beta31:'
       ParentColor = False
     end
     object Label21: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 301
-      Width = 31
+      Width = 25
       Caption = 'GD1:'
       ParentColor = False
     end
     object Label22: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 325
-      Width = 28
+      Width = 22
       Caption = 'KM1'
       ParentColor = False
     end
     object Alpha32Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
+      Hint = 'Alpha32: Dilution factor for central T3 (reciprocal of apparent volume of distribution)'
       Top = 370
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 10
       Text = 'Alpha32Edit'
     end
     object Beta32Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
+      Hint = 'Beta32: Clearance Exponent for central T3 (ln 2 / halflife)'
       Top = 394
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 11
       Text = 'Beta32Edit'
     end
     object GD2Edit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Top = 370
       Width = 80
       TabOrder = 21
@@ -1832,7 +1844,7 @@ object StructureParameters: TStructureParameters
     end
     object KM2Edit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Top = 394
       Width = 80
       TabOrder = 22
@@ -1840,87 +1852,93 @@ object StructureParameters: TStructureParameters
     end
     object Label23: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 375
-      Width = 57
+      Width = 42
       Caption = 'Alpha32:'
       ParentColor = False
     end
     object Label8: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 159
-      Width = 55
+      Width = 43
       Caption = 'AlphaS2:'
       ParentColor = False
     end
     object Label9: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 183
-      Width = 46
+      Width = 38
       Caption = 'BetaS2:'
       ParentColor = False
     end
     object Label10: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 133
-      Width = 23
+      Width = 19
       Caption = 'GH:'
       ParentColor = False
     end
     object Label11: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 157
-      Width = 23
+      Width = 19
       Caption = 'DH:'
       ParentColor = False
     end
     object Label12: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 181
-      Width = 18
+      Width = 16
       Caption = 'LS:'
       ParentColor = False
     end
     object Label13: TLabel
       Left = 440
-      Height = 16
+      Height = 13
       Top = 135
-      Width = 18
+      Width = 17
       Caption = 'SS:'
       ParentColor = False
     end
     object Label14: TLabel
       Left = 440
-      Height = 16
+      Height = 13
       Top = 159
-      Width = 21
+      Width = 18
       Caption = 'DS:'
       ParentColor = False
     end
     object AlphaTEdit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
+      Hint = 'AlphaT: Dilution factor for T4 in peripheral blood (reciprocal of apparent volume of distribution)'
       Top = 226
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 6
       Text = 'AlphaTEdit'
     end
     object BetaTEdit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
+      Hint = 'BetaT: Clearance Exponent for T4 in peripheral blood (ln 2 / halflife)'
       Top = 250
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 7
       Text = 'BetaTEdit'
     end
     object GTEdit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Top = 226
       Width = 80
       TabOrder = 17
@@ -1928,7 +1946,7 @@ object StructureParameters: TStructureParameters
     end
     object DTEdit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Top = 250
       Width = 80
       TabOrder = 18
@@ -1936,23 +1954,23 @@ object StructureParameters: TStructureParameters
     end
     object Label15: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 231
-      Width = 48
+      Width = 37
       Caption = 'AlphaT:'
       ParentColor = False
     end
     object Label16: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 255
-      Width = 39
+      Width = 32
       Caption = 'BetaT:'
       ParentColor = False
     end
     object DREdit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Hint = 'DR: Dissociation constant of central T3 at TR Beta (THR Beta) receptors'
       Top = 56
       Width = 80
@@ -1963,55 +1981,67 @@ object StructureParameters: TStructureParameters
     end
     object Label4: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 35
-      Width = 22
+      Width = 19
       Caption = 'GR:'
       ParentColor = False
     end
     object Label5: TLabel
       Left = 240
-      Height = 16
+      Height = 13
       Top = 61
-      Width = 22
+      Width = 19
       Caption = 'DR:'
       ParentColor = False
     end
     object AlphaSEdit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
+      Hint = 'AlphaS: Dilution factor for TSH in peripheral blood (reciprocal of apparent volume of distribution)'
       Top = 106
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 2
       Text = 'AlphaSEdit'
     end
     object BetaSEdit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
+      Hint = 'BetaS: Clearance Exponent for TSH in peripheral blood (ln 2 / halflife)'
       Top = 130
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 3
       Text = 'BetaSEdit'
     end
     object AlphaS2Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
+      Hint = 'AlphaS2: Dilution factor for TSH in pituitary tissue (reciprocal of apparent volume of distribution)'
       Top = 154
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 4
       Text = 'AlphaS2Edit'
     end
     object BetaS2Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
+      Hint = 'BetaS2: Clearance Exponent for TSH in pituitary tissue (ln 2 / halflife)'
       Top = 178
       Width = 80
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 5
       Text = 'BetaS2Edit'
     end
     object GHEdit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Top = 128
       Width = 80
       TabOrder = 14
@@ -2019,7 +2049,7 @@ object StructureParameters: TStructureParameters
     end
     object DHEdit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Top = 152
       Width = 80
       TabOrder = 15
@@ -2027,7 +2057,7 @@ object StructureParameters: TStructureParameters
     end
     object LSEdit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Top = 176
       Width = 80
       TabOrder = 16
@@ -2035,7 +2065,7 @@ object StructureParameters: TStructureParameters
     end
     object SSEdit: TEdit
       Left = 493
-      Height = 22
+      Height = 21
       Top = 128
       Width = 80
       TabOrder = 23
@@ -2043,7 +2073,7 @@ object StructureParameters: TStructureParameters
     end
     object DSEdit: TEdit
       Left = 493
-      Height = 22
+      Height = 21
       Top = 152
       Width = 80
       TabOrder = 24
@@ -2051,24 +2081,24 @@ object StructureParameters: TStructureParameters
     end
     object Label6: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 111
-      Width = 47
+      Width = 37
       Caption = 'AlphaS:'
       ParentColor = False
       OnClick = Label6Click
     end
     object Label7: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 135
-      Width = 38
+      Width = 32
       Caption = 'BetaS:'
       ParentColor = False
     end
     object GREdit: TEdit
       Left = 272
-      Height = 22
+      Height = 21
       Hint = 'GR: Gain of TR Beta (THR Beta) receptors'
       Top = 32
       Width = 80
@@ -2079,9 +2109,9 @@ object StructureParameters: TStructureParameters
     end
     object TitleLabel: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 0
-      Width = 370
+      Width = 311
       Caption = 'Constant structure parameters of the feedback control:'
       Font.Style = [fsBold]
       ParentColor = False
@@ -2089,37 +2119,39 @@ object StructureParameters: TStructureParameters
     end
     object AlphaREdit: TEdit
       Left = 64
-      Height = 22
-      Hint = 'AlphaR: Dilution factor for TRH in peripheral blood  (reciprocal of apparent volume of distribution)'
+      Height = 21
+      Hint = 'AlphaR: Dilution factor for TRH in peripheral blood (reciprocal of apparent volume of distribution)'
       Top = 32
       Width = 80
+      ParentShowHint = False
       ShowHint = True
       TabOrder = 0
       Text = 'AlphaREdit'
     end
     object BetaREdit: TEdit
       Left = 64
-      Height = 22
+      Height = 21
       Hint = 'BetaR: Clearance Exponent for TRH in peripheral blood (ln 2 / halflife)'
       Top = 58
       Width = 80
+      ParentShowHint = False
       ShowHint = True
       TabOrder = 1
       Text = 'BetaREdit'
     end
     object Label2: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 37
-      Width = 48
+      Width = 38
       Caption = 'AlphaR:'
       ParentColor = False
     end
     object Label3: TLabel
       Left = 0
-      Height = 16
+      Height = 13
       Top = 63
-      Width = 39
+      Width = 33
       Caption = 'BetaR:'
       ParentColor = False
     end

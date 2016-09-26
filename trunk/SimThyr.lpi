@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="750"/>
+      <BuildNr Value="751"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2016 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -657,8 +657,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="15"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="252"/>
-        <CursorPos X="41" Y="252"/>
+        <TopLine Value="251"/>
+        <CursorPos X="98" Y="262"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="1">
           <Item0 Y="533" ID="8"/>
@@ -1084,7 +1084,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="301"/>
         <CursorPos X="3" Y="316"/>
-        <UsageCount Value="193"/>
+        <UsageCount Value="194"/>
         <Loaded Value="True"/>
       </Unit133>
       <Unit134>
@@ -1110,7 +1110,7 @@
           <WindowIndex Value="1"/>
           <CursorPos Y="2"/>
         </ExtraEditor1>
-        <UsageCount Value="189"/>
+        <UsageCount Value="190"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit135>
@@ -1254,7 +1254,7 @@
           <TopLine Value="1458"/>
           <CursorPos X="25" Y="1480"/>
         </ExtraEditor3>
-        <UsageCount Value="132"/>
+        <UsageCount Value="133"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit155>
@@ -1287,7 +1287,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="8"/>
         <CursorPos X="52" Y="23"/>
-        <UsageCount Value="89"/>
+        <UsageCount Value="90"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit159>
