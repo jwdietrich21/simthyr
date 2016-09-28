@@ -108,6 +108,7 @@ type
       AZ: Double);
     procedure DependentParComboChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure StartPigMode;
     procedure FullScaleButton1Click(Sender: TObject);
     procedure StrucParCombo1Change(Sender: TObject);
     procedure StrucParCombo2Change(Sender: TObject);
@@ -1368,6 +1369,11 @@ begin
   ColouriseLegend;
   PopulateColourSource(0, 0.5, 1);
   SetStandardStrucParBoundaries(1 / 3, 3);
+end;
+
+procedure TTWSensitivityAnalysisForm.StartPigMode;
+begin
+  CheckToggleBox.Visible := true;
 end;
 
 procedure TTWSensitivityAnalysisForm.FullScaleButton1Click(Sender: TObject);

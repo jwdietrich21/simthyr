@@ -29,7 +29,7 @@ uses
   TANavigation, TATools, TAStyles, TAChartListbox, TAChartExtentLink,
   TAChartImageList, TADrawerSVG, TADrawUtils, TADrawerCanvas, LResources,
   Forms,Controls, Graphics, Dialogs, Buttons, LCLVersion,
-  ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus, Math,
+  ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus, Grids, Math,
   SimThyrTypes, SimThyrResources, Simulator, SimThyrServices, UnitConverter,
   SimThyrPrediction, Sensitivityanalysis, Types;
 
@@ -51,6 +51,7 @@ type
     ChartToolset1: TChartToolset;
     ChartToolset1DataPointClickTool1: TDataPointClickTool;
     ChartToolset1ZoomDragTool1: TZoomDragTool;
+    CheckGrid: TStringGrid;
     CopyItem: TMenuItem;
     CutItem: TMenuItem;
     Divider1: TMenuItem;
@@ -63,6 +64,7 @@ type
     EquilibriumChartLineSeries1: TLineSeries;
     EquilibriumChartLineSeries2: TLineSeries;
     GroupBox2:     TGroupBox;
+    TableButton: TSpeedButton;
     yMaxSpinEdit:  TFloatSpinEdit;
     xMaxSpinEdit:  TFloatSpinEdit;
     yMinSpinEdit:  TFloatSpinEdit;
@@ -95,14 +97,17 @@ type
     procedure GetBParameters;
     procedure SetSpinEditBoundaries;
     function  StrucParsEnabled: boolean;
+    procedure TableButtonClick(Sender: TObject);
     procedure UseStrucParsFromTrackBars;
     procedure UpdateEditsfromTrackBars;
     procedure UpdateTrackBarsfromEdits;
+    procedure FillCheckGrid(empty: boolean);
     procedure DrawDummyEquilibriumPlot;
     procedure DrawDiagram(empty: boolean);
     procedure yBParComboChange(Sender: TObject);
     procedure xBParComboChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure StartPigMode;
     procedure ScaleFull(Sender: TObject);
     procedure FullScaleButton1Click(Sender: TObject);
     procedure yMaxSpinEditChange(Sender: TObject);
@@ -140,6 +145,7 @@ var
   gMidSPar1, gMidSPar2, gMidSPar3: real;
   gSpinFactor, gTrackFactor1, gTrackFactor2, gTrackFactor3: real;
   gResponseCurve1, gResponseCurve2: tResponseCurve;
+  gSensitivityMatrix: tResultMatrix;
   gEmptyVector: tParamVector;
   gFT4conversionFactor, gFT3conversionFactor: real;
   gcT3conversionFactor: real;
@@ -1003,6 +1009,20 @@ begin
     result := true;
 end;
 
+procedure TEquilibriumDiagramForm.TableButtonClick(Sender: TObject);
+begin
+  if not CheckGrid.Visible then
+  begin
+    CheckGrid.Visible := true;
+    EquilibriumChart.Visible := false;
+  end
+  else
+  begin
+    CheckGrid.Visible := false;
+    EquilibriumChart.Visible := true;
+  end;
+end;
+
 procedure TEquilibriumDiagramForm.UseStrucParsFromTrackBars;
 { If dynamic sensitivity analysis is used, store standard structure parameters }
 { and use parameters as provided via trackbars instead }
@@ -1042,6 +1062,31 @@ begin
     SParTrackBar3.Position := SParTrackBar3.Min;
 end;
 
+procedure TEquilibriumDiagramForm.FillCheckGrid(empty: boolean);
+var
+  j: integer;
+begin
+  if CheckGrid.RowCount < MAX_I + 2 then
+    CheckGrid.RowCount := MAX_I + 2;
+  for j := 0 to MAX_I do
+  begin
+    if empty then
+    begin
+      CheckGrid.Cells[1, j + 1] := 'N/A';
+      CheckGrid.Cells[2, j + 1] := 'N/A';
+      CheckGrid.Cells[3, j + 1] := 'N/A';
+      CheckGrid.Cells[4, j + 1] := 'N/A';
+    end
+    else
+    begin
+      CheckGrid.Cells[1, j + 1] := FloatToStrF(gSensitivityMatrix[j, 0], ffGeneral, 4, 0);
+      CheckGrid.Cells[2, j + 1] := FloatToStrF(gSensitivityMatrix[j, 1], ffGeneral, 4, 0);
+      CheckGrid.Cells[3, j + 1] := FloatToStrF(gSensitivityMatrix[j, 2], ffGeneral, 4, 0);
+      CheckGrid.Cells[4, j + 1] := FloatToStrF(gSensitivityMatrix[j, 3], ffGeneral, 4, 0);
+    end;
+  end;
+end;
+
 procedure TEquilibriumDiagramForm.DrawDummyEquilibriumPlot;
 {Draws an empty plot, e.g. at program start}
 begin
@@ -1068,6 +1113,8 @@ var
   MinBPar_x, MaxBPar_x, MinBPar_y, MaxBPar_y: real;
   ConversionFactor_x, ConversionFactor_y: real;
 begin
+  SetLength(gSensitivityMatrix, 0, 4);     // empty matrix
+  SetLength(gSensitivityMatrix, MAX_I + 1, 4); // and create new matrix of correct size
   if StrucParsEnabled then
     UseStrucParsFromTrackBars;
   try
@@ -1145,6 +1192,14 @@ begin
       EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_1_STRING
     else
       EquilibriumChart.BottomAxis.Title.Caption := xBParCombo.Caption;
+    for j := 0 to MAX_I do
+    begin
+      gSensitivityMatrix[j, 0] := gResponseCurve1.input[j];
+      gSensitivityMatrix[j, 1] := gResponseCurve1.output[j];
+      gSensitivityMatrix[j, 2] := gResponseCurve2.input[j];
+      gSensitivityMatrix[j, 3] := gResponseCurve2.output[j];
+    end;
+    FillCheckGrid(empty);
   finally
     if StrucParsEnabled then
       RestoreStrucPars;
@@ -1156,6 +1211,11 @@ begin
   gSpinFactor := 1;
   UpdateEditsfromTrackBars;
   DrawDiagram(true);
+end;
+
+procedure TEquilibriumDiagramForm.StartPigMode;
+begin
+  TableButton.Visible := true;
 end;
 
 procedure TEquilibriumDiagramForm.yBParComboChange(Sender: TObject);
