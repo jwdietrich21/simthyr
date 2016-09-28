@@ -98,6 +98,7 @@ type
     procedure CutItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure StartPigMode;
     procedure FT3ColorBoxChange(Sender: TObject);
     procedure FT4ColorBoxChange(Sender: TObject);
     procedure FullScaleButton1Click(Sender: TObject);
@@ -865,6 +866,11 @@ begin
   SensitivityAnalysisForm.TT3ColorBox.Selected := gDefaultColors[7];
   SetStandardStrucParBoundaries(1 / 3, 3);
   DrawOWSensitivityPlot(True);
+end;
+
+procedure TSensitivityAnalysisForm.StartPigMode;
+begin
+  TableButton.Visible := true;
 end;
 
 procedure TSensitivityAnalysisForm.FT3ColorBoxChange(Sender: TObject);

@@ -44,8 +44,8 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +#2'/'#7'Anchors'#11#7'akRight'#8'akBottom'#0#8'AutoSize'#8#7'Caption'#6#1'0'
   +#11'ParentColor'#8#0#0#6'TLabel'#14'LegendMaxLabel'#4'Left'#2'H'#6'Height'#2
   +#13#3'Top'#2'0'#5'Width'#2'/'#8'AutoSize'#8#7'Caption'#6#1'0'#11'ParentColor'
-  +#8#0#0#6'TLabel'#11'LegendLabel'#4'Left'#2#8#6'Height'#2#15#3'Top'#2#10#5'Wi'
-  +'dth'#2')'#7'Caption'#6#6'Legend'#10'Font.Style'#11#6'fsBold'#0#11'ParentCol'
+  +#8#0#0#6'TLabel'#11'LegendLabel'#4'Left'#2#8#6'Height'#2#13#3'Top'#2#10#5'Wi'
+  +'dth'#2'*'#7'Caption'#6#6'Legend'#10'Font.Style'#11#6'fsBold'#0#11'ParentCol'
   +'or'#8#10'ParentFont'#8#0#0#6'TLabel'#8'UoMLabel'#21'AnchorSideTop.Control'#7
   +#14'LegendMaxLabel'#18'AnchorSideTop.Side'#7#9'asrBottom'#24'AnchorSideBotto'
   +'m.Control'#7#14'LegendMinLabel'#4'Left'#2'G'#6'Height'#2'i'#3'Top'#2'Q'#5'W'
@@ -64,23 +64,23 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +#12'ColourSource'#11'Interpolate'#9#11'OnCalculate'#7#29'LegendColorMapSerie'
   +'sCalculate'#0#0#0#0#9'TGroupBox'#9'GroupBox1'#4'Left'#2'0'#6'Height'#2'p'#3
   +'Top'#3'I'#1#5'Width'#3#252#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'
-  +#0#7'Caption'#6#10'Parameters'#12'ClientHeight'#2'\'#11'ClientWidth'#3#248#1
+  +#0#7'Caption'#6#10'Parameters'#12'ClientHeight'#2'^'#11'ClientWidth'#3#248#1
   ,#8'TabOrder'#2#1#0#14'TFloatSpinEdit'#12'MinSpinEdit1'#4'Left'#2#12#6'Height'
-  +#2#23#4'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2' '#5'Wid'
+  +#2#21#4'Hint'#6'''Minimum of selected structure parameter'#3'Top'#2'$'#5'Wid'
   +'th'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Incr'
   +'ement'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0#0#200#5'@'#8'Mi'
   +'nValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'MinSpinEdit1Change'#14'Paren'
   +'tShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0
-  +#0#14'TFloatSpinEdit'#12'MaxSpinEdit1'#4'Left'#3#164#1#6'Height'#2#23#4'Hint'
-  +#6'''Maximum of selected structure parameter'#3'Top'#2' '#5'Width'#2'H'#7'An'
+  +#0#14'TFloatSpinEdit'#12'MaxSpinEdit1'#4'Left'#3#164#1#6'Height'#2#21#4'Hint'
+  +#6'''Maximum of selected structure parameter'#3'Top'#2'$'#5'Width'#2'H'#7'An'
   +'chors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0
   +#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0'P'#195#15'@'#8'MinValue'#5#0
   +#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'MaxSpinEdit1Change'#14'ParentShowHint'#8
   +#8'ShowHint'#9#8'TabOrder'#2#1#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBo'
-  +'x'#14'StrucParCombo1'#4'Left'#2'd'#6'Height'#2#23#4'Hint'#6'OSelect the fir'
+  +'x'#14'StrucParCombo1'#4'Left'#2'd'#6'Height'#2#21#4'Hint'#6'OSelect the fir'
   +'st structure parameter that servers as independent variable here.'#3'Top'#2
-  +'#'#5'Width'#3'*'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'Arro'
-  +'wKeysTraverseList'#8#10'ItemHeight'#2#15#9'ItemIndex'#2#0#13'Items.Strings'
+  +''''#5'Width'#3'*'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'Arr'
+  +'owKeysTraverseList'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'
   +#1#6'(Select independent parameter (x axis)...'#6#12'GD1 (nmol/s)'#6#12'GD2 '
   +'(fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmol/l)'#6#11'GT (pmol/s)'#6#9'DT (m'
   +'U/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'G'
@@ -89,15 +89,15 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'#0#8'OnChange'#7#20'StrucParCombo'
   +'1Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6'(Sele'
   +'ct independent parameter (x axis)...'#0#0#14'TFloatSpinEdit'#12'MinSpinEdit'
-  +'2'#4'Left'#2#12#6'Height'#2#23#4'Hint'#6'''Minimum of selected structure pa'
-  +'rameter'#3'Top'#2'@'#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13
+  +'2'#4'Left'#2#12#6'Height'#2#21#4'Hint'#6'''Minimum of selected structure pa'
+  +'rameter'#3'Top'#2'D'#5'Width'#2'H'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#13
   +'DecimalPlaces'#2#4#9'Increment'#5#0#0#0#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0
   +#0#0#0#0#0#200#5'@'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'#7#18'MinSp'
   +'inEdit2Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#5'Value'#5
   +#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'#14'StrucParCombo2'#4'Left'#2'd'#6'Heig'
-  +'ht'#2#23#4'Hint'#6'NSelect a second structure parameter that servers as ind'
-  +'ependent variable here.'#3'Top'#2'C'#5'Width'#3'*'#1#7'Anchors'#11#6'akLeft'
-  +#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#15#9
+  +'ht'#2#21#4'Hint'#6'NSelect a second structure parameter that servers as ind'
+  +'ependent variable here.'#3'Top'#2'G'#5'Width'#3'*'#1#7'Anchors'#11#6'akLeft'
+  +#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseList'#8#10'ItemHeight'#2#13#9
   +'ItemIndex'#2#0#13'Items.Strings'#1#6'(Select independent parameter (y axis)'
   +'...'#6#12'GD1 (nmol/s)'#6#12'GD2 (fmol/s)'#6#12'KM1 (nmol/l)'#6#12'KM2 (nmo'
   +'l/l)'#6#11'GT (pmol/s)'#6#9'DT (mU/l)'#6#9'GH (mU/s)'#6#11'DH (nmol/l)'#6#9
@@ -106,16 +106,16 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +'31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194#181'mol/l)'
   +#0#8'OnChange'#7#20'StrucParCombo2Change'#14'ParentShowHint'#8#8'ShowHint'#9
   +#8'TabOrder'#2#4#4'Text'#6'(Select independent parameter (y axis)...'#0#0#14
-  +'TFloatSpinEdit'#12'MaxSpinEdit2'#4'Left'#3#164#1#6'Height'#2#23#4'Hint'#6
-  +'''Maximum of selected structure parameter'#3'Top'#2'@'#5'Width'#2'H'#7'Anch'
+  +'TFloatSpinEdit'#12'MaxSpinEdit2'#4'Left'#3#164#1#6'Height'#2#21#4'Hint'#6
+  +'''Maximum of selected structure parameter'#3'Top'#2'D'#5'Width'#2'H'#7'Anch'
   +'ors'#11#7'akRight'#8'akBottom'#0#13'DecimalPlaces'#2#4#9'Increment'#5#0#0#0
   +#0#0#0#0#128#255'?'#8'MaxValue'#5#0#0#0#0#0#0'P'#195#15'@'#8'MinValue'#5#0#0
   +#0#0#0#0#0#0#0#0#8'OnChange'#7#18'MaxSpinEdit2Change'#14'ParentShowHint'#8#8
   +'ShowHint'#9#8'TabOrder'#2#5#5'Value'#5#0#0#0#0#0#0#0#0#0#0#0#0#9'TComboBox'
-  +#17'DependentParCombo'#4'Left'#2'd'#6'Height'#2#23#4'Hint'#6'ASelect a depen'
-  +'dent behavioural parameter to be investigated here.'#3'Top'#2#2#5'Width'#3
+  +#17'DependentParCombo'#4'Left'#2'd'#6'Height'#2#21#4'Hint'#6'ASelect a depen'
+  +'dent behavioural parameter to be investigated here.'#3'Top'#2#6#5'Width'#3
   +'*'#1#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#21'ArrowKeysTraverseL'
-  +'ist'#8#10'ItemHeight'#2#15#9'ItemIndex'#2#0#13'Items.Strings'#1#6'*Select d'
+  +'ist'#8#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6'*Select d'
   +'ependent parameter (colour map)...'#6#3'TSH'#6#3'TT4'#6#3'FT4'#6#3'TT3'#6#3
   +'FT3'#6#3'cT3'#0#8'OnChange'#7#23'DependentParComboChange'#14'ParentShowHint'
   +#8#8'ShowHint'#9#8'TabOrder'#2#6#4'Text'#6'*Select dependent parameter (colo'
@@ -183,7 +183,7 @@ LazarusResources.Add('TTWSensitivityAnalysisForm','FORMDATA',[
   +' plot to be displayed.'#3'Top'#2'H'#5'Width'#2#23#5'Chart'#7#14'Sensitivity'
   +'Map'#22'LogicalExtentPen.Color'#7#8'clMaroon'#0#0#9'TGroupBox'#9'GroupBox2'
   +#4'Left'#3'4'#2#6'Height'#2'q'#3'Top'#3'I'#1#5'Width'#3#129#0#7'Anchors'#11#7
-  +'akRight'#8'akBottom'#0#7'Caption'#6#10'Colour Map'#12'ClientHeight'#2']'#11
+  +'akRight'#8'akBottom'#0#7'Caption'#6#10'Colour Map'#12'ClientHeight'#2'_'#11
   +'ClientWidth'#2'}'#8'TabOrder'#2#4#0#12'TColorButton'#12'ColorButton1'#4'Lef'
   +'t'#2#16#6'Height'#2#25#4'Hint'#6#30'Select color for minimum level'#3'Top'#2
   +'<'#5'Width'#2'K'#11'BorderWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonColo'

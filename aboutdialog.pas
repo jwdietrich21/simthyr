@@ -22,7 +22,7 @@ uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, Buttons, StdCtrls, LCLIntf, ComCtrls, SimThyrTypes, SimThyrResources,
   SimThyrServices, VersionSupport, DOS, HandlePreferences, Sensitivityanalysis,
-  TWSensitivityanalysis
+  TWSensitivityanalysis, Equilibriumdiagram
   {$IFDEF win32}
   , Windows, Win32Proc
   {$ENDIF}
@@ -177,8 +177,9 @@ begin
       = mrYes) then
     begin
       gPigMode := true;
-      SensitivityAnalysisForm.TableButton.Visible := true;
-      TWSensitivityAnalysisForm.CheckToggleBox.Visible := true;
+      SensitivityAnalysisForm.StartPigMode;
+      TWSensitivityAnalysisForm.StartPigMode;
+      EquilibriumDiagramForm.StartPigMode;
     end;
   end
   else if (key = 87) and ((ssMeta in Shift) or (ssCtrl in Shift)) then
