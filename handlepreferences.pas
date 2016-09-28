@@ -263,7 +263,8 @@ begin
 end;
 
 procedure SetUnits;
-{sets definitive units to the values of the interim units}
+{ sets definitive units of measurement and conversion factors for behavioural }
+{ parameters, depending on constants and values of the interim units }
 begin
   gParameterUnit[t_pos] := 'day h:m:s';
   gParameterUnit[TRH_pos] := 'ng/l';
