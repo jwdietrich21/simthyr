@@ -94,9 +94,6 @@ type
     procedure SetStandardStrucParBoundaries;
     procedure GetBParameters;
     procedure SetSpinEditBoundaries;
-    procedure SParEdit1Change(Sender: TObject);
-    procedure SParEdit2Change(Sender: TObject);
-    procedure SParEdit3Change(Sender: TObject);
     function  StrucParsEnabled: boolean;
     procedure UseStrucParsFromTrackBars;
     procedure UpdateEditsfromTrackBars;
@@ -891,36 +888,6 @@ begin
   automatedSpin := false;
 end;
 
-procedure TEquilibriumDiagramForm.SParEdit1Change(Sender: TObject);
-begin
-  { Get numeric value for structure Parameter 1 }
-  UpdateTrackBarsfromEdits;
-  SaveStrucPars;
-  UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
-  DrawDiagram(false);
-end;
-
-procedure TEquilibriumDiagramForm.SParEdit2Change(Sender: TObject);
-begin
-  { Get numeric value for structure Parameter 2 }
-  UpdateTrackBarsfromEdits;
-  SaveStrucPars;
-  UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter2, SParTrackBar2.Position / gTrackFactor2 / TRACK_RATIO);
-  DrawDiagram(false);
-end;
-
-procedure TEquilibriumDiagramForm.SParEdit3Change(Sender: TObject);
-begin
-  { Get numeric value for structure Parameter 3 }
-  UpdateTrackBarsfromEdits;
-  SaveStrucPars;
-  UpdateEditsfromTrackBars;
-  UpdateStrucPar(gSelectedSParameter3, SParTrackBar3.Position / gTrackFactor3 / TRACK_RATIO);
-  DrawDiagram(false);
-end;
-
 procedure TEquilibriumDiagramForm.FormActivate(Sender: TObject);
 begin
   gLastActiveCustomForm := EquilibriumDiagramForm;
@@ -1040,7 +1007,7 @@ procedure TEquilibriumDiagramForm.UseStrucParsFromTrackBars;
 { If dynamic sensitivity analysis is used, store standard structure parameters }
 { and use parameters as provided via trackbars instead }
 begin
-  SaveStrucPars;
+  //SaveStrucPars;
   if SParTrackBar1.Enabled then
     UpdateStrucPar(gSelectedSParameter1, SParTrackBar1.Position / gTrackFactor1 / TRACK_RATIO);
   if SParTrackBar2.Enabled then
@@ -1307,6 +1274,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.ResetNullcline(Sender: TObject);
+{ resets plot to standard form }
 begin
   SParCombo1.ItemIndex := 0;
   SParCombo2.ItemIndex := 0;
