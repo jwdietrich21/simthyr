@@ -62,6 +62,7 @@ const
  kSPACE = ' ';
  kSLASH = '/';
  kCOLON = ':';
+ kSEMICOLON = ';';
  kOMIT = '•';
  kCRLF = #13#10;
 

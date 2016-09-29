@@ -1063,7 +1063,7 @@ begin
   begin
     theStream := nil;
     SimThyrToolbar.SavePictureDialog2.FilterIndex := 2;
-    SimThyrToolbar.SavePictureDialog2.FileName := '';
+    SimThyrToolbar.SavePictureDialog2.FileName := ''; // avoids invalid filter index error
     if SimThyrToolbar.SavePictureDialog2.Execute then
       try
         theFileName    := SimThyrToolbar.SavePictureDialog2.FileName;
@@ -1073,22 +1073,22 @@ begin
              theFilterIndex := theFilterIndex + 1;
          {$ENDIF}
         case theFilterIndex of
-        2: Chart1.SaveToBitmapFile(theFileName);
-        3: Chart1.SaveToFile(TPixmap, theFileName);
-        4: Chart1.SaveToFile(TPortableNetworkGraphic, theFileName);
-        5: Chart1.SaveToFile(TPortableAnyMapGraphic, theFileName);
-        6: Chart1.SaveToFile(TJPEGImage, theFileName);
-        7: Chart1.SaveToFile(TTIFFImage, theFileName);
-        8: begin
+        2: Chart1.SaveToBitmapFile(theFileName); // BMP
+        3: Chart1.SaveToFile(TPixmap, theFileName); // XPM
+        4: Chart1.SaveToFile(TPortableNetworkGraphic, theFileName); // PNG
+        5: Chart1.SaveToFile(TPortableAnyMapGraphic, theFileName); //PBM
+        6: Chart1.SaveToFile(TJPEGImage, theFileName); // JPG
+        7: Chart1.SaveToFile(TTIFFImage, theFileName); // TIFF
+        8: begin // SVG
              theStream := TFileStream.Create(theFileName, fmCreate);
              theDrawer := TSVGDrawer.Create(theStream, true);
              theDrawer.DoChartColorToFPColor := @ChartColorSysToFPColor;
              with Chart1 do
                Draw(theDrawer, Rect(0, 0, Width, Height));
            end;
-        9: SaveGrid(theFileName, 't');
-        10: SaveGrid(theFilename, 'c');
-        11: SaveGrid(theFileName, 'd');
+        9: SaveGrid(theFileName, 't');  // Tab-delimited
+        10: SaveGrid(theFilename, 'c'); // CSV
+        11: SaveGrid(theFileName, 'd'); // DIF
         otherwise bell;
         end;
       finally

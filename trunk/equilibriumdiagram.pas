@@ -92,6 +92,7 @@ type
     procedure CopyItemClick(Sender: TObject);
     procedure CopyChart;
     procedure SaveChart;
+    procedure SaveGrid(theFileName: String; theDelimiter: Char);
     procedure FormActivate(Sender: TObject);
     procedure SetStandardStrucParBoundaries;
     procedure GetBParameters;
@@ -970,35 +971,51 @@ begin
   else
   begin
     theStream := nil;
-    SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
-    if SimThyrToolbar.SavePictureDialog1.Execute then
+    SimThyrToolbar.SavePictureDialog2.FilterIndex := 2;
+    SimThyrToolbar.SavePictureDialog2.FileName := ''; // avoids invalid filter index error
+    if SimThyrToolbar.SavePictureDialog2.Execute then
       try
-        theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
-        theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
+        theFileName    := SimThyrToolbar.SavePictureDialog2.FileName;
+        theFilterIndex := SimThyrToolbar.SavePictureDialog2.FilterIndex;
          {$IFDEF LCLcarbon}{compensates for a bug in older versions of carbon widgetset}
            if (lcl_major < 2) and (lcl_minor < 2) then
              theFilterIndex := theFilterIndex + 1;
          {$ENDIF}
         case theFilterIndex of
-        2: EquilibriumChart.SaveToBitmapFile(theFileName);
-        3: EquilibriumChart.SaveToFile(TPixmap, theFileName);
-        4: EquilibriumChart.SaveToFile(TPortableNetworkGraphic, theFileName);
-        5: EquilibriumChart.SaveToFile(TPortableAnyMapGraphic, theFileName);
-        6: EquilibriumChart.SaveToFile(TJPEGImage, theFileName);
-        7: EquilibriumChart.SaveToFile(TTIFFImage, theFileName);
-        8: begin
+        2: EquilibriumChart.SaveToBitmapFile(theFileName); // BMP
+        3: EquilibriumChart.SaveToFile(TPixmap, theFileName); // XPM
+        4: EquilibriumChart.SaveToFile(TPortableNetworkGraphic, theFileName); // PNG
+        5: EquilibriumChart.SaveToFile(TPortableAnyMapGraphic, theFileName); // PBM
+        6: EquilibriumChart.SaveToFile(TJPEGImage, theFileName); // JPG
+        7: EquilibriumChart.SaveToFile(TTIFFImage, theFileName); // TIFF
+        8: begin // SVG
              theStream := TFileStream.Create(theFileName, fmCreate);
              theDrawer := TSVGDrawer.Create(theStream, true);
              theDrawer.DoChartColorToFPColor := @ChartColorSysToFPColor;
              with EquilibriumChart do
                Draw(theDrawer, Rect(0, 0, Width, Height));
            end;
+        9: SaveGrid(theFileName, 't');  // Tab-delimited
+        10: SaveGrid(theFilename, 'c'); // CSV
+        11: SaveGrid(theFileName, 'd'); // DIF
         otherwise bell;
         end;
       finally
         if theStream <> nil then theStream.Free;
       end;
   end;
+end;
+
+procedure TEquilibriumDiagramForm.SaveGrid(theFileName: String;
+  theDelimiter: Char);
+{saves the contents of the table of values}
+{file type and, where applicable, delimiter are defined by variable theDelimiter}
+var
+  theCode: integer;
+begin
+  SaveGridToFile(CheckGrid, theFileName, theDelimiter, theCode);
+  if theCode = 0 then
+    SetFileName(self, theFileName);
 end;
 
 function TEquilibriumDiagramForm.StrucParsEnabled: boolean;

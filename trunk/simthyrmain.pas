@@ -289,9 +289,8 @@ begin
 end;
 
 procedure TSimThyrToolbar.FormShow(Sender: TObject);
-{ensures that simulation setting are shown on top}
+{some optimisations that are called from onShow handler}
 begin
-  { deprecated content has been removed }
   SimThyrLabel.Left := Left + Width - SimThyrLabel.Width - 5;
   SimThyrLabel.Top := Top + 5;
 end;
@@ -405,7 +404,7 @@ end;
 
 procedure TSimThyrToolbar.EquilibriumDiagramButtonClick(Sender: TObject);
 begin
-  EquilibriumDiagramForm.Show;
+  EquiDiagItemClick(Sender);
 end;
 
 procedure TSimThyrToolbar.IPSItemClick(Sender: TObject);
@@ -443,10 +442,10 @@ begin
   {$IFDEF LCLcarbon}{compensates for a bug in the carbon widgetset}
     if (lcl_major < 2) and (lcl_minor < 2) then
       theFilterIndex := theFilterIndex + 1;
-  {$ENDIF}{may be removed in future versions}
+  {$ENDIF} {may be removed in future versions}
     case theFilterIndex of
-      1: ShowImplementationMessage;  {unimplemented}
-      2: ReadScenario(theFileName, theVersion);
+      1: ShowImplementationMessage;  {text files unimplemented}
+      2: ReadScenario(theFileName, theVersion);  {XML file}
     end;
   if (theVersion <> '') and (theVersion <> '10.0') then ShowVersionError;
   end;
@@ -595,6 +594,14 @@ begin
         i := SensitivityAnalysisForm.CheckGrid.ColCount;
         j := SensitivityAnalysisForm.CheckGrid.RowCount;
         SensitivityAnalysisForm.CheckGrid.Selection := Rect(1,1,i,j);
+      end
+  else if (((theForm = EquilibriumDiagramForm) or ((theForm = SimThyrToolbar) and
+      (gLastActiveCustomForm = EquilibriumDiagramForm))) and
+      EquilibriumDiagramForm.CheckGrid.Visible) then
+      begin
+        i := EquilibriumDiagramForm.CheckGrid.ColCount;
+        j := EquilibriumDiagramForm.CheckGrid.RowCount;
+        EquilibriumDiagramForm.CheckGrid.Selection := Rect(1,1,i,j);
       end
   else if (theForm = Prediction) or ((theForm = SimThyrToolbar) and
       (gLastActiveCustomForm = Prediction)) then
