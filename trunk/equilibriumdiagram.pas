@@ -1066,12 +1066,17 @@ procedure TEquilibriumDiagramForm.FillCheckGrid(empty: boolean);
 var
   j: integer;
 begin
+  CheckGrid.AutoFillColumns := false;
   if CheckGrid.RowCount < MAX_I + 2 then
     CheckGrid.RowCount := MAX_I + 2;
   for j := 0 to MAX_I do
   begin
     if empty then
     begin
+      CheckGrid.Cells[1, 0] := ISOKLINE_1_STRING + A_AXIS_STRING;
+      CheckGrid.Cells[2, 0] := ISOKLINE_2_STRING + A_AXIS_STRING;
+      CheckGrid.Cells[3, 0] := ISOKLINE_2_STRING + B_AXIS_STRING;
+      CheckGrid.Cells[4, 0] := ISOKLINE_1_STRING + B_AXIS_STRING;
       CheckGrid.Cells[1, j + 1] := 'N/A';
       CheckGrid.Cells[2, j + 1] := 'N/A';
       CheckGrid.Cells[3, j + 1] := 'N/A';
@@ -1079,6 +1084,10 @@ begin
     end
     else
     begin
+      CheckGrid.Cells[1, 0] := xBParCombo.Caption + A_AXIS_STRING;
+      CheckGrid.Cells[2, 0] := yBParCombo.Caption + A_AXIS_STRING;
+      CheckGrid.Cells[3, 0] := yBParCombo.Caption + B_AXIS_STRING;
+      CheckGrid.Cells[4, 0] := xBParCombo.Caption + B_AXIS_STRING;
       CheckGrid.Cells[1, j + 1] := FloatToStrF(gSensitivityMatrix[j, 0], ffGeneral, 4, 0);
       CheckGrid.Cells[2, j + 1] := FloatToStrF(gSensitivityMatrix[j, 1], ffGeneral, 4, 0);
       CheckGrid.Cells[3, j + 1] := FloatToStrF(gSensitivityMatrix[j, 2], ffGeneral, 4, 0);

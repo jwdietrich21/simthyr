@@ -311,12 +311,12 @@ LazarusResources.Add('TEquilibriumDiagramForm','FORMDATA',[
   +#255#255#255#0#255#255#255#0#7'Visible'#8#7'OnClick'#7#16'TableButtonClick'
   +#11'ShowCaption'#8#8'ShowHint'#9#14'ParentShowHint'#8#0#0#11'TStringGrid'#9
   +'CheckGrid'#6'Cursor'#7#7'crIBeam'#4'Left'#2'@'#6'Height'#3#16#1#3'Top'#2'0'
-  +#5'Width'#3#170#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#8
+  +#5'Width'#3#176#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#8
   +'AutoEdit'#8#15'AutoFillColumns'#9#5'Color'#7#7'clWhite'#14'HeaderHotZones'
   +#11#11'gzFixedRows'#0#16'MouseWheelOption'#7#6'mwGrid'#7'Options'#11#15'goFi'
   +'xedVertLine'#15'goFixedHorzLine'#10'goVertLine'#10'goHorzLine'#13'goRangeSe'
   +'lect'#11'goColSizing'#18'goDblClickAutoSize'#14'goSmoothScroll'#0#8'RowCoun'
-  +'t'#2#13#8'TabOrder'#2#5#7'Visible'#8#9'ColWidths'#1#2')'#2'_'#2'_'#2'_'#2'`'
+  +'t'#2#13#8'TabOrder'#2#5#7'Visible'#8#9'ColWidths'#1#2')'#2'`'#2'`'#2'`'#2'c'
   +#0#5'Cells'#1#2#5#2#0#2#0#6#1'n'#2#1#2#0#6#10'x axis (1)'#2#2#2#0#6#10'y axi'
   +'s (1)'#2#3#2#0#6#10'y axis (2)'#2#4#2#0#6#10'x axis (2)'#0#0#0#10'TPopupMen'
   +'u'#10'PopupMenu1'#4'left'#3'x'#1#3'top'#3#24#2#0#9'TMenuItem'#8'UndoItem'#7
