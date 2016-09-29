@@ -341,6 +341,10 @@ begin
   end
   else if theDelimiter <> ' ' then {tab delimited and CSV files}
   begin
+    if theDelimiter = 't' then
+      theDelimiter := kTAB;
+    if theDelimiter = 'c' then
+      theDelimiter := kSEMICOLON;
     ReturnCode := 0;
     theContents := TStringList.Create;
     theString   := '';
