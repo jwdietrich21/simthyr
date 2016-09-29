@@ -608,7 +608,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     Left = 64
     Height = 272
     Top = 48
-    Width = 426
+    Width = 432
     Anchors = [akTop, akLeft, akRight, akBottom]
     AutoEdit = False
     AutoFillColumns = True
@@ -621,10 +621,10 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     Visible = False
     ColWidths = (
       41
-      95
-      95
-      95
       96
+      96
+      96
+      99
     )
     Cells = (
       5

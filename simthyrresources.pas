@@ -49,6 +49,8 @@ const
 
   ISOKLINE_1_STRING = 'Concentration 1';
   ISOKLINE_2_STRING = 'Concentration 2';
+  A_AXIS_STRING = ' a';
+  B_AXIS_STRING = ' b';
 
   I_LABEL = 'i';
   TIME_LABEL = 'Time';
