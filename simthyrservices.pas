@@ -84,7 +84,10 @@ uses SimThyrLog;
 function OSVersion: Str255; {returns the major version of the operating system}
 begin
   {$IFDEF LCLcarbon}
-  OSVersion := 'Mac OS X 10.';
+  if SierraOrNewer then
+    OSVersion := 'macOS 10.'
+  else
+    OSVersion := 'Mac OS X 10.';
   {$ELSE}
   {$IFDEF Linux}
   OSVersion := 'Linux Kernel ';
@@ -94,30 +97,30 @@ begin
   {$ELSE}
   {$IFDEF WINDOWS}
   if WindowsVersion = wv95 then
-    OSVersion := 'Windows 95 '
+    OSVersion := 'Windows 95 / '
   else if WindowsVersion = wvNT4 then
-    OSVersion := 'Windows NT v.4 '
+    OSVersion := 'Windows NT v.4 / '
   else if WindowsVersion = wv98 then
-    OSVersion := 'Windows 98 '
+    OSVersion := 'Windows 98 / '
   else if WindowsVersion = wvMe then
-    OSVersion := 'Windows ME '
+    OSVersion := 'Windows ME / '
   else if WindowsVersion = wv2000 then
-    OSVersion := 'Windows 2000 '
+    OSVersion := 'Windows 2000 / '
   else if WindowsVersion = wvXP then
-    OSVersion := 'Windows XP '
+    OSVersion := 'Windows XP / '
   else if WindowsVersion = wvServer2003 then
-    OSVersion := 'Windows Server 2003 '
+    OSVersion := 'Windows Server 2003 / '
   else if WindowsVersion = wvVista then
-    OSVersion := 'Windows Vista '
+    OSVersion := 'Windows Vista / '
   else if WindowsVersion = wv7 then
-    OSVersion := 'Windows 7 '
+    OSVersion := 'Windows 7 / '
   {$if FPC_FULlVERSION >= 30000}{Free Pascal 3.0 or newer}
   else if WindowsVersion = wv8 then
-    OSVersion := 'Windows 8 '
+    OSVersion := 'Windows 8 / '
   else if WindowsVersion = wv8_1 then
-    OSVersion := 'Windows 8.1 '
+    OSVersion := 'Windows 8.1 / '
   else if WindowsVersion = wv10 then
-    OSVersion := 'Windows 10 '
+    OSVersion := 'Windows 10 / '
   else if WindowsVersion = wvLater then
     OSVersion := 'Windows '
   {$ENDIF}

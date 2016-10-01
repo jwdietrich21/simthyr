@@ -71,9 +71,9 @@ const
   kError105 = 'Runtime error: max = NaN';
 
   {$IFDEF UNIX}
-  kHeapTraceFile = '~/heaptrace.trc';
+  kHeapTraceFile = '~/simthyr_heaptrace.trc';
   {$ELSE}
-  kHeapTraceFile = 'heaptrace.trc';
+  kHeapTraceFile = 'simthyr_heaptrace.trc';
   {$ENDIF}
 
 implementation

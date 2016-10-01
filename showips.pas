@@ -107,7 +107,7 @@ begin
     {$IFDEF LCLcarbon}
       Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 32;
     {$ELSE}
-      Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 32;
+      Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 38;
     if XPOrNewer then
       Top := Top + 10;
     if VistaORNewer then
