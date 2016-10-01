@@ -299,6 +299,8 @@ begin
     BugfixVer := '';
   if SystemStem <> 'Mac OS X 10.' then
     SystemStem := 'Mac OS ' + MajVer + '.';
+  if SierraOrNewer then
+    SystemStem := 'macOS 10.';
   VersionString := SystemStem + MinVer + '.' + BugfixVer;
   {$ELSE}
   {$IFDEF WINDOWS}

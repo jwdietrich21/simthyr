@@ -48,6 +48,7 @@ var
 
 function OSVersion: Str255;
 function YosemiteORNewer: boolean;
+function SierraOrNewer: boolean;
 function XPORNewer: boolean;
 function VistaORNewer: boolean;
 function Win8OrNewer: boolean;
@@ -144,6 +145,23 @@ begin
   {$ENDIF}
 end;
 
+function SierraOrNewer: boolean;
+{ returns true, if this app runs on macOS X 10.12 Sierra or newer }
+{$IFDEF LCLcarbon}
+var
+Major, Minor, Bugfix: SInt32;
+theError: SInt16;
+{$ENDIF}
+begin
+Result   := False;
+{$IFDEF LCLcarbon}
+theError := Gestalt(gestaltSystemVersionMinor, Minor);
+if TheError = 0 then
+  if Minor >= 12 then
+    Result := True;
+{$ENDIF}
+end;
+
 function XPORNewer: boolean;
 { returns true, if this app runs on Windows XP or a newer Windows version }
 begin
@@ -165,7 +183,7 @@ begin
 end;
 
 function Win8OrNewer: boolean;
-{ returns true, if this app runs on Windows Vista or a newer Windows version }
+{ returns true, if this app runs on Windows 8 or a newer Windows version }
 begin
   Result := false;
   {$IFDEF WINDOWS}
