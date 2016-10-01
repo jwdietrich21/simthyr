@@ -20,7 +20,7 @@ See http://simthyr.sourceforge.net for details
 	<key>CFBundleExecutable</key>
 	<string>SimThyr</string>
 	<key>CFBundleVersion</key>
-	<string>4.0.0</string>
+	<string>4.0.0 Beta</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleName</key>
@@ -30,7 +30,7 @@ See http://simthyr.sourceforge.net for details
 	<key>CFBundleSignature</key>
 	<string>SimT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>4.0.0</string>
+	<string>4.0.0 Beta</string>
 	<key>CFBundleGetInfoString</key>
 	<string>4.0.0, ©1994-2016 J. W. Dietrich</string>
 	<key>NSHumanReadableCopyright</key>
