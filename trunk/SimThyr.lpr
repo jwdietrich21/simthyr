@@ -17,7 +17,7 @@ program SimThyr;
 {$mode objfpc}{$H+}{$R+}
 {$define UseCThreads}
 
-{ $DEFINE debug}
+{$DEFINE debug}
 
 uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
@@ -32,7 +32,7 @@ uses
   help, SimThyrResources, unitconverter, TWSensitivityanalysis,
   equilibriumdiagram, MIRIAMForm
   {$IFDEF debug}
-  , SysUtils
+  , SysUtils // include heaptrc with Lazarus project options
   {$ENDIF}
   ;
 
@@ -43,9 +43,9 @@ uses
 begin
   // ReturnNilIfGrowHeapFails := true;
   {$IFDEF debug}
-  if FileExists('heaptrace.trc') then
-    DeleteFile('heaptrace.trc');
-  SetHeapTraceOutput('heaptrace.trc');
+  if FileExists(kHeapTraceFile) then
+    DeleteFile(kHeapTraceFile);
+  SetHeapTraceOutput(kHeapTraceFile);
   {$ENDIF}
   Application.Initialize;
   splashflag := true; {for debugging}
@@ -149,6 +149,9 @@ begin
   TornadoPlotForm.Hide;
   TornadoPlotForm.AlphaBlend := false;
   Application.CreateForm(THelpWindow, HelpWindow);
+  {$IFDEF debug}
+  ShowPrereleaseWarning;
+  {$ENDIF}
   if showSettingsAtStartup then
   begin
     SimThyrToolbar.SendToBack;

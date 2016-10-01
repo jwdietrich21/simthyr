@@ -75,6 +75,7 @@ procedure ShowFormatMessage;
 procedure ShowVersionError;
 procedure ShowSaveError;
 procedure ShowMemoryError;
+procedure ShowPrereleaseWarning;
 
 implementation
 
@@ -509,7 +510,7 @@ end;
 procedure ShowVersionError;
 begin
   bell;
-  MessageDlg(VERSION_MESSAGE, mtError, [mbOK], 0);
+  MessageDlg(FILE_VERSION_MESSAGE, mtError, [mbOK], 0);
 end;
 
 procedure ShowSaveError;
@@ -522,6 +523,11 @@ procedure ShowMemoryError;
 begin
   bell;
   MessageDlg(INSUFFICIENT_MEMORY_MESSAGE, mtError, [mbOK], 0);
+end;
+
+procedure ShowPrereleaseWarning;
+begin
+  MessageDlg(DEBUG_VERSION_MESSAGE, mtWarning, [mbOK], 0);
 end;
 
 end.

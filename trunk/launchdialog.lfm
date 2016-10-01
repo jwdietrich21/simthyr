@@ -99,7 +99,7 @@ object SimulationSettings: TSimulationSettings
     ShowHint = True
     TabOrder = 1
     object TestOffRadio: TRadioButton
-      Left = 192
+      Left = 80
       Height = 18
       Hint = 'No test signal'
       Top = 6
@@ -112,7 +112,7 @@ object SimulationSettings: TSimulationSettings
       TabStop = True
     end
     object TestTRHRadio: TRadioButton
-      Left = 270
+      Left = 192
       Height = 18
       Hint = 'Simulates TRH test'
       Top = 6
@@ -124,7 +124,7 @@ object SimulationSettings: TSimulationSettings
       TabOrder = 0
     end
     object TestTBGRadio: TRadioButton
-      Left = 380
+      Left = 312
       Height = 18
       Hint = 'Simulates a rise in thyroxine binding globulin level, e. g. in pregnancy'
       Top = 6

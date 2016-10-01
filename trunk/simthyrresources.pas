@@ -31,7 +31,8 @@ const
   WAIT_TITLE = 'Simulation running...';
 
   IMPLEMENTATION_MESSAGE = 'This function is not implemented in this version of SimThyr.';
-  VERSION_MESSAGE = 'This scenario file has a file version that is not supported by SimThyr';
+  FILE_VERSION_MESSAGE = 'This scenario file has a file version that is not supported by SimThyr';
+  DEBUG_VERSION_MESSAGE = 'This is a pre-release version of SimThyr, which is intended for testing purposes only. Usage is on your own risk.';
   FORMAT_MESSAGE = 'Please check your input.';
   SAVE_ERROR_MESSAGE = 'Error saving the file';
   PREFERENCES_READ_ERROR_MESSAGE = 'Preferences could not be read. Please check access rights of your user or home folder';
@@ -68,6 +69,12 @@ const
   kError103 = 'Runtime error: min > max';
   kError104 = 'Runtime error: max = 0';
   kError105 = 'Runtime error: max = NaN';
+
+  {$IFDEF UNIX}
+  kHeapTraceFile = '~/heaptrace.trc';
+  {$ELSE}
+  kHeapTraceFile = 'heaptrace.trc';
+  {$ENDIF}
 
 implementation
 
