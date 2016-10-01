@@ -90,7 +90,7 @@ begin
         {$IFDEF LCLcarbon}{compensates for a bug in older version of carbon widgetset}
           if (lcl_major < 2) and (lcl_minor < 2) then
             theFilterIndex := theFilterIndex + 1;
-       {$ENDIF}
+        {$ENDIF}
       if theFilterIndex = 8 then
         bell
       else
@@ -103,7 +103,18 @@ end;
 
 procedure TIPSForm.FormCreate(Sender: TObject);
 begin
-    Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 32;
+  { adapt extent of this rather large window to GUI style of different platforms }
+    {$IFDEF LCLcarbon}
+      Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 32;
+    {$ELSE}
+      Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 32;
+    if XPOrNewer then
+      Top := Top + 10;
+    if VistaORNewer then
+      Top := Top + 4;
+    if Win8OrNewer then
+      Top := Top + 10;
+    {$ENDIF}
     Height := Screen.Height - Top - 100;
     width := trunc(Height * Image1.Width / Image1.Height);
 end;
