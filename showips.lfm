@@ -17,7 +17,7 @@ object IPSForm: TIPSForm
   object Image1: TImage
     Left = 16
     Height = 427
-    Hint = 'The information processing structure (IPS) of this model'
+    Hint = 'The information processing structure (IPS) of this model. Click here to edit structure parameters.'
     Top = 16
     Width = 320
     AntialiasingMode = amOn

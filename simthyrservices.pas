@@ -48,6 +48,9 @@ var
 
 function OSVersion: Str255;
 function YosemiteORNewer: boolean;
+function XPORNewer: boolean;
+function VistaORNewer: boolean;
+function Win8OrNewer: boolean;
 procedure bell;
 function EncodeGreek(theString: string): string;
 function DecodeGreek(theString: string): string;
@@ -112,7 +115,7 @@ begin
   else if WindowsVersion = wv8_1 then
     OSVersion := 'Windows 8.1 '
   else if WindowsVersion = wv10 then
-    OSVersion := 'Windows '
+    OSVersion := 'Windows 10 '
   else if WindowsVersion = wvLater then
     OSVersion := 'Windows '
   {$ENDIF}
@@ -138,6 +141,36 @@ begin
   if TheError = 0 then
     if Minor >= 10 then
       Result := True;
+  {$ENDIF}
+end;
+
+function XPORNewer: boolean;
+{ returns true, if this app runs on Windows XP or a newer Windows version }
+begin
+  Result := false;
+  {$IFDEF WINDOWS}
+  if (Win32MajorVersion >= 5) and (Win32MinorVersion >= 1) then
+    result := true;
+  {$ENDIF}
+end;
+
+function VistaORNewer: boolean;
+{ returns true, if this app runs on Windows Vista or a newer Windows version }
+begin
+  Result := false;
+  {$IFDEF WINDOWS}
+  if Win32MajorVersion >= 6 then
+    result := true;
+  {$ENDIF}
+end;
+
+function Win8OrNewer: boolean;
+{ returns true, if this app runs on Windows Vista or a newer Windows version }
+begin
+  Result := false;
+  {$IFDEF WINDOWS}
+  if (Win32MajorVersion > 6) or (Win32MajorVersion = 6) and (Win32MinorVersion >= 2) then
+    result := true;
   {$ENDIF}
 end;
 
