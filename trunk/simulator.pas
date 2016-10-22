@@ -384,6 +384,8 @@ end;
 procedure TSimulationThread.Restart; {implements a resume function even on Unix systems}
 begin
  if not simready then Notice.ShowOnTop;
+ if not assigned(SimCS) then
+   SimCS := TCriticalSection.Create;
  haltsim := false;
 end;
 
@@ -475,6 +477,7 @@ begin
     SimThyrLogWindow.ProgressBar1.Position := 0;
   finally
     SimCS.Leave;
+    SimCS.Destroy;
   end;
 end;
 
