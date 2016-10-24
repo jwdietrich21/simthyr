@@ -608,7 +608,7 @@ begin
   theFileName := GetPreferencesFile;
   if FileExists(theFileName) then
   try
-    Doc := TXMLDocument.Create();
+    //Doc := TXMLDocument.Create();  Doc automatically created by ReadXMLFile
     ReadXMLFile(Doc, theFileName);
     with PreferencesDialog do
     begin
@@ -625,6 +625,8 @@ begin
       gParameterUnit[FT3_pos] := NodeContent(RootNode, 'FT3');
       SetCombo(FT3MassPrefixCombo, FT3MassUnitCombo, FT3VolumePrefixCombo, gParameterUnit[FT3_pos]);
       gParameterUnit[cT3_pos] := gParameterUnit[FT3_pos];
+      if assigned(RootNode) then
+        RootNode.Destroy;
     end;
     RootNode := Doc.DocumentElement.FindNode('formats');
     if not assigned(RootNode) then

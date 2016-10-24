@@ -408,13 +408,12 @@ begin
 end;
 
 procedure TValuesPlot.CopyChart;
-var
   {$IFDEF UNIX} {selects optimal type of clipboard graphic for respective OS}
+var
   theImage: TPortableNetworkGraphic;
-  {$ELSE}
   theImage: TBitMap;
-  {$ENDIF}
   theWidth, theHeight: integer;
+  {$ENDIF}
 begin
   if gSelectedChart = nil then
     bell
