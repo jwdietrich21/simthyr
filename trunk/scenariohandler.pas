@@ -50,7 +50,7 @@ begin
           with RootNode.Attributes[i] do
           begin
             if NodeName = 'modelversion' then
-              modelVersion := NodeValue;
+              modelVersion := UTF8Encode(NodeValue);
           end;
       RootNode := Doc.DocumentElement.FindNode('MIRIAM');
       if assigned(RootNode) then

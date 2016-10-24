@@ -276,9 +276,9 @@ begin
     if assigned(theNode) then
     begin
       try
-        theText := theNode.TextContent;
+        theText := UTF8Encode(theNode.TextContent);
         if theText <> '' then
-          Result := UTF8Encode(theText);
+          Result := theText;
       except
         Result := 'NA';
       end;

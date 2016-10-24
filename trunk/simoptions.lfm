@@ -21,10 +21,10 @@ object SimOptionsDlg: TSimOptionsDlg
   Visible = True
   object NoiseCheckBox: TCheckBox
     Left = 32
-    Height = 18
+    Height = 17
     Hint = 'Use noise at the level of hypothalamus'
     Top = 56
-    Width = 140
+    Width = 107
     Caption = 'Superimpose noise'
     Checked = True
     OnChange = NoiseCheckBoxChange
@@ -35,10 +35,10 @@ object SimOptionsDlg: TSimOptionsDlg
   end
   object PreviewCheckBox: TCheckBox
     Left = 32
-    Height = 18
+    Height = 17
     Hint = 'Use the calculated equilibrium values as shown in the preview palette as initial hormone levels'
     Top = 80
-    Width = 326
+    Width = 246
     Caption = 'Use calculated equilibrium values as start values'
     Checked = True
     OnChange = PreviewCheckBoxChange
@@ -71,41 +71,43 @@ object SimOptionsDlg: TSimOptionsDlg
   end
   object TRHEdit: TEdit
     Left = 152
-    Height = 22
+    Height = 21
     Hint = 'Mean concentration of TRH in the hypothalamo-hypophyseal portal system'
     Top = 16
     Width = 80
+    ParentShowHint = False
     ShowHint = True
     TabOrder = 4
     Text = 'TRHEdit'
   end
   object Label1: TLabel
     Left = 32
-    Height = 16
+    Height = 13
     Top = 21
-    Width = 101
+    Width = 81
     Caption = 'Mean TRH level:'
     ParentColor = False
   end
   object Label2: TLabel
     Left = 240
-    Height = 16
+    Height = 13
     Top = 21
-    Width = 27
+    Width = 19
     Caption = 'ng/l'
     ParentColor = False
   end
   object CircadianCheckBox: TCheckBox
     Left = 32
-    Height = 18
+    Height = 17
     Hint = 'Simulate physiological circadian variation of portal TRH concentrations (around the mean as defined from above)'
     Top = 104
-    Width = 294
+    Width = 222
     Caption = 'Simulate circadian rhythm of TRH secretion'
     Checked = True
     OnChange = CircadianCheckBoxChange
-    State = cbChecked
+    ParentShowHint = False
     ShowHint = True
+    State = cbChecked
     TabOrder = 5
   end
   object NeuronImage: TImage
