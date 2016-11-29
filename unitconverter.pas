@@ -6,12 +6,12 @@ unit UnitConverter;
 
 { Unit Converter }
 
-{ Version 1.3.2 }
+{ Version 1.4.0 (Eridanus) }
 
-{ (c) J. W. Dietrich, 1994 - 2015 }
+{ (c) J. W. Dietrich, 1994 - 2016 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
 { (c) University of Ulm Hospitals 2002-2004 }
-{ (c) Ruhr University of Bochum 2005 - 2015 }
+{ (c) Ruhr University of Bochum 2005 - 2016 }
 
 { Parser and converter for measurement units }
 
@@ -156,6 +156,14 @@ uses
   Classes, SysUtils, Math;
 
 const
+  UnitConverter_major = 1;
+  UnitConverter_minor = 4;
+  UnitConverter_release = 0;
+  UnitConverter_patch = 0;
+  UnitConverter_fullversion = ((UnitConverter_major *  100 + UnitConverter_minor) * 100 + UnitConverter_release) * 100 + UnitConverter_patch;
+  UnitConverter_version = '1.4.0.0';
+  UnitConverter_internalversion = 'Eridanus';
+
   MAXFACTORS = 11; {number of supported prefixes for measurement units}
   {$IFNDEF FULLMATHAVAILABLE}
   NaN = 0.0 / 0.0;
@@ -313,19 +321,14 @@ function ValidChar(theChar: char): boolean;
 type
   format1 = set of char;
 var
-  formatn1, formatn2, formatd1, formatd2, formate, formata, formato,
-  formatc, formatl, validformat: format1;
+  formatn, formatd, formate, formato,
+  validformat: format1;
 begin
-  formatn1 := ['1'..'9', '0', kTAB];
-  formatn2 := ['1'..'9', '0'];
-  formatd1 := ['.', ','];
-  formatd2 := ['.'];
+  formatn := ['1'..'9', '0'];
+  formatd := ['.', ','];
   formate := ['e', 'E'];
-  formata := [' '..chr(255)];
   formato := ['+', '-'];
-  formatc := [char($1c), char($1d), char($1e), char($1f), char($08)];
-  formatl := [kCR, kLF];
-  validformat := formatn2 + formatd1 + formate + formato;
+  validformat := formatn + formatd + formate + formato;
   if theChar in validformat then
     ValidChar := True
   else
@@ -370,7 +373,6 @@ function ParsedUnitstring(theString: string): TUnitElements;
   {parses a string for measurement unit and breaks it up in single components of a TUnitElements record}
 var
   theElements: TUnitElements;
-  tempPos:integer;
 begin
   with theElements do
   begin
@@ -413,8 +415,7 @@ begin
               if copy(theString, 2, 1) = 'c' then
               begin
                 MassPrefix := PrefixLabel[4]; {mc -> µ}
-                temppos := pos('/', theString) - 2;
-                MassUnit := copy(theString, 3, pos('/', theString) - 3);
+                 MassUnit := copy(theString, 3, pos('/', theString) - 3);
               end
               else
               begin
