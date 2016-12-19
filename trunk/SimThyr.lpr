@@ -103,6 +103,8 @@ begin
     InitGrid;
     Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 52;
     Left := 32;
+    if Screen.Width > 1024 then Width := 2 * Screen.Width div 3;
+    if Screen.Height > 800 then Height := Screen.Height div 2 - Top - 39;
     AlphaBlend := false;
   end;
   Application.CreateForm(TValuesPlot, ValuesPlot);
@@ -115,7 +117,7 @@ begin
   Application.CreateForm(TPrediction, Prediction);
   Prediction.Hide;
   Prediction.AlphaBlend := false;
-  Prediction.Left := Screen.Width - Prediction.Width - 13;
+  Prediction.Left := Screen.DesktopWidth - Prediction.Width - 13;
   Application.CreateForm(TStructureParameters, StructureParametersDlg);
   StructureParametersDlg.Hide;
   StructureParametersDlg.AlphaBlend := false;
