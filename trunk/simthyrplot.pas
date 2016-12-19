@@ -411,8 +411,9 @@ procedure TValuesPlot.CopyChart;
   {$IFDEF UNIX} {selects optimal type of clipboard graphic for respective OS}
 var
   theImage: TPortableNetworkGraphic;
-  theImage: TBitMap;
   theWidth, theHeight: integer;
+  {$ELSE}
+  theImage: TBitMap;
   {$ENDIF}
 begin
   if gSelectedChart = nil then
