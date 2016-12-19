@@ -42,7 +42,7 @@ uses
 
 begin
   // ReturnNilIfGrowHeapFails := true;
-  {$IFDEF debug}
+  {$IFDEF debug} // Diagnostic code for developmental versions
   if FileExists(kHeapTraceFile) then
     DeleteFile(kHeapTraceFile);
   SetHeapTraceOutput(kHeapTraceFile);
