@@ -29,6 +29,8 @@ type
   { TSimulationSettings }
 
   TSimulationSettings = class(TForm)
+    DurationLabel: TLabel;
+    StartLabel: TLabel;
     SimThyrLabel: TLabel;
     TestTimeUnit: TComboBox;
     RunTimeUnit: TComboBox;
