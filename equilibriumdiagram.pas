@@ -31,7 +31,7 @@ uses
   Forms,Controls, Graphics, Dialogs, Buttons, LCLVersion,
   ExtCtrls, StdCtrls, Spin, ComCtrls, ColorBox, Clipbrd, Menus, Grids, Math,
   SimThyrTypes, SimThyrResources, Simulator, SimThyrServices, UnitConverter,
-  SimThyrPrediction, Sensitivityanalysis, Types;
+  SimThyrPrediction, Sensitivityanalysis, StructureParameters, Types;
 
 const
   MAX_SERIES     = 2;    // number of isoclines to draw
@@ -91,6 +91,8 @@ type
       APoint: TPoint);
     procedure CopyItemClick(Sender: TObject);
     procedure CopyChart;
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormHide(Sender: TObject);
     procedure SaveChart;
     procedure SaveGrid(theFileName: String; theDelimiter: Char);
     procedure FormActivate(Sender: TObject);
@@ -176,26 +178,107 @@ begin
     end;
 end;
 
+procedure EnableStrucParEdits;
+begin
+  StructureParametersDlg.GD1Edit.Enabled := true;
+  StructureParametersDlg.GD2Edit.Enabled := true;
+  StructureParametersDlg.KM1Edit.Enabled := true;
+  StructureParametersDlg.KM2Edit.Enabled := true;
+  StructureParametersDlg.GTEdit.Enabled := true;
+  StructureParametersDlg.DTEdit.Enabled := true;
+  StructureParametersDlg.GHEdit.Enabled := true;
+  StructureParametersDlg.DHEdit.Enabled := true;
+  StructureParametersDlg.SSEdit.Enabled := true;
+  StructureParametersDlg.DSEdit.Enabled := true;
+  StructureParametersDlg.GREdit.Enabled := true;
+  StructureParametersDlg.DREdit.Enabled := true;
+  StructureParametersDlg.LSEdit.Enabled := true;
+  StructureParametersDlg.BetaTEdit.Enabled := true;
+end;
+
 procedure UpdateStrucPar(theParameter: tSParameter; theValue: real);
 { updates structure parameters after track bars have been changed }
 begin
+  EnableStrucParEdits;
   case theParameter of
-    GD1Item: GD1 := theValue;
-    GD2Item: GD2 := theValue;
-    KM1Item: kM1 := theValue;
-    KM2Item: kM2 := theValue;
-    GTItem: GT := theValue;
-    DTItem: DT := theValue;
-    GHItem: GH := theValue;
-    DHItem: DH := theValue;
-    SSItem: SS := theValue;
-    DSItem: DS := theValue;
-    GRItem: GR := theValue;
-    DRItem: DR := theValue;
-    LSItem: LS := theValue;
-    betaTItem: betaT := theValue;
-    TBGItem: TBG := theValue;
-    TBPAItem: TBPA := theValue;
+    GD1Item:
+    begin
+      StructureParametersDlg.GD1Edit.Enabled := false;
+      GD1 := theValue;
+    end;
+    GD2Item:
+    begin
+      StructureParametersDlg.GD2Edit.Enabled := false;
+      GD2 := theValue;
+    end;
+    KM1Item:
+    begin
+      StructureParametersDlg.KM1Edit.Enabled := false;
+      kM1 := theValue;
+    end;
+    KM2Item:
+    begin
+      StructureParametersDlg.KM2Edit.Enabled := false;
+      kM2 := theValue;
+    end;
+    GTItem:
+    begin
+      StructureParametersDlg.GTEdit.Enabled := false;
+      GT := theValue;
+    end;
+    DTItem:
+    begin
+      StructureParametersDlg.DTEdit.Enabled := false;
+      DT := theValue;
+    end;
+    GHItem:
+    begin
+      StructureParametersDlg.GHEdit.Enabled := false;
+      GH := theValue;
+    end;
+    DHItem:
+    begin
+      StructureParametersDlg.DHEdit.Enabled := false;
+      DH := theValue;
+    end;
+    SSItem:
+    begin
+      StructureParametersDlg.SSEdit.Enabled := false;
+      SS := theValue;
+    end;
+    DSItem:
+    begin
+      StructureParametersDlg.DSEdit.Enabled := false;
+      DS := theValue;
+    end;
+    GRItem:
+    begin
+      StructureParametersDlg.GREdit.Enabled := false;
+      GR := theValue;
+    end;
+    DRItem:
+    begin
+      StructureParametersDlg.DREdit.Enabled := false;
+      DR := theValue;
+    end;
+    LSItem:
+    begin
+      StructureParametersDlg.LSEdit.Enabled := false;
+      LS := theValue;
+    end;
+    betaTItem:
+    begin
+      StructureParametersDlg.BetaTEdit.Enabled := false;
+      betaT := theValue;
+    end;
+    TBGItem:
+    begin
+      TBG := theValue;
+    end;
+    TBPAItem:
+    begin
+      TBPA := theValue;
+    end;
   end;
 end;
 
@@ -956,6 +1039,17 @@ begin
     EquilibriumChart.CopyToClipboardBitmap;
     {$ENDIF}
   end;
+end;
+
+procedure TEquilibriumDiagramForm.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
+begin
+  EnableStrucParEdits;
+end;
+
+procedure TEquilibriumDiagramForm.FormHide(Sender: TObject);
+begin
+  EnableStrucParEdits;
 end;
 
 procedure TEquilibriumDiagramForm.SaveChart;
