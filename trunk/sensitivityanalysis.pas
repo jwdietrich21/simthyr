@@ -1013,8 +1013,6 @@ procedure TSensitivityAnalysisForm.CopyChart;
 var
   {$IFDEF UNIX}
   theImage: TPortableNetworkGraphic;
-  {$ELSE}
-  theImage: TBitMap;
   {$ENDIF}
   theWidth, theHeight: integer;
 begin

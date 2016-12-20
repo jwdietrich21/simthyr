@@ -412,8 +412,6 @@ procedure TValuesPlot.CopyChart;
 var
   theImage: TPortableNetworkGraphic;
   theWidth, theHeight: integer;
-  {$ELSE}
-  theImage: TBitMap;
   {$ENDIF}
 begin
   if gSelectedChart = nil then
