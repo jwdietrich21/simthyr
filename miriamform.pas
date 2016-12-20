@@ -29,6 +29,9 @@ type
 
   TAnnotationForm = class(TForm)
     CreatedTimeEdit: TEdit;
+    CommentsMemo: TMemo;
+    MIASELogo: TImage;
+    ModelCommentLabel: TLabel;
     ModifiedTimeEdit: TEdit;
     ModelTermsCombo: TComboBox;
     MIRIAMLogo: TImage;
@@ -124,6 +127,7 @@ begin
   TimeModified := EncodeDateTime(1900, 1, 1, theHour, theMinute, theSecond, 0);
   ReplaceTime(gActiveModel.LastModified, TimeModified);
   gActiveModel.Terms := ModelTermsCombo.Text;
+  gActiveModel.Comments := CommentsMemo.Lines.Text;
   if ConvError then
     ShowDatesAndTimes
   else
@@ -146,6 +150,7 @@ begin
   CreatorsMemo.Lines.Text := gActiveModel.Creators;
   ShowDatesAndTimes;
   ModelTermsCombo.Text := gActiveModel.Terms;
+  CommentsMemo.Lines.Text := gActiveModel.Comments;
 end;
 
 procedure TAnnotationForm.FormShow(Sender: TObject);

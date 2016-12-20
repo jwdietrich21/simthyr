@@ -102,9 +102,9 @@ begin
     Hide;
     InitGrid;
     Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 52;
-    Left := 32;
+    Left := 26;
     if Screen.Width > 1024 then Width := 2 * Screen.Width div 3;
-    if Screen.Height > 800 then Height := Screen.Height div 2 - Top - 39;
+    if Screen.Height > 800 then Height := Screen.Height div 2 - Top - 52;
     AlphaBlend := false;
   end;
   Application.CreateForm(TValuesPlot, ValuesPlot);
