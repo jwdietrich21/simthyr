@@ -533,11 +533,11 @@ end;
 
 procedure TTWSensitivityAnalysisForm.CopyChart;
 var
-  {$IFDEF UNIX}
+{$IFDEF UNIX}
   theImage: TPortableNetworkGraphic;
-  {$ELSE}
-  theImage: TBitMap;
-  {$ENDIF}
+{$ELSE}
+  theImage: TBitmap;
+{$ENDIF}
 begin
   if SensitivityMap = nil then
     bell
