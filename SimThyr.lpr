@@ -40,6 +40,9 @@ uses
 
 {$R *.res}
 
+var
+  Monitor0, Monitor1: TMonitor;
+
 begin
   // ReturnNilIfGrowHeapFails := true;
   {$IFDEF debug} // Diagnostic code for developmental versions
@@ -118,6 +121,15 @@ begin
   Prediction.Hide;
   Prediction.AlphaBlend := false;
   Prediction.Left := Screen.DesktopWidth - Prediction.Width - 13;
+  if Screen.MonitorCount > 1 then
+  begin
+    Monitor0 := Screen.Monitors[0];
+    Monitor1 := Screen.Monitors[1];
+{    if
+      (Monitor1.Primary = TRUE) and (Monitor1.Left < Monitor0.Left) then Prediction.Monitor := Monitor0
+    else if
+      (Monitor0.Primary = TRUE) and (Monitor0.Left < Monitor1.Left) then Prediction.Monitor := Monitor1; }
+  end;
   Application.CreateForm(TStructureParameters, StructureParametersDlg);
   StructureParametersDlg.Hide;
   StructureParametersDlg.AlphaBlend := false;
