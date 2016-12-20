@@ -47,7 +47,8 @@ type
    Creators: String; // MIRIAM 3
    Created: TDateTime; // MIRIAM 4
    LastModified: TDateTime; // MIRIAM 4
-   Terms: String // MIRIAM 5
+   Terms: String; // MIRIAM 5
+   Comments: String; // MIASE
  end;
 
 const
