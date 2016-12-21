@@ -125,10 +125,16 @@ begin
   begin
     Monitor0 := Screen.Monitors[0];
     Monitor1 := Screen.Monitors[1];
-{    if
-      (Monitor1.Primary = TRUE) and (Monitor1.Left < Monitor0.Left) then Prediction.Monitor := Monitor0
+    if
+      Monitor1.Primary = TRUE then
+      begin
+        Prediction.Left := Monitor0.Left + Monitor0.Width - Prediction.Width - 13;
+      end
     else if
-      (Monitor0.Primary = TRUE) and (Monitor0.Left < Monitor1.Left) then Prediction.Monitor := Monitor1; }
+      Monitor0.Primary = TRUE then
+      begin
+        Prediction.Left := Monitor1.Left + MOnitor1.Width - Prediction.Width - 13;
+      end;
   end;
   Application.CreateForm(TStructureParameters, StructureParametersDlg);
   StructureParametersDlg.Hide;
