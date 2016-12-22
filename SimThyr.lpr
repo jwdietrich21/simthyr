@@ -19,42 +19,61 @@ program SimThyr;
 
 {$DEFINE debug}
 
-uses
-  {$IFDEF UNIX}{$IFDEF UseCThreads}
-  cthreads,
-  {$ENDIF}{$ENDIF}
+uses {$IFDEF UNIX} {$IFDEF UseCThreads}
+  cthreads, {$ENDIF} {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, SimThyrMain, Controls, TAChartLazarusPkg, fpvectorialpkg, math,
-  SimThyrPlot, LaunchDialog, simthyrlog, SimThyrTypes, SimThyrServices, ShowIPS,
-  Simulator, Splash, AboutDialog, ShowAboutModel, SimThyrPrediction,
-  StructureParameters, SimOptions, VersionSupport, ScenarioHandler,
-  HandlePreferences, HandleNotifier, Sensitivityanalysis, tornado, DIFSupport,
-  help, SimThyrResources, unitconverter, TWSensitivityanalysis,
-  equilibriumdiagram, MIRIAMForm
-  {$IFDEF debug}
-  , SysUtils // include heaptrc with Lazarus project options
-  {$ENDIF}
-  ;
+  Forms,
+  SimThyrMain,
+  Controls,
+  TAChartLazarusPkg,
+  fpvectorialpkg,
+  Math,
+  SimThyrPlot,
+  LaunchDialog,
+  simthyrlog,
+  SimThyrTypes,
+  SimThyrServices,
+  ShowIPS,
+  Simulator,
+  Splash,
+  AboutDialog,
+  ShowAboutModel,
+  SimThyrPrediction,
+  StructureParameters,
+  SimOptions,
+  VersionSupport,
+  ScenarioHandler,
+  HandlePreferences,
+  HandleNotifier,
+  Sensitivityanalysis,
+  tornado,
+  DIFSupport,
+  help,
+  SimThyrResources,
+  unitconverter,
+  TWSensitivityanalysis,
+  equilibriumdiagram,
+  MIRIAMForm {$IFDEF debug}  ,
+  SysUtils // include heaptrc with Lazarus project options
+ {$ENDIF}  ;
 
 {{$IFDEF WINDOWS}{$R SimThyr.rc}{$ENDIF}}
 
 {$R *.res}
 
-var
-  Monitor0, Monitor1: TMonitor;
-
 begin
   // ReturnNilIfGrowHeapFails := true;
-  {$IFDEF debug} // Diagnostic code for developmental versions
+  {$IFDEF debug}// Diagnostic code for developmental versions
   if FileExists(kHeapTraceFile) then
     DeleteFile(kHeapTraceFile);
   SetHeapTraceOutput(kHeapTraceFile);
   {$ENDIF}
   Application.Initialize;
-  splashflag := true; {for debugging}
-  gPigMode := false;
-  showSettingsAtStartup := true;
-  if splashflag then begin
+  splashflag := True; {for debugging}
+  gPigMode := False;
+  showSettingsAtStartup := True;
+  if splashflag then
+  begin
     SplashScreen := TSplashScreen.Create(nil);
     SplashScreen.ShowOnTop;
     SplashScreen.FormStyle := fsSplash;
@@ -62,43 +81,48 @@ begin
     Application.ProcessMessages;
   end;
   SetExceptionMask([exInvalidOp, exDenormalized, exZeroDivide,
-                   exOverflow, exUnderflow, exPrecision]);
-  gStartup := true;
-  runcommand := false;
-  simready := true;
+    exOverflow, exUnderflow, exPrecision]);
+  gStartup := True;
+  runcommand := False;
+  simready := True;
   randomize;
   InitSimulationControl;
   SetBaseVariables;
   StandardValues;
   InitHormoneConversionFactors;
-  testflag := false;
-  tbgflag := false;
-  previewflag := true;
-  noiseflag := true;
-  circadianflag := true;
-  haltsim := false;
+  testflag := False;
+  tbgflag := False;
+  previewflag := True;
+  noiseflag := True;
+  circadianflag := True;
+  haltsim := False;
   Application.CreateForm(TSimThyrToolbar, SimThyrToolbar);
   SimThyrToolbar.SetPosition;
-  if splashflag then SplashScreen.Update;
+  if splashflag then
+    SplashScreen.Update;
   Application.BringToFront;
   Application.CreateForm(TAboutWindow, AboutWindow);
   AboutWindow.Hide;
-  AboutWindow.AlphaBlend := false;
+  AboutWindow.AlphaBlend := False;
   Application.CreateForm(TAboutModelForm, AboutModelForm);
   AboutModelForm.Hide;
-  AboutModelForm.AlphaBlend := false;
+  AboutModelForm.AlphaBlend := False;
   Application.CreateForm(TPreferencesDialog, PreferencesDialog);
   PreferencesDialog.Hide;
-  PreferencesDialog.AlphaBlend := false;
+  PreferencesDialog.AlphaBlend := False;
   PreferencesDialog.InitMenuItems;
   ReadPreferences;
   SetUnits;
+  Application.CreateForm(TStructureParameters, StructureParametersDlg);
+  StructureParametersDlg.Hide;
+  StructureParametersDlg.AlphaBlend := False;
   Application.CreateForm(TIPSForm, IPSForm);
   with IPSForm do
   begin
     Hide;
-    AlphaBlend := false;
+    AlphaBlend := False;
   end;
+  IPSForm.Show;
   Application.CreateForm(TSimThyrLogWindow, SimThyrLogWindow);
   with SimThyrLogWindow do
   begin
@@ -106,42 +130,36 @@ begin
     InitGrid;
     Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 52;
     Left := 26;
-    if Screen.Width > 1024 then Width := 2 * Screen.Width div 3;
-    if Screen.Height > 800 then Height := Screen.Height div 2 - Top - 52;
-    AlphaBlend := false;
+    if Screen.Width > 1024 then
+      Width := 2 * Screen.Width div 3;
+    if Screen.Height > 800 then
+      Height := Screen.Height div 2 - Top - 52;
+    AlphaBlend := False;
   end;
   Application.CreateForm(TValuesPlot, ValuesPlot);
   with ValuesPlot do
   begin
     Hide;
-    top := Screen.Height - Height - 80;
-    AlphaBlend := false;
+    top := Screen.Height - Height - 92;
+    left := Screen.Width - Width - 52;
+    AlphaBlend := False;
   end;
   Application.CreateForm(TPrediction, Prediction);
   Prediction.Hide;
-  Prediction.AlphaBlend := false;
+  Prediction.AlphaBlend := False;
   Prediction.Left := Screen.DesktopWidth - Prediction.Width - 13;
   if Screen.MonitorCount > 1 then
-  begin
-    Monitor0 := Screen.Monitors[0];
-    Monitor1 := Screen.Monitors[1];
-    if
-      Monitor1.Primary = TRUE then
-      begin
-        Prediction.Left := Monitor0.Left + Monitor0.Width - Prediction.Width - 13;
-      end
-    else if
-      Monitor0.Primary = TRUE then
-      begin
-        Prediction.Left := Monitor1.Left + MOnitor1.Width - Prediction.Width - 13;
-      end;
-  end;
-  Application.CreateForm(TStructureParameters, StructureParametersDlg);
-  StructureParametersDlg.Hide;
-  StructureParametersDlg.AlphaBlend := false;
+    if Screen.Monitors[1].Primary = True then
+      Prediction.Left := Screen.Monitors[0].Left + Screen.Monitors[0].Width -
+        Prediction.Width - 26
+    else if Screen.Monitors[0].Primary = True then
+      Prediction.Left := Screen.Monitors[1].Left + Screen.Monitors[1].Width -
+        Prediction.Width - 26;
+  //Prediction.MakeFullyVisible();
+  Prediction.Show;
   Application.CreateForm(TSimOptionsDlg, SimOptionsDlg);
   SimOptionsDlg.Hide;
-  SimOptionsDlg.AlphaBlend := false;
+  SimOptionsDlg.AlphaBlend := False;
   Notice := TNotice.Create(SimThyrLogWindow);
   Notice.Hide;
   Notice.NoticeLabel.Caption := WAIT_TITLE;
@@ -149,25 +167,22 @@ begin
   AnnotationForm.Hide;
   Application.CreateForm(TSimulationSettings, SimulationSettings);
   SimThyrToolbar.Show;
-  IPSForm.Show;
-  ValuesPlot.show;
+  ValuesPlot.Show;
   if ValuesPlot.Left + ValuesPLot.Width >= Screen.Width then
     ValuesPlot.Left := Screen.Width - ValuesPLot.Width - 26;
-  SimThyrLogWindow.show;
-  Prediction.MakeFullyVisible();
-  Prediction.Show;
+  SimThyrLogWindow.Show;
   Application.CreateForm(TSensitivityAnalysisForm, SensitivityAnalysisForm);
   SensitivityAnalysisForm.Hide;
-  SensitivityAnalysisForm.AlphaBlend := false;
+  SensitivityAnalysisForm.AlphaBlend := False;
   Application.CreateForm(TTWSensitivityAnalysisForm, TWSensitivityAnalysisForm);
   TWSensitivityAnalysisForm.Hide;
-  TWSensitivityAnalysisForm.AlphaBlend := false;
+  TWSensitivityAnalysisForm.AlphaBlend := False;
   Application.CreateForm(TEquilibriumDiagramForm, EquilibriumDiagramForm);
   EquilibriumDiagramForm.Hide;
-  EquilibriumDiagramForm.AlphaBlend := false;
+  EquilibriumDiagramForm.AlphaBlend := False;
   Application.CreateForm(TTornadoPlotForm, TornadoPlotForm);
   TornadoPlotForm.Hide;
-  TornadoPlotForm.AlphaBlend := false;
+  TornadoPlotForm.AlphaBlend := False;
   Application.CreateForm(THelpWindow, HelpWindow);
   {$IFDEF debug}
   ShowPrereleaseWarning;
@@ -181,12 +196,12 @@ begin
     {$ENDIF}
     SimulationSettings.ShowModal;
   end
-  else SimulationSettings.hide;
-  gStartup := false;
-  SimThyrToolbar.SelectAllMenuItem.Enabled := true;
+  else
+    SimulationSettings.hide;
+  gStartup := False;
+  SimThyrToolbar.SelectAllMenuItem.Enabled := True;
   Application.Run;
   if assigned(SimThread) then
     SimThread.SafeFree;
   SimThread := nil;
 end.
-

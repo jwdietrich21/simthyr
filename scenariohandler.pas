@@ -65,7 +65,12 @@ begin
           gActiveModel.LastModified := standardDate;
         gActiveModel.Terms := NodeContent(RootNode, 'Terms');
       end;
-      if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
+      RootNode := Doc.DocumentElement.FindNode('MIASE');
+      if assigned(RootNode) then
+      begin
+        gActiveModel.Comments := NodeContent(RootNode, 'Comments');
+      end;
+     if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
       begin
         RootNode := Doc.DocumentElement.FindNode('strucpars');
         VarFromNode(RootNode, 'alphaR', AlphaR);
@@ -141,8 +146,11 @@ begin
     ElementNode.AppendChild(SimpleNode(Doc, 'Terms', gActiveModel.Terms));
     RootNode.AppendChild(ElementNode);
 
-    ElementNode := Doc.CreateElement('strucpars');
+    ElementNode := Doc.CreateElement('MIASE');
+    ElementNode.AppendChild(SimpleNode(Doc, 'Comments', gActiveModel.Comments));
+    RootNode.AppendChild(ElementNode);
 
+    ElementNode := Doc.CreateElement('strucpars');
     ElementNode.AppendChild(SimpleNode(Doc, 'alphaR', FloatToStr(alphaR)));
     ElementNode.AppendChild(SimpleNode(Doc, 'betaR', FloatToStr(betaR)));
     ElementNode.AppendChild(SimpleNode(Doc, 'GR', FloatToStr(GR)));
@@ -177,7 +185,6 @@ begin
     ElementNode.AppendChild(SimpleNode(Doc, 'Tau0S2', FloatToStr(TT22)));
     ElementNode.AppendChild(SimpleNode(Doc, 'Tau0T', FloatToStr(TT3)));
     ElementNode.AppendChild(SimpleNode(Doc, 'Tau03z', FloatToStr(TT4)));
-
     RootNode.AppendChild(ElementNode);
 
     WriteXMLFile(Doc, theFileName);

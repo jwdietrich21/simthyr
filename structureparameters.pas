@@ -282,12 +282,13 @@ end;
 procedure TStructureParameters.FormActivate(Sender: TObject);
 begin
   {Adaptations for small screens:}
-  if StructureParametersDlg.Top < 0 then StructureParametersDlg.Top := 26;
-  if StructureParametersDlg.Left < 0 then StructureParametersDlg.Left := 7;
-  if Screen.Width < StructureParametersDlg.Left + StructureParametersDlg.Width then
-    StructureParametersDlg.Width := Screen.Width - StructureParametersDlg.Left;
-  if Screen.Height < StructureParametersDlg.Top + StructureParametersDlg.Height then
-    StructureParametersDlg.Height := Screen.Height - StructureParametersDlg.Top;
+  if Top < 0 then Top := 26;
+  if Left < 0 then Left := 7;
+  if Screen.Width < Left + Width then
+    Width := Screen.Width - Left;
+  if Screen.Height < Top + Height then
+    Height := Screen.Height - Top;
+  MakeFullyVisible;
 end;
 
 procedure TStructureParameters.FormCreate(Sender: TObject);
@@ -304,7 +305,7 @@ end;
 procedure TStructureParameters.HandleStrucPars;
 {opens the window and displays it in front similar to a dialog box}
 begin
-  StructureParametersDlg.ShowModal;
+  ShowModal;
 end;
 
 procedure TStructureParameters.TFCLogoClick(Sender: TObject);
@@ -326,7 +327,7 @@ procedure TStructureParameters.OKButtonClick(Sender: TObject);
 {reads entered values and closes window}
 begin
   if ParametersCorrect then
-    StructureParametersDlg.Close;
+    Close;
   if TornadoPlotForm.Visible = true then
     begin
       PredictEquilibrium;
@@ -342,13 +343,14 @@ end;
 procedure TStructureParameters.CancelButtonClick(Sender: TObject);
 {closes window without reading parameter values}
 begin
-  StructureParametersDlg.Close;
+  Close;
 end;
 
 procedure TStructureParameters.FormShow(Sender: TObject);
 {standard actions on show}
 begin
   FillInParameters;
+  FormActivate(Sender);
 end;
 
 initialization
