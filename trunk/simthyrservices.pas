@@ -272,6 +272,7 @@ var
 begin
   if assigned(theRoot) then
   begin
+    Result := 'NA';
     theNode := theRoot.FindNode(Name);
     if assigned(theNode) then
     begin
