@@ -6,7 +6,7 @@ LazarusResources.Add('TIPSForm','FORMDATA',[
   +'p'#8'akBottom'#0#7'Caption'#6'&Information Processing Structure (IPS)'#12'C'
   +'lientHeight'#3#201#1#11'ClientWidth'#3'^'#1#5'Color'#7#7'clWhite'#10'OnActi'
   +'vate'#7#12'FormActivate'#8'OnCreate'#7#10'FormCreate'#10'LCLVersion'#6#7'1.'
-  +'6.0.4'#7'Visible'#9#0#6'TImage'#6'Image1'#4'Left'#2#16#6'Height'#3#171#1#4
+  +'6.2.0'#7'Visible'#9#0#6'TImage'#6'Image1'#4'Left'#2#16#6'Height'#3#171#1#4
   +'Hint'#6'bThe information processing structure (IPS) of this model. Click he'
   +'re to edit structure parameters.'#3'Top'#2#16#5'Width'#3'@'#1#16'Antialiasi'
   +'ngMode'#7#4'amOn'#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0

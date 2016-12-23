@@ -342,9 +342,9 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +'ect parameter'#3'Top'#2'('#5'Width'#3'7'#3#7'Anchors'#11#5'akTop'#6'akLeft'
   +#7'akRight'#0#12'ClientHeight'#3#200#0#11'ClientWidth'#3'7'#3#14'ParentShowH'
   +'int'#8#8'ShowHint'#9#8'TabOrder'#2#0#7'OnClick'#7#11'Panel1Click'#0#9'TComb'
-  +'oBox'#9'ComboBox1'#4'Left'#3#143#2#6'Height'#2#23#4'Hint'#6'3Select a param'
-  +'eter to show in the plot on the left.'#3'Top'#2#14#5'Width'#3#146#0#7'Ancho'
-  +'rs'#11#7'akRight'#0#10'ItemHeight'#2#15#13'Items.Strings'#1#6#10'Portal TRH'
+  +'oBox'#9'ComboBox1'#4'Left'#3#143#2#6'Height'#2#21#4'Hint'#6'3Select a param'
+  +'eter to show in the plot on the left.'#3'Top'#2#15#5'Width'#3#146#0#7'Ancho'
+  +'rs'#11#7'akRight'#0#10'ItemHeight'#2#13#13'Items.Strings'#1#6#10'Portal TRH'
   +#6#13'Pituitary TSH'#6#9'Serum TSH'#6#14'Serum total T4'#6#13'Serum free T4'
   +#6#14'Serum total T3'#6#13'Serum free T3'#6#10'Central T3'#0#8'OnChange'#7#15
   +'ComboBox1Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#4'Text'
@@ -459,9 +459,9 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +'lset'#7#13'ChartToolset2'#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#5'C'
   +'olor'#7#7'clWhite'#14'ParentShowHint'#8#9'PopupMenu'#7#10'PopupMenu1'#8'Sho'
   +'wHint'#9#7'OnClick'#7#11'Chart2Click'#0#0#0#9'TComboBox'#9'ComboBox2'#4'Lef'
-  +'t'#3#144#2#6'Height'#2#23#4'Hint'#6'3Select a parameter to show in the plot'
-  +' on the left.'#3'Top'#2#14#5'Width'#3#146#0#7'Anchors'#11#7'akRight'#0#10'I'
-  +'temHeight'#2#15#13'Items.Strings'#1#6#10'Portal TRH'#6#13'Pituitary TSH'#6#9
+  +'t'#3#144#2#6'Height'#2#21#4'Hint'#6'3Select a parameter to show in the plot'
+  +' on the left.'#3'Top'#2#15#5'Width'#3#146#0#7'Anchors'#11#7'akRight'#0#10'I'
+  +'temHeight'#2#13#13'Items.Strings'#1#6#10'Portal TRH'#6#13'Pituitary TSH'#6#9
   +'Serum TSH'#6#14'Serum total T4'#6#13'Serum free T4'#6#14'Serum total T3'#6
   +#13'Serum free T3'#6#10'Central T3'#0#8'OnChange'#7#15'ComboBox2Change'#14'P'
   +'arentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#4'Text'#6#6'Unit 2'#0#0#13'T'
@@ -534,7 +534,7 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +'akTop'#7'akRight'#0#11'BorderWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonC'
   +'olor'#7#7'clBlack'#14'OnColorChanged'#7#24'ColorButton1ColorChanged'#8'Show'
   +'Hint'#9#14'ParentShowHint'#8#0#0#5'TEdit'#9'TitleEdit'#4'Left'#2'0'#6'Heigh'
-  +'t'#2#23#4'Hint'#6'CYou may enter a title that is shown on the top of every '
+  +'t'#2#21#4'Hint'#6'CYou may enter a title that is shown on the top of every '
   +'chart here.'#3'Top'#2#10#5'Width'#3#192#1#7'Anchors'#11#5'akTop'#6'akLeft'#7
   +'akRight'#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6#5'T'
   +'itle'#0#0#28'TDateTimeIntervalChartSource'#14'TimeAxisSource'#14'DateTimeFo'

@@ -6,7 +6,7 @@ LazarusResources.Add('TTornadoPlotForm','FORMDATA',[
   +'ornado Plot'#12'ClientHeight'#3#209#1#11'ClientWidth'#3#128#2#5'Color'#7#7
   +'clWhite'#21'Constraints.MinHeight'#3#209#1#20'Constraints.MinWidth'#3'X'#2
   +#10'OnActivate'#7#12'FormActivate'#8'OnCreate'#7#10'FormCreate'#6'OnShow'#7#8
-  +'FormShow'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#7'1.6.0.4'#7'Vi'
+  +'FormShow'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#7'1.6.2.0'#7'Vi'
   +'sible'#9#0#11'TCheckGroup'#11'CheckGroup1'#4'Left'#3#184#1#6'Height'#3#217#0
   +#4'Hint'#6'MSelect the independent structure parameters whose influence you '
   +'want to check'#3'Top'#2''''#5'Width'#3#185#0#7'Anchors'#11#5'akTop'#7'akRig'
@@ -16,16 +16,16 @@ LazarusResources.Add('TTornadoPlotForm','FORMDATA',[
   +'al'#7#24'crsHomogenousChildResize'#28'ChildSizing.ShrinkHorizontal'#7#14'cr'
   +'sScaleChilds'#26'ChildSizing.ShrinkVertical'#7#14'crsScaleChilds'#18'ChildS'
   +'izing.Layout'#7#29'cclLeftToRightThenTopToBottom'#27'ChildSizing.ControlsPe'
-  +'rLine'#2#2#12'ClientHeight'#3#197#0#11'ClientWidth'#3#181#0#7'Columns'#2#2
+  +'rLine'#2#2#12'ClientHeight'#3#199#0#11'ClientWidth'#3#181#0#7'Columns'#2#2
   +#13'Items.Strings'#1#6#3'GD1'#6#3'GD2'#6#3'KM1'#6#3'KM2'#6#2'GT'#6#2'DT'#6#2
   +'GH'#6#2'DH'#6#2'SS'#6#2'DS'#6#2'GR'#6#2'DR'#6#2'LS'#6#5'betaS'#6#6'betaS2'#6
   +#5'betaT'#6#6'beta31'#6#6'beta32'#6#3'TBG'#6#4'TBPA'#0#7'OnClick'#7#16'Check'
   +'Group1Click'#11'OnItemClick'#7#20'CheckGroup1ItemClick'#14'ParentShowHint'#8
   +#8'ShowHint'#9#8'TabOrder'#2#0#4'Data'#10#24#0#0#0#20#0#0#0#2#2#2#2#2#2#2#2#2
   +#2#2#2#2#2#2#2#2#2#2#2#0#0#9'TComboBox'#17'DepParameterCombo'#4'Left'#3#184#1
-  +#6'Height'#2#23#4'Hint'#6'9Select the depdentent parameter, e.g. hormone lev'
-  +'el here.'#3'Top'#2#6#5'Width'#3#185#0#7'Anchors'#11#7'akRight'#8'akBottom'#0
-  +#10'ItemHeight'#2#15#9'ItemIndex'#2#0#13'Items.Strings'#1#6#22'Dependent par'
+  +#6'Height'#2#21#4'Hint'#6'9Select the depdentent parameter, e.g. hormone lev'
+  +'el here.'#3'Top'#2#8#5'Width'#3#185#0#7'Anchors'#11#7'akRight'#8'akBottom'#0
+  +#10'ItemHeight'#2#13#9'ItemIndex'#2#0#13'Items.Strings'#1#6#22'Dependent par'
   +'ameter...'#6#3'TSH'#6#3'TT4'#6#3'FT4'#6#3'TT3'#6#3'FT3'#6#3'cT3'#0#8'OnChan'
   +'ge'#7#23'DepParameterComboChange'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabO'
   +'rder'#2#1#4'Text'#6#22'Dependent parameter...'#0#0#10'TStatusBar'#10'Status'
@@ -38,7 +38,7 @@ LazarusResources.Add('TTornadoPlotForm','FORMDATA',[
   +'hildResize'#28'ChildSizing.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildS'
   +'izing.ShrinkVertical'#7#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclL'
   +'eftToRightThenTopToBottom'#27'ChildSizing.ControlsPerLine'#2#1#12'ClientHei'
-  +'ght'#2'?'#11'ClientWidth'#3#181#0#9'ItemIndex'#2#0#13'Items.Strings'#1#6#8
+  +'ght'#2'A'#11'ClientWidth'#3#181#0#9'ItemIndex'#2#0#13'Items.Strings'#1#6#8
   +'Fraction'#6#7'percent'#0#7'OnClick'#7#16'RadioGroup1Click'#8'TabOrder'#2#3#0
   +#0#6'TPanel'#6'Panel1'#4'Left'#2#8#6'Height'#3#162#1#3'Top'#2#8#5'Width'#3
   +#163#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#7'Caption'#6
@@ -62,8 +62,8 @@ LazarusResources.Add('TTornadoPlotForm','FORMDATA',[
   +'AxisIndexY'#2#0#14'BarBrush.Color'#7#6'clGray'#13'BarWidthStyle'#7#12'bwPer'
   +'centMin'#0#0#10'TBarSeries'#11'DummySeries'#5'Title'#6#12'20% increase'#10
   +'AxisIndexX'#2#1#10'AxisIndexY'#2#0#14'BarBrush.Color'#7#7'clBlack'#0#0#0#0#9
-  +'TComboBox'#14'LegendPosCombo'#4'Left'#3#184#1#6'Height'#2#23#3'Top'#3#147#1
-  +#5'Width'#3#185#0#7'Anchors'#11#7'akRight'#8'akBottom'#0#10'ItemHeight'#2#15
+  +'TComboBox'#14'LegendPosCombo'#4'Left'#3#184#1#6'Height'#2#21#3'Top'#3#149#1
+  +#5'Width'#3#185#0#7'Anchors'#11#7'akRight'#8'akBottom'#0#10'ItemHeight'#2#13
   +#9'ItemIndex'#2#0#13'Items.Strings'#1#6#18'Legend position...'#6#8'Top left'
   ,#6#9'Top right'#6#11'Bottom left'#6#12'Bottom right'#0#8'OnChange'#7#20'Lege'
   +'ndPosComboChange'#8'TabOrder'#2#5#4'Text'#6#18'Legend position...'#0#0#9'TC'

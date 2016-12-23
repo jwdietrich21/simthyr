@@ -96,7 +96,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 260
+    ClientHeight = 262
     ClientWidth = 199
     Items.Strings = (
       'TSH'
@@ -170,14 +170,14 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     Width = 457
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Independent parameter'
-    ClientHeight = 30
+    ClientHeight = 32
     ClientWidth = 453
     TabOrder = 6
     object MinSpinEdit: TFloatSpinEdit
       Left = 8
-      Height = 23
+      Height = 21
       Hint = 'Minimum of selected structure parameter'
-      Top = -2
+      Top = 2
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
@@ -192,9 +192,9 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     end
     object MaxSpinEdit: TFloatSpinEdit
       Left = 369
-      Height = 23
+      Height = 21
       Hint = 'Maximum of selected structure parameter'
-      Top = -2
+      Top = 2
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
@@ -209,13 +209,13 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     end
     object StrucParCombo: TComboBox
       Left = 100
-      Height = 23
+      Height = 21
       Hint = 'Select the structure parameter that servers as independent variable here.'
-      Top = 1
+      Top = 5
       Width = 247
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 15
+      ItemHeight = 13
       ItemIndex = 0
       Items.Strings = (
         'Select independent parameter...'

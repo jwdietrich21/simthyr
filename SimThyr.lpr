@@ -17,7 +17,7 @@ program SimThyr;
 {$mode objfpc}{$H+}{$R+}
 {$define UseCThreads}
 
-{$DEFINE debug}
+{$UNDEFINE debug} // Additional debugging information recorded if defined
 
 uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   cthreads, {$ENDIF} {$ENDIF}
@@ -149,13 +149,10 @@ begin
   Prediction.AlphaBlend := False;
   Prediction.Left := Screen.DesktopWidth - Prediction.Width - 13;
   if Screen.MonitorCount > 1 then
-    if Screen.Monitors[1].Primary = True then
-      Prediction.Left := Screen.Monitors[0].Left + Screen.Monitors[0].Width -
-        Prediction.Width - 26
-    else if Screen.Monitors[0].Primary = True then
-      Prediction.Left := Screen.Monitors[1].Left + Screen.Monitors[1].Width -
-        Prediction.Width - 26;
-  //Prediction.MakeFullyVisible();
+    if Screen.Monitors[0].Primary then
+      Prediction.MakeFullyVisible(Screen.Monitors[1])
+    else
+      Prediction.MakeFullyVisible(Screen.Monitors[0]);
   Prediction.Show;
   Application.CreateForm(TSimOptionsDlg, SimOptionsDlg);
   SimOptionsDlg.Hide;
