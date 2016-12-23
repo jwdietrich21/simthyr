@@ -328,12 +328,12 @@ object ValuesPlot: TValuesPlot
     OnClick = Panel1Click
     object ComboBox1: TComboBox
       Left = 655
-      Height = 23
+      Height = 21
       Hint = 'Select a parameter to show in the plot on the left.'
-      Top = 14
+      Top = 15
       Width = 146
       Anchors = [akRight]
-      ItemHeight = 15
+      ItemHeight = 13
       Items.Strings = (
         'Portal TRH'
         'Pituitary TSH'
@@ -574,12 +574,12 @@ object ValuesPlot: TValuesPlot
     end
     object ComboBox2: TComboBox
       Left = 656
-      Height = 23
+      Height = 21
       Hint = 'Select a parameter to show in the plot on the left.'
-      Top = 14
+      Top = 15
       Width = 146
       Anchors = [akRight]
-      ItemHeight = 15
+      ItemHeight = 13
       Items.Strings = (
         'Portal TRH'
         'Pituitary TSH'
@@ -687,7 +687,7 @@ object ValuesPlot: TValuesPlot
   end
   object TitleEdit: TEdit
     Left = 48
-    Height = 23
+    Height = 21
     Hint = 'You may enter a title that is shown on the top of every chart here.'
     Top = 10
     Width = 448

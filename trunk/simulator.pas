@@ -546,80 +546,134 @@ end;
 end.
 
 {References:  }
+
 {1. Neuber, H., "Simulation von Regelkreisen auf Personal Computern  }
 {  in Pascal und Fortran 77", IWT, Vaterstetten 1989  }
+
 {2. Mark, D., C. Reed, "Macintosh Pascal Programming Primer"  }
 {  Addison-Wesley, Reading, Ma., Mento Park, Ca., New York 3° 1993  }
+
 {3. Borenstein, Ph., J. Mattson, "THINK Pascal™ User Manual"  }
 {  Symantec Corporation, Cupertino, Ca. 1990   }
+
 {4. Dahl, G. E., N. P. Evans, L. A. Thrun, f. J. Karsch (1994) "A Central   }
 {  Negative	Feedback Action of Thyroid Hormones on Thyrotropin-  }
 {  Releasing Hormone Secretion", Endocrinology 195: 2392-7  }
+
 {5. Samuels, M. H., P. Henry, M. Luther, E. C. Ridgway (1993) "Pulsatile  }
 {  TSH Secretion during 48-Hour Continuous TRH Infusions", Thyroid  }
 {  3: 201-6  }
+
 {6. Li, G., B. Liu, Y. Liu (1995) "A dynamical model of the pulsatile  }
 {  secretion of the hypothalamo-pituitary-thyroid axis", BioSystems  }
 {  35: 83-92  }
+
 {7. Greenspan, F. S. "The Thyroid Gland" in: Greenspan, F. S.,  }
 {  Strewler, G. J., "Basic and Clinical Endocrinology",  }
 {  Appleton & Lange, Stamford, CT, 1997  }
+
 {8. Visser, T. J., Kaplan, M. M., Leonard, J. L., Larsen, P. R. (1983)  }
 {  "Evidence for Two Pathways of Iodothyronine 5'-Deiodination in Rat  }
 {  Pituitary That Differ in Kinetics, Propylthiouracil Sensitivity and  }
 {  Respone to Hypothyroidism", J. Clin. Invest. 71: 992-1002  }
 {9. Lee TW; Anderson LA; Eidne KA; Milligan G (1995)   }
+
 {  "Comparison of the signalling properties of the long and short   }
 {  isoforms of the rat thyrotropin - releasing - hormone receptor  }
 {   following expression in rat 1 fibroblasts", Biochem J 310: 291-8  }
+
 {10. Karhapaa L; Tornquist K (1995) "Caffeine inhibits the binding of  }
 {  thyrotropin-releasing hormone in GH4C1 pituitary cells."  }
 {  Biochem Biophys Res Commun 210(3):726-32  }
+
 {11. Dumont, J. E., Vassart, G. "Thyroid Regulation" in De. Groot  }
 {  "Endocrinology", WB Saunders 1995  }
+
 {12. Jackson. I. M. D., "Thyrotropin Releasing Factor" in Adelman, G.  }
 {  "Encyclopedia of Neuroscience", Volume II, Birkhäuser, Boston,  }
 {  Basel, Stuttgart, 1987  }
+
 {13. Okuno, A., Taguchi, T., Takimoto, M. (1979) "Kinetic Analysis of   }
 {  Plasma TSH Dynamics after TRH Stimulation" Horm. Metab. Res. 11:  }
 {  293-5  }
+
 {14. D'Angelo, S. A., Paul, D. H., Wall, N. R., Lombardi, D. M. (1976)  }
 {  "Pituitary Thyrotropin (TSH) Rebound Phenomenon and Kinetics of  }
 {  Secretion in the Goitrous Rat: Differential Effects of Thyroxine on  }
 {  Synthesis and Release of TSH" Endocrinology 99: 935-43  }
+
 {15. Rondeel, J. M. M., de Greef, W. J., van der Schoot, P., Karels, B.,  }
 {  Klootwijk, W., Visser, T. J. (1988) "Effect of Thyroid Status and  }
 {  Paraventricular Area Lesions on the Release of Thyrotropin-  }
 {  Releasing Hormone and Catecholamines into Hypophysial Portal  }
 {  Blood" Endocrinology 123:523-7  }
+
 {16. Oppenheimer, J. H., G. Bernstein, J. Hasen (1967) "Estimation of  }
 {  Rapidly Exchangeable Cellular Thyroxine from the Plasma  }
+
 {  Disappearance Curves of Simultaneously Administered Thyroxine-  }
 {  131I and Albumin-125I" J. Clin. Invest 46: 762-77  }
+
 {17. Edelman, I. S., J. Leibman (1959) "Anatomy of Body Water and  }
 {  Electrolytes", Am. J. Med. 27, 256-77  }
+
 {18. Kakita, T., Laborde, N. P., Odell, W. D. (1984) "Autoregulatory  }
 {  Control of Thyrotrophin in Rabbits", Endocrinology 114: 2301-5  }
+
 {19. Dietrich, J. W., Tesche, A., Pickardt, C. R., Mitzdorf, U. (2004) }
 {  "Thyrotropic Feedback Control: Evidence for an Additional Ultrashort }
 {  Feedback Loop from Fractal Analysis", Cybernetics and Systems 35: }
 {  315-31 }
 {20. Dietrich JW, Stachon A, Antic B, Klein HH, Hering S. (2008) }
+
 {  "The AQUA-FONTIS study: protocol of a multidisciplinary, cross-sectional }
 {  and prospective longitudinal study for developing standardized diagnostics }
 {  and classification of non-thyroidal illness syndrome", BMC Endocr Disord. }
 {  8:13. doi: 10.1186/1472-6823-8-13. PMID 18851740 }
+
 {21. Dietrich JW, Landgrafe G, Fotiadou EH. (2012) "TSH and Thyrotropic }
 {  Agonists: Key Actors in Thyroid Homeostasis", J Thyroid Res. 2012:351864. }
 {  doi: 10.1155/2012/351864. PMID 23365787 }
+
 {22. Hoermann R, Midgley JE, Larisch R, Dietrich JW. (2013) "Is pituitary }
 {  TSH an adequate measure of thyroid hormone-controlled homoeostasis during }
 {  thyroxine treatment?", Eur J Endocrinol. 168(2):271-80. }
 {  doi: 10.1530/EJE-12-0819. PMID 23184912. }
+
 {23. Midgley JE, Hoermann R, Larisch R, Dietrich JW. (2013) "Physiological }
 {  states and functional relation between thyrotropin and free thyroxine in }
 {  thyroid health and disease: in vivo and in silico data suggest a }
 {  hierarchical model", J Clin Pathol. 66(4):335-42. }
 {  doi: 10.1136/jclinpath-2012-201213. PMID 23423518. }
+
+{24. Hoermann R, Midgley JE, Larisch R, Dietrich JW (2015). }
+{  Integration of Peripheral and Glandular Regulation of }
+{  Triiodothyronine Production by Thyrotropin in Untreated and }
+{  Thyroxine-Treated Subjects. Hormone and Metabolic Research, }
+{  47(9):674-80. PMID: 25750078 doi: 10.1055/s-0034-1398616. }
+
+{25. Midgley JE, Larisch R, Dietrich JW, Hoermann R. (2015). }
+{  Variation in the biochemical response to l-thyroxine therapy and }
+{  relationship with peripheral thyroid hormone conversion efficiency. }
+{  Endocr Connect. 2015 Dec;4(4):196-205. doi: 10.1530/EC-150056. }
+{  PMID 26335522. }
+
+{26. Dietrich JW, Midgley JE, Larisch R, Hoermann R. (2015). }
+{  Of rats and men: thyroid homeostasis in rodents and human beings. }
+{  Lancet Diabetes Endocrinol. 2015 Dec;3(12):932-3. }
+{  doi: 10.1016/S2213-8587(15)00421-0. PMID 26590684. }
+
+{27. Hoermann R, Midgley JE, Larisch R, Dietrich JW. (2015). }
+{  Homeostatic Control of the Thyroid-Pituitary Axis: Perspectives for }
+{  Diagnosis and Treatment. Front Endocrinol (Lausanne). 2015 }
+{  Nov 20;6:177. doi: 10.3389/fendo.2015.00177. PMID 26635726. }
+
+{28. Dietrich JW, Landgrafe-Mende G, Wiora E, Chatzitomaris A, }
+{  Klein HH, Midgley JE, Hoermann R. (2016). Calculated Parameters }
+{  of Thyroid Homeostasis: Emerging Tools for Differential Diagnosis }
+{  and Clinical Research. Front Endocrinol (Lausanne). 2016 Jun 9;7: }
+{  57. doi: 10.3389/fendo.2016.00057. PMID 27375554. }
+
+
 
 

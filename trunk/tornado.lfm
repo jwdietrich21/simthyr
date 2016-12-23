@@ -14,7 +14,7 @@ object TornadoPlotForm: TTornadoPlotForm
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.6.2.0'
   Visible = True
   object CheckGroup1: TCheckGroup
     Left = 440
@@ -33,7 +33,7 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 2
-    ClientHeight = 197
+    ClientHeight = 199
     ClientWidth = 181
     Columns = 2
     Items.Strings = (
@@ -69,12 +69,12 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object DepParameterCombo: TComboBox
     Left = 440
-    Height = 23
+    Height = 21
     Hint = 'Select the depdentent parameter, e.g. hormone level here.'
-    Top = 6
+    Top = 8
     Width = 185
     Anchors = [akRight, akBottom]
-    ItemHeight = 15
+    ItemHeight = 13
     ItemIndex = 0
     Items.Strings = (
       'Dependent parameter...'
@@ -114,7 +114,7 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
-    ClientHeight = 63
+    ClientHeight = 65
     ClientWidth = 181
     ItemIndex = 0
     Items.Strings = (
@@ -199,11 +199,11 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object LegendPosCombo: TComboBox
     Left = 440
-    Height = 23
-    Top = 403
+    Height = 21
+    Top = 405
     Width = 185
     Anchors = [akRight, akBottom]
-    ItemHeight = 15
+    ItemHeight = 13
     ItemIndex = 0
     Items.Strings = (
       'Legend position...'

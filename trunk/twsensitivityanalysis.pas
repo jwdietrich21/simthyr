@@ -9,7 +9,7 @@ unit TWSensitivityanalysis;
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
 { (c) Ruhr University of Bochum 2005 - 2016 }
 
-{ This unit implements sensitivity analysis }
+{ This unit implements two-way sensitivity analysis }
 
 { Source code released under the BSD License }
 { See http://simthyr.sourceforge.net for details }

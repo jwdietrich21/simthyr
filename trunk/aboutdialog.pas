@@ -58,6 +58,7 @@ type
     Image7: TImage;
     Image8: TImage;
     Image9: TImage;
+    SciCrunchLabel: TLabel;
     Label10: TLabel;
     Label11: TLabel;
     Label12: TLabel;
@@ -106,6 +107,7 @@ type
     procedure Label9Click(Sender: TObject);
     procedure Memo1Change(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
+    procedure SciCrunchLabelClick(Sender: TObject);
     procedure ShowAbout;
     procedure URL1Click(Sender: TObject);
     procedure URL2Click(Sender: TObject);
@@ -126,6 +128,11 @@ implementation
 procedure TAboutWindow.OKButtonClick(Sender: TObject);
 begin
   AboutWindow.Close;
+end;
+
+procedure TAboutWindow.SciCrunchLabelClick(Sender: TObject);
+begin
+  OpenURL('http://scicrunch.org/browse/resources/SCR_014351');
 end;
 
 procedure TAboutWindow.Label2Click(Sender: TObject);

@@ -19,7 +19,7 @@ object Notice: TNotice
   OnActivate = FormActivate
   OnCreate = FormCreate
   ShowInTaskBar = stNever
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.2.0'
   Visible = True
   object NoticeLabel: TLabel
     Left = 49
