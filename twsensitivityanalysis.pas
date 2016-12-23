@@ -88,6 +88,7 @@ type
     procedure CalculateMatrixWithCoordinates;
     procedure CheckToggleBoxChange(Sender: TObject);
     procedure CopyChart;
+    procedure FormDestroy(Sender: TObject);
     procedure MaxSpinEdit1Change(Sender: TObject);
     procedure MaxSpinEdit2Change(Sender: TObject);
     procedure MinSpinEdit1Change(Sender: TObject);
@@ -561,6 +562,11 @@ begin
     end;
     {$ENDIF}
   end;
+end;
+
+procedure TTWSensitivityAnalysisForm.FormDestroy(Sender: TObject);
+begin
+  SensitivityMatrix.destroy;
 end;
 
 procedure TTWSensitivityAnalysisForm.MaxSpinEdit1Change(Sender: TObject);
