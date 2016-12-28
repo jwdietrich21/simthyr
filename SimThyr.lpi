@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="796"/>
+      <BuildNr Value="798"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2016 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0 Beta"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -43,11 +43,10 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="192">
+    <Units Count="191">
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="34"/>
         <WindowIndex Value="1"/>
         <CursorPos X="9" Y="2"/>
@@ -63,7 +62,8 @@
         <UnitName Value="SimThyrMain"/>
         <EditorIndex Value="33"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="2"/>
+        <TopLine Value="445"/>
+        <CursorPos Y="464"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -215,10 +215,14 @@
         <UnitName Value="SimThyrServices"/>
         <EditorIndex Value="11"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="2"/>
+        <TopLine Value="40"/>
+        <CursorPos X="11" Y="55"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
+          <IsVisibleTab Value="True"/>
           <EditorIndex Value="-1"/>
+          <TopLine Value="507"/>
+          <CursorPos X="52" Y="524"/>
         </ExtraEditor1>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -620,9 +624,11 @@
         <Filename Value="scenariohandler.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ScenarioHandler"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="10"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="2"/>
+        <TopLine Value="112"/>
+        <CursorPos X="31" Y="136"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
           <EditorIndex Value="6"/>
@@ -1057,13 +1063,13 @@
         <UnitName Value="SimThyrResources"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="10" Y="2"/>
+        <TopLine Value="26"/>
+        <CursorPos X="52" Y="36"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
-          <WindowIndex Value="-1"/>
-          <TopLine Value="-1"/>
-          <CursorPos X="-1" Y="-1"/>
+          <TopLine Value="26"/>
+          <CursorPos X="24" Y="43"/>
         </ExtraEditor1>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -1230,11 +1236,11 @@
         <CursorPos X="4" Y="151"/>
         <ExtraEditorCount Value="3"/>
         <ExtraEditor1>
-          <EditorIndex Value="2"/>
           <WindowIndex Value="1"/>
           <CursorPos Y="2"/>
         </ExtraEditor1>
         <ExtraEditor2>
+          <EditorIndex Value="2"/>
           <WindowIndex Value="1"/>
           <CursorPos Y="2"/>
         </ExtraEditor2>
@@ -1244,7 +1250,7 @@
           <TopLine Value="1182"/>
           <CursorPos X="70" Y="1199"/>
         </ExtraEditor3>
-        <UsageCount Value="151"/>
+        <UsageCount Value="152"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit155>
@@ -1276,7 +1282,7 @@
         <EditorIndex Value="18"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
-        <UsageCount Value="108"/>
+        <UsageCount Value="109"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit159>
@@ -1445,7 +1451,7 @@
         <UsageCount Value="10"/>
       </Unit183>
       <Unit184>
-        <Filename Value="//lazarus/fpc/3.0.0/source/packages/fcl-base/src/syncobjs.pp"/>
+        <Filename Value="/lazarus/fpc/3.0.0/source/packages/fcl-base/src/syncobjs.pp"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="28"/>
@@ -1453,7 +1459,7 @@
         <UsageCount Value="10"/>
       </Unit184>
       <Unit185>
-        <Filename Value="//lazarus/fpc/3.0.0/source/packages/fcl-xml/src/xmlread.pp"/>
+        <Filename Value="/lazarus/fpc/3.0.0/source/packages/fcl-xml/src/xmlread.pp"/>
         <UnitName Value="XMLRead"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
@@ -1478,23 +1484,6 @@
         <UsageCount Value="10"/>
       </Unit187>
       <Unit188>
-        <Filename Value="//lazarus/lcl/forms.pp"/>
-        <UnitName Value="Forms"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="1"/>
-        <TopLine Value="652"/>
-        <CursorPos X="14" Y="669"/>
-        <UsageCount Value="10"/>
-      </Unit188>
-      <Unit189>
-        <Filename Value="//lazarus/lcl/include/customform.inc"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="1"/>
-        <TopLine Value="2493"/>
-        <CursorPos X="3" Y="2499"/>
-        <UsageCount Value="10"/>
-      </Unit189>
-      <Unit190>
         <Filename Value="../../../../../../../../lazarus/lcl/forms.pp"/>
         <UnitName Value="Forms"/>
         <EditorIndex Value="-1"/>
@@ -1502,137 +1491,141 @@
         <TopLine Value="585"/>
         <CursorPos X="31" Y="602"/>
         <UsageCount Value="10"/>
-      </Unit190>
-      <Unit191>
+      </Unit188>
+      <Unit189>
         <Filename Value="../../../../../../../../lazarus/lcl/include/customform.inc"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="2493"/>
         <CursorPos X="3" Y="2499"/>
         <UsageCount Value="10"/>
-      </Unit191>
+      </Unit189>
+      <Unit190>
+        <Filename Value="/usr/local/share/fpcsrc/packages/fcl-web/src/base/fphttpclient.pp"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="1769"/>
+        <CursorPos Y="1799"/>
+        <UsageCount Value="10"/>
+      </Unit190>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
-        <Filename Value="scenariohandler.pas"/>
-        <Caret Line="64" TopLine="34"/>
-      </Position1>
-      <Position2>
-        <Filename Value="scenariohandler.pas"/>
-        <Caret Line="66" TopLine="36"/>
-      </Position2>
-      <Position3>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="272" TopLine="253"/>
-      </Position3>
-      <Position4>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="273" TopLine="253"/>
-      </Position4>
-      <Position5>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="275" TopLine="253"/>
-      </Position5>
-      <Position6>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="276" TopLine="253"/>
-      </Position6>
-      <Position7>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="278" TopLine="253"/>
-      </Position7>
-      <Position8>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="276" Column="24" TopLine="253"/>
-      </Position8>
-      <Position9>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="280" Column="19" TopLine="253"/>
-      </Position9>
-      <Position10>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="285" TopLine="254"/>
-      </Position10>
-      <Position11>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="272" TopLine="254"/>
-      </Position11>
-      <Position12>
-        <Filename Value="scenariohandler.pas"/>
-        <Caret Line="66" Column="42" TopLine="39"/>
-      </Position12>
-      <Position13>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="275" Column="20" TopLine="267"/>
-      </Position13>
-      <Position14>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="1369" Column="18" TopLine="1350"/>
-      </Position14>
-      <Position15>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="1436" Column="3" TopLine="1434"/>
-      </Position15>
-      <Position16>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="1370" Column="23" TopLine="1359"/>
-      </Position16>
-      <Position17>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="1444" Column="3" TopLine="1436"/>
-      </Position17>
-      <Position18>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="1371" Column="32" TopLine="1359"/>
-      </Position18>
-      <Position19>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="1368" Column="42" TopLine="1359"/>
-      </Position19>
-      <Position20>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="34" Column="21" TopLine="16"/>
-      </Position20>
-      <Position21>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1010" Column="35" TopLine="991"/>
-      </Position21>
-      <Position22>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="1367" Column="34" TopLine="1359"/>
-      </Position22>
-      <Position23>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1016" TopLine="993"/>
-      </Position23>
-      <Position24>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="32" Column="6" TopLine="14"/>
-      </Position24>
-      <Position25>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="34" Column="4" TopLine="14"/>
-      </Position25>
-      <Position26>
         <Filename Value="twsensitivityanalysis.pas"/>
         <Caret Line="86" Column="24" TopLine="69"/>
-      </Position26>
-      <Position27>
+      </Position1>
+      <Position2>
         <Filename Value="twsensitivityanalysis.pas"/>
         <Caret Line="117" Column="5" TopLine="99"/>
-      </Position27>
-      <Position28>
+      </Position2>
+      <Position3>
         <Filename Value="twsensitivityanalysis.pas"/>
         <Caret Line="176" Column="13" TopLine="157"/>
-      </Position28>
-      <Position29>
+      </Position3>
+      <Position4>
         <Filename Value="SimThyr.lpr"/>
         <Caret Line="158" Column="30" TopLine="123"/>
-      </Position29>
-      <Position30>
+      </Position4>
+      <Position5>
         <Filename Value="aboutdialog.pas"/>
         <Caret Line="2"/>
-      </Position30>
+      </Position5>
+      <Position6>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="2"/>
+      </Position6>
+      <Position7>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="26" Column="23" TopLine="16"/>
+      </Position7>
+      <Position8>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="123" Column="7" TopLine="104"/>
+      </Position8>
+      <Position9>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="464" Column="17" TopLine="445"/>
+      </Position9>
+      <Position10>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="129" Column="29" TopLine="114"/>
+      </Position10>
+      <Position11>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="124" Column="28" TopLine="109"/>
+      </Position11>
+      <Position12>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="76" Column="23" TopLine="51"/>
+      </Position12>
+      <Position13>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="131" Column="5" TopLine="109"/>
+      </Position13>
+      <Position14>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="137" Column="35" TopLine="124"/>
+      </Position14>
+      <Position15>
+        <Filename Value="simthyrservices.pas"/>
+        <Caret Line="521" Column="24" TopLine="510"/>
+      </Position15>
+      <Position16>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="140" TopLine="126"/>
+      </Position16>
+      <Position17>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="141" TopLine="126"/>
+      </Position17>
+      <Position18>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="140" TopLine="124"/>
+      </Position18>
+      <Position19>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="128" TopLine="121"/>
+      </Position19>
+      <Position20>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="129" TopLine="121"/>
+      </Position20>
+      <Position21>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="130" TopLine="121"/>
+      </Position21>
+      <Position22>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="131" TopLine="121"/>
+      </Position22>
+      <Position23>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="132" TopLine="121"/>
+      </Position23>
+      <Position24>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="464" TopLine="445"/>
+      </Position24>
+      <Position25>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="128" TopLine="121"/>
+      </Position25>
+      <Position26>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="129" TopLine="121"/>
+      </Position26>
+      <Position27>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="124" Column="28" TopLine="121"/>
+      </Position27>
+      <Position28>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="130" Column="33" TopLine="121"/>
+      </Position28>
+      <Position29>
+        <Filename Value="scenariohandler.pas"/>
+        <Caret Line="124" Column="28" TopLine="112"/>
+      </Position29>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
@@ -1689,6 +1682,14 @@ end;"/>
         <InitialEnabled Value="False"/>
       </Item1>
     </BreakPoints>
+    <Watches Count="2">
+      <Item1>
+        <Expression Value="httpClient"/>
+      </Item1>
+      <Item2>
+        <Expression Value="theXMLFile"/>
+      </Item2>
+    </Watches>
     <Exceptions Count="3">
       <Item1>
         <Name Value="EAbort"/>

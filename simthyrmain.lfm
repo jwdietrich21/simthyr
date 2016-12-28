@@ -13,7 +13,7 @@ object SimThyrToolbar: TSimThyrToolbar
   AutoSize = True
   BorderStyle = bsToolWindow
   Caption = 'SimThyr'
-  ClientHeight = 55
+  ClientHeight = 75
   ClientWidth = 538
   DefaultMonitor = dmMainForm
   DockSite = True
@@ -561,10 +561,10 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SimThyrLabel: TLabel
-    Left = 469
+    Left = 468
     Height = 16
     Top = 8
-    Width = 50
+    Width = 51
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'SimThyr'
@@ -720,6 +720,10 @@ object SimThyrToolbar: TSimThyrToolbar
         ImageIndex = 1
         ShortCut = 4175
         OnClick = OpenToolButtonClick
+      end
+      object OpenURLMenuItem: TMenuItem
+        Caption = 'Get Scenario from URL...'
+        OnClick = OpenURLMenuItemClick
       end
       object Divider_1_1: TMenuItem
         Caption = '-'
