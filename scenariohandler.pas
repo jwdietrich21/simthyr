@@ -23,6 +23,24 @@ uses
   fphttpclient,
   SimThyrTypes, SimThyrServices, MiriamForm;
 
+type
+
+  { THandlers }
+
+  { TScenario }
+
+  TScenario = class(TObject)
+    XMLFile: String;
+    StatusCode: integer;
+    UserName, password: String;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      procedure HandleHeaders(Sender: TObject);
+      procedure HandleProgress(Sender: TObject; const ContentLength, CurrPos: Int64);
+      procedure HandlePassword(Sender: TObject; var RepeatRequest : Boolean);
+  end;
+
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
 procedure LoadScenario(theURL: string; var modelVersion: Str13);
 procedure SaveScenario(theFileName: string);
@@ -122,20 +140,26 @@ end;
 procedure LoadScenario(theURL: string; var modelVersion: Str13);
 var
   httpClient: TFPHTTPClient;
-  theXMLFile: String;
-  theStatusCode: integer;
+  theScenario:  TScenario;
+  RepeatRequest: boolean;
 begin
   httpClient := TFPHTTPClient.Create(nil);
+  theScenario := TScenario.Create;
   try
-    theXMLFile := httpClient.Get(theURL);
-    theStatusCode := httpClient.ResponseStatusCode;
-    if theStatusCode = 200 then
+    httpClient.AllowRedirect := true;
+    httpClient.OnDataReceived := @theScenario.HandleProgress;
+    httpClient.OnPassword := @theScenario.HandlePassword;
+    httpClient.OnHeaders := @theScenario.HandleHeaders;
+    theScenario.XMLFile := httpClient.Get(theURL);
+    theScenario.StatusCode := httpClient.ResponseStatusCode;
+    if theScenario.StatusCode = 200 then
      begin
-
+       // place holder for xml parser
      end
     else
-     ShowURLStatus(theStatusCode);
+     ShowURLStatus(theScenario.StatusCode);
   finally
+    theScenario.Destroy;
     httpClient.Free;
   end;
 end;
@@ -215,6 +239,35 @@ begin
     Doc.Free;
   end;
   DefaultFormatSettings.DecimalSeparator := oldSep;
+end;
+
+{ THandlers }
+
+constructor TScenario.Create;
+begin
+  inherited Create;
+end;
+
+destructor TScenario.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TScenario.HandleHeaders(Sender: TObject);
+begin
+
+end;
+
+procedure TScenario.HandleProgress(Sender: TObject; const ContentLength,
+  CurrPos: Int64);
+begin
+
+end;
+
+procedure TScenario.HandlePassword(Sender: TObject; var RepeatRequest: Boolean);
+begin
+  bell;
+  ShowImplementationMessage('Authorization not supported in this version'); // preliminary
 end;
 
 end.
