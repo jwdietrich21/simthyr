@@ -30,7 +30,7 @@ const
   PLOT_TITLE = 'Plots of simulated parameters';
   WAIT_TITLE = 'Simulation running...';
 
-  IMPLEMENTATION_MESSAGE = 'This function is not implemented in this version of SimThyr.';
+  IMPLEMENTATION_MESSAGE = 'Function not implemented in this version of SimThyr';
   FILE_VERSION_MESSAGE = 'This scenario file has a file version that is not supported by SimThyr';
   DEBUG_VERSION_MESSAGE = 'This is a pre-release version of SimThyr, which is intended for testing purposes only. Usage is on your own risk.';
   FORMAT_MESSAGE = 'Please check your input.';

@@ -17,7 +17,7 @@ program SimThyr;
 {$mode objfpc}{$H+}{$R+}
 {$define UseCThreads}
 
-{$UNDEFINE debug} // Additional debugging information recorded if defined
+{$UNDEF debug} // Additional debugging information recorded if defined
 
 uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   cthreads, {$ENDIF} {$ENDIF}

@@ -71,6 +71,7 @@ procedure SetStatusBarPanel0(curr, max: string);
 procedure writeaMemoLine(theMemo: TMemo; theString: Str255);
 procedure SetFileName(theForm: TForm; const FileName: string);
 procedure ShowImplementationMessage;
+procedure ShowImplementationMessage(theText: String);
 procedure ShowFormatMessage;
 procedure ShowVersionError;
 procedure ShowURLStatus(theCode: integer);
@@ -499,10 +500,17 @@ begin
 end;
 
 procedure ShowImplementationMessage;
-{error message}
+{generic error message}
 begin
   bell;
-  ShowMessage(IMPLEMENTATION_MESSAGE);
+  ShowMessage(IMPLEMENTATION_MESSAGE + '.');
+end;
+
+procedure ShowImplementationMessage(theText: String);
+{more flexible error message}
+begin
+  bell;
+  ShowMessage(IMPLEMENTATION_MESSAGE + ': ' + theText);
 end;
 
 procedure ShowFormatMessage;
