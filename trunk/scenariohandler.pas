@@ -20,9 +20,11 @@ interface
 
 uses
   Classes, SysUtils, DateUtils, DOM, XMLRead, XMLWrite, Forms,
+  fphttpclient,
   SimThyrTypes, SimThyrServices, MiriamForm;
 
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
+procedure LoadScenario(theURL: string; var modelVersion: Str13);
 procedure SaveScenario(theFileName: string);
 
 implementation
@@ -115,6 +117,27 @@ begin
   if AnnotationForm.Visible then
     AnnotationForm.ShowAnnotation;
   DefaultFormatSettings.DecimalSeparator := oldSep;
+end;
+
+procedure LoadScenario(theURL: string; var modelVersion: Str13);
+var
+  httpClient: TFPHTTPClient;
+  theXMLFile: String;
+  theStatusCode: integer;
+begin
+  httpClient := TFPHTTPClient.Create(nil);
+  try
+    theXMLFile := httpClient.Get(theURL);
+    theStatusCode := httpClient.ResponseStatusCode;
+    if theStatusCode = 200 then
+     begin
+
+     end
+    else
+     ShowURLStatus(theStatusCode);
+  finally
+    httpClient.Free;
+  end;
 end;
 
 procedure SaveScenario(theFileName: string); {saves scenario as XML file}

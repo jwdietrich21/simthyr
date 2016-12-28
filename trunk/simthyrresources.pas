@@ -34,10 +34,14 @@ const
   FILE_VERSION_MESSAGE = 'This scenario file has a file version that is not supported by SimThyr';
   DEBUG_VERSION_MESSAGE = 'This is a pre-release version of SimThyr, which is intended for testing purposes only. Usage is on your own risk.';
   FORMAT_MESSAGE = 'Please check your input.';
+  URL_STATUS_MESSAGE = 'Server status code: ';
   SAVE_ERROR_MESSAGE = 'Error saving the file';
   PREFERENCES_READ_ERROR_MESSAGE = 'Preferences could not be read. Please check access rights of your user or home folder';
   PREFERENCES_SAVE_ERROR_MESSAGE = 'The preferences could not be saved permanently, however, they are valid for this session';
   INSUFFICIENT_MEMORY_MESSAGE = 'This machine has not enough free memory to perform this function';
+
+  URL_TITLE = 'Read URL';
+  URL_QUERY = 'Please enter the URL of a Scenario:';
 
   EXAMPLE_STRING = 'Example: ';
   NEGATIVE_VALUES_HINT = 'Negative values represent virtual solutions delivered by equilibrium polynomials.';
