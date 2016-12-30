@@ -21,15 +21,15 @@ interface
 uses
   Classes, SysUtils, DateUtils, DOM, XMLRead, XMLWrite, Forms,
   fphttpclient,
-  SimThyrTypes, SimThyrServices, MiriamForm;
+  SimThyrTypes, SimThyrServices, MiriamForm, VersionSupport;
 
 type
 
   { THandlers }
 
-  { TScenario }
+  { TScenarioSessionSession }
 
-  TScenario = class(TObject)
+  TScenarioSession = class(TObject)
     XMLFile: String;
     StatusCode: integer;
     UserName, password: String;
@@ -140,27 +140,37 @@ end;
 procedure LoadScenario(theURL: string; var modelVersion: Str13);
 var
   httpClient: TFPHTTPClient;
-  theScenario:  TScenario;
+  theSession:  TScenarioSession;
+  theStream: TStream;
   RepeatRequest: boolean;
 begin
-  httpClient := TFPHTTPClient.Create(nil);
-  theScenario := TScenario.Create;
   try
-    httpClient.AllowRedirect := true;
-    httpClient.OnDataReceived := @theScenario.HandleProgress;
-    httpClient.OnPassword := @theScenario.HandlePassword;
-    httpClient.OnHeaders := @theScenario.HandleHeaders;
-    theScenario.XMLFile := httpClient.Get(theURL);
-    theScenario.StatusCode := httpClient.ResponseStatusCode;
-    if theScenario.StatusCode = 200 then
-     begin
-       // place holder for xml parser
-     end
-    else
-     ShowURLStatus(theScenario.StatusCode);
+    theSession := TScenarioSession.Create;
+    httpClient := TFPHTTPClient.Create(nil);
+    theStream := TStringStream.Create('');
+    try
+      theSession.StatusCode := 0;
+      httpClient.AllowRedirect := true;
+      httpClient.AddHeader('User-Agent', 'SimThyr/' + GetFileVersion);
+      httpClient.OnDataReceived := @theSession.HandleProgress;
+      httpClient.OnPassword := @theSession.HandlePassword;
+      httpClient.OnHeaders := @theSession.HandleHeaders;
+      httpClient.HTTPMethod('GET', theURL, theStream, [200, 301]);
+      theSession.XMLFile := TStringStream(theStream).DataString;
+      theSession.StatusCode := httpClient.ResponseStatusCode;
+      if theSession.StatusCode = 200 then
+       begin
+         // placeholder for xml parser
+       end
+      else
+       ShowURLStatus(theSession.StatusCode);
+    except
+       ShowURLStatus(theSession.StatusCode);
+    end;
   finally
-    theScenario.Destroy;
+    theStream.Free;
     httpClient.Free;
+    theSession.Destroy;
   end;
 end;
 
@@ -243,28 +253,28 @@ end;
 
 { THandlers }
 
-constructor TScenario.Create;
+constructor TScenarioSession.Create;
 begin
   inherited Create;
 end;
 
-destructor TScenario.Destroy;
+destructor TScenarioSession.Destroy;
 begin
   inherited Destroy;
 end;
 
-procedure TScenario.HandleHeaders(Sender: TObject);
+procedure TScenarioSession.HandleHeaders(Sender: TObject);
 begin
 
 end;
 
-procedure TScenario.HandleProgress(Sender: TObject; const ContentLength,
+procedure TScenarioSession.HandleProgress(Sender: TObject; const ContentLength,
   CurrPos: Int64);
 begin
 
 end;
 
-procedure TScenario.HandlePassword(Sender: TObject; var RepeatRequest: Boolean);
+procedure TScenarioSession.HandlePassword(Sender: TObject; var RepeatRequest: Boolean);
 begin
   bell;
   ShowImplementationMessage('Authorization not supported in this version'); // preliminary
