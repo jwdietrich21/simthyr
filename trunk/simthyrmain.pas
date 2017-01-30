@@ -52,7 +52,6 @@ type
     Divider_3_4: TMenuItem;
     EquiDiagItem: TMenuItem;
     AnnotationItem: TMenuItem;
-    OpenURLMenuItem: TMenuItem;
     SavePictureDialog2: TSavePictureDialog;
     ToolbarImageList:   TImageList;
     SimThyrLabel: TLabel;
@@ -153,7 +152,6 @@ type
     procedure AddOptItemClick(Sender: TObject);
     procedure OnlineInfoClick(Sender: TObject);
     procedure OpenToolButtonClick(Sender: TObject);
-    procedure OpenURLMenuItemClick(Sender: TObject);
     procedure OWSensitivityAnalysisItem2Click(Sender: TObject);
     procedure PageSetupItemClick(Sender: TObject);
     procedure ParametersToolButtonClick(Sender: TObject);
@@ -450,19 +448,6 @@ begin
       2: ReadScenario(theFileName, theVersion);  {XML file}
     end;
   if (theVersion <> '') and (theVersion <> '10.0') then ShowVersionError;
-  end;
-end;
-
-procedure TSimThyrToolbar.OpenURLMenuItemClick(Sender: TObject);
-var
-  theURL: String;
-  theVersion: Str13;
-begin
-  theURL := 'http://';
-  if InputQuery(URL_TITLE, URL_QUERY, theURL) then
-  begin
-    LoadScenario(theURL, theVersion);
-    if (theVersion <> '') and (theVersion <> '10.0') then ShowVersionError;
   end;
 end;
 

@@ -344,16 +344,16 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +'int'#8#8'ShowHint'#9#8'TabOrder'#2#0#7'OnClick'#7#11'Panel1Click'#0#9'TComb'
   +'oBox'#9'ComboBox1'#4'Left'#3#143#2#6'Height'#2#21#4'Hint'#6'3Select a param'
   +'eter to show in the plot on the left.'#3'Top'#2#15#5'Width'#3#146#0#7'Ancho'
-  +'rs'#11#7'akRight'#0#10'ItemHeight'#2#13#13'Items.Strings'#1#6#10'Portal TRH'
+  +'rs'#11#7'akRight'#0#10'ItemHeight'#2#0#13'Items.Strings'#1#6#10'Portal TRH'
   +#6#13'Pituitary TSH'#6#9'Serum TSH'#6#14'Serum total T4'#6#13'Serum free T4'
   +#6#14'Serum total T3'#6#13'Serum free T3'#6#10'Central T3'#0#8'OnChange'#7#15
   +'ComboBox1Change'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#0#4'Text'
   +#6#6'Unit 1'#0#0#6'TPanel'#10'PlotPanel1'#6'Cursor'#7#7'crCross'#4'Left'#2'1'
   +#6'Height'#3#189#0#3'Top'#2#13#5'Width'#3'O'#2#7'Anchors'#11#5'akTop'#6'akLe'
   +'ft'#7'akRight'#8'akBottom'#0#11'BorderStyle'#7#8'bsSingle'#12'ClientHeight'
-  +#3#185#0#11'ClientWidth'#3'K'#2#5'Color'#7#7'clWhite'#11'ParentColor'#8#8'Ta'
+  +#3#189#0#11'ClientWidth'#3'O'#2#5'Color'#7#7'clWhite'#11'ParentColor'#8#8'Ta'
   +'bOrder'#2#1#0#6'TChart'#6'Chart1'#4'Left'#2#2#6'Height'#3#170#0#4'Hint'#6#23
-  +'Drag with mouse to zoom'#3'Top'#2#7#5'Width'#3'F'#2#8'AxisList'#14#1#10'Gri'
+  +'Drag with mouse to zoom'#3'Top'#2#7#5'Width'#3'J'#2#8'AxisList'#14#1#10'Gri'
   +'d.Color'#7#8'clSilver'#10'Grid.Style'#7#6'psDash'#22'Marks.LabelFont.Height'
   +#2#245#6'Minors'#14#0#14'Title.Distance'#2#3#22'Title.LabelFont.Height'#2#245
   +#27'Title.LabelFont.Orientation'#3#132#3#13'Title.Visible'#9#13'Title.Captio'
@@ -440,10 +440,10 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +'entShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#7'OnClick'#7#11'Panel2Click'#0
   +#6'TPanel'#10'PlotPanel2'#6'Cursor'#7#7'crCross'#4'Left'#2'1'#6'Height'#3#190
   +#0#3'Top'#2#13#5'Width'#3'O'#2#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8
-  +'akBottom'#0#11'BorderStyle'#7#8'bsSingle'#12'ClientHeight'#3#186#0#11'Clien'
-  +'tWidth'#3'K'#2#5'Color'#7#7'clWhite'#11'ParentColor'#8#8'TabOrder'#2#0#0#6
+  +'akBottom'#0#11'BorderStyle'#7#8'bsSingle'#12'ClientHeight'#3#190#0#11'Clien'
+  +'tWidth'#3'O'#2#5'Color'#7#7'clWhite'#11'ParentColor'#8#8'TabOrder'#2#0#0#6
   +'TChart'#6'Chart2'#4'Left'#2#2#6'Height'#3#170#0#4'Hint'#6#23'Drag with mous'
-  +'e to zoom'#3'Top'#2#7#5'Width'#3'F'#2#8'AxisList'#14#1#10'Grid.Color'#7#8'c'
+  +'e to zoom'#3'Top'#2#7#5'Width'#3'J'#2#8'AxisList'#14#1#10'Grid.Color'#7#8'c'
   +'lSilver'#10'Grid.Style'#7#6'psDash'#22'Marks.LabelFont.Height'#2#245#6'Mino'
   +'rs'#14#0#14'Title.Distance'#2#3#22'Title.LabelFont.Height'#2#245#27'Title.L'
   +'abelFont.Orientation'#3#132#3#13'Title.Visible'#9#13'Title.Caption'#6#1'y'#0
@@ -461,7 +461,7 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +'wHint'#9#7'OnClick'#7#11'Chart2Click'#0#0#0#9'TComboBox'#9'ComboBox2'#4'Lef'
   +'t'#3#144#2#6'Height'#2#21#4'Hint'#6'3Select a parameter to show in the plot'
   +' on the left.'#3'Top'#2#15#5'Width'#3#146#0#7'Anchors'#11#7'akRight'#0#10'I'
-  +'temHeight'#2#13#13'Items.Strings'#1#6#10'Portal TRH'#6#13'Pituitary TSH'#6#9
+  +'temHeight'#2#0#13'Items.Strings'#1#6#10'Portal TRH'#6#13'Pituitary TSH'#6#9
   +'Serum TSH'#6#14'Serum total T4'#6#13'Serum free T4'#6#14'Serum total T3'#6
   +#13'Serum free T3'#6#10'Central T3'#0#8'OnChange'#7#15'ComboBox2Change'#14'P'
   +'arentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#1#4'Text'#6#6'Unit 2'#0#0#13'T'
@@ -528,13 +528,13 @@ LazarusResources.Add('TValuesPlot','FORMDATA',[
   +'Left'#2#15#6'Height'#2#16#4'Hint'#6'4Drag to select the part of the plot to'
   +' be displayed.'#3'Top'#2'0'#5'Width'#2#23#5'Chart'#7#6'Chart2'#22'LogicalEx'
   +'tentPen.Color'#7#8'clMaroon'#7'MiniMap'#9#0#0#0#10'TStatusBar'#10'StatusBar'
-  +'1'#4'Left'#2#0#6'Height'#2#23#3'Top'#3#163#1#5'Width'#3'8'#3#6'Panels'#14#0
+  +'1'#4'Left'#2#0#6'Height'#2#15#3'Top'#3#171#1#5'Width'#3'8'#3#6'Panels'#14#0
   +#0#0#12'TColorButton'#12'ColorButton1'#4'Left'#3#0#2#6'Height'#2#25#4'Hint'#6
   +#29'Select color for title string'#3'Top'#2#10#5'Width'#2'0'#7'Anchors'#11#5
   +'akTop'#7'akRight'#0#11'BorderWidth'#2#2#15'ButtonColorSize'#2#16#11'ButtonC'
   +'olor'#7#7'clBlack'#14'OnColorChanged'#7#24'ColorButton1ColorChanged'#8'Show'
   +'Hint'#9#14'ParentShowHint'#8#0#0#5'TEdit'#9'TitleEdit'#4'Left'#2'0'#6'Heigh'
-  +'t'#2#21#4'Hint'#6'CYou may enter a title that is shown on the top of every '
+  +'t'#2#22#4'Hint'#6'CYou may enter a title that is shown on the top of every '
   +'chart here.'#3'Top'#2#10#5'Width'#3#192#1#7'Anchors'#11#5'akTop'#6'akLeft'#7
   +'akRight'#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6#5'T'
   +'itle'#0#0#28'TDateTimeIntervalChartSource'#14'TimeAxisSource'#14'DateTimeFo'

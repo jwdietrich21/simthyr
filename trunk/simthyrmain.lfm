@@ -1,9 +1,9 @@
 object SimThyrToolbar: TSimThyrToolbar
   Left = 0
-  Height = 75
+  Height = 90
   Hint = 'Please use the icons to load or save settings and to start or stop the simulation.'
   Top = 22
-  Width = 538
+  Width = 986
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   Align = alTop
@@ -13,8 +13,8 @@ object SimThyrToolbar: TSimThyrToolbar
   AutoSize = True
   BorderStyle = bsToolWindow
   Caption = 'SimThyr'
-  ClientHeight = 75
-  ClientWidth = 538
+  ClientHeight = 90
+  ClientWidth = 986
   DefaultMonitor = dmMainForm
   DockSite = True
   Icon.Data = {
@@ -323,7 +323,7 @@ object SimThyrToolbar: TSimThyrToolbar
     Left = 0
     Height = 26
     Top = 0
-    Width = 538
+    Width = 986
     Caption = 'ToolBar1'
     Images = ToolbarImageList
     TabOrder = 0
@@ -561,7 +561,7 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SimThyrLabel: TLabel
-    Left = 468
+    Left = 916
     Height = 16
     Top = 8
     Width = 51
@@ -720,10 +720,6 @@ object SimThyrToolbar: TSimThyrToolbar
         ImageIndex = 1
         ShortCut = 4175
         OnClick = OpenToolButtonClick
-      end
-      object OpenURLMenuItem: TMenuItem
-        Caption = 'Get Scenario from URL...'
-        OnClick = OpenURLMenuItemClick
       end
       object Divider_1_1: TMenuItem
         Caption = '-'
@@ -1692,7 +1688,9 @@ object SimThyrToolbar: TSimThyrToolbar
   object SaveDialog1: TSaveDialog
     Title = 'Save results or current simulation as a scenario'
     DefaultExt = '.tsv'
+    FileName = '/Users/drjohanneswdietrich/Desktop'
     Filter = 'Log (tab delimited)|*.tsv|Log (CSV)|*.csv|Log (DIF)|*.dtf|Scenario (XML)|*.xml'
+    InitialDir = '/Users/drjohanneswdietrich/'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail, ofAutoPreview]
     left = 720
     top = 40
@@ -2486,7 +2484,9 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SavePictureDialog1: TSavePictureDialog
+    FileName = '/Users/drjohanneswdietrich'
     Filter = 'Graphics (*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif)|*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif|Bitmaps (*.bmp)|*.bmp|Pixmap (*.xpm)|*.xpm|Portable Network Graphic (*.png)|*.png|Portable PixMap (*.pbm;*.pgm;*.ppm)|*.pbm;*.pgm;*.ppm|Joint Picture Expert Group (*.jpg;*.jpeg;*.jpe;*.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Tagged Image File Format (*.tif;*.tiff)|*.tif;*.tiff|Scalable Vector Graphic|*.svg|All files (*)|*'
+    InitialDir = '/Users/'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
     left = 816
     top = 40
@@ -2504,7 +2504,9 @@ object SimThyrToolbar: TSimThyrToolbar
   end
   object SavePictureDialog2: TSavePictureDialog
     DefaultExt = '.png'
+    FileName = '/Users/drjohanneswdietrich/Desktop'
     Filter = 'Graphics (*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif)|*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif|Bitmaps (*.bmp)|*.bmp|Pixmap (*.xpm)|*.xpm|Portable Network Graphic (*.png)|*.png|Portable PixMap (*.pbm;*.pgm;*.ppm)|*.pbm;*.pgm;*.ppm|Joint Picture Expert Group (*.jpg;*.jpeg;*.jpe;*.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Tagged Image File Format (*.tif;*.tiff)|*.tif;*.tiff|Scalable Vector Graphic|*.svg|Values (tab delimited)|*.tsv|Values (CSV)|*.csv|Values (DIF)|*.dif|All files (*)|*'
+    InitialDir = '/Users/drjohanneswdietrich/'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
     left = 904
     top = 40

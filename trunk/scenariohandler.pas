@@ -20,32 +20,50 @@ interface
 
 uses
   Classes, SysUtils, DateUtils, DOM, XMLRead, XMLWrite, Forms,
-  fphttpclient,
+  URIParser,
   SimThyrTypes, SimThyrServices, MiriamForm, VersionSupport;
 
-type
-
-  { THandlers }
-
-  { TScenarioSessionSession }
-
-  TScenarioSession = class(TObject)
-    XMLFile: String;
-    StatusCode: integer;
-    UserName, password: String;
-    public
-      constructor Create;
-      destructor Destroy; override;
-      procedure HandleHeaders(Sender: TObject);
-      procedure HandleProgress(Sender: TObject; const ContentLength, CurrPos: Int64);
-      procedure HandlePassword(Sender: TObject; var RepeatRequest : Boolean);
-  end;
-
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
-procedure LoadScenario(theURL: string; var modelVersion: Str13);
 procedure SaveScenario(theFileName: string);
 
 implementation
+
+function ValidFormat(theStream: TStream; const theBaseURI: ansistring): boolean;
+const
+  SIGNATURE_1 = '<?xml version="1.';
+  SIGNATURE_2 = '<scenario';
+  SIGNATURE_3 = '</scenario>';
+var
+  origString, lowerString: ansistring;
+begin
+  Result := False;
+  if theStream.Size > 0 then
+  begin
+    SetLength(origString, theStream.Size);
+    theStream.Read(origString[1], theStream.Size);
+    if origString <> '' then
+    begin
+      lowerString := LowerCase(origString);
+      if LeftStr(lowerString, 17) = SIGNATURE_1 then
+        if pos(SIGNATURE_2, lowerString) <> 0 then
+          if pos(SIGNATURE_3, lowerString) <> 0 then
+            Result := True;
+    end;
+  end;
+end;
+
+function ValidFormat(theFileName: string): boolean;
+var
+  theStream: TStream;
+begin
+  theStream := TFileStream.Create(theFileName, fmOpenRead + fmShareDenyWrite);
+  try
+    Result := ValidFormat(theStream, FilenameToURI(theFileName));
+  finally
+    if theStream <> nil then
+      theStream.Free;
+  end;
+end;
 
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
 {reads a simulation scenario}
@@ -53,133 +71,103 @@ var
   i: integer;
   Doc: TXMLDocument;
   RootNode: TDOMNode;
-  oldSep: Char;
+  oldSep: char;
   standardDate: TDateTime;
 begin
   if FileExists(theFileName) then
-  oldSep := DefaultFormatSettings.DecimalSeparator;
-  DefaultFormatSettings.DecimalSeparator := kPERIOD;
-  begin
-    try
-      standardDate := EncodeDateTime(1904, 01, 01, 00, 00, 00, 00);
-      Doc := TXMLDocument.Create();
-      ReadXMLFile(Doc, theFileName);
-      RootNode := Doc.DocumentElement;
-      if RootNode.HasAttributes and (RootNode.Attributes.Length > 0) then
-        for i := 0 to RootNode.Attributes.Length - 1 do
-          with RootNode.Attributes[i] do
-          begin
-            if NodeName = 'modelversion' then
-              modelVersion := UTF8Encode(NodeValue);
-          end;
-      RootNode := Doc.DocumentElement.FindNode('MIRIAM');
-      if assigned(RootNode) then
-      begin
-        gActiveModel.Name := NodeContent(RootNode, 'Name');
-        gActiveModel.Reference := NodeContent(RootNode, 'Reference');
-        gActiveModel.Species := NodeContent(RootNode, 'Species');
-        gActiveModel.Creators := NodeContent(RootNode, 'Creators');
-        if not TryXMLDateTime2DateTime(NodeContent(RootNode, 'Created'), gActiveModel.Created) then
-          gActiveModel.Created := standardDate;
-        if not TryXMLDateTime2DateTime(NodeContent(RootNode, 'LastModified'), gActiveModel.LastModified) then
-          gActiveModel.LastModified := standardDate;
-        gActiveModel.Terms := NodeContent(RootNode, 'Terms');
+    if ValidFormat(theFileName) then
+    begin
+      oldSep := DefaultFormatSettings.DecimalSeparator;
+      DefaultFormatSettings.DecimalSeparator := kPERIOD;
+      try
+        standardDate := EncodeDateTime(1904, 01, 01, 00, 00, 00, 00);
+        Doc := TXMLDocument.Create();
+        ReadXMLFile(Doc, theFileName);
+        RootNode := Doc.DocumentElement;
+        if RootNode.HasAttributes and (RootNode.Attributes.Length > 0) then
+          for i := 0 to RootNode.Attributes.Length - 1 do
+            with RootNode.Attributes[i] do
+            begin
+              if NodeName = 'modelversion' then
+                modelVersion := UTF8Encode(NodeValue);
+            end;
+        RootNode := Doc.DocumentElement.FindNode('MIRIAM');
+        if assigned(RootNode) then
+        begin
+          gActiveModel.Name := NodeContent(RootNode, 'Name');
+          gActiveModel.Reference := NodeContent(RootNode, 'Reference');
+          gActiveModel.Species := NodeContent(RootNode, 'Species');
+          gActiveModel.Creators := NodeContent(RootNode, 'Creators');
+          if not TryXMLDateTime2DateTime(NodeContent(RootNode, 'Created'),
+            gActiveModel.Created) then
+            gActiveModel.Created := standardDate;
+          if not TryXMLDateTime2DateTime(NodeContent(RootNode, 'LastModified'),
+            gActiveModel.LastModified) then
+            gActiveModel.LastModified := standardDate;
+          gActiveModel.Terms := NodeContent(RootNode, 'Terms');
+        end;
+        RootNode := Doc.DocumentElement.FindNode('MIASE');
+        if assigned(RootNode) then
+        begin
+          gActiveModel.Comments := NodeContent(RootNode, 'Comments');
+        end;
+        if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
+        begin
+          RootNode := Doc.DocumentElement.FindNode('strucpars');
+          VarFromNode(RootNode, 'alphaR', AlphaR);
+          VarFromNode(RootNode, 'betaR', BetaR);
+          VarFromNode(RootNode, 'GR', GR);
+          VarFromNode(RootNode, 'dR', dR);
+          VarFromNode(RootNode, 'alphaS', AlphaS);
+          VarFromNode(RootNode, 'betaS', BetaS);
+          VarFromNode(RootNode, 'alphaS2', AlphaS2);
+          VarFromNode(RootNode, 'betaS2', BetaS2);
+          VarFromNode(RootNode, 'GH', GH);
+          VarFromNode(RootNode, 'dH', dH);
+          VarFromNode(RootNode, 'LS', LS);
+          VarFromNode(RootNode, 'SS', SS);
+          VarFromNode(RootNode, 'DS', DS);
+          VarFromNode(RootNode, 'alphaT', AlphaT);
+          VarFromNode(RootNode, 'betaT', BetaT);
+          VarFromNode(RootNode, 'GT', GT);
+          VarFromNode(RootNode, 'dT', dT);
+          VarFromNode(RootNode, 'alpha31', alpha31);
+          VarFromNode(RootNode, 'beta31', beta31);
+          VarFromNode(RootNode, 'GD1', GD1);
+          VarFromNode(RootNode, 'KM1', KM1);
+          VarFromNode(RootNode, 'alpha32', alpha32);
+          VarFromNode(RootNode, 'beta32', beta32);
+          VarFromNode(RootNode, 'GD2', GD2);
+          VarFromNode(RootNode, 'KM2', KM2);
+          VarFromNode(RootNode, 'K30', K30);
+          VarFromNode(RootNode, 'K31', K31);
+          VarFromNode(RootNode, 'K41', K41);
+          VarFromNode(RootNode, 'K42', K42);
+          VarFromNode(RootNode, 'Tau0R', TT1);
+          VarFromNode(RootNode, 'Tau0S', TT2);
+          VarFromNode(RootNode, 'Tau0S2', TT22);
+          VarFromNode(RootNode, 'Tau0T', TT3);
+          VarFromNode(RootNode, 'Tau03z', TT4);
+        end
+        else
+          ShowVersionError;
+      finally
+        Doc.Free;
       end;
-      RootNode := Doc.DocumentElement.FindNode('MIASE');
-      if assigned(RootNode) then
-      begin
-        gActiveModel.Comments := NodeContent(RootNode, 'Comments');
-      end;
-     if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
-      begin
-        RootNode := Doc.DocumentElement.FindNode('strucpars');
-        VarFromNode(RootNode, 'alphaR', AlphaR);
-        VarFromNode(RootNode, 'betaR', BetaR);
-        VarFromNode(RootNode, 'GR', GR);
-        VarFromNode(RootNode, 'dR', dR);
-        VarFromNode(RootNode, 'alphaS', AlphaS);
-        VarFromNode(RootNode, 'betaS', BetaS);
-        VarFromNode(RootNode, 'alphaS2', AlphaS2);
-        VarFromNode(RootNode, 'betaS2', BetaS2);
-        VarFromNode(RootNode, 'GH', GH);
-        VarFromNode(RootNode, 'dH', dH);
-        VarFromNode(RootNode, 'LS', LS);
-        VarFromNode(RootNode, 'SS', SS);
-        VarFromNode(RootNode, 'DS', DS);
-        VarFromNode(RootNode, 'alphaT', AlphaT);
-        VarFromNode(RootNode, 'betaT', BetaT);
-        VarFromNode(RootNode, 'GT', GT);
-        VarFromNode(RootNode, 'dT', dT);
-        VarFromNode(RootNode, 'alpha31', alpha31);
-        VarFromNode(RootNode, 'beta31', beta31);
-        VarFromNode(RootNode, 'GD1', GD1);
-        VarFromNode(RootNode, 'KM1', KM1);
-        VarFromNode(RootNode, 'alpha32', alpha32);
-        VarFromNode(RootNode, 'beta32', beta32);
-        VarFromNode(RootNode, 'GD2', GD2);
-        VarFromNode(RootNode, 'KM2', KM2);
-        VarFromNode(RootNode, 'K30', K30);
-        VarFromNode(RootNode, 'K31', K31);
-        VarFromNode(RootNode, 'K41', K41);
-        VarFromNode(RootNode, 'K42', K42);
-        VarFromNode(RootNode, 'Tau0R', TT1);
-        VarFromNode(RootNode, 'Tau0S', TT2);
-        VarFromNode(RootNode, 'Tau0S2', TT22);
-        VarFromNode(RootNode, 'Tau0T', TT3);
-        VarFromNode(RootNode, 'Tau03z', TT4);
-      end;
-    finally
-      Doc.Free;
-    end;
-  end;
-  if AnnotationForm.Visible then
-    AnnotationForm.ShowAnnotation;
-  DefaultFormatSettings.DecimalSeparator := oldSep;
-end;
-
-procedure LoadScenario(theURL: string; var modelVersion: Str13);
-var
-  httpClient: TFPHTTPClient;
-  theSession:  TScenarioSession;
-  theStream: TStream;
-  RepeatRequest: boolean;
-begin
-  try
-    theSession := TScenarioSession.Create;
-    httpClient := TFPHTTPClient.Create(nil);
-    theStream := TStringStream.Create('');
-    try
-      theSession.StatusCode := 0;
-      httpClient.AllowRedirect := true;
-      httpClient.AddHeader('User-Agent', 'SimThyr/' + GetFileVersion);
-      httpClient.OnDataReceived := @theSession.HandleProgress;
-      httpClient.OnPassword := @theSession.HandlePassword;
-      httpClient.OnHeaders := @theSession.HandleHeaders;
-      httpClient.HTTPMethod('GET', theURL, theStream, [200, 301]);
-      theSession.XMLFile := TStringStream(theStream).DataString;
-      theSession.StatusCode := httpClient.ResponseStatusCode;
-      if theSession.StatusCode = 200 then
-       begin
-         // placeholder for xml parser
-       end
-      else
-       ShowURLStatus(theSession.StatusCode);
-    except
-       ShowURLStatus(theSession.StatusCode);
-    end;
-  finally
-    theStream.Free;
-    httpClient.Free;
-    theSession.Destroy;
-  end;
+      if AnnotationForm.Visible then
+        AnnotationForm.ShowAnnotation;
+      DefaultFormatSettings.DecimalSeparator := oldSep;
+    end
+    else
+      ShowFileError;
 end;
 
 procedure SaveScenario(theFileName: string); {saves scenario as XML file}
 var
-  oldSep: Char;
+  oldSep: char;
   Doc: TXMLDocument;
   RootNode, ElementNode: TDOMNode;
-  theDate: AnsiString;
+  theDate: ansistring;
 begin
   oldSep := DefaultFormatSettings.DecimalSeparator;
   DefaultFormatSettings.DecimalSeparator := kPERIOD;
@@ -249,35 +237,6 @@ begin
     Doc.Free;
   end;
   DefaultFormatSettings.DecimalSeparator := oldSep;
-end;
-
-{ THandlers }
-
-constructor TScenarioSession.Create;
-begin
-  inherited Create;
-end;
-
-destructor TScenarioSession.Destroy;
-begin
-  inherited Destroy;
-end;
-
-procedure TScenarioSession.HandleHeaders(Sender: TObject);
-begin
-
-end;
-
-procedure TScenarioSession.HandleProgress(Sender: TObject; const ContentLength,
-  CurrPos: Int64);
-begin
-
-end;
-
-procedure TScenarioSession.HandlePassword(Sender: TObject; var RepeatRequest: Boolean);
-begin
-  bell;
-  ShowImplementationMessage('Authorization not supported in this version'); // preliminary
 end;
 
 end.
