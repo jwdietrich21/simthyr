@@ -73,6 +73,7 @@ procedure SetFileName(theForm: TForm; const FileName: string);
 procedure ShowImplementationMessage;
 procedure ShowImplementationMessage(theText: String);
 procedure ShowFormatMessage;
+procedure ShowFileError;
 procedure ShowVersionError;
 procedure ShowURLStatus(theCode: integer);
 procedure ShowSaveError;
@@ -518,6 +519,12 @@ procedure ShowFormatMessage;
 begin
   bell;
   ShowMessage(FORMAT_MESSAGE);
+end;
+
+procedure ShowFileError;
+begin
+  bell;
+  MessageDlg(FILE_FORMAT_ERROR_MESSAGE, mtError, [mbOK], 0);
 end;
 
 procedure ShowVersionError;
