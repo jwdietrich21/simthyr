@@ -5,9 +5,9 @@ unit Equilibriumdiagram;
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2016 }
+{ (c) J. W. Dietrich, 1994 - 2017 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2016 }
+{ (c) Ruhr University of Bochum 2005 - 2017 }
 
 { This unit implements an equilibrium diagram or nullcline plot }
 
@@ -164,7 +164,7 @@ uses
   SimThyrMain;
 
 procedure TrimMax(var aVector: tParamVector; const maxLimit: extended);
-{ removes components of a vector that are greater than max }
+{ removes components of a vector that are greater than maxLimit }
 { and replaces it by NaN }
 var
   i: integer;
@@ -179,6 +179,7 @@ begin
 end;
 
 procedure EnableStrucParEdits;
+{ enables all edit fields, which may have been blocked by trackbar handlers }
 begin
   StructureParametersDlg.GD1Edit.Enabled := true;
   StructureParametersDlg.GD2Edit.Enabled := true;

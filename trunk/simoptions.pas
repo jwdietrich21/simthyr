@@ -5,9 +5,9 @@ unit SimOptions;
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2016 }
+{ (c) J. W. Dietrich, 1994 - 2017 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2016 }
+{ (c) Ruhr University of Bochum 2005 - 2017 }
 
 { This unit supports a small dialog with additional simulation settings }
 

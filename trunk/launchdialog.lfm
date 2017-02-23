@@ -24,12 +24,12 @@ object SimulationSettings: TSimulationSettings
   Position = poScreenCenter
   ShowHint = True
   ShowInTaskBar = stNever
-  LCLVersion = '1.6.2.0'
+  LCLVersion = '1.4.4.0'
   object TitleLabel: TLabel
     Left = 113
-    Height = 13
+    Height = 16
     Top = 16
-    Width = 212
+    Width = 256
     Caption = 'Basic settings for next simulation run:'
     Font.Style = [fsBold]
     ParentColor = False
@@ -45,14 +45,14 @@ object SimulationSettings: TSimulationSettings
     BorderSpacing.Top = 1
     BorderSpacing.Right = 1
     BorderSpacing.Bottom = 1
-    ClientHeight = 38
-    ClientWidth = 527
+    ClientHeight = 49
+    ClientWidth = 523
     Color = clWhite
     ParentColor = False
     TabOrder = 0
     object RunTimeEdit: TEdit
       Left = 95
-      Height = 21
+      Height = 22
       Hint = 'Enter a numeric value for duration of simulation'
       Top = 6
       Width = 80
@@ -69,7 +69,7 @@ object SimulationSettings: TSimulationSettings
       Hint = 'Unit of measurement for simulation time'
       Top = 6
       Width = 155
-      ItemHeight = 13
+      ItemHeight = 0
       ItemIndex = 1
       Items.Strings = (
         'Hours'
@@ -81,9 +81,9 @@ object SimulationSettings: TSimulationSettings
     end
     object DurationLabel: TLabel
       Left = 16
-      Height = 13
+      Height = 16
       Top = 10
-      Width = 43
+      Width = 59
       Caption = 'Duration:'
       ParentColor = False
     end
@@ -99,8 +99,8 @@ object SimulationSettings: TSimulationSettings
     BorderSpacing.Top = 1
     BorderSpacing.Right = 1
     BorderSpacing.Bottom = 1
-    ClientHeight = 69
-    ClientWidth = 527
+    ClientHeight = 80
+    ClientWidth = 523
     Color = clWhite
     ParentColor = False
     ParentShowHint = False
@@ -108,10 +108,10 @@ object SimulationSettings: TSimulationSettings
     TabOrder = 1
     object TestOffRadio: TRadioButton
       Left = 97
-      Height = 17
+      Height = 18
       Hint = 'No test signal'
       Top = 6
-      Width = 32
+      Width = 40
       Caption = 'Off'
       Checked = True
       ParentShowHint = False
@@ -121,10 +121,10 @@ object SimulationSettings: TSimulationSettings
     end
     object TestTRHRadio: TRadioButton
       Left = 209
-      Height = 17
+      Height = 18
       Hint = 'Simulates TRH test'
       Top = 6
-      Width = 77
+      Width = 96
       Caption = '200 µg TRH'
       OnChange = TestTRHRadioChange
       ParentShowHint = False
@@ -133,10 +133,10 @@ object SimulationSettings: TSimulationSettings
     end
     object TestTBGRadio: TRadioButton
       Left = 329
-      Height = 17
+      Height = 18
       Hint = 'Simulates a rise in thyroxine binding globulin level, e. g. in pregnancy'
       Top = 6
-      Width = 82
+      Width = 102
       Caption = '50% TBG rise'
       OnChange = TestTBGRadioChange
       ParentShowHint = False
@@ -145,7 +145,7 @@ object SimulationSettings: TSimulationSettings
     end
     object TestTimeEdit: TEdit
       Left = 95
-      Height = 21
+      Height = 22
       Hint = 'Enter a numeric value for begin of test signal'
       Top = 35
       Width = 80
@@ -162,7 +162,7 @@ object SimulationSettings: TSimulationSettings
       Top = 35
       Width = 155
       Enabled = False
-      ItemHeight = 13
+      ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
         'Hours'
@@ -174,9 +174,9 @@ object SimulationSettings: TSimulationSettings
     end
     object StartLabel: TLabel
       Left = 16
-      Height = 13
+      Height = 16
       Top = 39
-      Width = 42
+      Width = 56
       Caption = 'Starts at:'
       ParentColor = False
     end
@@ -448,18 +448,18 @@ object SimulationSettings: TSimulationSettings
   end
   object Label2: TLabel
     Left = 113
-    Height = 13
+    Height = 16
     Top = 64
-    Width = 71
+    Width = 98
     Caption = 'Simulated time:'
     ParentColor = False
     OnClick = Label2Click
   end
   object Label3: TLabel
     Left = 113
-    Height = 13
+    Height = 16
     Top = 169
-    Width = 92
+    Width = 127
     Caption = 'Optional test signal:'
     ParentColor = False
     OnClick = Label2Click
@@ -478,10 +478,10 @@ object SimulationSettings: TSimulationSettings
     TabOrder = 5
   end
   object SimThyrLabel: TLabel
-    Left = 472
-    Height = 13
+    Left = 458
+    Height = 16
     Top = 16
-    Width = 75
+    Width = 89
     Anchors = [akTop, akRight]
     Caption = 'SimThyr x.y.z'
     Font.Color = 12615808
