@@ -153,12 +153,12 @@ object AboutModelForm: TAboutModelForm
     0000
   }
   Position = poScreenCenter
-  LCLVersion = '1.6.2.0'
+  LCLVersion = '1.4.4.0'
   object Label1: TLabel
     Left = 56
-    Height = 13
+    Height = 16
     Top = 96
-    Width = 69
+    Width = 77
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -178,10 +178,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 364
-    Height = 13
+    Left = 306
+    Height = 16
     Top = 64
-    Width = 154
+    Width = 212
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -292,6 +292,7 @@ object AboutModelForm: TAboutModelForm
       'of Thyroid Homeostasis: Emerging Tools for Differential Diagnosis '
       'and Clinical Research. Front Endocrinol (Lausanne). 2016 Jun 9;7:'
       '57. doi: 10.3389/fendo.2016.00057. PMID 27375554.'
+      ''
       ''
     )
     OnChange = Memo1Change

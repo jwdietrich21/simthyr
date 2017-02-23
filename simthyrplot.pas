@@ -5,11 +5,11 @@ unit SimThyrPlot;
 
 { Version 4.0.0 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2016 }
+{ (c) J. W. Dietrich, 1994 - 2017 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2016 }
+{ (c) Ruhr University of Bochum 2005 - 2017 }
 
-{ This unit plots values }
+{ This unit plots simulated results in time domain }
 
 { Source code released under the BSD License }
 { See http://simthyr.sourceforge.net for details }
