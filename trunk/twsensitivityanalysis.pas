@@ -14,6 +14,9 @@ unit TWSensitivityanalysis;
 { Source code released under the BSD License }
 { See http://simthyr.sourceforge.net for details }
 
+{ TODO 5 -oJohannes W. Dietrich -cGUI : DIF works, CSV and TSV still buggy
+Save command correctly handled from context menu, but exception with wrong picture extension, if fired from tool bar. }
+
 {$mode objfpc}{$H+}
 
 interface
@@ -97,6 +100,7 @@ type
     procedure SaveAsItemClick(Sender: TObject);
     procedure DrawToImage(var theImage: TFPImageBitmap);
     procedure SaveChart;
+    procedure SaveGrid(theFileName: String; theDelimiter: Char);
     procedure CopyItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure LegendColorMapSeriesCalculate(const AX, AY: Double; out AZ: Double
@@ -446,11 +450,11 @@ begin
   else
   begin
     theStream := nil;
-    SimThyrToolbar.SavePictureDialog1.FilterIndex := 2;
-    if SimThyrToolbar.SavePictureDialog1.Execute then
+    SimThyrToolbar.SavePictureDialog2.FilterIndex := 2;
+    if SimThyrToolbar.SavePictureDialog2.Execute then
       try
-        theFileName    := SimThyrToolbar.SavePictureDialog1.FileName;
-        theFilterIndex := SimThyrToolbar.SavePictureDialog1.FilterIndex;
+        theFileName    := SimThyrToolbar.SavePictureDialog2.FileName;
+        theFilterIndex := SimThyrToolbar.SavePictureDialog2.FilterIndex;
          {$IFDEF LCLcarbon}{compensates for a bug in older versions of carbon widgetset}
            if (lcl_major < 2) and (lcl_minor < 2) then
              theFilterIndex := theFilterIndex + 1;
@@ -524,12 +528,27 @@ begin
               Draw(theDrawer, Rect(0, 0, Width, Height));
              { Drawing of legend not implemented }
           end;
-        otherwise bell;
+       9: SaveGrid(theFileName, 't');  // Tab-delimited
+       10: SaveGrid(theFilename, 'c'); // CSV
+       11: SaveGrid(theFileName, 'd'); // DIF
+       otherwise bell;
         end;
       finally
         if theStream <> nil then theStream.Free;
       end;
   end;
+end;
+
+procedure TTWSensitivityAnalysisForm.SaveGrid(theFileName: String;
+  theDelimiter: Char);
+{saves the contents of the table of values}
+{file type and, where applicable, delimiter are defined by variable theDelimiter}
+var
+  theCode: integer;
+begin
+  SaveGridToFile(CheckGrid, theFileName, theDelimiter, theCode);
+  if theCode = 0 then
+    SetFileName(self, theFileName);
 end;
 
 procedure TTWSensitivityAnalysisForm.CopyChart;
