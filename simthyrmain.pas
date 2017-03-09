@@ -552,12 +552,12 @@ begin
               theFilterIndex := theFilterIndex + 1;
           {$ENDIF}
         case theFilterIndex of
-          1: theDelimiter := kTab;
+          1: theDelimiter := kTab; // Tab-delimited
           2: if DefaultFormatSettings.DecimalSeparator = ',' then
-              theDelimiter := ';'
+              theDelimiter := ';'  // CSV
             else
-              theDelimiter := ',';
-          3: theDelimiter := 'd';
+              theDelimiter := ','; // CSV
+          3: theDelimiter := 'd';  // DIF
           4: theDelimiter := ' ';
         end;
         case theFilterIndex of
