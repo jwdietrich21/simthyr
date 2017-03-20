@@ -145,9 +145,11 @@ procedure TSimThyrLogWindow.SaveGrid(theFileName: string; theDelimiter: char);
 var
   theCode: integer;
 begin
-  SaveGridToFile(SimThyrLogWindow.ValuesGrid, theFileName, theDelimiter, theCode);
+  SaveGridToFile(SimThyrLogWindow.ValuesGrid, theFileName, theDelimiter, true, true, theCode);
   if theCode = 0 then
-    SetFileName(SimThyrLogWindow, theFileName);
+    SetFileName(SimThyrLogWindow, theFileName)
+  else
+    ShowSaveError;
 end;
 
 procedure TSimThyrLogWindow.ValuesGridGetCellHint(Sender: TObject;

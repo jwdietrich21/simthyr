@@ -1689,7 +1689,7 @@ object SimThyrToolbar: TSimThyrToolbar
     Title = 'Save results or current simulation as a scenario'
     DefaultExt = '.tsv'
     FileName = '/Users/drjohanneswdietrich/Desktop'
-    Filter = 'Log (tab delimited)|*.tsv|Log (CSV)|*.csv|Log (DIF)|*.dtf|Scenario (XML)|*.xml'
+    Filter = 'Log (tab delimited)|*.tsv|Log (CSV)|*.csv|Log (DIF)|*.dif|Scenario (XML)|*.xml'
     InitialDir = '/Users/drjohanneswdietrich/'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail, ofAutoPreview]
     left = 720

@@ -1619,7 +1619,7 @@ LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   +#0#0#11'TSaveDialog'#11'SaveDialog1'#5'Title'#6'0Save results or current sim'
   +'ulation as a scenario'#10'DefaultExt'#6#4'.tsv'#8'FileName'#6'"/Users/drjoh'
   +'anneswdietrich/Desktop'#6'Filter'#6'NLog (tab delimited)|*.tsv|Log (CSV)|*.'
-  +'csv|Log (DIF)|*.dtf|Scenario (XML)|*.xml'#10'InitialDir'#6#27'/Users/drjoha'
+  +'csv|Log (DIF)|*.dif|Scenario (XML)|*.xml'#10'InitialDir'#6#27'/Users/drjoha'
   +'nneswdietrich/'#7'Options'#11#17'ofOverwritePrompt'#14'ofEnableSizing'#12'o'
   +'fViewDetail'#13'ofAutoPreview'#0#4'left'#3#208#2#3'top'#2'('#0#0#10'TImageL'
   +'ist'#16'ToolbarImageList'#4'left'#3#128#1#3'top'#2'('#6'Bitmap'#10#14'\'#0#0
