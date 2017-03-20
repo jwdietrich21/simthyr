@@ -1,18 +1,18 @@
 unit SimThyrServices;
 
- { SimThyr Project }
- { A numerical simulator of thyrotropic feedback control }
+{ SimThyr Project }
+{ A numerical simulator of thyrotropic feedback control }
 
 { Version 4.0.0 (Merlion) }
 
- { (c) J. W. Dietrich, 1994 - 2017 }
- { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
- { (c) Ruhr University of Bochum 2005 - 2017 }
+{ (c) J. W. Dietrich, 1994 - 2017 }
+{ (c) Ludwig Maximilian University of Munich 1995 - 2002 }
+{ (c) Ruhr University of Bochum 2005 - 2017 }
 
 { This unit provides some global functions }
 
- { Source code released under the BSD License }
- { See http://simthyr.sourceforge.net for details }
+{ Source code released under the BSD License }
+{ See http://simthyr.sourceforge.net for details }
 
 {$mode objfpc}{$R+}
 
@@ -32,13 +32,13 @@ uses
   {$ENDIF}  ;
 
 const
-  iuSystemScript     = -1;
-  iuCurrentScript    = -2;
-  iuWordSelectTable  = 0;
-  iuWordWrapTable    = 1;
+  iuSystemScript = -1;
+  iuCurrentScript = -2;
+  iuWordSelectTable = 0;
+  iuWordWrapTable = 1;
   iuNumberPartsTable = 2;
-  iuUnTokenTable     = 3;
-  iuWhiteSpaceList   = 4;
+  iuUnTokenTable = 3;
+  iuWhiteSpaceList = 4;
 
 type
   tSaveMode = (TimeSeries, Plot);
@@ -64,14 +64,14 @@ procedure ClearResultContents(var theContents: tResultContent);
 procedure writeaTableCell(theTable: TStringGrid; theCell: TableCell; theString: Str255);
 procedure writeTableCells(theTable: TStringGrid; theContents: tResultContent);
 procedure SaveGridToFile(theTable: TStringGrid; theFileName: string;
-  theDelimiter: char; var ReturnCode: integer);
+  theDelimiter: char; colNames, rowNames: boolean; var ReturnCode: integer);
 function AsTime(x: real): TDateTime;
 function FormattedTime(x: real): Str255;
 procedure SetStatusBarPanel0(curr, max: string);
 procedure writeaMemoLine(theMemo: TMemo; theString: Str255);
 procedure SetFileName(theForm: TForm; const FileName: string);
 procedure ShowImplementationMessage;
-procedure ShowImplementationMessage(theText: String);
+procedure ShowImplementationMessage(theText: string);
 procedure ShowFormatMessage;
 procedure ShowFileError;
 procedure ShowVersionError;
@@ -143,7 +143,7 @@ var
   theError: SInt16;
   {$ENDIF}
 begin
-  Result   := False;
+  Result := False;
   {$IFDEF LCLcarbon}
   theError := Gestalt(gestaltSystemVersionMinor, Minor);
   if TheError = 0 then
@@ -153,49 +153,49 @@ begin
 end;
 
 function SierraOrNewer: boolean;
-{ returns true, if this app runs on macOS X 10.12 Sierra or newer }
+  { returns true, if this app runs on macOS X 10.12 Sierra or newer }
 {$IFDEF LCLcarbon}
 var
-Major, Minor, Bugfix: SInt32;
-theError: SInt16;
+  Major, Minor, Bugfix: SInt32;
+  theError: SInt16;
 {$ENDIF}
 begin
-Result   := False;
+  Result := False;
 {$IFDEF LCLcarbon}
-theError := Gestalt(gestaltSystemVersionMinor, Minor);
-if TheError = 0 then
-  if Minor >= 12 then
-    Result := True;
+  theError := Gestalt(gestaltSystemVersionMinor, Minor);
+  if TheError = 0 then
+    if Minor >= 12 then
+      Result := True;
 {$ENDIF}
 end;
 
 function XPORNewer: boolean;
-{ returns true, if this app runs on Windows XP or a newer Windows version }
+  { returns true, if this app runs on Windows XP or a newer Windows version }
 begin
-  Result := false;
+  Result := False;
   {$IFDEF WINDOWS}
   if (Win32MajorVersion >= 5) and (Win32MinorVersion >= 1) then
-    result := true;
+    Result := True;
   {$ENDIF}
 end;
 
 function VistaORNewer: boolean;
-{ returns true, if this app runs on Windows Vista or a newer Windows version }
+  { returns true, if this app runs on Windows Vista or a newer Windows version }
 begin
-  Result := false;
+  Result := False;
   {$IFDEF WINDOWS}
   if Win32MajorVersion >= 6 then
-    result := true;
+    Result := True;
   {$ENDIF}
 end;
 
 function Win8OrNewer: boolean;
-{ returns true, if this app runs on Windows 8 or a newer Windows version }
+  { returns true, if this app runs on Windows 8 or a newer Windows version }
 begin
-  Result := false;
+  Result := False;
   {$IFDEF WINDOWS}
   if (Win32MajorVersion > 6) or (Win32MajorVersion = 6) and (Win32MinorVersion >= 2) then
-    result := true;
+    Result := True;
   {$ENDIF}
 end;
 
@@ -223,7 +223,7 @@ var
   theFlags: TReplaceFlags;
 begin
   theFlags := [rfReplaceAll, rfIgnoreCase];
-  Result   := StringReplace(theString, #194#181, 'mc', theFlags);
+  Result := StringReplace(theString, #194#181, 'mc', theFlags);
 end;
 
 function DecodeGreek(theString: string): string;
@@ -245,14 +245,14 @@ begin
   begin
     DateOnly := Copy(XMLDateTime, 1, TPos - 1);
     TimeOnly := Copy(XMLDateTime, TPos + 1, Length(XMLDateTime));
-    theDate  := ScanDateTime(LeftStr(ISO_8601_DATE_FORMAT, 10), DateOnly);
-    theTime  := ScanDateTime(RightStr(ISO_8601_DATE_FORMAT, 8), TimeOnly);
-    Result   := theDate + theTime;
+    theDate := ScanDateTime(LeftStr(ISO_8601_DATE_FORMAT, 10), DateOnly);
+    theTime := ScanDateTime(RightStr(ISO_8601_DATE_FORMAT, 8), TimeOnly);
+    Result := theDate + theTime;
   end
   else
   begin
     DateOnly := XMLDateTime;
-    Result   := ScanDateTime(LeftStr(ISO_8601_DATE_FORMAT, 10), DateOnly);
+    Result := ScanDateTime(LeftStr(ISO_8601_DATE_FORMAT, 10), DateOnly);
   end;
 end;
 
@@ -296,10 +296,10 @@ end;
 procedure VarFromNode(theRoot: TDOMNode; Name: string; var theVar: real);
 {supports XML routines}
 var
-  oldSep:    char;
+  oldSep: char;
   theString: string;
 begin
-  oldSep    := DefaultFormatSettings.DecimalSeparator;
+  oldSep := DefaultFormatSettings.DecimalSeparator;
   DefaultFormatSettings.DecimalSeparator := kPERIOD;
   theString := NodeContent(theRoot, Name);
   if theString <> 'NA' then
@@ -355,16 +355,21 @@ begin
 end;
 
 procedure SaveGridToFile(theTable: TStringGrid; theFileName: string;
-  theDelimiter: char; var ReturnCode: integer);
- {saves the contents of a string grid}
- {file type and, where applicable, delimiter are defined by variable theDelimiter}
+  theDelimiter: char; colnames, rowNames: boolean; var ReturnCode: integer);
+{saves the contents of a string grid}
+{file type and, where applicable, delimiter are defined by variable theDelimiter}
 var
   theString: string;
-  r, c:    integer;
+  r, c: integer;
+  startC: integer;
   theContents: TStringList;
-  doc:     TDIFDocument;
+  doc: TDIFDocument;
   theCode: integer;
 begin
+  if rowNames then
+    startC := 0
+  else
+    startC := 1;
   if theDelimiter = 'd' then
   begin {DIF file handling}
     theCode := 0;
@@ -372,18 +377,21 @@ begin
       doc := TDIFDocument.Create;
       doc.SetHead('SimThyr');
 
-      doc.NewTuple;
-      theString := '';
-      for c := 1 to theTable.ColCount - 1 do
+      if colNames then
       begin
-        theString := theTable.Cells[c, 0];
-        Doc.AppendCell(theString);
+        doc.NewTuple;
+        theString := '';
+        for c := startC to theTable.ColCount - 1 do
+        begin
+          theString := theTable.Cells[c, 0];
+          Doc.AppendCell(theString);
+        end;
       end;
       for r := 1 to theTable.RowCount - 1 do
       begin
         doc.NewTuple;
         theString := '';
-        for c := 1 to theTable.ColCount - 1 do
+        for c := startC to theTable.ColCount - 1 do
         begin
           theString := theTable.Cells[c, r];
           Doc.AppendCell(theString);
@@ -406,14 +414,17 @@ begin
       theDelimiter := kSEMICOLON;
     ReturnCode := 0;
     theContents := TStringList.Create;
-    theString   := '';
-    for c := 1 to theTable.ColCount - 1 do
-      theString := theString + theTable.Cells[c, 0] + theDelimiter;
-    theContents.Add(theString);
+    theString := '';
+    if colNames then
+    begin
+      for c := startC to theTable.ColCount - 1 do
+        theString := theString + theTable.Cells[c, 0] + theDelimiter;
+      theContents.Add(theString);
+    end;
     for r := 1 to theTable.RowCount - 1 do
     begin
       theString := '';
-      for c := 1 to theTable.ColCount - 1 do
+      for c := startC to theTable.ColCount - 1 do
         theString := theString + theTable.Cells[c, r] + theDelimiter;
       theContents.Add(theString);
     end;
@@ -422,10 +433,10 @@ begin
         theContents.SaveToFile(theFileName);
       except
         on Ex: EFCreateError do
-          begin
-            ShowMessage(SAVE_ERROR_MESSAGE);
-            ReturnCode := -2;
-          end;
+        begin
+          ShowMessage(SAVE_ERROR_MESSAGE);
+          ReturnCode := -2;
+        end;
       end;
     finally
       theContents.Free;
@@ -507,7 +518,7 @@ begin
   ShowMessage(IMPLEMENTATION_MESSAGE + '.');
 end;
 
-procedure ShowImplementationMessage(theText: String);
+procedure ShowImplementationMessage(theText: string);
 {more flexible error message}
 begin
   bell;

@@ -1108,9 +1108,11 @@ procedure TEquilibriumDiagramForm.SaveGrid(theFileName: String;
 var
   theCode: integer;
 begin
-  SaveGridToFile(CheckGrid, theFileName, theDelimiter, theCode);
+  SaveGridToFile(CheckGrid, theFileName, theDelimiter, true, false, theCode);
   if theCode = 0 then
-    SetFileName(self, theFileName);
+    SetFileName(self, theFileName)
+  else
+    ShowSaveError;
 end;
 
 function TEquilibriumDiagramForm.StrucParsEnabled: boolean;
