@@ -13,7 +13,7 @@ object SimThyrToolbar: TSimThyrToolbar
   AutoSize = True
   BorderStyle = bsToolWindow
   Caption = 'SimThyr'
-  ClientHeight = 70
+  ClientHeight = 90
   ClientWidth = 986
   DefaultMonitor = dmMainForm
   DockSite = True
@@ -561,10 +561,10 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SimThyrLabel: TLabel
-    Left = 921
-    Height = 17
+    Left = 916
+    Height = 16
     Top = 8
-    Width = 46
+    Width = 51
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'SimThyr'
@@ -1688,9 +1688,7 @@ object SimThyrToolbar: TSimThyrToolbar
   object SaveDialog1: TSaveDialog
     Title = 'Save results or current simulation as a scenario'
     DefaultExt = '.tsv'
-    FileName = '/Users/drjohanneswdietrich/Desktop'
     Filter = 'Log (tab delimited)|*.tsv|Log (CSV)|*.csv|Log (DIF)|*.dif|Scenario (XML)|*.xml'
-    InitialDir = '/Users/drjohanneswdietrich/'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail, ofAutoPreview]
     left = 720
     top = 40
@@ -2484,9 +2482,7 @@ object SimThyrToolbar: TSimThyrToolbar
     end
   end
   object SavePictureDialog1: TSavePictureDialog
-    FileName = '/Users/drjohanneswdietrich'
     Filter = 'Graphics (*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif)|*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif|Bitmaps (*.bmp)|*.bmp|Pixmap (*.xpm)|*.xpm|Portable Network Graphic (*.png)|*.png|Portable PixMap (*.pbm;*.pgm;*.ppm)|*.pbm;*.pgm;*.ppm|Joint Picture Expert Group (*.jpg;*.jpeg;*.jpe;*.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Tagged Image File Format (*.tif;*.tiff)|*.tif;*.tiff|Scalable Vector Graphic|*.svg|All files (*)|*'
-    InitialDir = '/Users/'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
     left = 816
     top = 40
@@ -2504,9 +2500,7 @@ object SimThyrToolbar: TSimThyrToolbar
   end
   object SavePictureDialog2: TSavePictureDialog
     DefaultExt = '.png'
-    FileName = '/Users/drjohanneswdietrich/Desktop'
     Filter = 'Graphics (*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif)|*.bmp;*.png;*.pbm;*.pgm;*.ppm;*.jpg;*.jpeg;*.jpe;*.jfif;*.tif;*.tiff;*.gif|Bitmaps (*.bmp)|*.bmp|Pixmap (*.xpm)|*.xpm|Portable Network Graphic (*.png)|*.png|Portable PixMap (*.pbm;*.pgm;*.ppm)|*.pbm;*.pgm;*.ppm|Joint Picture Expert Group (*.jpg;*.jpeg;*.jpe;*.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|Tagged Image File Format (*.tif;*.tiff)|*.tif;*.tiff|Scalable Vector Graphic|*.svg|Values (tab delimited)|*.tsv|Values (CSV)|*.csv|Values (DIF)|*.dif|All files (*)|*'
-    InitialDir = '/Users/drjohanneswdietrich/'
     Options = [ofOverwritePrompt, ofEnableSizing, ofViewDetail]
     left = 904
     top = 40
