@@ -41,14 +41,15 @@ type
  end;
  tModel = record
    Equilibrium: tEquilibrium;
-   Name: String; // MIRIAM 1
-   Reference: String; // MIRIAM 2
-   Species: String;
-   Creators: String; // MIRIAM 3
+   Name: AnsiString; // MIRIAM 1
+   Reference: AnsiString; // MIRIAM 2
+   Species: AnsiString;
+   Creators: AnsiString; // MIRIAM 3
    Created: TDateTime; // MIRIAM 4
    LastModified: TDateTime; // MIRIAM 4
-   Terms: String; // MIRIAM 5
-   Comments: String; // MIASE
+   Terms: AnsiString; // MIRIAM 5
+   Code: AnsiString; // MIASE
+   Comments: AnsiString; // MIASE
  end;
  TPlotOptions = record
    titleString: AnsiString;
