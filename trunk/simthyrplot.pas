@@ -365,6 +365,8 @@ begin
 end;
 
 procedure TValuesPlot.OptionsButtonClick(Sender: TObject);
+var
+  theTitle: PChar;
 begin
   PlotOptions := PlotOptionsForm.GetPlotOptions;
 if PlotOptions.titleString = '' then
@@ -373,7 +375,8 @@ begin
   Chart2.Title.Visible := false;
 end
 else begin
-  Chart1.Title.Text.SetText(PChar(@PlotOptions.titleString[1]));
+  theTitle := PChar(PlotOptions.titleString);
+  Chart1.Title.Text.SetText(theTitle);
   Chart1.Title.Visible := true;
   Chart1.Title.Font.Color := PlotOptions.titleColor;
   Chart2.Title.Text.SetText(PChar(@PlotOptions.titleString[1]));

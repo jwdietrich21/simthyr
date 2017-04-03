@@ -51,7 +51,7 @@ type
    Comments: String; // MIASE
  end;
  TPlotOptions = record
-   titleString: String;
+   titleString: AnsiString;
    titleColor: TColor;
  end;
 

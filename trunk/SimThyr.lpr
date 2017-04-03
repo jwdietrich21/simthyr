@@ -17,7 +17,7 @@ program SimThyr;
 {$mode objfpc}{$H+}{$R+}
 {$define UseCThreads}
 
-{$UNDEF debug} // Additional debugging information recorded if defined
+{$define debug} // Additional debugging information recorded if defined
 
 uses
 {$IFDEF UNIX}
@@ -60,10 +60,8 @@ uses
   MIRIAMForm,
   plotoptions
  {$IFDEF debug}  ,
-  SysUtils // include heaptrc with Lazarus project options
+  SysUtils // heaptrc unit is to be included with Lazarus project options
  {$ENDIF}  ;
-
-{{$IFDEF WINDOWS}{$R SimThyr.rc}{$ENDIF}}
 
 {$R *.res}
 
