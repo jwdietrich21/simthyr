@@ -19,8 +19,12 @@ program SimThyr;
 
 {$UNDEF debug} // Additional debugging information recorded if defined
 
-uses {$IFDEF UNIX} {$IFDEF UseCThreads}
-  cthreads, {$ENDIF} {$ENDIF}
+uses
+{$IFDEF UNIX}
+{$IFDEF UseCThreads}
+  cthreads,
+{$ENDIF}
+{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms,
   SimThyrMain,
@@ -53,7 +57,9 @@ uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   unitconverter,
   TWSensitivityanalysis,
   equilibriumdiagram,
-  MIRIAMForm {$IFDEF debug}  ,
+  MIRIAMForm,
+  plotoptions
+ {$IFDEF debug}  ,
   SysUtils // include heaptrc with Lazarus project options
  {$ENDIF}  ;
 
@@ -69,7 +75,7 @@ begin
   SetHeapTraceOutput(kHeapTraceFile);
   {$ENDIF}
   Application.Initialize;
-  splashflag := True; {for debugging}
+  splashflag := True; {splash screen can be switched off for debugging}
   gPigMode := False;
   showSettingsAtStartup := True;
   if splashflag then
@@ -195,6 +201,8 @@ begin
   end
   else
     SimulationSettings.hide;
+  Application.CreateForm(TPlotOptionsForm, PlotOptionsForm);
+  PlotOptionsForm.Visible := false;
   gStartup := False;
   SimThyrToolbar.SelectAllMenuItem.Enabled := True;
   Application.Run;

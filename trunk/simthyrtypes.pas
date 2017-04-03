@@ -50,6 +50,10 @@ type
    Terms: String; // MIRIAM 5
    Comments: String; // MIASE
  end;
+ TPlotOptions = record
+   titleString: String;
+   titleColor: TColor;
+ end;
 
 const
 
