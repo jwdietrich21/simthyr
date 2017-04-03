@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, DateUtils, DOM, XMLRead, XMLWrite, Forms,
   URIParser,
-  SimThyrTypes, SimThyrServices, MiriamForm, VersionSupport;
+  SimThyrTypes, SimThyrServices, MiriamForm, VersionSupport, SimThyrResources;
 
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
 procedure SaveScenario(theFileName: string);
@@ -109,8 +109,11 @@ begin
         RootNode := Doc.DocumentElement.FindNode('MIASE');
         if assigned(RootNode) then
         begin
+          gActiveModel.Code := NodeContent(RootNode, 'Code');
           gActiveModel.Comments := NodeContent(RootNode, 'Comments');
         end;
+        if gActiveModel.Code = '' then
+          gActiveModel.Code := MIASE_SIMTHYR_STANDARD_CODE;
         if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
         begin
           RootNode := Doc.DocumentElement.FindNode('strucpars');
@@ -192,6 +195,9 @@ begin
     RootNode.AppendChild(ElementNode);
 
     ElementNode := Doc.CreateElement('MIASE');
+    if gActiveModel.Code = '' then
+      gActiveModel.Code := MIASE_SIMTHYR_STANDARD_CODE;
+    ElementNode.AppendChild(SimpleNode(Doc, 'Code', gActiveModel.Code));
     ElementNode.AppendChild(SimpleNode(Doc, 'Comments', gActiveModel.Comments));
     RootNode.AppendChild(ElementNode);
 

@@ -26,6 +26,8 @@ const
   SIMTHYR_GLOBAL_ID = 'net.sf.simthyr';
   HELP_URL = 'http://simthyr.sourceforge.net/manual.html';
 
+  MIASE_SIMTHYR_STANDARD_CODE = 'Model of Thyroid Homeostasis for use with SimThyr, as available from ' +  BASE_URL;
+
   LOG_TITLE = 'Log Window';
   PLOT_TITLE = 'Plots of simulated parameters';
   WAIT_TITLE = 'Simulation running...';
