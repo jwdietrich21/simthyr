@@ -81,10 +81,10 @@ begin
       DefaultFormatSettings.DecimalSeparator := kPERIOD;
       try
         standardDate := EncodeDateTime(1904, 01, 01, 00, 00, 00, 00);
-        Doc := TXMLDocument.Create();
         ReadXMLFile(Doc, theFileName);
-        RootNode := Doc.DocumentElement;
-        if RootNode.HasAttributes and (RootNode.Attributes.Length > 0) then
+        if assigned(Doc) then
+          RootNode := Doc.DocumentElement;
+        if assigned(RootNode) and RootNode.HasAttributes and (RootNode.Attributes.Length > 0) then
           for i := 0 to RootNode.Attributes.Length - 1 do
             with RootNode.Attributes[i] do
             begin
@@ -117,45 +117,49 @@ begin
         if (modelVersion = '') or (LeftStr(modelVersion, 3) = '10.') then
         begin
           RootNode := Doc.DocumentElement.FindNode('strucpars');
-          VarFromNode(RootNode, 'alphaR', AlphaR);
-          VarFromNode(RootNode, 'betaR', BetaR);
-          VarFromNode(RootNode, 'GR', GR);
-          VarFromNode(RootNode, 'dR', dR);
-          VarFromNode(RootNode, 'alphaS', AlphaS);
-          VarFromNode(RootNode, 'betaS', BetaS);
-          VarFromNode(RootNode, 'alphaS2', AlphaS2);
-          VarFromNode(RootNode, 'betaS2', BetaS2);
-          VarFromNode(RootNode, 'GH', GH);
-          VarFromNode(RootNode, 'dH', dH);
-          VarFromNode(RootNode, 'LS', LS);
-          VarFromNode(RootNode, 'SS', SS);
-          VarFromNode(RootNode, 'DS', DS);
-          VarFromNode(RootNode, 'alphaT', AlphaT);
-          VarFromNode(RootNode, 'betaT', BetaT);
-          VarFromNode(RootNode, 'GT', GT);
-          VarFromNode(RootNode, 'dT', dT);
-          VarFromNode(RootNode, 'alpha31', alpha31);
-          VarFromNode(RootNode, 'beta31', beta31);
-          VarFromNode(RootNode, 'GD1', GD1);
-          VarFromNode(RootNode, 'KM1', KM1);
-          VarFromNode(RootNode, 'alpha32', alpha32);
-          VarFromNode(RootNode, 'beta32', beta32);
-          VarFromNode(RootNode, 'GD2', GD2);
-          VarFromNode(RootNode, 'KM2', KM2);
-          VarFromNode(RootNode, 'K30', K30);
-          VarFromNode(RootNode, 'K31', K31);
-          VarFromNode(RootNode, 'K41', K41);
-          VarFromNode(RootNode, 'K42', K42);
-          VarFromNode(RootNode, 'Tau0R', TT1);
-          VarFromNode(RootNode, 'Tau0S', TT2);
-          VarFromNode(RootNode, 'Tau0S2', TT22);
-          VarFromNode(RootNode, 'Tau0T', TT3);
-          VarFromNode(RootNode, 'Tau03z', TT4);
+          if assigned(RootNode) then
+          begin
+            VarFromNode(RootNode, 'alphaR', AlphaR);
+            VarFromNode(RootNode, 'betaR', BetaR);
+            VarFromNode(RootNode, 'GR', GR);
+            VarFromNode(RootNode, 'dR', dR);
+            VarFromNode(RootNode, 'alphaS', AlphaS);
+            VarFromNode(RootNode, 'betaS', BetaS);
+            VarFromNode(RootNode, 'alphaS2', AlphaS2);
+            VarFromNode(RootNode, 'betaS2', BetaS2);
+            VarFromNode(RootNode, 'GH', GH);
+            VarFromNode(RootNode, 'dH', dH);
+            VarFromNode(RootNode, 'LS', LS);
+            VarFromNode(RootNode, 'SS', SS);
+            VarFromNode(RootNode, 'DS', DS);
+            VarFromNode(RootNode, 'alphaT', AlphaT);
+            VarFromNode(RootNode, 'betaT', BetaT);
+            VarFromNode(RootNode, 'GT', GT);
+            VarFromNode(RootNode, 'dT', dT);
+            VarFromNode(RootNode, 'alpha31', alpha31);
+            VarFromNode(RootNode, 'beta31', beta31);
+            VarFromNode(RootNode, 'GD1', GD1);
+            VarFromNode(RootNode, 'KM1', KM1);
+            VarFromNode(RootNode, 'alpha32', alpha32);
+            VarFromNode(RootNode, 'beta32', beta32);
+            VarFromNode(RootNode, 'GD2', GD2);
+            VarFromNode(RootNode, 'KM2', KM2);
+            VarFromNode(RootNode, 'K30', K30);
+            VarFromNode(RootNode, 'K31', K31);
+            VarFromNode(RootNode, 'K41', K41);
+            VarFromNode(RootNode, 'K42', K42);
+            VarFromNode(RootNode, 'Tau0R', TT1);
+            VarFromNode(RootNode, 'Tau0S', TT2);
+            VarFromNode(RootNode, 'Tau0S2', TT22);
+            VarFromNode(RootNode, 'Tau0T', TT3);
+            VarFromNode(RootNode, 'Tau03z', TT4);
+          end;
         end
         else
           ShowVersionError;
       finally
-        Doc.Free;
+        if assigned(Doc) then
+          Doc.Free;
       end;
       if AnnotationForm.Visible then
         AnnotationForm.ShowAnnotation;
