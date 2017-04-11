@@ -31,6 +31,7 @@ type
     OKButton: TButton;
     ColorButton1: TColorButton;
     TitleEdit: TEdit;
+    procedure FormShow(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -67,6 +68,12 @@ end;
 procedure TPlotOptionsForm.OKButtonClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TPlotOptionsForm.FormShow(Sender: TObject);
+begin
+  ShowOnTop;
+  SetFocus;
 end;
 
 end.

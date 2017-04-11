@@ -340,7 +340,7 @@ object SimThyrToolbar: TSimThyrToolbar
     end
     object OpenToolButton: TToolButton
       Left = 24
-      Hint = 'Open an existing simulation'
+      Hint = 'Open an existing simulation scenario...'
       Top = 2
       Caption = 'OpenToolButton'
       ImageIndex = 1
@@ -350,7 +350,7 @@ object SimThyrToolbar: TSimThyrToolbar
     end
     object SaveToolButton: TToolButton
       Left = 47
-      Hint = 'Save parameters of this simulation as scenario.'
+      Hint = 'Save contents of front window.'
       Top = 2
       Caption = 'SaveToolButton'
       ImageIndex = 2
@@ -360,7 +360,7 @@ object SimThyrToolbar: TSimThyrToolbar
     end
     object SaveAsToolButton: TToolButton
       Left = 70
-      Hint = 'Save scenario as...'
+      Hint = 'Save as...'
       Top = 2
       Caption = 'SaveAsToolButton'
       Down = True

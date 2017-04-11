@@ -1,7 +1,7 @@
 object ValuesPlot: TValuesPlot
-  Left = 403
+  Left = 451
   Height = 442
-  Top = 438
+  Top = 507
   Width = 824
   AlphaBlend = True
   AlphaBlendValue = 0

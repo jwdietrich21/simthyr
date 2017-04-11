@@ -1,7 +1,7 @@
 object IPSForm: TIPSForm
-  Left = 258
+  Left = 198
   Height = 457
-  Top = 200
+  Top = 219
   Width = 350
   AlphaBlend = True
   AlphaBlendValue = 0
