@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, clipbrd, Menus, LCLVersion,
-  SimThyrTypes, SimThyrServices, StructureParameters;
+  SimThyrTypes, SimThyrServices, StructureParameters, ShowAboutModel;
 
 type
 
@@ -33,6 +33,7 @@ type
     DeleteItem: TMenuItem;
     Divider1: TMenuItem;
     Image1: TImage;
+    Image2: TImage;
     PasteItem: TMenuItem;
     PopupMenu1: TPopupMenu;
     UndoItem: TMenuItem;
@@ -40,6 +41,7 @@ type
     procedure CopyItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure Image1Click(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
     procedure SaveFigure;
     procedure FormCreate(Sender: TObject);
     private
@@ -74,6 +76,11 @@ end;
 procedure TIPSForm.Image1Click(Sender: TObject);
 begin
   StructureParametersDlg.HandleStrucPars;
+end;
+
+procedure TIPSForm.Image2Click(Sender: TObject);
+begin
+  AboutModelForm.Show;
 end;
 
 procedure TIPSForm.SaveFigure;
