@@ -145,9 +145,11 @@ var
 begin
   Result := False;
   {$IFDEF LCLcarbon}
-  theError := Gestalt(gestaltSystemVersionMinor, Minor);
+  theError := Gestalt(gestaltSystemVersionMinor, Major);
+  if theError = 0 then
+    theError := Gestalt(gestaltSystemVersionMinor, Minor);
   if TheError = 0 then
-    if Minor >= 10 then
+    if (Major = 10) and (Minor >= 10) or (Major > 10) then
       Result := True;
   {$ENDIF}
 end;
@@ -162,9 +164,11 @@ var
 begin
   Result := False;
 {$IFDEF LCLcarbon}
-  theError := Gestalt(gestaltSystemVersionMinor, Minor);
-  if TheError = 0 then
-    if Minor >= 12 then
+  theError := Gestalt(gestaltSystemVersionMinor, Major);
+  if theError = 0 then
+    theError := Gestalt(gestaltSystemVersionMinor, Minor);
+  if theError = 0 then
+    if (Major = 10) and (Minor >= 12) or (Major > 10) then
       Result := True;
 {$ENDIF}
 end;

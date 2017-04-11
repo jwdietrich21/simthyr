@@ -3,18 +3,22 @@ object PlotOptionsForm: TPlotOptionsForm
   Height = 166
   Top = 361
   Width = 587
+  ActiveControl = TitleEdit
+  AlphaBlend = True
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsDialog
   Caption = 'Plot Options'
   ClientHeight = 166
   ClientWidth = 587
   Color = clWhite
   OnCreate = FormCreate
-  PopupMode = pmExplicit
-  PopupParent = ValuesPlot.Owner
+  OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.6.2.0'
+  ShowInTaskBar = stNever
+  LCLVersion = '1.6.4.0'
   object TitleEdit: TEdit
     Left = 16
-    Height = 21
+    Height = 22
     Hint = 'You may enter a title that is shown on the top of every chart here.'
     Top = 48
     Width = 476
@@ -50,9 +54,9 @@ object PlotOptionsForm: TPlotOptionsForm
   end
   object TitleLabel: TLabel
     Left = 16
-    Height = 13
+    Height = 16
     Top = 24
-    Width = 44
+    Width = 60
     Caption = 'Plot Title:'
     ParentColor = False
   end
