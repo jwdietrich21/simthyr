@@ -306,7 +306,7 @@ object Prediction: TPrediction
     AC41E33FAC41C10FAC41C00FAC41C007AC418007AC418007AC418487AC418C87
     AC418CC3AC418CC3AC41CCE3AC41CDF3AC41EFFFAC41FFFFAC41
   }
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.4.0'
   Visible = True
   object PredictionMemo: TMemo
     Left = 16
@@ -317,6 +317,7 @@ object Prediction: TPrediction
     Anchors = [akTop, akLeft, akRight, akBottom]
     Lines.Strings = (
       'Predicted values:'
+      ''
       ''
       ''
       ''

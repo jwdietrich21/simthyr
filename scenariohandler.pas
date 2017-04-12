@@ -14,19 +14,25 @@ unit ScenarioHandler;
 { Source code released under the BSD License }
 { See http://simthyr.sourceforge.net for details }
 
-{$mode objfpc}
+{$mode objfpc}{$H+}
 
 interface
 
 uses
   Classes, SysUtils, DateUtils, DOM, XMLRead, XMLWrite, Forms,
   URIParser,
-  SimThyrTypes, SimThyrServices, MiriamForm, VersionSupport, SimThyrResources;
+  SimThyrTypes, SimThyrServices, VersionSupport, SimThyrResources;
 
+function NewScenario: TModel;
+procedure StandardAnnotations(var theModel: TModel);
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
 procedure SaveScenario(theFileName: string);
 
+
 implementation
+
+uses
+  MiriamForm;
 
 function ValidFormat(theStream: TStream; const theBaseURI: ansistring): boolean;
 const
@@ -63,6 +69,22 @@ begin
     if theStream <> nil then
       theStream.Free;
   end;
+end;
+
+function NewScenario: TModel;
+begin
+  StandardAnnotations(NewScenario);
+end;
+
+procedure StandardAnnotations(var theModel: TModel);
+begin
+  theModel.Name := kSTANDARD_MODEL_NAME;
+  theModel.Reference := kSTANDARD_MODEL_REFERENCE;
+  theModel.Species := kSTANDARD_MODEL_SPECIES;
+  theModel.Creators := kSTANDARD_MODEL_CREATORS;
+  theModel.Created := EncodeDateTime(kSTANDARD_MODEL_CREATED_Y, kSTANDARD_MODEL_CREATED_M, kSTANDARD_MODEL_CREATED_D, kSTANDARD_MODEL_CREATED_H, kSTANDARD_MODEL_CREATED_N, kSTANDARD_MODEL_CREATED_S, 0);
+  theModel.LastModified := EncodeDateTime(kSTANDARD_MODEL_MODIFIED_Y, kSTANDARD_MODEL_MODIFIED_M, kSTANDARD_MODEL_MODIFIED_D, kSTANDARD_MODEL_MODIFIED_H, kSTANDARD_MODEL_MODIFIED_N, kSTANDARD_MODEL_MODIFIED_S, 0);
+  theModel.Terms := kSTANDARD_MODEL_TERMS;
 end;
 
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);

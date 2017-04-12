@@ -24,7 +24,7 @@ object SimulationSettings: TSimulationSettings
   Position = poScreenCenter
   ShowHint = True
   ShowInTaskBar = stNever
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.4.0'
   object TitleLabel: TLabel
     Left = 113
     Height = 16
