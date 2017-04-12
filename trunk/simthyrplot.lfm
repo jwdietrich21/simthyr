@@ -1,13 +1,13 @@
 object ValuesPlot: TValuesPlot
-  Left = 451
-  Height = 442
-  Top = 507
-  Width = 824
+  Left = 259
+  Height = 441
+  Top = 363
+  Width = 857
   AlphaBlend = True
   AlphaBlendValue = 0
   Caption = 'Time Series Plot'
-  ClientHeight = 442
-  ClientWidth = 824
+  ClientHeight = 441
+  ClientWidth = 857
   Color = clWhite
   Constraints.MinHeight = 420
   Constraints.MinWidth = 500
@@ -318,16 +318,16 @@ object ValuesPlot: TValuesPlot
     Height = 216
     Hint = 'Select parameter'
     Top = 24
-    Width = 823
+    Width = 856
     Anchors = [akTop, akLeft, akRight]
     ClientHeight = 216
-    ClientWidth = 823
+    ClientWidth = 856
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
     OnClick = Panel1Click
     object ComboBox1: TComboBox
-      Left = 655
+      Left = 688
       Height = 21
       Hint = 'Select a parameter to show in the plot on the left.'
       Top = 17
@@ -355,11 +355,11 @@ object ValuesPlot: TValuesPlot
       Left = 49
       Height = 205
       Top = 13
-      Width = 591
+      Width = 624
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
       ClientHeight = 205
-      ClientWidth = 591
+      ClientWidth = 624
       Color = clWhite
       ParentColor = False
       TabOrder = 1
@@ -368,7 +368,7 @@ object ValuesPlot: TValuesPlot
         Height = 180
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 586
+        Width = 619
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -416,7 +416,7 @@ object ValuesPlot: TValuesPlot
       end
     end
     object ColorListBox1: TColorListBox
-      Left = 656
+      Left = 689
       Height = 91
       Hint = 'Select plot color here.'
       Top = 64
@@ -534,10 +534,10 @@ object ValuesPlot: TValuesPlot
     Height = 208
     Hint = 'Select parameter'
     Top = 232
-    Width = 823
+    Width = 856
     Anchors = [akTop, akLeft, akRight]
     ClientHeight = 208
-    ClientWidth = 823
+    ClientWidth = 856
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
@@ -547,11 +547,11 @@ object ValuesPlot: TValuesPlot
       Left = 49
       Height = 198
       Top = 8
-      Width = 591
+      Width = 624
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
       ClientHeight = 198
-      ClientWidth = 591
+      ClientWidth = 624
       Color = clWhite
       ParentColor = False
       TabOrder = 0
@@ -560,7 +560,7 @@ object ValuesPlot: TValuesPlot
         Height = 180
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 586
+        Width = 619
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -608,7 +608,7 @@ object ValuesPlot: TValuesPlot
       end
     end
     object ComboBox2: TComboBox
-      Left = 656
+      Left = 689
       Height = 21
       Hint = 'Select a parameter to show in the plot on the left.'
       Top = 16
@@ -632,7 +632,7 @@ object ValuesPlot: TValuesPlot
       Text = 'Unit 2'
     end
     object ColorListBox2: TColorListBox
-      Left = 656
+      Left = 689
       Height = 91
       Hint = 'Select plot color here.'
       Top = 62
@@ -748,8 +748,8 @@ object ValuesPlot: TValuesPlot
   object StatusBar1: TStatusBar
     Left = 0
     Height = 15
-    Top = 427
-    Width = 824
+    Top = 426
+    Width = 857
     Panels = <>
   end
   object TimeAxisSource: TDateTimeIntervalChartSource

@@ -90,6 +90,7 @@ begin
   runcommand := False;
   simready := True;
   randomize;
+  gActiveModel := NewScenario;
   InitSimulationControl;
   SetBaseVariables;
   StandardValues;
@@ -201,7 +202,6 @@ begin
     SimulationSettings.hide;
   Application.CreateForm(TPlotOptionsForm, PlotOptionsForm);
   PlotOptionsForm.Visible := false;
-  gActiveModel := NewScenario;
   gStartup := False;
   SimThyrToolbar.SelectAllMenuItem.Enabled := True;
   Application.Run;
