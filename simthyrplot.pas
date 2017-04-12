@@ -31,9 +31,7 @@ type
   { TValuesPlot }
 
   TValuesPlot = class(TForm)
-    OptionsSpeedButton1: TSpeedButton;
-    OptionsSpeedButton2: TSpeedButton;
-    TSImageList: TImageList;
+    OptionsButton: TButton;
     Chart1: TChart;
     Chart2: TChart;
     ChartNavPanel1: TChartNavPanel;
@@ -82,8 +80,7 @@ type
     procedure CopyItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure OptionsSpeedButton1Click(Sender: TObject);
-    procedure OptionsSpeedButton2Click(Sender: TObject);
+    procedure OptionsButtonClick(Sender: TObject);
     procedure UpdateTimeAxes;
     procedure FormShow(Sender: TObject);
     procedure Panel1Click(Sender: TObject);
@@ -361,40 +358,31 @@ begin
   PlotPanel1.Color := clWhite;
   PlotPanel2.Color := clWhite;
   append := false;
+  if YosemiteORNewer then
+  begin
+    OptionsButton.Height := 22;
+  end;
 end;
 
-procedure TValuesPlot.OptionsSpeedButton1Click(Sender: TObject);
+procedure TValuesPlot.OptionsButtonClick(Sender: TObject);
 var
   theTitle: PChar;
 begin
   PlotOptions := PlotOptionsForm.GetPlotOptions;
-  if PlotOptions.titleString = '' then
-  begin
-    Chart1.Title.Visible := false;
-  end
-  else begin
-    theTitle := PChar(PlotOptions.titleString);
-    Chart1.Title.Text.SetText(theTitle);
-    Chart1.Title.Visible := true;
-    Chart1.Title.Font.Color := PlotOptions.titleColor;
-  end;
-end;
-
-procedure TValuesPlot.OptionsSpeedButton2Click(Sender: TObject);
-var
-  theTitle: PChar;
+if PlotOptions.titleString = '' then
 begin
-  PlotOptions := PlotOptionsForm.GetPlotOptions;
-  if PlotOptions.titleString = '' then
-  begin
-    Chart2.Title.Visible := false;
-  end
-  else begin
-    theTitle := PChar(PlotOptions.titleString);
-    Chart2.Title.Text.SetText(theTitle);
-    Chart2.Title.Visible := true;
-    Chart2.Title.Font.Color := PlotOptions.titleColor;
-  end;
+  Chart1.Title.Visible := false;
+  Chart2.Title.Visible := false;
+end
+else begin
+  theTitle := PChar(PlotOptions.titleString);
+  Chart1.Title.Text.SetText(theTitle);
+  Chart1.Title.Visible := true;
+  Chart1.Title.Font.Color := PlotOptions.titleColor;
+  Chart2.Title.Text.SetText(PChar(@PlotOptions.titleString[1]));
+  Chart2.Title.Visible := true;
+  Chart2.Title.Font.Color := PlotOptions.titleColor;
+end;
 end;
 
 procedure TValuesPlot.UpdateTimeAxes;

@@ -26,10 +26,7 @@ const
   SIMTHYR_GLOBAL_ID = 'net.sf.simthyr';
   HELP_URL = 'http://simthyr.sourceforge.net/manual.html';
 
-  MIASE_URL = 'http://co.mbine.org/standards/miase';
   MIASE_SIMTHYR_STANDARD_CODE = 'Model of Thyroid Homeostasis for use with SimThyr, as available from ' +  BASE_URL;
-  MIRIAM_URL = 'http://www.ebi.ac.uk/miriam/main/';
-  MIBBI_URL = 'http://biosharing.org/collection/MIBBI';
 
   LOG_TITLE = 'Log Window';
   PLOT_TITLE = 'Plots of simulated parameters';

@@ -20,19 +20,17 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  LCLIntf, StdCtrls, ExtCtrls, MIRIAMForm;
+  LCLIntf, StdCtrls;
 
 type
 
   { TAboutModelForm }
 
   TAboutModelForm = class(TForm)
-    Image1: TImage;
     Label1: TLabel;
     Label2: TLabel;
     Memo1: TMemo;
     StaticText2: TStaticText;
-    procedure Image1Click(Sender: TObject);
     procedure Label1Click(Sender: TObject);
     procedure Label2Click(Sender: TObject);
     procedure Memo1Change(Sender: TObject);
@@ -53,11 +51,6 @@ implementation
 procedure TAboutModelForm.Label1Click(Sender: TObject);
 begin
 
-end;
-
-procedure TAboutModelForm.Image1Click(Sender: TObject);
-begin
-  AnnotationForm.Show;
 end;
 
 procedure TAboutModelForm.Label2Click(Sender: TObject);

@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ExtCtrls, EditBtn, LCLIntf, DateUtils, StrUtils,
-  SimThyrTypes, SimThyrResources, SimThyrServices;
+  SimThyrTypes, SimThyrServices;
 
 type
 
@@ -30,8 +30,6 @@ type
   TAnnotationForm = class(TForm)
     CreatedTimeEdit: TEdit;
     CommentsMemo: TMemo;
-    Image1: TImage;
-    mibbiLogo: TImage;
     MIASELogo: TImage;
     ModelCommentLabel: TLabel;
     ModifiedTimeEdit: TEdit;
@@ -56,9 +54,6 @@ type
     TitleLabel: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure Image1Click(Sender: TObject);
-    procedure mibbiLogoClick(Sender: TObject);
-    procedure MIASELogoClick(Sender: TObject);
     procedure MIRIAMLogoClick(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
   private
@@ -73,9 +68,6 @@ var
   AnnotationForm: TAnnotationForm;
 
 implementation
-
-uses
-  ShowAboutModel;
 
 {$R *.lfm}
 
@@ -166,21 +158,6 @@ begin
   ShowAnnotation;
 end;
 
-procedure TAnnotationForm.Image1Click(Sender: TObject);
-begin
-  AboutModelForm.Show;
-end;
-
-procedure TAnnotationForm.mibbiLogoClick(Sender: TObject);
-begin
-  OpenURL(MIBBI_URL);
-end;
-
-procedure TAnnotationForm.MIASELogoClick(Sender: TObject);
-begin
-  OpenURL(MIASE_URL);
-end;
-
 procedure TAnnotationForm.FormCreate(Sender: TObject);
 begin
   if YosemiteORNewer then
@@ -191,7 +168,7 @@ end;
 
 procedure TAnnotationForm.MIRIAMLogoClick(Sender: TObject);
 begin
-  OpenURL(MIRIAM_URL);
+  OpenURL('http://www.ebi.ac.uk/miriam/main/');
 end;
 
 end.
