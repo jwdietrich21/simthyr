@@ -61,7 +61,7 @@ uses
   plotoptions
  {$IFDEF debug}  ,
   SysUtils // heaptrc unit is to be included with Lazarus project options
- {$ENDIF}  ;
+ {$ENDIF} ;
 
 {$R *.res}
 
@@ -201,6 +201,7 @@ begin
     SimulationSettings.hide;
   Application.CreateForm(TPlotOptionsForm, PlotOptionsForm);
   PlotOptionsForm.Visible := false;
+  gActiveModel := NewScenario;
   gStartup := False;
   SimThyrToolbar.SelectAllMenuItem.Enabled := True;
   Application.Run;

@@ -9,7 +9,7 @@ unit SimThyrServices;
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
 { (c) Ruhr University of Bochum 2005 - 2017 }
 
-{ This unit provides some global functions }
+{ This unit provides some global functions for use by other units }
 
 { Source code released under the BSD License }
 { See http://simthyr.sourceforge.net for details }

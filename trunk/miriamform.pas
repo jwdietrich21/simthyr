@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ExtCtrls, EditBtn, LCLIntf, DateUtils, StrUtils,
-  SimThyrTypes, SimThyrResources, SimThyrServices;
+  SimThyrTypes, SimThyrResources, SimThyrServices, ScenarioHandler;
 
 type
 
@@ -148,13 +148,7 @@ procedure TAnnotationForm.StandardButtonClick(Sender: TObject);
 var
   tempModel: TModel;
 begin
-  tempModel.Name := kSTANDARD_MODEL_NAME;
-  tempModel.Reference := kSTANDARD_MODEL_REFERENCE;
-  tempModel.Species := kSTANDARD_MODEL_SPECIES;
-  tempModel.Creators := kSTANDARD_MODEL_CREATORS;
-  tempModel.Created := EncodeDateTime(kSTANDARD_MODEL_CREATED_Y, kSTANDARD_MODEL_CREATED_M, kSTANDARD_MODEL_CREATED_D, kSTANDARD_MODEL_CREATED_H, kSTANDARD_MODEL_CREATED_N, kSTANDARD_MODEL_CREATED_S, 0);
-  tempModel.LastModified := EncodeDateTime(kSTANDARD_MODEL_MODIFIED_Y, kSTANDARD_MODEL_MODIFIED_M, kSTANDARD_MODEL_MODIFIED_D, kSTANDARD_MODEL_MODIFIED_H, kSTANDARD_MODEL_MODIFIED_N, kSTANDARD_MODEL_MODIFIED_S, 0);
-  tempModel.Terms := kSTANDARD_MODEL_TERMS;
+  StandardAnnotations(tempModel);
   ShowAnnotation(tempModel);
 end;
 
