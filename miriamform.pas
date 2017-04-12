@@ -28,6 +28,7 @@ type
   { TAnnotationForm }
 
   TAnnotationForm = class(TForm)
+    StandardButton: TButton;
     CreatedTimeEdit: TEdit;
     CommentsMemo: TMemo;
     Image1: TImage;
@@ -61,12 +62,13 @@ type
     procedure MIASELogoClick(Sender: TObject);
     procedure MIRIAMLogoClick(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
+    procedure StandardButtonClick(Sender: TObject);
   private
     { private declarations }
   public
-    procedure ShowDatesAndTimes;
-    procedure ShowAnnotation;
     { public declarations }
+    procedure ShowDatesAndTimes(theModel: TModel);
+    procedure ShowAnnotation(theModel: TModel);
   end;
 
 var
@@ -137,33 +139,47 @@ begin
   gActiveModel.Terms := ModelTermsCombo.Text;
   gActiveModel.Comments := CommentsMemo.Lines.Text;
   if ConvError then
-    ShowDatesAndTimes
+    ShowDatesAndTimes(gActiveModel)
   else
     Close;
 end;
 
-procedure TAnnotationForm.ShowDatesAndTimes;
+procedure TAnnotationForm.StandardButtonClick(Sender: TObject);
+var
+  tempModel: TModel;
 begin
-  CreatedDateEdit.Date := gActiveModel.Created;
-  CreatedTimeEdit.Text := TimeToStr(gActiveModel.Created);
-  ModifiedDateEdit.Date := gActiveModel.LastModified;
-  ModifiedTimeEdit.Text := TimeToStr(gActiveModel.LastModified);
+  tempModel.Name := kSTANDARD_MODEL_NAME;
+  tempModel.Reference := kSTANDARD_MODEL_REFERENCE;
+  tempModel.Species := kSTANDARD_MODEL_SPECIES;
+  tempModel.Creators := kSTANDARD_MODEL_CREATORS;
+  tempModel.Created := EncodeDateTime(kSTANDARD_MODEL_CREATED_Y, kSTANDARD_MODEL_CREATED_M, kSTANDARD_MODEL_CREATED_D, kSTANDARD_MODEL_CREATED_H, kSTANDARD_MODEL_CREATED_N, kSTANDARD_MODEL_CREATED_S, 0);
+  tempModel.LastModified := EncodeDateTime(kSTANDARD_MODEL_MODIFIED_Y, kSTANDARD_MODEL_MODIFIED_M, kSTANDARD_MODEL_MODIFIED_D, kSTANDARD_MODEL_MODIFIED_H, kSTANDARD_MODEL_MODIFIED_N, kSTANDARD_MODEL_MODIFIED_S, 0);
+  tempModel.Terms := kSTANDARD_MODEL_TERMS;
+  ShowAnnotation(tempModel);
 end;
 
-procedure TAnnotationForm.ShowAnnotation;
+procedure TAnnotationForm.ShowDatesAndTimes(theModel: TModel);
 begin
-  ModelNameEdit.Text := gActiveModel.Name;
-  ReferenceEdit.Text := gActiveModel.Reference;
-  SpeciesCombo.Text := gActiveModel.Species;
-  CreatorsMemo.Lines.Text := gActiveModel.Creators;
-  ShowDatesAndTimes;
-  ModelTermsCombo.Text := gActiveModel.Terms;
-  CommentsMemo.Lines.Text := gActiveModel.Comments;
+  CreatedDateEdit.Date := theModel.Created;
+  CreatedTimeEdit.Text := TimeToStr(theModel.Created);
+  ModifiedDateEdit.Date := theModel.LastModified;
+  ModifiedTimeEdit.Text := TimeToStr(theModel.LastModified);
+end;
+
+procedure TAnnotationForm.ShowAnnotation(theModel: TModel);
+begin
+  ModelNameEdit.Text := theModel.Name;
+  ReferenceEdit.Text := theModel.Reference;
+  SpeciesCombo.Text := theModel.Species;
+  CreatorsMemo.Lines.Text := theModel.Creators;
+  ShowDatesAndTimes(theModel);
+  ModelTermsCombo.Text := theModel.Terms;
+  CommentsMemo.Lines.Text := theModel.Comments;
 end;
 
 procedure TAnnotationForm.FormShow(Sender: TObject);
 begin
-  ShowAnnotation;
+  ShowAnnotation(gActiveModel);
 end;
 
 procedure TAnnotationForm.Image1Click(Sender: TObject);
@@ -185,6 +201,7 @@ procedure TAnnotationForm.FormCreate(Sender: TObject);
 begin
   if YosemiteORNewer then
   begin
+    StandardButton.Height := 22;
     OKButton.Height  := 22;
   end;
 end;

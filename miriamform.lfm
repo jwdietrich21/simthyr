@@ -1,8 +1,8 @@
 object AnnotationForm: TAnnotationForm
-  Left = 370
+  Left = 420
   Height = 400
   Hint = 'You may enter important meta-information on your model in this dialog box. This information according to the BioSharing initiative is increasingly required by journals and publishers.'
-  Top = 202
+  Top = 211
   Width = 594
   Caption = 'Model Annotation'
   ClientHeight = 400
@@ -1204,6 +1204,16 @@ object AnnotationForm: TAnnotationForm
         866138B954E97D93EE95B7F5BDBA1F65D14515F921FB08514514005145140051
         4514005145140051451400514514005145140051451401FFD9
       }
+    end
+    object StandardButton: TButton
+      Left = 488
+      Height = 25
+      Top = 16
+      Width = 75
+      Anchors = [akRight, akBottom]
+      Caption = 'Standard'
+      OnClick = StandardButtonClick
+      TabOrder = 1
     end
   end
   object Image1: TImage

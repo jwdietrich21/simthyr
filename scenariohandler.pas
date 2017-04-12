@@ -162,7 +162,7 @@ begin
           Doc.Free;
       end;
       if AnnotationForm.Visible then
-        AnnotationForm.ShowAnnotation;
+        AnnotationForm.ShowAnnotation(gActiveModel);
       DefaultFormatSettings.DecimalSeparator := oldSep;
     end
     else
