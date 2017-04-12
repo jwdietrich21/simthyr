@@ -13,9 +13,8 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="836"/>
-      <Attributes pvaDebug="True" pvaPreRelease="True"/>
-      <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2017 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0 Beta"/>
+      <BuildNr Value="837"/>
+      <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2017 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0"/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
@@ -51,7 +50,7 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="35"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="43" Y="7"/>
+        <CursorPos Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -1708,7 +1707,7 @@ end;"/>
     </CodeGeneration>
     <Linking>
       <Debugging>
-        <UseHeaptrc Value="True"/>
+        <GenerateDebugInfo Value="False"/>
         <StripSymbols Value="True"/>
       </Debugging>
       <LinkSmart Value="True"/>
