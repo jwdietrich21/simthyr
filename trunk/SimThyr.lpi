@@ -13,7 +13,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
-      <BuildNr Value="833"/>
+      <BuildNr Value="834"/>
       <Attributes pvaDebug="True" pvaPreRelease="True"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.0 Merlion" LegalCopyright="1994-2017 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.0 Beta"/>
     </VersionInfo>
@@ -48,7 +48,7 @@
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="36"/>
+        <EditorIndex Value="35"/>
         <WindowIndex Value="1"/>
         <CursorPos X="57" Y="8"/>
         <UsageCount Value="200"/>
@@ -61,7 +61,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
-        <EditorIndex Value="35"/>
+        <EditorIndex Value="34"/>
         <WindowIndex Value="1"/>
         <CursorPos X="45" Y="2"/>
         <UsageCount Value="200"/>
@@ -96,7 +96,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPlot"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="18"/>
         <WindowIndex Value="1"/>
         <TopLine Value="366"/>
         <CursorPos X="48" Y="370"/>
@@ -115,7 +115,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPrediction"/>
-        <EditorIndex Value="25"/>
+        <EditorIndex Value="24"/>
         <WindowIndex Value="1"/>
         <CursorPos X="14" Y="2"/>
         <UsageCount Value="200"/>
@@ -129,7 +129,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="LaunchDialog"/>
-        <EditorIndex Value="22"/>
+        <EditorIndex Value="21"/>
         <WindowIndex Value="1"/>
         <TopLine Value="150"/>
         <CursorPos X="26" Y="152"/>
@@ -145,8 +145,10 @@
       </Unit8>
       <Unit9>
         <Filename Value="/Developer/lazarus/lcl/include/control.inc"/>
-        <TopLine Value="2700"/>
-        <CursorPos Y="2718"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="4759"/>
+        <CursorPos Y="4774"/>
         <UsageCount Value="10"/>
       </Unit9>
       <Unit10>
@@ -174,7 +176,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrLog"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="13"/>
         <WindowIndex Value="1"/>
         <CursorPos X="41" Y="5"/>
         <UsageCount Value="200"/>
@@ -215,7 +217,6 @@
         <Filename Value="simthyrservices.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrServices"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="11"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
@@ -248,7 +249,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ShowIPS"/>
-        <EditorIndex Value="21"/>
+        <EditorIndex Value="20"/>
         <WindowIndex Value="1"/>
         <CursorPos X="68" Y="7"/>
         <UsageCount Value="201"/>
@@ -259,7 +260,7 @@
         <Filename Value="simulator.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Simulator"/>
-        <EditorIndex Value="23"/>
+        <EditorIndex Value="22"/>
         <WindowIndex Value="1"/>
         <CursorPos X="51" Y="3"/>
         <ExtraEditorCount Value="2"/>
@@ -352,7 +353,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AboutDialog"/>
-        <EditorIndex Value="33"/>
+        <EditorIndex Value="32"/>
         <WindowIndex Value="1"/>
         <CursorPos X="12" Y="2"/>
         <UsageCount Value="200"/>
@@ -366,7 +367,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Splash"/>
-        <EditorIndex Value="31"/>
+        <EditorIndex Value="30"/>
         <WindowIndex Value="1"/>
         <CursorPos X="8" Y="2"/>
         <UsageCount Value="200"/>
@@ -393,7 +394,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ShowAboutModel"/>
-        <EditorIndex Value="32"/>
+        <EditorIndex Value="31"/>
         <WindowIndex Value="1"/>
         <CursorPos X="32" Y="3"/>
         <UsageCount Value="200"/>
@@ -521,7 +522,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="StructureParameters"/>
-        <EditorIndex Value="24"/>
+        <EditorIndex Value="23"/>
         <WindowIndex Value="1"/>
         <CursorPos X="16" Y="2"/>
         <UsageCount Value="200"/>
@@ -608,7 +609,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimOptions"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="17"/>
         <WindowIndex Value="1"/>
         <TopLine Value="81"/>
         <CursorPos X="11" Y="93"/>
@@ -620,7 +621,7 @@
         <Filename Value="versionsupport.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="VersionSupport"/>
-        <EditorIndex Value="16"/>
+        <EditorIndex Value="15"/>
         <WindowIndex Value="1"/>
         <TopLine Value="220"/>
         <CursorPos X="59" Y="239"/>
@@ -633,7 +634,7 @@
         <UnitName Value="ScenarioHandler"/>
         <EditorIndex Value="10"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="15" Y="16"/>
+        <CursorPos X="67" Y="157"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
           <EditorIndex Value="6"/>
@@ -655,7 +656,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HandlePreferences"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="16"/>
         <WindowIndex Value="1"/>
         <TopLine Value="121"/>
         <CursorPos X="15" Y="136"/>
@@ -679,7 +680,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HandleNotifier"/>
-        <EditorIndex Value="26"/>
+        <EditorIndex Value="25"/>
         <WindowIndex Value="1"/>
         <CursorPos X="11" Y="2"/>
         <UsageCount Value="200"/>
@@ -794,7 +795,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Sensitivityanalysis"/>
-        <EditorIndex Value="27"/>
+        <EditorIndex Value="26"/>
         <WindowIndex Value="1"/>
         <CursorPos X="12" Y="2"/>
         <ExtraEditorCount Value="2"/>
@@ -849,7 +850,7 @@
         <ComponentName Value="TornadoPlotForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="29"/>
+        <EditorIndex Value="28"/>
         <WindowIndex Value="1"/>
         <CursorPos X="7" Y="2"/>
         <UsageCount Value="200"/>
@@ -906,7 +907,7 @@
         <Filename Value="difsupport.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="DIFSupport"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="12"/>
         <WindowIndex Value="1"/>
         <CursorPos X="5" Y="2"/>
         <UsageCount Value="200"/>
@@ -936,7 +937,7 @@
         <ComponentName Value="HelpWindow"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="34"/>
+        <EditorIndex Value="33"/>
         <WindowIndex Value="1"/>
         <CursorPos X="13" Y="2"/>
         <UsageCount Value="200"/>
@@ -1072,13 +1073,14 @@
         <UnitName Value="SimThyrResources"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="17" Y="2"/>
+        <TopLine Value="18"/>
+        <CursorPos X="95" Y="51"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
+          <IsVisibleTab Value="True"/>
           <EditorIndex Value="-1"/>
-          <WindowIndex Value="-1"/>
-          <TopLine Value="26"/>
-          <CursorPos X="24" Y="43"/>
+          <TopLine Value="18"/>
+          <CursorPos X="27" Y="44"/>
         </ExtraEditor1>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -1106,7 +1108,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="TWSensitivityanalysis"/>
-        <EditorIndex Value="28"/>
+        <EditorIndex Value="27"/>
         <WindowIndex Value="1"/>
         <CursorPos X="21" Y="2"/>
         <ExtraEditorCount Value="1"/>
@@ -1243,7 +1245,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Equilibriumdiagram"/>
-        <EditorIndex Value="30"/>
+        <EditorIndex Value="29"/>
         <WindowIndex Value="1"/>
         <CursorPos X="66" Y="5"/>
         <ExtraEditorCount Value="3"/>
@@ -1262,7 +1264,7 @@
           <TopLine Value="1182"/>
           <CursorPos X="70" Y="1199"/>
         </ExtraEditor3>
-        <UsageCount Value="173"/>
+        <UsageCount Value="175"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit155>
@@ -1291,11 +1293,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MIRIAMForm"/>
-        <EditorIndex Value="20"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="19"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="58"/>
-        <CursorPos X="18" Y="78"/>
-        <UsageCount Value="130"/>
+        <TopLine Value="149"/>
+        <CursorPos X="90" Y="175"/>
+        <UsageCount Value="132"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit159>
@@ -1536,11 +1539,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="PlotOptions"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="14"/>
         <WindowIndex Value="1"/>
         <TopLine Value="50"/>
         <CursorPos X="36" Y="71"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit192>
@@ -1555,134 +1558,133 @@
       </Unit193>
       <Unit194>
         <Filename Value="/usr/local/share/fpcsrc/packages/univint/src/GestaltEqu.pas"/>
-        <EditorIndex Value="12"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="2012"/>
         <CursorPos X="34" Y="2026"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit194>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="390" Column="3" TopLine="388"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="158" TopLine="140"/>
       </Position1>
       <Position2>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="391" Column="3" TopLine="389"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="170" TopLine="145"/>
       </Position2>
       <Position3>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="398" Column="3" TopLine="396"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="171" TopLine="146"/>
       </Position3>
       <Position4>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="390" TopLine="370"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="172" TopLine="147"/>
       </Position4>
       <Position5>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="389" TopLine="369"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="173" TopLine="148"/>
       </Position5>
       <Position6>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="388" TopLine="368"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="174" TopLine="149"/>
       </Position6>
       <Position7>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="387" TopLine="367"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="175" TopLine="150"/>
       </Position7>
       <Position8>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="386" TopLine="366"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="162" TopLine="150"/>
       </Position8>
       <Position9>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="372" Column="52" TopLine="362"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="163" TopLine="150"/>
       </Position9>
       <Position10>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="380" TopLine="363"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="164" TopLine="150"/>
       </Position10>
       <Position11>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="382" TopLine="365"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="165" TopLine="150"/>
       </Position11>
       <Position12>
-        <Filename Value="simoptions.pas"/>
-        <Caret Line="2" Column="16"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="166" TopLine="150"/>
       </Position12>
       <Position13>
-        <Filename Value="plotoptions.pas"/>
-        <Caret Line="18" Column="2"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="175" TopLine="150"/>
       </Position13>
       <Position14>
-        <Filename Value="simoptions.pas"/>
-        <Caret Line="103" Column="3" TopLine="101"/>
+        <Filename Value="simthyrresources.pas"/>
+        <Caret Line="39" Column="28" TopLine="18"/>
       </Position14>
       <Position15>
-        <Filename Value="plotoptions.pas"/>
-        <Caret Line="55" Column="3" TopLine="44"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="155" TopLine="143"/>
       </Position15>
       <Position16>
-        <Filename Value="launchdialog.pas"/>
-        <Caret Line="3" Column="20"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="156" TopLine="143"/>
       </Position16>
       <Position17>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Column="13"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="157" TopLine="143"/>
       </Position17>
       <Position18>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="370" Column="48" TopLine="366"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="158" TopLine="143"/>
       </Position18>
       <Position19>
-        <Filename Value="launchdialog.pas"/>
-        <Caret Line="151" Column="11" TopLine="150"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="170" TopLine="145"/>
       </Position19>
       <Position20>
-        <Filename Value="launchdialog.pas"/>
-        <Caret Line="152" Column="26" TopLine="150"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="171" TopLine="146"/>
       </Position20>
       <Position21>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="370" Column="48" TopLine="366"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="172" TopLine="147"/>
       </Position21>
       <Position22>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="412" Column="3" TopLine="410"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="173" TopLine="148"/>
       </Position22>
       <Position23>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="85" Column="15" TopLine="70"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="174" TopLine="149"/>
       </Position23>
       <Position24>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="370" Column="48" TopLine="366"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="175" TopLine="150"/>
       </Position24>
       <Position25>
-        <Filename Value="SimThyr.lpr"/>
-        <Caret Line="2" Column="29"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="166" Column="46" TopLine="150"/>
       </Position25>
       <Position26>
-        <Filename Value="SimThyr.lpr"/>
-        <Caret Line="161" Column="55" TopLine="136"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="175" Column="90" TopLine="149"/>
       </Position26>
       <Position27>
-        <Filename Value="SimThyr.lpr"/>
-        <Caret Line="162" Column="16" TopLine="137"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="176" Column="90" TopLine="150"/>
       </Position27>
       <Position28>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="537" Column="3"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="175" Column="90" TopLine="149"/>
       </Position28>
       <Position29>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="204" Column="3" TopLine="189"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="176" Column="90" TopLine="150"/>
       </Position29>
       <Position30>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="165" Column="48" TopLine="144"/>
+        <Filename Value="miriamform.pas"/>
+        <Caret Line="175" Column="90" TopLine="149"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

@@ -31,6 +31,24 @@ const
   MIRIAM_URL = 'http://www.ebi.ac.uk/miriam/main/';
   MIBBI_URL = 'http://biosharing.org/collection/MIBBI';
 
+  kSTANDARD_MODEL_NAME = 'Model 10';
+  kSTANDARD_MODEL_REFERENCE = 'Dietrich, J. W.; Tesche, A.; Pickardt, C. R.; Mitzdorf, U. (2004), Thyrotropic Feedback Control: Evidence For An Additional Ultrashort Feedback Loop From Fractal Analysis., Cybernetics and Systems 35 (4), 315-331. http://dx.doi.org/10.1080/01969720490443354';
+  kSTANDARD_MODEL_SPECIES = 'Homo sapiens (NCBI Taxonomy ID 9606)';
+  kSTANDARD_MODEL_CREATORS = 'Dietrich, Tesche, Pickardt and Mitzdorf';
+  kSTANDARD_MODEL_CREATED_Y = 2001;
+  kSTANDARD_MODEL_CREATED_M = 8;
+  kSTANDARD_MODEL_CREATED_D = 23;
+  kSTANDARD_MODEL_CREATED_H = 13;
+  kSTANDARD_MODEL_CREATED_N = 7;
+  kSTANDARD_MODEL_CREATED_S = 5;
+  kSTANDARD_MODEL_MODIFIED_Y = 2015;
+  kSTANDARD_MODEL_MODIFIED_M = 12;
+  kSTANDARD_MODEL_MODIFIED_D = 21;
+  kSTANDARD_MODEL_MODIFIED_H = 9;
+  kSTANDARD_MODEL_MODIFIED_N = 57;
+  kSTANDARD_MODEL_MODIFIED_S = 13;
+  kSTANDARD_MODEL_TERMS = 'Creative Commons Attributions License 4.0 (CC BY 4.0)';
+
   LOG_TITLE = 'Log Window';
   PLOT_TITLE = 'Plots of simulated parameters';
   WAIT_TITLE = 'Simulation running...';
