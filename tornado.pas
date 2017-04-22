@@ -3,7 +3,7 @@ unit tornado;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.0 (Merlion) }
+{ Version 4.0.1 (Merlion) }
 
 { (c) J. W. Dietrich, 1994 - 2017 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
