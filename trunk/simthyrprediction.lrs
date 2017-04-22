@@ -342,6 +342,6 @@ LazarusResources.Add('TPrediction','FORMDATA',[
   +'ual solutions that result from the system''s equations.  Only the positive '
   +'solution is possible in a biological sense.'#3'Top'#2#16#5'Width'#3'>'#1#7
   +'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#13'Lines.Strings'#1
-  +#6#17'Predicted values:'#6#0#6#0#6#0#6#0#0#14'ParentShowHint'#8#8'ReadOnly'#9
-  +#10'ScrollBars'#7#10'ssAutoBoth'#8'ShowHint'#9#8'TabOrder'#2#0#0#0#0
+  +#6#17'Predicted values:'#6#0#6#0#6#0#6#0#6#0#0#14'ParentShowHint'#8#8'ReadOn'
+  +'ly'#9#10'ScrollBars'#7#10'ssAutoBoth'#8'ShowHint'#9#8'TabOrder'#2#0#0#0#0
 ]);

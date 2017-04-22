@@ -6,7 +6,7 @@ LazarusResources.Add('TTornadoPlotForm','FORMDATA',[
   +'ornado Plot'#12'ClientHeight'#3#209#1#11'ClientWidth'#3#128#2#5'Color'#7#7
   +'clWhite'#21'Constraints.MinHeight'#3#209#1#20'Constraints.MinWidth'#3'X'#2
   +#10'OnActivate'#7#12'FormActivate'#8'OnCreate'#7#10'FormCreate'#6'OnShow'#7#8
-  +'FormShow'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#7'1.4.4.0'#7'Vi'
+  +'FormShow'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#7'1.6.4.0'#7'Vi'
   +'sible'#9#0#11'TCheckGroup'#11'CheckGroup1'#4'Left'#3#184#1#6'Height'#3#217#0
   +#4'Hint'#6'MSelect the independent structure parameters whose influence you '
   +'want to check'#3'Top'#2''''#5'Width'#3#185#0#7'Anchors'#11#5'akTop'#7'akRig'

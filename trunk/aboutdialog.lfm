@@ -18,7 +18,7 @@ object AboutWindow: TAboutWindow
   OnKeyDown = FormKeyDown
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.4.0'
   Visible = True
   object OKButton: TButton
     Left = 224
