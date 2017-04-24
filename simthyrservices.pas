@@ -213,7 +213,7 @@ begin
     {$IFDEF LCLCarbon}
   SysBeep(30);
     {$ELSE}
-  s := Shell('echo -ne ''\007''');
+  s := fpSystem('echo -ne ''\007''');
   {s := fpSystem('echo -ne "\a"');}
   {s := fpSystem('tput bel');}
   {beep;}
