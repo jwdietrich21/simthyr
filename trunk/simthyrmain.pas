@@ -274,7 +274,12 @@ begin
     top    := 0;
     Width  := Screen.Width - 6;
     {$ENDIF}
+    {$IFDEF LINUX}
+    AutoSize := false;
+    Height := 2 * Toolbar1.Height + 3;
+    {$ELSE}
     Height := Toolbar1.Height + 3;
+    {$ENDIF}
     AlphaBlend := False;
   end;
 end;
