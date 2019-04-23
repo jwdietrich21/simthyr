@@ -15,7 +15,7 @@ object PreferencesDialog: TPreferencesDialog
   OnDestroy = FormDestroy
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.2.0'
   Visible = True
   object GroupBox1: TGroupBox
     Left = 24

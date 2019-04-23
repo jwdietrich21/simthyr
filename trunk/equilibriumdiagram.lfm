@@ -14,7 +14,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
   OnClose = FormClose
   OnCreate = FormCreate
   OnHide = FormHide
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.2.0'
   object MainPanel: TPanel
     Left = 48
     Height = 301
@@ -40,6 +40,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
           Grid.Style = psDash
           Marks.LabelFont.Height = -11
           Marks.Format = '%0:.2g'
+          Marks.LabelBrush.Style = bsClear
           Marks.Style = smsCustom
           Minors = <>
           Range.Max = 1
@@ -49,12 +50,14 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
           Title.LabelFont.Orientation = 900
           Title.Visible = True
           Title.Caption = 'Concentration 2'
+          Title.LabelBrush.Style = bsClear
         end      
         item
           Grid.Style = psClear
           Alignment = calBottom
           Marks.LabelFont.Height = -11
           Marks.Format = '%0:.2g'
+          Marks.LabelBrush.Style = bsClear
           Marks.Style = smsCustom
           Minors = <>
           Range.Max = 1
@@ -63,6 +66,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
           Title.LabelFont.Height = -11
           Title.Visible = True
           Title.Caption = 'Concentration 1'
+          Title.LabelBrush.Style = bsClear
         end>
       BackColor = clWhite
       Extent.XMax = 100
@@ -421,7 +425,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 3
       Increment = 0.01
-      MaxValue = 100
       MinValue = 0
       OnChange = yMinSpinEditChange
       ParentShowHint = False
@@ -479,7 +482,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 3
       Increment = 0.01
-      MaxValue = 100
       MinValue = 0
       OnChange = xMinSpinEditChange
       ParentShowHint = False
@@ -679,6 +681,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object ChartToolset1ZoomDragTool1: TZoomDragTool
       Shift = [ssLeft]
+      Brush.Style = bsClear
     end
   end
 end

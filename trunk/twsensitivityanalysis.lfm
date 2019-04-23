@@ -15,7 +15,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   Position = poScreenCenter
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.2.0'
   object PlotPanel: TPanel
     Left = 48
     Height = 288
@@ -56,21 +56,25 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
           Grid.Color = clNone
           Grid.Style = psClear
           Marks.LabelFont.Height = -11
+          Marks.LabelBrush.Style = bsClear
           Minors = <>
           Title.LabelFont.Height = -11
           Title.LabelFont.Orientation = 900
           Title.Visible = True
           Title.Caption = 'Independent Structure Parameter 2'
+          Title.LabelBrush.Style = bsClear
         end      
         item
           Grid.Color = clNone
           Grid.Style = psClear
           Alignment = calBottom
           Marks.LabelFont.Height = -11
+          Marks.LabelBrush.Style = bsClear
           Minors = <>
           Title.LabelFont.Height = -11
           Title.Visible = True
           Title.Caption = 'Independent Structure Parameter 1'
+          Title.LabelBrush.Style = bsClear
         end>
       BackColor = clWhite
       Foot.Brush.Color = clBtnFace
@@ -96,9 +100,9 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         Title = 'test'
         ColorSource = ColourSource
         Interpolate = True
-        OnCalculate = SensitivityMapColorMapSeriesCalculate
         StepX = 5
         StepY = 5
+        OnCalculate = SensitivityMapColorMapSeriesCalculate
       end
     end
     object LegendPanel: TPanel
@@ -180,9 +184,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
           Alignment = calRight
           Marks.Distance = 7
           Marks.Frame.Visible = False
+          Marks.LabelBrush.Style = bsClear
           Minors = <>
           Range.Max = 15
           Title.LabelFont.Orientation = 900
+          Title.LabelBrush.Style = bsClear
         end>
       BackColor = clNone
       Foot.Brush.Color = clBtnFace
@@ -219,8 +225,6 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
-      Increment = 1
-      MaxValue = 100
       MinValue = 0
       OnChange = MinSpinEdit1Change
       ParentShowHint = False
@@ -236,7 +240,6 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
-      Increment = 1
       MaxValue = 100000
       MinValue = 0
       OnChange = MaxSpinEdit1Change
@@ -292,8 +295,6 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
-      Increment = 1
-      MaxValue = 100
       MinValue = 0
       OnChange = MinSpinEdit2Change
       ParentShowHint = False
@@ -348,7 +349,6 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
-      Increment = 1
       MaxValue = 100000
       MinValue = 0
       OnChange = MaxSpinEdit2Change

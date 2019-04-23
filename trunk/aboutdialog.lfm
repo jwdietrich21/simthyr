@@ -18,7 +18,7 @@ object AboutWindow: TAboutWindow
   OnKeyDown = FormKeyDown
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.2.0'
   Visible = True
   object OKButton: TButton
     Left = 224
@@ -1160,7 +1160,7 @@ object AboutWindow: TAboutWindow
         Height = 13
         Top = 118
         Width = 81
-        Caption = '© 1994 – 2017'
+        Caption = '© 1994 – 2019'
         Font.Height = -11
         Font.Pitch = fpVariable
         ParentColor = False

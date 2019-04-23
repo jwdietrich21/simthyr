@@ -11,7 +11,7 @@ LazarusResources.Add('TSimulationSettings','FORMDATA',[
   +'le'#8'OnCreate'#7#10'FormCreate'#12'OnDeactivate'#7#14'FormDeactivate'#14'O'
   +'nMouseWheelUp'#7#16'FormMouseWheelUp'#6'OnShow'#7#8'FormShow'#8'Position'#7
   +#14'poScreenCenter'#8'ShowHint'#9#13'ShowInTaskBar'#7#7'stNever'#10'LCLVersi'
-  +'on'#6#7'1.6.4.0'#0#6'TLabel'#10'TitleLabel'#4'Left'#2'q'#6'Height'#2#16#3'T'
+  +'on'#6#7'2.0.2.0'#0#6'TLabel'#10'TitleLabel'#4'Left'#2'q'#6'Height'#2#16#3'T'
   +'op'#2#16#5'Width'#3#0#1#7'Caption'#6'''Basic settings for next simulation r'
   +'un:'#10'Font.Style'#11#6'fsBold'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#9
   +'TGroupBox'#9'GroupBox1'#4'Left'#2#16#6'Height'#2'8'#3'Top'#2'X'#5'Width'#3

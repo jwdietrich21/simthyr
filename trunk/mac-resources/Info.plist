@@ -6,9 +6,9 @@ A numerical simulator of thyrotropic feedback control
 
 Version 4.0.1
 
-(c) J. W. Dietrich, 1994 - 2017
+(c) J. W. Dietrich, 1994 - 2019
 (c) Ludwig Maximilian University of Munich 1995 - 2002
-(c) Ruhr University of Bochum 2005 - 2017
+(c) Ruhr University of Bochum 2005 - 2019
 
 Source code released under the BSD License
 See http://simthyr.sourceforge.net for details
@@ -32,9 +32,9 @@ See http://simthyr.sourceforge.net for details
 	<key>CFBundleShortVersionString</key>
 	<string>4.0.1</string>
 	<key>CFBundleGetInfoString</key>
-	<string>4.0.1, ©1994-2017 J. W. Dietrich</string>
+	<string>4.0.1, ©1994-2019 J. W. Dietrich</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>4.0.1, ©1994-2017 J. W. Dietrich</string>
+	<string>4.0.1, ©1994-2019 J. W. Dietrich</string>
 	<key>CFBundleIdentifier</key>
 	<string>net.sf.simthyr</string>
 	<key>LSApplicationCategoryType</key>

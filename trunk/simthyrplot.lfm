@@ -311,7 +311,7 @@ object ValuesPlot: TValuesPlot
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.2.0'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -374,18 +374,21 @@ object ValuesPlot: TValuesPlot
             Grid.Color = clSilver
             Grid.Style = psDash
             Marks.LabelFont.Height = -11
+            Marks.LabelBrush.Style = bsClear
             Minors = <>
             Title.Distance = 3
             Title.LabelFont.Height = -11
             Title.LabelFont.Orientation = 900
             Title.Visible = True
             Title.Caption = 'y'
+            Title.LabelBrush.Style = bsClear
           end        
           item
             Grid.Style = psClear
             Alignment = calBottom
             Marks.LabelFont.Height = -11
             Marks.Format = '%2:s'
+            Marks.LabelBrush.Style = bsClear
             Marks.OverlapPolicy = opHideNeighbour
             Marks.Source = TimeAxisSource
             Marks.Style = smsLegend
@@ -394,6 +397,7 @@ object ValuesPlot: TValuesPlot
             Title.LabelFont.Height = -11
             Title.Visible = True
             Title.Caption = 'time'
+            Title.LabelBrush.Style = bsClear
           end>
         BackColor = clWhite
         Extent.XMax = 100
@@ -566,18 +570,21 @@ object ValuesPlot: TValuesPlot
             Grid.Color = clSilver
             Grid.Style = psDash
             Marks.LabelFont.Height = -11
+            Marks.LabelBrush.Style = bsClear
             Minors = <>
             Title.Distance = 3
             Title.LabelFont.Height = -11
             Title.LabelFont.Orientation = 900
             Title.Visible = True
             Title.Caption = 'y'
+            Title.LabelBrush.Style = bsClear
           end        
           item
             Grid.Style = psClear
             Alignment = calBottom
             Marks.LabelFont.Height = -11
             Marks.Format = '%2:s'
+            Marks.LabelBrush.Style = bsClear
             Marks.OverlapPolicy = opHideNeighbour
             Marks.Source = TimeAxisSource
             Marks.Style = smsLabel
@@ -586,6 +593,7 @@ object ValuesPlot: TValuesPlot
             Title.LabelFont.Height = -11
             Title.Visible = True
             Title.Caption = 'time'
+            Title.LabelBrush.Style = bsClear
           end>
         BackColor = clWhite
         Extent.XMax = 100
@@ -794,6 +802,7 @@ object ValuesPlot: TValuesPlot
     end
     object ChartToolset1ZoomDragTool1: TZoomDragTool
       Shift = [ssLeft]
+      Brush.Style = bsClear
     end
     object ChartToolset1ZoomMouseWheelTool1: TZoomMouseWheelTool
     end
@@ -807,6 +816,7 @@ object ValuesPlot: TValuesPlot
     end
     object ChartToolset2ZoomDragTool1: TZoomDragTool
       Shift = [ssLeft]
+      Brush.Style = bsClear
     end
     object ChartToolset2PanMouseWheelTool1: TPanMouseWheelTool
     end

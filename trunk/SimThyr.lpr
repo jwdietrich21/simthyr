@@ -5,9 +5,9 @@ program SimThyr;
 
 { Version 4.0.1 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2017 }
+{ (c) J. W. Dietrich, 1994 - 2019 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2017 }
+{ (c) Ruhr University of Bochum 2005 - 2019 }
 
 { This is the main project file }
 

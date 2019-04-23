@@ -5,9 +5,9 @@ unit SimThyrPlot;
 
 { Version 4.0.1 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2017 }
+{ (c) J. W. Dietrich, 1994 - 2019 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2017 }
+{ (c) Ruhr University of Bochum 2005 - 2019 }
 
 { This unit plots simulated results in time domain }
 
@@ -440,10 +440,11 @@ begin
       theHeight := gSelectedChart.Height;
       theImage.Width := theWidth;
       theImage.Height := theHeight;
+      {$IFDEF VER2}
       if (lcl_major < 2) and (lcl_minor < 4) then
         gSelectedChart.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height),
         theImage.canvas)
-      else
+      else  {$ENDIF}
         gSelectedChart.PaintOnCanvas(theImage.canvas, rect(0, 0, theImage.Width, theImage.Height));
       Clipboard.Assign(theImage);
     finally
