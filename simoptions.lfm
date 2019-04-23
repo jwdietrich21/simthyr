@@ -18,14 +18,14 @@ object SimOptionsDlg: TSimOptionsDlg
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.2.0'
   Visible = True
   object NoiseCheckBox: TCheckBox
     Left = 32
     Height = 18
     Hint = 'Use noise at the level of hypothalamus'
     Top = 56
-    Width = 140
+    Width = 136
     Caption = 'Superimpose noise'
     Checked = True
     OnChange = NoiseCheckBoxChange
@@ -39,7 +39,7 @@ object SimOptionsDlg: TSimOptionsDlg
     Height = 18
     Hint = 'Use the calculated equilibrium values as shown in the preview palette as initial hormone levels'
     Top = 80
-    Width = 326
+    Width = 314
     Caption = 'Use calculated equilibrium values as start values'
     Checked = True
     OnChange = PreviewCheckBoxChange
@@ -102,7 +102,7 @@ object SimOptionsDlg: TSimOptionsDlg
     Height = 18
     Hint = 'Simulate physiological circadian variation of portal TRH concentrations (around the mean as defined from above)'
     Top = 104
-    Width = 294
+    Width = 283
     Caption = 'Simulate circadian rhythm of TRH secretion'
     Checked = True
     OnChange = CircadianCheckBoxChange

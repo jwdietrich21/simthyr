@@ -14,7 +14,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.2.0'
   Visible = True
   object Panel1: TPanel
     Left = 48
@@ -40,20 +40,24 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
           Grid.Color = clSilver
           Grid.Style = psDash
           Marks.LabelFont.Height = -11
+          Marks.LabelBrush.Style = bsClear
           Minors = <>
           Title.LabelFont.Height = -11
           Title.LabelFont.Orientation = 900
           Title.Visible = True
           Title.Caption = 'Dependent variable(s)'
+          Title.LabelBrush.Style = bsClear
         end      
         item
           Grid.Style = psClear
           Alignment = calBottom
           Marks.LabelFont.Height = -11
+          Marks.LabelBrush.Style = bsClear
           Minors = <>
           Title.LabelFont.Height = -11
           Title.Visible = True
           Title.Caption = 'Structure Parameter'
+          Title.LabelBrush.Style = bsClear
           Transformations = ChartAxisTransformations1
         end>
       BackColor = clWhite
@@ -181,8 +185,6 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 4
-      Increment = 1
-      MaxValue = 100
       MinValue = 0
       OnChange = MinSpinEditChange
       ParentShowHint = False
@@ -198,7 +200,6 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 4
-      Increment = 1
       MaxValue = 100000
       MinValue = 0
       OnChange = MaxSpinEditChange
@@ -469,7 +470,6 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     left = 376
     top = 664
     object ChartAxisTransformations1LinearAxisTransform1: TLinearAxisTransform
-      Scale = 1E-12
     end
   end
   object PopupMenu1: TPopupMenu
@@ -507,6 +507,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
     end
     object ChartToolset1ZoomDragTool1: TZoomDragTool
       Shift = [ssLeft]
+      Brush.Style = bsClear
     end
     object ChartToolset1ZoomMouseWheelTool1: TZoomMouseWheelTool
     end

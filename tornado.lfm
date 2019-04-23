@@ -14,7 +14,7 @@ object TornadoPlotForm: TTornadoPlotForm
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.2.0'
   Visible = True
   object CheckGroup1: TCheckGroup
     Left = 440
@@ -149,18 +149,22 @@ object TornadoPlotForm: TTornadoPlotForm
           Inverted = True
           Marks.Distance = 7
           Marks.Format = '%2:s'
+          Marks.LabelBrush.Style = bsClear
           Marks.Source = ListChartSource1
           Marks.Style = smsLabel
           Minors = <>
           Title.LabelFont.Orientation = 900
+          Title.LabelBrush.Style = bsClear
         end      
         item
           Alignment = calBottom
           Marks.LabelFont.Height = 11
+          Marks.LabelBrush.Style = bsClear
           Minors = <>
           Title.LabelFont.Height = -9
           Title.Visible = True
           Title.Caption = 'Change in dependent variable'
+          Title.LabelBrush.Style = bsClear
         end>
       BackColor = clWhite
       Foot.Brush.Color = clBtnFace

@@ -5,9 +5,9 @@ unit Sensitivityanalysis;
 
 { Version 4.0.1 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2017 }
+{ (c) J. W. Dietrich, 1994 - 2019 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2017 }
+{ (c) Ruhr University of Bochum 2005 - 2019 }
 
 { This unit implements one-way sensitivity analysis }
 
@@ -1028,9 +1028,10 @@ begin
       theHeight := Chart1.Height;
       theImage.Width := theWidth;
       theImage.Height := theHeight;
+      {$IFDEF VER2}
       if (lcl_major < 2) and (lcl_minor < 4) then
         Chart1.DrawOnCanvas(rect(0, 0, theImage.Width, theImage.Height), theImage.canvas)
-      else
+      else  {$ENDIF}
         Chart1.PaintOnCanvas(theImage.canvas, rect(0, 0, theImage.Width, theImage.Height));
       Clipboard.Assign(theImage);
     finally

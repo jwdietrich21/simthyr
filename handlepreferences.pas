@@ -5,9 +5,9 @@ unit HandlePreferences;
 
 { Version 4.0.1 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2017 }
+{ (c) J. W. Dietrich, 1994 - 2019 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2017 }
+{ (c) Ruhr University of Bochum 2005 - 2019 }
 
 { This unit handles global application preferences }
 
@@ -328,7 +328,7 @@ begin
   begin
     Items.Clear;
     SetMassItemAndFactor(pTSH_pos, TSH_pos, PreferencesDialog.TSHMassPrefixCombo, 0, 3);
-    SetMassItemAndFactor(pTSH_pos, TSH_pos, PreferencesDialog.TSHMassPrefixCombo, 1, 4);
+    SetMassItemAndFactor(pTSH_pos, TSH_pos, PreferencesDialog.TSHMassPrefixCombo, 1, 5);
     ItemIndex := 0;
     Text := Items[ItemIndex];
   end;
@@ -343,8 +343,8 @@ begin
   with PreferencesDialog.TT4MassPrefixCombo do
   begin
     Items.Clear;
-    SetMassItemAndFactor(TT4_pos, -1, PreferencesDialog.TT4MassPrefixCombo, 0, 4);
-    SetMassItemAndFactor(TT4_pos, -1, PreferencesDialog.TT4MassPrefixCombo, 1, 5);
+    SetMassItemAndFactor(TT4_pos, -1, PreferencesDialog.TT4MassPrefixCombo, 0, 5);
+    SetMassItemAndFactor(TT4_pos, -1, PreferencesDialog.TT4MassPrefixCombo, 1, 6);
     ItemIndex := 1;
     Text := Items[ItemIndex];
   end;
@@ -367,8 +367,8 @@ begin
   with PreferencesDialog.FT4MassPrefixCombo do
   begin
     Items.Clear;
-    SetMassItemAndFactor(FT4_pos, -1, PreferencesDialog.FT4MassPrefixCombo, 0, 5);
-    SetMassItemAndFactor(FT4_pos, -1, PreferencesDialog.FT4MassPrefixCombo, 1, 6);
+    SetMassItemAndFactor(FT4_pos, -1, PreferencesDialog.FT4MassPrefixCombo, 0, 6);
+    SetMassItemAndFactor(FT4_pos, -1, PreferencesDialog.FT4MassPrefixCombo, 1, 7);
     ItemIndex := 0;
     Text := Items[ItemIndex];
   end;
@@ -391,9 +391,9 @@ begin
   with PreferencesDialog.TT3MassPrefixCombo do
   begin
     Items.Clear;
-    SetMassItemAndFactor(TT3_pos, -1, PreferencesDialog.TT3MassPrefixCombo, 0, 4);
-    SetMassItemAndFactor(TT3_pos, -1, PreferencesDialog.TT3MassPrefixCombo, 1, 5);
-    SetMassItemAndFactor(TT3_pos, -1, PreferencesDialog.TT3MassPrefixCombo, 2, 6);
+    SetMassItemAndFactor(TT3_pos, -1, PreferencesDialog.TT3MassPrefixCombo, 0, 5);
+    SetMassItemAndFactor(TT3_pos, -1, PreferencesDialog.TT3MassPrefixCombo, 1, 6);
+    SetMassItemAndFactor(TT3_pos, -1, PreferencesDialog.TT3MassPrefixCombo, 2, 7);
     ItemIndex := 2;
     Text := Items[ItemIndex];
   end;
@@ -417,8 +417,8 @@ begin
   with PreferencesDialog.FT3MassPrefixCombo do
   begin
     Items.Clear;
-    SetMassItemAndFactor(FT3_pos, -1, PreferencesDialog.FT3MassPrefixCombo, 0, 5);
-    SetMassItemAndFactor(FT3_pos, -1, PreferencesDialog.FT3MassPrefixCombo, 1, 6);
+    SetMassItemAndFactor(FT3_pos, -1, PreferencesDialog.FT3MassPrefixCombo, 0, 6);
+    SetMassItemAndFactor(FT3_pos, -1, PreferencesDialog.FT3MassPrefixCombo, 1, 7);
     ItemIndex := 1;
     Text := Items[ItemIndex];
   end;
@@ -581,7 +581,7 @@ begin
 end;
 
 procedure SubstitutePreferences;
-{get standard values for preferences, if preferences file nonexistent or corrupt}
+{get standard values for preferences if preferences file nonexistent or corrupt}
 begin
   begin
     if PreferencesDialog <> nil then
@@ -590,7 +590,7 @@ begin
       gDateTimeFormat := PreferencesDialog.DateTimeFormatEdit.Text;
     end
     else
-    begin  {fall-back solution, if neither file nor dialog exist}
+    begin  {fall-back solution if neither file nor dialog exist}
       gNumberFormat := STANDARD_NUM_FORMAT;
       gDateTimeFormat := STANDARD_TIME_FORMAT;
     end;

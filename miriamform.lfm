@@ -13,7 +13,7 @@ object AnnotationForm: TAnnotationForm
   OnCreate = FormCreate
   OnShow = FormShow
   ShowHint = True
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '2.0.2.0'
   object ScrollBox1: TScrollBox
     Left = 16
     Height = 280

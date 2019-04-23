@@ -8,7 +8,7 @@ Unit VersionSupport;
 Interface
 
 (*
-  Building on the excellent vinfo.pas supplied by Paul Ishenin and available elsewhere on these Lazarus
+  Building on the excellent vinfo.pas supplied by Paul Ishenin and available elsewhere on the Lazarus
   Forums
     - I hid the TVersionInfo class from the end user to simplify their (mine) number of required Uses...
     - Added defensive code to TVersionInfo if no build info is compiled into the exe
@@ -30,36 +30,75 @@ Interface
   //  {$I %LINE%} = current line number
 
   Mike Thompson - mike.cornflake@gmail.com
-  July 24 2011
+  Origin: July 24 2011
+
+  Changes:
+  January 2017:   Updated code to cope with refactored LCL Platform Definitions
 *)
 
 Uses
   Classes, SysUtils;
 
-Function GetFileVersion: String;
-Function GetProductVersion: String;
+// Surfacing general defines and lookups
 Function GetCompiledDate: String;
 Function GetCompilerInfo: String;
 Function GetTargetInfo: String;
 Function GetOS: String;
-Function GetResourceStrings(oStringList : TStringList) : Boolean;
+Function GetCPU: String;
 Function GetLCLVersion: String;
-function GetWidgetSet: string;
+Function GetWidgetSet: String;
 
-Const
-  WIDGETSET_GTK        = 'GTK widget set';
-  WIDGETSET_GTK2       = 'GTK 2 widget set';
-  WIDGETSET_WIN        = 'Win32/Win64 widget set';
-  WIDGETSET_WINCE      = 'WinCE widget set';
-  WIDGETSET_CARBON     = 'Carbon widget set';
-  WIDGETSET_QT         = 'QT widget set';
-  WIDGETSET_fpGUI      = 'fpGUI widget set';
-  WIDGETSET_OTHER      = 'Other gui';
+// Exposing resource and version info compiled into exe
+Function GetResourceStrings(oStringList : TStringList) : Boolean;
+Function GetFileVersion: String;
+Function GetProductVersion: String;
 
 Implementation
 
 Uses
-  resource, versiontypes, versionresource, LCLVersion, InterfaceBase;
+  resource, versiontypes, versionresource, LCLVersion, InterfaceBase, LCLPlatformDef;
+
+Function GetWidgetSet: String;
+Begin
+  Result := LCLPlatformDisplayNames[WidgetSet.LCLPlatform];
+End;
+
+Function GetCompilerInfo: String;
+begin
+  Result := 'FPC '+{$I %FPCVERSION%};
+end;
+
+Function GetTargetInfo: String;
+Begin
+  Result := {$I %FPCTARGETCPU%}+' - '+{$I %FPCTARGETOS%};
+End;
+
+Function GetOS: String;
+Begin
+  Result := {$I %FPCTARGETOS%};
+End;
+
+function GetCPU: String;
+begin
+  Result := {$I %FPCTARGETCPU%};
+end;
+
+Function GetLCLVersion: String;
+Begin
+  Result := 'LCL '+lcl_version;
+End;
+
+Function GetCompiledDate: String;
+Var
+  sDate, sTime: String;
+Begin
+  sDate := {$I %DATE%};
+  sTime := {$I %TIME%};
+
+  Result := sDate + ' at ' + sTime;
+End;
+
+{ Routines to expose TVersionInfo data }
 
 Type
   TVersionInfo = Class
@@ -81,53 +120,6 @@ Type
     Property StringFileInfo: TVersionStringFileInfo Read GetStringFileInfo;
     Property VarFileInfo: TVersionVarFileInfo Read GetVarFileInfo;
   End;
-
-function GetWidgetSet: string;
-begin
-  case WidgetSet.LCLPlatform of
-    lpGtk:   Result := WIDGETSET_GTK;
-    lpGtk2:  Result := WIDGETSET_GTK2;
-    lpWin32: Result := WIDGETSET_WIN;
-    lpWinCE: Result := WIDGETSET_WINCE;
-    lpCarbon:Result := WIDGETSET_CARBON;
-    lpQT:    Result := WIDGETSET_QT;
-    lpfpGUI: Result := WIDGETSET_fpGUI;
-  else
-    Result:=WIDGETSET_OTHER;
-  end;
-end;
-
-Function GetCompilerInfo: String;
-begin
-  Result := 'FPC '+{$I %FPCVERSION%};
-end;
-
-Function GetTargetInfo: String;
-begin
-  Result := {$I %FPCTARGETCPU%}+' - '+{$I %FPCTARGETOS%};
-end;
-
-Function GetOS: String;
-Begin
-  Result := {$I %FPCTARGETOS%};
-End;
-
-Function GetLCLVersion: String;
-begin
-  Result := 'LCL '+lcl_version;
-end;
-
-Function GetCompiledDate: String;
-Var
-  sDate, sTime: String;
-Begin
-  sDate := {$I %DATE%};
-  sTime := {$I %TIME%};
-
-  Result := sDate + ' at ' + sTime;
-End;
-
-{ Routines to expose TVersionInfo data }
 
 Var
   FInfo: TVersionInfo;
@@ -259,3 +251,4 @@ Finalization
   If Assigned(FInfo) Then
     FInfo.Free;
 End.
+

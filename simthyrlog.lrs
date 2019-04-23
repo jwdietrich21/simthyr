@@ -336,7 +336,7 @@ LazarusResources.Add('TSimThyrLogWindow','FORMDATA',[
   +#255#172'A'#255#255#172'A'#227'?'#172'A'#193#15#172'A'#192#15#172'A'#192#7
   +#172'A'#128#7#172'A'#128#7#172'A'#132#135#172'A'#140#135#172'A'#140#195#172
   +'A'#140#195#172'A'#204#227#172'A'#205#243#172'A'#239#255#172'A'#255#255#172
-  +'A'#10'OnActivate'#7#12'FormActivate'#10'LCLVersion'#6#7'1.6.4.0'#7'Visible'
+  +'A'#10'OnActivate'#7#12'FormActivate'#10'LCLVersion'#6#7'2.0.2.0'#7'Visible'
   +#9#0#11'TStringGrid'#10'ValuesGrid'#6'Cursor'#7#7'crIBeam'#4'Left'#2#0#6'Hei'
   +'ght'#3#23#1#4'Hint'#6'7Simulated behavioural parameters of thyroid homeosta'
   +'sis'#3'Top'#2#0#5'Width'#3#176#2#5'Align'#7#8'alClient'#15'AutoFillColumns'
