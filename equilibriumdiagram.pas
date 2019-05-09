@@ -1124,6 +1124,7 @@ procedure TEquilibriumDiagramForm.SaveGrid(theFileName: String;
 var
   theCode: integer;
 begin
+  theCode := 0;
   SaveGridToFile(CheckGrid, theFileName, theDelimiter, true, false, theCode);
   if theCode = 0 then
     SetFileName(self, theFileName)
