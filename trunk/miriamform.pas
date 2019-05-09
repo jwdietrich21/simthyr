@@ -148,7 +148,7 @@ procedure TAnnotationForm.StandardButtonClick(Sender: TObject);
 var
   tempModel: TModel;
 begin
-  StandardAnnotations(tempModel);
+  tempModel := emptyModel;
   ShowAnnotation(tempModel);
 end;
 

@@ -26,7 +26,7 @@ uses
   Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, Spin, ComCtrls,
   ColorBox, Buttons, Grids, Clipbrd, Menus, TAChartUtils, TANavigation, Math,
   TADrawerSVG, TADrawUtils, TADrawerCanvas, TALegendPanel, TATools, LCLVersion,
-  FPimage, SimThyrTypes, SimThyrServices, SimThyrResources, UnitConverter,
+  FPimage, SimThyrTypes, SimThyrServices, UnitConverter,
   SimThyrPrediction, Sensitivityanalysis;
 
 type

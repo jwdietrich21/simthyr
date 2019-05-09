@@ -137,16 +137,6 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     ShowHint = True
     ParentShowHint = False
   end
-  object ChartNavPanel1: TChartNavPanel
-    Left = 16
-    Height = 24
-    Hint = 'Drag to select the part of the plot to be displayed.'
-    Top = 72
-    Width = 23
-    Chart = EquilibriumChart
-    LogicalExtentPen.Color = clMaroon
-    MiniMap = True
-  end
   object ResetButton: TSpeedButton
     AnchorSideBottom.Control = MainPanel
     AnchorSideBottom.Side = asrBottom
@@ -646,6 +636,16 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       0
       'x axis (2)'
     )
+  end
+  object ChartNavPanel1: TChartNavPanel
+    Left = 16
+    Height = 24
+    Hint = 'Drag to select the part of the plot to be displayed.'
+    Top = 72
+    Width = 23
+    Chart = EquilibriumChart
+    LogicalExtentPen.Color = clMaroon
+    MiniMap = True
   end
   object PopupMenu1: TPopupMenu
     left = 376

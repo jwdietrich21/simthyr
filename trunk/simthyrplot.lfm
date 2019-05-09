@@ -1,7 +1,7 @@
 object ValuesPlot: TValuesPlot
-  Left = 259
+  Left = 282
   Height = 441
-  Top = 363
+  Top = 359
   Width = 857
   AlphaBlend = True
   AlphaBlendValue = 0
@@ -328,12 +328,12 @@ object ValuesPlot: TValuesPlot
     OnClick = Panel1Click
     object ComboBox1: TComboBox
       Left = 688
-      Height = 21
+      Height = 23
       Hint = 'Select a parameter to show in the plot on the left.'
-      Top = 17
+      Top = 16
       Width = 146
       Anchors = [akRight]
-      ItemHeight = 0
+      ItemHeight = 15
       Items.Strings = (
         'Portal TRH'
         'Pituitary TSH'
@@ -358,8 +358,8 @@ object ValuesPlot: TValuesPlot
       Width = 624
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
-      ClientHeight = 205
-      ClientWidth = 624
+      ClientHeight = 201
+      ClientWidth = 620
       Color = clWhite
       ParentColor = False
       TabOrder = 1
@@ -368,7 +368,7 @@ object ValuesPlot: TValuesPlot
         Height = 180
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 619
+        Width = 615
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -554,8 +554,8 @@ object ValuesPlot: TValuesPlot
       Width = 624
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderStyle = bsSingle
-      ClientHeight = 198
-      ClientWidth = 624
+      ClientHeight = 194
+      ClientWidth = 620
       Color = clWhite
       ParentColor = False
       TabOrder = 0
@@ -564,7 +564,7 @@ object ValuesPlot: TValuesPlot
         Height = 180
         Hint = 'Drag with mouse to zoom'
         Top = 7
-        Width = 619
+        Width = 615
         AxisList = <        
           item
             Grid.Color = clSilver
@@ -617,12 +617,12 @@ object ValuesPlot: TValuesPlot
     end
     object ComboBox2: TComboBox
       Left = 689
-      Height = 21
+      Height = 23
       Hint = 'Select a parameter to show in the plot on the left.'
-      Top = 16
+      Top = 15
       Width = 146
       Anchors = [akRight]
-      ItemHeight = 0
+      ItemHeight = 15
       Items.Strings = (
         'Portal TRH'
         'Pituitary TSH'
@@ -755,8 +755,8 @@ object ValuesPlot: TValuesPlot
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
-    Top = 426
+    Height = 23
+    Top = 418
     Width = 857
     Panels = <>
   end

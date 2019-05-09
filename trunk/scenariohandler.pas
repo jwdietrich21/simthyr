@@ -24,7 +24,7 @@ uses
   SimThyrTypes, SimThyrServices, VersionSupport, SimThyrResources;
 
 function NewScenario: TModel;
-procedure StandardAnnotations(var theModel: TModel);
+function emptyModel: TModel;
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
 procedure SaveScenario(theFileName: string);
 
@@ -73,18 +73,18 @@ end;
 
 function NewScenario: TModel;
 begin
-  StandardAnnotations(NewScenario);
+  result := emptyModel;
 end;
 
-procedure StandardAnnotations(var theModel: TModel);
+function emptyModel: TModel;
 begin
-  theModel.Name := kSTANDARD_MODEL_NAME;
-  theModel.Reference := kSTANDARD_MODEL_REFERENCE;
-  theModel.Species := kSTANDARD_MODEL_SPECIES;
-  theModel.Creators := kSTANDARD_MODEL_CREATORS;
-  theModel.Created := EncodeDateTime(kSTANDARD_MODEL_CREATED_Y, kSTANDARD_MODEL_CREATED_M, kSTANDARD_MODEL_CREATED_D, kSTANDARD_MODEL_CREATED_H, kSTANDARD_MODEL_CREATED_N, kSTANDARD_MODEL_CREATED_S, 0);
-  theModel.LastModified := EncodeDateTime(kSTANDARD_MODEL_MODIFIED_Y, kSTANDARD_MODEL_MODIFIED_M, kSTANDARD_MODEL_MODIFIED_D, kSTANDARD_MODEL_MODIFIED_H, kSTANDARD_MODEL_MODIFIED_N, kSTANDARD_MODEL_MODIFIED_S, 0);
-  theModel.Terms := kSTANDARD_MODEL_TERMS;
+  result.Name := kSTANDARD_MODEL_NAME;
+  result.Reference := kSTANDARD_MODEL_REFERENCE;
+  result.Species := kSTANDARD_MODEL_SPECIES;
+  result.Creators := kSTANDARD_MODEL_CREATORS;
+  result.Created := EncodeDateTime(kSTANDARD_MODEL_CREATED_Y, kSTANDARD_MODEL_CREATED_M, kSTANDARD_MODEL_CREATED_D, kSTANDARD_MODEL_CREATED_H, kSTANDARD_MODEL_CREATED_N, kSTANDARD_MODEL_CREATED_S, 0);
+  result.LastModified := EncodeDateTime(kSTANDARD_MODEL_MODIFIED_Y, kSTANDARD_MODEL_MODIFIED_M, kSTANDARD_MODEL_MODIFIED_D, kSTANDARD_MODEL_MODIFIED_H, kSTANDARD_MODEL_MODIFIED_N, kSTANDARD_MODEL_MODIFIED_S, 0);
+  result.Terms := kSTANDARD_MODEL_TERMS;
 end;
 
 procedure ReadScenario(theFileName: string; var modelVersion: Str13);
