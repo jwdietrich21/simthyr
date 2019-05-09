@@ -3,7 +3,7 @@
 LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   'TPF0'#15'TSimThyrToolbar'#14'SimThyrToolbar'#4'Left'#2#0#6'Height'#2'Z'#4'Hi'
   +'nt'#6'RPlease use the icons to load or save settings and to start or stop t'
-  +'he simulation.'#3'Top'#2#22#5'Width'#3#218#3#21'HorzScrollBar.Visible'#8#21
+  +'he simulation.'#3'Top'#2#23#5'Width'#3#218#3#21'HorzScrollBar.Visible'#8#21
   +'VertScrollBar.Visible'#8#5'Align'#7#5'alTop'#10'AlphaBlend'#9#15'AlphaBlend'
   +'Value'#2#0#7'Anchors'#11#0#8'AutoSize'#9#11'BorderStyle'#7#12'bsToolWindow'
   +#7'Caption'#6#7'SimThyr'#12'ClientHeight'#2'Z'#11'ClientWidth'#3#218#3#14'De'

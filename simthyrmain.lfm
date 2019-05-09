@@ -2,7 +2,7 @@ object SimThyrToolbar: TSimThyrToolbar
   Left = 0
   Height = 90
   Hint = 'Please use the icons to load or save settings and to start or stop the simulation.'
-  Top = 22
+  Top = 23
   Width = 986
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
