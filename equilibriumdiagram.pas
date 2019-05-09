@@ -1036,7 +1036,7 @@ begin
   else
   begin
     {Chart1.CopyToClipboardBitmap doesn't work on Mac OS X}
-    {$IFDEF UNIX}
+    {$IFDEF UNIX} {Unix-based and unixoid operating systems }
     theImage := TPortableNetworkGraphic.Create;
     try
       theWidth := EquilibriumChart.Width;
@@ -1303,7 +1303,6 @@ begin
           yColorBox.Selected);
       end;
       Fline[0].SeriesColor := yColorBox.Selected;
-      // automatedSpin := true; // for testing only
       if automatedSpin then
       begin
         MinBPar_y := MinValue(gResponseCurve1.output) / 10;
