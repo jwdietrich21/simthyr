@@ -958,7 +958,6 @@ end;
 
 procedure TEquilibriumDiagramForm.SetSpinEditBoundaries;
 begin
-  automatedSpin := true; // prevents control of spin boundaries by SpinEditChange handler
   case gSelectedBParameter_x of
     TSHItem:
     begin
@@ -976,7 +975,23 @@ begin
       xMaxSpinEdit.Value := gActiveModel.Equilibrium.T3z1 * SPLAY_FACTOR_B * gFT3conversionFactor;
     end;
   end;
-  automatedSpin := false;
+  case gSelectedBParameter_y of
+    TSHItem:
+    begin
+      yMinSpinEdit.Value := gActiveModel.Equilibrium.TSH1 / SPLAY_FACTOR_B;
+      yMaxSpinEdit.Value := gActiveModel.Equilibrium.TSH1 * SPLAY_FACTOR_B;
+    end;
+    FT4Item:
+    begin
+      yMinSpinEdit.Value := gActiveModel.Equilibrium.FT41 / SPLAY_FACTOR_B * gFT4conversionFactor;
+      yMaxSpinEdit.Value := gActiveModel.Equilibrium.FT41 * SPLAY_FACTOR_B * gFT4conversionFactor;
+    end;
+    cT3Item:
+    begin
+      yMinSpinEdit.Value := gActiveModel.Equilibrium.T3z1 / SPLAY_FACTOR_B * gFT3conversionFactor;
+      yMaxSpinEdit.Value := gActiveModel.Equilibrium.T3z1 * SPLAY_FACTOR_B * gFT3conversionFactor;
+    end;
+  end;
 end;
 
 procedure TEquilibriumDiagramForm.FormActivate(Sender: TObject);
@@ -1288,8 +1303,17 @@ begin
           yColorBox.Selected);
       end;
       Fline[0].SeriesColor := yColorBox.Selected;
-      MinBPar_y := MinValue(gResponseCurve1.output) / 10;
-      MaxBPar_y := MaxValue(gResponseCurve1.output);
+      // automatedSpin := true; // for testing only
+      if automatedSpin then
+      begin
+        MinBPar_y := MinValue(gResponseCurve1.output) / 10;
+        MaxBPar_y := MaxValue(gResponseCurve1.output);
+      end
+      else
+      begin
+        MinBPar_y := yMinSpinEdit.Value / gSpinFactor;
+        MaxBPar_y := yMaxSpinEdit.Value / gSpinFactor;
+      end;
       ConversionFactor_y := NaN; // signals to SimSubsystemResponse that input is native
       if MaxBPar_y <> 0 then
         gResponseCurve2 := SimSubsystemResponse(gSelectedBParameter_y, gSelectedBParameter_x, MinBPar_y,
@@ -1345,6 +1369,7 @@ end;
 procedure TEquilibriumDiagramForm.yBParComboChange(Sender: TObject);
 { Get selected behavioural parameter #1 }
 begin
+  automatedSpin := true;
   if xBParCombo.ItemIndex = 0 then
     begin // set selections to useful initial values
       if yBParCombo.ItemIndex = 1 then
@@ -1364,11 +1389,13 @@ begin
   xColorBox.Selected := gDefaultColors[integer(gSelectedBParameter_x)];
   ResetNullcline(Sender);
   DrawDiagram(false);
+  automatedSpin := false;
 end;
 
 procedure TEquilibriumDiagramForm.xBParComboChange(Sender: TObject);
 { Get selected behavioural parameter #2 }
 begin
+  automatedSpin := true;
   if yBParCombo.ItemIndex = 0 then
     begin // set selections to useful initial values
       if xBParCombo.ItemIndex = 1 then
@@ -1386,6 +1413,7 @@ begin
     ResetNullcline(Sender);
     DrawDiagram(false);
   end;
+  automatedSpin := false;
 end;
 
 procedure TEquilibriumDiagramForm.ScaleFull(Sender: TObject);
@@ -1481,8 +1509,10 @@ end;
 procedure TEquilibriumDiagramForm.ResetButtonClick(Sender: TObject);
 { reset to standard values }
 begin
+  automatedSpin := true;
   ResetNullcline(Sender);
   DrawDiagram(false);
+  automatedSpin := false;
 end;
 
 procedure TEquilibriumDiagramForm.SParCombo1Change(Sender: TObject);
