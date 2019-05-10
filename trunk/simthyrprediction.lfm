@@ -11,6 +11,8 @@ object Prediction: TPrediction
   ClientHeight = 214
   ClientWidth = 350
   Color = clWhite
+  Constraints.MinHeight = 150
+  Constraints.MinWidth = 300
   Icon.Data = {
     9624000000000100080020200200010001003001000086000000101002000100
     0100B0000000B60100002020100001000400E802000066020000101010000100
@@ -316,7 +318,7 @@ object Prediction: TPrediction
     Width = 318
     Anchors = [akTop, akLeft, akRight, akBottom]
     Lines.Strings = (
-      'Predicted values:'
+      'Predicted concentrations:'
       ''
       ''
       ''
