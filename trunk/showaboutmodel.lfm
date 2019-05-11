@@ -1,7 +1,7 @@
 object AboutModelForm: TAboutModelForm
   Left = 529
   Height = 699
-  Top = 181
+  Top = 22
   Width = 575
   HorzScrollBar.Page = 1
   HorzScrollBar.Visible = False

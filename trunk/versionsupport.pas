@@ -53,15 +53,43 @@ Function GetResourceStrings(oStringList : TStringList) : Boolean;
 Function GetFileVersion: String;
 Function GetProductVersion: String;
 
+Const
+  WIDGETSET_GTK        = 'GTK widget set';
+  WIDGETSET_GTK2       = 'GTK 2 widget set';
+  WIDGETSET_WIN        = 'Win32/Win64 widget set';
+  WIDGETSET_WINCE      = 'WinCE widget set';
+  WIDGETSET_CARBON     = 'Carbon widget set';
+  WIDGETSET_COCOA      = 'Cocoa widget set';
+  WIDGETSET_QT         = 'QT widget set';
+  WIDGETSET_fpGUI      = 'fpGUI widget set';
+  WIDGETSET_OTHER      = 'Other gui';
+
 Implementation
 
 Uses
-  resource, versiontypes, versionresource, LCLVersion, InterfaceBase, LCLPlatformDef;
+  resource, versiontypes, versionresource, LCLVersion, InterfaceBase
+  {$IFDEF VER3}
+  , LCLPlatformDef
+  {$ENDIF};
 
 Function GetWidgetSet: String;
 Begin
-  Result := LCLPlatformDisplayNames[WidgetSet.LCLPlatform];
-End;
+  {$IFDEF VER3}
+    Result := LCLPlatformDisplayNames[WidgetSet.LCLPlatform];
+  {$ELSE}
+    case WidgetSet.LCLPlatform of
+      lpGtk:   Result := WIDGETSET_GTK;
+      lpGtk2:  Result := WIDGETSET_GTK2;
+      lpWin32: Result := WIDGETSET_WIN;
+      lpWinCE: Result := WIDGETSET_WINCE;
+      lpCarbon:Result := WIDGETSET_CARBON;
+      lpQT:    Result := WIDGETSET_QT;
+      lpfpGUI: Result := WIDGETSET_fpGUI;
+    else
+      Result := WIDGETSET_OTHER;
+    end;
+  {$ENDIF}
+end;
 
 Function GetCompilerInfo: String;
 begin
@@ -251,4 +279,4 @@ Finalization
   If Assigned(FInfo) Then
     FInfo.Free;
 End.
-
+
