@@ -14,7 +14,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="858"/>
+      <BuildNr Value="859"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.1 Merlion" LegalCopyright="1994-2019 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.1"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -209,9 +209,8 @@
           <CursorPos X="10" Y="2"/>
         </ExtraEditor2>
         <ExtraEditor3>
-          <IsVisibleTab Value="True"/>
           <EditorIndex Value="-1"/>
-          <WindowIndex Value="2"/>
+          <WindowIndex Value="-1"/>
           <TopLine Value="15"/>
           <CursorPos X="63" Y="20"/>
         </ExtraEditor3>
@@ -805,8 +804,8 @@
           <CursorPos X="78" Y="607"/>
         </ExtraEditor1>
         <ExtraEditor2>
-          <IsVisibleTab Value="True"/>
           <EditorIndex Value="-1"/>
+          <WindowIndex Value="-1"/>
           <TopLine Value="536"/>
           <CursorPos X="9" Y="549"/>
         </ExtraEditor2>
@@ -1249,17 +1248,18 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="36"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="2"/>
+        <TopLine Value="1351"/>
+        <CursorPos X="62" Y="1377"/>
         <ExtraEditorCount Value="3"/>
         <ExtraEditor1>
+          <WindowIndex Value="1"/>
+          <CursorPos X="6" Y="2"/>
+        </ExtraEditor1>
+        <ExtraEditor2>
           <EditorIndex Value="1"/>
           <WindowIndex Value="1"/>
           <TopLine Value="1182"/>
           <CursorPos X="70" Y="1199"/>
-        </ExtraEditor1>
-        <ExtraEditor2>
-          <WindowIndex Value="1"/>
-          <CursorPos X="6" Y="2"/>
         </ExtraEditor2>
         <ExtraEditor3>
           <EditorIndex Value="3"/>
