@@ -11,12 +11,12 @@ object HelpWindow: THelpWindow
   Constraints.MinWidth = 500
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '1.6.2.0'
   object MainTitle: TLabel
     Left = 80
     Height = 21
     Top = 34
-    Width = 125
+    Width = 10000
     Caption = 'SimThyr Help'
     Font.Height = -18
     Font.Style = [fsBold]
@@ -26,9 +26,9 @@ object HelpWindow: THelpWindow
   object ModelInfoTitle: TLabel
     Cursor = crHandPoint
     Left = 40
-    Height = 16
+    Height = 21
     Top = 128
-    Width = 185
+    Width = 10000
     Caption = 'Information about this model'
     Font.Color = clNavy
     Font.Pitch = fpVariable
@@ -39,9 +39,9 @@ object HelpWindow: THelpWindow
   object OnlineHelpTitle: TLabel
     Cursor = crHandPoint
     Left = 40
-    Height = 16
+    Height = 21
     Top = 80
-    Width = 74
+    Width = 10000
     Caption = 'Online Help'
     Font.Color = clNavy
     Font.Pitch = fpVariable
@@ -117,9 +117,9 @@ object HelpWindow: THelpWindow
   end
   object OnlineHelpSubTitle: TLabel
     Left = 40
-    Height = 12
-    Top = 96
-    Width = 300
+    Height = 11
+    Top = 99
+    Width = 291
     Caption = 'Get a short introduction, a full handbook and tutorials online.'
     Font.Height = 10
     ParentColor = False
@@ -127,9 +127,9 @@ object HelpWindow: THelpWindow
   end
   object ModelInfoSubTitle: TLabel
     Left = 40
-    Height = 12
-    Top = 144
-    Width = 390
+    Height = 11
+    Top = 147
+    Width = 389
     Caption = 'References and background information on the theory that SimThyr is based on.'
     Font.Height = 10
     ParentColor = False
@@ -138,9 +138,9 @@ object HelpWindow: THelpWindow
   object VersionInfoTitle: TLabel
     Cursor = crHandPoint
     Left = 40
-    Height = 16
+    Height = 21
     Top = 168
-    Width = 76
+    Width = 10000
     Caption = 'Version info'
     Font.Color = clNavy
     Font.Pitch = fpVariable
@@ -151,7 +151,7 @@ object HelpWindow: THelpWindow
   object VersionInfoSubTitle: TLabel
     Left = 40
     Height = 32
-    Top = 184
+    Top = 187
     Width = 404
     Anchors = [akTop, akLeft, akRight]
     AutoSize = False
