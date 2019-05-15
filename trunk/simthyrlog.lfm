@@ -1,7 +1,7 @@
 object SimThyrLogWindow: TSimThyrLogWindow
-  Left = 280
+  Left = 604
   Height = 294
-  Top = 249
+  Top = 150
   Width = 688
   Align = alRight
   AlphaBlend = True

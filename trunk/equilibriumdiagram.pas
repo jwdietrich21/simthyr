@@ -150,6 +150,7 @@ var
   gResponseCurve1, gResponseCurve2: tResponseCurve;
   gSensitivityMatrix: tResultMatrix;
   gEmptyVector: tParamVector;
+  gTSHconversionFactor: real;
   gFT4conversionFactor, gFT3conversionFactor: real;
   gcT3conversionFactor: real;
   TRH1: real; // storage for TRH concentration from previous simulation run
@@ -354,6 +355,8 @@ end;
 
 procedure RecalculateConversionFactors;
 begin
+  gTSHconversionFactor := ConvertedValue(1, 1, 'mU/l',
+    gParameterUnit[TSH_pos]);
   gFT4conversionFactor := ConvertedValue(1, T4_MOLAR_MASS, 'mol/l',
     gParameterUnit[FT4_pos]);
   gFT3conversionFactor := ConvertedValue(1, T3_MOLAR_MASS, 'mol/l',
@@ -380,12 +383,16 @@ begin
   case bParameter1 of // input (independent parameter)
     TSHItem:
     begin
-      conversionFactor1 := 1;
+      if isNaN(conversionFactor1) then
+        conversionFactor := 1 // input is native
+      else
+        conversionFactor := gTSHconversionFactor;
       for i := 0 to MAX_I do
       begin
         TSH := min + i * interval;
         inputVector[i] := TSH;
       end;
+      conversionFactor1 := gTSHconversionFactor;
     end;
     FT4Item:
     begin
@@ -427,7 +434,7 @@ begin
     end;
     TSHItem:
     begin
-      conversionFactor2 := 1;
+      conversionFactor2 := gTSHconversionFactor;
       case bParameter1 of
         FT4Item:
         begin;
@@ -1254,7 +1261,7 @@ var
   ConversionFactor_x, ConversionFactor_y: real;
   theUnit: string;
 begin
-  SetLength(gSensitivityMatrix, 0, 4);     // empty matrix
+  SetLength(gSensitivityMatrix, 0, 4);         // empty matrix
   SetLength(gSensitivityMatrix, MAX_I + 1, 4); // and create new matrix of correct size
   if StrucParsEnabled then
     UseStrucParsFromTrackBars;
@@ -1355,28 +1362,28 @@ begin
         EquilibriumChart.LeftAxis.Title.Caption := ISOKLINE_2_STRING
       end;
     end;
-  case gSelectedBParameter_x of
-    TSHItem:
-    begin
-      theUnit := ' (' + gParameterUnit[TSH_pos] + ')';
-      EquilibriumChart.BottomAxis.Title.Caption := 'TSH' + theUnit;
+    case gSelectedBParameter_x of
+      TSHItem:
+      begin
+        theUnit := ' (' + gParameterUnit[TSH_pos] + ')';
+        EquilibriumChart.BottomAxis.Title.Caption := 'TSH' + theUnit;
+      end;
+      FT4Item:
+      begin
+        theUnit := ' (' + gParameterUnit[FT4_pos] + ')';
+        EquilibriumChart.BottomAxis.Title.Caption := 'FT4' + theUnit;
+      end;
+      cT3Item:
+      begin
+        theUnit := ' (' + gParameterUnit[cT3_pos] + ')';
+        EquilibriumChart.BottomAxis.Title.Caption := 'cT3' + theUnit;
+      end;
+      otherwise
+      begin
+        theUnit := '';
+        EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_1_STRING
+      end;
     end;
-    FT4Item:
-    begin
-      theUnit := ' (' + gParameterUnit[FT4_pos] + ')';
-      EquilibriumChart.BottomAxis.Title.Caption := 'FT4' + theUnit;
-    end;
-    cT3Item:
-    begin
-      theUnit := ' (' + gParameterUnit[cT3_pos] + ')';
-      EquilibriumChart.BottomAxis.Title.Caption := 'cT3' + theUnit;
-    end;
-    otherwise
-    begin
-      theUnit := '';
-      EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_1_STRING
-    end;
-  end;
     for j := 0 to MAX_I do
     begin
       gSensitivityMatrix[j, 0] := gResponseCurve1.input[j];
