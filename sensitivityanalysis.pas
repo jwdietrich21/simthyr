@@ -499,7 +499,7 @@ begin
     FLine[1].AddXY(xPar, gSensitivityMatrix[gCurLine, TSH_COL], '',
       SensitivityAnalysisForm.TSHColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
-      'TSH' + ': ' + gParameterUnit[TSH_pos];
+      'TSH' + ' (' + gParameterUnit[TSH_pos] + ')';
     Inc(SeriesCount);
     FLine[1].SeriesColor := SensitivityAnalysisForm.TSHColorBox.Selected;
   end;
@@ -511,7 +511,7 @@ begin
     FLine[5].AddXY(xPar, gSensitivityMatrix[gCurLine, TT4_COL], '',
       SensitivityAnalysisForm.TT4ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
-      'TT4' + ': ' + gParameterUnit[TT4_pos];
+      'TT4' + ' (' + gParameterUnit[TT4_pos] + ')';
     Inc(SeriesCount);
     FLine[5].SeriesColor := SensitivityAnalysisForm.TT4ColorBox.Selected;
   end;
@@ -523,7 +523,7 @@ begin
     FLine[2].AddXY(xPar, gSensitivityMatrix[gCurLine, FT4_COL], '',
       SensitivityAnalysisForm.FT4ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
-      'FT4' + ': ' + gParameterUnit[FT4_pos];
+      'FT4' + ' (' + gParameterUnit[FT4_pos] + ')';
     Inc(SeriesCount);
     FLine[2].SeriesColor := SensitivityAnalysisForm.FT4ColorBox.Selected;
   end;
@@ -535,7 +535,7 @@ begin
     FLine[6].AddXY(xPar, gSensitivityMatrix[gCurLine, TT3_COL], '',
       SensitivityAnalysisForm.TT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
-      'TT3' + ': ' + gParameterUnit[TT3_pos];
+      'TT3' + ' (' + gParameterUnit[TT3_pos] + ')';
     Inc(SeriesCount);
     FLine[6].SeriesColor := SensitivityAnalysisForm.TT3ColorBox.Selected;
   end;
@@ -547,7 +547,7 @@ begin
     FLine[3].AddXY(xPar, gSensitivityMatrix[gCurLine, FT3_COL], '',
       SensitivityAnalysisForm.FT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
-      'FT3' + ': ' + gParameterUnit[FT3_pos];
+      'FT3' + ' (' + gParameterUnit[FT3_pos] + ')';
     Inc(SeriesCount);
     FLine[3].SeriesColor := SensitivityAnalysisForm.FT3ColorBox.Selected;
   end;
@@ -559,12 +559,14 @@ begin
     FLine[4].AddXY(xPar, gSensitivityMatrix[gCurLine, cT3_COL], '',
       SensitivityAnalysisForm.cT3ColorBox.Selected);
     SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption :=
-      'cT3' + ': ' + gParameterUnit[cT3_pos];
+      'cT3' + ' (' + gParameterUnit[cT3_pos] + ')';
     Inc(SeriesCount);
     FLine[4].SeriesColor := SensitivityAnalysisForm.cT3ColorBox.Selected;
   end;
   if SeriesCount > 1 then
-    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameters';
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameters'
+  else if SeriesCount = 0 then
+    SensitivityAnalysisForm.Chart1.LeftAxis.Title.Caption := 'Dependent Parameter';
   inc(gCurLine);
 end;
 

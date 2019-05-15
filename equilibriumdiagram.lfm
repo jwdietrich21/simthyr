@@ -405,7 +405,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     Caption = 'Behavioural Parameters'
     ClientHeight = 66
     ClientWidth = 682
-    TabOrder = 4
+    TabOrder = 3
     object yMinSpinEdit: TFloatSpinEdit
       Left = 8
       Height = 23
