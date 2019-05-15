@@ -1374,7 +1374,7 @@ begin
     otherwise
     begin
       theUnit := '';
-      EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_2_STRING
+      EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_1_STRING
     end;
   end;
     for j := 0 to MAX_I do
