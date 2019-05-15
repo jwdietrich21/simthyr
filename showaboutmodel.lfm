@@ -1,7 +1,7 @@
 object AboutModelForm: TAboutModelForm
   Left = 529
   Height = 699
-  Top = 22
+  Top = 36
   Width = 575
   HorzScrollBar.Page = 1
   HorzScrollBar.Visible = False
@@ -154,12 +154,12 @@ object AboutModelForm: TAboutModelForm
     0000
   }
   Position = poScreenCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '1.6.2.0'
   object Label1: TLabel
     Left = 56
-    Height = 16
-    Top = 96
-    Width = 77
+    Height = 15
+    Top = 104
+    Width = 88
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -168,7 +168,7 @@ object AboutModelForm: TAboutModelForm
   end
   object StaticText2: TStaticText
     Left = 56
-    Height = 61
+    Height = 66
     Top = 16
     Width = 462
     Anchors = [akTop, akLeft, akRight]
@@ -179,10 +179,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = 306
-    Height = 16
-    Top = 64
-    Width = 212
+    Left = -9482
+    Height = 21
+    Top = 80
+    Width = 10000
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
@@ -197,8 +197,8 @@ object AboutModelForm: TAboutModelForm
   end
   object Memo1: TMemo
     Left = 56
-    Height = 527
-    Top = 120
+    Height = 519
+    Top = 128
     Width = 462
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.InnerBorder = 5
@@ -313,7 +313,7 @@ object AboutModelForm: TAboutModelForm
     Left = 502
     Height = 16
     Hint = 'Edit model annotations'
-    Top = 96
+    Top = 103
     Width = 16
     Anchors = [akTop, akRight]
     OnClick = Image1Click

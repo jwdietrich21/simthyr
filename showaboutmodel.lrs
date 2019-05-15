@@ -2,7 +2,7 @@
 
 LazarusResources.Add('TAboutModelForm','FORMDATA',[
   'TPF0'#15'TAboutModelForm'#14'AboutModelForm'#4'Left'#3#17#2#6'Height'#3#187#2
-  +#3'Top'#2#22#5'Width'#3'?'#2#18'HorzScrollBar.Page'#2#1#21'HorzScrollBar.Vis'
+  +#3'Top'#2'$'#5'Width'#3'?'#2#18'HorzScrollBar.Page'#2#1#21'HorzScrollBar.Vis'
   +'ible'#8#18'VertScrollBar.Page'#2#1#21'VertScrollBar.Visible'#8#10'AlphaBlen'
   +'d'#9#15'AlphaBlendValue'#2#0#7'Anchors'#11#0#11'BorderIcons'#11#12'biSystem'
   +'Menu'#10'biMinimize'#0#7'Caption'#6#15'About the model'#12'ClientHeight'#3
@@ -150,120 +150,121 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#8'Position'#7#14'poScre'
-  +'enCenter'#10'LCLVersion'#6#7'2.0.2.0'#0#6'TLabel'#6'Label1'#4'Left'#2'8'#6
-  +'Height'#2#16#3'Top'#2'`'#5'Width'#2'M'#7'Caption'#6#11'References:'#12'Font'
+  +'enCenter'#10'LCLVersion'#6#7'1.6.2.0'#0#6'TLabel'#6'Label1'#4'Left'#2'8'#6
+  +'Height'#2#15#3'Top'#2'h'#5'Width'#2'X'#7'Caption'#6#11'References:'#12'Font'
   +'.Quality'#7#13'fqAntialiased'#10'Font.Style'#11#6'fsBold'#0#11'ParentColor'
   +#8#10'ParentFont'#8#0#0#11'TStaticText'#11'StaticText2'#4'Left'#2'8'#6'Heigh'
-  +'t'#2'='#3'Top'#2#16#5'Width'#3#206#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akR'
+  +'t'#2'B'#3'Top'#2#16#5'Width'#3#206#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akR'
   +'ight'#0#7'Caption'#6#176'This simulation is based on version 10 of the MiMe'
   +'-NoCoDI model of thyrotropic feedback control proposed by Dietrich et al. 1'
   +'997 and subsequently.'#13#10#13#10'(SimThyr, RRID:SCR_014351)'#12'Font.Qual'
   +'ity'#7#13'fqAntialiased'#10'ParentFont'#8#8'TabOrder'#2#0#0#0#6'TLabel'#6'L'
-  +'abel2'#6'Cursor'#7#11'crHandPoint'#4'Left'#3'2'#1#6'Height'#2#16#3'Top'#2'@'
-  +#5'Width'#3#212#0#9'Alignment'#7#14'taRightJustify'#7'Anchors'#11#5'akTop'#7
-  +'akRight'#0#7'Caption'#6'!http://tfc.medical-cybernetics.de'#5'Color'#7#8'cl'
-  +'Window'#10'Font.Color'#7#6'clNavy'#10'Font.Pitch'#7#10'fpVariable'#12'Font.'
-  +'Quality'#7#13'fqAntialiased'#11'ParentColor'#8#10'ParentFont'#8#11'Transpar'
-  +'ent'#8#7'OnClick'#7#11'Label2Click'#0#0#5'TMemo'#5'Memo1'#4'Left'#2'8'#6'He'
-  +'ight'#3#15#2#3'Top'#2'x'#5'Width'#3#206#1#7'Anchors'#11#5'akTop'#6'akLeft'#7
-  +'akRight'#8'akBottom'#0#25'BorderSpacing.InnerBorder'#2#5#5'Color'#7#7'clWhi'
-  +'te'#13'Lines.Strings'#1#6'91. Dietrich JW, Mitzdorf U, Weitkunat R, Pickard'
-  +'t CR. The'#6'Apituitary thyroid feedback control: stability and oscillation'
-  +'s in'#6'2a new nonlinear model. Journal of Endocrinological'#6',Investigati'
-  +'on. 1997;20(Suppl. to no. 5):100.'#6#0#6':2. Dietrich JW, Fischer MR, Jauch'
-  +' J, Pantke E, G'#195#164'rtner R,'#6';Pickardt CR. SPINA-THYR: A novel syst'
-  +'ems theoretic approach'#6'9to determine the secretion capacity of the thyro'
-  +'id gland.'#6'=European Journal of Internal Medicine. 1999;10 (Suppl. 1)(May'
-  +#6#10'1999):S34.'#6#0#6'>3. Dietrich JW. Signal Storage in Metabolic Pathway'
-  +'s: The ASIA'#6',Element. kybernetiknet. 2000;1(3, 2000):1-9.'#6#0#6':4. Die'
-  +'trich JW, Tesche A, Pickardt CR, Mitzdorf U. Fractal'#6'<Properties of the '
-  +'Thyrotropic Feedback Control: Implications'#6'6of a Nonlinear Model Compare'
-  +'d with Empirical Data. In:'#6'<Trappl R, ed. Cybernetics and Systems 2002. '
-  +'Vienna: Austrian'#6',Society for Cybernetic Studies; 2002:329-34.'#6#0#6'85'
-  +'. Dietrich JW. Der Hypophysen-Schilddr'#195#188'sen-Regelkreis.'#6'7Entwick'
-  +'lung und klinische Anwendung eines nichtlinearen'#6';Modells. Vol. 2 Berlin'
-  +': Logos Verlag; 2002. (Schardt F, ed.'#6'"Spektrum medizinischer Forschung)'
-  +'.'#6#0#6'>6. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Thyrotropic'#6
-  +'7Feedback Control: Evidence for an Additional Ultrashort'#6'4Feedback Loop '
-  +'from Fractal Analysis. Cybernetics and'#6#28'Systems. 2004;35(4) 315-31. '#6
-  +#30'doi 10.1080/01969720490443354.'#6#0#6'67. Dietrich, J. W. and B. O. Boeh'
-  +'m (2006). Equilibrium'#6'6behaviour of feedback-coupled physiological satur'
-  +'ation'#6'=kinetics. In: Cybernetics and Systems 2006. R. Trappl (Hrsg).'#6
-  +';Vienna, Austrian Society for Cybernetic Studies. 1: 269-74.'#6#0#6'<8. Die'
-  +'trich, J. W., A. Stachon, B. Antic, H. H. Klein und S.'#6'4Hering (2008). "'
-  +'The AQUA-FONTIS Study: Protocol of a'#6'?multidisciplinary, cross sectional'
-  +' and prospective longitudinal'#6'1study for developing standardized diagnos'
-  ,'tics and'#6'6classification of non-thyroidal illness syndrome." BMC'#6'7End'
-  +'ocrine Disorders 8 (13). doi 10.1186/1472-6823-8-13.'#6#14'PMID 18851740.'#6
-  +#0#6'@9. Dietrich, J. W., G. Landgrafe, E. H. Fotiadou (2012). TSH and'#6'8t'
-  +'hyrotropic agonists: Key actors in thyroid homeostasis.'#6'=Journal of Thyr'
-  +'oid Research, vol. 2012, Article ID 351864, 29'#6'4pages, 2012. doi 10.1155'
-  +'/2012/351864. PMID 23365787.'#6#0#6'=10. Hoermann R, Midgley JE, Larisch R,'
-  +' Dietrich JW (2013). Is'#6'4pituitary TSH an adequate measure of thyroid ho'
-  +'rmone'#6'9controlled homoeostasis during thyroxine treatment? Eur J'#6'8End'
-  +'ocrinol. 168(2):271-80. doi 10.1530/EJE-12-0819. PMID'#6#9'23184912.'#6#0#6
-  +';11. Midgley JE, Hoermann R, Larisch R, Dietrich JW (2013). '#6'5Physiologi'
-  +'cal states and functional relation between '#6'>thyrotropin and free thyrox'
-  +'ine in thyroid health and disease: '#6'9in vivo and in silico data suggest '
-  +'a hierarchical model. '#6'"J Clin Pathol. 2013 66(4):335-42. '#6'1doi 10.11'
-  +'36/jclinpath-2012-201213. PMID 23423518.'#6#0#6';12. Hoermann R, Midgley JE'
-  +', Larisch R, Dietrich JW (2015). '#6'6Integration of Peripheral and Glandul'
-  +'ar Regulation of '#6'<Triiodothyronine Production by Thyrotropin in Untreat'
-  +'ed and '#6'<Thyroxine-Treated Subjects. Hormone and Metabolic Research, '#6
-  +'947(9):674-80. PMID: 25750078 doi: 10.1055/s-0034-1398616.'#6#0#6';13. Midg'
-  +'ley JE, Larisch R, Dietrich JW, Hoermann R. (2015).'#6'AVariation in the bi'
-  +'ochemical response to l-thyroxine therapy and '#6'Drelationship with periph'
-  +'eral thyroid hormone conversion efficiency. '#6'?Endocr Connect. 2015 Dec;4'
-  +'(4):196-205. doi: 10.1530/EC-150056. '#6#14'PMID 26335522.'#6#0#6';14. Diet'
-  +'rich JW, Midgley JE, Larisch R, Hoermann R. (2015).'#6'BOf rats and men: th'
-  +'yroid homeostasis in rodents and human beings. '#6'2Lancet Diabetes Endocri'
-  +'nol. 2015 Dec;3(12):932-3. '#6'2doi: 10.1016/S2213-8587(15)00421-0. PMID 26'
-  +'590684.'#6#0#6';15. Hoermann R, Midgley JE, Larisch R, Dietrich JW. (2015).'
-  +#6'CHomeostatic Control of the Thyroid-Pituitary Axis: Perspectives for'#6';'
-  +'Diagnosis and Treatment. Front Endocrinol (Lausanne). 2015 '#6';Nov 20;6:17'
-  +'7. doi: 10.3389/fendo.2015.00177. PMID 26635726.'#6#0#6'>16. Dietrich JW, L'
-  +'andgrafe-Mende G, Wiora E, Chatzitomaris A, '#6'@Klein HH, Midgley JE, Hoer'
-  +'mann R. (2016). Calculated Parameters '#6'Bof Thyroid Homeostasis: Emerging'
-  +' Tools for Differential Diagnosis '#6'Aand Clinical Research. Front Endocri'
-  +'nol (Lausanne). 2016 Jun 9;7:'#6'157. doi: 10.3389/fendo.2016.00057. PMID 2'
-  +'7375554.'#6#0#6'?17. Chatzitomaris A, Hoermann R, Midley JE, Hering S, Urba'
-  +'n A, '#6'3Dietrich B, Abood A, Klein HH, Dietrich JW (2017). '#6'BThyroid A'
-  +'llostasis '#226#128#147' Adaptive Responses of Thyrotropic Feedback '#6':Co'
-  +'ntrol to Conditions of Strain, Stress and Developmental '#6'8Programming. F'
-  +'rontiers in Endocrinology. 2017; 8:00163. '#6',PMID 28775711. doi: 10.3389/'
-  +'fendo.2017.00163'#6#0#6#0#0#8'OnChange'#7#11'Memo1Change'#8'ReadOnly'#9#10
-  +'ScrollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#1#11'WantReturns'#8#0#0#6'TImage'
-  +#6'Image1'#4'Left'#3#246#1#6'Height'#2#16#4'Hint'#6#22'Edit model annotation'
-  +'s'#3'Top'#2'`'#5'Width'#2#16#7'Anchors'#11#5'akTop'#7'akRight'#0#7'OnClick'
-  +#7#11'Image1Click'#14'ParentShowHint'#8#12'Picture.Data'#10#247#2#0#0#23'TPo'
-  +'rtableNetworkGraphic'#219#2#0#0#137'PNG'#13#10#26#10#0#0#0#13'IHDR'#0#0#0#16
-  +#0#0#0#16#8#6#0#0#0#31#243#255'a'#0#0#0#4'gAMA'#0#0#175#200'7'#5#138#233#0#0
-  +#0#25'tEXtSoftware'#0'Adobe ImageReadyq'#201'e<'#0#0#2'mIDAT8'#203#165#147
-  +#205'K'#148'Q'#20#198#127#239'83Zj'#147#22#147#155'2+'#178'(3'#133#10#130'Z'
-  +#9'B'#138'PP'#20#5#18#173'Z'#180#169#160#255' '#194'MA'#139#22#233#166#149#17
-  +#180#136#160#168#8#202#146#4#169#208#162'O'#243#163'Fm'#166#25#167#25#157#247
-  +#190#247#189#239'=-4'#202#143'V'#221#197#185'p'#224#249#157#231'r'#159#227
-  +#136#8#255's'#194#0'2rOL'#254#7'"'#26'1>'#18#248#136#209#136#241#144#192#3'_'
-  +#17#24#133#24#23'|E'#236#208#13'g> 0D'#182#31']D'#23#1#7#230#10' 0u'#235#216
-  +'b'#7'^6'#193'2'#17#196#186#179']'#7'D,'#224' '#252'!8'#161'b'#196'w'#151'x'
-  +#130'1X='#137#201#247#129#245#16#209#179#183#213'`'#21'b'#21'b]'#162#171#15
-  +'b'#253#194#18#128#192#3#12'b'#21#136'?'''#250'['#172#16'['#192'M'#246#147'.'
-  +#174'"{'#231#162#204#252'x'#130#163#18#237'a'#0'3'#157#158#181'<o'#178#139
-  +#181'j'#14#226#162's'#195'x?'#151'SUw'#130'XM'#3#217#225'Z'#222'?'#232#236#8
-  +#3#216'@'#161'>'#245'`'#188#207#16'h'#16'C'#160'r'#148'T'#199#17'[@'#231#198
-  +#160#164#129#202#248'.2C'#239#136':'#154#242#21'U'#148#173'Z'#23#11#3#4'n'#26
-  +#147'KP'#182#243'8`'#177'z'#148#252#171#155'HP'#192#159#249#6#197';'#136#213
-  +'4'#227'Mt'#19']'#238'0'#250#250'='#190#210'i'#229'N'#239#13#1'8"'#248#201#1
-  +#166#30#157'''(|'#130#192#199#138#143#151#255#138#132#183#18#219#216#130#26
-  +#191#142#19#153'"RVNIa'#232#187#159#155'h'#218'u'#230#246#199#208#239#255'.'
-  +#223#221#142#159'M'#145'}z'#25'+>'#153#244'8'#218'n!'#182#169#13#149#184'F('
-  ,#226#163's'#235'I>~'#142#206#23'Z'#27#207'>|'#13#16#2#192'('#156#162#16#165
-  +#141#167#16#179#146#177#251']'#216#149'{'#136'okAOvR'#20#21#188'\5'#169'g'
-  +#253'DR}l>'#215#215#191' '#7#138#169#251'W'#16#163#24'Kf(kl'#195'H'#156#137
-  +#193#171'T'#196#163#168#204'Z2O{'#8#167'_b'#181#154#151#3'g'#225'2'#221#234
-  +'h'#146#195#167#187#248#208'}'#158#241#145'^'#138#215#213'c'#146#169#241#138
-  +'hQs'#221#133#23'o'#22#198'='#180#176#241#225#243#164#209'o'#239'RS'#191#143
-  +#210#210'Z'#18#253#131#211#202#213#7#150#18'/'#233#224#200#254'J'#183'q'#195
-  +#154#240#238#173'5H'#196#235'u'#147#169#147#173#151#6#190#252'k'#157#127#1
-  +#192#219'r'#240#26#219#244'X'#0#0#0#0'IEND'#174'B`'#130#8'ShowHint'#9#0#0#0
+  +'abel2'#6'Cursor'#7#11'crHandPoint'#4'Left'#3#246#218#6'Height'#2#21#3'Top'#2
+  +'P'#5'Width'#3#16''''#9'Alignment'#7#14'taRightJustify'#7'Anchors'#11#5'akTo'
+  +'p'#7'akRight'#0#7'Caption'#6'!http://tfc.medical-cybernetics.de'#5'Color'#7
+  +#8'clWindow'#10'Font.Color'#7#6'clNavy'#10'Font.Pitch'#7#10'fpVariable'#12'F'
+  +'ont.Quality'#7#13'fqAntialiased'#11'ParentColor'#8#10'ParentFont'#8#11'Tran'
+  +'sparent'#8#7'OnClick'#7#11'Label2Click'#0#0#5'TMemo'#5'Memo1'#4'Left'#2'8'#6
+  +'Height'#3#7#2#3'Top'#3#128#0#5'Width'#3#206#1#7'Anchors'#11#5'akTop'#6'akLe'
+  +'ft'#7'akRight'#8'akBottom'#0#25'BorderSpacing.InnerBorder'#2#5#5'Color'#7#7
+  +'clWhite'#13'Lines.Strings'#1#6'91. Dietrich JW, Mitzdorf U, Weitkunat R, Pi'
+  +'ckardt CR. The'#6'Apituitary thyroid feedback control: stability and oscill'
+  +'ations in'#6'2a new nonlinear model. Journal of Endocrinological'#6',Invest'
+  +'igation. 1997;20(Suppl. to no. 5):100.'#6#0#6':2. Dietrich JW, Fischer MR, '
+  +'Jauch J, Pantke E, G'#195#164'rtner R,'#6';Pickardt CR. SPINA-THYR: A novel'
+  +' systems theoretic approach'#6'9to determine the secretion capacity of the '
+  +'thyroid gland.'#6'=European Journal of Internal Medicine. 1999;10 (Suppl. 1'
+  +')(May'#6#10'1999):S34.'#6#0#6'>3. Dietrich JW. Signal Storage in Metabolic '
+  +'Pathways: The ASIA'#6',Element. kybernetiknet. 2000;1(3, 2000):1-9.'#6#0#6
+  +':4. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Fractal'#6'<Properties '
+  +'of the Thyrotropic Feedback Control: Implications'#6'6of a Nonlinear Model '
+  +'Compared with Empirical Data. In:'#6'<Trappl R, ed. Cybernetics and Systems'
+  +' 2002. Vienna: Austrian'#6',Society for Cybernetic Studies; 2002:329-34.'#6
+  +#0#6'85. Dietrich JW. Der Hypophysen-Schilddr'#195#188'sen-Regelkreis.'#6'7E'
+  +'ntwicklung und klinische Anwendung eines nichtlinearen'#6';Modells. Vol. 2 '
+  +'Berlin: Logos Verlag; 2002. (Schardt F, ed.'#6'"Spektrum medizinischer Fors'
+  +'chung).'#6#0#6'>6. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Thyrotro'
+  +'pic'#6'7Feedback Control: Evidence for an Additional Ultrashort'#6'4Feedbac'
+  +'k Loop from Fractal Analysis. Cybernetics and'#6#28'Systems. 2004;35(4) 315'
+  +'-31. '#6#30'doi 10.1080/01969720490443354.'#6#0#6'67. Dietrich, J. W. and B'
+  +'. O. Boehm (2006). Equilibrium'#6'6behaviour of feedback-coupled physiologi'
+  +'cal saturation'#6'=kinetics. In: Cybernetics and Systems 2006. R. Trappl (H'
+  +'rsg).'#6';Vienna, Austrian Society for Cybernetic Studies. 1: 269-74.'#6#0#6
+  +'<8. Dietrich, J. W., A. Stachon, B. Antic, H. H. Klein und S.'#6'4Hering (2'
+  +'008). "The AQUA-FONTIS Study: Protocol of a'#6'?multidisciplinary, cross se'
+  +'ctional and prospective longitudinal'#6'1study for developing standardized '
+  ,'diagnostics and'#6'6classification of non-thyroidal illness syndrome." BMC'
+  +#6'7Endocrine Disorders 8 (13). doi 10.1186/1472-6823-8-13.'#6#14'PMID 18851'
+  +'740.'#6#0#6'@9. Dietrich, J. W., G. Landgrafe, E. H. Fotiadou (2012). TSH a'
+  +'nd'#6'8thyrotropic agonists: Key actors in thyroid homeostasis.'#6'=Journal'
+  +' of Thyroid Research, vol. 2012, Article ID 351864, 29'#6'4pages, 2012. doi'
+  +' 10.1155/2012/351864. PMID 23365787.'#6#0#6'=10. Hoermann R, Midgley JE, La'
+  +'risch R, Dietrich JW (2013). Is'#6'4pituitary TSH an adequate measure of th'
+  +'yroid hormone'#6'9controlled homoeostasis during thyroxine treatment? Eur J'
+  +#6'8Endocrinol. 168(2):271-80. doi 10.1530/EJE-12-0819. PMID'#6#9'23184912.'
+  +#6#0#6';11. Midgley JE, Hoermann R, Larisch R, Dietrich JW (2013). '#6'5Phys'
+  +'iological states and functional relation between '#6'>thyrotropin and free '
+  +'thyroxine in thyroid health and disease: '#6'9in vivo and in silico data su'
+  +'ggest a hierarchical model. '#6'"J Clin Pathol. 2013 66(4):335-42. '#6'1doi'
+  +' 10.1136/jclinpath-2012-201213. PMID 23423518.'#6#0#6';12. Hoermann R, Midg'
+  +'ley JE, Larisch R, Dietrich JW (2015). '#6'6Integration of Peripheral and G'
+  +'landular Regulation of '#6'<Triiodothyronine Production by Thyrotropin in U'
+  +'ntreated and '#6'<Thyroxine-Treated Subjects. Hormone and Metabolic Researc'
+  +'h, '#6'947(9):674-80. PMID: 25750078 doi: 10.1055/s-0034-1398616.'#6#0#6';1'
+  +'3. Midgley JE, Larisch R, Dietrich JW, Hoermann R. (2015).'#6'AVariation in'
+  +' the biochemical response to l-thyroxine therapy and '#6'Drelationship with'
+  +' peripheral thyroid hormone conversion efficiency. '#6'?Endocr Connect. 201'
+  +'5 Dec;4(4):196-205. doi: 10.1530/EC-150056. '#6#14'PMID 26335522.'#6#0#6';1'
+  +'4. Dietrich JW, Midgley JE, Larisch R, Hoermann R. (2015).'#6'BOf rats and '
+  +'men: thyroid homeostasis in rodents and human beings. '#6'2Lancet Diabetes '
+  +'Endocrinol. 2015 Dec;3(12):932-3. '#6'2doi: 10.1016/S2213-8587(15)00421-0. '
+  +'PMID 26590684.'#6#0#6';15. Hoermann R, Midgley JE, Larisch R, Dietrich JW. '
+  +'(2015).'#6'CHomeostatic Control of the Thyroid-Pituitary Axis: Perspectives'
+  +' for'#6';Diagnosis and Treatment. Front Endocrinol (Lausanne). 2015 '#6';No'
+  +'v 20;6:177. doi: 10.3389/fendo.2015.00177. PMID 26635726.'#6#0#6'>16. Dietr'
+  +'ich JW, Landgrafe-Mende G, Wiora E, Chatzitomaris A, '#6'@Klein HH, Midgley'
+  +' JE, Hoermann R. (2016). Calculated Parameters '#6'Bof Thyroid Homeostasis:'
+  +' Emerging Tools for Differential Diagnosis '#6'Aand Clinical Research. Fron'
+  +'t Endocrinol (Lausanne). 2016 Jun 9;7:'#6'157. doi: 10.3389/fendo.2016.0005'
+  +'7. PMID 27375554.'#6#0#6'?17. Chatzitomaris A, Hoermann R, Midley JE, Herin'
+  +'g S, Urban A, '#6'3Dietrich B, Abood A, Klein HH, Dietrich JW (2017). '#6'B'
+  +'Thyroid Allostasis '#226#128#147' Adaptive Responses of Thyrotropic Feedbac'
+  +'k '#6':Control to Conditions of Strain, Stress and Developmental '#6'8Progr'
+  +'amming. Frontiers in Endocrinology. 2017; 8:00163. '#6',PMID 28775711. doi:'
+  +' 10.3389/fendo.2017.00163'#6#0#6#0#0#8'OnChange'#7#11'Memo1Change'#8'ReadOn'
+  +'ly'#9#10'ScrollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#1#11'WantReturns'#8#0#0
+  +#6'TImage'#6'Image1'#4'Left'#3#246#1#6'Height'#2#16#4'Hint'#6#22'Edit model '
+  +'annotations'#3'Top'#2'g'#5'Width'#2#16#7'Anchors'#11#5'akTop'#7'akRight'#0#7
+  +'OnClick'#7#11'Image1Click'#14'ParentShowHint'#8#12'Picture.Data'#10#247#2#0
+  +#0#23'TPortableNetworkGraphic'#219#2#0#0#137'PNG'#13#10#26#10#0#0#0#13'IHDR'
+  +#0#0#0#16#0#0#0#16#8#6#0#0#0#31#243#255'a'#0#0#0#4'gAMA'#0#0#175#200'7'#5#138
+  +#233#0#0#0#25'tEXtSoftware'#0'Adobe ImageReadyq'#201'e<'#0#0#2'mIDAT8'#203
+  +#165#147#205'K'#148'Q'#20#198#127#239'83Zj'#147#22#147#155'2+'#178'(3'#133#10
+  +#130'Z'#9'B'#138'PP'#20#5#18#173'Z'#180#169#160#255' '#194'MA'#139#22#233#166
+  +#149#17#180#136#160#168#8#202#146#4#169#208#162'O'#243#163'Fm'#166#25#167#25
+  +#157#247#190#247#189#239'=-4'#202#143'V'#221#197#185'p'#224#249#157#231'r'
+  +#159#227#136#8#255's'#194#0'2rOL'#254#7'"'#26'1>'#18#248#136#209#136#241#144
+  +#192#3'_'#17#24#133#24#23'|E'#236#208#13'g> 0D'#182#31']D'#23#1#7#230#10' 0u'
+  +#235#216'b'#7'^6'#193'2'#17#196#186#179']'#7'D,'#224' '#252'!8'#161'b'#196'w'
+  +#151'x'#130'1X='#137#201#247#129#245#16#209#179#183#213'`'#21'b'#21'b]'#162
+  +#171#15'b'#253#194#18#128#192#3#12'b'#21#136'?'''#250'['#172#16'['#192'M'#246
+  +#147'.'#174'"{'#231#162#204#252'x'#130#163#18#237'a'#0'3'#157#158#181'<o'#178
+  +#139#181'j'#14#226#162's'#195'x?'#151'SUw'#130'XM'#3#217#225'Z'#222'?'#232
+  +#236#8#3#216'@'#161'>'#245'`'#188#207#16'h'#16'C'#160'r'#148'T'#199#17'[@'
+  +#231#198#160#164#129#202#248'.2C'#239#136':'#154#242#21'U'#148#173'Z'#23#11#3
+  +#4'n'#26#147'KP'#182#243'8`'#177'z'#148#252#171#155'HP'#192#159#249#6#197';'
+  +#136#213'4'#227'Mt'#19']'#238'0'#250#250'='#190#210'i'#229'N'#239#13#1'8"'
+  +#248#201#1#166#30#157'''(|'#130#192#199#138#143#151#255#138#132#183#18#219
+  +#216#130#26#191#142#19#153'"RVNIa'#232#187#159#155'h'#218'u'#230#246#199#208
+  +#239#255'.'#223#221#142#159'M'#145'}z'#25'+>'#153#244'8'#218'n!'#182#169#13
+  ,#149#184'F('#226#163's'#235'I>~'#142#206#23'Z'#27#207'>|'#13#16#2#192'('#156
+  +#162#16#165#141#167#16#179#146#177#251']'#216#149'{'#136'okAOvR'#20#21#188'\'
+  +'5'#169'g'#253'DR}l>'#215#215#191' '#7#138#169#251'W'#16#163#24'Kf(kl'#195'H'
+  +#156#137#193#171'T'#196#163#168#204'Z2O{'#8#167'_b'#181#154#151#3'g'#225'2'
+  +#221#234'h'#146#195#167#187#248#208'}'#158#241#145'^'#138#215#213'c'#146#169
+  +#241#138'hQs'#221#133#23'o'#22#198'='#180#176#241#225#243#164#209'o'#239'RS'
+  +#191#143#210#210'Z'#18#253#131#211#202#213#7#150#18'/'#233#224#200#254'J'#183
+  +'q'#195#154#240#238#173'5H'#196#235'u'#147#169#147#173#151#6#190#252'k'#157
+  +#127#1#192#219'r'#240#26#219#244'X'#0#0#0#0'IEND'#174'B`'#130#8'ShowHint'#9#0
+  +#0#0
 ]);
