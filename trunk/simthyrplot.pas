@@ -222,8 +222,8 @@ end;
 procedure TValuesPlot.ComboBox1Change(Sender: TObject);
 begin
   ValuesPlot.Chart1.LeftAxis.Title.Caption :=
-    gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' +
-    gParameterUnit[ComboBox1.ItemIndex + 2];
+    gParameterLabel[ComboBox1.ItemIndex + 2] + ' (' +
+    gParameterUnit[ComboBox1.ItemIndex + 2] + ')';
   ColorListBox1.Selected := gDefaultColors[ComboBox1.ItemIndex + 2];
   DrawDummyPlots;
   nmax_old := 0;
@@ -257,8 +257,8 @@ var
   theTitle, theUnit: String;
   x, y: Double;
 begin
-  theTitle := ExtractDelimited(1, Chart1.LeftAxis.Title.Caption, [':']);
-  theUnit := ExtractDelimited(2, Chart1.LeftAxis.Title.Caption, [':']);
+  theTitle := ExtractDelimited(1, Chart1.LeftAxis.Title.Caption, ['(']);
+  theUnit := ExtractDelimited(2, Chart1.LeftAxis.Title.Caption, ['(']);
   with ATool as TDatapointClickTool do
     if (Series is TLineSeries) then
       with TLineSeries(Series) do begin
@@ -276,8 +276,8 @@ var
   theTitle, theUnit: String;
   x, y: Double;
 begin
-  theTitle := ExtractDelimited(1, Chart2.LeftAxis.Title.Caption, [':']);
-  theUnit := ExtractDelimited(2, Chart2.LeftAxis.Title.Caption, [':']);
+  theTitle := ExtractDelimited(1, Chart2.LeftAxis.Title.Caption, ['(']);
+  theUnit := ExtractDelimited(2, Chart2.LeftAxis.Title.Caption, ['(']);
   with ATool as TDatapointClickTool do
     if (Series is TLineSeries) then
       with TLineSeries(Series) do begin
@@ -323,8 +323,8 @@ end;
 procedure TValuesPlot.ComboBox2Change(Sender: TObject);
 begin
   ValuesPlot.Chart2.LeftAxis.Title.Caption :=
-    gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' +
-    gParameterUnit[ComboBox2.ItemIndex + 2];
+    gParameterLabel[ComboBox2.ItemIndex + 2] + ' (' +
+    gParameterUnit[ComboBox2.ItemIndex + 2] + ')';
   ColorListBox2.Selected := gDefaultColors[ComboBox2.ItemIndex + 2];
   DrawDummyPlots;
   nmax_old := 0;
@@ -351,11 +351,11 @@ begin
   Chart1.Title.Visible := False;
   Chart2.Title.Visible := False;
   Chart1.LeftAxis.Title.Caption :=
-    gParameterLabel[ComboBox1.ItemIndex + 2] + ': ' +
-    gParameterUnit[ComboBox1.ItemIndex + 2];
+    gParameterLabel[ComboBox1.ItemIndex + 2] + ' (' +
+    gParameterUnit[ComboBox1.ItemIndex + 2] + ')';
   Chart2.LeftAxis.Title.Caption :=
-    gParameterLabel[ComboBox2.ItemIndex + 2] + ': ' +
-    gParameterUnit[ComboBox2.ItemIndex + 2];
+    gParameterLabel[ComboBox2.ItemIndex + 2] + ' (' +
+    gParameterUnit[ComboBox2.ItemIndex + 2] + ')';
   DrawPlot(True);
   gSelectedChart := nil;
   PlotPanel1.Color := clWhite;

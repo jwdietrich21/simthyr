@@ -1252,6 +1252,7 @@ var
   i, j: integer;
   MinBPar_x, MaxBPar_x, MinBPar_y, MaxBPar_y: real;
   ConversionFactor_x, ConversionFactor_y: real;
+  theUnit: string;
 begin
   SetLength(gSensitivityMatrix, 0, 4);     // empty matrix
   SetLength(gSensitivityMatrix, MAX_I + 1, 4); // and create new matrix of correct size
@@ -1332,14 +1333,50 @@ begin
     end;
     for i := 0 to MAX_SERIES - 1 do
       FLine[i].EndUpdate;
-    if gSelectedBParameter_y = IItem then
-      EquilibriumChart.LeftAxis.Title.Caption := ISOKLINE_2_STRING
-    else
-      EquilibriumChart.LeftAxis.Title.Caption := yBParCombo.Caption;
-    if gSelectedBParameter_x = IItem then
-      EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_1_STRING
-    else
-      EquilibriumChart.BottomAxis.Title.Caption := xBParCombo.Caption;
+    case gSelectedBParameter_y of
+      TSHItem:
+      begin
+        theUnit := ' (' + gParameterUnit[TSH_pos] + ')';
+        EquilibriumChart.LeftAxis.Title.Caption := 'TSH' + theUnit;
+      end;
+      FT4Item:
+      begin
+        theUnit := ' (' + gParameterUnit[FT4_pos] + ')';
+        EquilibriumChart.LeftAxis.Title.Caption := 'FT4' + theUnit;
+      end;
+      cT3Item:
+      begin
+        theUnit := ' (' + gParameterUnit[cT3_pos] + ')';
+        EquilibriumChart.LeftAxis.Title.Caption := 'cT3' + theUnit;
+      end;
+      otherwise
+      begin
+        theUnit := '';
+        EquilibriumChart.LeftAxis.Title.Caption := ISOKLINE_2_STRING
+      end;
+    end;
+  case gSelectedBParameter_x of
+    TSHItem:
+    begin
+      theUnit := ' (' + gParameterUnit[TSH_pos] + ')';
+      EquilibriumChart.BottomAxis.Title.Caption := 'TSH' + theUnit;
+    end;
+    FT4Item:
+    begin
+      theUnit := ' (' + gParameterUnit[FT4_pos] + ')';
+      EquilibriumChart.BottomAxis.Title.Caption := 'FT4' + theUnit;
+    end;
+    cT3Item:
+    begin
+      theUnit := ' (' + gParameterUnit[cT3_pos] + ')';
+      EquilibriumChart.BottomAxis.Title.Caption := 'cT3' + theUnit;
+    end;
+    otherwise
+    begin
+      theUnit := '';
+      EquilibriumChart.BottomAxis.Title.Caption := ISOKLINE_2_STRING
+    end;
+  end;
     for j := 0 to MAX_I do
     begin
       gSensitivityMatrix[j, 0] := gResponseCurve1.input[j];

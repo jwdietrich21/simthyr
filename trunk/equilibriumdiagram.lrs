@@ -202,7 +202,7 @@ LazarusResources.Add('TEquilibriumDiagramForm','FORMDATA',[
   +'TGroupBox'#9'GroupBox2'#4'Left'#2'0'#6'Height'#2'V'#3'Top'#3']'#1#5'Width'#3
   +#174#2#7'Anchors'#11#6'akLeft'#7'akRight'#8'akBottom'#0#7'Caption'#6#22'Beha'
   +'vioural Parameters'#12'ClientHeight'#2'B'#11'ClientWidth'#3#170#2#8'TabOrde'
-  +'r'#2#4#0#14'TFloatSpinEdit'#12'yMinSpinEdit'#4'Left'#2#8#6'Height'#2#23#4'H'
+  +'r'#2#3#0#14'TFloatSpinEdit'#12'yMinSpinEdit'#4'Left'#2#8#6'Height'#2#23#4'H'
   +'int'#6'''Minimum of selected structure parameter'#3'Top'#2#3#5'Width'#2'H'#7
   +'Anchors'#11#6'akLeft'#8'akBottom'#0#13'DecimalPlaces'#2#3#9'Increment'#5#0
   +#216#163'p='#10#215#163#248'?'#8'MinValue'#5#0#0#0#0#0#0#0#0#0#0#8'OnChange'
