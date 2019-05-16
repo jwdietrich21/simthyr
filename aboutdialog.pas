@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, Buttons, StdCtrls, LCLIntf, ComCtrls, SimThyrTypes, SimThyrResources,
-  SimThyrServices, VersionSupport, DOS, HandlePreferences, Sensitivityanalysis,
+  SimThyrServices, VersionSupport, EnvironmentInfo, DOS, HandlePreferences, Sensitivityanalysis,
   TWSensitivityanalysis, Equilibriumdiagram
   {$IFDEF win32}
   , Windows, Win32Proc
@@ -284,9 +284,9 @@ begin
   AboutWindow.Memo1.Lines.Add('Build Date: ' + {$I %DATE%} + ', ' + {$I %TIME%});
   AboutWindow.Memo1.Lines.Add('');
   AboutWindow.Memo1.Lines.Add('Developed with Lazarus / Free Pascal');
-  AboutWindow.Memo1.Lines.Add('Built for '+ GetTargetInfo);
-  AboutWindow.Memo1.Lines.Add('with '+ GetCompilerInfo + ' on '+ GetCompiledDate);
-  AboutWindow.Memo1.Lines.Add('and using '+ GetLCLVersion + ' with ' + GetWidgetset);
+  AboutWindow.Memo1.Lines.Add('Built for '+ PlatformInfo.OS + ' (' + PlatformInfo.CPU + ')');
+  AboutWindow.Memo1.Lines.Add('with '+ CompilerVersion + ' on '+ DateOfCompilingAsString);
+  AboutWindow.Memo1.Lines.Add('and using '+ EnvironmentInfo.LCLVersion + ' with ' + CurrentWidgetSet);
   AboutWindow.Memo1.Lines.Add('');
   {$IFDEF LCLcarbon}
   theError := Gestalt(gestaltSystemVersionMajor, Major);

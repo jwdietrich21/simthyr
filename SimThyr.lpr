@@ -58,7 +58,8 @@ uses
   TWSensitivityanalysis,
   equilibriumdiagram,
   MIRIAMForm,
-  plotoptions
+  plotoptions,
+  EnvironmentInfo
  {$IFDEF debug}  ,
   SysUtils // heaptrc unit is to be included with Lazarus project options
  {$ENDIF} ;
