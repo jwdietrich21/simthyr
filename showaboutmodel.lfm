@@ -1,7 +1,7 @@
 object AboutModelForm: TAboutModelForm
   Left = 529
   Height = 699
-  Top = 36
+  Top = 22
   Width = 575
   HorzScrollBar.Page = 1
   HorzScrollBar.Visible = False
@@ -154,12 +154,12 @@ object AboutModelForm: TAboutModelForm
     0000
   }
   Position = poScreenCenter
-  LCLVersion = '1.6.2.0'
+  LCLVersion = '2.0.2.0'
   object Label1: TLabel
     Left = 56
-    Height = 15
+    Height = 16
     Top = 104
-    Width = 88
+    Width = 77
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -179,10 +179,10 @@ object AboutModelForm: TAboutModelForm
   end
   object Label2: TLabel
     Cursor = crHandPoint
-    Left = -9482
-    Height = 21
+    Left = 306
+    Height = 16
     Top = 80
-    Width = 10000
+    Width = 212
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medical-cybernetics.de'
