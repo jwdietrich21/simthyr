@@ -8,6 +8,7 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="1"/>
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
@@ -45,7 +46,7 @@
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="20"/>
+        <EditorIndex Value="23"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
@@ -58,7 +59,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrMain"/>
-        <EditorIndex Value="38"/>
+        <EditorIndex Value="41"/>
         <WindowIndex Value="1"/>
         <CursorPos X="48"/>
         <UsageCount Value="200"/>
@@ -93,12 +94,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPlot"/>
-        <EditorIndex Value="23"/>
+        <EditorIndex Value="26"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="5"/>
+          <EditorIndex Value="8"/>
           <WindowIndex Value="1"/>
         </ExtraEditor1>
         <UsageCount Value="200"/>
@@ -112,7 +113,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPrediction"/>
-        <EditorIndex Value="29"/>
+        <EditorIndex Value="32"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
@@ -126,7 +127,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="LaunchDialog"/>
-        <EditorIndex Value="26"/>
+        <EditorIndex Value="29"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
@@ -171,7 +172,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrLog"/>
-        <EditorIndex Value="17"/>
+        <EditorIndex Value="20"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
@@ -193,24 +194,24 @@
         <Filename Value="simthyrtypes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrTypes"/>
-        <EditorIndex Value="10"/>
-        <WindowIndex Value="1"/>
-        <CursorPos X="20" Y="2"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="15"/>
+        <CursorPos X="63" Y="20"/>
         <ExtraEditorCount Value="3"/>
         <ExtraEditor1>
-          <EditorIndex Value="6"/>
+          <EditorIndex Value="13"/>
           <WindowIndex Value="1"/>
+          <CursorPos X="20" Y="2"/>
         </ExtraEditor1>
         <ExtraEditor2>
-          <EditorIndex Value="7"/>
+          <EditorIndex Value="9"/>
           <WindowIndex Value="1"/>
-          <CursorPos X="10" Y="2"/>
         </ExtraEditor2>
         <ExtraEditor3>
-          <EditorIndex Value="-1"/>
-          <WindowIndex Value="-1"/>
-          <TopLine Value="15"/>
-          <CursorPos X="63" Y="20"/>
+          <EditorIndex Value="10"/>
+          <WindowIndex Value="1"/>
+          <CursorPos X="10" Y="2"/>
         </ExtraEditor3>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -219,12 +220,12 @@
         <Filename Value="simthyrservices.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrServices"/>
-        <EditorIndex Value="15"/>
+        <EditorIndex Value="18"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="11"/>
+          <EditorIndex Value="14"/>
           <WindowIndex Value="1"/>
           <CursorPos Y="2"/>
         </ExtraEditor1>
@@ -250,7 +251,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ShowIPS"/>
-        <EditorIndex Value="25"/>
+        <EditorIndex Value="28"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="201"/>
@@ -261,20 +262,20 @@
         <Filename Value="simulator.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Simulator"/>
-        <EditorIndex Value="27"/>
+        <EditorIndex Value="30"/>
         <WindowIndex Value="1"/>
         <TopLine Value="406"/>
         <CursorPos X="45" Y="406"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
-          <EditorIndex Value="9"/>
-          <WindowIndex Value="1"/>
-          <CursorPos Y="2"/>
-        </ExtraEditor1>
-        <ExtraEditor2>
-          <EditorIndex Value="4"/>
+          <EditorIndex Value="7"/>
           <WindowIndex Value="1"/>
           <CursorPos X="11" Y="2"/>
+        </ExtraEditor1>
+        <ExtraEditor2>
+          <EditorIndex Value="12"/>
+          <WindowIndex Value="1"/>
+          <CursorPos Y="2"/>
         </ExtraEditor2>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -354,7 +355,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AboutDialog"/>
-        <EditorIndex Value="39"/>
+        <EditorIndex Value="42"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
@@ -368,7 +369,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Splash"/>
-        <EditorIndex Value="35"/>
+        <EditorIndex Value="38"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
@@ -395,7 +396,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ShowAboutModel"/>
-        <EditorIndex Value="36"/>
+        <EditorIndex Value="39"/>
         <WindowIndex Value="1"/>
         <CursorPos X="17" Y="2"/>
         <UsageCount Value="200"/>
@@ -521,7 +522,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="StructureParameters"/>
-        <EditorIndex Value="28"/>
+        <EditorIndex Value="31"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
@@ -608,7 +609,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimOptions"/>
-        <EditorIndex Value="22"/>
+        <EditorIndex Value="25"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
@@ -618,7 +619,6 @@
       <Unit71>
         <Filename Value="versionsupport.pas"/>
         <UnitName Value="VersionSupport"/>
-        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="117"/>
         <CursorPos X="4" Y="132"/>
@@ -628,20 +628,20 @@
         <Filename Value="scenariohandler.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ScenarioHandler"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="11"/>
         <WindowIndex Value="1"/>
         <CursorPos X="16" Y="2"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
-          <EditorIndex Value="14"/>
-          <WindowIndex Value="1"/>
-          <CursorPos Y="2"/>
-        </ExtraEditor1>
-        <ExtraEditor2>
-          <EditorIndex Value="-1"/>
+          <EditorIndex Value="1"/>
           <WindowIndex Value="1"/>
           <TopLine Value="19"/>
           <CursorPos X="46" Y="28"/>
+        </ExtraEditor1>
+        <ExtraEditor2>
+          <EditorIndex Value="17"/>
+          <WindowIndex Value="1"/>
+          <CursorPos Y="2"/>
         </ExtraEditor2>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -653,7 +653,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HandlePreferences"/>
-        <EditorIndex Value="21"/>
+        <EditorIndex Value="24"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
@@ -676,7 +676,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="HandleNotifier"/>
-        <EditorIndex Value="30"/>
+        <EditorIndex Value="33"/>
         <WindowIndex Value="1"/>
         <CursorPos X="13" Y="2"/>
         <UsageCount Value="200"/>
@@ -789,19 +789,16 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Sensitivityanalysis"/>
-        <EditorIndex Value="32"/>
+        <EditorIndex Value="35"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
-          <EditorIndex Value="-1"/>
-          <WindowIndex Value="-1"/>
           <TopLine Value="578"/>
           <CursorPos X="78" Y="607"/>
         </ExtraEditor1>
         <ExtraEditor2>
-          <EditorIndex Value="-1"/>
-          <WindowIndex Value="-1"/>
+          <EditorIndex Value="1"/>
           <TopLine Value="536"/>
           <CursorPos X="9" Y="549"/>
         </ExtraEditor2>
@@ -844,7 +841,7 @@
         <ComponentName Value="TornadoPlotForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="33"/>
+        <EditorIndex Value="36"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <UsageCount Value="200"/>
@@ -901,7 +898,7 @@
         <Filename Value="difsupport.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="DIFSupport"/>
-        <EditorIndex Value="16"/>
+        <EditorIndex Value="19"/>
         <WindowIndex Value="1"/>
         <CursorPos X="19" Y="2"/>
         <UsageCount Value="200"/>
@@ -931,7 +928,7 @@
         <ComponentName Value="HelpWindow"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="37"/>
+        <EditorIndex Value="40"/>
         <WindowIndex Value="1"/>
         <CursorPos X="15" Y="2"/>
         <UsageCount Value="200"/>
@@ -1063,12 +1060,12 @@
         <Filename Value="simthyrresources.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrResources"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="1"/>
         <CursorPos X="151" Y="13"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="12"/>
+          <EditorIndex Value="15"/>
           <WindowIndex Value="1"/>
           <CursorPos X="22" Y="2"/>
         </ExtraEditor1>
@@ -1079,13 +1076,13 @@
         <Filename Value="unitconverter.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitConverter"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="1"/>
         <TopLine Value="289"/>
         <CursorPos X="32" Y="289"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="13"/>
+          <EditorIndex Value="16"/>
           <WindowIndex Value="1"/>
           <CursorPos Y="2"/>
         </ExtraEditor1>
@@ -1105,12 +1102,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="TWSensitivityanalysis"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="1"/>
         <CursorPos X="9" Y="2"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="31"/>
+          <EditorIndex Value="34"/>
           <WindowIndex Value="1"/>
           <CursorPos Y="2"/>
         </ExtraEditor1>
@@ -1139,10 +1136,11 @@
       <Unit139>
         <Filename Value="/Developer/lazarus/lcl/lclversion.pas"/>
         <UnitName Value="LCLVersion"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="32"/>
-        <CursorPos X="28" Y="46"/>
-        <UsageCount Value="10"/>
+        <CursorPos X="24" Y="41"/>
+        <UsageCount Value="11"/>
       </Unit139>
       <Unit140>
         <Filename Value="/vs-chs01/lazarus/fpc/2.6.4/source/packages/fcl-xml/src/dom.pp"/>
@@ -1240,25 +1238,25 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Equilibriumdiagram"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="1"/>
         <CursorPos X="6" Y="2"/>
         <ExtraEditorCount Value="3"/>
         <ExtraEditor1>
-          <EditorIndex Value="34"/>
           <WindowIndex Value="1"/>
-          <CursorPos Y="2"/>
         </ExtraEditor1>
         <ExtraEditor2>
-          <EditorIndex Value="-1"/>
+          <EditorIndex Value="37"/>
+          <WindowIndex Value="1"/>
+          <CursorPos Y="2"/>
+        </ExtraEditor2>
+        <ExtraEditor3>
+          <EditorIndex Value="4"/>
           <WindowIndex Value="1"/>
           <TopLine Value="1189"/>
           <CursorPos X="70" Y="1206"/>
-        </ExtraEditor2>
-        <ExtraEditor3>
-          <EditorIndex Value="-1"/>
-          <WindowIndex Value="1"/>
         </ExtraEditor3>
-        <UsageCount Value="190"/>
+        <UsageCount Value="193"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit155>
@@ -1287,10 +1285,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MIRIAMForm"/>
-        <EditorIndex Value="24"/>
+        <EditorIndex Value="27"/>
         <WindowIndex Value="1"/>
         <CursorPos X="68" Y="23"/>
-        <UsageCount Value="147"/>
+        <UsageCount Value="150"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit159>
@@ -1499,10 +1497,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="PlotOptions"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="21"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
-        <UsageCount Value="46"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit190>
@@ -1524,23 +1522,24 @@
       <Unit193>
         <Filename Value="/Developer/lazarus/lcl/interfacebase.pp"/>
         <UnitName Value="InterfaceBase"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="112"/>
-        <CursorPos X="6" Y="18"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="5"/>
+        <CursorPos X="33" Y="15"/>
+        <UsageCount Value="11"/>
       </Unit193>
       <Unit194>
         <Filename Value="/Developer/lazarus/components/lazutils/lazversion.pas"/>
         <UnitName Value="LazVersion"/>
+        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="18"/>
-        <CursorPos X="27" Y="30"/>
+        <TopLine Value="15"/>
+        <CursorPos X="3" Y="23"/>
         <UsageCount Value="10"/>
       </Unit194>
       <Unit195>
         <Filename Value="/usr/lib/lazarus/1.6.2/lcl/lclversion.pas"/>
         <UnitName Value="LCLVersion"/>
-        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="9"/>
         <CursorPos X="26" Y="25"/>
@@ -1551,23 +1550,20 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="EnvironmentInfo"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="19"/>
+        <EditorIndex Value="22"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="89" Y="13"/>
+        <TopLine Value="14"/>
+        <CursorPos Y="17"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="-1"/>
-          <WindowIndex Value="-1"/>
-          <TopLine Value="-1"/>
-          <CursorPos X="-1" Y="-1"/>
+          <EditorIndex Value="2"/>
         </ExtraEditor1>
-        <UsageCount Value="24"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit196>
       <Unit197>
         <Filename Value="C:/lazarus/lcl/interfacebase.pp"/>
         <UnitName Value="InterfaceBase"/>
-        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="10"/>
         <CursorPos X="46" Y="34"/>
@@ -1576,14 +1572,12 @@
       <Unit198>
         <Filename Value="C:/lazarus/lcl/lclplatformdef.pas"/>
         <UnitName Value="LCLPlatformDef"/>
-        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <CursorPos X="20" Y="12"/>
         <UsageCount Value="10"/>
       </Unit198>
       <Unit199>
         <Filename Value="C:/lazarus/fpc/3.0.4/source/packages/fcl-res/src/versiontypes.pp"/>
-        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="202"/>
         <UsageCount Value="10"/>
@@ -1591,14 +1585,12 @@
       <Unit200>
         <Filename Value="C:/lazarus/lcl/lclversion.pas"/>
         <UnitName Value="LCLVersion"/>
-        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <UsageCount Value="10"/>
       </Unit200>
       <Unit201>
         <Filename Value="C:/lazarus/lcl/forms.pp"/>
         <UnitName Value="Forms"/>
-        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="828"/>
         <CursorPos X="14" Y="844"/>
@@ -1606,7 +1598,6 @@
       </Unit201>
       <Unit202>
         <Filename Value="/usr/local/share/fpcsrc/packages/fcl-res/src/versiontypes.pp"/>
-        <EditorIndex Value="-1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="15"/>
         <UsageCount Value="10"/>
@@ -1621,122 +1612,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="38" Column="13" TopLine="14"/>
+        <Caret Line="64" Column="32" TopLine="47"/>
       </Position1>
       <Position2>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="323" Column="69" TopLine="310"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="305" Column="4" TopLine="291"/>
       </Position2>
       <Position3>
-        <Filename Value="aboutdialog.pas"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="306" Column="40" TopLine="299"/>
       </Position3>
       <Position4>
-        <Filename Value="SimThyr.lpr"/>
-        <Caret Line="48" Column="3" TopLine="42"/>
+        <Filename Value="aboutdialog.pas"/>
+        <Caret Line="285" Column="92" TopLine="276"/>
       </Position4>
       <Position5>
-        <Filename Value="SimThyr.lpr"/>
-        <Caret Line="47" Column="14" TopLine="42"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="312" Column="27" TopLine="295"/>
       </Position5>
       <Position6>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="29" Column="3" TopLine="4"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="13" Column="89"/>
       </Position6>
       <Position7>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="289" Column="55" TopLine="274"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="16" Column="44" TopLine="5"/>
       </Position7>
       <Position8>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="36" Column="50" TopLine="38"/>
+        <Caret Line="17" Column="31" TopLine="4"/>
       </Position8>
       <Position9>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Column="21"/>
+        <Caret Line="20" Column="11" TopLine="5"/>
       </Position9>
       <Position10>
-        <Filename Value="simthyrmain.pas"/>
-        <Caret Line="29" Column="20"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="18" Column="23" TopLine="6"/>
       </Position10>
       <Position11>
-        <Filename Value="splash.pas"/>
-        <Caret Line="23" Column="52"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="16" Column="42" TopLine="6"/>
       </Position11>
       <Position12>
-        <Filename Value="launchdialog.pas"/>
-        <Caret Line="24" Column="3"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="20" Column="5"/>
       </Position12>
       <Position13>
-        <Filename Value="scenariohandler.pas"/>
-        <Caret Line="24" Column="49"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="139" Column="17" TopLine="136"/>
       </Position13>
       <Position14>
-        <Filename Value="launchdialog.pas"/>
-        <Caret Line="199" Column="40" TopLine="184"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="20" Column="3"/>
       </Position14>
       <Position15>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="228" Column="17" TopLine="210"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="18" Column="7" TopLine="6"/>
       </Position15>
       <Position16>
-        <Filename Value="unitconverter.pas"/>
-        <Caret Line="622" TopLine="596"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="11" Column="3" TopLine="6"/>
       </Position16>
       <Position17>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="26" Column="18" TopLine="76"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="12" Column="19" TopLine="6"/>
       </Position17>
       <Position18>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="106" Column="3" TopLine="101"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="18" Column="31" TopLine="7"/>
       </Position18>
       <Position19>
-        <Filename Value="SimThyr.lpr"/>
-        <Caret Line="47" Column="14" TopLine="42"/>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="20" Column="63" TopLine="15"/>
       </Position19>
       <Position20>
-        <Filename Value="launchdialog.pas"/>
-        <Caret Line="199" Column="40" TopLine="184"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="20" Column="12" TopLine="13"/>
       </Position20>
       <Position21>
-        <Filename Value="structureparameters.pas"/>
-        <Caret Line="99" Column="3" TopLine="77"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="16" Column="42" TopLine="9"/>
       </Position21>
       <Position22>
-        <Filename Value="splash.pas"/>
-        <Caret Line="70" Column="40" TopLine="47"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="18" Column="17" TopLine="10"/>
       </Position22>
       <Position23>
-        <Filename Value="simthyrresources.pas"/>
-        <Caret Line="44" Column="27" TopLine="18"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="21" Column="20" TopLine="10"/>
       </Position23>
       <Position24>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="2" Column="7"/>
+        <Caret Line="18" Column="26" TopLine="12"/>
       </Position24>
       <Position25>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="64" Column="32" TopLine="47"/>
+        <Caret Line="17" Column="16" TopLine="9"/>
       </Position25>
       <Position26>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="342" TopLine="299"/>
+        <Caret Line="12" Column="11" TopLine="5"/>
       </Position26>
       <Position27>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="305" Column="4" TopLine="291"/>
+        <Caret Line="14" Column="17" TopLine="9"/>
       </Position27>
       <Position28>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="306" Column="40" TopLine="299"/>
+        <Caret Line="18" Column="24" TopLine="9"/>
       </Position28>
       <Position29>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="285" Column="92" TopLine="276"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="19" Column="21" TopLine="9"/>
       </Position29>
       <Position30>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="312" Column="27" TopLine="295"/>
+        <Caret Line="20" Column="10" TopLine="9"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

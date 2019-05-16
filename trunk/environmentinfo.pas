@@ -13,12 +13,19 @@ unit EnvironmentInfo;
 interface
 
 uses
-  Classes, SysUtils, StrUtils, LCLVersion, InterfaceBase, versiontypes,
-  versionresource, LCLPlatformDef
+  Classes, SysUtils, StrUtils, LCLVersion
+  {$if FPC_FULlVERSION >= 30000}
+  // {$IF LCL_MAJOR >= 2} should work, but it doesn't, see
+  // https://forum.lazarus.freepascal.org/index.php/topic,45144.0.html
+  {$DEFINE NewLaz}
+  {$ENDIF}
+  {$IFDEF NewLaz}
+  , LCLPlatformDef
+  {$ENDIF}
   {$IFDEF LCLCarbon}
   , MacOSAll
   {$ENDIF}
-  ;
+  , InterfaceBase, versiontypes, versionresource;
 
 type
 
@@ -142,11 +149,15 @@ begin
     lpCarbon:      result := CARBON_WIDGETSET;
     lpCocoa:       result := COCOA_WIDGETSET;
     lpQT:          result := QT_WIDGETSET;
-    lpQt5:         result := QT5_WIDGETSET;
+    {$IFDEF NewLaz}
+      lpQt5:         result := QT5_WIDGETSET;
+    {$ENDIF}
     lpfpGUI:       result := fpGUI_WIDGETSET;
     lpNoGUI:       result := noGUI_WIDGETSET;
     lpCustomDrawn: result := CUSTROMDRAWN_WIDGETSET;
-    lpMUI:         result := MUI_WIDGETSET
+    {$IFDEF NewLaz}
+      lpMUI:         result := MUI_WIDGETSET
+    {$ENDIF}
   otherwise
     result := OTHER_WIDGETSET;
   end;
