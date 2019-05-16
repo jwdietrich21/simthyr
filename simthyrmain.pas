@@ -26,7 +26,7 @@ uses
   ShowAboutModel, StructureParameters, SimThyrPrediction, Sensitivityanalysis,
   TWSensitivityanalysis, tornado, Equilibriumdiagram, help, ScenarioHandler,
   HandlePreferences, HandleNotifier, LCLProc, StdCtrls, LCLVersion,
-  VersionSupport, MIRIAMForm;
+  EnvironmentInfo, MIRIAMForm;
 
 type
 
@@ -286,7 +286,7 @@ end;
 
 procedure TSimThyrToolbar.FormCreate(Sender: TObject);
 begin
-  SimThyrToolbar.SimThyrLabel.Caption := 'SimThyr ' + GetFileVersion;
+  SimThyrToolbar.SimThyrLabel.Caption := 'SimThyr ' + FileVersion;
   AdaptLanguages;
   gIdleCounter := 0;
   SetPosition;

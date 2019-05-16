@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, EditBtn, LCLIntf, DateUtils, StrUtils,
+  ExtCtrls, EditBtn, LCLIntf, DateUtils, StrUtils, EnvironmentInfo,
   SimThyrTypes, SimThyrResources, SimThyrServices, ScenarioHandler;
 
 type

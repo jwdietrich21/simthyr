@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, DateUtils, DOM, XMLRead, XMLWrite, Forms,
   URIParser,
-  SimThyrTypes, SimThyrServices, VersionSupport, SimThyrResources;
+  SimThyrTypes, SimThyrServices, EnvironmentInfo, SimThyrResources;
 
 function NewScenario: TModel;
 function emptyModel: TModel;
