@@ -20,7 +20,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, ExtCtrls, SimThyrTypes, SimThyrServices, Simulator, SimOptions;
+  StdCtrls, ExtCtrls, SimThyrTypes, SimThyrServices, EnvironmentInfo,
+  Simulator, SimOptions;
 
 type
 

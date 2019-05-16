@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdCtrls, LaunchDialog, VersionSupport;
+  ExtCtrls, StdCtrls, LaunchDialog, EnvironmentInfo;
 
 type
 
@@ -67,7 +67,7 @@ end;
 
 procedure TSplashScreen.FormCreate(Sender: TObject);
 begin
-  VersionLabel.Caption := 'Version ' + GetFileVersion;
+  VersionLabel.Caption := 'Version ' + FileVersion;
 end;
 
 initialization

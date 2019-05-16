@@ -45,7 +45,6 @@ uses
   SimThyrPrediction,
   StructureParameters,
   SimOptions,
-  VersionSupport,
   ScenarioHandler,
   HandlePreferences,
   HandleNotifier,

@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, ExtCtrls, ActnList, types, LCLType, SimThyrTypes, SimThyrServices,
-  VersionSupport, SimThyrPlot, SimThyrLog, StructureParameters, Simulator,
+  EnvironmentInfo, SimThyrPlot, SimThyrLog, StructureParameters, Simulator,
   SimOptions;
 
 type
@@ -196,7 +196,7 @@ end;
 
 procedure TSimulationSettings.FormCreate(Sender: TObject);
 begin
-  SimThyrLabel.Caption := 'SimThyr ' + GetFileVersion;
+  SimThyrLabel.Caption := 'SimThyr ' + FileVersion;
   BringToFront;
   if (testflag or tbgflag) then
   begin

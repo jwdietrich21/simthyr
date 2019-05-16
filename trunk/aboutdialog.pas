@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, Buttons, StdCtrls, LCLIntf, ComCtrls, SimThyrTypes, SimThyrResources,
-  SimThyrServices, VersionSupport, EnvironmentInfo, DOS, HandlePreferences, Sensitivityanalysis,
+  SimThyrServices, EnvironmentInfo, DOS, HandlePreferences, Sensitivityanalysis,
   TWSensitivityanalysis, Equilibriumdiagram
   {$IFDEF win32}
   , Windows, Win32Proc
@@ -31,8 +31,8 @@ uses
     {$ENDIF}
   {$IFDEF UNIX}
   , Unix
-  {$ENDIF}  , types;
-
+  {$ENDIF}
+  , types;
 
 type
 
@@ -195,7 +195,7 @@ end;
 
 procedure TAboutWindow.FormCreate(Sender: TObject);
 begin
-  VersionLabel.Caption := 'Version ' + GetFileVersion;
+  VersionLabel.Caption := 'Version ' + FileVersion;
   if YosemiteORNewer then
     OKButton.Height := 22;
 end;
@@ -261,25 +261,18 @@ begin
 end;
 
 procedure TAboutWindow.ShowAbout;
-var
-  SystemStem, MajVer, MinVer, BugfixVer, VersionString: Str255;
-  {$IFDEF LCLcarbon}
-  Major, Minor, Bugfix: SInt32;
-  theError: SInt16;
-  {$ENDIF}
 begin
   gExtendedInfo := false;
-  SystemStem := OSVersion;
   AboutWindow.FormStyle := fsStayOnTop;
   AboutWindow.AlphaBlend := false;
   {The following lines provide additional information}
   {on the software installation}
   AboutWindow.Memo1.Lines.Clear;
-  AboutWindow.Memo1.Lines.Add('SimThyr ' + GetFileVersion);
+  AboutWindow.Memo1.Lines.Add('SimThyr ' + FileVersion);
   AboutWindow.Memo1.Lines.Add('');
   AboutWindow.Memo1.Lines.Add('License: BSD');
   AboutWindow.Memo1.Lines.Add('');
-  AboutWindow.Memo1.Lines.Add('File version: ' + GetFileVersion);
+  AboutWindow.Memo1.Lines.Add('File version: ' + FileVersion);
   AboutWindow.Memo1.Lines.Add('');
   AboutWindow.Memo1.Lines.Add('Build Date: ' + {$I %DATE%} + ', ' + {$I %TIME%});
   AboutWindow.Memo1.Lines.Add('');
@@ -288,39 +281,7 @@ begin
   AboutWindow.Memo1.Lines.Add('with '+ CompilerVersion + ' on '+ DateOfCompilingAsString);
   AboutWindow.Memo1.Lines.Add('and using '+ EnvironmentInfo.LCLVersion + ' with ' + CurrentWidgetSet);
   AboutWindow.Memo1.Lines.Add('');
-  {$IFDEF LCLcarbon}
-  theError := Gestalt(gestaltSystemVersionMajor, Major);
-  if theError = 0 then
-    MajVer := IntToStr(Major)
-  else
-    MajVer := '';
-  theError := Gestalt(gestaltSystemVersionMinor, Minor);
-  if theError = 0 then
-    MinVer := IntToStr(Minor)
-  else
-    MinVer := '';
-  theError := Gestalt(gestaltSystemVersionBugFix, Bugfix);
-  if theError = 0 then
-    BugfixVer := IntToStr(Bugfix)
-  else
-    BugfixVer := '';
-  if SystemStem <> 'Mac OS X 10.' then
-    SystemStem := 'Mac OS ' + MajVer + '.';
-  if SierraOrNewer then
-    SystemStem := 'macOS 10.';
-  VersionString := SystemStem + MinVer + '.' + BugfixVer;
-  {$ELSE}
-  {$IFDEF WINDOWS}
-  MajVer := IntToStr(Win32MajorVersion);
-  MinVer := IntToStr(Win32MinorVersion);
-  VersionString := SystemStem + MajVer + '.' + MinVer;
-  {$ELSE}
-  MajVer := IntToStr(Lo(DosVersion) - 4);
-  MinVer := IntToStr(Hi(DosVersion));
-  VersionString := SystemStem + MajVer + '.' + MinVer;
-  {$ENDIF}
-  {$ENDIF}
-  AboutWindow.Memo1.Lines.Add('Operating system: ' + GetOS + ' (' + VersionString + ')');
+  AboutWindow.Memo1.Lines.Add('Operating system: ' + PlatformInfo.OS + ' (' + SystemVersion + ')');
   AboutWindow.ShowModal;
 end;
 

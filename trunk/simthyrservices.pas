@@ -46,12 +46,6 @@ type
 var
   gSaveMode: tSaveMode;
 
-function OSVersion: Str255;
-function YosemiteORNewer: boolean;
-function SierraOrNewer: boolean;
-function XPORNewer: boolean;
-function VistaORNewer: boolean;
-function Win8OrNewer: boolean;
 procedure bell;
 function EncodeGreek(theString: string): string;
 function DecodeGreek(theString: string): string;
@@ -83,125 +77,6 @@ procedure ShowPrereleaseWarning;
 implementation
 
 uses SimThyrLog;
-
-function OSVersion: Str255; {returns the major version of the operating system}
-begin
-  {$IFDEF LCLcarbon}
-  if SierraOrNewer then
-    OSVersion := 'macOS 10.'
-  else
-    OSVersion := 'Mac OS X 10.';
-  {$ELSE}
-  {$IFDEF Linux}
-  OSVersion := 'Linux Kernel ';
-  {$ELSE}
-  {$IFDEF UNIX}
-  OSVersion := 'Unix ';
-  {$ELSE}
-  {$IFDEF WINDOWS}
-  if WindowsVersion = wv95 then
-    OSVersion := 'Windows 95 / '
-  else if WindowsVersion = wvNT4 then
-    OSVersion := 'Windows NT v.4 / '
-  else if WindowsVersion = wv98 then
-    OSVersion := 'Windows 98 / '
-  else if WindowsVersion = wvMe then
-    OSVersion := 'Windows ME / '
-  else if WindowsVersion = wv2000 then
-    OSVersion := 'Windows 2000 / '
-  else if WindowsVersion = wvXP then
-    OSVersion := 'Windows XP / '
-  else if WindowsVersion = wvServer2003 then
-    OSVersion := 'Windows Server 2003 / '
-  else if WindowsVersion = wvVista then
-    OSVersion := 'Windows Vista / '
-  else if WindowsVersion = wv7 then
-    OSVersion := 'Windows 7 / '
-  {$if FPC_FULlVERSION >= 30000}{Free Pascal 3.0 or newer}
-  else if WindowsVersion = wv8 then
-    OSVersion := 'Windows 8 / '
-  else if WindowsVersion = wv8_1 then
-    OSVersion := 'Windows 8.1 / '
-  else if WindowsVersion = wv10 then
-    OSVersion := 'Windows 10 / '
-  else if WindowsVersion = wvLater then
-    OSVersion := 'Windows '
-  {$ENDIF}
-  else
-    OSVersion := 'Windows ';
-  {$ENDIF}
-  {$ENDIF}
-  {$ENDIF}
-  {$ENDIF}
-end;
-
-function YosemiteORNewer: boolean;
-  { returns true, if this app runs on Mac OS X 10.10 Yosemite or newer }
-  {$IFDEF LCLcarbon}
-var
-  Major, Minor, Bugfix: SInt32;
-  theError: SInt16;
-  {$ENDIF}
-begin
-  Result := False;
-  {$IFDEF LCLcarbon}
-  theError := Gestalt(gestaltSystemVersionMinor, Major);
-  if theError = 0 then
-    theError := Gestalt(gestaltSystemVersionMinor, Minor);
-  if TheError = 0 then
-    if (Major = 10) and (Minor >= 10) or (Major > 10) then
-      Result := True;
-  {$ENDIF}
-end;
-
-function SierraOrNewer: boolean;
-  { returns true, if this app runs on macOS X 10.12 Sierra or newer }
-{$IFDEF LCLcarbon}
-var
-  Major, Minor, Bugfix: SInt32;
-  theError: SInt16;
-{$ENDIF}
-begin
-  Result := False;
-{$IFDEF LCLcarbon}
-  theError := Gestalt(gestaltSystemVersionMinor, Major);
-  if theError = 0 then
-    theError := Gestalt(gestaltSystemVersionMinor, Minor);
-  if theError = 0 then
-    if (Major = 10) and (Minor >= 12) or (Major > 10) then
-      Result := True;
-{$ENDIF}
-end;
-
-function XPORNewer: boolean;
-  { returns true, if this app runs on Windows XP or a newer Windows version }
-begin
-  Result := False;
-  {$IFDEF WINDOWS}
-  if (Win32MajorVersion >= 5) and (Win32MinorVersion >= 1) then
-    Result := True;
-  {$ENDIF}
-end;
-
-function VistaORNewer: boolean;
-  { returns true, if this app runs on Windows Vista or a newer Windows version }
-begin
-  Result := False;
-  {$IFDEF WINDOWS}
-  if Win32MajorVersion >= 6 then
-    Result := True;
-  {$ENDIF}
-end;
-
-function Win8OrNewer: boolean;
-  { returns true, if this app runs on Windows 8 or a newer Windows version }
-begin
-  Result := False;
-  {$IFDEF WINDOWS}
-  if (Win32MajorVersion > 6) or (Win32MajorVersion = 6) and (Win32MinorVersion >= 2) then
-    Result := True;
-  {$ENDIF}
-end;
 
 procedure bell; {platform-independent implementation of acustical warning}
 var
