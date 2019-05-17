@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <General>
       <MainUnit Value="0"/>
       <Title Value="SimThyr"/>
@@ -24,9 +24,10 @@
       <Version Value="2"/>
     </PublishOptions>
     <RunParams>
-      <local>
-        <FormatVersion Value="1"/>
-      </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
     </RunParams>
     <RequiredPackages Count="3">
       <Item1>
@@ -206,8 +207,8 @@
           <CursorPos X="10" Y="2"/>
         </ExtraEditor2>
         <ExtraEditor3>
-          <IsVisibleTab Value="True"/>
           <EditorIndex Value="-1"/>
+          <WindowIndex Value="-1"/>
           <TopLine Value="15"/>
           <CursorPos X="63" Y="20"/>
         </ExtraEditor3>
@@ -1552,7 +1553,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="22"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="25" Y="24"/>
+        <TopLine Value="48"/>
+        <CursorPos X="20" Y="57"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
@@ -1611,123 +1613,122 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="13" Column="89"/>
+        <Caret Line="20" Column="3"/>
       </Position1>
       <Position2>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="16" Column="44" TopLine="5"/>
+        <Caret Line="18" Column="7" TopLine="6"/>
       </Position2>
       <Position3>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="17" Column="31" TopLine="4"/>
+        <Caret Line="11" Column="3" TopLine="6"/>
       </Position3>
       <Position4>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="11" TopLine="5"/>
+        <Caret Line="12" Column="19" TopLine="6"/>
       </Position4>
       <Position5>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="23" TopLine="6"/>
+        <Caret Line="18" Column="31" TopLine="7"/>
       </Position5>
       <Position6>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="16" Column="42" TopLine="6"/>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="20" Column="63" TopLine="15"/>
       </Position6>
       <Position7>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="5"/>
+        <Caret Line="20" Column="12" TopLine="13"/>
       </Position7>
       <Position8>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="139" Column="17" TopLine="136"/>
+        <Caret Line="16" Column="42" TopLine="9"/>
       </Position8>
       <Position9>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="3"/>
+        <Caret Line="18" Column="17" TopLine="10"/>
       </Position9>
       <Position10>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="7" TopLine="6"/>
+        <Caret Line="21" Column="20" TopLine="10"/>
       </Position10>
       <Position11>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="11" Column="3" TopLine="6"/>
+        <Caret Line="18" Column="26" TopLine="12"/>
       </Position11>
       <Position12>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="12" Column="19" TopLine="6"/>
+        <Caret Line="17" Column="16" TopLine="9"/>
       </Position12>
       <Position13>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="31" TopLine="7"/>
+        <Caret Line="12" Column="11" TopLine="5"/>
       </Position13>
       <Position14>
-        <Filename Value="simthyrtypes.pas"/>
-        <Caret Line="20" Column="63" TopLine="15"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="14" Column="17" TopLine="9"/>
       </Position14>
       <Position15>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="12" TopLine="13"/>
+        <Caret Line="18" Column="24" TopLine="9"/>
       </Position15>
       <Position16>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="16" Column="42" TopLine="9"/>
+        <Caret Line="19" Column="21" TopLine="9"/>
       </Position16>
       <Position17>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="17" TopLine="10"/>
+        <Caret Line="20" Column="10" TopLine="9"/>
       </Position17>
       <Position18>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="21" Column="20" TopLine="10"/>
+        <Caret Line="31" Column="36" TopLine="14"/>
       </Position18>
       <Position19>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="26" TopLine="12"/>
+        <Caret Line="2" Column="11"/>
       </Position19>
       <Position20>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="17" Column="16" TopLine="9"/>
+        <Caret Line="33" Column="11" TopLine="15"/>
       </Position20>
       <Position21>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="12" Column="11" TopLine="5"/>
+        <Caret Line="325" Column="48" TopLine="306"/>
       </Position21>
       <Position22>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="14" Column="17" TopLine="9"/>
+        <Caret Column="21"/>
       </Position22>
       <Position23>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="24" TopLine="9"/>
+        <Caret Line="24" Column="25" TopLine="16"/>
       </Position23>
       <Position24>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="19" Column="21" TopLine="9"/>
+        <Caret Line="158" Column="19" TopLine="145"/>
       </Position24>
       <Position25>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="10" TopLine="9"/>
       </Position25>
       <Position26>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="31" Column="36" TopLine="14"/>
+        <Caret Line="20" Column="18" TopLine="7"/>
       </Position26>
       <Position27>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="2" Column="11"/>
+        <Caret Line="22" Column="17" TopLine="9"/>
       </Position27>
       <Position28>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="33" Column="11" TopLine="15"/>
+        <Caret Line="158" Column="19" TopLine="145"/>
       </Position28>
       <Position29>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="325" Column="48" TopLine="306"/>
+        <Caret Line="164" Column="19" TopLine="152"/>
       </Position29>
       <Position30>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Column="21"/>
+        <Caret Line="52" Column="21" TopLine="46"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

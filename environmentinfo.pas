@@ -14,14 +14,6 @@ interface
 
 uses
   Classes, SysUtils, StrUtils, LCLVersion
-  {$if FPC_FULlVERSION >= 30000}
-  // {$IF LCL_MAJOR >= 2} should work, but it doesn't, see
-  // https://forum.lazarus.freepascal.org/index.php/topic,45144.0.html
-  {$DEFINE NewLaz}
-  {$ENDIF}
-  {$IFDEF NewLaz}
-  , LCLPlatformDef
-  {$ENDIF}
   {$IFDEF LCLCarbon}
   , MacOSAll
   {$ENDIF}
@@ -56,6 +48,14 @@ function FileVersion: String;
 function SystemVersion: String;
 
 implementation
+
+{$IF LCL_MAJOR >= 2}
+  {$DEFINE NewLaz}
+{$ENDIF}
+{$IFDEF NewLaz}
+  uses
+    LCLPlatformDef;
+{$ENDIF}
 
 type
   { TVersionInfo }
