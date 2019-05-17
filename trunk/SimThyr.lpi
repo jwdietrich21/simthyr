@@ -47,7 +47,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="23"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="2"/>
+        <CursorPos X="23" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -1239,17 +1239,18 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Equilibriumdiagram"/>
-        <EditorIndex Value="3"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="37"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="6" Y="2"/>
+        <CursorPos Y="2"/>
         <ExtraEditorCount Value="3"/>
         <ExtraEditor1>
+          <EditorIndex Value="3"/>
           <WindowIndex Value="1"/>
+          <CursorPos X="6" Y="2"/>
         </ExtraEditor1>
         <ExtraEditor2>
-          <EditorIndex Value="37"/>
           <WindowIndex Value="1"/>
-          <CursorPos Y="2"/>
         </ExtraEditor2>
         <ExtraEditor3>
           <EditorIndex Value="4"/>
@@ -1550,11 +1551,9 @@
         <Filename Value="environmentinfo.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="EnvironmentInfo"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="22"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="48"/>
-        <CursorPos X="20" Y="57"/>
+        <CursorPos X="108" Y="6"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
