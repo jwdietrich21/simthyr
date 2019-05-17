@@ -25,6 +25,12 @@ uses
   {$IFDEF LCLCarbon}
   , MacOSAll
   {$ENDIF}
+  {$IFDEF WINDOWS}
+  , Windows, Win32Proc
+  {$ENDIF}
+  {$IFDEF UNIX}
+  , Unix
+  {$ENDIF}
   , InterfaceBase, versiontypes, versionresource;
 
 type
@@ -316,7 +322,7 @@ end;
 
 function SystemVersion: String;
 var
-  SystemStem, MajVer, MinVer, BugfixVer: Str255;
+  SystemStem, MajVer, MinVer, BugfixVer: String;
   {$IFDEF LCLcarbon}
   Major, Minor, Bugfix: SInt32;
   theError: SInt16;

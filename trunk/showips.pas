@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, clipbrd, Menus, LCLVersion,
+  ExtCtrls, clipbrd, Menus, LCLVersion, EnvironmentInfo,
   SimThyrTypes, SimThyrServices, StructureParameters, ShowAboutModel;
 
 type

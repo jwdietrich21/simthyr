@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="11"/>
+    <Version Value="10"/>
     <General>
       <MainUnit Value="0"/>
       <Title Value="SimThyr"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
-      <ActiveWindowIndexAtStart Value="1"/>
     </General>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
@@ -25,10 +24,9 @@
       <Version Value="2"/>
     </PublishOptions>
     <RunParams>
-      <FormatVersion Value="2"/>
-      <Modes Count="1">
-        <Mode0 Name="default"/>
-      </Modes>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
     </RunParams>
     <RequiredPackages Count="3">
       <Item1>
@@ -194,24 +192,24 @@
         <Filename Value="simthyrtypes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrTypes"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="15"/>
-        <CursorPos X="63" Y="20"/>
+        <EditorIndex Value="13"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="20" Y="2"/>
         <ExtraEditorCount Value="3"/>
         <ExtraEditor1>
-          <EditorIndex Value="13"/>
-          <WindowIndex Value="1"/>
-          <CursorPos X="20" Y="2"/>
-        </ExtraEditor1>
-        <ExtraEditor2>
           <EditorIndex Value="9"/>
           <WindowIndex Value="1"/>
-        </ExtraEditor2>
-        <ExtraEditor3>
+        </ExtraEditor1>
+        <ExtraEditor2>
           <EditorIndex Value="10"/>
           <WindowIndex Value="1"/>
           <CursorPos X="10" Y="2"/>
+        </ExtraEditor2>
+        <ExtraEditor3>
+          <IsVisibleTab Value="True"/>
+          <EditorIndex Value="-1"/>
+          <TopLine Value="15"/>
+          <CursorPos X="63" Y="20"/>
         </ExtraEditor3>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -220,12 +218,13 @@
         <Filename Value="simthyrservices.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SimThyrServices"/>
-        <EditorIndex Value="18"/>
+        <EditorIndex Value="14"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="2"/>
+        <TopLine Value="13"/>
+        <CursorPos Y="33"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="14"/>
+          <EditorIndex Value="18"/>
           <WindowIndex Value="1"/>
           <CursorPos Y="2"/>
         </ExtraEditor1>
@@ -253,7 +252,7 @@
         <UnitName Value="ShowIPS"/>
         <EditorIndex Value="28"/>
         <WindowIndex Value="1"/>
-        <CursorPos Y="2"/>
+        <CursorPos X="57" Y="23"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -794,11 +793,12 @@
         <CursorPos Y="2"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
+          <EditorIndex Value="-1"/>
           <TopLine Value="578"/>
           <CursorPos X="78" Y="607"/>
         </ExtraEditor1>
         <ExtraEditor2>
-          <EditorIndex Value="1"/>
+          <EditorIndex Value="-1"/>
           <TopLine Value="536"/>
           <CursorPos X="9" Y="549"/>
         </ExtraEditor2>
@@ -1552,11 +1552,10 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="22"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="14"/>
-        <CursorPos Y="17"/>
+        <CursorPos X="25" Y="24"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="2"/>
+          <EditorIndex Value="-1"/>
         </ExtraEditor1>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
@@ -1612,123 +1611,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="64" Column="32" TopLine="47"/>
+        <Caret Line="13" Column="89"/>
       </Position1>
       <Position2>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="305" Column="4" TopLine="291"/>
+        <Caret Line="16" Column="44" TopLine="5"/>
       </Position2>
       <Position3>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="306" Column="40" TopLine="299"/>
+        <Caret Line="17" Column="31" TopLine="4"/>
       </Position3>
       <Position4>
-        <Filename Value="aboutdialog.pas"/>
-        <Caret Line="285" Column="92" TopLine="276"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="20" Column="11" TopLine="5"/>
       </Position4>
       <Position5>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="312" Column="27" TopLine="295"/>
+        <Caret Line="18" Column="23" TopLine="6"/>
       </Position5>
       <Position6>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="13" Column="89"/>
+        <Caret Line="16" Column="42" TopLine="6"/>
       </Position6>
       <Position7>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="16" Column="44" TopLine="5"/>
+        <Caret Line="20" Column="5"/>
       </Position7>
       <Position8>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="17" Column="31" TopLine="4"/>
+        <Caret Line="139" Column="17" TopLine="136"/>
       </Position8>
       <Position9>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="11" TopLine="5"/>
+        <Caret Line="20" Column="3"/>
       </Position9>
       <Position10>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="23" TopLine="6"/>
+        <Caret Line="18" Column="7" TopLine="6"/>
       </Position10>
       <Position11>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="16" Column="42" TopLine="6"/>
+        <Caret Line="11" Column="3" TopLine="6"/>
       </Position11>
       <Position12>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="5"/>
+        <Caret Line="12" Column="19" TopLine="6"/>
       </Position12>
       <Position13>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="139" Column="17" TopLine="136"/>
+        <Caret Line="18" Column="31" TopLine="7"/>
       </Position13>
       <Position14>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="3"/>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="20" Column="63" TopLine="15"/>
       </Position14>
       <Position15>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="7" TopLine="6"/>
+        <Caret Line="20" Column="12" TopLine="13"/>
       </Position15>
       <Position16>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="11" Column="3" TopLine="6"/>
+        <Caret Line="16" Column="42" TopLine="9"/>
       </Position16>
       <Position17>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="12" Column="19" TopLine="6"/>
+        <Caret Line="18" Column="17" TopLine="10"/>
       </Position17>
       <Position18>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="31" TopLine="7"/>
+        <Caret Line="21" Column="20" TopLine="10"/>
       </Position18>
       <Position19>
-        <Filename Value="simthyrtypes.pas"/>
-        <Caret Line="20" Column="63" TopLine="15"/>
+        <Filename Value="environmentinfo.pas"/>
+        <Caret Line="18" Column="26" TopLine="12"/>
       </Position19>
       <Position20>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="12" TopLine="13"/>
+        <Caret Line="17" Column="16" TopLine="9"/>
       </Position20>
       <Position21>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="16" Column="42" TopLine="9"/>
+        <Caret Line="12" Column="11" TopLine="5"/>
       </Position21>
       <Position22>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="17" TopLine="10"/>
+        <Caret Line="14" Column="17" TopLine="9"/>
       </Position22>
       <Position23>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="21" Column="20" TopLine="10"/>
+        <Caret Line="18" Column="24" TopLine="9"/>
       </Position23>
       <Position24>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="26" TopLine="12"/>
+        <Caret Line="19" Column="21" TopLine="9"/>
       </Position24>
       <Position25>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="17" Column="16" TopLine="9"/>
+        <Caret Line="20" Column="10" TopLine="9"/>
       </Position25>
       <Position26>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="12" Column="11" TopLine="5"/>
+        <Caret Line="31" Column="36" TopLine="14"/>
       </Position26>
       <Position27>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="14" Column="17" TopLine="9"/>
+        <Caret Line="2" Column="11"/>
       </Position27>
       <Position28>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="24" TopLine="9"/>
+        <Caret Line="33" Column="11" TopLine="15"/>
       </Position28>
       <Position29>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="19" Column="21" TopLine="9"/>
+        <Caret Line="325" Column="48" TopLine="306"/>
       </Position29>
       <Position30>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="10" TopLine="9"/>
+        <Caret Column="21"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
