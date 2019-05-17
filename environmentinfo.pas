@@ -13,7 +13,7 @@ unit EnvironmentInfo;
 interface
 
 uses
-  Classes, SysUtils, StrUtils, LCLVersion
+  Classes, SysUtils, StrUtils, LCLVersion, DOS
   {$IFDEF LCLCarbon}
   , MacOSAll
   {$ENDIF}
