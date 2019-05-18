@@ -376,8 +376,22 @@ begin
     theTitle := PChar(PlotOptions.titleString);
     Chart1.Title.Text.SetText(theTitle);
     Chart1.Title.Visible := true;
-    Chart1.Title.Font.Color := PlotOptions.titleColor;
   end;
+  Chart1.Font.Name := PlotOptions.fontname;
+  {$IF (LCL_MAJOR >= 2)}
+    Chart1.LeftAxis.Title.LabelFont.Name := PlotOptions.fontname;
+  {$ELSE}
+    Chart1.LeftAxis.Title.Font.Name := PlotOptions.fontname;
+  {$ENDIF}
+  Chart1.LeftAxis.Marks.LabelFont.Name := PlotOptions.fontname;
+  {$IF (LCL_MAJOR >= 2)}
+    Chart1.BottomAxis.Title.LabelFont.Name := PlotOptions.fontname;
+  {$ELSE}
+    Chart1.BottomAxis.Title.Font.Name := PlotOptions.fontname;
+  {$ENDIF}
+  Chart1.BottomAxis.Marks.LabelFont.Name := PlotOptions.fontname;;
+  Chart1.Title.Font.Color := PlotOptions.titleColor;
+  Chart1.Title.Font.Name := PlotOptions.fontname;
 end;
 
 procedure TValuesPlot.OptionsSpeedButton2Click(Sender: TObject);
@@ -393,8 +407,22 @@ begin
     theTitle := PChar(PlotOptions.titleString);
     Chart2.Title.Text.SetText(theTitle);
     Chart2.Title.Visible := true;
-    Chart2.Title.Font.Color := PlotOptions.titleColor;
   end;
+  Chart2.Font.Name := PlotOptions.fontname;
+  {$IF (LCL_MAJOR >= 2)}
+    Chart2.LeftAxis.Title.LabelFont.Name := PlotOptions.fontname;
+  {$ELSE}
+    Chart2.LeftAxis.Title.Font.Name := PlotOptions.fontname;
+  {$ENDIF}
+  Chart2.LeftAxis.Marks.LabelFont.Name := PlotOptions.fontname;
+  {$IF (LCL_MAJOR >= 2)}
+    Chart2.BottomAxis.Title.LabelFont.Name := PlotOptions.fontname;
+  {$ELSE}
+    Chart2.BottomAxis.Title.Font.Name := PlotOptions.fontname;
+  {$ENDIF}
+  Chart2.BottomAxis.Marks.LabelFont.Name := PlotOptions.fontname;;
+  Chart2.Title.Font.Color := PlotOptions.titleColor;
+  Chart2.Title.Font.Name := PlotOptions.fontname;
 end;
 
 procedure TValuesPlot.UpdateTimeAxes;

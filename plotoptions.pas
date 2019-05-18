@@ -27,6 +27,7 @@ type
   { TPlotOptionsForm }
 
   TPlotOptionsForm = class(TForm)
+    FontsCombobox: TComboBox;
     TitleLabel: TLabel;
     OKButton: TButton;
     ColorButton1: TColorButton;
@@ -63,6 +64,10 @@ begin
   ShowModal;
   GetPlotOptions.titleString := AnsiString(TitleEdit.Text);
   GetPlotOptions.titleColor := ColorButton1.ButtonColor;
+  if FontsCombobox.ItemIndex < 1 then
+    GetPlotOptions.fontname := 'default'
+  else
+    GetPlotOptions.fontname := FontsCombobox.Items[FontsCombobox.ItemIndex];
 end;
 
 procedure TPlotOptionsForm.OKButtonClick(Sender: TObject);
@@ -72,6 +77,7 @@ end;
 
 procedure TPlotOptionsForm.FormShow(Sender: TObject);
 begin
+  FontsCombobox.Items.Assign(Screen.Fonts);
   ShowOnTop;
   SetFocus;
 end;

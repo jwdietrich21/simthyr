@@ -1,5 +1,3 @@
-{ This is an automatically generated lazarus resource file }
-
 LazarusResources.Add('THelpWindow','FORMDATA',[
   'TPF0'#11'THelpWindow'#10'HelpWindow'#4'Left'#3#138#1#6'Height'#3#9#1#3'Top'#3
   +#213#0#5'Width'#3#10#2#7'Caption'#6#12'SimThyr Help'#12'ClientHeight'#3#9#1
