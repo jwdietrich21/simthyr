@@ -14,7 +14,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="868"/>
+      <BuildNr Value="869"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.1 Merlion" LegalCopyright="1994-2019 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.1"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -41,7 +41,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="204">
+    <Units Count="206">
       <Unit0>
         <Filename Value="SimThyr.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -93,6 +93,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="SimThyrPlot"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="26"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
@@ -195,7 +196,8 @@
         <UnitName Value="SimThyrTypes"/>
         <EditorIndex Value="13"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="20" Y="2"/>
+        <TopLine Value="35"/>
+        <CursorPos X="13" Y="53"/>
         <ExtraEditorCount Value="3"/>
         <ExtraEditor1>
           <EditorIndex Value="9"/>
@@ -1239,18 +1241,17 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Equilibriumdiagram"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="37"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
         <ExtraEditorCount Value="3"/>
         <ExtraEditor1>
+          <WindowIndex Value="1"/>
+        </ExtraEditor1>
+        <ExtraEditor2>
           <EditorIndex Value="3"/>
           <WindowIndex Value="1"/>
           <CursorPos X="6" Y="2"/>
-        </ExtraEditor1>
-        <ExtraEditor2>
-          <WindowIndex Value="1"/>
         </ExtraEditor2>
         <ExtraEditor3>
           <EditorIndex Value="4"/>
@@ -1258,7 +1259,7 @@
           <TopLine Value="1189"/>
           <CursorPos X="70" Y="1206"/>
         </ExtraEditor3>
-        <UsageCount Value="193"/>
+        <UsageCount Value="195"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit155>
@@ -1290,7 +1291,7 @@
         <EditorIndex Value="27"/>
         <WindowIndex Value="1"/>
         <CursorPos X="68" Y="23"/>
-        <UsageCount Value="150"/>
+        <UsageCount Value="152"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit159>
@@ -1502,7 +1503,7 @@
         <EditorIndex Value="21"/>
         <WindowIndex Value="1"/>
         <CursorPos Y="2"/>
-        <UsageCount Value="49"/>
+        <UsageCount Value="51"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit190>
@@ -1553,16 +1554,16 @@
         <UnitName Value="EnvironmentInfo"/>
         <EditorIndex Value="22"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="108" Y="6"/>
+        <CursorPos Y="2"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
         </ExtraEditor1>
-        <UsageCount Value="27"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit196>
       <Unit197>
-        <Filename Value="C:/lazarus/lcl/interfacebase.pp"/>
+        <Filename Value="../../../../../../../lazarus/lcl/interfacebase.pp"/>
         <UnitName Value="InterfaceBase"/>
         <WindowIndex Value="1"/>
         <TopLine Value="10"/>
@@ -1570,26 +1571,26 @@
         <UsageCount Value="10"/>
       </Unit197>
       <Unit198>
-        <Filename Value="C:/lazarus/lcl/lclplatformdef.pas"/>
+        <Filename Value="../../../../../../../lazarus/lcl/lclplatformdef.pas"/>
         <UnitName Value="LCLPlatformDef"/>
         <WindowIndex Value="1"/>
         <CursorPos X="20" Y="12"/>
         <UsageCount Value="10"/>
       </Unit198>
       <Unit199>
-        <Filename Value="C:/lazarus/fpc/3.0.4/source/packages/fcl-res/src/versiontypes.pp"/>
+        <Filename Value="../../../../../../../lazarus/fpc/3.0.4/source/packages/fcl-res/src/versiontypes.pp"/>
         <WindowIndex Value="1"/>
         <TopLine Value="202"/>
         <UsageCount Value="10"/>
       </Unit199>
       <Unit200>
-        <Filename Value="C:/lazarus/lcl/lclversion.pas"/>
+        <Filename Value="../../../../../../../lazarus/lcl/lclversion.pas"/>
         <UnitName Value="LCLVersion"/>
         <WindowIndex Value="1"/>
         <UsageCount Value="10"/>
       </Unit200>
       <Unit201>
-        <Filename Value="C:/lazarus/lcl/forms.pp"/>
+        <Filename Value="../../../../../../../lazarus/lcl/forms.pp"/>
         <UnitName Value="Forms"/>
         <WindowIndex Value="1"/>
         <TopLine Value="828"/>
@@ -1608,126 +1609,145 @@
         <WindowIndex Value="1"/>
         <UsageCount Value="10"/>
       </Unit203>
+      <Unit204>
+        <Filename Value="../../../../../../../lazarus/lcl/graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="40"/>
+        <CursorPos X="26" Y="59"/>
+        <UsageCount Value="10"/>
+      </Unit204>
+      <Unit205>
+        <Filename Value="../../../../../../../lazarus/lcl/graphtype.pp"/>
+        <UnitName Value="GraphType"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="297"/>
+        <CursorPos X="3" Y="37"/>
+        <UsageCount Value="10"/>
+      </Unit205>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="3"/>
+        <Caret Line="164" Column="19" TopLine="152"/>
       </Position1>
       <Position2>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="7" TopLine="6"/>
+        <Caret Line="52" Column="21" TopLine="46"/>
       </Position2>
       <Position3>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="11" Column="3" TopLine="6"/>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <Caret Line="2"/>
       </Position3>
       <Position4>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="12" Column="19" TopLine="6"/>
+        <Caret Line="52" Column="16" TopLine="39"/>
       </Position4>
       <Position5>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="31" TopLine="7"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="2"/>
       </Position5>
       <Position6>
-        <Filename Value="simthyrtypes.pas"/>
-        <Caret Line="20" Column="63" TopLine="15"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="2"/>
       </Position6>
       <Position7>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="12" TopLine="13"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="62" Column="55" TopLine="42"/>
       </Position7>
       <Position8>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="16" Column="42" TopLine="9"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="395" Column="43" TopLine="366"/>
       </Position8>
       <Position9>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="17" TopLine="10"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="369" Column="22" TopLine="360"/>
       </Position9>
       <Position10>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="21" Column="20" TopLine="10"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="62" Column="55" TopLine="42"/>
       </Position10>
       <Position11>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="26" TopLine="12"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="401" Column="24" TopLine="369"/>
       </Position11>
       <Position12>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="17" Column="16" TopLine="9"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="70" Column="23" TopLine="48"/>
       </Position12>
       <Position13>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="12" Column="11" TopLine="5"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="67" Column="33" TopLine="48"/>
       </Position13>
       <Position14>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="14" Column="17" TopLine="9"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="62" Column="55" TopLine="48"/>
       </Position14>
       <Position15>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="18" Column="24" TopLine="9"/>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="57" Column="15" TopLine="35"/>
       </Position15>
       <Position16>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="19" Column="21" TopLine="9"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="42" Column="5" TopLine="20"/>
       </Position16>
       <Position17>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="10" TopLine="9"/>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="57" Column="24" TopLine="35"/>
       </Position17>
       <Position18>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="31" Column="36" TopLine="14"/>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="56" Column="22" TopLine="35"/>
       </Position18>
       <Position19>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="2" Column="11"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="91" Column="32" TopLine="59"/>
       </Position19>
       <Position20>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="33" Column="11" TopLine="15"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="42" Column="59" TopLine="25"/>
       </Position20>
       <Position21>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="325" Column="48" TopLine="306"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="43" Column="14" TopLine="23"/>
       </Position21>
       <Position22>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Column="21"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="46" Column="23" TopLine="23"/>
       </Position22>
       <Position23>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="24" Column="25" TopLine="16"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="43" Column="56" TopLine="33"/>
       </Position23>
       <Position24>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="158" Column="19" TopLine="145"/>
+        <Caret Line="75" Column="60" TopLine="49"/>
       </Position24>
       <Position25>
         <Filename Value="environmentinfo.pas"/>
+        <Caret Line="67" Column="26" TopLine="48"/>
       </Position25>
       <Position26>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="20" Column="18" TopLine="7"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="81" Column="30" TopLine="45"/>
       </Position26>
       <Position27>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="22" Column="17" TopLine="9"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="64" Column="30" TopLine="34"/>
       </Position27>
       <Position28>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="158" Column="19" TopLine="145"/>
+        <Filename Value="plotoptions.pas"/>
+        <Caret Line="85" TopLine="43"/>
       </Position28>
       <Position29>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="164" Column="19" TopLine="152"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="2"/>
       </Position29>
       <Position30>
         <Filename Value="environmentinfo.pas"/>
-        <Caret Line="52" Column="21" TopLine="46"/>
+        <Caret Line="2" Column="17"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>

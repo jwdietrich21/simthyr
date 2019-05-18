@@ -1,5 +1,3 @@
-{ This is an automatically generated lazarus resource file }
-
 LazarusResources.Add('TSimThyrToolbar','FORMDATA',[
   'TPF0'#15'TSimThyrToolbar'#14'SimThyrToolbar'#4'Left'#2#0#6'Height'#2'Z'#4'Hi'
   +'nt'#6'RPlease use the icons to load or save settings and to start or stop t'

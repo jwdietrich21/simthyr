@@ -15,12 +15,12 @@ object PlotOptionsForm: TPlotOptionsForm
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '1.8.4.0'
   object TitleEdit: TEdit
     Left = 16
-    Height = 22
+    Height = 23
     Hint = 'You may enter a title that is shown on the top of every chart here.'
-    Top = 48
+    Top = 42
     Width = 476
     Anchors = [akTop, akLeft, akRight]
     ParentShowHint = False
@@ -32,7 +32,7 @@ object PlotOptionsForm: TPlotOptionsForm
     Left = 516
     Height = 25
     Hint = 'Select color for title string'
-    Top = 45
+    Top = 39
     Width = 48
     Anchors = [akTop, akRight]
     BorderWidth = 2
@@ -44,7 +44,7 @@ object PlotOptionsForm: TPlotOptionsForm
   object OKButton: TButton
     Left = 489
     Height = 25
-    Top = 104
+    Top = 119
     Width = 75
     Anchors = [akTop, akRight]
     Caption = 'OK'
@@ -54,10 +54,24 @@ object PlotOptionsForm: TPlotOptionsForm
   end
   object TitleLabel: TLabel
     Left = 16
-    Height = 16
-    Top = 24
-    Width = 60
+    Height = 15
+    Top = 18
+    Width = 50
     Caption = 'Plot Title:'
     ParentColor = False
+  end
+  object FontsCombobox: TComboBox
+    Left = 16
+    Height = 23
+    Top = 80
+    Width = 476
+    Anchors = [akTop, akLeft, akRight]
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'Font'
+    )
+    TabOrder = 2
+    Text = 'Font'
   end
 end

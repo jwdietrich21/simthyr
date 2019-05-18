@@ -49,7 +49,7 @@ function SystemVersion: String;
 
 implementation
 
-{$IF LCL_MAJOR >= 2}
+{$IF (LCL_MAJOR >= 2) OR (LCL_MAJOR >= 1) AND (LCL_MINOR >=8)}
   {$DEFINE NewLaz}
 {$ENDIF}
 {$IFDEF NewLaz}
@@ -418,10 +418,10 @@ procedure TVersionInfo.Load(Instance: THandle);
     end;
 end;
 
-Initialization
+initialization
   FInfo := nil;
 
-Finalization
+finalization
   If Assigned(FInfo) Then
     FInfo.Free;
 

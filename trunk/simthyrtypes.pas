@@ -54,6 +54,8 @@ type
  TPlotOptions = record
    titleString: AnsiString;
    titleColor: TColor;
+   fontname: string;
+   fontsize: integer;
  end;
 
 const
