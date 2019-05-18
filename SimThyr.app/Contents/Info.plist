@@ -22,8 +22,10 @@ See http://simthyr.sourceforge.net for details
 	<key>CFBundleVersion</key>
 	<string>4.0.1</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
+	<string>en</string>
 	<key>CFBundleName</key>
+	<string>SimThyr</string>
+	<key>CFBundleDisplayName</key>
 	<string>SimThyr</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
@@ -53,6 +55,7 @@ See http://simthyr.sourceforge.net for details
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>*</string>
+				<string>xml</string>
 			</array>
 			<key>CFBundleTypeOSTypes</key>
 			<array>
