@@ -490,6 +490,7 @@ var
   theFilterIndex: integer;
   theStream: TFileStream;
   theDrawer: IChartDrawer;
+  theFont: TFont;
 begin
   if gSelectedChart = nil then
     bell
