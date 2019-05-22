@@ -30,7 +30,6 @@ uses
   SimThyrMain,
   Controls,
   TAChartLazarusPkg,
-  fpvectorialpkg,
   Math,
   SimThyrPlot,
   LaunchDialog,
