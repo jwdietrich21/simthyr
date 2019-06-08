@@ -16,7 +16,7 @@ We have invested a lot of time and effort in creating SimThyr, please cite it wh
 
 In order to cite SimThyr in publications use:
 
-* J. W. Dietrich (1994-2019). SimThyr, a simulator of thyrotropic feedback control. RRID:SCR_014351. URL http://simthyr.sf.net.
+* J. W. Dietrich (1994-2019). SimThyr, a simulator of thyrotropic feedback control. RRID:SCR_014351. doi: 10.5281/zenodo.1303822. URL http://simthyr.sf.net.
 
 Additionally you might want to cite one of the following papers:
 
