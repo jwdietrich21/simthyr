@@ -3,11 +3,11 @@ unit SimThyrServices;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.1 (Merlion) }
+{ Version 4.0.2 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2019 }
+{ (c) J. W. Dietrich, 1994 - 2020 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2019 }
+{ (c) Ruhr University of Bochum 2005 - 2020 }
 
 { This unit provides some global functions for use by other units }
 
@@ -24,7 +24,7 @@ uses
   {$IFDEF WINDOWS}
   , Windows, Win32Proc
   {$ENDIF}
-  {$IFDEF LCLCarbon}
+  {$IFDEF DARWIN}
   , MacOSAll
   {$ENDIF}
   {$IFDEF UNIX}
@@ -86,7 +86,7 @@ begin
   {$IFDEF WINDOWS}
   MessageBeep(0);
   {$ELSE}
-    {$IFDEF LCLCarbon}
+    {$IFDEF DARWIN}
   SysBeep(30);
     {$ELSE}
   s := fpSystem('echo -ne ''\007''');
@@ -376,7 +376,7 @@ begin
   {$IFDEF win32}
   theMemo.Lines.Text := theMemo.Lines.Text + kCRLF + theString;
   {$ELSE}
-    {$IFDEF LCLCarbon}
+    {$IFDEF DARWIN}
   theMemo.Lines.Text := theMemo.Lines.Text + kRETURN + theString;
     {$ELSE}
   theMemo.Lines.Text := theMemo.Lines.Text + kLF + theString;

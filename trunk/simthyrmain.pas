@@ -3,11 +3,11 @@ unit SimThyrMain;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.1 (Merlion) }
+{ Version 4.0.2 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2019 }
+{ (c) J. W. Dietrich, 1994 - 2020 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2019 }
+{ (c) Ruhr University of Bochum 2005 - 2020 }
 
 { This unit provides global GUI functions, toolbar and menubar handling }
 
@@ -210,6 +210,16 @@ begin
   SimThyrToolbar.WinPreferencesItem.Visible := False;
   SimThyrToolbar.AppleMenu.Visible := True;
   {$ELSE}
+  {$IFDEF LCLCocoa}
+  modifierKey := [ssMeta];
+  SimThyrToolbar.WinAboutItem.Visible := False;
+  SimThyrToolbar.Divider_5_1.Visible := False;
+  SimThyrToolbar.Divider_2_2.Visible := False;
+  SimThyrToolbar.Divider_2_2.Visible := False;
+  SimThyrToolbar.Divider_2_3.Visible := False;
+  SimThyrToolbar.WinPreferencesItem.Visible := False;
+  SimThyrToolbar.AppleMenu.Visible := True;
+  {$ELSE}
   modifierKey := [ssCtrl];
   SimThyrToolbar.WinAboutItem.Visible := True;
   SimThyrToolbar.Divider_5_1.Visible := True;
@@ -217,6 +227,7 @@ begin
   SimThyrToolbar.WinPreferencesItem.Visible := True;
   SimThyrToolbar.AppleMenu.Visible := False;
   SimThyrToolbar.HelpItem.ShortCut := ShortCut(VK_F1, []);
+  {$ENDIF}
   {$ENDIF}
   SimThyrToolbar.NewMenuItem.ShortCut := ShortCut(VK_N, modifierKey);
   SimThyrToolbar.OpenMenuItem.ShortCut := ShortCut(VK_O, modifierKey);
@@ -262,7 +273,7 @@ begin
   with SimThyrToolbar do
   begin
     hide;
-    {$IFDEF LCLcarbon}
+    {$IFDEF DARWIN}
     WindowState := wsMaximized;
     left   := 0;
     top    := 20;
@@ -305,7 +316,7 @@ procedure TSimThyrToolbar.HandleIdle(Sender: TObject);
 begin
   if simready then
   begin
-  {$IFDEF LCLcarbon}
+  {$IFDEF DARWIN}
     SimThyrLogWindow.ValuesGrid.BeginUpdate;
     SimThyrLogWindow.ValuesGrid.EndUpdate(True);
   {$ENDIF}
@@ -322,7 +333,7 @@ procedure TSimThyrToolbar.IdleTimer1Timer(Sender: TObject);
 begin
   if simready then
   begin
-  {$IFDEF LCLcarbon}
+  {$IFDEF DARWIN}
     SimThyrLogWindow.ValuesGrid.BeginUpdate;
     SimThyrLogWindow.ValuesGrid.EndUpdate(True);
   {$ENDIF}

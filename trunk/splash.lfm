@@ -19,7 +19,7 @@ object SplashScreen: TSplashScreen
   OnCreate = FormCreate
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.6.0'
   Visible = True
   object Image1: TImage
     Left = 16
@@ -1139,7 +1139,7 @@ object SplashScreen: TSplashScreen
     Height = 13
     Top = 130
     Width = 81
-    Caption = '© 1994 – 2019'
+    Caption = '© 1994 – 2020'
     Font.Height = -11
     Font.Pitch = fpVariable
     ParentColor = False
