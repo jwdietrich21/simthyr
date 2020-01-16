@@ -15,7 +15,7 @@ object PlotOptionsForm: TPlotOptionsForm
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.6.0'
   object TitleEdit: TEdit
     Left = 16
     Height = 22

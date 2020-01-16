@@ -3,11 +3,11 @@ unit HandlePreferences;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.1 (Merlion) }
+{ Version 4.0.2 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2019 }
+{ (c) J. W. Dietrich, 1994 - 2020 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2019 }
+{ (c) Ruhr University of Bochum 2005 - 2020 }
 
 { This unit handles global application preferences }
 
@@ -24,13 +24,19 @@ uses
   UnitConverter, SimThyrLog, SimThyrPlot, Sensitivityanalysis,
   TWSensitivityanalysis, Equilibriumdiagram, SimThyrPrediction,
   DOM, XMLRead, XMLWrite
-  {$IFDEF win32}
+  {$IFDEF Windows}
   , Windows
   {$ELSE}
     {$IFDEF LCLCarbon}
       , MacOSAll
+    {$ELSE}
+      {$IFDEF LCLCocoa}
+        , CocoaAll, MacOSAll
+      {$ENDIF}
     {$ENDIF}
-  {$ENDIF};
+  , Unix
+  {$ENDIF}
+;
 
 const
   STANDARD_NUM_FORMAT = '###,###.00##';
@@ -168,7 +174,7 @@ end;
 
 function GetPreferencesFile: String;
 begin
-  {$IFDEF LCLCarbon}
+  {$IFDEF DARWIN}
     GetPreferencesFile := GetPreferencesFolder + SIMTHYR_GLOBAL_ID + '.xml';
   {$ELSE}
     GetPreferencesFile := GetAppConfigFile(false);

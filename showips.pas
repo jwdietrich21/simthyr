@@ -3,11 +3,11 @@ unit ShowIPS;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.1 (Merlion) }
+{ Version 4.0.2 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2019 }
+{ (c) J. W. Dietrich, 1994 - 2020 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2019 }
+{ (c) Ruhr University of Bochum 2005 - 2020 }
 
 { This unit draws the information processing structure }
 
@@ -111,7 +111,7 @@ end;
 procedure TIPSForm.FormCreate(Sender: TObject);
 begin
   { adapt extent of this rather large window to GUI style of different platforms }
-    {$IFDEF LCLcarbon}
+    {$IFDEF DARWIN}
       Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 32;
     {$ELSE}
       Top := SimThyrToolbar.Top + SimThyrToolbar.Height + 38;

@@ -14,7 +14,7 @@ interface
 
 uses
   Classes, SysUtils, StrUtils, LCLVersion, DOS
-  {$IFDEF LCLCarbon}
+  {$IFDEF DARWIN}
   , MacOSAll
   {$ENDIF}
   {$IFDEF WINDOWS}

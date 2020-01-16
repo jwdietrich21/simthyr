@@ -3,11 +3,11 @@ program SimThyr;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.1 (Merlion) }
+{ Version 4.0.2 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2019 }
+{ (c) J. W. Dietrich, 1994 - 2020 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2019 }
+{ (c) Ruhr University of Bochum 2005 - 2020 }
 
 { This is the main project file }
 

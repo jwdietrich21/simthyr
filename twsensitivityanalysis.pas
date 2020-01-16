@@ -3,11 +3,11 @@ unit TWSensitivityanalysis;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.1 (Merlion) }
+{ Version 4.0.2 (Merlion) }
 
-{ (c) J. W. Dietrich, 1994 - 2019 }
+{ (c) J. W. Dietrich, 1994 - 2020 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2019 }
+{ (c) Ruhr University of Bochum 2005 - 2020 }
 
 { This unit implements two-way sensitivity analysis }
 
@@ -1385,7 +1385,7 @@ end;
 
 procedure TTWSensitivityAnalysisForm.FormCreate(Sender: TObject);
 begin
-  {$IFDEF LCLcarbon}
+  {$IFDEF DARWIN}
   SensitivityMapColorMapSeries.UseImage := cmuiAlways;
   LegendColorMapSeries.UseImage := cmuiAlways;
   {$ELSE}

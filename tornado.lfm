@@ -14,7 +14,7 @@ object TornadoPlotForm: TTornadoPlotForm
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.6.2.0'
+  LCLVersion = '2.0.6.0'
   Visible = True
   object CheckGroup1: TCheckGroup
     Left = 440
@@ -34,7 +34,7 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 2
     ClientHeight = 195
-    ClientWidth = 183
+    ClientWidth = 177
     Columns = 2
     Items.Strings = (
       'GD1'
@@ -69,9 +69,9 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object DepParameterCombo: TComboBox
     Left = 440
-    Height = 33
+    Height = 21
     Hint = 'Select the depdentent parameter, e.g. hormone level here.'
-    Top = 0
+    Top = 12
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 0
@@ -93,8 +93,8 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 23
-    Top = 442
+    Height = 15
+    Top = 450
     Width = 640
     Panels = <>
   end
@@ -115,7 +115,7 @@ object TornadoPlotForm: TTornadoPlotForm
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 1
     ClientHeight = 61
-    ClientWidth = 183
+    ClientWidth = 177
     ItemIndex = 0
     Items.Strings = (
       'Fraction'
@@ -149,18 +149,22 @@ object TornadoPlotForm: TTornadoPlotForm
           Inverted = True
           Marks.Distance = 7
           Marks.Format = '%2:s'
+          Marks.LabelBrush.Style = bsClear
           Marks.Source = ListChartSource1
           Marks.Style = smsLabel
           Minors = <>
           Title.LabelFont.Orientation = 900
+          Title.LabelBrush.Style = bsClear
         end      
         item
           Alignment = calBottom
           Marks.LabelFont.Height = 11
+          Marks.LabelBrush.Style = bsClear
           Minors = <>
           Title.LabelFont.Height = -9
           Title.Visible = True
           Title.Caption = 'Change in dependent variable'
+          Title.LabelBrush.Style = bsClear
         end>
       BackColor = clWhite
       Foot.Brush.Color = clBtnFace
@@ -199,8 +203,8 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object LegendPosCombo: TComboBox
     Left = 440
-    Height = 33
-    Top = 393
+    Height = 21
+    Top = 405
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 0
@@ -218,9 +222,9 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object DecreaseColorBox: TColorBox
     Left = 440
-    Height = 31
+    Height = 20
     Hint = 'Select color for decresing indepenent variable here.'
-    Top = 337
+    Top = 348
     Width = 185
     DefaultColorColor = clGray
     Selected = clGray
@@ -233,9 +237,9 @@ object TornadoPlotForm: TTornadoPlotForm
   end
   object IncreaseColorBox: TColorBox
     Left = 440
-    Height = 31
+    Height = 20
     Hint = 'Select color for incresing indepenent variable here.'
-    Top = 361
+    Top = 372
     Width = 185
     Anchors = [akRight, akBottom]
     ItemHeight = 16

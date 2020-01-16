@@ -1,7 +1,7 @@
 object AboutModelForm: TAboutModelForm
-  Left = 529
+  Left = 654
   Height = 699
-  Top = 22
+  Top = 139
   Width = 575
   HorzScrollBar.Page = 1
   HorzScrollBar.Visible = False
@@ -154,7 +154,7 @@ object AboutModelForm: TAboutModelForm
     0000
   }
   Position = poScreenCenter
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.6.0'
   object Label1: TLabel
     Left = 56
     Height = 16

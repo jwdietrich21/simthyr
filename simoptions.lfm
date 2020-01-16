@@ -18,7 +18,7 @@ object SimOptionsDlg: TSimOptionsDlg
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.0.2.0'
+  LCLVersion = '2.0.6.0'
   Visible = True
   object NoiseCheckBox: TCheckBox
     Left = 32
