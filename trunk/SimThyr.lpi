@@ -18,10 +18,13 @@
       <Attributes pvaDebug="True" pvaPreRelease="True"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.2 Merlion" LegalCopyright="1994-2020 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.2"/>
     </VersionInfo>
+    <MacroValues Count="1">
+      <Macro1 Name="LCLWidgetType" Value="cocoa"/>
+    </MacroValues>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
       <SharedMatrixOptions Count="1">
-        <Item1 ID="542318232062" Type="IDEMacro" MacroName="LCLWidgetType" Value="cocoa"/>
+        <Item1 ID="542318232062" Modes="default" Type="IDEMacro" MacroName="LCLWidgetType" Value="cocoa"/>
       </SharedMatrixOptions>
     </BuildModes>
     <PublishOptions>
@@ -100,8 +103,8 @@
         <UnitName Value="SimThyrPlot"/>
         <EditorIndex Value="23"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="491"/>
-        <CursorPos X="18" Y="505"/>
+        <TopLine Value="193"/>
+        <CursorPos Y="217"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="8"/>
@@ -133,10 +136,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="LaunchDialog"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="26"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="7" Y="2"/>
+        <CursorPos X="145" Y="7"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -274,10 +276,11 @@
         <Filename Value="simulator.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Simulator"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="27"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="530"/>
-        <CursorPos Y="544"/>
+        <TopLine Value="459"/>
+        <CursorPos X="13" Y="477"/>
         <ExtraEditorCount Value="2"/>
         <ExtraEditor1>
           <EditorIndex Value="7"/>
@@ -1653,111 +1656,127 @@
         <UsageCount Value="10"/>
       </Unit206>
     </Units>
-    <JumpHistory Count="26" HistoryIndex="25">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="528" TopLine="503"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="185" TopLine="162"/>
       </Position1>
       <Position2>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="530" TopLine="505"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="190" TopLine="175"/>
       </Position2>
       <Position3>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="532" TopLine="507"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="192" TopLine="175"/>
       </Position3>
       <Position4>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="533" TopLine="508"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="193" TopLine="175"/>
       </Position4>
       <Position5>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="534" TopLine="509"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="194" TopLine="175"/>
       </Position5>
       <Position6>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="535" TopLine="510"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="195" TopLine="175"/>
       </Position6>
       <Position7>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="538" TopLine="514"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="196" TopLine="175"/>
       </Position7>
       <Position8>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="539" TopLine="515"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="197" TopLine="175"/>
       </Position8>
       <Position9>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="540" TopLine="516"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="199" TopLine="175"/>
       </Position9>
       <Position10>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="541" TopLine="517"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="201" TopLine="177"/>
       </Position10>
       <Position11>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="542" TopLine="518"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="203" TopLine="179"/>
       </Position11>
       <Position12>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="543" TopLine="519"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="202" TopLine="179"/>
       </Position12>
       <Position13>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="496" TopLine="480"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="203" TopLine="179"/>
       </Position13>
       <Position14>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="497" TopLine="480"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="202" TopLine="179"/>
       </Position14>
       <Position15>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="498" TopLine="480"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="197" TopLine="179"/>
       </Position15>
       <Position16>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="499" TopLine="480"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="199" TopLine="179"/>
       </Position16>
       <Position17>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="500" TopLine="480"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="207" TopLine="183"/>
       </Position17>
       <Position18>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="501" TopLine="480"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="208" TopLine="184"/>
       </Position18>
       <Position19>
         <Filename Value="simulator.pas"/>
-        <Caret Line="502" TopLine="480"/>
+        <Caret Line="473" TopLine="459"/>
       </Position19>
       <Position20>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="503" TopLine="480"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="207" TopLine="184"/>
       </Position20>
       <Position21>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="504" TopLine="480"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="208" Column="7" TopLine="184"/>
       </Position21>
       <Position22>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="505" TopLine="480"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="207" TopLine="184"/>
       </Position22>
       <Position23>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="508" TopLine="483"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="209" TopLine="185"/>
       </Position23>
       <Position24>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="509" TopLine="484"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="211" TopLine="187"/>
       </Position24>
       <Position25>
-        <Filename Value="simulator.pas"/>
-        <Caret Line="544" TopLine="530"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="212" TopLine="188"/>
       </Position25>
       <Position26>
-        <Filename Value="launchdialog.pas"/>
-        <Caret Line="148" TopLine="124"/>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="213" TopLine="189"/>
       </Position26>
+      <Position27>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="214" TopLine="190"/>
+      </Position27>
+      <Position28>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="215" TopLine="191"/>
+      </Position28>
+      <Position29>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="207" TopLine="191"/>
+      </Position29>
+      <Position30>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="217" TopLine="193"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

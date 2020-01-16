@@ -472,7 +472,9 @@ begin
       end;
     simready := true;
     DrawPlot(false);
+    {$IFNDEF LCLCocoa} // temporary solution for a bug in Coca, needs evaluation
     SimThyrLogWindow.Caption := LOG_TITLE;
+    {$ENDIF}
     SetStatusBarPanel0(iString, nmaxString);
     SimThyrLogWindow.ProgressBar1.Position := 0;
   finally
