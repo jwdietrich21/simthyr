@@ -205,7 +205,9 @@ begin
       end;
     end;
     graphready := True;
+    {$IFNDEF LCLCocoa} // temporary solution for a bug in Coca, needs evaluation
     ValuesPlot.Caption := PLOT_TITLE;
+    {$ENDIF}
     append := true;
   end;
   ValuesPlot.Fline1.EndUpdate;
