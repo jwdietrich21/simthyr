@@ -29,7 +29,11 @@ type
   { TSimulationSettings }
 
   TSimulationSettings = class(TForm)
+    CyclesIconDark: TImage;
+    CyclesIconLight: TImage;
     DurationLabel: TLabel;
+    HeavisideIconDark: TImage;
+    HeavisideIconLight: TImage;
     StartLabel: TLabel;
     SimThyrLabel: TLabel;
     TestTimeUnit: TComboBox;
@@ -39,9 +43,9 @@ type
     OptButton:   TButton;
     StartButton: TButton;
     CancelButton: TButton;
-    Image1:      TImage;
-    Image2:      TImage;
-    Image3:      TImage;
+    ThyroidIcon:      TImage;
+    CyclesIcon:      TImage;
+    HeavisideIcon:      TImage;
     Label2:      TLabel;
     Label3:      TLabel;
     RunTimeEdit: TEdit;
@@ -52,6 +56,7 @@ type
     TestTRHRadio: TRadioButton;
     TestTBGRadio: TRadioButton;
     procedure FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
+    procedure FormPaint(Sender: TObject);
     procedure OptButtonClick(Sender: TObject);
     procedure OptButtonKeyPress(Sender: TObject; var Key: char);
     procedure OptButtonKeyUp(Sender: TObject; var Key: word; Shift: TShiftState);
@@ -65,7 +70,7 @@ type
     procedure FormMouseWheelUp(Sender: TObject; Shift: TShiftState;
       MousePos: TPoint; var Handled: boolean);
     procedure FormShow(Sender: TObject);
-    procedure Image1Click(Sender: TObject);
+    procedure ThyroidIconClick(Sender: TObject);
     procedure Label2Click(Sender: TObject);
     procedure RunDaysRadioChange(Sender: TObject);
     procedure RunHoursRadioChange(Sender: TObject);
@@ -161,6 +166,32 @@ begin
   end;
 end;
 
+procedure TSimulationSettings.FormPaint(Sender: TObject);
+begin
+  {$IFDEF LCLCocoa}
+  if DarkTheme then
+  begin
+    Color := clDefault;
+    GroupBox1.Color := clDefault;
+    GroupBox2.Color := clDefault;
+    CyclesIcon.Picture := CyclesIconDark.Picture;
+    HeavisideIcon.Picture := HeavisideIconDark.Picture;
+  end
+  else
+  begin
+    Color := clWhite;
+    GroupBox1.Color := clWhite;
+    GroupBox2.Color := clWhite;
+    CyclesIcon.Picture := CyclesIconLight.Picture;
+    HeavisideIcon.Picture := HeavisideIconLight.Picture;
+  end
+  {$ELSE}
+  Color := clWhite;
+  GroupBox1.Color := clWhite;
+  GroupBox2.Color := clWhite;
+  {$ENDIF}
+end;
+
 procedure TSimulationSettings.OptButtonKeyPress(Sender: TObject; var Key: char);
 begin
   ;
@@ -196,6 +227,7 @@ end;
 
 procedure TSimulationSettings.FormCreate(Sender: TObject);
 begin
+  FormPaint(Sender);
   SimThyrLabel.Caption := 'SimThyr ' + FileVersion;
   BringToFront;
   if (testflag or tbgflag) then
@@ -240,7 +272,7 @@ begin
   SetFocus;
 end;
 
-procedure TSimulationSettings.Image1Click(Sender: TObject);
+procedure TSimulationSettings.ThyroidIconClick(Sender: TObject);
 begin
 
 end;

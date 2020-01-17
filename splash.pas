@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdCtrls, LaunchDialog, EnvironmentInfo;
+  ExtCtrls, StdCtrls, LaunchDialog, EnvironmentInfo, SimThyrServices;
 
 type
 
@@ -38,6 +38,8 @@ type
     Timer1: TTimer;
     VersionLabel: TLabel;
     procedure FormCreate(Sender: TObject);
+    procedure FormPaint(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
   private
@@ -68,6 +70,27 @@ end;
 procedure TSplashScreen.FormCreate(Sender: TObject);
 begin
   VersionLabel.Caption := 'Version ' + FileVersion;
+end;
+
+procedure TSplashScreen.FormPaint(Sender: TObject);
+begin
+  {$IFDEF LCLCocoa}
+  if DarkTheme then
+  begin
+    Color := clDefault;
+  end
+  else
+  begin
+    Color := $00E6E6E6;
+  end
+  {$ELSE}
+  Color := $00E6E6E6;
+  {$ENDIF}
+end;
+
+procedure TSplashScreen.FormShow(Sender: TObject);
+begin
+  FormPaint(Sender);
 end;
 
 initialization

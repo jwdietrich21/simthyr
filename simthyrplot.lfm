@@ -1,7 +1,7 @@
 object ValuesPlot: TValuesPlot
-  Left = 282
+  Left = 482
   Height = 441
-  Top = 359
+  Top = 379
   Width = 857
   AlphaBlend = True
   AlphaBlendValue = 0
@@ -310,6 +310,7 @@ object ValuesPlot: TValuesPlot
   }
   OnActivate = FormActivate
   OnCreate = FormCreate
+  OnPaint = FormPaint
   OnShow = FormShow
   LCLVersion = '2.0.6.0'
   Visible = True

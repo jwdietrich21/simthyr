@@ -15,6 +15,10 @@ unit SimThyrServices;
 { See http://simthyr.sourceforge.net for details }
 
 {$mode objfpc}{$R+}
+{$IFDEF LCLCocoa}
+  {$modeswitch objectivec1}
+{$ENDIF}
+
 
 interface
 
@@ -26,6 +30,9 @@ uses
   {$ENDIF}
   {$IFDEF DARWIN}
   , MacOSAll
+  {$ENDIF}
+  {$IFDEF LCLCocoa}
+  , CocoaAll, CocoaUtils
   {$ENDIF}
   {$IFDEF UNIX}
   , Unix
@@ -64,6 +71,9 @@ function AsTime(x: real): TDateTime;
 function FormattedTime(x: real): Str255;
 procedure SetStatusBarPanel0(curr, max: string);
 procedure writeaMemoLine(theMemo: TMemo; theString: Str255);
+{$IFDEF LCLCocoa}
+function DarkTheme: boolean;
+{$ENDIF}
 procedure SetFileName(theForm: TForm; const FileName: string);
 procedure ShowImplementationMessage;
 procedure ShowImplementationMessage(theText: string);
@@ -382,13 +392,31 @@ begin
   theMemo.Lines.Text := theMemo.Lines.Text + kLF + theString;
     {$ENDIF}
   {$ENDIF}
-
 end;
+
+{$IFDEF LCLCocoa}
+
+{The following two functions were suggested by Hansaplast at https://forum.lazarus.freepascal.org/index.php/topic,43111.msg304366.html}
+
+// Retrieve key's string value from user preferences. Result is encoded using NSStrToStr's default encoding.
+function GetPrefString(const KeyName : string) : string;
+begin
+  Result := NSStringToString(NSUserDefaults.standardUserDefaults.stringForKey(NSStr(@KeyName[1])));
+end;
+
+// IsDarkTheme: Detects if the Dark Theme (true) has been enabled or not (false)
+function DarkTheme: boolean;
+begin
+  Result := pos('DARK',UpperCase(GetPrefString('AppleInterfaceStyle'))) > 0;
+end;
+{$ENDIF}
 
 procedure SetFileName(theForm: TForm; const FileName: string);
 {sets the title of a window to file name}
 begin
+  {$IFNDEF LCLCocoa} // temporary solution for a bug in Cocoa, needs evaluation
   theForm.Caption := ExtractFileName(FileName);
+  {$ENDIF}
 end;
 
 procedure ShowImplementationMessage;

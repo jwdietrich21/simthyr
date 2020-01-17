@@ -40,6 +40,7 @@ type
     ValuesGrid:   TStringGrid;
     procedure CopyCells;
     procedure CopyItemClick(Sender: TObject);
+    procedure FormPaint(Sender: TObject);
     procedure RedrawGrid(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure InitGrid;
@@ -96,6 +97,25 @@ end;
 procedure TSimThyrLogWindow.CopyItemClick(Sender: TObject);
 begin
   CopyCells;
+end;
+
+procedure TSimThyrLogWindow.FormPaint(Sender: TObject);
+begin
+  {$IFDEF LCLCocoa}
+  if DarkTheme then
+  begin
+    Color := clDefault;
+    ValuesGrid.Color := clDefault;
+  end
+  else
+  begin
+    Color := clWhite;
+    ValuesGrid.Color := clWhite;
+  end
+  {$ELSE}
+  Color := clWhite;
+  ValuesGrid.Color := clWhite;
+  {$ENDIF}
 end;
 
 procedure TSimThyrLogWindow.RedrawGrid(Sender: TObject);
