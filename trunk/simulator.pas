@@ -472,7 +472,7 @@ begin
       end;
     simready := true;
     DrawPlot(false);
-    {$IFNDEF LCLCocoa} // temporary solution for a bug in Coca, needs evaluation
+    {$IFNDEF LCLCocoa} // temporary solution for a bug in Cocoa, needs evaluation
     SimThyrLogWindow.Caption := LOG_TITLE;
     {$ENDIF}
     SetStatusBarPanel0(iString, nmaxString);

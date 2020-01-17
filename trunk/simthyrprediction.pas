@@ -28,6 +28,8 @@ type
 
   TPrediction = class(TForm)
     PredictionMemo: TMemo;
+    procedure FormPaint(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { private declarations }
   public
@@ -211,6 +213,29 @@ begin
   end;
   Prediction.PredictionMemo.SelStart  := 0;
   Prediction.PredictionMemo.SelLength := 0;
+end;
+
+{ TPrediction }
+
+procedure TPrediction.FormPaint(Sender: TObject);
+begin
+  {$IFDEF LCLCocoa}
+  if DarkTheme then
+  begin
+    Color := clDefault;
+  end
+  else
+  begin
+    Color := clWhite;
+  end
+  {$ELSE}
+  Color := clWhite;
+  {$ENDIF}
+end;
+
+procedure TPrediction.FormShow(Sender: TObject);
+begin
+  FormPaint(Sender);
 end;
 
 initialization
