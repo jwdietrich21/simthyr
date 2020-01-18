@@ -71,11 +71,16 @@ end;
 procedure TSplashScreen.FormCreate(Sender: TObject);
 begin
   VersionLabel.Caption := 'Version ' + FileVersion;
+  refresh;
+  {$IFDEF LCLcarbon}
+  FormStyle:=fsNormal;
+  {$ELSE}
+  FormStyle:=fsStayOnTop;
+  {$ENDIF}
 end;
 
 procedure TSplashScreen.FormPaint(Sender: TObject);
 begin
-  {$IFDEF LCLCocoa}
   if DarkTheme then
   begin
     Color := clDefault;
@@ -84,9 +89,6 @@ begin
   begin
     Color := $00E6E6E6;
   end
-  {$ELSE}
-  Color := $00E6E6E6;
-  {$ENDIF}
 end;
 
 procedure TSplashScreen.FormShow(Sender: TObject);

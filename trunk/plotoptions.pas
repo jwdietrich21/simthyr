@@ -32,6 +32,7 @@ type
     OKButton: TButton;
     ColorButton1: TColorButton;
     TitleEdit: TEdit;
+    procedure FormPaint(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -57,6 +58,14 @@ begin
   begin
     OKButton.Height := 22;
   end;
+  if DarkTheme then
+  begin
+    ColorButton1.ButtonColor := clWhite;
+  end
+  else
+  begin
+    ColorButton1.ButtonColor := clBlack;
+  end
 end;
 
 function TPlotOptionsForm.GetPlotOptions: TPlotOptions;
@@ -77,9 +86,22 @@ end;
 
 procedure TPlotOptionsForm.FormShow(Sender: TObject);
 begin
+  FormPaint(Sender);
   FontsCombobox.Items.Assign(Screen.Fonts);
   ShowOnTop;
   SetFocus;
+end;
+
+procedure TPlotOptionsForm.FormPaint(Sender: TObject);
+begin
+  if DarkTheme then
+  begin
+    Color := clDefault;
+  end
+  else
+  begin
+    Color := clWhite;
+  end
 end;
 
 end.

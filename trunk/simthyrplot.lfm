@@ -1,7 +1,7 @@
 object ValuesPlot: TValuesPlot
-  Left = 482
+  Left = 766
   Height = 441
-  Top = 379
+  Top = 307
   Width = 857
   AlphaBlend = True
   AlphaBlendValue = 0
@@ -389,6 +389,7 @@ object ValuesPlot: TValuesPlot
             Alignment = calBottom
             Marks.LabelFont.Height = -11
             Marks.Format = '%2:s'
+            Marks.Frame.Color = clSilver
             Marks.LabelBrush.Style = bsClear
             Marks.OverlapPolicy = opHideNeighbour
             Marks.Source = TimeAxisSource

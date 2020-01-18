@@ -219,7 +219,6 @@ end;
 
 procedure TPrediction.FormPaint(Sender: TObject);
 begin
-  {$IFDEF LCLCocoa}
   if DarkTheme then
   begin
     Color := clDefault;
@@ -228,9 +227,6 @@ begin
   begin
     Color := clWhite;
   end
-  {$ELSE}
-  Color := clWhite;
-  {$ENDIF}
 end;
 
 procedure TPrediction.FormShow(Sender: TObject);

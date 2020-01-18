@@ -168,7 +168,6 @@ end;
 
 procedure TSimulationSettings.FormPaint(Sender: TObject);
 begin
-  {$IFDEF LCLCocoa}
   if DarkTheme then
   begin
     Color := clDefault;
@@ -185,11 +184,6 @@ begin
     CyclesIcon.Picture := CyclesIconLight.Picture;
     HeavisideIcon.Picture := HeavisideIconLight.Picture;
   end
-  {$ELSE}
-  Color := clWhite;
-  GroupBox1.Color := clWhite;
-  GroupBox2.Color := clWhite;
-  {$ENDIF}
 end;
 
 procedure TSimulationSettings.OptButtonKeyPress(Sender: TObject; var Key: char);

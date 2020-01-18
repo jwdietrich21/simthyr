@@ -101,7 +101,6 @@ end;
 
 procedure TSimThyrLogWindow.FormPaint(Sender: TObject);
 begin
-  {$IFDEF LCLCocoa}
   if DarkTheme then
   begin
     Color := clDefault;
@@ -112,10 +111,6 @@ begin
     Color := clWhite;
     ValuesGrid.Color := clWhite;
   end
-  {$ELSE}
-  Color := clWhite;
-  ValuesGrid.Color := clWhite;
-  {$ENDIF}
 end;
 
 procedure TSimThyrLogWindow.RedrawGrid(Sender: TObject);

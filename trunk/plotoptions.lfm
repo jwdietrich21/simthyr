@@ -12,6 +12,7 @@ object PlotOptionsForm: TPlotOptionsForm
   ClientWidth = 587
   Color = clWhite
   OnCreate = FormCreate
+  OnPaint = FormPaint
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever

@@ -368,7 +368,6 @@ end;
 
 procedure TValuesPlot.FormPaint(Sender: TObject);
 begin
-  {$IFDEF LCLCocoa}
   if DarkTheme then
   begin
     Color := clDefault;
@@ -397,19 +396,6 @@ begin
     PlotPanel1.Color := clWhite;
     PlotPanel2.Color := clWhite;
   end
-  {$ELSE}
-  Color := clWhite;
-  Chart1.Color := clWhite;
-  Chart1.BackColor := clWhite;
-  Chart2.Color := clWhite;
-  Chart2.BackColor := clWhite;
-  Chart1.AxisList[0].TickColor := clBlack;
-  Chart1.AxisList[1].TickColor := clBlack;
-  Chart2.AxisList[0].TickColor := clBlack;
-  Chart2.AxisList[1].TickColor := clBlack;
-  PlotPanel1.Color := clWhite;
-  PlotPanel2.Color := clWhite;
-  {$ENDIF}
 end;
 
 procedure TValuesPlot.OptionsSpeedButton1Click(Sender: TObject);
