@@ -34,13 +34,14 @@ type
     CopyrightLabel5: TLabel;
     CopyrightLabel6: TLabel;
     CopyrightLabel7: TLabel;
-    Image1: TImage;
+    BigLogo: TImage;
+    SimThyrLabel: TImage;
     Timer1: TTimer;
     VersionLabel: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormPaint(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure Image1Click(Sender: TObject);
+    procedure BigLogoClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
   private
     { private declarations }
@@ -62,7 +63,7 @@ begin
   Free;
 end;
 
-procedure TSplashScreen.Image1Click(Sender: TObject);
+procedure TSplashScreen.BigLogoClick(Sender: TObject);
 begin
 
 end;

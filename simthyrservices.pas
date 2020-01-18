@@ -96,9 +96,9 @@ begin
   {$IFDEF WINDOWS}
   MessageBeep(0);
   {$ELSE}
-    {$IFDEF DARWIN}
+  {$IFDEF LCLCarbon}
   SysBeep(30);
-    {$ELSE}
+  {$ELSE}
   s := fpSystem('echo -ne ''\007''');
   {s := fpSystem('echo -ne "\a"');}
   {s := fpSystem('tput bel');}

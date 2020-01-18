@@ -50,6 +50,7 @@ type
     Image11: TImage;
     Image12: TImage;
     Image13: TImage;
+    SimThyrLabel: TImage;
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
@@ -74,7 +75,7 @@ type
     Label9: TLabel;
     Memo1: TMemo;
     OKButton: TButton;
-    Image1: TImage;
+    BigLogo: TImage;
     StaticText1: TStaticText;
     StaticText2: TStaticText;
     Tabs: TPageControl;
@@ -87,11 +88,12 @@ type
     VersionLabel: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormPaint(Sender: TObject);
     procedure Image10Click(Sender: TObject);
     procedure Image11Click(Sender: TObject);
     procedure Image12Click(Sender: TObject);
     procedure Image13Click(Sender: TObject);
-    procedure Image1Click(Sender: TObject);
+    procedure BigLogoClick(Sender: TObject);
     procedure Image2Click(Sender: TObject);
     procedure Image3Click(Sender: TObject);
     procedure Image4Click(Sender: TObject);
@@ -160,7 +162,7 @@ begin
 
 end;
 
-procedure TAboutWindow.Image1Click(Sender: TObject);
+procedure TAboutWindow.BigLogoClick(Sender: TObject);
 begin
   OpenURL(BASE_URL);
 end;
@@ -191,6 +193,22 @@ begin
   end
   else if (key = 87) and ((ssMeta in Shift) or (ssCtrl in Shift)) then
     self.Close;
+end;
+
+procedure TAboutWindow.FormPaint(Sender: TObject);
+begin
+  {$IFDEF LCLCocoa}
+  if DarkTheme then
+  begin
+    Color := clDefault;
+  end
+  else
+  begin
+    Color := clWhite;
+  end
+  {$ELSE}
+  Color := clWhite;
+  {$ENDIF}
 end;
 
 procedure TAboutWindow.FormCreate(Sender: TObject);
