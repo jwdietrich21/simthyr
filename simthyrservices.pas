@@ -71,9 +71,7 @@ function AsTime(x: real): TDateTime;
 function FormattedTime(x: real): Str255;
 procedure SetStatusBarPanel0(curr, max: string);
 procedure writeaMemoLine(theMemo: TMemo; theString: Str255);
-{$IFDEF LCLCocoa}
 function DarkTheme: boolean;
-{$ENDIF}
 procedure SetFileName(theForm: TForm; const FileName: string);
 procedure ShowImplementationMessage;
 procedure ShowImplementationMessage(theText: string);
@@ -394,8 +392,8 @@ begin
   {$ENDIF}
 end;
 
-{$IFDEF LCLCocoa}
 
+{$IFDEF LCLCocoa}
 {The following two functions were suggested by Hansaplast at https://forum.lazarus.freepascal.org/index.php/topic,43111.msg304366.html}
 
 // Retrieve key's string value from user preferences. Result is encoded using NSStrToStr's default encoding.
@@ -403,13 +401,18 @@ function GetPrefString(const KeyName : string) : string;
 begin
   Result := NSStringToString(NSUserDefaults.standardUserDefaults.stringForKey(NSStr(@KeyName[1])));
 end;
+{$ENDIF}
 
 // IsDarkTheme: Detects if the Dark Theme (true) has been enabled or not (false)
 function DarkTheme: boolean;
 begin
+  {$IFDEF LCLCocoa}
   Result := pos('DARK',UpperCase(GetPrefString('AppleInterfaceStyle'))) > 0;
+  {$ELSE}
+  Result := false;
+  {$ENDIF}
 end;
-{$ENDIF}
+
 
 procedure SetFileName(theForm: TForm; const FileName: string);
 {sets the title of a window to file name}

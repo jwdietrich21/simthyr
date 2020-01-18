@@ -94,6 +94,8 @@ type
     Tau0SEdit: TEdit;
     Tau0REdit: TEdit;
     TFCLogo: TImage;
+    ImageContainer1l: TImage;
+    ImageContainer1d: TImage;
     ThyroidImage: TImage;
     NeuronImage: TImage;
     PituitaryImage: TImage;
@@ -148,6 +150,7 @@ type
     Label3: TLabel;
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormPaint(Sender: TObject);
     procedure OptionsButtonClick(Sender: TObject);
     procedure StandardButtonClick(Sender: TObject);
     procedure FillInParameters;
@@ -301,6 +304,20 @@ begin
       OptionsButton.Height := 22;
       StandardButton.Height := 22;
     end;
+end;
+
+procedure TStructureParameters.FormPaint(Sender: TObject);
+begin
+  if DarkTheme then
+  begin
+    Color := clDefault;
+    TFCLogo.Picture := ImageContainer1d.Picture;
+  end
+  else
+  begin
+    Color := clWhite;
+    TFCLogo.Picture := ImageContainer1l.Picture;
+  end
 end;
 
 procedure TStructureParameters.HandleStrucPars;
