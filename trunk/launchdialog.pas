@@ -173,16 +173,20 @@ begin
     Color := clDefault;
     GroupBox1.Color := clDefault;
     GroupBox2.Color := clDefault;
+    {$IFDEF LCLCocoa}
     CyclesIcon.Picture := CyclesIconDark.Picture;
     HeavisideIcon.Picture := HeavisideIconDark.Picture;
+    {$ENDIF}
   end
   else
   begin
     Color := clWhite;
     GroupBox1.Color := clWhite;
     GroupBox2.Color := clWhite;
+    {$IFDEF LCLCocoa}
     CyclesIcon.Picture := CyclesIconLight.Picture;
     HeavisideIcon.Picture := HeavisideIconLight.Picture;
+    {$ENDIF}
   end
 end;
 
