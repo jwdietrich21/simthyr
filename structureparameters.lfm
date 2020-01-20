@@ -1,7 +1,7 @@
 object StructureParameters: TStructureParameters
-  Left = 374
+  Left = 390
   Height = 663
-  Top = 130
+  Top = 187
   Width = 664
   AlphaBlend = True
   AlphaBlendValue = 0
@@ -46,9 +46,9 @@ object StructureParameters: TStructureParameters
   end
   object Tau0REdit: TEdit
     Left = 88
-    Height = 22
+    Height = 23
     Hint = 'Tau0R: Dead time delay for TRH in the hypothalamic-pituitary portal system'
-    Top = 527
+    Top = 526
     Width = 80
     Anchors = [akLeft, akBottom]
     ParentShowHint = False
@@ -58,9 +58,9 @@ object StructureParameters: TStructureParameters
   end
   object Tau0SEdit: TEdit
     Left = 88
-    Height = 22
+    Height = 23
     Hint = 'Tau0S: Dead time delay for peripheral TSH'
-    Top = 551
+    Top = 550
     Width = 80
     Anchors = [akLeft, akBottom]
     ParentShowHint = False
@@ -70,9 +70,9 @@ object StructureParameters: TStructureParameters
   end
   object Tau0S2Edit: TEdit
     Left = 88
-    Height = 22
+    Height = 23
     Hint = 'Tau0S2: Dead time delay for TSH within the pituitary'
-    Top = 575
+    Top = 574
     Width = 80
     Anchors = [akLeft, akBottom]
     ParentShowHint = False
@@ -82,9 +82,9 @@ object StructureParameters: TStructureParameters
   end
   object Tau0TEdit: TEdit
     Left = 312
-    Height = 22
+    Height = 23
     Hint = 'Tau0T: Dead time delay for T4 effects'
-    Top = 551
+    Top = 550
     Width = 80
     Anchors = [akLeft, akBottom]
     ParentShowHint = False
@@ -94,9 +94,9 @@ object StructureParameters: TStructureParameters
   end
   object Tau03zEdit: TEdit
     Left = 312
-    Height = 22
+    Height = 23
     Hint = 'Tau03z: Dead time delay for central T3'
-    Top = 575
+    Top = 574
     Width = 80
     Anchors = [akLeft, akBottom]
     ParentShowHint = False
@@ -106,45 +106,45 @@ object StructureParameters: TStructureParameters
   end
   object Label32: TLabel
     Left = 24
-    Height = 16
-    Top = 531
-    Width = 48
+    Height = 15
+    Top = 532
+    Width = 39
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 R:'
     ParentColor = False
   end
   object Label33: TLabel
     Left = 24
-    Height = 16
-    Top = 557
-    Width = 47
+    Height = 15
+    Top = 558
+    Width = 38
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 S:'
     ParentColor = False
   end
   object Label34: TLabel
     Left = 24
-    Height = 16
-    Top = 581
-    Width = 55
+    Height = 15
+    Top = 582
+    Width = 44
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 S2:'
     ParentColor = False
   end
   object Label35: TLabel
     Left = 256
-    Height = 16
-    Top = 557
-    Width = 48
+    Height = 15
+    Top = 558
+    Width = 39
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 T:'
     ParentColor = False
   end
   object Label36: TLabel
     Left = 256
-    Height = 16
-    Top = 581
-    Width = 56
+    Height = 15
+    Top = 582
+    Width = 43
     Anchors = [akLeft, akBottom]
     Caption = 'Tau0 3z:'
     ParentColor = False
@@ -162,9 +162,9 @@ object StructureParameters: TStructureParameters
   end
   object Label38: TLabel
     Left = 24
-    Height = 16
-    Top = 494
-    Width = 106
+    Height = 15
+    Top = 495
+    Width = 87
     Anchors = [akLeft, akBottom]
     Caption = 'Time constants:'
     Font.Style = [fsBold]
@@ -280,45 +280,45 @@ object StructureParameters: TStructureParameters
   end
   object Label51: TLabel
     Left = 176
-    Height = 16
-    Top = 531
-    Width = 7
+    Height = 15
+    Top = 532
+    Width = 5
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label52: TLabel
     Left = 176
-    Height = 16
-    Top = 557
-    Width = 7
+    Height = 15
+    Top = 558
+    Width = 5
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label53: TLabel
     Left = 176
-    Height = 16
-    Top = 581
-    Width = 7
+    Height = 15
+    Top = 582
+    Width = 5
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label54: TLabel
     Left = 400
-    Height = 16
-    Top = 557
-    Width = 7
+    Height = 15
+    Top = 558
+    Width = 5
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
   end
   object Label55: TLabel
     Left = 400
-    Height = 16
-    Top = 581
-    Width = 7
+    Height = 15
+    Top = 582
+    Width = 5
     Anchors = [akLeft, akBottom]
     Caption = 's'
     ParentColor = False
@@ -342,233 +342,233 @@ object StructureParameters: TStructureParameters
     TabOrder = 0
     object Label72: TLabel
       Left = 576
-      Height = 16
+      Height = 15
       Top = 399
-      Width = 34
+      Width = 29
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label71: TLabel
       Left = 576
-      Height = 16
+      Height = 15
       Top = 375
-      Width = 34
+      Width = 29
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label70: TLabel
       Left = 576
-      Height = 16
+      Height = 15
       Top = 351
-      Width = 34
+      Width = 29
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label69: TLabel
       Left = 576
-      Height = 16
+      Height = 15
       Top = 327
-      Width = 34
+      Width = 29
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label68: TLabel
       Left = 576
-      Height = 16
+      Height = 15
       Top = 159
-      Width = 32
+      Width = 27
       Caption = 'mU/l'
       ParentColor = False
     end
     object Label67: TLabel
       Left = 576
-      Height = 16
+      Height = 15
       Top = 135
-      Width = 32
+      Width = 27
       Caption = 'l/mU'
       ParentColor = False
     end
     object Label66: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 181
-      Width = 34
+      Width = 29
       Caption = 'l/mol'
       ParentColor = False
     end
     object Label65: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 253
-      Width = 32
+      Width = 27
       Caption = 'mU/l'
       ParentColor = False
     end
     object Label64: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 399
-      Width = 34
+      Width = 29
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label63: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 325
-      Width = 34
+      Width = 29
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label62: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 157
-      Width = 34
+      Width = 29
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label61: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 61
-      Width = 34
+      Width = 29
       Caption = 'mol/l'
       ParentColor = False
     end
     object Label60: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 133
-      Width = 35
+      Width = 29
       Caption = 'mU/s'
       ParentColor = False
     end
     object Label59: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 373
-      Width = 37
+      Width = 31
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label58: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 301
-      Width = 37
+      Width = 31
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label57: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 229
-      Width = 37
+      Width = 31
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label56: TLabel
       Left = 360
-      Height = 16
+      Height = 15
       Top = 35
-      Width = 37
+      Width = 31
       Caption = 'mol/s'
       ParentColor = False
     end
     object Label50: TLabel
       Left = 152
-      Height = 16
+      Height = 15
       Top = 399
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
     object Label49: TLabel
       Left = 152
-      Height = 16
+      Height = 15
       Top = 327
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
     object Label48: TLabel
       Left = 152
-      Height = 16
+      Height = 15
       Top = 255
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
     object Label47: TLabel
       Left = 152
-      Height = 16
+      Height = 15
       Top = 183
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
     object Label46: TLabel
       Left = 152
-      Height = 16
+      Height = 15
       Top = 135
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
     object Label45: TLabel
       Left = 154
-      Height = 16
+      Height = 15
       Top = 375
-      Width = 11
+      Width = 8
       Caption = '/l'
       ParentColor = False
     end
     object Label44: TLabel
       Left = 154
-      Height = 16
+      Height = 15
       Top = 303
-      Width = 11
+      Width = 8
       Caption = '/l'
       ParentColor = False
     end
     object Label43: TLabel
       Left = 154
-      Height = 16
+      Height = 15
       Top = 231
-      Width = 11
+      Width = 8
       Caption = '/l'
       ParentColor = False
     end
     object Label42: TLabel
       Left = 154
-      Height = 16
+      Height = 15
       Top = 159
-      Width = 11
+      Width = 8
       Caption = '/l'
       ParentColor = False
     end
     object Label39: TLabel
       Left = 154
-      Height = 16
+      Height = 15
       Top = 37
-      Width = 11
+      Width = 8
       Caption = '/l'
       ParentColor = False
     end
     object Label41: TLabel
       Left = 154
-      Height = 16
+      Height = 15
       Top = 111
-      Width = 11
+      Width = 8
       Caption = '/l'
       ParentColor = False
     end
     object Label40: TLabel
       Left = 154
-      Height = 16
+      Height = 15
       Top = 63
-      Width = 13
+      Width = 10
       Caption = '/s'
       ParentColor = False
     end
@@ -1840,31 +1840,31 @@ object StructureParameters: TStructureParameters
     end
     object Label24: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 399
-      Width = 47
+      Width = 38
       Caption = 'Beta32:'
       ParentColor = False
     end
     object Label25: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 373
-      Width = 31
+      Width = 25
       Caption = 'GD2:'
       ParentColor = False
     end
     object Label26: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 399
-      Width = 32
+      Width = 27
       Caption = 'KM2:'
       ParentColor = False
     end
     object k30Edit: TEdit
       Left = 493
-      Height = 22
+      Height = 23
       Hint = 'k30: Dissociation constant of T3 at thyroxine binding globulin (TBG)'
       Top = 320
       Width = 80
@@ -1875,7 +1875,7 @@ object StructureParameters: TStructureParameters
     end
     object k31Edit: TEdit
       Left = 493
-      Height = 22
+      Height = 23
       Hint = 'k31: Dissociation constant of T3 at intracellular binding substrate (IBS)'
       Top = 344
       Width = 80
@@ -1886,7 +1886,7 @@ object StructureParameters: TStructureParameters
     end
     object k41Edit: TEdit
       Left = 493
-      Height = 22
+      Height = 23
       Hint = 'k41: Dissociation constant of T4 at thyroxine binding globulin (TBG)'
       Top = 368
       Width = 80
@@ -1897,7 +1897,7 @@ object StructureParameters: TStructureParameters
     end
     object k42Edit: TEdit
       Left = 493
-      Height = 22
+      Height = 23
       Hint = 'k42: Dissociation constant of T4 at transthyretine (TBPA, TTR)'
       Top = 392
       Width = 80
@@ -1908,55 +1908,55 @@ object StructureParameters: TStructureParameters
     end
     object Label27: TLabel
       Left = 440
-      Height = 16
+      Height = 15
       Top = 327
-      Width = 29
+      Width = 22
       Caption = 'K30:'
       ParentColor = False
     end
     object Label28: TLabel
       Left = 440
-      Height = 16
+      Height = 15
       Top = 351
-      Width = 29
+      Width = 22
       Caption = 'K31:'
       ParentColor = False
     end
     object Label29: TLabel
       Left = 440
-      Height = 16
+      Height = 15
       Top = 375
-      Width = 29
+      Width = 22
       Caption = 'K41:'
       ParentColor = False
     end
     object Label30: TLabel
       Left = 440
-      Height = 16
+      Height = 15
       Top = 399
-      Width = 29
+      Width = 22
       Caption = 'K42:'
       ParentColor = False
     end
     object Label17: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 229
-      Width = 22
+      Width = 18
       Caption = 'GT:'
       ParentColor = False
     end
     object Label18: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 253
-      Width = 22
+      Width = 18
       Caption = 'DT:'
       ParentColor = False
     end
     object Alpha31Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'Alpha31: Dilution factor for T3 in peripheral blood (reciprocal of apparent volume of distribution)'
       Top = 298
       Width = 80
@@ -1967,7 +1967,7 @@ object StructureParameters: TStructureParameters
     end
     object Beta31Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'Beta31: Clearance Exponent for T3 in peripheral blood (ln 2 / halflife)'
       Top = 322
       Width = 80
@@ -1978,7 +1978,7 @@ object StructureParameters: TStructureParameters
     end
     object GD1Edit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'GD1: "Gain of deiodinases", i.e. sum activity of peripheral type 1 deiodinase'
       Top = 298
       Width = 80
@@ -1989,7 +1989,7 @@ object StructureParameters: TStructureParameters
     end
     object KM1Edit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'KM1: Dissociation constant of type 1 deiodinase'
       Top = 322
       Width = 80
@@ -2000,39 +2000,39 @@ object StructureParameters: TStructureParameters
     end
     object Label19: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 303
-      Width = 57
+      Width = 46
       Caption = 'Alpha31:'
       ParentColor = False
     end
     object Label20: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 327
-      Width = 47
+      Width = 38
       Caption = 'Beta31:'
       ParentColor = False
     end
     object Label21: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 301
-      Width = 31
+      Width = 25
       Caption = 'GD1:'
       ParentColor = False
     end
     object Label22: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 325
-      Width = 28
+      Width = 24
       Caption = 'KM1'
       ParentColor = False
     end
     object Alpha32Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'Alpha32: Dilution factor for central T3 (reciprocal of apparent volume of distribution)'
       Top = 370
       Width = 80
@@ -2043,7 +2043,7 @@ object StructureParameters: TStructureParameters
     end
     object Beta32Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'Beta32: Clearance Exponent for central T3 (ln 2 / halflife)'
       Top = 394
       Width = 80
@@ -2054,7 +2054,7 @@ object StructureParameters: TStructureParameters
     end
     object GD2Edit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'GD2: "Gain of deiodinases", i.e. sum activity of central type 2 deiodinase'
       Top = 370
       Width = 80
@@ -2065,7 +2065,7 @@ object StructureParameters: TStructureParameters
     end
     object KM2Edit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'KM2: Dissociation constant of type 2 deiodinase'
       Top = 394
       Width = 80
@@ -2076,71 +2076,71 @@ object StructureParameters: TStructureParameters
     end
     object Label23: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 375
-      Width = 57
+      Width = 46
       Caption = 'Alpha32:'
       ParentColor = False
     end
     object Label8: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 159
-      Width = 55
+      Width = 46
       Caption = 'AlphaS2:'
       ParentColor = False
     end
     object Label9: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 183
-      Width = 46
+      Width = 38
       Caption = 'BetaS2:'
       ParentColor = False
     end
     object Label10: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 133
-      Width = 23
+      Width = 20
       Caption = 'GH:'
       ParentColor = False
     end
     object Label11: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 157
-      Width = 23
+      Width = 20
       Caption = 'DH:'
       ParentColor = False
     end
     object Label12: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 181
-      Width = 18
+      Width = 15
       Caption = 'LS:'
       ParentColor = False
     end
     object Label13: TLabel
       Left = 440
-      Height = 16
+      Height = 15
       Top = 135
-      Width = 18
+      Width = 15
       Caption = 'SS:'
       ParentColor = False
     end
     object Label14: TLabel
       Left = 440
-      Height = 16
+      Height = 15
       Top = 159
-      Width = 21
+      Width = 17
       Caption = 'DS:'
       ParentColor = False
     end
     object AlphaTEdit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'AlphaT: Dilution factor for T4 in peripheral blood (reciprocal of apparent volume of distribution)'
       Top = 226
       Width = 80
@@ -2151,7 +2151,7 @@ object StructureParameters: TStructureParameters
     end
     object BetaTEdit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'BetaT: Clearance Exponent for T4 in peripheral blood (ln 2 / halflife)'
       Top = 250
       Width = 80
@@ -2162,7 +2162,7 @@ object StructureParameters: TStructureParameters
     end
     object GTEdit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'GT: "Gain of thyroid", i.e. secretory capacity of the thyroid gland.'
       Top = 226
       Width = 80
@@ -2173,7 +2173,7 @@ object StructureParameters: TStructureParameters
     end
     object DTEdit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'DT: Damping constant (EC50) of TSH at the thyroid'
       Top = 248
       Width = 80
@@ -2184,23 +2184,23 @@ object StructureParameters: TStructureParameters
     end
     object Label15: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 231
-      Width = 48
+      Width = 41
       Caption = 'AlphaT:'
       ParentColor = False
     end
     object Label16: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 255
-      Width = 39
+      Width = 33
       Caption = 'BetaT:'
       ParentColor = False
     end
     object DREdit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'DR: Dissociation constant of central T3 at TR Beta (THR Beta) receptors'
       Top = 56
       Width = 80
@@ -2211,23 +2211,23 @@ object StructureParameters: TStructureParameters
     end
     object Label4: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 35
-      Width = 22
+      Width = 18
       Caption = 'GR:'
       ParentColor = False
     end
     object Label5: TLabel
       Left = 240
-      Height = 16
+      Height = 15
       Top = 61
-      Width = 22
+      Width = 18
       Caption = 'DR:'
       ParentColor = False
     end
     object AlphaSEdit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'AlphaS: Dilution factor for TSH in peripheral blood (reciprocal of apparent volume of distribution)'
       Top = 106
       Width = 80
@@ -2238,7 +2238,7 @@ object StructureParameters: TStructureParameters
     end
     object BetaSEdit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'BetaS: Clearance Exponent for TSH in peripheral blood (ln 2 / halflife)'
       Top = 130
       Width = 80
@@ -2249,7 +2249,7 @@ object StructureParameters: TStructureParameters
     end
     object AlphaS2Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'AlphaS2: Dilution factor for TSH in pituitary tissue (reciprocal of apparent volume of distribution)'
       Top = 154
       Width = 80
@@ -2260,7 +2260,7 @@ object StructureParameters: TStructureParameters
     end
     object BetaS2Edit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'BetaS2: Clearance Exponent for TSH in pituitary tissue (ln 2 / halflife)'
       Top = 178
       Width = 80
@@ -2271,7 +2271,7 @@ object StructureParameters: TStructureParameters
     end
     object GHEdit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'GH: Hypophyseal gain, i. e. secretory capacity of the pituitary gland.'
       Top = 128
       Width = 80
@@ -2282,7 +2282,7 @@ object StructureParameters: TStructureParameters
     end
     object DHEdit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'DH: Damping constant (EC50) of TRH at the site of the anterior pituitary.'
       Top = 154
       Width = 80
@@ -2293,7 +2293,7 @@ object StructureParameters: TStructureParameters
     end
     object LSEdit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'LS: Brake constant of feedback path #1 (Astwood-Hoskins Loop)'
       Top = 176
       Width = 80
@@ -2304,7 +2304,7 @@ object StructureParameters: TStructureParameters
     end
     object SSEdit: TEdit
       Left = 493
-      Height = 22
+      Height = 23
       Hint = 'SS: Brake constant of feedback path #5 (Ultra-Short feedback, Brokken-Wiersinga-Prummel loop)'
       Top = 128
       Width = 80
@@ -2315,7 +2315,7 @@ object StructureParameters: TStructureParameters
     end
     object DSEdit: TEdit
       Left = 493
-      Height = 22
+      Height = 23
       Hint = 'DS: Damping constant (EC50) of TSH at the anterior pituitary lobe.'
       Top = 154
       Width = 80
@@ -2326,24 +2326,24 @@ object StructureParameters: TStructureParameters
     end
     object Label6: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 111
-      Width = 47
+      Width = 40
       Caption = 'AlphaS:'
       ParentColor = False
       OnClick = Label6Click
     end
     object Label7: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 135
-      Width = 38
+      Width = 32
       Caption = 'BetaS:'
       ParentColor = False
     end
     object GREdit: TEdit
       Left = 272
-      Height = 22
+      Height = 23
       Hint = 'GR: Gain of TR Beta (THR Beta) receptors'
       Top = 32
       Width = 80
@@ -2354,9 +2354,9 @@ object StructureParameters: TStructureParameters
     end
     object TitleLabel: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 0
-      Width = 370
+      Width = 309
       Caption = 'Constant structure parameters of the feedback control:'
       Font.Style = [fsBold]
       ParentColor = False
@@ -2364,7 +2364,7 @@ object StructureParameters: TStructureParameters
     end
     object AlphaREdit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'AlphaR: Dilution factor for TRH in peripheral blood (reciprocal of apparent volume of distribution)'
       Top = 32
       Width = 80
@@ -2375,7 +2375,7 @@ object StructureParameters: TStructureParameters
     end
     object BetaREdit: TEdit
       Left = 64
-      Height = 22
+      Height = 23
       Hint = 'BetaR: Clearance Exponent for TRH in peripheral blood (ln 2 / halflife)'
       Top = 58
       Width = 80
@@ -2386,17 +2386,17 @@ object StructureParameters: TStructureParameters
     end
     object Label2: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 37
-      Width = 48
+      Width = 41
       Caption = 'AlphaR:'
       ParentColor = False
     end
     object Label3: TLabel
       Left = 0
-      Height = 16
+      Height = 15
       Top = 63
-      Width = 39
+      Width = 33
       Caption = 'BetaR:'
       ParentColor = False
     end
