@@ -1,5 +1,3 @@
-{ This is an automatically generated lazarus resource file }
-
 LazarusResources.Add('TSimOptionsDlg','FORMDATA',[
   'TPF0'#14'TSimOptionsDlg'#13'SimOptionsDlg'#4'Left'#3#182#1#6'Height'#3#190#0
   +#3'Top'#3#193#1#5'Width'#3#164#1#13'ActiveControl'#7#7'TRHEdit'#10'AlphaBlen'
