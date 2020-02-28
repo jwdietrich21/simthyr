@@ -1,5 +1,3 @@
-{ This is an automatically generated lazarus resource file }
-
 LazarusResources.Add('TStructureParameters','FORMDATA',[
   'TPF0'#20'TStructureParameters'#19'StructureParameters'#4'Left'#3#134#1#6'Hei'
   +'ght'#3#151#2#3'Top'#3#187#0#5'Width'#3#152#2#10'AlphaBlend'#9#15'AlphaBlend'
