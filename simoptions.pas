@@ -29,9 +29,9 @@ type
   TSimOptionsDlg = class(TForm)
     CancelButton: TButton;
     CircadianCheckBox: TCheckBox;
-    NeuronImage: TImage;
     Label1: TLabel;
     Label2: TLabel;
+    NeuronImage: TImage;
     TRHEdit: TEdit;
     OKButton: TButton;
     NoiseCheckBox: TCheckBox;
@@ -39,6 +39,7 @@ type
     procedure CancelButtonClick(Sender: TObject);
     procedure CircadianCheckBoxChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormPaint(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure NoiseCheckBoxChange(Sender: TObject);
     procedure OKButtonClick(Sender: TObject);
@@ -105,6 +106,18 @@ begin
       OKButton.Height := 22;
       CancelButton.Height := 22;
     end;
+end;
+
+procedure TSimOptionsDlg.FormPaint(Sender: TObject);
+begin
+  if DarkTheme then
+  begin
+    Color := clDefault;
+  end
+  else
+  begin
+    Color := clWhite;
+  end
 end;
 
 procedure TSimOptionsDlg.PreviewCheckBoxChange(Sender: TObject);

@@ -200,10 +200,26 @@ begin
   if DarkTheme then
   begin
     Color := clDefault;
+    Memo1.Font.Color := clWhite;
+    URL1.Font.Color := clSkyBlue;
+    URL2.Font.Color := clSkyBlue;
+    SciCrunchLabel.Font.Color := clSkyBlue;
+    Label5.Font.Color := clSkyBlue;
+    Label7.Font.Color := clSkyBlue;
+    Label9.Font.Color := clSkyBlue;
+    Label15.Font.Color := clSkyBlue;
   end
   else
   begin
     Color := clWhite;
+    Memo1.Font.Color := clDefault;
+    URL1.Font.Color := clNavy;
+    URL2.Font.Color := clNavy;
+    SciCrunchLabel.Font.Color := clNavy;
+    Label5.Font.Color := clNavy;
+    Label7.Font.Color := clNavy;
+    Label9.Font.Color := clNavy;
+    Label15.Font.Color := clNavy;
   end
 end;
 
