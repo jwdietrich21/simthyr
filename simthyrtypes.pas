@@ -28,6 +28,17 @@ type
  Str255 = string[255];
  tResultMatrix = array of array of real;      {matrix with simulated values}
  tmode = (integerMode, realMode);
+ tParameterSpace = record
+   alphaR, betaR: real;
+   alphaS, alphaS2: real;
+   alphaT, alpha31, alpha32: real;
+   GT, GD1, GD2, kM1, kM2, dT, LS: real;
+   GH, DH, SS, DS, GR, DR: real;
+   betaS, betaS2, betaT, beta31, beta32: real;
+   k30, k31, k41, k42: real;
+   Tt1, Tt2, Tt22, Tt3, Tt4: real;
+   TBG, TBPA: real;
+ end;
  tBParameter = (iItem, tItem, TRHItem, pTSHItem, TSHItem, TT4Item, FT4Item,
    TT3Item, FT3Item, cT3Item);
  tSParameter = (NullItem, GD1Item, GD2Item, KM1Item, KM2Item, GTItem, DTItem,
