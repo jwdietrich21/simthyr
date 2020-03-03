@@ -523,7 +523,7 @@ end;
 
 procedure TSimThyrToolbar.SaveAsToolButtonClick(Sender: TObject);
 begin
-  ShowImplementationMessage;
+  SaveToolButtonClick(Sender);
 end;
 
 procedure TSimThyrToolbar.SaveToolButtonClick(Sender: TObject);
