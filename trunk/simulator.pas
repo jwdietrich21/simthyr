@@ -419,7 +419,7 @@ begin
         if not haltsim then
           begin
             gResultMatrix[i-1, i_pos] := i;
-            gResultMatrix[i-1, t_pos] := AsTime(t);
+            gResultMatrix[i-1, t_pos] := t;
             gResultMatrix[i-1, TRH_pos] := TRH * inv_UTRH;
             gResultMatrix[i-1, pTSH_pos] := TSHz;
             gResultMatrix[i-1, TSH_pos] := TSH;
