@@ -98,6 +98,7 @@ type
     procedure CutItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormPaint(Sender: TObject);
     procedure StartPigMode;
     procedure FT3ColorBoxChange(Sender: TObject);
     procedure FT4ColorBoxChange(Sender: TObject);
@@ -897,6 +898,26 @@ begin
   SensitivityAnalysisForm.TT3ColorBox.Selected := gDefaultColors[7];
   SetStandardStrucParBoundaries(1 / 3, 3);
   DrawOWSensitivityPlot(True);
+end;
+
+procedure TSensitivityAnalysisForm.FormPaint(Sender: TObject);
+begin
+  if DarkTheme then
+  begin
+    Color := clDefault;
+    Chart1.Color := clDefault;
+    Chart1.BackColor := clDefault;
+    Chart1.AxisList[0].TickColor := clWhite;
+    Chart1.AxisList[1].TickColor := clWhite;
+  end
+  else
+  begin
+    Color := clWhite;
+    Chart1.Color := clWhite;
+    Chart1.BackColor := clWhite;
+    Chart1.AxisList[0].TickColor := clBlack;
+    Chart1.AxisList[1].TickColor := clBlack;
+  end
 end;
 
 procedure TSensitivityAnalysisForm.StartPigMode;
