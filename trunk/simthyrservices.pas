@@ -344,9 +344,9 @@ var
   y, m, d, h, n, s, ms, dy: word;
   theTime, theDate: TDateTime;
 begin
-  y := 1900;                            {Take 1900 as standard year}
-  r := trunc(x);
-  dy := word(r div 86400);              {day of year}
+  y := 1900;                   {year negligible, so take 1900 as standard year}
+  r := trunc(x);               {use whole seconds only}
+  dy := word(r div 86400);     {seconds per day to obtain day of year}
   if not TryEncodeDateDay(y, dy + 1, theDate) then {error in encoding?}
   begin
     theDate := 0;
@@ -354,11 +354,11 @@ begin
   end;
   DecodeDateTime(theDate, y, m, d, h, n, s, ms);
   r := r mod 86400;
-  h := word(r div 3600);
+  h := word(r div 3600);       {hour}
   r := r mod 3600;
-  n := word(r div 60);
+  n := word(r div 60);         {minute}
   r := r mod 60;
-  s := word(r);
+  s := word(r);                {second}
   if not TryEncodeDateTime(y, m, d, h, n, s, 0, theTime) then {error in encoding?}
   begin
     theTime := 0;

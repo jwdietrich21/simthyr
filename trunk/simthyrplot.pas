@@ -182,7 +182,7 @@ begin
       begin
         if not isNaN(gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2]) then
         begin
-          theSecond := gResultMatrix[j, t_pos];
+          theSecond := AsTime(gResultMatrix[j, t_pos]);
           AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2] *
             gParameterFactor[ValuesPlot.ComboBox1.ItemIndex + 2], '', SeriesColor);
         end;
@@ -199,7 +199,7 @@ begin
       begin
         if not isNaN(gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2]) then
         begin
-          theSecond := gResultMatrix[j, t_pos];
+          theSecond := AsTime(gResultMatrix[j, t_pos]);
           AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] *
             gParameterFactor[ValuesPlot.ComboBox2.ItemIndex + 2], '', SeriesColor);
         end;

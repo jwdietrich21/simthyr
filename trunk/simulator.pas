@@ -456,7 +456,7 @@ begin
             SimCentralDeiodination(gainOfCentralT3, true);
 {5'-Deiodinase type I (peripheral):}
             SimPeripheralDeiodination(gainOfPeripheralT3, true);
-            i := i + 1;
+            inc(i);
 {Load:}
             if (i > i1) and testflag then
               begin
