@@ -89,6 +89,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormPaint(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure Image10Click(Sender: TObject);
     procedure Image11Click(Sender: TObject);
     procedure Image12Click(Sender: TObject);
@@ -221,6 +222,11 @@ begin
     Label9.Font.Color := clNavy;
     Label15.Font.Color := clNavy;
   end
+end;
+
+procedure TAboutWindow.FormShow(Sender: TObject);
+begin
+  FormPaint(Sender);
 end;
 
 procedure TAboutWindow.FormCreate(Sender: TObject);

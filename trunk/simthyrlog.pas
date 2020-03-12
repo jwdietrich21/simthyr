@@ -41,6 +41,7 @@ type
     procedure CopyCells;
     procedure CopyItemClick(Sender: TObject);
     procedure FormPaint(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure RedrawGrid(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure InitGrid;
@@ -111,6 +112,11 @@ begin
     Color := clWhite;
     ValuesGrid.Color := clWhite;
   end
+end;
+
+procedure TSimThyrLogWindow.FormShow(Sender: TObject);
+begin
+  FormPaint(Sender);
 end;
 
 procedure TSimThyrLogWindow.RedrawGrid(Sender: TObject);

@@ -266,6 +266,7 @@ end;
 
 procedure TSimulationSettings.FormShow(Sender: TObject);
 begin
+  FormPaint(Sender);
   ShowOnTop;
   SetFocus;
 end;

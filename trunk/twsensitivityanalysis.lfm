@@ -11,9 +11,13 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   Constraints.MaxWidth = 800
   Constraints.MinHeight = 380
   Constraints.MinWidth = 600
+  DoubleBuffered = True
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
+  OnPaint = FormPaint
+  OnShow = FormShow
+  ParentDoubleBuffered = False
   Position = poScreenCenter
   LCLVersion = '2.0.6.0'
   object PlotPanel: TPanel

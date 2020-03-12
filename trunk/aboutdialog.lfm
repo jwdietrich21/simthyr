@@ -17,6 +17,7 @@ object AboutWindow: TAboutWindow
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   OnPaint = FormPaint
+  OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
   LCLVersion = '2.0.6.0'
