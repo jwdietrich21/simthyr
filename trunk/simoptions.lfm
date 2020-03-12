@@ -14,6 +14,7 @@ object SimOptionsDlg: TSimOptionsDlg
   Color = clWhite
   Constraints.MinHeight = 190
   Constraints.MinWidth = 420
+  OnActivate = FormActivate
   OnCreate = FormCreate
   OnPaint = FormPaint
   OnShow = FormShow

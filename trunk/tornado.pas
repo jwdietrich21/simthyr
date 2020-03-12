@@ -56,6 +56,7 @@ type
     procedure CopyItemClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormPaint(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure CopyTornado;
     procedure IncreaseColorBoxChange(Sender: TObject);
@@ -668,6 +669,34 @@ begin
   gINcreaseTitle := '20% ' + INCREASE_STRING;
   RadioGroup1.ItemIndex := 0;
   DrawTornadoPlot;
+end;
+
+procedure TTornadoPlotForm.FormPaint(Sender: TObject);
+begin
+  if DarkTheme then
+  begin
+    Color := clDefault;
+    Chart1.Color := clDefault;
+    Chart1.BackColor := clDefault;
+    Chart1.AxisList[0].TickColor := clWhite;
+    Chart1.AxisList[1].TickColor := clWhite;
+    IncreaseColorBox.DefaultColorColor := clGray;
+    IncreaseColorBox.Selected := clGray;
+    DecreaseColorBox.DefaultColorColor := clWhite;
+    DecreaseColorBox.Selected := clWhite;
+  end
+  else
+  begin
+    Color := clWhite;
+    Chart1.Color := clWhite;
+    Chart1.BackColor := clWhite;
+    Chart1.AxisList[0].TickColor := clBlack;
+    Chart1.AxisList[1].TickColor := clBlack;
+    IncreaseColorBox.DefaultColorColor := clBlack;
+    IncreaseColorBox.Selected := clBlack;
+    DecreaseColorBox.DefaultColorColor := clGray;
+    DecreaseColorBox.Selected := clGray;
+  end
 end;
 
 procedure TTornadoPlotForm.CheckGroup1Click(Sender: TObject);
