@@ -38,6 +38,7 @@ type
     PreviewCheckBox: TCheckBox;
     procedure CancelButtonClick(Sender: TObject);
     procedure CircadianCheckBoxChange(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormPaint(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -135,6 +136,12 @@ end;
 procedure TSimOptionsDlg.CircadianCheckBoxChange(Sender: TObject);
 begin
   temp_circadianflag := CircadianCheckBox.Checked;
+end;
+
+procedure TSimOptionsDlg.FormActivate(Sender: TObject);
+begin
+  ShowOnTop;
+  SetFocus;
 end;
 
 procedure TSimOptionsDlg.OKButtonClick(Sender: TObject);
