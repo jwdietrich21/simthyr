@@ -826,6 +826,7 @@ end;
 
 procedure TTornadoPlotForm.FormShow(Sender: TObject);
 begin
+  FormPaint(Sender);
   DrawTornadoPlot;
 end;
 

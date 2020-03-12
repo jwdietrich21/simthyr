@@ -92,6 +92,8 @@ type
     procedure CheckToggleBoxChange(Sender: TObject);
     procedure CopyChart;
     procedure FormDestroy(Sender: TObject);
+    procedure FormPaint(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure MaxSpinEdit1Change(Sender: TObject);
     procedure MaxSpinEdit2Change(Sender: TObject);
     procedure MinSpinEdit1Change(Sender: TObject);
@@ -421,14 +423,30 @@ begin
   theImage.Height := theHeight;
   with theImage.Canvas do
   begin
-    Pen.Color := clBlack;
-    Brush.Color := clWhite;
+    if DarkTheme then
+    begin
+      Pen.Color := clWhite;
+      Brush.Color := clDefault;
+    end
+    else
+    begin
+      Pen.Color := clBlack;
+      Brush.Color := clWhite;
+    end;
     FillRect(0, 0, theWidth, theHeight);
     SensitivityMap.PaintOnCanvas(theImage.canvas, rect(0, 0, SensitivityMap.Width, SensitivityMap.Height));
     LegendMap.PaintOnCanvas(theImage.canvas, rect(LegendMap.Left, LegendMap.Top, LegendMap.Left + LegendMap.Width, LegendMap.Top + LegendMap.Height));
     {Reset after changes introduced by chart:}
-    Pen.Color := clBlack;
-    Brush.Color := clWhite;
+    if DarkTheme then
+    begin
+      Pen.Color := clWhite;
+      Brush.Color := clDefault;
+    end
+    else
+    begin
+      Pen.Color := clBlack;
+      Brush.Color := clWhite;
+    end;
     Font := LegendMinLabel.Font;
     TextOut(LegendPanel.Left + LegendMinLabel.Left, LegendPanel.Top + LegendMinLabel.Top, LegendMinLabel.Caption);
     TextOut(LegendPanel.Left + LegendMaxLabel.Left, LegendPanel.Top + LegendMaxLabel.Top, LegendMaxLabel.Caption);
@@ -588,6 +606,51 @@ end;
 procedure TTWSensitivityAnalysisForm.FormDestroy(Sender: TObject);
 begin
   SensitivityMatrix.destroy;
+end;
+
+procedure TTWSensitivityAnalysisForm.FormPaint(Sender: TObject);
+begin
+  if DarkTheme then
+  begin
+    Color := clDefault;
+    PlotPanel.Color := clDefault;
+    LegendPanel.Color := clDefault;
+    LegendFrame.Brush.Color := clDefault;
+    GroupBox1.Color := clDefault;
+    GroupBox2.Color := clDefault;
+    SensitivityMap.Color := clDefault;
+    SensitivityMap.BackColor := clDefault;
+    SensitivityMap.Frame.Color := clWhite;
+    SensitivityMap.Title.Brush.Color := clDefault;
+    SensitivityMap.Title.Font.Color := clWhite;
+    SensitivityMap.Legend.BackgroundBrush.Color := clDefault;
+    SensitivityMap.AxisList[0].TickColor := clWhite;
+    SensitivityMap.AxisList[1].TickColor := clWhite;
+    LegendMap.Color := clDefault;
+  end
+  else
+  begin
+    Color := clWhite;
+    PlotPanel.Color := clWhite;
+    LegendPanel.Color := clWhite;
+    LegendFrame.Brush.Color := clWhite;
+    GroupBox1.Color := clWhite;
+    GroupBox2.Color := clWhite;
+    SensitivityMap.Color := clWhite;
+    SensitivityMap.BackColor := clWhite;
+    SensitivityMap.Frame.Color := clBlack;
+    SensitivityMap.Title.Brush.Color := clNone;
+    SensitivityMap.Title.Font.Color := clBlack;
+    SensitivityMap.Legend.BackgroundBrush.Color := clWhite;
+    SensitivityMap.AxisList[0].TickColor := clBlack;
+    SensitivityMap.AxisList[1].TickColor := clBlack;
+    LegendMap.Color := clNone;
+  end;
+end;
+
+procedure TTWSensitivityAnalysisForm.FormShow(Sender: TObject);
+begin
+  FormPaint(Sender);
 end;
 
 procedure TTWSensitivityAnalysisForm.MaxSpinEdit1Change(Sender: TObject);
@@ -1385,7 +1448,7 @@ end;
 
 procedure TTWSensitivityAnalysisForm.FormCreate(Sender: TObject);
 begin
-  {$IFDEF DARWIN}
+  {$IFDEF LCLCarbon}
   SensitivityMapColorMapSeries.UseImage := cmuiAlways;
   LegendColorMapSeries.UseImage := cmuiAlways;
   {$ELSE}

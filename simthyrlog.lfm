@@ -308,6 +308,7 @@ object SimThyrLogWindow: TSimThyrLogWindow
   }
   OnActivate = FormActivate
   OnPaint = FormPaint
+  OnShow = FormShow
   LCLVersion = '2.0.6.0'
   Visible = True
   object ValuesGrid: TStringGrid

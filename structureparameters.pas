@@ -367,6 +367,7 @@ end;
 procedure TStructureParameters.FormShow(Sender: TObject);
 {standard actions on show}
 begin
+  FormPaint(Sender);
   FillInParameters;
   FormActivate(Sender);
 end;

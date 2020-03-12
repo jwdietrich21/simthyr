@@ -90,6 +90,7 @@ begin
   CheckNoise;
   CheckPreview;
   CheckCircadian;
+  FormPaint(Sender);
   ShowOnTop;
   SetFocus;
 end;

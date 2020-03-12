@@ -99,6 +99,7 @@ type
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormPaint(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure StartPigMode;
     procedure FT3ColorBoxChange(Sender: TObject);
     procedure FT4ColorBoxChange(Sender: TObject);
@@ -918,6 +919,11 @@ begin
     Chart1.AxisList[0].TickColor := clBlack;
     Chart1.AxisList[1].TickColor := clBlack;
   end
+end;
+
+procedure TSensitivityAnalysisForm.FormShow(Sender: TObject);
+begin
+  FormPaint(Sender);
 end;
 
 procedure TSensitivityAnalysisForm.StartPigMode;
