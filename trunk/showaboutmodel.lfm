@@ -153,6 +153,8 @@ object AboutModelForm: TAboutModelForm
     0000000000000000000000000000000000000000000000000000000000000000
     0000
   }
+  OnPaint = FormPaint
+  OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '2.0.6.0'
   object Label1: TLabel
@@ -177,23 +179,21 @@ object AboutModelForm: TAboutModelForm
     ParentFont = False
     TabOrder = 0
   end
-  object Label2: TLabel
+  object URLLabel: TLabel
     Cursor = crHandPoint
-    Left = 306
+    Left = 277
     Height = 16
     Top = 80
-    Width = 212
+    Width = 241
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
-    Caption = 'http://tfc.medical-cybernetics.de'
-    Color = clWindow
+    Caption = 'http://tfc.medizinische-kybernetik.de'
     Font.Color = clNavy
     Font.Pitch = fpVariable
     Font.Quality = fqAntialiased
     ParentColor = False
     ParentFont = False
-    Transparent = False
-    OnClick = Label2Click
+    OnClick = URLLabelClick
   end
   object Memo1: TMemo
     Left = 56
