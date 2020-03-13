@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  LCLIntf, StdCtrls, ExtCtrls, MIRIAMForm;
+  LCLIntf, StdCtrls, ExtCtrls, SimThyrServices, MIRIAMForm;
 
 type
 
@@ -29,12 +29,14 @@ type
   TAboutModelForm = class(TForm)
     Image1: TImage;
     Label1: TLabel;
-    Label2: TLabel;
+    URLLabel: TLabel;
     Memo1: TMemo;
     StaticText2: TStaticText;
+    procedure FormPaint(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure Label1Click(Sender: TObject);
-    procedure Label2Click(Sender: TObject);
+    procedure URLLabelClick(Sender: TObject);
     procedure Memo1Change(Sender: TObject);
     procedure StaticText1Click(Sender: TObject);
   private
@@ -60,9 +62,32 @@ begin
   AnnotationForm.Show;
 end;
 
-procedure TAboutModelForm.Label2Click(Sender: TObject);
+procedure TAboutModelForm.FormPaint(Sender: TObject);
 begin
-  OpenURL('http://tfc.medical-cybernetics.de');
+  if DarkTheme then
+  begin
+    Color := clDefault;
+    Memo1.Color := clDefault;
+    Memo1.Font.Color := clWhite;
+    URLLabel.Font.Color := clSkyBlue;
+  end
+  else
+  begin
+    Color := clWhite;
+    Memo1.Color := clWhite;
+    Memo1.Font.Color := clDefault;
+    URLLabel.Font.Color := clNavy;
+  end
+end;
+
+procedure TAboutModelForm.FormShow(Sender: TObject);
+begin
+  FormPaint(Sender);
+end;
+
+procedure TAboutModelForm.URLLabelClick(Sender: TObject);
+begin
+  OpenURL('http://tfc.medizinische-kybernetik.de');
 end;
 
 procedure TAboutModelForm.Memo1Change(Sender: TObject);
