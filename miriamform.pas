@@ -56,6 +56,7 @@ type
     ScrollBox1: TScrollBox;
     TitleLabel: TLabel;
     procedure FormCreate(Sender: TObject);
+    procedure FormPaint(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure mibbiLogoClick(Sender: TObject);
@@ -173,6 +174,7 @@ end;
 
 procedure TAnnotationForm.FormShow(Sender: TObject);
 begin
+  FormPaint(Sender);
   ShowAnnotation(gActiveModel);
 end;
 
@@ -198,6 +200,20 @@ begin
     StandardButton.Height := 22;
     OKButton.Height  := 22;
   end;
+end;
+
+procedure TAnnotationForm.FormPaint(Sender: TObject);
+begin
+  if DarkTheme then
+  begin
+    Color := clDefault;
+    BottomPanel.Color := clDefault;
+  end
+  else
+  begin
+    Color := clWhite;
+    BottomPanel.Color := clWhite;
+  end
 end;
 
 procedure TAnnotationForm.MIRIAMLogoClick(Sender: TObject);
