@@ -93,6 +93,8 @@ type
     procedure CopyChart;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormHide(Sender: TObject);
+    procedure FormPaint(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure SaveChart;
     procedure SaveGrid(theFileName: String; theDelimiter: Char);
     procedure FormActivate(Sender: TObject);
@@ -1074,6 +1076,31 @@ end;
 procedure TEquilibriumDiagramForm.FormHide(Sender: TObject);
 begin
   EnableStrucParEdits;
+end;
+
+procedure TEquilibriumDiagramForm.FormPaint(Sender: TObject);
+begin
+  if DarkTheme then
+  begin
+    Color := clDefault;
+    EquilibriumChart.Color := clDefault;
+    EquilibriumChart.BackColor := clDefault;
+    EquilibriumChart.AxisList[0].TickColor := clWhite;
+    EquilibriumChart.AxisList[1].TickColor := clWhite;
+  end
+  else
+  begin
+    Color := clWhite;
+    EquilibriumChart.Color := clWhite;
+    EquilibriumChart.BackColor := clWhite;
+    EquilibriumChart.AxisList[0].TickColor := clBlack;
+    EquilibriumChart.AxisList[1].TickColor := clBlack;
+  end
+end;
+
+procedure TEquilibriumDiagramForm.FormShow(Sender: TObject);
+begin
+  FormPaint(Sender);
 end;
 
 procedure TEquilibriumDiagramForm.SaveChart;
