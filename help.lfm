@@ -18,6 +18,7 @@ object HelpWindow: THelpWindow
     Top = 34
     Width = 125
     Caption = 'SimThyr Help'
+    Font.Color = clBlack
     Font.Height = -18
     Font.Style = [fsBold]
     ParentColor = False
@@ -121,6 +122,7 @@ object HelpWindow: THelpWindow
     Top = 99
     Width = 300
     Caption = 'Get a short introduction, a full handbook and tutorials online.'
+    Font.Color = clBlack
     Font.Height = 10
     ParentColor = False
     ParentFont = False
@@ -131,6 +133,7 @@ object HelpWindow: THelpWindow
     Top = 147
     Width = 390
     Caption = 'References and background information on the theory that SimThyr is based on.'
+    Font.Color = clBlack
     Font.Height = 10
     ParentColor = False
     ParentFont = False
@@ -156,6 +159,7 @@ object HelpWindow: THelpWindow
     Anchors = [akTop, akLeft, akRight]
     AutoSize = False
     Caption = 'Get information about the version of this application and information on the runtime environment.'
+    Font.Color = clBlack
     Font.Height = 10
     ParentColor = False
     ParentFont = False

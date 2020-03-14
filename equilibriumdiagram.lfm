@@ -384,11 +384,13 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object SParBoxSubLabel: TLabel
       Left = 8
-      Height = 16
+      Height = 12
       Top = 2
-      Width = 196
+      Width = 151
       Caption = 'for dynamic sensitivity analysis'
+      Font.Height = 10
       ParentColor = False
+      ParentFont = False
     end
   end
   object StatusBar1: TStatusBar

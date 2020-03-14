@@ -910,6 +910,8 @@ begin
     Chart1.BackColor := clDefault;
     Chart1.AxisList[0].TickColor := clWhite;
     Chart1.AxisList[1].TickColor := clWhite;
+    Chart1.Frame.Color := clMedGray;
+    CheckGrid.Color := clDefault;
   end
   else
   begin
@@ -918,6 +920,8 @@ begin
     Chart1.BackColor := clWhite;
     Chart1.AxisList[0].TickColor := clBlack;
     Chart1.AxisList[1].TickColor := clBlack;
+    Chart1.Frame.Color := clMedGray;
+    CheckGrid.Color := clWhite;
   end
 end;
 
