@@ -379,6 +379,8 @@ begin
     Chart1.AxisList[1].TickColor := clWhite;
     Chart2.AxisList[0].TickColor := clWhite;
     Chart2.AxisList[1].TickColor := clWhite;
+    Chart1.Frame.Color := clMedGray;
+    Chart2.Frame.Color := clMedGray;
     PlotPanel1.Color := clDefault;
     PlotPanel2.Color := clDefault;
   end
@@ -393,6 +395,8 @@ begin
     Chart1.AxisList[1].TickColor := clBlack;
     Chart2.AxisList[0].TickColor := clBlack;
     Chart2.AxisList[1].TickColor := clBlack;
+    Chart1.Frame.Color := clBlack;
+    Chart2.Frame.Color := clBlack;
     PlotPanel1.Color := clWhite;
     PlotPanel2.Color := clWhite;
   end

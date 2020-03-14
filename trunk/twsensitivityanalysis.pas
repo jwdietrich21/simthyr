@@ -427,11 +427,13 @@ begin
     begin
       Pen.Color := clWhite;
       Brush.Color := clDefault;
+      CheckGrid.Color := clDefault;
     end
     else
     begin
       Pen.Color := clBlack;
       Brush.Color := clWhite;
+      CheckGrid.Color := clWhite;
     end;
     FillRect(0, 0, theWidth, theHeight);
     SensitivityMap.PaintOnCanvas(theImage.canvas, rect(0, 0, SensitivityMap.Width, SensitivityMap.Height));
@@ -620,7 +622,7 @@ begin
     GroupBox2.Color := clDefault;
     SensitivityMap.Color := clDefault;
     SensitivityMap.BackColor := clDefault;
-    SensitivityMap.Frame.Color := clWhite;
+    SensitivityMap.Frame.Color := clMedGray;
     SensitivityMap.Title.Brush.Color := clDefault;
     SensitivityMap.Title.Font.Color := clWhite;
     SensitivityMap.Legend.BackgroundBrush.Color := clDefault;

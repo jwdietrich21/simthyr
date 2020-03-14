@@ -1,7 +1,7 @@
 object SensitivityAnalysisForm: TSensitivityAnalysisForm
-  Left = 222
+  Left = 270
   Height = 400
-  Top = 362
+  Top = 411
   Width = 752
   AlphaBlendValue = 0
   Anchors = [akTop, akLeft, akBottom]

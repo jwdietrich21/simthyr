@@ -1087,6 +1087,8 @@ begin
     EquilibriumChart.BackColor := clDefault;
     EquilibriumChart.AxisList[0].TickColor := clWhite;
     EquilibriumChart.AxisList[1].TickColor := clWhite;
+    EquilibriumChart.Frame.Color := clMedGray;
+    CheckGrid.Color := clDefault;
   end
   else
   begin
@@ -1095,6 +1097,8 @@ begin
     EquilibriumChart.BackColor := clWhite;
     EquilibriumChart.AxisList[0].TickColor := clBlack;
     EquilibriumChart.AxisList[1].TickColor := clBlack;
+    EquilibriumChart.Frame.Color := clBlack;
+    CheckGrid.Color := clWhite;
   end
 end;
 

@@ -1,8 +1,8 @@
 { This is an automatically generated lazarus resource file }
 
 LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
-  'TPF0'#24'TSensitivityAnalysisForm'#23'SensitivityAnalysisForm'#4'Left'#3#222
-  +#0#6'Height'#3#144#1#3'Top'#3'j'#1#5'Width'#3#240#2#15'AlphaBlendValue'#2#0#7
+  'TPF0'#24'TSensitivityAnalysisForm'#23'SensitivityAnalysisForm'#4'Left'#3#14#1
+  +#6'Height'#3#144#1#3'Top'#3#155#1#5'Width'#3#240#2#15'AlphaBlendValue'#2#0#7
   +'Anchors'#11#5'akTop'#6'akLeft'#8'akBottom'#0#7'Caption'#6#28'One-Way Sensit'
   +'ivity Analysis'#12'ClientHeight'#3#144#1#11'ClientWidth'#3#240#2#5'Color'#7
   +#7'clWhite'#21'Constraints.MinHeight'#3#144#1#20'Constraints.MinWidth'#3'X'#2
