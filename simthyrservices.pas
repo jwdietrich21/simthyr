@@ -381,7 +381,7 @@ end;
 procedure writeaMemoLine(theMemo: TMemo; theString: Str255);
 {emulates writeln for a memo}
 begin
-  {$IFDEF win32}
+  {$IFDEF Windows}
   theMemo.Lines.Text := theMemo.Lines.Text + kCRLF + theString;
   {$ELSE}
     {$IFDEF DARWIN}
