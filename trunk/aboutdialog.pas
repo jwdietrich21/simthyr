@@ -23,7 +23,7 @@ uses
   ExtCtrls, Buttons, StdCtrls, LCLIntf, ComCtrls, SimThyrTypes, SimThyrResources,
   SimThyrServices, EnvironmentInfo, DOS, HandlePreferences, Sensitivityanalysis,
   TWSensitivityanalysis, Equilibriumdiagram
-  {$IFDEF win32}
+  {$IFDEF WINDOWS}
   , Windows, Win32Proc
   {$ENDIF}
     {$IFDEF DARWIN}

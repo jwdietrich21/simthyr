@@ -72,7 +72,7 @@ end;
 
 procedure THelpWindow.FormCreate(Sender: TObject);
 begin
-  {$IFDEF win32}
+  {$IFDEF Windows}
     {adapt font sizes to be readable also under Windows}
     OnlineHelpTitle.Font.Height := 15;
     OnlineHelpSubTitle.Font.Height := 13;
