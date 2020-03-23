@@ -55,18 +55,17 @@ LazarusResources.Add('TSimulationSettings','FORMDATA',[
   +#11'ParentColor'#8#0#0#0#7'TButton'#9'OptButton'#4'Left'#2#16#6'Height'#2#25
   +#4'Hint'#6#29'Additional simulation options'#3'Top'#3'7'#1#5'Width'#3#152#0#7
   +'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6#21'Additional Options...'#7
-  +'OnClick'#7#14'OptButtonClick'#10'OnKeyPress'#7#17'OptButtonKeyPress'#7'OnKe'
-  +'yUp'#7#14'OptButtonKeyUp'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2
-  +#0#0#7'TButton'#11'StartButton'#4'Left'#3#216#1#6'Height'#2#25#4'Hint'#6#14
-  +'Run simulation'#3'Top'#3'7'#1#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBo'
-  +'ttom'#0#7'Caption'#6#5'Start'#7'Default'#9#11'ModalResult'#2#1#7'OnClick'#7
-  +#16'StartButtonClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#0#0
-  +#7'TButton'#12'CancelButton'#4'Left'#3#128#1#6'Height'#2#25#3'Top'#3'7'#1#5
+  +'OnClick'#7#14'OptButtonClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'
+  +#2#2#0#0#7'TButton'#11'StartButton'#4'Left'#3#216#1#6'Height'#2#25#4'Hint'#6
+  +#14'Run simulation'#3'Top'#3'7'#1#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'a'
+  +'kBottom'#0#7'Caption'#6#5'Start'#7'Default'#9#11'ModalResult'#2#1#7'OnClick'
+  +#7#16'StartButtonClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#3#0
+  +#0#7'TButton'#12'CancelButton'#4'Left'#3#128#1#6'Height'#2#25#3'Top'#3'7'#1#5
   +'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#6'Cancel'#9#7'Caption'#6
   +#6'Cancel'#11'ModalResult'#2#2#7'OnClick'#7#17'CancelButtonClick'#8'TabOrder'
   +#2#4#0#0#6'TImage'#11'ThyroidIcon'#4'Left'#2' '#6'Height'#2' '#3'Top'#2#8#5
-  ,'Width'#2' '#7'OnClick'#7#16'ThyroidIconClick'#12'Picture.Data'#10#144#1#0#0
-  +#23'TPortableNetworkGraphict'#1#0#0#137'PNG'#13#10#26#10#0#0#0#13'IHDR'#0#0#0
+  +'Width'#2' '#7'OnClick'#7#16'ThyroidIconClick'#12'Picture.Data'#10#144#1#0#0
+  ,#23'TPortableNetworkGraphict'#1#0#0#137'PNG'#13#10#26#10#0#0#0#13'IHDR'#0#0#0
   +' '#0#0#0' '#8#6#0#0#0'szz'#244#0#0#0#25'tEXtSoftware'#0'GraphicConverter5]H'
   +#238#0#0#1#22'IDATx'#156#236#148#219#13#194'0'#12'E'#179#9'_'#140#194#4#236
   +#208#157':V'#7'`'#5'V'#8'D'#194#144#186'~\''m'#249#137'%KU'#19#251#30#219'IR'
@@ -129,8 +128,8 @@ LazarusResources.Add('TSimulationSettings','FORMDATA',[
   +'eavisideIconDark'#4'Left'#3#232#3#6'Height'#2' '#3'Top'#3#161#0#5'Width'#2
   +' '#12'Picture.Data'#10#167#0#0#0#23'TPortableNetworkGraphic'#139#0#0#0#137
   +'PNG'#13#10#26#10#0#0#0#13'IHDR'#0#0#0' '#0#0#0' '#8#4#0#0#0#217's'#178#127#0
-  ,#0#0'RIDATx'#156'b`'#24'.'#224#255#255#129'5'#224'?'#24#12#156#1#255#225'`'
-  +#160#12#128#24'B'#129'f'#220#6#128'D'#241'a'#250#184#128'"'#3'F]0'#140']'#128
+  +#0#0'RIDATx'#156'b`'#24'.'#224#255#255#129'5'#224'?'#24#12#156#1#255#225'`'
+  ,#160#12#128#24'B'#129'f'#220#6#128'D'#241'a'#250#184#128'"'#3'F]0'#140']'#128
   +'5'#215#16#145'XQ'#12#192'0'#228'?'#153#128'T'#159#226'v'#1#169#6#144#173'y'
   +#20#12'N'#0#0#0#0#255#255#3#0#214#236#177'O'#215'E'#218#247#0#0#0#0'IEND'#174
   +'B`'#130#11'Transparent'#9#7'Visible'#8#0#0#6'TImage'#18'HeavisideIconLight'

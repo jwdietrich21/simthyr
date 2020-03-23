@@ -191,8 +191,6 @@ object SimulationSettings: TSimulationSettings
     Anchors = [akLeft, akBottom]
     Caption = 'Additional Options...'
     OnClick = OptButtonClick
-    OnKeyPress = OptButtonKeyPress
-    OnKeyUp = OptButtonKeyUp
     ParentShowHint = False
     ShowHint = True
     TabOrder = 2

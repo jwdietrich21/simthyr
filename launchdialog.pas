@@ -58,8 +58,6 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure FormPaint(Sender: TObject);
     procedure OptButtonClick(Sender: TObject);
-    procedure OptButtonKeyPress(Sender: TObject; var Key: char);
-    procedure OptButtonKeyUp(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure ParsButtonClick(Sender: TObject);
     procedure RadioGroup1Click(Sender: TObject);
     procedure StartButtonClick(Sender: TObject);
@@ -97,6 +95,9 @@ implementation
 
 procedure TSimulationSettings.StartButtonClick(Sender: TObject);
 begin
+  {$IFDEF LCLCocoa}
+  SimOptionsDlg.Close;
+  {$ENDIF}
   if i > 1 then
     nmax_old := nmax  {continue halted simulation}
   else
@@ -142,7 +143,7 @@ begin
       i1_unit := '';
     graphready := False;
     runcommand := True;
-    SimulationSettings.Close;
+    Close;
     nmax := nmax_old + cycles(tmax, tmax_unit);
     i1   := nmax_old + cycles(tt, i1_unit);
     SetStatusBarPanel0('   ' + IntToStr(nmax_old) + ':', IntToStr(nmax));
@@ -156,6 +157,7 @@ procedure TSimulationSettings.OptButtonClick(Sender: TObject);
 begin
   SimOptionsDlg.ShowOnTop;
 end;
+
 
 procedure TSimulationSettings.FormKeyDown(Sender: TObject; var Key: word;
   Shift: TShiftState);
@@ -190,17 +192,6 @@ begin
   end
 end;
 
-procedure TSimulationSettings.OptButtonKeyPress(Sender: TObject; var Key: char);
-begin
-  ;
-end;
-
-procedure TSimulationSettings.OptButtonKeyUp(Sender: TObject;
-  var Key: word; Shift: TShiftState);
-begin
-
-end;
-
 procedure TSimulationSettings.ParsButtonClick(Sender: TObject);
 begin
   StructureParametersDlg.HandleStrucPars;
@@ -213,6 +204,9 @@ end;
 
 procedure TSimulationSettings.CancelButtonClick(Sender: TObject);
 begin
+  {$IFDEF LCLCocoa}
+  SimOptionsDlg.Close;
+  {$ENDIF}
   runcommand := False;
   SimulationSettings.Close;
 end;

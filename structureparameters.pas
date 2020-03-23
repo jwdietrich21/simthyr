@@ -356,12 +356,18 @@ begin
       PredictEquilibrium;
       DrawOWSensitivityPlot(false);
     end;
+  {$IFDEF LCLCocoa}
+  SimOptionsDlg.Close;
+  {$ENDIF}
 end;
 
 procedure TStructureParameters.CancelButtonClick(Sender: TObject);
 {closes window without reading parameter values}
 begin
   Close;
+  {$IFDEF LCLCocoa}
+  SimOptionsDlg.Close;
+  {$ENDIF}
 end;
 
 procedure TStructureParameters.FormShow(Sender: TObject);

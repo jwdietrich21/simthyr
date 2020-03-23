@@ -14,14 +14,170 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="4"/>
       <RevisionNr Value="2"/>
-      <BuildNr Value="897"/>
+      <BuildNr Value="899"/>
       <Attributes pvaDebug="True" pvaPreRelease="True"/>
       <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.2 Merlion" LegalCopyright="1994-2020 J. W. Dietrich" LegalTrademarks="SimThyr, Bergmannsheil, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.2"/>
     </VersionInfo>
-    <BuildModes Count="1">
-      <Item1 Name="default" Default="True"/>
-      <SharedMatrixOptions Count="1">
-        <Item1 ID="542318232062" Type="IDEMacro" MacroName="LCLWidgetType" Value="cocoa"/>
+    <MacroValues Count="1">
+      <Macro4 Name="LCLWidgetType" Value="carbon"/>
+    </MacroValues>
+    <BuildModes Count="4" Active="Cocoa">
+      <Item1 Name="Carbon" Default="True"/>
+      <Item2 Name="Cocoa">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="cocoa"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+          </SearchPaths>
+          <Conditionals Value="if TargetOS = 'darwin' then
+begin
+  UsageCustomOptions += ' -k-macosx_version_min -k10.4';
+  UsageCustomOptions += ' -XR/Developer/SDKs/MacOSX10.4u.sdk/';
+end;"/>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+            <TargetCPU Value="x86_64"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="//-k-macosx_version_min //-k10.4
+//-XR/Developer/SDKs/MacOSX10.4u.sdk/"/>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="Win32">
+        <MacroValues Count="1">
+          <Macro2 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+          </SearchPaths>
+          <Conditionals Value="if TargetOS = 'darwin' then
+begin
+  UsageCustomOptions += ' -k-macosx_version_min -k10.4';
+  UsageCustomOptions += ' -XR/Developer/SDKs/MacOSX10.4u.sdk/';
+end;"/>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+            <TargetCPU Value="x86_64"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="//-k-macosx_version_min //-k10.4
+//-XR/Developer/SDKs/MacOSX10.4u.sdk/"/>
+          </Other>
+        </CompilerOptions>
+      </Item3>
+      <Item4 Name="Linux">
+        <MacroValues Count="1">
+          <Macro3 Name="LCLWidgetType" Value="gtk3"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+          </SearchPaths>
+          <Conditionals Value="if TargetOS = 'darwin' then
+begin
+  UsageCustomOptions += ' -k-macosx_version_min -k10.4';
+  UsageCustomOptions += ' -XR/Developer/SDKs/MacOSX10.4u.sdk/';
+end;"/>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+            <TargetCPU Value="x86_64"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="//-k-macosx_version_min //-k10.4
+//-XR/Developer/SDKs/MacOSX10.4u.sdk/"/>
+          </Other>
+        </CompilerOptions>
+      </Item4>
+      <SharedMatrixOptions Count="4">
+        <Item1 ID="542318232062" Modes="Cocoa" Type="IDEMacro" MacroName="LCLWidgetType" Value="cocoa"/>
+        <Item2 ID="518339041979" Modes="Win32" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
+        <Item3 ID="855366092992" Modes="Linux" Type="IDEMacro" MacroName="LCLWidgetType" Value="gtk3"/>
+        <Item4 ID="948414872988" Modes="Carbon" Type="IDEMacro" MacroName="LCLWidgetType" Value="carbon"/>
       </SharedMatrixOptions>
     </BuildModes>
     <PublishOptions>
@@ -51,8 +207,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="20"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="61"/>
-        <CursorPos X="4" Y="76"/>
+        <CursorPos X="34" Y="162"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -65,8 +220,6 @@
         <UnitName Value="SimThyrMain"/>
         <EditorIndex Value="38"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="690"/>
-        <CursorPos X="18" Y="692"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -101,7 +254,6 @@
         <UnitName Value="SimThyrPlot"/>
         <EditorIndex Value="23"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="364"/>
         <CursorPos X="100" Y="367"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
@@ -137,8 +289,8 @@
         <UnitName Value="LaunchDialog"/>
         <EditorIndex Value="26"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="154"/>
-        <CursorPos X="31" Y="169"/>
+        <TopLine Value="75"/>
+        <CursorPos X="25" Y="114"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -238,7 +390,7 @@
         <UnitName Value="SimThyrServices"/>
         <EditorIndex Value="12"/>
         <WindowIndex Value="1"/>
-        <CursorPos X="17" Y="2"/>
+        <CursorPos X="28" Y="32"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
@@ -382,11 +534,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="AboutDialog"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="39"/>
         <WindowIndex Value="1"/>
         <TopLine Value="7"/>
-        <CursorPos X="33" Y="11"/>
+        <CursorPos X="37" Y="20"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -552,10 +703,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="StructureParameters"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="28"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="294"/>
-        <CursorPos X="32" Y="309"/>
+        <TopLine Value="328"/>
+        <CursorPos X="106" Y="347"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -642,8 +794,7 @@
         <UnitName Value="SimOptions"/>
         <EditorIndex Value="22"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="83"/>
-        <CursorPos X="26" Y="93"/>
+        <CursorPos X="6" Y="2"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -1334,8 +1485,8 @@
         <EditorIndex Value="24"/>
         <WindowIndex Value="1"/>
         <TopLine Value="193"/>
-        <CursorPos X="130" Y="198"/>
-        <UsageCount Value="170"/>
+        <CursorPos X="45" Y="208"/>
+        <UsageCount Value="172"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit159>
@@ -1546,9 +1697,8 @@
         <UnitName Value="PlotOptions"/>
         <EditorIndex Value="18"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="70"/>
         <CursorPos X="28" Y="95"/>
-        <UsageCount Value="69"/>
+        <UsageCount Value="71"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit190>
@@ -1605,7 +1755,7 @@
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
         </ExtraEditor1>
-        <UsageCount Value="47"/>
+        <UsageCount Value="49"/>
         <Loaded Value="True"/>
       </Unit196>
       <Unit197>
@@ -1732,124 +1882,124 @@
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="101" Column="24" TopLine="89"/>
-      </Position1>
-      <Position2>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="922" Column="31" TopLine="901"/>
-      </Position2>
-      <Position3>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="929" Column="41" TopLine="904"/>
-      </Position3>
-      <Position4>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="436" Column="33" TopLine="421"/>
-      </Position4>
-      <Position5>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="1055" Column="3" TopLine="1053"/>
-      </Position5>
-      <Position6>
-        <Filename Value="sensitivityanalysis.pas"/>
-        <Caret Line="101" Column="24" TopLine="87"/>
-      </Position6>
-      <Position7>
-        <Filename Value="twsensitivityanalysis.pas"/>
-        <Caret Line="406" Column="42" TopLine="400"/>
-      </Position7>
-      <Position8>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="18" Column="31"/>
-      </Position8>
-      <Position9>
-        <Filename Value="tornado.pas"/>
-        <Caret Line="59" Column="24" TopLine="35"/>
-      </Position9>
-      <Position10>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="1424" Column="33" TopLine="1415"/>
-      </Position10>
-      <Position11>
-        <Filename Value="equilibriumdiagram.pas"/>
-        <Caret Line="96" Column="24" TopLine="82"/>
-      </Position11>
-      <Position12>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="106" Column="100" TopLine="98"/>
-      </Position12>
-      <Position13>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="119" Column="12" TopLine="98"/>
-      </Position13>
-      <Position14>
-        <Filename Value="simthyrlog.pas"/>
-        <Caret Line="43" Column="24" TopLine="28"/>
-      </Position14>
-      <Position15>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="574" Column="141" TopLine="573"/>
-      </Position15>
-      <Position16>
-        <Filename Value="simthyrplot.pas"/>
-        <Caret Line="85" Column="24" TopLine="71"/>
-      </Position16>
-      <Position17>
-        <Filename Value="help.pas"/>
-        <Caret Line="24" Column="39"/>
-      </Position17>
-      <Position18>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="29" Column="14" TopLine="10"/>
-      </Position18>
-      <Position19>
-        <Filename Value="simthyrservices.pas"/>
-        <Caret Line="2" Column="17"/>
-      </Position19>
-      <Position20>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="21" Column="14"/>
-      </Position20>
-      <Position21>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="87" Column="29" TopLine="68"/>
-      </Position21>
-      <Position22>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="21" Column="14" TopLine="2"/>
-      </Position22>
-      <Position23>
-        <Filename Value="environmentinfo.pas"/>
-        <Caret Line="87" Column="29" TopLine="68"/>
-      </Position23>
-      <Position24>
         <Filename Value="environmentinfo.pas"/>
         <Caret Line="153" Column="7" TopLine="134"/>
-      </Position24>
-      <Position25>
+      </Position1>
+      <Position2>
         <Filename Value="environmentinfo.pas"/>
         <Caret Line="278" Column="7" TopLine="259"/>
-      </Position25>
-      <Position26>
+      </Position2>
+      <Position3>
         <Filename Value="environmentinfo.pas"/>
         <Caret Line="288" Column="6" TopLine="259"/>
-      </Position26>
-      <Position27>
+      </Position3>
+      <Position4>
         <Filename Value="environmentinfo.pas"/>
         <Caret Line="298" Column="7" TopLine="279"/>
-      </Position27>
-      <Position28>
+      </Position4>
+      <Position5>
         <Filename Value="environmentinfo.pas"/>
         <Caret Line="370" Column="22" TopLine="352"/>
-      </Position28>
-      <Position29>
+      </Position5>
+      <Position6>
         <Filename Value="environmentinfo.pas"/>
         <Caret Line="371" Column="22" TopLine="352"/>
-      </Position29>
-      <Position30>
+      </Position6>
+      <Position7>
         <Filename Value="aboutdialog.pas"/>
         <Caret Line="26" Column="18" TopLine="7"/>
+      </Position7>
+      <Position8>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="169" Column="31" TopLine="154"/>
+      </Position8>
+      <Position9>
+        <Filename Value="simoptions.pas"/>
+        <Caret Line="93" Column="26" TopLine="83"/>
+      </Position9>
+      <Position10>
+        <Filename Value="simoptions.pas"/>
+        <Caret Line="92" Column="13" TopLine="80"/>
+      </Position10>
+      <Position11>
+        <Filename Value="simoptions.pas"/>
+        <Caret Line="94" TopLine="76"/>
+      </Position11>
+      <Position12>
+        <Filename Value="simoptions.pas"/>
+        <Caret Line="95" TopLine="76"/>
+      </Position12>
+      <Position13>
+        <Filename Value="simoptions.pas"/>
+        <Caret Line="94" TopLine="76"/>
+      </Position13>
+      <Position14>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="692" Column="18" TopLine="690"/>
+      </Position14>
+      <Position15>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="535" Column="35" TopLine="433"/>
+      </Position15>
+      <Position16>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="2" Column="14" TopLine="18"/>
+      </Position16>
+      <Position17>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="397" Column="45" TopLine="372"/>
+      </Position17>
+      <Position18>
+        <Filename Value="simthyrmain.pas"/>
+        <Caret Line="377" Column="31" TopLine="327"/>
+      </Position18>
+      <Position19>
+        <Filename Value="simoptions.pas"/>
+        <Caret Line="97" Column="5" TopLine="72"/>
+      </Position19>
+      <Position20>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="76" Column="4" TopLine="61"/>
+      </Position20>
+      <Position21>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="46" Column="12" TopLine="31"/>
+      </Position21>
+      <Position22>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="59" Column="13" TopLine="34"/>
+      </Position22>
+      <Position23>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="62" Column="73" TopLine="37"/>
+      </Position23>
+      <Position24>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="367" Column="100"/>
+      </Position24>
+      <Position25>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="196" Column="48" TopLine="191"/>
+      </Position25>
+      <Position26>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="61" TopLine="47"/>
+      </Position26>
+      <Position27>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="69" Column="14" TopLine="50"/>
+      </Position27>
+      <Position28>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="162" TopLine="161"/>
+      </Position28>
+      <Position29>
+        <Filename Value="simoptions.pas"/>
+        <Caret Line="2" Column="6"/>
+      </Position29>
+      <Position30>
+        <Filename Value="simthyrplot.pas"/>
+        <Caret Line="367" Column="100"/>
       </Position30>
     </JumpHistory>
   </ProjectOptions>
