@@ -52,6 +52,7 @@ type
     procedure CheckCircadian;
   public
     { public declarations }
+    parentForm: TForm;
   end; 
 
 var
@@ -59,6 +60,9 @@ var
   temp_noiseflag, temp_previewflag, temp_circadianflag: boolean;
 
 implementation
+
+uses
+  LaunchDialog, StructureParameters;
 
 { TSimOptionsDlg }
 
@@ -82,23 +86,39 @@ end;
 
 procedure TSimOptionsDlg.FormShow(Sender: TObject);
 {code executed on show}
+var
+  theForm: TForm;
 begin
   temp_noiseflag := noiseflag;
   temp_previewflag := previewflag;
   temp_circadianflag := circadianflag;
   TRHEdit.Text := FloatToStrF(gActiveModel.Equilibrium.TRHs, ffGeneral, 5, 2);
+  theForm := Screen.ActiveForm;
+  {$IFDEF LCLCocoa}
+  parentForm := Screen.ActiveForm;
+  if parentForm = SimulationSettings then
+    SimulationSettings.Close
+  else if parentForm = StructureParametersDlg then
+    StructureParametersDlg.Close;
+  {$ENDIF}
+  FormPaint(Sender);
+  ShowOnTop;
   CheckNoise;
   CheckPreview;
   CheckCircadian;
-  FormPaint(Sender);
-  ShowOnTop;
   SetFocus;
 end;
 
 procedure TSimOptionsDlg.CancelButtonClick(Sender: TObject);
 {closes dialog without reading any data}
 begin
-  SimOptionsDlg.Close;
+  Close;
+  {$IFDEF LCLCocoa}
+  if parentForm = SimulationSettings then
+    SimulationSettings.ShowModal
+  else if parentForm = StructureParametersDlg then
+    StructureParametersDlg.ShowModal;
+  {$ENDIF}
 end;
 
 procedure TSimOptionsDlg.FormCreate(Sender: TObject);
@@ -152,7 +172,13 @@ begin
   previewflag := temp_previewflag;
   circadianflag := temp_circadianflag;
   gActiveModel.Equilibrium.TRHs := StrToFloat(TRHEdit.Text);
-  SimOptionsDlg.Close;
+  Close;
+  {$IFDEF LCLCocoa}
+  if parentForm = SimulationSettings then
+    SimulationSettings.ShowModal
+  else if parentForm = StructureParametersDlg then
+    StructureParametersDlg.ShowModal;
+  {$ENDIF}
 end;
 
 initialization

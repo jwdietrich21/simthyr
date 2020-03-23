@@ -159,6 +159,7 @@ begin
       Prediction.MakeFullyVisible(Screen.Monitors[0]);
   Prediction.Show;
   Application.CreateForm(TSimOptionsDlg, SimOptionsDlg);
+  SimOptionsDlg.parentForm := nil;
   SimOptionsDlg.Hide;
   SimOptionsDlg.AlphaBlend := False;
   Notice := TNotice.Create(SimThyrLogWindow);
