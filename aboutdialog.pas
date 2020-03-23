@@ -49,12 +49,15 @@ type
     Image10: TImage;
     Image11: TImage;
     Image12: TImage;
-    Image13: TImage;
+    PumaImageLight: TImage;
+    BMHImageDark: TImage;
+    PumaImageDark: TImage;
+    RubImageDark: TImage;
     SimThyrLabel: TImage;
     Image2: TImage;
-    Image3: TImage;
-    Image4: TImage;
-    Image5: TImage;
+    UlmImageLight: TImage;
+    RubImageLight: TImage;
+    BMHImageLight: TImage;
     Image6: TImage;
     Image7: TImage;
     Image8: TImage;
@@ -83,6 +86,7 @@ type
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
     TabSheet4: TTabSheet;
+    UlmImageDark: TImage;
     URL1: TLabel;
     URL2: TLabel;
     VersionLabel: TLabel;
@@ -93,12 +97,12 @@ type
     procedure Image10Click(Sender: TObject);
     procedure Image11Click(Sender: TObject);
     procedure Image12Click(Sender: TObject);
-    procedure Image13Click(Sender: TObject);
+    procedure PumaImageLightClick(Sender: TObject);
     procedure BigLogoClick(Sender: TObject);
     procedure Image2Click(Sender: TObject);
-    procedure Image3Click(Sender: TObject);
-    procedure Image4Click(Sender: TObject);
-    procedure Image5Click(Sender: TObject);
+    procedure UlmImageLightClick(Sender: TObject);
+    procedure RubImageLightClick(Sender: TObject);
+    procedure BMHImageLightClick(Sender: TObject);
     procedure Image6Click(Sender: TObject);
     procedure Image7Click(Sender: TObject);
     procedure Image8Click(Sender: TObject);
@@ -209,6 +213,12 @@ begin
     Label7.Font.Color := clSkyBlue;
     Label9.Font.Color := clSkyBlue;
     Label15.Font.Color := clSkyBlue;
+    BMHImageDark.Visible := true;
+    BMHImageLight.Visible := false;
+    RUBImageDark.Visible := true;
+    RUBImageLight.Visible := false;
+    UlmImageDark.Visible := true;
+    UlmImageLight.Visible := false;
   end
   else
   begin
@@ -221,6 +231,12 @@ begin
     Label7.Font.Color := clNavy;
     Label9.Font.Color := clNavy;
     Label15.Font.Color := clNavy;
+    BMHImageDark.Visible := false;
+    BMHImageLight.Visible := true;
+    RUBImageDark.Visible := false;
+    RUBImageLight.Visible := true;
+    UlmImageDark.Visible := false;
+    UlmImageLight.Visible := true;
   end
 end;
 
@@ -238,7 +254,7 @@ end;
 
 procedure TAboutWindow.Image11Click(Sender: TObject);
 begin
-  OpenURL('http://www.zennaware.com');
+  OpenURL('https://cornerstone.assembla.com');
 end;
 
 procedure TAboutWindow.Image12Click(Sender: TObject);
@@ -246,7 +262,7 @@ begin
   OpenURL('http://developer.apple.com/');
 end;
 
-procedure TAboutWindow.Image13Click(Sender: TObject);
+procedure TAboutWindow.PumaImageLightClick(Sender: TObject);
 begin
   OpenURL('http://puma-repository.sf.net');
 end;
@@ -256,17 +272,17 @@ begin
   OpenURL('http://link.medinn.med.uni-muenchen.de');
 end;
 
-procedure TAboutWindow.Image3Click(Sender: TObject);
+procedure TAboutWindow.UlmImageLightClick(Sender: TObject);
 begin
   OpenURL('http://www.uniklinik-ulm.de');
 end;
 
-procedure TAboutWindow.Image4Click(Sender: TObject);
+procedure TAboutWindow.RubImageLightClick(Sender: TObject);
 begin
   OpenURL('http://www.ruhr-uni-bochum.de');
 end;
 
-procedure TAboutWindow.Image5Click(Sender: TObject);
+procedure TAboutWindow.BMHImageLightClick(Sender: TObject);
 begin
   OpenURL('http://www.bergmannsheil.de');
 end;
