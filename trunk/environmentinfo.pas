@@ -40,6 +40,7 @@ function CurrentWidgetSet: String;
 function OSVersion: String;
 function YosemiteORNewer: boolean;
 function SierraOrNewer: boolean;
+function MojaveOrNewer: boolean;
 function XPORNewer: boolean;
 function VistaORNewer: boolean;
 function Win8OrNewer: boolean;
@@ -224,49 +225,49 @@ begin
   {$ENDIF}
 end;
 
-function YosemiteORNewer: boolean;
-  { returns true, if this app runs on Mac OS X 10.10 Yosemite or newer }
-  {$IFDEF LCLcarbon}
+function IsMinMacOS(Maj, Min: integer): boolean;
+  { returns true, if this app runs on a macOS version as specified or newer }
+  {$IFDEF DARWIN}
 var
-  Major, Minor, Bugfix: SInt32;
+  Major, Minor: SInt32;
   theError: SInt16;
   {$ENDIF}
 begin
-  {$IFDEF LCLCocoa}
-  result := true;
-  {$ELSE}
   result := false;
-  {$IFDEF LCLcarbon}
-  theError := Gestalt(gestaltSystemVersionMinor, Minor);
-  if TheError = 0 then
-    if Minor >= 10 then
-      result := true;
-  {$ELSE}
-  result := false;
+  {$IFDEF DARWIN}
+  theError := Gestalt(gestaltSystemVersionMajor, Major);
+  if theError = 0 then
+    theError := Gestalt(gestaltSystemVersionMinor, Minor);
+  if theError = 0 then
+    if (Major = Maj) and (Minor >= Min) or (Major > Maj) then
+      Result := True;
   {$ENDIF}
+end;
+
+function YosemiteORNewer: boolean;
+  { returns true, if this app runs on Mac OS X 10.10 Yosemite or newer }
+begin
+  result := false;
+  {$IFDEF DARWIN}
+  result := IsMinMacOS(10, 10);
   {$ENDIF}
 end;
 
 function SierraOrNewer: boolean;
   { returns true, if this app runs on macOS X 10.12 Sierra or newer }
-{$IFDEF LCLcarbon}
-var
-  Major, Minor, Bugfix: SInt32;
-  theError: SInt16;
-{$ENDIF}
 begin
-  {$IFDEF LCLCocoa}
-  result := true;
-  {$ELSE}
   result := false;
-  {$IFDEF LCLcarbon}
-  theError := Gestalt(gestaltSystemVersionMinor, Major);
-  if theError = 0 then
-    theError := Gestalt(gestaltSystemVersionMinor, Minor);
-  if theError = 0 then
-    if (Major = 10) and (Minor >= 12) or (Major > 10) then
-      Result := True;
+  {$IFDEF DARWIN}
+  result := IsMinMacOS(10, 12);
   {$ENDIF}
+end;
+
+function MojaveOrNewer: boolean;
+  { returns true, if this app runs on macOS X 10.14 Mojave or newer }
+begin
+  result := false;
+  {$IFDEF DARWIN}
+  result := IsMinMacOS(10, 14);
   {$ENDIF}
 end;
 

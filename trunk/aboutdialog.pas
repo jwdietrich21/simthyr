@@ -49,6 +49,7 @@ type
     Image10: TImage;
     Image11: TImage;
     Image12: TImage;
+    Label16: TLabel;
     PumaImageLight: TImage;
     BMHImageDark: TImage;
     PumaImageDark: TImage;
@@ -74,8 +75,6 @@ type
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
-    Label8: TLabel;
-    Label9: TLabel;
     Memo1: TMemo;
     OKButton: TButton;
     BigLogo: TImage;
@@ -211,7 +210,6 @@ begin
     SciCrunchLabel.Font.Color := clSkyBlue;
     Label5.Font.Color := clSkyBlue;
     Label7.Font.Color := clSkyBlue;
-    Label9.Font.Color := clSkyBlue;
     Label15.Font.Color := clSkyBlue;
     BMHImageDark.Visible := true;
     BMHImageLight.Visible := false;
@@ -229,7 +227,6 @@ begin
     SciCrunchLabel.Font.Color := clNavy;
     Label5.Font.Color := clNavy;
     Label7.Font.Color := clNavy;
-    Label9.Font.Color := clNavy;
     Label15.Font.Color := clNavy;
     BMHImageDark.Visible := false;
     BMHImageLight.Visible := true;
