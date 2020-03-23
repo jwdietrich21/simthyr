@@ -7904,31 +7904,10 @@ object AboutWindow: TAboutWindow
         ParentFont = False
         OnClick = Label7Click
       end
-      object Label8: TLabel
-        Left = 25
-        Height = 16
-        Top = 111
-        Width = 250
-        Caption = 'VersionSupport unit by Mike Thompson'
-        ParentColor = False
-      end
-      object Label9: TLabel
-        Cursor = crHandPoint
-        Left = 25
-        Height = 16
-        Top = 127
-        Width = 371
-        Caption = 'http://www.lazarus.freepascal.org/index.php/topic,13957'
-        Font.Color = clNavy
-        Font.Pitch = fpVariable
-        ParentColor = False
-        ParentFont = False
-        OnClick = Label9Click
-      end
       object Label10: TLabel
         Left = 25
         Height = 16
-        Top = 198
+        Top = 176
         Width = 204
         Caption = 'Scientific and technical advise:'
         Font.Pitch = fpVariable
@@ -7940,17 +7919,17 @@ object AboutWindow: TAboutWindow
       object Label11: TLabel
         Left = 25
         Height = 16
-        Top = 222
+        Top = 200
         Width = 368
         AutoSize = False
-        Caption = 'Ulla Mitzdorf, C. Renate Pickardt, Martin Adler'
+        Caption = 'Ulla Mitzdorf, C. Renate Pickardt, Martin Adler,'
         ParentColor = False
         OnClick = Label10Click
       end
       object Label12: TLabel
         Left = 25
         Height = 16
-        Top = 238
+        Top = 216
         Width = 368
         AutoSize = False
         Caption = 'Matthias Holzer, Phil Hess, Martin R. Fischer,'
@@ -7960,17 +7939,17 @@ object AboutWindow: TAboutWindow
       object Label13: TLabel
         Left = 25
         Height = 16
-        Top = 254
+        Top = 232
         Width = 368
         AutoSize = False
-        Caption = 'Rudolf Hörmann, John E. Midgley'
+        Caption = 'Rudolf Hörmann, John E. Midgley, Matthias Müller,'
         ParentColor = False
         OnClick = Label10Click
       end
       object Label14: TLabel
         Left = 24
         Height = 16
-        Top = 150
+        Top = 112
         Width = 107
         Caption = 'PUMA Repository'
         ParentColor = False
@@ -7979,7 +7958,7 @@ object AboutWindow: TAboutWindow
         Cursor = crHandPoint
         Left = 24
         Height = 16
-        Top = 165
+        Top = 127
         Width = 191
         Caption = 'http://puma-repository.sf.net'
         Font.Color = clNavy
@@ -7987,6 +7966,16 @@ object AboutWindow: TAboutWindow
         ParentColor = False
         ParentFont = False
         OnClick = PumaImageLightClick
+      end
+      object Label16: TLabel
+        Left = 25
+        Height = 16
+        Top = 248
+        Width = 368
+        AutoSize = False
+        Caption = 'Julian Berberich, Henrik Glensbo'
+        ParentColor = False
+        OnClick = Label10Click
       end
     end
     object TabSheet4: TTabSheet

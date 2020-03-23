@@ -37,7 +37,7 @@ uses
   {$IFDEF UNIX}
   , Unix
   {$ENDIF}
-  ;
+  , EnvironmentInfo;
 
 const
   iuSystemScript = -1;
@@ -407,7 +407,10 @@ end;
 function DarkTheme: boolean;
 begin
   {$IFDEF LCLCocoa}
-  Result := pos('DARK',UpperCase(GetPrefString('AppleInterfaceStyle'))) > 0;
+  if MojaveOrNewer then
+    Result := pos('DARK',UpperCase(GetPrefString('AppleInterfaceStyle'))) > 0
+  else
+    Result := false;
   {$ELSE}
   Result := false;
   {$ENDIF}
