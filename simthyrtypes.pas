@@ -133,7 +133,7 @@ var
  testflag, tbgflag, signalflag, previewflag, noiseflag, circadianflag: boolean;
  haltsim, runcommand, simready, splashflag, showSettingsAtStartup: boolean;
  G3, t1, x1, x2, x3, x4, x5, x6, xe, ya, t: real;
- a, b, c, d, e, xd, a1, b1, c1, d1, r1, s1, p1, q1, u, v, u1, u2, Det, y1, y2, y3: real;
+ a, b, c, d, e, xd, a1, b1, c1, d1: real;
  dTRH, TRH, TRHi, TRHe, dTSH, TSH, TSHz, dT4, T4, FT4: real;
  dT3z, T3z, T3n, T3R, dT3p, T3p, FT3, Albumin, TBG, TBPA, IBS: real;
  alphaR, betaR, gH, alphaS, betaS, alphaS2, betaS2, kDH, dH, LS, SS, dS, GT, alphaT, betaT, dT: real;

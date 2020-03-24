@@ -20,9 +20,13 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  StdCtrls, SimThyrTypes, SimThyrResources, SimThyrServices, UnitConverter;
+  StdCtrls, SimThyrTypes, SimThyrResources, SimThyrServices, UnitConverter, Math;
 
 type
+
+  TRoots = record
+    x1, x2, x3: extended;
+  end;
 
   { TPrediction }
 
@@ -48,17 +52,58 @@ implementation
 
 function arc(chi: real): real;
   {rechnet Winkel von Grad nach Bogenmaß um}
+  {converts an angle from degree to radian}
 begin
   arc := 2 * pi * (chi / 360);
 end;
 
 function arccosinus(cosphi: real): real;
   {errechnet den Arcus-Cosinus einer Zahl zwischen -1 und 1}
+  {calculates the arcus cosine of a number between -1 and 1}
 var
   arcsin: real;
 begin
   arcsin     := arctan(cosphi / sqrt(1 - sqr(cosphi)));
   arccosinus := arc(90) - arcsin;
+end;
+
+function cbrt(x: real): real;
+  {calculates cubic root of x}
+begin
+  result := sign(x) * power(abs(x), 1/3);
+end;
+
+function SolveCubic(a, b, c, d: extended): TRoots;
+var
+  r, s, p, q, u, v, Det, phi, y1, y2, y3: extended;
+begin
+  r  := c / a - 1 / 3 * sqr(b / a);
+  s  := 2 / 27 * power((b / a), 3) - 1 / 3 * c * b / sqr(a) + d / a;
+  p  := r / 3;
+  q  := s / 2;
+
+  Det := p * p * p + q * q;
+
+  if Det >= 0 then
+  begin {Cardano's formula, one real solution}
+    u  := cbrt(-q + sqrt(Det));
+    v  := cbrt(-q - sqrt(Det));
+    y1 := u + v;        {real solution of Cardano's equation}
+    y2 := -(u + v) / 2; {Real part of the first complex solution}
+    y3 := y2;           {Real part of the second complex solution (=y2)}
+  end
+  else
+  begin {Casus irreducibilis, three real solutions}
+    u   := -q / (sqrt(-p * sqr(-p))); {cos phi}
+    phi := arccosinus(u);            {angle as radian}
+    y1  := 2 * sqrt(-p) * cos(phi / 3);
+    y2  := -2 * sqrt(-p) * cos(phi / 3 + arc(60));
+    y3  := -2 * sqrt(-p) * cos(phi / 3 - arc(60));
+  end;
+
+  result.x1 := y1 - b / (3 * a);
+  result.x2 := y2 - b / (3 * a);
+  result.x3 := y3 - b / (3 * a);
 end;
 
 function TRH0: real;
@@ -72,6 +117,8 @@ end;
 
 procedure PredictEquilibrium;
 {predicts equilibrium values of behavioural parameters like TSH, free T4 or free T3}
+var
+  CubicRoots: TRoots;
 begin
   gActiveModel.Equilibrium.TRH1 := TRH0;
   k1  := gH * alphaS / betaS;
@@ -96,32 +143,12 @@ begin
   c1  := 2 * (D3 * dT * k9 - D3 * dT * k8 - 2 * (1 + SS) * D3 * k8 *
     k9 * k61 - 2 * (1 + SS) * k8 * k9 * k22 * k61);
   d1  := -4 * (1 + SS) * D3 * dT * k8 * k9 * k61;
-  r1  := c1 / a1 - 1 / 3 * sqr(b1 / a1);
-  s1  := 2 / 27 * sqr(b1 / a1) * (b1 / a1) - 1 / 3 * c1 * b1 / sqr(a1) + d1 / a1;
-  p1  := r1 / 3;
-  q1  := s1 / 2;
-  Det := p1 * p1 * p1 + q1 * q1;
-  if Det > 0 then
-  begin {Cardano-Formel, eine reale Lösung}
-    u  := exp(ln(-q1 + sqrt(Det)) * (1 / 3));
-    v  := exp(ln(-q1 - sqrt(Det)) * (1 / 3));
-    y1 := u + v;  {reale Lösung nach der Cardano-Fomel}
-    y2 := -(u + v) / 2; {Realteil der 1. komplexen Lösung}
-    y3 := y2;     {Realteil der 2. komplexen Lösung, identisch mit y2}
-  end
-  else
-  begin {Casus irreducibilis, drei reale Lösungen}
-    u   := -q1 / (sqrt(-p1 * sqr(-p1))); {cos phi}
-    phi := arccosinus(u); {Winkel im Bogenmaß}
-    y1  := 2 * sqrt(-p1) * cos(phi / 3);
-    y2  := -2 * sqrt(-p1) * cos(phi / 3 + arc(60));
-    y3  := -2 * sqrt(-p1) * cos(phi / 3 - arc(60));
-  end;
+  CubicRoots := SolveCubic(a1, b1, c1, d1);
   with gActiveModel.Equilibrium do
   begin
-    TSH1 := y1 - b1 / (3 * a1);
-    TSH2 := y2 - b1 / (3 * a1);
-    TSH3 := y3 - b1 / (3 * a1);
+    TSH1 := CubicRoots.x1;
+    TSH2 := CubicRoots.x2;
+    TSH3 := CubicRoots.x3;
     FT41 := alphaT * GT * TSH1 / (betaT * (dT + TSH1) * (1 + k41 * TBG + k42 * TBPA));
     FT42 := alphaT * GT * TSH2 / (betaT * (dT + TSH2) * (1 + k41 * TBG + k42 * TBPA));
     FT43 := alphaT * GT * TSH3 / (betaT * (dT + TSH3) * (1 + k41 * TBG + k42 * TBPA));
