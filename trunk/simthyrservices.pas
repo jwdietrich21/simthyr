@@ -417,6 +417,7 @@ begin
   finally
     Registry.Free;
   end;
+  Result := false; { TODO -oJWD : Remove this line if design has beeen optimised for Win 10 }
   {$ELSE}
   {$IFDEF LCLCocoa}
   if MojaveOrNewer then
