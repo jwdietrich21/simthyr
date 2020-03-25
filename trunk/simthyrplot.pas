@@ -150,7 +150,8 @@ procedure DrawPlot(empty: boolean);
   {Draws plots from simulated values in gResultMatrix}
 var
   j: integer;
-  theSecond: real;
+  theTime: TDateTime;
+  theYear, theMonth: Word;
 begin
   if (empty or not append) then begin
     if ValuesPlot.Fline1 <> nil then
@@ -182,8 +183,8 @@ begin
       begin
         if not isNaN(gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2]) then
         begin
-          theSecond := AsTime(gResultMatrix[j, t_pos]);
-          AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2] *
+          theTime := AsTime(gResultMatrix[j, t_pos]);
+          AddXY(theTime, gResultMatrix[j, ValuesPlot.ComboBox1.ItemIndex + 2] *
             gParameterFactor[ValuesPlot.ComboBox1.ItemIndex + 2], '', SeriesColor);
         end;
       end;
@@ -199,12 +200,20 @@ begin
       begin
         if not isNaN(gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2]) then
         begin
-          theSecond := AsTime(gResultMatrix[j, t_pos]);
-          AddXY(theSecond, gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] *
+          theTime := AsTime(gResultMatrix[j, t_pos]);
+          AddXY(theTime, gResultMatrix[j, ValuesPlot.ComboBox2.ItemIndex + 2] *
             gParameterFactor[ValuesPlot.ComboBox2.ItemIndex + 2], '', SeriesColor);
         end;
       end;
     end;
+    theYear := YearOf(theTime);
+    theMonth := MonthOf(theTime);
+    if theYear > 1900 then
+      ValuesPlot.TimeAxisSource.DateTimeFormat := '"y"y "m"m "d"D hh:nn:ss'
+    else if theMonth > 1 then
+      ValuesPlot.TimeAxisSource.DateTimeFormat := '"m"m "d"D hh:nn:ss'
+    else
+      ValuesPlot.TimeAxisSource.DateTimeFormat := '"d"D hh:nn:ss';
     graphready := True;
     {$IFNDEF LCLCocoa} // temporary solution for a bug in Cocoa, needs evaluation
     ValuesPlot.Caption := PLOT_TITLE;
