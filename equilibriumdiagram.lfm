@@ -16,7 +16,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
   OnHide = FormHide
   OnPaint = FormPaint
   OnShow = FormShow
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.0.2.0'
   object MainPanel: TPanel
     Left = 48
     Height = 323
@@ -26,16 +26,16 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     BorderSpacing.Top = 20
     BorderStyle = bsSingle
     Caption = 'MainPanel'
-    ClientHeight = 323
-    ClientWidth = 456
+    ClientHeight = 319
+    ClientWidth = 452
     TabOrder = 0
     object EquilibriumChart: TChart
       Cursor = crCross
       Left = 8
-      Height = 305
+      Height = 301
       Hint = 'Drag with mouse to zoom'
       Top = 8
-      Width = 440
+      Width = 436
       AxisList = <      
         item
           Grid.Color = clSilver
@@ -196,20 +196,20 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     Width = 218
     Anchors = [akTop, akRight, akBottom]
     Caption = 'Structure Parameters'
-    ClientHeight = 299
-    ClientWidth = 210
+    ClientHeight = 301
+    ClientWidth = 214
     ParentShowHint = False
     ShowHint = True
     TabOrder = 2
     object SParCombo1: TComboBox
       Left = 8
-      Height = 21
+      Height = 23
       Hint = 'Select a structure parameter to be modified here.'
       Top = 36
-      Width = 194
+      Width = 198
       Anchors = [akTop, akLeft, akRight]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 15
       ItemIndex = 0
       Items.Strings = (
         'Select structure parameter...'
@@ -253,13 +253,13 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object SParCombo2: TComboBox
       Left = 8
-      Height = 21
+      Height = 23
       Hint = 'Select a structure parameter to be modified here.'
       Top = 125
-      Width = 194
+      Width = 198
       Anchors = [akTop, akLeft, akRight]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 15
       ItemIndex = 0
       Items.Strings = (
         'Select structure parameter...'
@@ -303,13 +303,13 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object SParCombo3: TComboBox
       Left = 8
-      Height = 21
+      Height = 23
       Hint = 'Select a structure parameter to be modified here.'
       Top = 212
-      Width = 194
+      Width = 198
       Anchors = [akTop, akLeft, akRight]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 15
       ItemIndex = 0
       Items.Strings = (
         'Select structure parameter...'
@@ -353,7 +353,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object SParEdit1: TEdit
       Left = 160
-      Height = 22
+      Height = 23
       Top = 65
       Width = 44
       Enabled = False
@@ -364,7 +364,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object SParEdit2: TEdit
       Left = 160
-      Height = 22
+      Height = 23
       Top = 151
       Width = 44
       Enabled = False
@@ -374,7 +374,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object SParEdit3: TEdit
       Left = 160
-      Height = 22
+      Height = 23
       Top = 241
       Width = 44
       Enabled = False
@@ -384,19 +384,19 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object SParBoxSubLabel: TLabel
       Left = 8
-      Height = 12
+      Height = 13
       Top = 2
-      Width = 151
+      Width = 156
       Caption = 'for dynamic sensitivity analysis'
-      Font.Height = 10
+      Font.Height = -11
       ParentColor = False
       ParentFont = False
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Height = 15
-    Top = 476
+    Height = 23
+    Top = 468
     Width = 755
     Panels = <>
   end
@@ -407,14 +407,14 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     Width = 686
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Behavioural Parameters'
-    ClientHeight = 72
-    ClientWidth = 678
+    ClientHeight = 74
+    ClientWidth = 682
     TabOrder = 3
     object yMinSpinEdit: TFloatSpinEdit
       Left = 8
-      Height = 16
+      Height = 23
       Hint = 'Minimum of selected structure parameter'
-      Top = 16
+      Top = 11
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 3
@@ -427,10 +427,10 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Value = 0
     end
     object yMaxSpinEdit: TFloatSpinEdit
-      Left = 466
-      Height = 16
+      Left = 470
+      Height = 23
       Hint = 'Maximum of selected structure parameter'
-      Top = 16
+      Top = 11
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 3
@@ -445,13 +445,13 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object yBParCombo: TComboBox
       Left = 88
-      Height = 21
+      Height = 23
       Hint = 'Select the first dependent behavioural parameter whose response to be investigated here.'
       Top = 13
-      Width = 371
+      Width = 375
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 15
       ItemIndex = 0
       Items.Strings = (
         'Select zero isocline 2 (y axis)...'
@@ -467,9 +467,9 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object xMinSpinEdit: TFloatSpinEdit
       Left = 8
-      Height = 16
+      Height = 23
       Hint = 'Minimum of selected structure parameter'
-      Top = 47
+      Top = 42
       Width = 72
       Anchors = [akLeft, akBottom]
       DecimalPlaces = 3
@@ -483,13 +483,13 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     end
     object xBParCombo: TComboBox
       Left = 88
-      Height = 21
+      Height = 23
       Hint = 'Select the second dependent behavioural parameter whose response to be investigated here.'
       Top = 44
-      Width = 371
+      Width = 375
       Anchors = [akLeft, akRight, akBottom]
       ArrowKeysTraverseList = False
-      ItemHeight = 0
+      ItemHeight = 15
       ItemIndex = 0
       Items.Strings = (
         'Select zero isocline 1 (x axis)...'
@@ -504,10 +504,10 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Text = 'Select zero isocline 1 (x axis)...'
     end
     object xMaxSpinEdit: TFloatSpinEdit
-      Left = 466
-      Height = 16
+      Left = 470
+      Height = 23
       Hint = 'Maximum of selected structure parameter'
-      Top = 47
+      Top = 42
       Width = 72
       Anchors = [akRight, akBottom]
       DecimalPlaces = 3
@@ -521,8 +521,8 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       Value = 10
     end
     object yColorBox: TColorBox
-      Left = 548
-      Height = 20
+      Left = 552
+      Height = 22
       Hint = 'Select the color of the selected curve here.'
       Top = 13
       Width = 121
@@ -536,8 +536,8 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
       TabOrder = 6
     end
     object xColorBox: TColorBox
-      Left = 548
-      Height = 20
+      Left = 552
+      Height = 22
       Hint = 'Select the color of the selected curve here.'
       Top = 44
       Width = 121
@@ -617,10 +617,10 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     Visible = False
     ColWidths = (
       41
-      97
-      97
-      97
-      99
+      96
+      96
+      96
+      98
     )
     Cells = (
       5

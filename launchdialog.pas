@@ -172,9 +172,9 @@ procedure TSimulationSettings.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
-    GroupBox1.Color := clDefault;
-    GroupBox2.Color := clDefault;
+    Color := BACKCOLOUR;
+    GroupBox1.Color := BACKCOLOUR;
+    GroupBox2.Color := BACKCOLOUR;
     {$IFDEF LCLCocoa}
     CyclesIcon.Picture := CyclesIconDark.Picture;
     HeavisideIcon.Picture := HeavisideIconDark.Picture;

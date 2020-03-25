@@ -26,7 +26,7 @@ uses
   Classes, SysUtils, Grids, StdCtrls, Dialogs, Forms, SimThyrTypes,
   SimThyrResources, UnitConverter, DIFSupport, DOM, FileUtil, DateUtils
   {$IFDEF WINDOWS}
-  , Windows, Win32Proc
+  , Windows, Win32Proc, registry
   {$ENDIF}
   {$IFDEF DARWIN}
   , MacOSAll
@@ -390,7 +390,34 @@ end;
 
 // IsDarkTheme: Detects if the Dark Theme (true) has been enabled or not (false)
 function DarkTheme: boolean;
+{$IFDEF Windows}
+const
+  KEYPATH = '\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize';
+  KEYNAME = 'AppsUseLightTheme';
+var
+  LightKey: boolean;
+  Registry: TRegistry;
+{$ENDIF}
 begin
+  Result := false;
+  {$IFDEF Windows}
+  Registry := TRegistry.Create;
+  try
+    Registry.RootKey := HKEY_CURRENT_USER;
+    if Registry.OpenKeyReadOnly(KEYPATH) then
+      begin
+        if Registry.ValueExists(KEYNAME) then
+          LightKey := Registry.ReadBool(KEYNAME)
+        else
+          LightKey := true;
+      end
+    else
+      LightKey := true;
+      Result := not LightKey
+  finally
+    Registry.Free;
+  end;
+  {$ELSE}
   {$IFDEF LCLCocoa}
   if MojaveOrNewer then
     Result := pos('DARK',UpperCase(GetPrefString('AppleInterfaceStyle'))) > 0
@@ -398,6 +425,7 @@ begin
     Result := false;
   {$ELSE}
   Result := false;
+  {$ENDIF}
   {$ENDIF}
 end;
 

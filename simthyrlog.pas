@@ -104,8 +104,8 @@ procedure TSimThyrLogWindow.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
-    ValuesGrid.Color := clDefault;
+    Color := BACKCOLOUR;
+    ValuesGrid.Color := BACKCOLOUR;
   end
   else
   begin

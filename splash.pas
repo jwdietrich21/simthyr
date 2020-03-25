@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, StdCtrls, LaunchDialog, EnvironmentInfo, SimThyrServices;
+  ExtCtrls, StdCtrls, LaunchDialog, EnvironmentInfo, SimThyrTypes, SimThyrServices;
 
 type
 
@@ -83,7 +83,7 @@ procedure TSplashScreen.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
+    Color := BACKCOLOUR;
   end
   else
   begin

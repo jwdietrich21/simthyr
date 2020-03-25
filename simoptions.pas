@@ -134,7 +134,7 @@ procedure TSimOptionsDlg.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
+    Color := BACKCOLOUR;
   end
   else
   begin

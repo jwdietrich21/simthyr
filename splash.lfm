@@ -21,7 +21,7 @@ object SplashScreen: TSplashScreen
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.0.2.0'
   Visible = True
   object BigLogo: TImage
     Left = 160
@@ -6724,7 +6724,7 @@ object SplashScreen: TSplashScreen
     Left = 17
     Height = 13
     Top = 104
-    Width = 63
+    Width = 62
     Caption = 'Version x.y.z'
     Font.Height = -11
     Font.Pitch = fpVariable

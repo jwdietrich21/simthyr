@@ -310,7 +310,7 @@ procedure TStructureParameters.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
+    Color := BACKCOLOUR;
     TFCLogo.Picture := ImageContainer1d.Picture;
   end
   else

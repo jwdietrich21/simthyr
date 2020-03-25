@@ -20,7 +20,7 @@ object AboutWindow: TAboutWindow
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.0.2.0'
   Visible = True
   object OKButton: TButton
     Left = 224
@@ -43,8 +43,8 @@ object AboutWindow: TAboutWindow
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Version'
-      ClientHeight = 289
-      ClientWidth = 427
+      ClientHeight = 300
+      ClientWidth = 425
       object BigLogo: TImage
         Left = 168
         Height = 212
@@ -6747,7 +6747,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 92
-        Width = 69
+        Width = 62
         Caption = 'Version x.y.z'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -6758,7 +6758,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 118
-        Width = 81
+        Width = 73
         Caption = '© 1994 – 2020'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -6769,7 +6769,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 132
-        Width = 69
+        Width = 67
         Caption = 'J. W. Dietrich'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -6780,7 +6780,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 156
-        Width = 109
+        Width = 107
         Caption = 'In Cooperation with:'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -6791,7 +6791,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 182
-        Width = 147
+        Width = 142
         Caption = 'Klinikum der LMU München'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -6802,7 +6802,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 196
-        Width = 134
+        Width = 127
         Caption = 'Universitätsklinikum Ulm'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -6813,7 +6813,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 210
-        Width = 135
+        Width = 129
         Caption = 'Ruhr-Universität Bochum'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -6824,7 +6824,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 224
-        Width = 191
+        Width = 184
         Caption = 'Universitätsklinikum Bergmannsheil'
         Font.Height = -11
         Font.Pitch = fpVariable
@@ -6836,7 +6836,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 252
-        Width = 168
+        Width = 156
         Caption = 'simthyr.medical-cybernetics.de'
         Font.Color = clNavy
         Font.Height = -11
@@ -6850,7 +6850,7 @@ object AboutWindow: TAboutWindow
         Left = 17
         Height = 13
         Top = 266
-        Width = 74
+        Width = 69
         Caption = 'simthyr.sf.net'
         Font.Color = clNavy
         Font.Height = -11
@@ -6864,7 +6864,7 @@ object AboutWindow: TAboutWindow
         Left = 272
         Height = 13
         Top = 266
-        Width = 154
+        Width = 140
         Caption = '(SimThyr, RRID:SCR_014351)'
         Font.Color = clNavy
         Font.Height = -11
