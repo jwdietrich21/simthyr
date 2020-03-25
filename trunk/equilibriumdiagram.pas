@@ -1082,9 +1082,9 @@ procedure TEquilibriumDiagramForm.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
-    EquilibriumChart.Color := clDefault;
-    EquilibriumChart.BackColor := clDefault;
+    Color := BACKCOLOUR;
+    EquilibriumChart.Color := BACKCOLOUR;
+    EquilibriumChart.BackColor := BACKCOLOUR;
     EquilibriumChart.AxisList[0].TickColor := clWhite;
     EquilibriumChart.AxisList[1].TickColor := clWhite;
     EquilibriumChart.Frame.Color := clMedGray;

@@ -156,12 +156,12 @@ object AboutModelForm: TAboutModelForm
   OnPaint = FormPaint
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '2.0.6.0'
+  LCLVersion = '2.0.2.0'
   object Label1: TLabel
     Left = 56
-    Height = 16
+    Height = 15
     Top = 104
-    Width = 77
+    Width = 67
     Caption = 'References:'
     Font.Quality = fqAntialiased
     Font.Style = [fsBold]
@@ -181,10 +181,10 @@ object AboutModelForm: TAboutModelForm
   end
   object URLLabel: TLabel
     Cursor = crHandPoint
-    Left = 277
-    Height = 16
+    Left = 321
+    Height = 15
     Top = 80
-    Width = 241
+    Width = 197
     Alignment = taRightJustify
     Anchors = [akTop, akRight]
     Caption = 'http://tfc.medizinische-kybernetik.de'

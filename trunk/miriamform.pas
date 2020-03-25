@@ -206,8 +206,8 @@ procedure TAnnotationForm.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
-    BottomPanel.Color := clDefault;
+    Color := BACKCOLOUR;
+    BottomPanel.Color := BACKCOLOUR;
   end
   else
   begin

@@ -20,7 +20,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
-  LCLIntf, StdCtrls, ExtCtrls, SimThyrServices, MIRIAMForm;
+  LCLIntf, StdCtrls, ExtCtrls, SimThyrTypes, SimThyrServices, MIRIAMForm;
 
 type
 
@@ -66,8 +66,8 @@ procedure TAboutModelForm.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
-    Memo1.Color := clDefault;
+    Color := BACKCOLOUR;
+    Memo1.Color := BACKCOLOUR;
     Memo1.Font.Color := clWhite;
     URLLabel.Font.Color := clSkyBlue;
   end

@@ -427,7 +427,7 @@ begin
     begin
       Pen.Color := clWhite;
       Brush.Color := clDefault;
-      CheckGrid.Color := clDefault;
+      CheckGrid.Color := BACKCOLOUR;
     end
     else
     begin
@@ -442,7 +442,7 @@ begin
     if DarkTheme then
     begin
       Pen.Color := clWhite;
-      Brush.Color := clDefault;
+      Brush.Color := BACKCOLOUR;
     end
     else
     begin
@@ -614,7 +614,7 @@ procedure TTWSensitivityAnalysisForm.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
+    Color := BACKCOLOUR;
     PlotPanel.Color := clDefault;
     LegendPanel.Color := clDefault;
     LegendFrame.Brush.Color := clDefault;

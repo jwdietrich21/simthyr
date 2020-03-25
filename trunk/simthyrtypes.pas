@@ -119,6 +119,12 @@ const
 
  ISO_8601_DATE_FORMAT = 'YYYY-MM-DD"T"hh:nn:ss'; {Date/time format in XML representation}
 
+ {$IFDEF Windows}
+ BACKCOLOUR = clDefault; { TODO -oJWD : Change this and dependent uses in order to support dark mode for Windows 10 }
+ {$ELSE}
+ BACKCOLOUR = clDefault;
+ {$ENDIF}
+
 type
  tResultContent = array[0..RES_MAX_COLS-1] of Str255;
 

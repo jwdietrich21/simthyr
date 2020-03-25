@@ -203,7 +203,7 @@ procedure TAboutWindow.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
+    Color := BACKCOLOUR;
     Memo1.Font.Color := clWhite;
     URL1.Font.Color := clSkyBlue;
     URL2.Font.Color := clSkyBlue;

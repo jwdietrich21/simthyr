@@ -379,19 +379,19 @@ procedure TValuesPlot.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
-    Chart1.Color := clDefault;
-    Chart1.BackColor := clDefault;
-    Chart2.Color := clDefault;
-    Chart2.BackColor := clDefault;
+    Color := BACKCOLOUR;
+    Chart1.Color := BACKCOLOUR;
+    Chart1.BackColor := BACKCOLOUR;
+    Chart2.Color := BACKCOLOUR;
+    Chart2.BackColor := BACKCOLOUR;
     Chart1.AxisList[0].TickColor := clWhite;
     Chart1.AxisList[1].TickColor := clWhite;
     Chart2.AxisList[0].TickColor := clWhite;
     Chart2.AxisList[1].TickColor := clWhite;
     Chart1.Frame.Color := clMedGray;
     Chart2.Frame.Color := clMedGray;
-    PlotPanel1.Color := clDefault;
-    PlotPanel2.Color := clDefault;
+    PlotPanel1.Color := BACKCOLOUR;
+    PlotPanel2.Color := BACKCOLOUR;
   end
   else
   begin

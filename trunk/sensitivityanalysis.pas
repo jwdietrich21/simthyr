@@ -905,13 +905,13 @@ procedure TSensitivityAnalysisForm.FormPaint(Sender: TObject);
 begin
   if DarkTheme then
   begin
-    Color := clDefault;
-    Chart1.Color := clDefault;
-    Chart1.BackColor := clDefault;
+    Color := BACKCOLOUR;
+    Chart1.Color := BACKCOLOUR;
+    Chart1.BackColor := BACKCOLOUR;
     Chart1.AxisList[0].TickColor := clWhite;
     Chart1.AxisList[1].TickColor := clWhite;
     Chart1.Frame.Color := clMedGray;
-    CheckGrid.Color := clDefault;
+    CheckGrid.Color := BACKCOLOUR;
   end
   else
   begin
