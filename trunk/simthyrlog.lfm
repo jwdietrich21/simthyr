@@ -1,7 +1,7 @@
 object SimThyrLogWindow: TSimThyrLogWindow
-  Left = 604
+  Left = 518
   Height = 294
-  Top = 150
+  Top = 151
   Width = 688
   Align = alRight
   AlphaBlend = True
@@ -334,7 +334,6 @@ object SimThyrLogWindow: TSimThyrLogWindow
     ShowHint = True
     TabOrder = 0
     TitleFont.Pitch = fpVariable
-    OnGetCellHint = ValuesGridGetCellHint
     ColWidths = (
       64
       69

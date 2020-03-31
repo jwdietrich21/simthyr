@@ -47,8 +47,6 @@ type
     procedure InitGrid;
     procedure PopupMenu1Popup(Sender: TObject);
     procedure SaveGrid(theFileName: string; theDelimiter: char);
-    procedure ValuesGridGetCellHint(Sender: TObject; ACol, ARow: integer;
-      var HintText: string);
   private
     { private declarations }
   public
@@ -171,20 +169,6 @@ begin
     SetFileName(SimThyrLogWindow, theFileName)
   else
     ShowSaveError;
-end;
-
-procedure TSimThyrLogWindow.ValuesGridGetCellHint(Sender: TObject;
-  ACol, ARow: integer; var HintText: string);
-{ TODO 9 -oJ. W. Dietrich -cbugs : This bug is to be fixed. }
-var
-  theText: string;
-begin
-  { Raises a SIGSEGV exception
-  theText := 'Simulated behavioural parameters of thyroid homeostasis';
-  if ACol > 1 then
-    theText := gParameterLabel[ACol - 1];
-  HintText := theText;
-  }
 end;
 
 initialization
