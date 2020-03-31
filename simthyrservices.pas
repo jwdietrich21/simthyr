@@ -394,6 +394,7 @@ function DarkTheme: boolean;
 const
   KEYPATH = '\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize';
   KEYNAME = 'AppsUseLightTheme';
+  WindowsDarkModeSupported: boolean = false; // may be set to true in future versions
 var
   LightKey: boolean;
   Registry: TRegistry;
@@ -401,23 +402,27 @@ var
 begin
   Result := false;
   {$IFDEF Windows}
-  Registry := TRegistry.Create;
-  try
-    Registry.RootKey := HKEY_CURRENT_USER;
-    if Registry.OpenKeyReadOnly(KEYPATH) then
-      begin
-        if Registry.ValueExists(KEYNAME) then
-          LightKey := Registry.ReadBool(KEYNAME)
-        else
-          LightKey := true;
-      end
-    else
-      LightKey := true;
-      Result := not LightKey
-  finally
-    Registry.Free;
-  end;
-  Result := false; { TODO -oJWD : Remove this line if design has beeen optimised for Win 10 }
+  if WindowsDarkModeSupported then
+  begin
+    Registry := TRegistry.Create;
+    try
+      Registry.RootKey := HKEY_CURRENT_USER;
+      if Registry.OpenKeyReadOnly(KEYPATH) then
+        begin
+          if Registry.ValueExists(KEYNAME) then
+            LightKey := Registry.ReadBool(KEYNAME)
+          else
+            LightKey := true;
+        end
+      else
+        LightKey := true;
+        Result := not LightKey
+    finally
+      Registry.Free;
+    end;
+  end
+  else
+  Result := false;
   {$ELSE}
   {$IFDEF LCLCocoa}
   if MojaveOrNewer then
