@@ -1,4 +1,4 @@
-Copyright (c) 1994-2019, PD Dr. med. Johannes W. Dietrich, M.D., Klinikum der Universitaet Muenchen, Universitaetsklinikum Ulm, and Universitaetsklinikum Bergmannsheil, Ruhr-Universitaet Bochum.
+Copyright (c) 1994-2020, PD Dr. med. Johannes W. Dietrich, M.D., Klinikum der Universitaet Muenchen, Universitaetsklinikum Ulm, and Universitaetsklinikum Bergmannsheil, Ruhr-Universitaet Bochum.
 
 All rights reserved.
 
@@ -16,7 +16,7 @@ We have invested a lot of time and effort in creating SimThyr, please cite it wh
 
 In order to cite SimThyr in publications use:
 
-* J. W. Dietrich (1994-2019). SimThyr, a simulator of thyrotropic feedback control. RRID:SCR_014351. doi: 10.5281/zenodo.1303822. URL http://simthyr.sf.net.
+* J. W. Dietrich (1994-2020). SimThyr, a simulator of thyrotropic feedback control. RRID:SCR_014351. doi: 10.5281/zenodo.1303822. URL http://simthyr.sf.net.
 
 Additionally you might want to cite one of the following papers:
 
@@ -39,3 +39,5 @@ Additionally you might want to cite one of the following papers:
 9. Dietrich JW, Landgrafe-Mende G, Wiora E, Chatzitomaris A, Klein HH., Midgley JE, Hoermann R. (2016) Calculated parameters of thyroid homeostasis: Emerging tools for differential diagnosis and clinical research. Frontiers in Endocrinology. 2016; 7:00057. PMID 27375554. doi: 10.3389/fendo.2016.00057.
 
 10. Chatzitomaris A, Hoermann R, Midley JE, Hering S, Urban A, Dietrich B, Abood A, Klein HH, Dietrich JW (2017). Thyroid Allostasis – Adaptive Responses of Thyrotropic Feedback Control to Conditions of Strain, Stress and Developmental Programming. Frontiers in Endocrinology. 2017; 8:00163. PMID 28775711. doi: 10.3389/fendo.2017.00163
+
+11. Hoermann R, Midgley JEM, Larisch R, Dietrich JW (2018). The role of functional thyroid capacity in pituitary thyroid feedback regulation. Eur J Clin Invest. 2018 Oct;48(10):e13003. doi: 10.1111/eci.13003. PMID: 30022470.
