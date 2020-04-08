@@ -3,7 +3,7 @@ unit PlotOptions;
 { SimThyr Project }
 { A numerical simulator of thyrotropic feedback control }
 
-{ Version 4.0.2 (Merlion) }
+{ Version 4.0.3 (Merlion) }
 
 { (c) J. W. Dietrich, 1994 - 2020 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
