@@ -21,7 +21,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, LResources, Forms, Controls, Graphics, Dialogs,
   StdCtrls, ExtCtrls, ComCtrls, Menus, TAGraph, TAStyles, TASeries, TASources,
-  TATools, TATransformations, TALegend, TALegendPanel,
+  TATools, TATransformations, TALegend, TALegendPanel, Math,
   Clipbrd, Buttons, ColorBox, TADrawerSVG, TADrawUtils, TADrawerCanvas,
   TANavigation, LCLVersion, SimThyrServices, Sensitivityanalysis, SimThyrTypes,
   SimThyrResources, SimThyrPrediction;
@@ -67,6 +67,7 @@ type
     { private declarations }
   public
     { public declarations }
+    ColourChanged: boolean;
   end;
 
   TNumberTriplet = record
@@ -93,6 +94,7 @@ procedure Rotate(ASeries: TBasicPointSeries);
 var
   t: integer;
 begin
+  if ASeries <> nil then
   with ASeries do
   begin
     t := AxisIndexX;
@@ -109,7 +111,7 @@ begin
   tempResult.o := thePar;
   tempResult.l := (1 - amount) * thePar;
   tempResult.u := (1 + amount) * thePar;
-  TestRecord := tempResult;
+  result := tempResult;
 end;
 
 function ResponseVariable: real;
@@ -126,44 +128,46 @@ begin
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + DEPENDEND_VAR_STRING + scaleIndicator;
-      ResponseVariable := 1;
+      result := 1;
     end;
     1:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'TSH' + scaleIndicator;
-      ResponseVariable := gActiveModel.Equilibrium.TSH1;
+      result := gActiveModel.Equilibrium.TSH1;
     end;
     2:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'TT4' + scaleIndicator;
-      ResponseVariable := gActiveModel.Equilibrium.T41;
+      result := gActiveModel.Equilibrium.T41;
     end;
     3:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'FT4' + scaleIndicator;
-      ResponseVariable := gActiveModel.Equilibrium.FT41;
+      result := gActiveModel.Equilibrium.FT41;
     end;
     4:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'TT3' + scaleIndicator;
-      ResponseVariable := gActiveModel.Equilibrium.T31;
+      result := gActiveModel.Equilibrium.T31;
     end;
     5:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'FT3' + scaleIndicator;
-      ResponseVariable := gActiveModel.Equilibrium.FT31;
+      result := gActiveModel.Equilibrium.FT31;
     end;
     6:
     begin
       TornadoPlotForm.Chart1.BottomAxis.Title.Caption :=
         CHANGE_IN_STRING + 'cT3' + scaleIndicator;
-      ResponseVariable := gActiveModel.Equilibrium.T3z1; {cT3}
+      result := gActiveModel.Equilibrium.T3z1; {cT3}
     end;
+    otherwise
+      result := NaN;
   end;
 end;
 
@@ -241,20 +245,23 @@ begin
     {GD1}
     gstrucPar := TestRecord(GD1, 0.2);
     gDepPar.o := ResponseVariable;
-    GD1 := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    GD1 := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'GD1');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      GD1 := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      GD1 := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'GD1');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[1] then
@@ -262,20 +269,23 @@ begin
     {GD2}
     gstrucPar := TestRecord(GD2, 0.2);
     gDepPar.o := ResponseVariable;
-    GD2 := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    GD2 := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'GD2');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      GD2 := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      GD2 := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'GD2');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[2] then
@@ -283,20 +293,23 @@ begin
     {kM1}
     gstrucPar := TestRecord(kM1, 0.2);
     gDepPar.o := ResponseVariable;
-    kM1 := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    kM1 := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'kM1');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      kM1 := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      kM1 := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'kM1');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[3] then
@@ -304,20 +317,23 @@ begin
     {kM2}
     gstrucPar := TestRecord(kM2, 0.2);
     gDepPar.o := ResponseVariable;
-    kM2 := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    kM2 := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'kM2');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      kM2 := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      kM2 := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'kM2');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[4] then
@@ -325,20 +341,23 @@ begin
     {GT}
     gstrucPar := TestRecord(GT, 0.2);
     gDepPar.o := ResponseVariable;
-    GT := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    GT := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'GT');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      GT := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      GT := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'GT');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[5] then
@@ -346,20 +365,23 @@ begin
     {DT}
     gstrucPar := TestRecord(DT, 0.2);
     gDepPar.o := ResponseVariable;
-    DT := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    DT := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'DT');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      DT := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      DT := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'DT');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[6] then
@@ -367,20 +389,23 @@ begin
     {GH}
     gstrucPar := TestRecord(GH, 0.2);
     gDepPar.o := ResponseVariable;
-    GH := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    GH := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'GH');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      GH := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      GH := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'GH');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[7] then
@@ -388,20 +413,23 @@ begin
     {DH}
     gstrucPar := TestRecord(DH, 0.2);
     gDepPar.o := ResponseVariable;
-    DH := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    DH := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'DH');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      DH := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      DH := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'DH');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[8] then
@@ -409,20 +437,23 @@ begin
     {SS}
     gstrucPar := TestRecord(SS, 0.2);
     gDepPar.o := ResponseVariable;
-    SS := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    SS := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'SS');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      SS := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      SS := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'SS');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[9] then
@@ -430,20 +461,23 @@ begin
     {DS}
     gstrucPar := TestRecord(DS, 0.2);
     gDepPar.o := ResponseVariable;
-    DS := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    DS := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'DS');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      DS := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      DS := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'DS');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[10] then
@@ -451,20 +485,23 @@ begin
     {GR}
     gstrucPar := TestRecord(GR, 0.2);
     gDepPar.o := ResponseVariable;
-    GR := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    GR := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'GR');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      GR := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      GR := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'GR');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[11] then
@@ -472,20 +509,23 @@ begin
     {DR}
     gstrucPar := TestRecord(DR, 0.2);
     gDepPar.o := ResponseVariable;
-    DR := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    DR := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'DR');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      DR := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      DR := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'DR');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[12] then
@@ -493,20 +533,23 @@ begin
     {LS}
     gstrucPar := TestRecord(LS, 0.2);
     gDepPar.o := ResponseVariable;
-    LS := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    LS := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'LS');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      LS := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      LS := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'LS');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[13] then
@@ -514,20 +557,23 @@ begin
     {betaS}
     gstrucPar := TestRecord(betaS, 0.2);
     gDepPar.o := ResponseVariable;
-    betaS := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    betaS := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'betaS');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      betaS := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      betaS := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'betaS');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[14] then
@@ -535,20 +581,23 @@ begin
     {betaS2}
     gstrucPar := TestRecord(betaS2, 0.2);
     gDepPar.o := ResponseVariable;
-    betaS2 := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    betaS2 := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'betaS2');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      betaS2 := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      betaS2 := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'betaS2');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[15] then
@@ -556,20 +605,23 @@ begin
     {betaT}
     gstrucPar := TestRecord(betaT, 0.2);
     gDepPar.o := ResponseVariable;
-    betaT := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    betaT := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'betaT');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      betaT := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      betaT := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'betaT');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[16] then
@@ -577,20 +629,23 @@ begin
     {beta31}
     gstrucPar := TestRecord(beta31, 0.2);
     gDepPar.o := ResponseVariable;
-    beta31 := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    beta31 := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'beta31');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      beta31 := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      beta31 := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'beta31');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[17] then
@@ -598,20 +653,23 @@ begin
     {beta32}
     gstrucPar := TestRecord(beta32, 0.2);
     gDepPar.o := ResponseVariable;
-    beta32 := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    beta32 := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'beta32');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      beta32 := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      beta32 := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'beta32');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[18] then
@@ -619,20 +677,23 @@ begin
     {TBG}
     gstrucPar := TestRecord(TBG, 0.2);
     gDepPar.o := ResponseVariable;
-    TBG := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TBG := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'TBG');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      TBG := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TBG := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'TBG');
+      i := i + 3;
+    end;
   end;
 
   if TornadoPlotForm.CheckGroup1.Checked[19] then
@@ -640,20 +701,23 @@ begin
     {TBPA}
     gstrucPar := TestRecord(TBPA, 0.2);
     gDepPar.o := ResponseVariable;
-    TBPA := gStrucPar.l;
-    PredictEquilibrium;
-    gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TBPA := gStrucPar.u;
-    PredictEquilibrium;
-    gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
-    TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
-    TornadoPlotForm.FBar.Add(0, '', clDkGray);
-    RestoreStrucPars;
-    PredictEquilibrium;     {restore previous predictions}
-    TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
-      '|' + IntToStr(i) + '|?|' + 'TBPA');
-    i := i + 3;
+    if gDepPar.o <> Nan then
+    begin
+      TBPA := gStrucPar.l;
+      PredictEquilibrium;
+      gDepPar.l := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TBPA := gStrucPar.u;
+      PredictEquilibrium;
+      gDepPar.u := (ResponseVariable - gDepPar.o) / gDepPar.o * gFracFactor;
+      TornadoPlotForm.FBar.Add(gDepPar.l, '', TornadoPlotForm.DecreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(gDepPar.u, '', TornadoPlotForm.IncreaseColorBox.Selected);
+      TornadoPlotForm.FBar.Add(0, '', clDkGray);
+      RestoreStrucPars;
+      PredictEquilibrium;     {restore previous predictions}
+      TornadoPlotForm.ListChartSource1.DataPoints.Add(IntToStr(i) +
+        '|' + IntToStr(i) + '|?|' + 'TBPA');
+      i := i + 3;
+    end;
   end;
 
   if i = 1 then
@@ -665,6 +729,7 @@ end;
 
 procedure TTornadoPlotForm.FormCreate(Sender: TObject);
 begin
+  ColourChanged := false;
   gDecreaseTitle := '20% ' + DECREASE_STRING;
   gINcreaseTitle := '20% ' + INCREASE_STRING;
   RadioGroup1.ItemIndex := 0;
@@ -682,9 +747,11 @@ begin
     Chart1.AxisList[1].TickColor := clWhite;
     Chart1.Frame.Color := clMedGray;
     IncreaseColorBox.DefaultColorColor := clGray;
-    IncreaseColorBox.Selected := clGray;
     DecreaseColorBox.DefaultColorColor := clWhite;
-    DecreaseColorBox.Selected := clWhite;
+    if not ColourChanged then begin
+      IncreaseColorBox.Selected := clGray;
+      DecreaseColorBox.Selected := clWhite;
+    end;
   end
   else
   begin
@@ -695,9 +762,11 @@ begin
     Chart1.AxisList[1].TickColor := clBlack;
     Chart1.Frame.Color := clBlack;
     IncreaseColorBox.DefaultColorColor := clBlack;
-    IncreaseColorBox.Selected := clBlack;
     DecreaseColorBox.DefaultColorColor := clGray;
-    DecreaseColorBox.Selected := clGray;
+    if not ColourChanged then begin
+      IncreaseColorBox.Selected := clBlack;
+      DecreaseColorBox.Selected := clGray;
+    end;
   end
 end;
 
@@ -713,22 +782,22 @@ end;
 
 procedure TTornadoPlotForm.DecreaseColorBoxChange(Sender: TObject);
 begin
+  ColourChanged := true;
   DrawTornadoPlot;
 end;
 
 procedure TTornadoPlotForm.DepParameterComboChange(Sender: TObject);
 begin
+  ColourChanged := true;
   DrawTornadoPlot;
 end;
 
 procedure TTornadoPlotForm.CopyTornado;
+{$IFDEF UNIX}
 var
-  {$IFDEF UNIX}
   theImage: TPortableNetworkGraphic;
-  {$ELSE}
-  theImage: TBitMap;
-  {$ENDIF}
   theWidth, theHeight: integer;
+{$ENDIF}
 begin
   if Chart1 = nil then
     bell

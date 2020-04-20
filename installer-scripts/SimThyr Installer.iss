@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "SimThyr"
-#define MyAppVersion "4.0.2"
+#define MyAppVersion "4.0.3"
 #define MyAppPublisher "FORMATIO RETICULARIS"
 #define MyAppURL "http://simthyr.sf.net"
 #define MyAppExeName "SimThyr.exe"
@@ -23,7 +23,7 @@ DefaultDirName={autopf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=..\license.txt
-OutputBaseFilename=setup
+OutputBaseFilename=simthyr-setup
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=lowest
