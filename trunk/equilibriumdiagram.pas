@@ -148,7 +148,7 @@ var
   gSelectedSParameter1, gSelectedSParameter2, gSelectedSParameter3: tSParameter;
   gMinSPar1, gMaxSPar1, gMinSPar2, gMaxSPar2, gMinSPar3, gMaxSPar3: real;
   gMidSPar1, gMidSPar2, gMidSPar3: real;
-  gSpinFactor, gTrackFactor1, gTrackFactor2, gTrackFactor3: real;
+  gTrackFactor1, gTrackFactor2, gTrackFactor3: real;
   gResponseCurve1, gResponseCurve2: tResponseCurve;
   gSensitivityMatrix: tResultMatrix;
   gEmptyVector: tParamVector;
@@ -182,7 +182,7 @@ begin
 end;
 
 procedure EnableStrucParEdits;
-{ enables all edit fields, which may have been blocked by trackbar handlers }
+{ enables all edit fields that may have been blocked by trackbar handlers }
 begin
   StructureParametersDlg.GD1Edit.Enabled := true;
   StructureParametersDlg.GD2Edit.Enabled := true;
@@ -909,7 +909,7 @@ begin
 end;
 
 procedure TEquilibriumDiagramForm.GetBParameters;
-{ Check, which behavioural parameters are to be inspected }
+{ Check which behavioural parameters are to be inspected }
 begin
   { Get parameter for x axis: }
   if pos(LowerCase('TSH'), LowerCase(yBParCombo.Text)) > 0 then
@@ -1328,8 +1328,8 @@ begin
       DrawDummyEquilibriumPlot
     else
     begin
-      MinBPar_x := xMinSpinEdit.Value / gSpinFactor;
-      MaxBPar_x := xMaxSpinEdit.Value / gSpinFactor;
+      MinBPar_x := xMinSpinEdit.Value;
+      MaxBPar_x := xMaxSpinEdit.Value;
       EquilibriumChart.LeftAxis.Range.UseMin := true;
       EquilibriumChart.LeftAxis.Range.UseMax := true;
       EquilibriumChart.BottomAxis.Range.UseMin := true;
@@ -1347,13 +1347,15 @@ begin
       begin
         MinBPar_y := MinValue(gResponseCurve1.output) / 10;
         MaxBPar_y := MaxValue(gResponseCurve1.output);
+        yMinSpinEdit.Value := MinBPar_y * ConversionFactor_y;
+        yMaxSpinEdit.Value := MaxBPar_y * ConversionFactor_y;
+        ConversionFactor_y := NaN; // signals to SimSubsystemResponse that input is converted and therefore native
       end
       else
       begin
-        MinBPar_y := yMinSpinEdit.Value / gSpinFactor;
-        MaxBPar_y := yMaxSpinEdit.Value / gSpinFactor;
+        MinBPar_y := yMinSpinEdit.Value;
+        MaxBPar_y := yMaxSpinEdit.Value;
       end;
-      ConversionFactor_y := NaN; // signals to SimSubsystemResponse that input is native
       if MaxBPar_y <> 0 then
         gResponseCurve2 := SimSubsystemResponse(gSelectedBParameter_y, gSelectedBParameter_x, MinBPar_y,
         MaxBPar_y, ConversionFactor_y, ConversionFactor_x)
@@ -1431,7 +1433,6 @@ end;
 
 procedure TEquilibriumDiagramForm.FormCreate(Sender: TObject);
 begin
-  gSpinFactor := 1;
   UpdateEditsfromTrackBars;
   DrawDiagram(true);
 end;
