@@ -1,0 +1,93 @@
+object SimOptionsDlg: TSimOptionsDlg
+  Left = 437
+  Height = 155
+  Top = 449
+  Width = 400
+  ActiveControl = TRHEdit
+  AlphaBlend = True
+  AlphaBlendValue = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsDialog
+  Caption = 'Additional Simulation Options'
+  ClientHeight = 155
+  ClientWidth = 400
+  Color = clWhite
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.12.0'
+  Visible = True
+  object NoiseCheckBox: TCheckBox
+    Left = 32
+    Height = 18
+    Hint = 'Use noise at the level of hypothalamus'
+    Top = 56
+    Width = 140
+    Caption = 'Superimpose noise'
+    Checked = True
+    OnChange = NoiseCheckBoxChange
+    ParentShowHint = False
+    ShowHint = True
+    State = cbChecked
+    TabOrder = 0
+  end
+  object PreviewCheckBox: TCheckBox
+    Left = 32
+    Height = 18
+    Hint = 'Use the calculated equilibrium values as shown in the preview palette as initial hormone levels'
+    Top = 80
+    Width = 326
+    Caption = 'Use calculated equilibrium values as start values'
+    Checked = True
+    OnChange = PreviewCheckBoxChange
+    ParentShowHint = False
+    ShowHint = True
+    State = cbChecked
+    TabOrder = 1
+  end
+  object OKButton: TButton
+    Left = 307
+    Height = 25
+    Top = 113
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = 'OK'
+    Default = True
+    OnClick = OKButtonClick
+    TabOrder = 2
+  end
+  object CancelButton: TButton
+    Left = 219
+    Height = 25
+    Top = 113
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Cancel = True
+    Caption = 'Cancel'
+    OnClick = CancelButtonClick
+    TabOrder = 3
+  end
+  object TRHEdit: TEdit
+    Left = 152
+    Height = 22
+    Top = 16
+    Width = 80
+    TabOrder = 4
+    Text = 'TRHEdit'
+  end
+  object Label1: TLabel
+    Left = 32
+    Height = 17
+    Top = 21
+    Width = 102
+    Caption = 'Mean TRH level:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 240
+    Height = 17
+    Top = 21
+    Width = 28
+    Caption = 'ng/l'
+    ParentColor = False
+  end
+end

@@ -1,0 +1,458 @@
+object PreferencesDialog: TPreferencesDialog
+  Left = 286
+  Height = 385
+  Top = 196
+  Width = 523
+  AlphaBlend = True
+  AlphaBlendValue = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsDialog
+  Caption = 'SimThyr Preferences'
+  ClientHeight = 385
+  ClientWidth = 523
+  Constraints.MinHeight = 350
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.2.6.0'
+  Visible = True
+  object GroupBox1: TGroupBox
+    Left = 24
+    Height = 200
+    Top = 24
+    Width = 477
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Right = 13
+    Caption = 'Units of measurement:'
+    ClientHeight = 178
+    ClientWidth = 469
+    TabOrder = 2
+    object TSHMassPrefixCombo: TComboBox
+      Left = 76
+      Height = 21
+      Top = 14
+      Width = 40
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+      )
+      OnChange = TSHMassPrefixComboChange
+      TabOrder = 0
+    end
+    object Label1: TLabel
+      Left = 12
+      Height = 16
+      Top = 18
+      Width = 25
+      Caption = 'TSH'
+      ParentColor = False
+    end
+    object TSHMassUnitLabel: TLabel
+      Left = 148
+      Height = 16
+      Top = 18
+      Width = 16
+      Caption = 'U/'
+      ParentColor = False
+    end
+    object TSHVolumePrefixCombo: TComboBox
+      Left = 204
+      Height = 21
+      Top = 14
+      Width = 40
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+      )
+      OnChange = TSHVolumePrefixComboChange
+      TabOrder = 1
+    end
+    object TSHVolumeUnitLabel: TLabel
+      Left = 252
+      Height = 16
+      Top = 18
+      Width = 4
+      Caption = 'l'
+      ParentColor = False
+    end
+    object TSHExampleLabel: TLabel
+      Left = 278
+      Height = 16
+      Top = 18
+      Width = 62
+      Caption = 'Example: '
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 12
+      Height = 16
+      Top = 46
+      Width = 25
+      Caption = 'TT4'
+      ParentColor = False
+    end
+    object TT4ExampleLabel: TLabel
+      Left = 278
+      Height = 16
+      Top = 46
+      Width = 62
+      Caption = 'Example: '
+      ParentColor = False
+    end
+    object TT4MassPrefixCombo: TComboBox
+      Left = 76
+      Height = 21
+      Top = 42
+      Width = 40
+      ItemHeight = 0
+      OnChange = TT4MassPrefixComboChange
+      TabOrder = 2
+    end
+    object TT4MassUnitCombo: TComboBox
+      Left = 124
+      Height = 21
+      Top = 42
+      Width = 56
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        'g'
+        'mol'
+      )
+      OnChange = TT4MassUnitComboChange
+      TabOrder = 3
+      Text = 'g'
+    end
+    object Label3: TLabel
+      Left = 12
+      Height = 16
+      Top = 78
+      Width = 23
+      Caption = 'FT4'
+      ParentColor = False
+    end
+    object FT4ExampleLabel: TLabel
+      Left = 278
+      Height = 16
+      Top = 78
+      Width = 62
+      Caption = 'Example: '
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 12
+      Height = 16
+      Top = 110
+      Width = 25
+      Caption = 'TT3'
+      ParentColor = False
+    end
+    object TT3ExampleLabel: TLabel
+      Left = 278
+      Height = 16
+      Top = 110
+      Width = 62
+      Caption = 'Example: '
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 12
+      Height = 16
+      Top = 142
+      Width = 23
+      Caption = 'FT3'
+      ParentColor = False
+    end
+    object FT3ExampleLabel: TLabel
+      Left = 278
+      Height = 16
+      Top = 142
+      Width = 62
+      Caption = 'Example: '
+      ParentColor = False
+    end
+    object TT4VolumePrefixCombo: TComboBox
+      Left = 204
+      Height = 21
+      Top = 42
+      Width = 40
+      ItemHeight = 0
+      OnChange = TT4VolumePrefixComboChange
+      TabOrder = 4
+    end
+    object TT4VolumeUnitLabel: TLabel
+      Left = 252
+      Height = 16
+      Top = 46
+      Width = 4
+      Caption = 'l'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 188
+      Height = 16
+      Top = 46
+      Width = 7
+      Caption = '/'
+      ParentColor = False
+    end
+    object FT4MassPrefixCombo: TComboBox
+      Left = 76
+      Height = 21
+      Top = 74
+      Width = 40
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+      )
+      OnChange = FT4MassPrefixComboChange
+      TabOrder = 5
+    end
+    object FT4MassUnitCombo: TComboBox
+      Left = 124
+      Height = 21
+      Top = 74
+      Width = 56
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        'g'
+        'mol'
+      )
+      OnChange = FT4MassUnitComboChange
+      TabOrder = 6
+      Text = 'g'
+    end
+    object Label7: TLabel
+      Left = 188
+      Height = 16
+      Top = 78
+      Width = 7
+      Caption = '/'
+      ParentColor = False
+    end
+    object FT4VolumePrefixCombo: TComboBox
+      Left = 204
+      Height = 21
+      Top = 74
+      Width = 40
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+      )
+      OnChange = FT4VolumePrefixComboChange
+      TabOrder = 7
+    end
+    object FT4VolumeUnitLabel: TLabel
+      Left = 252
+      Height = 16
+      Top = 78
+      Width = 4
+      Caption = 'l'
+      ParentColor = False
+    end
+    object TT3MassPrefixCombo: TComboBox
+      Left = 76
+      Height = 21
+      Top = 106
+      Width = 40
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+      )
+      OnChange = TT3MassPrefixComboChange
+      TabOrder = 8
+    end
+    object TT3MassUnitCombo: TComboBox
+      Left = 124
+      Height = 21
+      Top = 106
+      Width = 56
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        'g'
+        'mol'
+      )
+      OnChange = TT3MassUnitComboChange
+      TabOrder = 9
+      Text = 'g'
+    end
+    object Label8: TLabel
+      Left = 188
+      Height = 16
+      Top = 110
+      Width = 7
+      Caption = '/'
+      ParentColor = False
+    end
+    object TT3VolumePrefixCombo: TComboBox
+      Left = 204
+      Height = 21
+      Top = 106
+      Width = 40
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+      )
+      OnChange = TT3VolumePrefixComboChange
+      TabOrder = 10
+    end
+    object TT3VolumeUnitLabel: TLabel
+      Left = 252
+      Height = 16
+      Top = 110
+      Width = 4
+      Caption = 'l'
+      ParentColor = False
+    end
+    object FT3MassPrefixCombo: TComboBox
+      Left = 76
+      Height = 21
+      Top = 138
+      Width = 40
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+      )
+      OnChange = FT3MassPrefixComboChange
+      TabOrder = 11
+    end
+    object FT3MassUnitCombo: TComboBox
+      Left = 124
+      Height = 21
+      Top = 138
+      Width = 56
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        'g'
+        'mol'
+      )
+      OnChange = FT3MassUnitComboChange
+      TabOrder = 12
+      Text = 'g'
+    end
+    object Label10: TLabel
+      Left = 188
+      Height = 16
+      Top = 142
+      Width = 7
+      Caption = '/'
+      ParentColor = False
+    end
+    object FT3VolumePrefixCombo: TComboBox
+      Left = 204
+      Height = 21
+      Top = 138
+      Width = 40
+      ItemHeight = 0
+      ItemIndex = 0
+      Items.Strings = (
+        ''
+      )
+      OnChange = FT3VolumePrefixComboChange
+      TabOrder = 13
+    end
+    object FT3VolumeUnitLabel: TLabel
+      Left = 252
+      Height = 16
+      Top = 142
+      Width = 4
+      Caption = 'l'
+      ParentColor = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 24
+    Height = 96
+    Top = 232
+    Width = 477
+    Caption = 'Formats:'
+    ClientHeight = 74
+    ClientWidth = 469
+    TabOrder = 3
+    object NumberFormatEdit: TEdit
+      Left = 76
+      Height = 22
+      Hint = '0: Digit place holder (replaces/fills with 0); 1: Digit place holder (digit in the value replaces #); .: Location of decimal separator; ,: Location of thousands separator e+ and e-: Scientific notation; ; Separates positive, negative and zero numbers, respectively.'
+      Top = 8
+      Width = 168
+      OnChange = NumberFormatEditChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Text = '###,###.00##'
+    end
+    object Label11: TLabel
+      Left = 12
+      Height = 16
+      Top = 13
+      Width = 57
+      Caption = 'Numbers'
+      ParentColor = False
+    end
+    object NumberFormatExampleLabel: TLabel
+      Left = 278
+      Height = 16
+      Top = 13
+      Width = 62
+      Caption = 'Example: '
+      ParentColor = False
+    end
+    object DateTimeFormatEdit: TEdit
+      Left = 76
+      Height = 22
+      Hint = 'D: day; dd: day with leading zero; h: hour; n: minute; s: second'
+      Top = 38
+      Width = 168
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      Text = '"d"D hh:nn:ss'
+    end
+    object Label12: TLabel
+      Left = 12
+      Height = 16
+      Top = 43
+      Width = 31
+      Caption = 'Time'
+      ParentColor = False
+    end
+  end
+  object CancelButton: TButton
+    AnchorSideRight.Control = OKButton
+    Left = 338
+    Height = 25
+    Top = 338
+    Width = 75
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 13
+    BorderSpacing.Bottom = 13
+    Cancel = True
+    Caption = 'Cancel'
+    OnClick = CancelButtonClick
+    TabOrder = 1
+  end
+  object OKButton: TButton
+    Left = 426
+    Height = 25
+    Top = 338
+    Width = 75
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 13
+    BorderSpacing.Bottom = 13
+    Caption = 'OK'
+    Default = True
+    OnClick = OKButtonClick
+    TabOrder = 0
+  end
+end

@@ -1,0 +1,2296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <General>
+      <Flags>
+        <CompatibilityMode Value="True"/>
+      </Flags>
+      <Title Value="SimThyr"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True/PM"/>
+        <TextName Value="net.sf.simthyr"/>
+        <TextDesc Value="SimThyr, a simulator of thyroid homeostasis"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MajorVersionNr Value="4"/>
+      <RevisionNr Value="6"/>
+      <BuildNr Value="939"/>
+      <Attributes pvaDebug="True" pvaPreRelease="True"/>
+      <StringTable Comments="SimThyr, a simulator of thyrotropic feedback control" CompanyName="SPINA Consortium" FileDescription="SimThyr" InternalName="SimThyr 4.0.6 Merlion" LegalCopyright="1994-2022 J. W. Dietrich" LegalTrademarks="SimThyr, KKB, RUB" OriginalFilename="SimThyr" ProductName="SimThyr" ProductVersion="SimThyr 4.0.6"/>
+    </VersionInfo>
+    <MacroValues Count="1">
+      <Macro4 Name="LCLWidgetType" Value="carbon"/>
+    </MacroValues>
+    <BuildModes Count="6" Active="Cocoa">
+      <Item1 Name="Carbon" Default="True"/>
+      <Item2 Name="Cocoa">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="cocoa"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+          </SearchPaths>
+          <Conditionals Value="if TargetOS = &apos;darwin&apos; then
+begin
+  UsageCustomOptions += &apos; -k-macosx_version_min -k10.4&apos;;
+  UsageCustomOptions += &apos; -XR/Developer/SDKs/MacOSX10.4u.sdk/&apos;;
+end;"/>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dGUI"/>
+            <OtherDefines Count="1">
+              <Define0 Value="GUI"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+      <Item3 Name="Win32">
+        <MacroValues Count="1">
+          <Macro2 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+          </SearchPaths>
+          <Conditionals Value="if TargetOS = &apos;darwin&apos; then
+begin
+  UsageCustomOptions += &apos; -k-macosx_version_min -k10.4&apos;;
+  UsageCustomOptions += &apos; -XR/Developer/SDKs/MacOSX10.4u.sdk/&apos;;
+end;"/>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dGUI"/>
+            <OtherDefines Count="1">
+              <Define0 Value="GUI"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item3>
+      <Item4 Name="Win64">
+        <MacroValues Count="1">
+          <Macro2 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+          </SearchPaths>
+          <Conditionals Value="if TargetOS = &apos;darwin&apos; then
+begin
+  UsageCustomOptions += &apos; -k-macosx_version_min -k10.4&apos;;
+  UsageCustomOptions += &apos; -XR/Developer/SDKs/MacOSX10.4u.sdk/&apos;;
+end;"/>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="win64"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dGUI"/>
+            <OtherDefines Count="1">
+              <Define0 Value="GUI"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item4>
+      <Item5 Name="Linux">
+        <MacroValues Count="1">
+          <Macro3 Name="LCLWidgetType" Value="gtk3"/>
+        </MacroValues>
+        <CompilerOptions>
+          <Version Value="11"/>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+          </SearchPaths>
+          <Conditionals Value="if TargetOS = &apos;darwin&apos; then
+begin
+  UsageCustomOptions += &apos; -k-macosx_version_min -k10.4&apos;;
+  UsageCustomOptions += &apos; -XR/Developer/SDKs/MacOSX10.4u.sdk/&apos;;
+end;"/>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+            <TargetCPU Value="x86_64"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="-dGUI"/>
+            <OtherDefines Count="1">
+              <Define0 Value="GUI"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item5>
+      <Item6 Name="Default">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+          </SearchPaths>
+          <Conditionals Value="if TargetOS = &apos;darwin&apos; then
+begin
+  UsageCustomOptions += &apos; -k-macosx_version_min -k10.4&apos;;
+  UsageCustomOptions += &apos; -XR/Developer/SDKs/MacOSX10.4u.sdk/&apos;;
+end;"/>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+            <TargetCPU Value="i386"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowDebugInfo Value="True"/>
+            </Verbosity>
+            <CustomOptions Value="//-k-macosx_version_min
+//-k10.4
+//-XR/Developer/SDKs/MacOSX10.4u.sdk/
+-dGUI"/>
+            <OtherDefines Count="1">
+              <Define0 Value="GUI"/>
+            </OtherDefines>
+          </Other>
+        </CompilerOptions>
+      </Item6>
+      <SharedMatrixOptions Count="4">
+        <Item1 ID="542318232062" Modes="Cocoa" Type="IDEMacro" MacroName="LCLWidgetType" Value="cocoa"/>
+        <Item2 ID="518339041979" Modes="Win32,Win64" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
+        <Item3 ID="855366092992" Modes="Linux" Type="IDEMacro" MacroName="LCLWidgetType" Value="gtk3"/>
+        <Item4 ID="948414872988" Modes="Carbon" Type="IDEMacro" MacroName="LCLWidgetType" Value="carbon"/>
+      </SharedMatrixOptions>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
+    </RunParams>
+    <RequiredPackages Count="3">
+      <Item1>
+        <PackageName Value="fpvectorialpkg"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="TAChartLazarusPkg"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="LCL"/>
+      </Item3>
+    </RequiredPackages>
+    <Units Count="230">
+      <Unit0>
+        <Filename Value="SimThyr.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="81"/>
+        <CursorPos X="28" Y="98"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="simthyrmain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SimThyrToolbar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SimThyrMain"/>
+        <EditorIndex Value="21"/>
+        <TopLine Value="686"/>
+        <CursorPos Y="719"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="plotwindow.pas"/>
+        <ComponentName Value="PlotWin"/>
+        <ResourceBaseClass Value="Form"/>
+        <CursorPos X="50" Y="19"/>
+        <UsageCount Value="18"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="plot.pas"/>
+        <ComponentName Value="PlotWindow"/>
+        <ResourceBaseClass Value="Form"/>
+        <CursorPos X="63" Y="15"/>
+        <UsageCount Value="18"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="prediction.pas"/>
+        <ComponentName Value="PredictionWindow"/>
+        <ResourceBaseClass Value="Form"/>
+        <CursorPos X="31" Y="8"/>
+        <UsageCount Value="18"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="simthyrplot.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="ValuesPlot"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SimThyrPlot"/>
+        <EditorIndex Value="27"/>
+        <TopLine Value="93"/>
+        <CursorPos X="15" Y="109"/>
+        <ExtraEditorCount Value="2"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor1>
+        <ExtraEditor2>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor2>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="simthyrprediction.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Prediction"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SimThyrPrediction"/>
+        <EditorIndex Value="14"/>
+        <CursorPos X="19" Y="2"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="launchdialog.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SimulationSettings"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="LaunchDialog"/>
+        <EditorIndex Value="22"/>
+        <TopLine Value="144"/>
+        <CursorPos X="47" Y="148"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="/Developer/lazarus/lcl/include/customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="1109"/>
+        <CursorPos Y="1131"/>
+        <UsageCount Value="10"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="/Developer/lazarus/lcl/include/control.inc"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="2900"/>
+        <CursorPos Y="2917"/>
+        <UsageCount Value="10"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="/lazarus/components/tachart/tachartaxis.pas"/>
+        <TopLine Value="553"/>
+        <CursorPos Y="572"/>
+        <UsageCount Value="9"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="/lazarus/lcl/alllclunits.pp"/>
+        <TopLine Value="11"/>
+        <CursorPos X="6" Y="30"/>
+        <UsageCount Value="8"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="/lazarus/ide/todolist.pas"/>
+        <TopLine Value="296"/>
+        <CursorPos X="30" Y="315"/>
+        <UsageCount Value="8"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="simthyrlog.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SimThyrLogWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SimThyrLog"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="38" Y="24"/>
+        <UsageCount Value="200"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="simthyrlogwindow.pas"/>
+        <HasResources Value="True"/>
+        <UsageCount Value="18"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="/lazarus/lcl/include/control.inc"/>
+        <TopLine Value="2270"/>
+        <CursorPos Y="2289"/>
+        <UsageCount Value="10"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="simthyrtypes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SimThyrTypes"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="141"/>
+        <CursorPos X="2" Y="158"/>
+        <ExtraEditorCount Value="3"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <TopLine Value="15"/>
+          <CursorPos X="63" Y="20"/>
+        </ExtraEditor1>
+        <ExtraEditor2>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="-1"/>
+          <TopLine Value="11"/>
+          <CursorPos X="17" Y="33"/>
+        </ExtraEditor2>
+        <ExtraEditor3>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor3>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="simthyrguiservices.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SimThyrGUIServices"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="16"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor1>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/classes/classesh.inc"/>
+        <TopLine Value="1958"/>
+        <CursorPos X="10" Y="1976"/>
+        <UsageCount Value="10"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/types.pp"/>
+        <TopLine Value="60"/>
+        <CursorPos X="3" Y="70"/>
+        <UsageCount Value="8"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="showips.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="IPSForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ShowIPS"/>
+        <EditorIndex Value="10"/>
+        <CursorPos X="42" Y="2"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="simulator.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Simulator"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="6"/>
+        <CursorPos Y="2"/>
+        <ExtraEditorCount Value="3"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor1>
+        <ExtraEditor2>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor2>
+        <ExtraEditor3>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor3>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="/usr/local/share/fpcsrc/packages/univint/src/Lists.pas"/>
+        <TopLine Value="186"/>
+        <CursorPos X="21" Y="196"/>
+        <UsageCount Value="8"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="/usr/local/share/fpcsrc/packages/univint/src/MacTypes.pas"/>
+        <TopLine Value="688"/>
+        <CursorPos X="9" Y="698"/>
+        <UsageCount Value="8"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="/Developer/lazarus/lcl/grids.pas"/>
+        <TopLine Value="8658"/>
+        <CursorPos Y="8675"/>
+        <UsageCount Value="10"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="/Developer/lazarus/lcl/include/menuitem.inc"/>
+        <TopLine Value="67"/>
+        <CursorPos Y="85"/>
+        <UsageCount Value="10"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="/Developer/lazarus/lcl/include/menu.inc"/>
+        <TopLine Value="257"/>
+        <CursorPos Y="273"/>
+        <UsageCount Value="10"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="/Developer/lazarus/lcl/forms.pp"/>
+        <UnitName Value="Forms"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="639"/>
+        <CursorPos X="15" Y="653"/>
+        <UsageCount Value="10"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="/Developer/lazarus/lcl/include/buttoncontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="7"/>
+        <CursorPos Y="22"/>
+        <UsageCount Value="10"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="/Developer/lazarus/lcl/include/statuspanels.inc"/>
+        <TopLine Value="3"/>
+        <CursorPos Y="34"/>
+        <UsageCount Value="8"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="/Developer/lazarus/lcl/include/toolbutton.inc"/>
+        <TopLine Value="120"/>
+        <CursorPos Y="139"/>
+        <UsageCount Value="8"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="/Developer/lazarus/lcl/interfaces/carbon/carboncanvas.pp"/>
+        <TopLine Value="1572"/>
+        <CursorPos Y="1591"/>
+        <UsageCount Value="10"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="/Developer/lazarus/lcl/interfaces/carbon/carbonprivate.pp"/>
+        <TopLine Value="1337"/>
+        <CursorPos Y="1365"/>
+        <UsageCount Value="10"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="aboutdialog.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AboutWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="AboutDialog"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="13" Y="2"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="splash.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SplashScreen"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Splash"/>
+        <EditorIndex Value="23"/>
+        <CursorPos X="14" Y="2"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="/Developer/lazarus/lcl/fileutil.pas"/>
+        <UsageCount Value="8"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="/Developer/lazarus/lcl/controls.pp"/>
+        <CursorPos X="50" Y="131"/>
+        <UsageCount Value="8"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="../Temp/SimThyr 3.0/SimThyr.lpr"/>
+        <UsageCount Value="8"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="showaboutmodel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AboutModelForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ShowAboutModel"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="86" Y="80"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="/lazarus/lcl/dynamicarray.pas"/>
+        <TopLine Value="145"/>
+        <CursorPos Y="164"/>
+        <UsageCount Value="9"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="/lazarus/fpc/2.2.4/source/rtl/objpas/classes/classesh.inc"/>
+        <TopLine Value="1374"/>
+        <CursorPos X="3" Y="1357"/>
+        <UsageCount Value="8"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="/Developer/lazarus/lcl/stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="786"/>
+        <CursorPos X="14" Y="800"/>
+        <UsageCount Value="10"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="simthyrprediction.lfm"/>
+        <ComponentName Value="Prediction"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <CursorPos X="106" Y="11"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="simthyrprediction.ppu"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="/Developer/lazarus/components/tachart/tagraph.pas"/>
+        <UnitName Value="TAGraph"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="945"/>
+        <CursorPos X="3" Y="947"/>
+        <UsageCount Value="10"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="/Developer/lazarus/components/tachart/demo/line/Main.pas"/>
+        <UsageCount Value="9"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="/lazarus/components/tachart/tagraph.pas"/>
+        <TopLine Value="714"/>
+        <CursorPos Y="733"/>
+        <UsageCount Value="9"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="/lazarus/lcl/include/customcombobox.inc"/>
+        <TopLine Value="184"/>
+        <CursorPos Y="203"/>
+        <UsageCount Value="9"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="/lazarus/lcl/include/statuspanels.inc"/>
+        <TopLine Value="3"/>
+        <CursorPos Y="34"/>
+        <UsageCount Value="9"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="/lazarus/lcl/include/toolbutton.inc"/>
+        <TopLine Value="120"/>
+        <CursorPos Y="139"/>
+        <UsageCount Value="9"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="/lazarus/lcl/include/customform.inc"/>
+        <TopLine Value="2100"/>
+        <CursorPos Y="2119"/>
+        <UsageCount Value="9"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="/lazarus/lcl/grids.pas"/>
+        <TopLine Value="8211"/>
+        <CursorPos Y="8230"/>
+        <UsageCount Value="10"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="/lazarus/components/tachart/taseries.pas"/>
+        <TopLine Value="477"/>
+        <CursorPos Y="496"/>
+        <UsageCount Value="9"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="/Developer/lazarus/lcl/include/filedialog.inc"/>
+        <TopLine Value="204"/>
+        <CursorPos Y="221"/>
+        <UsageCount Value="11"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="/Developer/lazarus/lcl/dialogs.pp"/>
+        <TopLine Value="194"/>
+        <CursorPos X="45" Y="213"/>
+        <UsageCount Value="10"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="/Developer/lazarus/lcl/lclclasses.pp"/>
+        <TopLine Value="28"/>
+        <CursorPos X="17" Y="45"/>
+        <UsageCount Value="10"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="/Developer/lazarus/lcl/interfaces/carbon/carbonprivatewindow.inc"/>
+        <TopLine Value="1679"/>
+        <CursorPos Y="1696"/>
+        <UsageCount Value="10"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="structureparameters.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="StructureParameters"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="StructureParameters"/>
+        <EditorIndex Value="24"/>
+        <CursorPos X="13" Y="2"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit57>
+      <Unit58>
+        <Filename Value="/Developer/lazarus/lcl/interfaces/carbon/carbongdiobjects.pp"/>
+        <UnitName Value="CarbonGDIObjects"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="1724"/>
+        <CursorPos Y="1735"/>
+        <UsageCount Value="10"/>
+      </Unit58>
+      <Unit59>
+        <Filename Value="/Developer/lazarus/lcl/interfaces/carbon/carbonprivatecommon.inc"/>
+        <TopLine Value="27"/>
+        <CursorPos Y="43"/>
+        <UsageCount Value="10"/>
+      </Unit59>
+      <Unit60>
+        <Filename Value="/Developer/lazarus/lcl/interfaces/carbon/carbonobject.inc"/>
+        <TopLine Value="525"/>
+        <CursorPos Y="541"/>
+        <UsageCount Value="10"/>
+      </Unit60>
+      <Unit61>
+        <Filename Value="../../../&quot;&quot;/home/Johannes/Dokumente/Projekte/SimThyr/SimThyr 3.0/SimThyr.lpi&quot;&quot;"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit61>
+      <Unit62>
+        <Filename Value="/usr/lib/lazarus/lcl/interfaces/gtk2/gtk2winapi.inc"/>
+        <TopLine Value="9150"/>
+        <CursorPos Y="9168"/>
+        <UsageCount Value="10"/>
+      </Unit62>
+      <Unit63>
+        <Filename Value="/usr/lib/lazarus/lcl/include/customform.inc"/>
+        <TopLine Value="860"/>
+        <CursorPos Y="878"/>
+        <UsageCount Value="10"/>
+      </Unit63>
+      <Unit64>
+        <Filename Value="/usr/lib/lazarus/lcl/include/application.inc"/>
+        <TopLine Value="2070"/>
+        <CursorPos Y="2088"/>
+        <UsageCount Value="10"/>
+      </Unit64>
+      <Unit65>
+        <Filename Value="/usr/lib/lazarus/lcl/include/control.inc"/>
+        <TopLine Value="2271"/>
+        <CursorPos Y="2289"/>
+        <UsageCount Value="10"/>
+      </Unit65>
+      <Unit66>
+        <Filename Value="/usr/lib/lazarus/components/tachart/tachartutils.pas"/>
+        <TopLine Value="1125"/>
+        <CursorPos Y="1171"/>
+        <UsageCount Value="10"/>
+      </Unit66>
+      <Unit67>
+        <Filename Value="/usr/lib/lazarus/lcl/interfaces/gtk2/gtk2widgetset.inc"/>
+        <TopLine Value="2366"/>
+        <CursorPos Y="2395"/>
+        <UsageCount Value="10"/>
+      </Unit67>
+      <Unit68>
+        <Filename Value="/usr/lib/lazarus/lcl/include/picture.inc"/>
+        <TopLine Value="575"/>
+        <CursorPos Y="593"/>
+        <UsageCount Value="10"/>
+      </Unit68>
+      <Unit69>
+        <Filename Value="/Developer/lazarus/components/tachart/tacustomseries.pas"/>
+        <TopLine Value="779"/>
+        <CursorPos Y="797"/>
+        <UsageCount Value="10"/>
+      </Unit69>
+      <Unit70>
+        <Filename Value="simoptions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SimOptionsDlg"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="SimOptions"/>
+        <EditorIndex Value="20"/>
+        <CursorPos X="14" Y="2"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit70>
+      <Unit71>
+        <Filename Value="versionsupport.pas"/>
+        <UnitName Value="VersionSupport"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="117"/>
+        <CursorPos X="4" Y="132"/>
+        <UsageCount Value="200"/>
+      </Unit71>
+      <Unit72>
+        <Filename Value="scenariohandler.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ScenarioHandler"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="4"/>
+        <CursorPos X="26" Y="5"/>
+        <ExtraEditorCount Value="2"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor1>
+        <ExtraEditor2>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor2>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit72>
+      <Unit73>
+        <Filename Value="handlepreferences.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PreferencesDialog"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="HandlePreferences"/>
+        <EditorIndex Value="17"/>
+        <TopLine Value="267"/>
+        <CursorPos Y="286"/>
+        <UsageCount Value="200"/>
+        <Bookmarks Count="1">
+          <Item0 Y="539" ID="8"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit73>
+      <Unit74>
+        <Filename Value="/Developer/lazarus/lcl/include/icnsicon.inc"/>
+        <TopLine Value="184"/>
+        <CursorPos Y="200"/>
+        <UsageCount Value="10"/>
+      </Unit74>
+      <Unit75>
+        <Filename Value="handlenotifier.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Notice"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="HandleNotifier"/>
+        <EditorIndex Value="11"/>
+        <CursorPos X="42" Y="2"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit75>
+      <Unit76>
+        <Filename Value="/lazarus/lcl/interfaces/win32/win32object.inc"/>
+        <TopLine Value="363"/>
+        <CursorPos Y="394"/>
+        <UsageCount Value="10"/>
+      </Unit76>
+      <Unit77>
+        <Filename Value="/Developer/lazarus/lcl/interfaces/carbon/carbonedits.pp"/>
+        <TopLine Value="584"/>
+        <CursorPos Y="601"/>
+        <UsageCount Value="10"/>
+      </Unit77>
+      <Unit78>
+        <Filename Value="/Developer/lazarus/lcl/include/customcombobox.inc"/>
+        <TopLine Value="186"/>
+        <CursorPos Y="193"/>
+        <UsageCount Value="10"/>
+      </Unit78>
+      <Unit79>
+        <Filename Value="/Developer/lazarus/lcl/include/wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="6864"/>
+        <CursorPos Y="6879"/>
+        <UsageCount Value="10"/>
+      </Unit79>
+      <Unit80>
+        <Filename Value="/usr/local/share/fpcsrc/packages/univint/src/Folders.pas"/>
+        <TopLine Value="401"/>
+        <CursorPos X="58" Y="420"/>
+        <UsageCount Value="10"/>
+      </Unit80>
+      <Unit81>
+        <Filename Value="/usr/local/share/fpcsrc/packages/univint/src/Files.pas"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="425"/>
+        <CursorPos X="9" Y="440"/>
+        <UsageCount Value="12"/>
+      </Unit81>
+      <Unit82>
+        <Filename Value="/usr/local/share/fpcsrc/packages/fcl-xml/src/xmlwrite.pp"/>
+        <TopLine Value="18"/>
+        <CursorPos X="54" Y="18"/>
+        <UsageCount Value="10"/>
+      </Unit82>
+      <Unit83>
+        <Filename Value="/usr/local/share/fpcsrc/packages/fcl-xml/src/dom.pp"/>
+        <TopLine Value="188"/>
+        <CursorPos Y="188"/>
+        <UsageCount Value="10"/>
+      </Unit83>
+      <Unit84>
+        <Filename Value="/usr/local/share/fpcsrc/packages/univint/src/fp.pas"/>
+        <TopLine Value="86"/>
+        <CursorPos Y="86"/>
+        <UsageCount Value="10"/>
+      </Unit84>
+      <Unit85>
+        <Filename Value="/lazarus/fpc/2.4.4/source/rtl/objpas/sysutils/osutilsh.inc"/>
+        <TopLine Value="27"/>
+        <CursorPos X="10" Y="38"/>
+        <UsageCount Value="10"/>
+      </Unit85>
+      <Unit86>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/sysutils/osutilsh.inc"/>
+        <TopLine Value="10"/>
+        <CursorPos X="25" Y="38"/>
+        <UsageCount Value="10"/>
+      </Unit86>
+      <Unit87>
+        <Filename Value="/usr/local/share/fpcsrc/packages/fcl-xml/src/xmlread.pp"/>
+        <UnitName Value="XMLRead"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="376"/>
+        <CursorPos X="11" Y="391"/>
+        <UsageCount Value="10"/>
+      </Unit87>
+      <Unit88>
+        <Filename Value="/Developer/lazarus/lcl/include/application.inc"/>
+        <TopLine Value="670"/>
+        <CursorPos Y="689"/>
+        <UsageCount Value="10"/>
+      </Unit88>
+      <Unit89>
+        <Filename Value="/Developer/lazarus/lcl/include/fileutil.inc"/>
+        <TopLine Value="23"/>
+        <CursorPos Y="44"/>
+        <UsageCount Value="10"/>
+      </Unit89>
+      <Unit90>
+        <Filename Value="/usr/local/share/fpcsrc/packages/univint/src/cssmkrapi.pas"/>
+        <TopLine Value="314"/>
+        <CursorPos X="120" Y="337"/>
+        <UsageCount Value="10"/>
+      </Unit90>
+      <Unit91>
+        <Filename Value="/Developer/lazarus/lcl/lclmessageglue.pas"/>
+        <TopLine Value="124"/>
+        <CursorPos Y="141"/>
+        <UsageCount Value="10"/>
+      </Unit91>
+      <Unit92>
+        <Filename Value="sensitivityanalysis.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SensitivityAnalysisForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Sensitivityanalysis"/>
+        <EditorIndex Value="18"/>
+        <CursorPos X="34" Y="2"/>
+        <ExtraEditorCount Value="2"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="-1"/>
+          <TopLine Value="578"/>
+          <CursorPos X="78" Y="607"/>
+        </ExtraEditor1>
+        <ExtraEditor2>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor2>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit92>
+      <Unit93>
+        <Filename Value="/lazarus/lcl/include/application.inc"/>
+        <TopLine Value="2059"/>
+        <CursorPos Y="2078"/>
+        <UsageCount Value="10"/>
+      </Unit93>
+      <Unit94>
+        <Filename Value="/Developer/lazarus/components/tachart/taseries.pas"/>
+        <TopLine Value="508"/>
+        <CursorPos Y="525"/>
+        <UsageCount Value="10"/>
+      </Unit94>
+      <Unit95>
+        <Filename Value="sensitivityanalysis.lrs"/>
+        <TopLine Value="49"/>
+        <CursorPos Y="66"/>
+        <UsageCount Value="10"/>
+      </Unit95>
+      <Unit96>
+        <Filename Value="/lazarus/lcl/include/spinedit.inc"/>
+        <TopLine Value="113"/>
+        <CursorPos Y="134"/>
+        <UsageCount Value="10"/>
+      </Unit96>
+      <Unit97>
+        <Filename Value="/Developer/lazarus/lcl/include/rasterimage.inc"/>
+        <TopLine Value="809"/>
+        <CursorPos Y="826"/>
+        <UsageCount Value="10"/>
+      </Unit97>
+      <Unit98>
+        <Filename Value="tornado.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TornadoPlotForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="25"/>
+        <CursorPos X="13" Y="2"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit98>
+      <Unit99>
+        <Filename Value="/Developer/lazarus/lcl/chart.pp"/>
+        <TopLine Value="400"/>
+        <CursorPos Y="417"/>
+        <UsageCount Value="10"/>
+      </Unit99>
+      <Unit100>
+        <Filename Value="/Developer/lazarus/lcl/include/buttons.inc"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="155"/>
+        <CursorPos Y="170"/>
+        <UsageCount Value="10"/>
+      </Unit100>
+      <Unit101>
+        <Filename Value="/Developer/lazarus/components/tachart/tachartaxis.pas"/>
+        <TopLine Value="586"/>
+        <CursorPos Y="603"/>
+        <UsageCount Value="10"/>
+      </Unit101>
+      <Unit102>
+        <Filename Value="/Developer/lazarus/components/tachart/tasources.pas"/>
+        <TopLine Value="149"/>
+        <CursorPos X="33" Y="152"/>
+        <UsageCount Value="10"/>
+      </Unit102>
+      <Unit103>
+        <Filename Value="/Developer/lazarus/components/tachart/talegendpanel.pas"/>
+        <TopLine Value="12"/>
+        <UsageCount Value="10"/>
+      </Unit103>
+      <Unit104>
+        <Filename Value="/Developer/lazarus/lcl/include/picture.inc"/>
+        <TopLine Value="691"/>
+        <CursorPos Y="708"/>
+        <UsageCount Value="10"/>
+      </Unit104>
+      <Unit105>
+        <Filename Value="/lazarus/lcl/lclclasses.pp"/>
+        <TopLine Value="19"/>
+        <CursorPos X="29" Y="36"/>
+        <UsageCount Value="10"/>
+      </Unit105>
+      <Unit106>
+        <Filename Value="/lazarus/fpc/2.6.0/source/rtl/objpas/classes/classesh.inc"/>
+        <CursorPos X="53" Y="645"/>
+        <UsageCount Value="10"/>
+      </Unit106>
+      <Unit107>
+        <Filename Value="difsupport.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DIFSupport"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="200"/>
+      </Unit107>
+      <Unit108>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/classes/stringl.inc"/>
+        <TopLine Value="1127"/>
+        <CursorPos X="7" Y="1142"/>
+        <UsageCount Value="10"/>
+      </Unit108>
+      <Unit109>
+        <Filename Value="/Developer/lazarus/lcl/include/customcheckgroup.inc"/>
+        <TopLine Value="72"/>
+        <CursorPos Y="89"/>
+        <UsageCount Value="10"/>
+      </Unit109>
+      <Unit110>
+        <Filename Value="/lazarus/lcl/controls.pp"/>
+        <TopLine Value="31"/>
+        <CursorPos X="36" Y="44"/>
+        <UsageCount Value="10"/>
+      </Unit110>
+      <Unit111>
+        <Filename Value="help.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="HelpWindow"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="9"/>
+        <CursorPos X="28" Y="2"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit111>
+      <Unit112>
+        <Filename Value="/Developer/lazarus/lcl/lclintf.pas"/>
+        <TopLine Value="65"/>
+        <CursorPos X="10" Y="82"/>
+        <UsageCount Value="10"/>
+      </Unit112>
+      <Unit113>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/sysutils/sysstrh.inc"/>
+        <TopLine Value="227"/>
+        <CursorPos X="3" Y="244"/>
+        <UsageCount Value="10"/>
+      </Unit113>
+      <Unit114>
+        <Filename Value="todo.txt"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos Y="2"/>
+        <UsageCount Value="200"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit114>
+      <Unit115>
+        <Filename Value="simthyrmain.lfm"/>
+        <TopLine Value="1376"/>
+        <CursorPos X="29" Y="1396"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit115>
+      <Unit116>
+        <Filename Value="/Developer/lazarus/lcl/lcltype.pp"/>
+        <TopLine Value="557"/>
+        <CursorPos X="73" Y="587"/>
+        <UsageCount Value="10"/>
+      </Unit116>
+      <Unit117>
+        <Filename Value="/vs-chs01/lazarus/lcl/include/toolbutton.inc"/>
+        <CursorPos Y="954"/>
+        <UsageCount Value="10"/>
+      </Unit117>
+      <Unit118>
+        <Filename Value="/vs-chs01/lazarus/lcl/interfaces/win32/win32callback.inc"/>
+        <TopLine Value="2714"/>
+        <CursorPos Y="2736"/>
+        <UsageCount Value="10"/>
+      </Unit118>
+      <Unit119>
+        <Filename Value="/vs-chs01/lazarus/lcl/include/customform.inc"/>
+        <TopLine Value="190"/>
+        <CursorPos Y="219"/>
+        <UsageCount Value="10"/>
+      </Unit119>
+      <Unit120>
+        <Filename Value="/vs-chs01/lazarus/lcl/include/application.inc"/>
+        <TopLine Value="1077"/>
+        <CursorPos Y="1095"/>
+        <UsageCount Value="10"/>
+      </Unit120>
+      <Unit121>
+        <Filename Value="/vs-chs01/lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutilsh.inc"/>
+        <TopLine Value="23"/>
+        <CursorPos X="26" Y="41"/>
+        <UsageCount Value="10"/>
+      </Unit121>
+      <Unit122>
+        <Filename Value="/vs-chs01/lazarus/fpc/2.6.2/source/rtl/objpas/sysutils/osutil.inc"/>
+        <TopLine Value="91"/>
+        <CursorPos X="10" Y="109"/>
+        <UsageCount Value="10"/>
+      </Unit122>
+      <Unit123>
+        <Filename Value="/vs-chs01/lazarus/fpc/2.6.2/source/rtl/win/sysutils.pp"/>
+        <TopLine Value="1105"/>
+        <CursorPos X="28" Y="1108"/>
+        <UsageCount Value="10"/>
+      </Unit123>
+      <Unit124>
+        <Filename Value="/vs-chs01/lazarus/fpc/2.6.2/source/packages/fcl-xml/src/xmlread.pp"/>
+        <TopLine Value="34"/>
+        <CursorPos X="45" Y="44"/>
+        <UsageCount Value="10"/>
+      </Unit124>
+      <Unit125>
+        <Filename Value="/vs-chs01/lazarus/fpc/2.6.2/source/packages/fcl-xml/src/dom.pp"/>
+        <TopLine Value="207"/>
+        <CursorPos X="23" Y="224"/>
+        <UsageCount Value="10"/>
+      </Unit125>
+      <Unit126>
+        <Filename Value="/vs-chs01/lazarus/lcl/grids.pas"/>
+        <TopLine Value="3544"/>
+        <CursorPos Y="3562"/>
+        <UsageCount Value="10"/>
+      </Unit126>
+      <Unit127>
+        <Filename Value="/vs-chs01/lazarus/fpc/2.6.2/source/rtl/inc/objpash.inc"/>
+        <TopLine Value="177"/>
+        <CursorPos X="22" Y="194"/>
+        <UsageCount Value="10"/>
+      </Unit127>
+      <Unit128>
+        <Filename Value="/vs-chs01/lazarus/components/tachart/taintervalsources.pas"/>
+        <TopLine Value="391"/>
+        <CursorPos Y="409"/>
+        <UsageCount Value="10"/>
+      </Unit128>
+      <Unit129>
+        <Filename Value="/vs-chs01/lazarus/lcl/forms.pp"/>
+        <TopLine Value="33"/>
+        <CursorPos X="3" Y="46"/>
+        <UsageCount Value="10"/>
+      </Unit129>
+      <Unit130>
+        <Filename Value="/vs-chs01/lazarus/lcl/lclclasses.pp"/>
+        <TopLine Value="19"/>
+        <CursorPos X="10" Y="32"/>
+        <UsageCount Value="10"/>
+      </Unit130>
+      <Unit131>
+        <Filename Value="/vs-chs01/lazarus/fpc/2.6.2/source/rtl/objpas/classes/classesh.inc"/>
+        <TopLine Value="1595"/>
+        <CursorPos X="14" Y="1610"/>
+        <UsageCount Value="10"/>
+      </Unit131>
+      <Unit132>
+        <Filename Value="simthyrresources.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SimThyrResources"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor1>
+        <UsageCount Value="200"/>
+      </Unit132>
+      <Unit133>
+        <Filename Value="unitconverter.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UnitConverter"/>
+        <EditorIndex Value="16"/>
+        <CursorPos X="10" Y="2"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor1>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit133>
+      <Unit134>
+        <Filename Value="/vs-chs01/lazarus/lcl/include/control.inc"/>
+        <TopLine Value="3225"/>
+        <CursorPos Y="3239"/>
+        <UsageCount Value="11"/>
+      </Unit134>
+      <Unit135>
+        <Filename Value="twsensitivityanalysis.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TWSensitivityAnalysisForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="TWSensitivityanalysis"/>
+        <EditorIndex Value="26"/>
+        <CursorPos X="9" Y="2"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor1>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit135>
+      <Unit136>
+        <Filename Value="/vs-chs01/lazarus/fpc/2.6.4/source/rtl/inc/objpash.inc"/>
+        <TopLine Value="178"/>
+        <CursorPos X="23" Y="192"/>
+        <UsageCount Value="10"/>
+      </Unit136>
+      <Unit137>
+        <Filename Value="/Developer/lazarus/components/tachart/tafuncseries.pas"/>
+        <TopLine Value="1586"/>
+        <CursorPos Y="1602"/>
+        <UsageCount Value="11"/>
+      </Unit137>
+      <Unit138>
+        <Filename Value="/vs-chs01/lazarus/fpc/2.6.4/source/rtl/objpas/math.pp"/>
+        <TopLine Value="405"/>
+        <CursorPos X="10" Y="419"/>
+        <UsageCount Value="10"/>
+      </Unit138>
+      <Unit139>
+        <Filename Value="/Developer/lazarus/lcl/lclversion.pas"/>
+        <UnitName Value="LCLVersion"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="32"/>
+        <CursorPos X="24" Y="41"/>
+        <UsageCount Value="11"/>
+      </Unit139>
+      <Unit140>
+        <Filename Value="/vs-chs01/lazarus/fpc/2.6.4/source/packages/fcl-xml/src/dom.pp"/>
+        <TopLine Value="245"/>
+        <CursorPos X="14" Y="265"/>
+        <UsageCount Value="10"/>
+      </Unit140>
+      <Unit141>
+        <Filename Value="/Developer/lazarus/lcl/graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="541"/>
+        <CursorPos X="3" Y="555"/>
+        <UsageCount Value="10"/>
+      </Unit141>
+      <Unit142>
+        <Filename Value="/Developer/lazarus/components/tachart/tadrawersvg.pas"/>
+        <TopLine Value="51"/>
+        <CursorPos X="3" Y="21"/>
+        <UsageCount Value="11"/>
+      </Unit142>
+      <Unit143>
+        <Filename Value="/Developer/lazarus/components/tachart/tadrawutils.pas"/>
+        <UnitName Value="TADrawUtils"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="99"/>
+        <CursorPos X="3" Y="68"/>
+        <UsageCount Value="11"/>
+      </Unit143>
+      <Unit144>
+        <Filename Value="/usr/local/share/fpcsrc/packages/fcl-image/src/fpimage.pp"/>
+        <CursorPos X="13" Y="16"/>
+        <UsageCount Value="10"/>
+      </Unit144>
+      <Unit145>
+        <Filename Value="/Developer/lazarus/components/fpvectorial/fpvectorial.pas"/>
+        <UsageCount Value="10"/>
+      </Unit145>
+      <Unit146>
+        <Filename Value="/vs-chs01/lazarus/components/tachart/tacustomsource.pas"/>
+        <TopLine Value="677"/>
+        <CursorPos Y="698"/>
+        <UsageCount Value="10"/>
+      </Unit146>
+      <Unit147>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/sysutils/sysstr.inc"/>
+        <TopLine Value="801"/>
+        <CursorPos X="3" Y="804"/>
+        <UsageCount Value="10"/>
+      </Unit147>
+      <Unit148>
+        <Filename Value="/lazarus/components/tachart/tacustomsource.pas"/>
+        <TopLine Value="672"/>
+        <CursorPos Y="698"/>
+        <UsageCount Value="10"/>
+      </Unit148>
+      <Unit149>
+        <Filename Value="/lazarus/lcl/include/wincontrol.inc"/>
+        <TopLine Value="5310"/>
+        <CursorPos Y="5327"/>
+        <UsageCount Value="10"/>
+      </Unit149>
+      <Unit150>
+        <Filename Value="/lazarus/lcl/lclmessageglue.pas"/>
+        <TopLine Value="125"/>
+        <CursorPos Y="144"/>
+        <UsageCount Value="10"/>
+      </Unit150>
+      <Unit151>
+        <Filename Value="/lazarus/lcl/interfaces/win32/win32callback.inc"/>
+        <TopLine Value="1029"/>
+        <CursorPos Y="1048"/>
+        <UsageCount Value="10"/>
+      </Unit151>
+      <Unit152>
+        <Filename Value="/lazarus/components/tachart/tatypes.pas"/>
+        <TopLine Value="551"/>
+        <CursorPos Y="570"/>
+        <UsageCount Value="10"/>
+      </Unit152>
+      <Unit153>
+        <Filename Value="/lazarus/lcl/interfaces/win32/win32wsstdctrls.pp"/>
+        <TopLine Value="467"/>
+        <CursorPos Y="485"/>
+        <UsageCount Value="10"/>
+      </Unit153>
+      <Unit154>
+        <Filename Value="/lazarus/components/tachart/tacustomseries.pas"/>
+        <TopLine Value="172"/>
+        <CursorPos X="14" Y="189"/>
+        <UsageCount Value="10"/>
+      </Unit154>
+      <Unit155>
+        <Filename Value="equilibriumdiagram.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="EquilibriumDiagramForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Equilibriumdiagram"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="24" Y="2"/>
+        <ExtraEditorCount Value="3"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor1>
+        <ExtraEditor2>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor2>
+        <ExtraEditor3>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor3>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit155>
+      <Unit156>
+        <Filename Value="/lazarus/fpc/2.6.4/source/rtl/objpas/math.pp"/>
+        <TopLine Value="1792"/>
+        <CursorPos X="4" Y="1798"/>
+        <UsageCount Value="10"/>
+      </Unit156>
+      <Unit157>
+        <Filename Value="/lazarus/lcl/stdctrls.pp"/>
+        <TopLine Value="750"/>
+        <CursorPos X="18" Y="772"/>
+        <UsageCount Value="10"/>
+      </Unit157>
+      <Unit158>
+        <Filename Value="/lazarus/lcl/lcltype.pp"/>
+        <TopLine Value="47"/>
+        <CursorPos X="56" Y="53"/>
+        <UsageCount Value="10"/>
+      </Unit158>
+      <Unit159>
+        <Filename Value="miriamform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="AnnotationForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MIRIAMForm"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="18" Y="2"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit159>
+      <Unit160>
+        <Filename Value="/Developer/lazarus 1.4.2/lcl/lclintf.pas"/>
+        <UnitName Value="LCLIntf"/>
+        <TopLine Value="63"/>
+        <CursorPos X="10" Y="80"/>
+        <UsageCount Value="10"/>
+      </Unit160>
+      <Unit161>
+        <Filename Value="/lazarus/fpc/2.6.4/source/rtl/inc/objpash.inc"/>
+        <TopLine Value="174"/>
+        <CursorPos X="29" Y="192"/>
+        <UsageCount Value="10"/>
+      </Unit161>
+      <Unit162>
+        <Filename Value="/lazarus/fpc/2.6.4/source/rtl/inc/objpas.inc"/>
+        <TopLine Value="265"/>
+        <CursorPos X="9" Y="267"/>
+        <UsageCount Value="10"/>
+      </Unit162>
+      <Unit163>
+        <Filename Value="/lazarus/fpc/2.6.4/source/rtl/objpas/sysutils/datih.inc"/>
+        <TopLine Value="148"/>
+        <CursorPos X="26" Y="176"/>
+        <UsageCount Value="10"/>
+      </Unit163>
+      <Unit164>
+        <Filename Value="/lazarus/fpc/2.6.4/source/rtl/objpas/sysutils/dati.inc"/>
+        <TopLine Value="1378"/>
+        <CursorPos X="26" Y="1380"/>
+        <UsageCount Value="10"/>
+      </Unit164>
+      <Unit165>
+        <Filename Value="/lazarus/fpc/2.6.4/source/rtl/objpas/sysutils/sysinth.inc"/>
+        <TopLine Value="39"/>
+        <CursorPos X="42" Y="57"/>
+        <UsageCount Value="10"/>
+      </Unit165>
+      <Unit166>
+        <Filename Value="/lazarus/lcl/forms.pp"/>
+        <UnitName Value="Forms"/>
+        <TopLine Value="594"/>
+        <CursorPos X="15" Y="612"/>
+        <UsageCount Value="10"/>
+      </Unit166>
+      <Unit167>
+        <Filename Value="/lazarus/fpc/2.6.4/source/rtl/objpas/dateutil.inc"/>
+        <TopLine Value="2439"/>
+        <CursorPos X="3" Y="2453"/>
+        <UsageCount Value="10"/>
+      </Unit167>
+      <Unit168>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/strutils.pp"/>
+        <TopLine Value="152"/>
+        <CursorPos X="82" Y="169"/>
+        <UsageCount Value="10"/>
+      </Unit168>
+      <Unit169>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/inc/systemh.inc"/>
+        <TopLine Value="1072"/>
+        <CursorPos X="11" Y="1089"/>
+        <UsageCount Value="10"/>
+      </Unit169>
+      <Unit170>
+        <Filename Value="/lazarus/fpc/3.0.0/source/packages/rtl-objpas/src/inc/strutils.pp"/>
+        <TopLine Value="151"/>
+        <CursorPos X="82" Y="169"/>
+        <UsageCount Value="10"/>
+      </Unit170>
+      <Unit171>
+        <Filename Value="/lazarus/fpc/3.0.0/source/rtl/objpas/sysutils/sysstrh.inc"/>
+        <TopLine Value="226"/>
+        <CursorPos X="3" Y="244"/>
+        <UsageCount Value="10"/>
+      </Unit171>
+      <Unit172>
+        <Filename Value="/vs-chs01/lazarus/lcl/interfaces/win32/win32proc.pp"/>
+        <TopLine Value="132"/>
+        <CursorPos Y="157"/>
+        <UsageCount Value="10"/>
+      </Unit172>
+      <Unit173>
+        <Filename Value="/lazarus/fpc/3.0.0/source/packages/fcl-xml/src/dom.pp"/>
+        <UnitName Value="DOM"/>
+        <UsageCount Value="10"/>
+      </Unit173>
+      <Unit174>
+        <Filename Value="/lazarus/lcl/dialogs.pp"/>
+        <UnitName Value="Dialogs"/>
+        <TopLine Value="491"/>
+        <CursorPos X="10" Y="509"/>
+        <UsageCount Value="10"/>
+      </Unit174>
+      <Unit175>
+        <Filename Value="/lazarus/lcl/include/brush.inc"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="7"/>
+        <CursorPos Y="38"/>
+        <UsageCount Value="10"/>
+      </Unit175>
+      <Unit176>
+        <Filename Value="/lazarus/lcl/include/pen.inc"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="426"/>
+        <CursorPos Y="445"/>
+        <UsageCount Value="10"/>
+      </Unit176>
+      <Unit177>
+        <Filename Value="/lazarus/lcl/colorbox.pas"/>
+        <UnitName Value="ColorBox"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="373"/>
+        <CursorPos Y="392"/>
+        <UsageCount Value="11"/>
+      </Unit177>
+      <Unit178>
+        <Filename Value="/lazarus/lcl/include/customedit.inc"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="560"/>
+        <CursorPos Y="578"/>
+        <UsageCount Value="10"/>
+      </Unit178>
+      <Unit179>
+        <Filename Value="/lazarus/fpc/3.0.0/source/rtl/objpas/math.pp"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="449"/>
+        <CursorPos X="10" Y="468"/>
+        <UsageCount Value="10"/>
+      </Unit179>
+      <Unit180>
+        <Filename Value="/lazarus/lcl/include/picture.inc"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="727"/>
+        <CursorPos Y="745"/>
+        <UsageCount Value="10"/>
+      </Unit180>
+      <Unit181>
+        <Filename Value="/lazarus/lcl/include/filedialog.inc"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="197"/>
+        <CursorPos Y="215"/>
+        <UsageCount Value="10"/>
+      </Unit181>
+      <Unit182>
+        <Filename Value="/Developer/lazarus/lcl/include/customimage.inc"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="6"/>
+        <CursorPos Y="31"/>
+        <UsageCount Value="10"/>
+      </Unit182>
+      <Unit183>
+        <Filename Value="/usr/local/share/fpcsrc/rtl/objpas/sysutils/filutilh.inc"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="10" Y="149"/>
+        <UsageCount Value="10"/>
+      </Unit183>
+      <Unit184>
+        <Filename Value="/lazarus/fpc/3.0.0/source/packages/fcl-base/src/syncobjs.pp"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="28"/>
+        <CursorPos X="17" Y="46"/>
+        <UsageCount Value="10"/>
+      </Unit184>
+      <Unit185>
+        <Filename Value="/lazarus/fpc/3.0.0/source/packages/fcl-xml/src/xmlread.pp"/>
+        <UnitName Value="XMLRead"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="373"/>
+        <CursorPos X="11" Y="391"/>
+        <UsageCount Value="10"/>
+      </Unit185>
+      <Unit186>
+        <Filename Value="/Developer/lazarus/lcl/include/screen.inc"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="655"/>
+        <CursorPos X="17" Y="655"/>
+        <UsageCount Value="10"/>
+      </Unit186>
+      <Unit187>
+        <Filename Value="/Developer/lazarus/lcl/include/winapih.inc"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="132"/>
+        <CursorPos X="10" Y="147"/>
+        <UsageCount Value="10"/>
+      </Unit187>
+      <Unit188>
+        <Filename Value="/usr/local/share/fpcsrc/packages/fcl-web/src/base/fphttpclient.pp"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="101"/>
+        <CursorPos X="25" Y="125"/>
+        <UsageCount Value="10"/>
+      </Unit188>
+      <Unit189>
+        <Filename Value="/usr/local/share/fpcsrc/packages/fcl-xml/src/xmltextreader.pp"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="78"/>
+        <CursorPos X="3" Y="93"/>
+        <UsageCount Value="10"/>
+      </Unit189>
+      <Unit190>
+        <Filename Value="plotoptions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PlotOptionsForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="PlotOptions"/>
+        <EditorIndex Value="12"/>
+        <CursorPos X="15" Y="2"/>
+        <UsageCount Value="101"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit190>
+      <Unit191>
+        <Filename Value="/lazarus/fpc/3.0.2/source/packages/fcl-xml/src/xmlread.pp"/>
+        <UnitName Value="XMLRead"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="410"/>
+        <CursorPos X="3" Y="414"/>
+        <UsageCount Value="10"/>
+      </Unit191>
+      <Unit192>
+        <Filename Value="/usr/local/share/fpcsrc/packages/univint/src/GestaltEqu.pas"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="361"/>
+        <CursorPos X="10" Y="278"/>
+        <UsageCount Value="10"/>
+      </Unit192>
+      <Unit193>
+        <Filename Value="/Developer/lazarus/lcl/interfacebase.pp"/>
+        <UnitName Value="InterfaceBase"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="33" Y="15"/>
+        <UsageCount Value="11"/>
+      </Unit193>
+      <Unit194>
+        <Filename Value="/Developer/lazarus/components/lazutils/lazversion.pas"/>
+        <UnitName Value="LazVersion"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="15"/>
+        <CursorPos X="3" Y="23"/>
+        <UsageCount Value="10"/>
+      </Unit194>
+      <Unit195>
+        <Filename Value="/usr/lib/lazarus/1.6.2/lcl/lclversion.pas"/>
+        <UnitName Value="LCLVersion"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="9"/>
+        <CursorPos X="26" Y="25"/>
+        <UsageCount Value="10"/>
+      </Unit195>
+      <Unit196>
+        <Filename Value="environmentinfo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="EnvironmentInfo"/>
+        <EditorIndex Value="19"/>
+        <CursorPos X="24" Y="2"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="-1"/>
+          <WindowIndex Value="1"/>
+        </ExtraEditor1>
+        <UsageCount Value="79"/>
+        <Loaded Value="True"/>
+      </Unit196>
+      <Unit197>
+        <Filename Value="/lazarus/lcl/interfacebase.pp"/>
+        <UnitName Value="InterfaceBase"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="46" Y="34"/>
+        <UsageCount Value="10"/>
+      </Unit197>
+      <Unit198>
+        <Filename Value="/lazarus/lcl/lclplatformdef.pas"/>
+        <UnitName Value="LCLPlatformDef"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="20" Y="12"/>
+        <UsageCount Value="10"/>
+      </Unit198>
+      <Unit199>
+        <Filename Value="/lazarus/fpc/3.0.4/source/packages/fcl-res/src/versiontypes.pp"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="202"/>
+        <UsageCount Value="10"/>
+      </Unit199>
+      <Unit200>
+        <Filename Value="/lazarus/lcl/lclversion.pas"/>
+        <UnitName Value="LCLVersion"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="10"/>
+      </Unit200>
+      <Unit201>
+        <Filename Value="/usr/local/share/fpcsrc/packages/fcl-res/src/versiontypes.pp"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="15"/>
+        <UsageCount Value="10"/>
+      </Unit201>
+      <Unit202>
+        <Filename Value="/usr/local/share/fpcsrc/packages/fcl-res/src/versionresource.pp"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="10"/>
+      </Unit202>
+      <Unit203>
+        <Filename Value="/lazarus/lcl/graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="40"/>
+        <CursorPos X="26" Y="59"/>
+        <UsageCount Value="10"/>
+      </Unit203>
+      <Unit204>
+        <Filename Value="/lazarus/lcl/graphtype.pp"/>
+        <UnitName Value="GraphType"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="297"/>
+        <CursorPos X="3" Y="37"/>
+        <UsageCount Value="10"/>
+      </Unit204>
+      <Unit205>
+        <Filename Value="/Developer/lazarus/components/fpvectorial/fpvectorialpkg.pas"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <UsageCount Value="10"/>
+      </Unit205>
+      <Unit206>
+        <Filename Value="/lazarus/lcl/include/customcontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="80"/>
+        <CursorPos Y="99"/>
+        <UsageCount Value="10"/>
+      </Unit206>
+      <Unit207>
+        <Filename Value="/Developer/lazarus/lcl/interfaces/carbon/carbonbars.pp"/>
+        <UnitName Value="CarbonBars"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="2" Y="16"/>
+        <UsageCount Value="10"/>
+      </Unit207>
+      <Unit208>
+        <Filename Value="/Developer/lazarus/lcl/intfgraphics.pas"/>
+        <UnitName Value="IntfGraphics"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="3627"/>
+        <CursorPos Y="3642"/>
+        <UsageCount Value="10"/>
+      </Unit208>
+      <Unit209>
+        <Filename Value="/Developer/lazarus/lcl/include/customcontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="84"/>
+        <CursorPos Y="100"/>
+        <UsageCount Value="10"/>
+      </Unit209>
+      <Unit210>
+        <Filename Value="/Developer/lazarus/components/fpvectorial/odtvectorialwriter.pas"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="200"/>
+        <CursorPos X="3" Y="213"/>
+        <UsageCount Value="10"/>
+      </Unit210>
+      <Unit211>
+        <Filename Value="/lazarus/fpc/3.0.4/source/packages/fcl-registry/src/registry.pp"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="75"/>
+        <CursorPos X="25" Y="104"/>
+        <UsageCount Value="10"/>
+      </Unit211>
+      <Unit212>
+        <Filename Value="/lazarus/fpc/3.0.4/source/packages/fcl-registry/src/winreg.inc"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="167"/>
+        <CursorPos X="3" Y="172"/>
+        <UsageCount Value="10"/>
+      </Unit212>
+      <Unit213>
+        <Filename Value="/lazarus/lcl/interfaces/cocoa/cocoa_extra.pas"/>
+        <UnitName Value="Cocoa_Extra"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="2" Y="18"/>
+        <UsageCount Value="10"/>
+      </Unit213>
+      <Unit214>
+        <Filename Value="../../../../../../../lazarus/components/tachart/tagraph.pas"/>
+        <UnitName Value="TAGraph"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1088"/>
+        <CursorPos Y="1107"/>
+        <UsageCount Value="10"/>
+      </Unit214>
+      <Unit215>
+        <Filename Value="../../../../../../../lazarus/lcl/include/customcombobox.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="199"/>
+        <CursorPos Y="207"/>
+        <UsageCount Value="10"/>
+      </Unit215>
+      <Unit216>
+        <Filename Value="../../../../../../../lazarus/lcl/include/control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2224"/>
+        <CursorPos Y="2242"/>
+        <UsageCount Value="10"/>
+      </Unit216>
+      <Unit217>
+        <Filename Value="../../../../../../../lazarus/lcl/include/wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5394"/>
+        <CursorPos Y="5412"/>
+        <UsageCount Value="10"/>
+      </Unit217>
+      <Unit218>
+        <Filename Value="../../../../../../../lazarus/lcl/lclmessageglue.pas"/>
+        <UnitName Value="LCLMessageGlue"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="124"/>
+        <CursorPos Y="143"/>
+        <UsageCount Value="10"/>
+      </Unit218>
+      <Unit219>
+        <Filename Value="../../../../../../../lazarus/lcl/interfaces/win32/win32callback.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2658"/>
+        <CursorPos Y="2677"/>
+        <UsageCount Value="10"/>
+      </Unit219>
+      <Unit220>
+        <Filename Value="../../../../../../../lazarus/lcl/interfaces/win32/win32wsstdctrls.pp"/>
+        <UnitName Value="Win32WSStdCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="558"/>
+        <CursorPos Y="576"/>
+        <UsageCount Value="10"/>
+      </Unit220>
+      <Unit221>
+        <Filename Value="/Applications/Lazarus/lcl/lclversion.pas"/>
+        <UnitName Value="LCLVersion"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2"/>
+        <CursorPos X="16" Y="17"/>
+        <UsageCount Value="10"/>
+      </Unit221>
+      <Unit222>
+        <Filename Value="simthyrbaseservices.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="SimThyrBaseServices"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="148"/>
+        <CursorPos X="19" Y="181"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit222>
+      <Unit223>
+        <Filename Value="predictor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Predictor"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="25" Y="2"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+      </Unit223>
+      <Unit224>
+        <Filename Value="/Applications/Lazarus/components/lazutils/easylazfreetype.pas"/>
+        <UnitName Value="EasyLazFreeType"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1208"/>
+        <CursorPos Y="1228"/>
+        <UsageCount Value="10"/>
+      </Unit224>
+      <Unit225>
+        <Filename Value="/Applications/Lazarus/components/ideintf/idewindowintf.pas"/>
+        <UnitName Value="IDEWindowIntf"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="3" Y="26"/>
+        <UsageCount Value="11"/>
+      </Unit225>
+      <Unit226>
+        <Filename Value="/Applications/Lazarus/components/buildintf/ideoptionsintf.pas"/>
+        <UnitName Value="IDEOptionsIntf"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="393"/>
+        <UsageCount Value="10"/>
+      </Unit226>
+      <Unit227>
+        <Filename Value="/Applications/Lazarus/lcl/graphics.pp"/>
+        <UnitName Value="Graphics"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="65" Y="62"/>
+        <UsageCount Value="11"/>
+      </Unit227>
+      <Unit228>
+        <Filename Value="/Applications/Lazarus/lcl/interfaces/cocoa/cocoautils.pas"/>
+        <UnitName Value="CocoaUtils"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="28" Y="12"/>
+        <UsageCount Value="10"/>
+      </Unit228>
+      <Unit229>
+        <Filename Value="/Applications/Lazarus/lcl/include/control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2941"/>
+        <CursorPos X="158" Y="2951"/>
+        <UsageCount Value="10"/>
+      </Unit229>
+    </Units>
+    <OtherDefines Count="1">
+      <Define0 Value="GUI"/>
+    </OtherDefines>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="53" Column="16" TopLine="37"/>
+      </Position1>
+      <Position2>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="225" Column="21" TopLine="208"/>
+      </Position2>
+      <Position3>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="302" Column="19" TopLine="285"/>
+      </Position3>
+      <Position4>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="151" Column="22" TopLine="141"/>
+      </Position4>
+      <Position5>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="152" Column="18" TopLine="141"/>
+      </Position5>
+      <Position6>
+        <Filename Value="SimThyr.lpr"/>
+        <Caret Line="98" Column="28" TopLine="81"/>
+      </Position6>
+      <Position7>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="150" TopLine="144"/>
+      </Position7>
+      <Position8>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="490" Column="44" TopLine="470"/>
+      </Position8>
+      <Position9>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="495" Column="72" TopLine="470"/>
+      </Position9>
+      <Position10>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="175" Column="3" TopLine="158"/>
+      </Position10>
+      <Position11>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="486" Column="21" TopLine="470"/>
+      </Position11>
+      <Position12>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="492" Column="21" TopLine="470"/>
+      </Position12>
+      <Position13>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="158" Column="2" TopLine="141"/>
+      </Position13>
+      <Position14>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="175" Column="3" TopLine="158"/>
+      </Position14>
+      <Position15>
+        <Filename Value="simthyrtypes.pas"/>
+        <Caret Line="158" Column="2" TopLine="141"/>
+      </Position15>
+      <Position16>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="174" Column="93" TopLine="158"/>
+      </Position16>
+      <Position17>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="490" Column="40" TopLine="470"/>
+      </Position17>
+      <Position18>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="484" TopLine="457"/>
+      </Position18>
+      <Position19>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="221" TopLine="204"/>
+      </Position19>
+      <Position20>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="222" TopLine="204"/>
+      </Position20>
+      <Position21>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="481" TopLine="465"/>
+      </Position21>
+      <Position22>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="221" TopLine="204"/>
+      </Position22>
+      <Position23>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="481" TopLine="465"/>
+      </Position23>
+      <Position24>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="484" TopLine="465"/>
+      </Position24>
+      <Position25>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="432" TopLine="479"/>
+      </Position25>
+      <Position26>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="488" Column="47" TopLine="479"/>
+      </Position26>
+      <Position27>
+        <Filename Value="launchdialog.pas"/>
+        <Caret Line="148" Column="47" TopLine="144"/>
+      </Position27>
+      <Position28>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="66" Column="16" TopLine="49"/>
+      </Position28>
+      <Position29>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="484" TopLine="472"/>
+      </Position29>
+      <Position30>
+        <Filename Value="simulator.pas"/>
+        <Caret Line="487" Column="25" TopLine="467"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+    </SearchPaths>
+    <Conditionals Value="if TargetOS = &apos;darwin&apos; then
+begin
+  UsageCustomOptions += &apos; -k-macosx_version_min -k10.4&apos;;
+  UsageCustomOptions += &apos; -XR/Developer/SDKs/MacOSX10.4u.sdk/&apos;;
+end;"/>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+      <VerifyObjMethodCallValidity Value="True"/>
+      <TargetCPU Value="i386"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+        <DebugInfoType Value="dsDwarf2Set"/>
+        <StripSymbols Value="True"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <Verbosity>
+        <ShowDebugInfo Value="True"/>
+      </Verbosity>
+      <CustomOptions Value="//-k-macosx_version_min
+//-k10.4
+//-XR/Developer/SDKs/MacOSX10.4u.sdk/
+-dGUI"/>
+      <OtherDefines Count="1">
+        <Define0 Value="GUI"/>
+      </OtherDefines>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkData"/>
+        <WatchData Value="MaxSpinEdit2.Value"/>
+        <WatchScope Value="wpsGlobal"/>
+        <WatchKind Value="wpkWrite"/>
+        <InitialEnabled Value="False"/>
+      </Item1>
+    </BreakPoints>
+    <Watches Count="4">
+      <Item1>
+        <Expression Value="i"/>
+      </Item1>
+      <Item2>
+        <Expression Value="tmax"/>
+      </Item2>
+      <Item3>
+        <Expression Value="tmax_unit"/>
+      </Item3>
+      <Item4>
+        <Expression Value="nmax"/>
+      </Item4>
+    </Watches>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

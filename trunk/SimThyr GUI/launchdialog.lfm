@@ -1,0 +1,383 @@
+object SimulationSettings: TSimulationSettings
+  Left = 607
+  Height = 357
+  Hint = 'Enter basic settings for the simulation here.'
+  Top = 256
+  Width = 560
+  HorzScrollBar.Visible = False
+  VertScrollBar.Visible = False
+  ActiveControl = RunTimeEdit
+  AlphaBlendValue = 220
+  Anchors = []
+  BorderIcons = []
+  Caption = 'Simulation Settings'
+  ClientHeight = 357
+  ClientWidth = 560
+  Constraints.MinHeight = 350
+  Constraints.MinWidth = 560
+  Font.Pitch = fpVariable
+  OnCreate = FormCreate
+  OnDeactivate = FormDeactivate
+  OnMouseWheelUp = FormMouseWheelUp
+  OnPaint = FormPaint
+  OnShow = FormShow
+  Position = poScreenCenter
+  ShowHint = True
+  ShowInTaskBar = stNever
+  LCLVersion = '2.2.6.0'
+  object TitleLabel: TLabel
+    Left = 113
+    Height = 16
+    Top = 16
+    Width = 245
+    Caption = 'Basic settings for next simulation run:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 16
+    Height = 56
+    Top = 88
+    Width = 531
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 1
+    BorderSpacing.Top = 1
+    BorderSpacing.Right = 1
+    BorderSpacing.Bottom = 1
+    ClientHeight = 29
+    ClientWidth = 521
+    ParentColor = False
+    TabOrder = 0
+    object RunTimeEdit: TEdit
+      Left = 95
+      Height = 22
+      Hint = 'Enter a numeric value for duration of simulation'
+      Top = 6
+      Width = 80
+      Alignment = taRightJustify
+      OnChange = RunTimeEditChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Text = '1'
+    end
+    object RunTimeUnit: TComboBox
+      Left = 209
+      Height = 20
+      Hint = 'Unit of measurement for simulation time'
+      Top = 6
+      Width = 155
+      ItemHeight = 19
+      ItemIndex = 1
+      Items.Strings = (
+        'Hours'
+        'Days'
+        'Weeks'
+      )
+      TabOrder = 1
+      Text = 'Days'
+    end
+    object DurationLabel: TLabel
+      Left = 16
+      Height = 16
+      Top = 10
+      Width = 56
+      Caption = 'Duration:'
+      ParentColor = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 16
+    Height = 87
+    Hint = 'Additional scheduled functions'
+    Top = 193
+    Width = 531
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 1
+    BorderSpacing.Top = 1
+    BorderSpacing.Right = 1
+    BorderSpacing.Bottom = 1
+    ClientHeight = 60
+    ClientWidth = 521
+    ParentColor = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    object TestOffRadio: TRadioButton
+      Left = 97
+      Height = 18
+      Hint = 'No test signal'
+      Top = 6
+      Width = 46
+      Caption = 'Off'
+      Checked = True
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      TabStop = True
+    end
+    object TestTRHRadio: TRadioButton
+      Left = 209
+      Height = 18
+      Hint = 'Simulates TRH test'
+      Top = 6
+      Width = 100
+      Caption = '200 µg TRH'
+      OnChange = TestTRHRadioChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object TestTBGRadio: TRadioButton
+      Left = 329
+      Height = 18
+      Hint = 'Simulates a rise in thyroxine binding globulin level, e. g. in pregnancy'
+      Top = 6
+      Width = 110
+      Caption = '50% TBG rise'
+      OnChange = TestTBGRadioChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+    end
+    object TestTimeEdit: TEdit
+      Left = 95
+      Height = 22
+      Hint = 'Enter a numeric value for begin of test signal'
+      Top = 35
+      Width = 80
+      Alignment = taRightJustify
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+      Text = '0'
+    end
+    object TestTimeUnit: TComboBox
+      Left = 209
+      Height = 20
+      Hint = 'Unit of measurement for the time of the beginning of test signal'
+      Top = 35
+      Width = 155
+      Enabled = False
+      ItemHeight = 19
+      ItemIndex = 0
+      Items.Strings = (
+        'Hours'
+        'Days'
+        'Weeks'
+      )
+      TabOrder = 4
+      Text = 'Hours'
+    end
+    object StartLabel: TLabel
+      Left = 16
+      Height = 16
+      Top = 39
+      Width = 55
+      Caption = 'Starts at:'
+      ParentColor = False
+    end
+  end
+  object OptButton: TButton
+    Left = 16
+    Height = 25
+    Hint = 'Additional simulation options'
+    Top = 311
+    Width = 152
+    Anchors = [akLeft, akBottom]
+    Caption = 'Additional Options...'
+    OnClick = OptButtonClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+  end
+  object StartButton: TButton
+    Left = 472
+    Height = 25
+    Hint = 'Run simulation'
+    Top = 311
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = 'Start'
+    Default = True
+    ModalResult = 1
+    OnClick = StartButtonClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+  end
+  object CancelButton: TButton
+    Left = 384
+    Height = 25
+    Top = 311
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    OnClick = CancelButtonClick
+    TabOrder = 4
+  end
+  object ThyroidIcon: TImage
+    Left = 32
+    Height = 32
+    Top = 8
+    Width = 32
+    OnClick = ThyroidIconClick
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869637401000089504E47
+      0D0A1A0A0000000D4948445200000020000000200806000000737A7AF4000000
+      1974455874536F6674776172650047726170686963436F6E766572746572355D
+      48EE0000011649444154789CEC94DB0DC2300C45B3095F8CC204ECD09D3A5607
+      6005560844C290BA7E5C276DF989254B5513FB1EDB49521A364CB13CA75CDC5A
+      3F5C3C4FB28807A7E633728AE27B00ACC4DFFE4808C06443A0D5F0CA8BE30046
+      00528D241E0398DB01447123DF36F013B4DCAE3A80914CABFE79410058BBA200
+      3C47BD373C7F4BC48413AAC7E6CF367B6780C6E4158177000CD2AE95748561F1
+      2F007A0D5962ADED7100C557E24207C4EA230F106FAD789A05F10D80E27100EE
+      468BBDF6E3005A72EF9F71F5A007C804E8741A130470240424BE2700CDFE6F00
+      FC9684AC0EEE11870F5F4B1728396F77BDDE05A025E79559EB4DE26494982A59
+      EEBFEFE2F5BEFA7F73D51A84E4DEBE5DC4879D652F000000FFFF03007AACF5F4
+      385C52B10000000049454E44AE426082
+    }
+    Transparent = True
+  end
+  object CyclesIcon: TImage
+    Left = 32
+    Height = 32
+    Top = 56
+    Width = 32
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B47726170686963AD00000089504E47
+      0D0A1A0A0000000D4948445200000020000000200804000000D973B27F000000
+      7449444154789CECD4DB0A4011100550FFFFD34EF220C65CB63DC5C34991DB32
+      84520B97C8E98F0373958E4043C070E933900408480206562217D8EDD0233281
+      5EC8F008008A60F4DF3B03EDAA0280B6A235261BF089C05BB088E06BD408E03F
+      6899D76202B22B36EA20FDC00BC0070000FFFF03007750FC2E9B7C0E62000000
+      0049454E44AE426082
+    }
+    Transparent = True
+  end
+  object HeavisideIcon: TImage
+    Left = 32
+    Height = 32
+    Top = 161
+    Width = 32
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869639300000089504E47
+      0D0A1A0A0000000D4948445200000020000000200804000000D973B27F000000
+      5A49444154789C62F8CF4019A4503BF50C60F83FB00640D80367008237500640
+      28F23C40C00090283E4C1F170C7C188CBA6070BA00446035005762C561277A52
+      260F92A513AB0B483500D338B2E1A80183C10000000000FFFF03006067FC2E3B
+      FB68180000000049454E44AE426082
+    }
+    Transparent = True
+  end
+  object Label2: TLabel
+    Left = 113
+    Height = 16
+    Top = 64
+    Width = 94
+    Caption = 'Simulated time:'
+    ParentColor = False
+    OnClick = Label2Click
+  end
+  object Label3: TLabel
+    Left = 113
+    Height = 16
+    Top = 169
+    Width = 121
+    Caption = 'Optional test signal:'
+    ParentColor = False
+    OnClick = Label2Click
+  end
+  object ParsButton: TButton
+    Left = 176
+    Height = 25
+    Hint = 'Modify structure pareameters'
+    Top = 311
+    Width = 168
+    Anchors = [akLeft, akBottom]
+    Caption = 'Structure Parameters...'
+    OnClick = ParsButtonClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 5
+  end
+  object SimThyrLabel: TLabel
+    Left = 461
+    Height = 16
+    Top = 16
+    Width = 86
+    Anchors = [akTop, akRight]
+    Caption = 'SimThyr x.y.z'
+    Font.Color = 12615808
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object CyclesIconDark: TImage
+    Left = 10000
+    Height = 32
+    Top = 56
+    Width = 32
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869639900000089504E47
+      0D0A1A0A0000000D4948445200000020000000200804000000D973B27F000000
+      6049444154789CEC94C10A00200843FBFF9FAE73387543890EEEEA78856CAE35
+      0AB42FB5E01A208348017684CD2EA208B081F1224403A41FE0D0BEDD011E083B
+      48469CA70CC811C4139185EC8167136A842225B7B0F9268E7ED6010000FFFF03
+      0038AE837DC98462C50000000049454E44AE426082
+    }
+    Transparent = True
+  end
+  object CyclesIconLight: TImage
+    Left = 10050
+    Height = 32
+    Top = 56
+    Width = 32
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B47726170686963AD00000089504E47
+      0D0A1A0A0000000D4948445200000020000000200804000000D973B27F000000
+      7449444154789CECD4DB0A4011100550FFFFD34EF220C65CB63DC5C34991DB32
+      84520B97C8E98F0373958E4043C070E933900408480206562217D8EDD0233281
+      5EC8F008008A60F4DF3B03EDAA0280B6A235261BF089C05BB088E06BD408E03F
+      6899D76202B22B36EA20FDC00BC0070000FFFF03007750FC2E9B7C0E62000000
+      0049454E44AE426082
+    }
+    Transparent = True
+  end
+  object HeavisideIconDark: TImage
+    Left = 1000
+    Height = 32
+    Top = 161
+    Width = 32
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869638B00000089504E47
+      0D0A1A0A0000000D4948445200000020000000200804000000D973B27F000000
+      5249444154789C6260182EE0FFFF8135E03F180C9C01FFE160A00C8018428166
+      DC068044F161FAB8802203465D308C5D8035D7109158510CC030E43F9980549F
+      E27601A90690AD79140C4E00000000FFFF0300D6ECB14FD745DAF70000000049
+      454E44AE426082
+    }
+    Transparent = True
+    Visible = False
+  end
+  object HeavisideIconLight: TImage
+    Left = 1050
+    Height = 32
+    Top = 161
+    Width = 32
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869639300000089504E47
+      0D0A1A0A0000000D4948445200000020000000200804000000D973B27F000000
+      5A49444154789C62F8CF4019A4503BF50C60F83FB00640D80367008237500640
+      28F23C40C00090283E4C1F170C7C188CBA6070BA00446035005762C561277A52
+      260F92A513AB0B483500D338B2E1A80183C10000000000FFFF03006067FC2E3B
+      FB68180000000049454E44AE426082
+    }
+    Transparent = True
+    Visible = False
+  end
+end

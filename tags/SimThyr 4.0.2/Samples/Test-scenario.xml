@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scenario modelversion="10.0">
+  <MIRIAM>
+    <Name>Model 10</Name>
+    <Reference>Dietrich, J. W.; Tesche, A.; Pickardt, C. R.; Mitzdorf, U. (2004), Thyrotropic Feedback Control: Evidence For An Additional Ultrashort Feedback Loop From Fractal Analysis., Cybernetics and Systems 35 (4), 315-331. http://dx.doi.org/10.1080/01969720490443354</Reference>
+    <Species>Homo sapiens (NCBI Taxonomy ID 9606)</Species>
+    <Creators>Dietrich, Tesche, Pickardt and Mitzdorf</Creators>
+    <Created>2001-08-23T13:07:05</Created>
+    <LastModified>2015-12-21T09:57:13</LastModified>
+    <Terms>Creative Commons Attributions License 4.0 (CC BY 4.0)</Terms>
+  </MIRIAM>
+  <strucpars>
+    <alphaR>0.4</alphaR>
+    <betaR>0.00231049060186648</betaR>
+    <GR>1</GR>
+    <dR>1E-10</dR>
+    <alphaS>0.4</alphaS>
+    <betaS>0.00023</betaS>
+    <alphaS2>260000</alphaS2>
+    <betaS2>140</betaS2>
+    <GH>471.854007665112</GH>
+    <dH>4.7E-8</dH>
+    <LS>1687909.66010733</LS>
+    <SS>100</SS>
+    <DS>50</DS>
+    <alphaT>0.1</alphaT>
+    <betaT>1.1E-6</betaT>
+    <GT>3.375E-12</GT>
+    <dT>2.75</dT>
+    <alpha31>0.026</alpha31>
+    <beta31>8E-6</beta31>
+    <GD1>2.8E-8</GD1>
+    <KM1>5E-7</KM1>
+    <alpha32>130000</alpha32>
+    <beta32>0.00083</beta32>
+    <GD2>4.3E-15</GD2>
+    <KM2>1E-9</KM2>
+    <K30>2000000000</K30>
+    <K31>2000000000</K31>
+    <K41>20000000000</K41>
+    <K42>200000000</K42>
+    <Tau0R>1800</Tau0R>
+    <Tau0S>120</Tau0S>
+    <Tau0S2>3240</Tau0S2>
+    <Tau0T>300</Tau0T>
+    <Tau03z>3600</Tau03z>
+  </strucpars>
+</scenario>

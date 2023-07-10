@@ -1,0 +1,79 @@
+object PlotOptionsForm: TPlotOptionsForm
+  Left = 387
+  Height = 166
+  Top = 361
+  Width = 587
+  ActiveControl = TitleEdit
+  AlphaBlend = True
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsDialog
+  Caption = 'Plot Options'
+  ClientHeight = 166
+  ClientWidth = 587
+  Color = clWhite
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  OnShow = FormShow
+  Position = poScreenCenter
+  ShowInTaskBar = stNever
+  LCLVersion = '2.2.4.0'
+  object TitleEdit: TEdit
+    Left = 16
+    Height = 22
+    Hint = 'You may enter a title that is shown on the top of every chart here.'
+    Top = 42
+    Width = 476
+    Anchors = [akTop, akLeft, akRight]
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    Text = 'Title'
+  end
+  object ColorButton1: TColorButton
+    Left = 516
+    Height = 25
+    Hint = 'Select color for title string'
+    Top = 39
+    Width = 48
+    Anchors = [akTop, akRight]
+    BorderWidth = 2
+    ButtonColorSize = 16
+    ButtonColor = clBlack
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object OKButton: TButton
+    Left = 489
+    Height = 25
+    Top = 119
+    Width = 75
+    Anchors = [akTop, akRight]
+    Caption = 'OK'
+    Default = True
+    OnClick = OKButtonClick
+    TabOrder = 1
+  end
+  object TitleLabel: TLabel
+    Left = 16
+    Height = 16
+    Top = 18
+    Width = 57
+    Caption = 'Plot Title:'
+    ParentColor = False
+  end
+  object FontsCombobox: TComboBox
+    Left = 16
+    Height = 20
+    Top = 80
+    Width = 476
+    Anchors = [akTop, akLeft, akRight]
+    ItemHeight = 19
+    ItemIndex = 0
+    Items.Strings = (
+      'Font'
+    )
+    TabOrder = 2
+    Text = 'Font'
+    Visible = False
+  end
+end

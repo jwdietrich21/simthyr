@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SimThyr
+Version=5.0.0
+Comment=SimThyr
+Exec="/home/pi/SimThyr"
+Terminal=false
+Type=Application
+Icon=simthyr.png
+Categories=Application;Education;Science

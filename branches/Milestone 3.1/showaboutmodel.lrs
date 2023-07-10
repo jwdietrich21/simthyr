@@ -1,0 +1,55 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TAboutModelForm','FORMDATA',[
+  'TPF0'#15'TAboutModelForm'#14'AboutModelForm'#4'Left'#3#242#1#6'Height'#3#218
+  +#2#3'Top'#2#22#5'Width'#3'A'#2#18'HorzScrollBar.Page'#3#253#1#19'HorzScrollB'
+  +'ar.Range'#3#253#1#21'HorzScrollBar.Visible'#8#18'VertScrollBar.Page'#3#183#2
+  +#19'VertScrollBar.Range'#3#183#2#10'AlphaBlend'#9#15'AlphaBlendValue'#2#0#7
+  +'Anchors'#11#0#11'BorderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#7'Captio'
+  +'n'#6#15'About the model'#12'ClientHeight'#3#218#2#11'ClientWidth'#3'A'#2#5
+  +'Color'#7#7'clWhite'#10'LCLVersion'#6#8'0.9.30.4'#7'Visible'#9#0#6'TLabel'#6
+  +'Label1'#4'Left'#2'8'#6'Height'#2#17#3'Top'#2'`'#5'Width'#2'N'#7'Caption'#6
+  +#11'References:'#12'Font.Quality'#7#13'fqAntialiased'#10'Font.Style'#11#6'fs'
+  +'Bold'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#11'TStaticText'#11'StaticTex'
+  +'t2'#4'Left'#2'8'#6'Height'#2'0'#3'Top'#2#16#5'Width'#3#208#1#7'Anchors'#11#5
+  +'akTop'#6'akLeft'#7'akRight'#0#7'Caption'#6#146'This simulation is based on '
+  +'version 10 of the MiMe-NoCoDI model of thyrotropic feedback control propose'
+  +'d by Dietrich et al. 1997 and subsequently.'#12'Font.Quality'#7#13'fqAntial'
+  +'iased'#10'ParentFont'#8#8'TabOrder'#2#0#0#0#6'TLabel'#6'Label2'#6'Cursor'#7
+  +#11'crHandPoint'#4'Left'#3'3'#1#6'Height'#2#17#3'Top'#2'@'#5'Width'#3#213#0#9
+  +'Alignment'#7#14'taRightJustify'#7'Anchors'#11#5'akTop'#7'akRight'#0#7'Capti'
+  +'on'#6'!http://tfc.medical-cybernetics.de'#5'Color'#7#8'clWindow'#10'Font.Co'
+  +'lor'#7#15'clActiveCaption'#12'Font.Quality'#7#13'fqAntialiased'#11'ParentCo'
+  +'lor'#8#10'ParentFont'#8#11'Transparent'#8#7'OnClick'#7#11'Label2Click'#0#0#5
+  +'TMemo'#5'Memo1'#4'Left'#2'8'#6'Height'#3'('#2#3'Top'#2'x'#5'Width'#3#208#1#7
+  +'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#8'akBottom'#0#25'BorderSpacing.In'
+  +'nerBorder'#2#5#13'Lines.Strings'#1#6'91. Dietrich JW, Mitzdorf U, Weitkunat'
+  +' R, Pickardt CR. The'#6'Cpituitary-thyroid feedback control: stability and '
+  +'oscillations in a'#6'?new nonlinear model. Journal of Endocrinological Inve'
+  +'stigation.'#6#29'1997;20(Suppl. to no. 5):100.'#6#0#6'C2. Dietrich JW, Fisc'
+  +'her MR, Jauch J, Pantke E, G'#195#164'rtner R, Pickardt'#6'5CR. SPINA-THYR:'
+  +' A novel systems theoretic approach to'#6'?determine the secretion capacity'
+  +' of the thyroid gland. European'#6'?Journal of Internal Medicine. 1999;10 ('
+  +'Suppl. 1)(May 1999):S34.'#6#0#6'>3. Dietrich JW. Signal Storage in Metaboli'
+  +'c Pathways: The ASIA'#6',Element. kybernetiknet. 2000;1(3, 2000):1-9.'#6#0#6
+  +':4. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Fractal'#6'?Properties '
+  +'of the Thyrotropic Feedback Control: Implications of'#6'=a Nonlinear Model '
+  +'Compared with Empirical Data. In: Trappl R,'#6'>ed. Cybernetics and Systems'
+  +' 2002. Vienna: Austrian Society for'#6' Cybernetic Studies; 2002:329-34.'#6
+  +#0#6'85. Dietrich JW. Der Hypophysen-Schilddr'#195#188'sen-Regelkreis.'#6'7E'
+  +'ntwicklung und klinische Anwendung eines nichtlinearen'#6';Modells. Vol. 2 '
+  +'Berlin: Logos-Verlag; 2002. (Schardt F, ed.'#6'"Spektrum medizinischer Fors'
+  +'chung).'#6#0#6'>6. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Thyrotro'
+  +'pic'#6'7Feedback Control: Evidence for an Additional Ultrashort'#6'=Feedbac'
+  +'k Loop from Fractal Analysis. Cybernetics and Systems.'#6#18'2004;35(4):315'
+  +'-31.'#6#0#6'@7. Dietrich, J. W. and B. O. Boehm (2006). Equilibrium behavio'
+  +'ur'#6':of feedback-coupled physiological saturation kinetics. In:'#6'7Cyber'
+  +'netics and Systems 2006. R. Trappl (Hrsg). Vienna,'#6'3Austrian Society for'
+  +' Cybernetic Studies. 1: 269-74.'#6#0#6'C8. Dietrich, J. W., A. Stachon, B. '
+  +'Antic, H. H. Klein und S. Hering'#6'-(2008). "The AQUA-FONTIS Study: Protoc'
+  +'ol of a'#6'?multidisciplinary, cross-sectional and prospective longitudinal'
+  +#6'@study for developing standardized diagnostics and classification'#6'=of '
+  +'non-thyroidal illness syndrome." BMC Endocrine Disorders 8'#6#5'(13).'#0#8
+  +'OnChange'#7#11'Memo1Change'#8'ReadOnly'#9#10'ScrollBars'#7#10'ssAutoBoth'#8
+  +'TabOrder'#2#1#0#0#0
+]);

@@ -1,0 +1,684 @@
+object EquilibriumDiagramForm: TEquilibriumDiagramForm
+  Left = 655
+  Height = 491
+  Top = 154
+  Width = 755
+  ActiveControl = yBParCombo
+  Caption = 'Equilibrium Diagram (Zero Isoclines)'
+  ClientHeight = 491
+  ClientWidth = 755
+  Color = clWhite
+  Constraints.MinHeight = 380
+  Constraints.MinWidth = 600
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnHide = FormHide
+  OnPaint = FormPaint
+  OnShow = FormShow
+  LCLVersion = '2.2.4.0'
+  object MainPanel: TPanel
+    Left = 48
+    Height = 323
+    Top = 32
+    Width = 456
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Top = 20
+    BorderStyle = bsSingle
+    Caption = 'MainPanel'
+    ClientHeight = 321
+    ClientWidth = 454
+    TabOrder = 0
+    object EquilibriumChart: TChart
+      Cursor = crCross
+      Left = 8
+      Height = 303
+      Hint = 'Drag with mouse to zoom'
+      Top = 8
+      Width = 438
+      AxisList = <      
+        item
+          Grid.Color = clSilver
+          Grid.Style = psDash
+          Marks.LabelFont.Height = -11
+          Marks.Format = '%0:.2g'
+          Marks.LabelBrush.Style = bsClear
+          Marks.Style = smsCustom
+          Minors = <>
+          Range.Max = 1
+          Range.UseMax = True
+          Range.UseMin = True
+          Title.LabelFont.Height = -11
+          Title.LabelFont.Orientation = 900
+          Title.Visible = True
+          Title.Caption = 'Concentration 2'
+          Title.LabelBrush.Style = bsClear
+        end      
+        item
+          Grid.Style = psClear
+          Alignment = calBottom
+          Marks.LabelFont.Height = -11
+          Marks.Format = '%0:.2g'
+          Marks.LabelBrush.Style = bsClear
+          Marks.Style = smsCustom
+          Minors = <>
+          Range.Max = 1
+          Range.UseMax = True
+          Range.UseMin = True
+          Title.LabelFont.Height = -11
+          Title.Visible = True
+          Title.Caption = 'Concentration 1'
+          Title.LabelBrush.Style = bsClear
+        end>
+      BackColor = clWhite
+      Extent.XMax = 100
+      Foot.Brush.Color = clBtnFace
+      Foot.Font.Color = clBlue
+      Legend.UseSidebar = False
+      Title.Brush.Color = clBtnFace
+      Title.Font.Color = clBlue
+      Title.Text.Strings = (
+        'TAChart'
+      )
+      Toolset = ChartToolset1
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      Color = clWhite
+      ParentShowHint = False
+      PopupMenu = PopupMenu1
+      ShowHint = True
+      object EquilibriumChartLineSeries1: TLineSeries
+      end
+      object EquilibriumChartLineSeries2: TLineSeries
+      end
+    end
+  end
+  object FullScaleButton1: TSpeedButton
+    Left = 16
+    Height = 22
+    Hint = 'Full scale plot (drag with mouse over plot to zoom)'
+    Top = 32
+    Width = 23
+    BorderSpacing.Top = 20
+    Glyph.Data = {
+      36040000424D3604000000000000360000002800000010000000100000000100
+      20000000000000040000640000006400000000000000000000008186849D858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF7F8382A0858A88FFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA46534FFA46534FFA46534FFFAFBFBFFFAFBFBFFFCFCFDFFFDFC
+      FCFFA46534FFA46534FFA46534FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA46534FFA46534FFF9FAFAFFF9F9F9FFF9FAF9FFFBFBFBFFFBFB
+      FCFFFBFBFCFFA46534FFA46534FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA46636FFA76A3BFFAB7246FFF8F9F8FFF8F9F9FFFAFAFAFFFAFA
+      FBFFAA7043FFA56737FFA46534FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46635FFF6F7F7FFAE774CFFB98B67FFC9A68BFFF7F8F8FFF9F9F9FFD1B5
+      9EFFBD916FFFAE764BFFF9FAFAFFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFF5F6F6FFF4F6F6FFF6F6F7FFCAAA90FFDBC7B7FFE6DBD3FFEAE2DBFFE4D6
+      CAFFD4BAA6FFF8F9F9FFF9FAFAFFF9F9F9FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFF3F5F5FFF3F5F5FFF4F5F5FFF4F5F6FFE3D7CCFFF5F5F6FFF6F7F7FFEAE1
+      D9FFF7F8F8FFF8F9F8FFF7F9F9FFF8F8F9FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFEFF1F1FFF0F1F1FFF0F1F2FFF0F2F1FFDFD2C7FFF0F2F2FFF2F3F4FFE2D7
+      CEFFF3F4F5FFF3F4F5FFF3F5F5FFF4F5F4FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFEFF0F0FFEFF0F0FFEFF1F1FFCFB4A0FFD8C7B9FFE0D3C9FFE2D7CDFFDCCB
+      BDFFCFB49FFFF2F4F4FFF3F4F3FFF2F4F4FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46635FFEDEFEFFFB3825CFFC39F83FFCFB6A2FFEEF0F0FFF0F2F1FFCCB0
+      99FFC0987AFFB27F57FFF1F3F3FFA56737FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA56736FFAA7043FFB4845FFFEEEFEFFFEEEFEFFFF0F1F1FFF0F1
+      F1FFAE784EFFA96E40FFA56838FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA46534FFA56736FFECEEEEFFECEEEEFFECEEEFFFEEF0F0FFEEF0
+      F0FFEEF0F0FFA56736FFA46534FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFA46534FFA46534FFA46534FFA46534FFECEEEEFFECEEEEFFEEEFEFFFEDEF
+      EFFFA46534FFA46534FFA46534FFA46534FFFFFFFFFF858A88FF858A88FFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF858A88FF858A8899858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A
+      88FF858A88FF858A88FF858A88FF858A88FF858A88FF858A8899
+    }
+    OnClick = FullScaleButton1Click
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object ResetButton: TSpeedButton
+    AnchorSideBottom.Control = MainPanel
+    AnchorSideBottom.Side = asrBottom
+    Left = 16
+    Height = 22
+    Hint = 'Reset structure parameters to default values.'
+    Top = 333
+    Width = 23
+    Anchors = [akLeft, akBottom]
+    Glyph.Data = {
+      36040000424D3604000000000000360000002800000010000000100000000100
+      2000000000000004000064000000640000000000000000000000FFFFFF00A465
+      34A2A4653401FFFFFF00FFFFFF00A4653405A4653453A76A3ABEA66938E9A466
+      35FAA76A3AE4A76B3BAAA4653424FFFFFF00FFFFFF00FFFFFF00FFFFFF00A465
+      34FFA5673693FFFFFF00A4653454A66737EEB58055F3CEA684FFD8B697FFDBB9
+      99FFD3AC8AFFC2946DFCA66838F6A466355BFFFFFF00FFFFFF00FFFFFF00A567
+      37FEB7845BF7A56736D4B17A4EF4E3CAB4FFECDAC9FFE7D1BCFFE3C9B0FFDEBE
+      A0FFD2AB88FFCEA582FFD3AE8EFFA66838F5A465342AFFFFFF00FFFFFF00A668
+      38FDF1E4D8FFD4B295FEF4E9E0FFF3E8DDFFEDDCCCFFD2AD8FFEB0784CF5A566
+      35FBA66939FFA66939FEA96D3DFFB0784CFFA76A3AA8FFFFFF00FFFFFF00A567
+      37FDF6EEE6FFF5ECE3FFF5EDE4FFE6D2C1FFB0794DF5A66938CAA4653436FFFF
+      FF00A465346AA96B3CEDB67C4FFFA76A3AFEA56837FAFFFFFF00FFFFFF00A466
+      35FCF6EEE6FFEBD7C4FFEAD9C9FFA46534FEA465346AFFFFFF00FFFFFF00FFFF
+      FF00A465340BA56635E9C9956C8DB77F53C2A46534FFA4653405FFFFFF00A465
+      34FCF5EDE5FFF6EDE5FFF5ECE4FFD7B79CFDA66837E0A4653410FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00D5A47E1ACD997239A46534FCA465340CFFFFFF00A465
+      34F9A46534FEA46534FEA46534FDA46534FCA46534FBA46534B9A465341DA465
+      3418A4653418A4653418A4653418A4653418A465341CFFFFFF00FFFFFF00A465
+      340DFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00A46534A0A465
+      34FFAD7447F8AF774CF7AF774CF7AF784CF7A46534FFA4653408FFFFFF00A465
+      34FCB3794C7ECF9D762BBB835713A4653402FFFFFF00FFFFFF00A4653404A668
+      38C4D0AC8FFAF6EEE7FFF2E6DBFFF6EEE6FFA66A3AFBA4653409FFFFFF00A465
+      35FEA76A3AFBC791689DA56737E6A4653423FFFFFF00FFFFFF00FFFFFF00A465
+      3460A46635FFE9D7C7FFEBD8C6FFF5ECE3FFA66A3AFAA465340AFFFFFF00A668
+      38F3AB7041FFA96C3CFEA76A3AF5A4653475A4653419A4653445A66938CDB988
+      61F5EBDBCDFFF5EBE2FFF6EEE6FFF6EEE6FFA76A3AFAA465340BFFFFFF00A769
+      399BC09069FDC59872FFA86B3CFFA46635FFA76A3AFCB7855DF3D9BBA1FEF1E4
+      D8FFF2E6DBFFF3E8DDFFCEA788FDEAD8C8FFA76A3AF9A465340DFFFFFF00A465
+      3429A66939F5D3AD8CFFDCBD9DFFDDBEA1FFE5CBB4FFE9D3BFFFEEDDCCFFF0E2
+      D5FFE7D2BFFFAF774BF5A56736C0AB7143F7A46635FCA465340EFFFFFF00FFFF
+      FF00A4653550A66838F6C09068FAD3B08FFFDFC2A8FFDEC1A8FFD4B193FFB987
+      5FF4A56737F0A4653458FFFFFF00A4663566A46534FFA465340FFFFFFF00FFFF
+      FF00FFFFFF00A465341DA7693A9FA76A3ADEA56736F6A76939E5A76A3ABCA465
+      3453A4653405FFFFFF00FFFFFF00FFFFFF00A4653479A4653410
+    }
+    OnClick = ResetButtonClick
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object SParGroupBox: TGroupBox
+    Left = 515
+    Height = 321
+    Hint = 'This selection provides an optional addition.'#13#10#13#10'It allows for studying the influenece of '#13#10'certain structure parameters on homeostatic '#13#10'equilibria of the overall feedback control system.'
+    Top = 32
+    Width = 218
+    Anchors = [akTop, akRight, akBottom]
+    Caption = 'Structure Parameters'
+    ClientHeight = 294
+    ClientWidth = 208
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 2
+    object SParCombo1: TComboBox
+      Left = 8
+      Height = 20
+      Hint = 'Select a structure parameter to be modified here.'
+      Top = 36
+      Width = 192
+      Anchors = [akTop, akLeft, akRight]
+      ArrowKeysTraverseList = False
+      ItemHeight = 19
+      ItemIndex = 0
+      Items.Strings = (
+        'Select structure parameter...'
+        'GD1 (nmol/s)'
+        'GD2 (fmol/s)'
+        'KM1 (nmol/l)'
+        'KM2 (nmol/l)'
+        'GT (pmol/s)'
+        'DT (mU/l)'
+        'GH (mU/s)'
+        'DH (nmol/l)'
+        'SS (l/mU)'
+        'DS (mU/l)'
+        'GR (mol/s)'
+        'DR (pmol/l)'
+        'LS (l/µmol)'
+        'betaT (/s)'
+        'TBG (nmol/l)'
+        'TBPA (µmol/l)'
+      )
+      OnChange = SParCombo1Change
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Text = 'Select structure parameter...'
+    end
+    object SParTrackBar1: TTrackBar
+      Left = 8
+      Height = 51
+      Hint = 'Change the magnitude of the selected structure parameter here.'
+      Top = 65
+      Width = 144
+      Max = 50
+      OnChange = SParTrackBar1Change
+      Position = 0
+      TickMarks = tmTopLeft
+      Enabled = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+    end
+    object SParCombo2: TComboBox
+      Left = 8
+      Height = 20
+      Hint = 'Select a structure parameter to be modified here.'
+      Top = 125
+      Width = 192
+      Anchors = [akTop, akLeft, akRight]
+      ArrowKeysTraverseList = False
+      ItemHeight = 19
+      ItemIndex = 0
+      Items.Strings = (
+        'Select structure parameter...'
+        'GD1 (nmol/s)'
+        'GD2 (fmol/s)'
+        'KM1 (nmol/l)'
+        'KM2 (nmol/l)'
+        'GT (pmol/s)'
+        'DT (mU/l)'
+        'GH (mU/s)'
+        'DH (nmol/l)'
+        'SS (l/mU)'
+        'DS (mU/l)'
+        'GR (mol/s)'
+        'DR (pmol/l)'
+        'LS (l/µmol)'
+        'betaT (/s)'
+        'TBG (nmol/l)'
+        'TBPA (µmol/l)'
+      )
+      OnChange = SParCombo2Change
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      Text = 'Select structure parameter...'
+    end
+    object SParTrackBar2: TTrackBar
+      Left = 8
+      Height = 51
+      Hint = 'Change the magnitude of the selected structure parameter here.'
+      Top = 154
+      Width = 144
+      Max = 50
+      OnChange = SParTrackBar2Change
+      Position = 0
+      TickMarks = tmTopLeft
+      Enabled = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+    end
+    object SParCombo3: TComboBox
+      Left = 8
+      Height = 20
+      Hint = 'Select a structure parameter to be modified here.'
+      Top = 212
+      Width = 192
+      Anchors = [akTop, akLeft, akRight]
+      ArrowKeysTraverseList = False
+      ItemHeight = 19
+      ItemIndex = 0
+      Items.Strings = (
+        'Select structure parameter...'
+        'GD1 (nmol/s)'
+        'GD2 (fmol/s)'
+        'KM1 (nmol/l)'
+        'KM2 (nmol/l)'
+        'GT (pmol/s)'
+        'DT (mU/l)'
+        'GH (mU/s)'
+        'DH (nmol/l)'
+        'SS (l/mU)'
+        'DS (mU/l)'
+        'GR (mol/s)'
+        'DR (pmol/l)'
+        'LS (l/µmol)'
+        'betaT (/s)'
+        'TBG (nmol/l)'
+        'TBPA (µmol/l)'
+      )
+      OnChange = SParCombo3Change
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 4
+      Text = 'Select structure parameter...'
+    end
+    object SParTrackBar3: TTrackBar
+      Left = 8
+      Height = 51
+      Hint = 'Change the magnitude of the selected structure parameter here.'
+      Top = 241
+      Width = 144
+      Max = 50
+      OnChange = SParTrackBar3Change
+      Position = 0
+      TickMarks = tmTopLeft
+      Enabled = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
+    end
+    object SParEdit1: TEdit
+      Left = 160
+      Height = 22
+      Top = 65
+      Width = 44
+      Enabled = False
+      MaxLength = 15
+      ReadOnly = True
+      TabOrder = 6
+      Text = 'SParEdit1'
+    end
+    object SParEdit2: TEdit
+      Left = 160
+      Height = 22
+      Top = 151
+      Width = 44
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 7
+      Text = 'SParEdit2'
+    end
+    object SParEdit3: TEdit
+      Left = 160
+      Height = 22
+      Top = 241
+      Width = 44
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 8
+      Text = 'SParEdit3'
+    end
+    object SParBoxSubLabel: TLabel
+      Left = 8
+      Height = 13
+      Top = 2
+      Width = 163
+      Caption = 'for dynamic sensitivity analysis'
+      Font.Height = -11
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 18
+    Top = 473
+    Width = 755
+    Panels = <>
+  end
+  object GroupBox2: TGroupBox
+    Left = 48
+    Height = 94
+    Top = 371
+    Width = 686
+    Anchors = [akLeft, akRight, akBottom]
+    Caption = 'Behavioural Parameters'
+    ClientHeight = 67
+    ClientWidth = 676
+    TabOrder = 3
+    object yMinSpinEdit: TFloatSpinEdit
+      Left = 8
+      Height = 21
+      Hint = 'Minimum of selected structure parameter'
+      Top = 6
+      Width = 72
+      Anchors = [akLeft, akBottom]
+      DecimalPlaces = 3
+      Increment = 0.01
+      OnChange = yMinSpinEditChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+    end
+    object yMaxSpinEdit: TFloatSpinEdit
+      Left = 464
+      Height = 21
+      Hint = 'Maximum of selected structure parameter'
+      Top = 6
+      Width = 72
+      Anchors = [akRight, akBottom]
+      DecimalPlaces = 3
+      Increment = 0.01
+      MaxValue = 100000
+      OnChange = yMaxSpinEditChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      Value = 10
+    end
+    object yBParCombo: TComboBox
+      Left = 88
+      Height = 20
+      Hint = 'Select the first dependent behavioural parameter whose response to be investigated here.'
+      Top = 9
+      Width = 369
+      Anchors = [akLeft, akRight, akBottom]
+      ArrowKeysTraverseList = False
+      ItemHeight = 19
+      ItemIndex = 0
+      Items.Strings = (
+        'Select zero isocline 2 (y axis)...'
+        'Pituitary response (TSH concentration)'
+        'Thyroid response (FT4 concentration)'
+        'Central deiodination (cT3 concentration)'
+      )
+      OnChange = yBParComboChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      Text = 'Select zero isocline 2 (y axis)...'
+    end
+    object xMinSpinEdit: TFloatSpinEdit
+      Left = 8
+      Height = 21
+      Hint = 'Minimum of selected structure parameter'
+      Top = 37
+      Width = 72
+      Anchors = [akLeft, akBottom]
+      DecimalPlaces = 3
+      Increment = 0.01
+      OnChange = xMinSpinEditChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+      Value = 0.3
+    end
+    object xBParCombo: TComboBox
+      Left = 88
+      Height = 20
+      Hint = 'Select the second dependent behavioural parameter whose response to be investigated here.'
+      Top = 40
+      Width = 369
+      Anchors = [akLeft, akRight, akBottom]
+      ArrowKeysTraverseList = False
+      ItemHeight = 19
+      ItemIndex = 0
+      Items.Strings = (
+        'Select zero isocline 1 (x axis)...'
+        'Pituitary response (TSH concentration)'
+        'Thyroid response (FT4 concentration)'
+        'Central deiodination (cT3 concentration)'
+      )
+      OnChange = xBParComboChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 4
+      Text = 'Select zero isocline 1 (x axis)...'
+    end
+    object xMaxSpinEdit: TFloatSpinEdit
+      Left = 464
+      Height = 21
+      Hint = 'Maximum of selected structure parameter'
+      Top = 37
+      Width = 72
+      Anchors = [akRight, akBottom]
+      DecimalPlaces = 3
+      Increment = 0.01
+      MaxValue = 100000
+      OnChange = xMaxSpinEditChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 5
+      Value = 10
+    end
+    object yColorBox: TColorBox
+      Left = 546
+      Height = 20
+      Hint = 'Select the color of the selected curve here.'
+      Top = 13
+      Width = 121
+      DefaultColorColor = clRed
+      Selected = clBlue
+      Anchors = [akTop, akRight]
+      ItemHeight = 16
+      OnChange = yColorBoxChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 6
+    end
+    object xColorBox: TColorBox
+      Left = 546
+      Height = 20
+      Hint = 'Select the color of the selected curve here.'
+      Top = 44
+      Width = 121
+      DefaultColorColor = clBlue
+      Selected = clRed
+      Anchors = [akTop, akRight]
+      ItemHeight = 16
+      OnChange = xColorBoxChange
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 7
+    end
+  end
+  object TableButton: TSpeedButton
+    Left = 16
+    Height = 22
+    Hint = 'Table of values'
+    Top = 120
+    Width = 23
+    Glyph.Data = {
+      36040000424D3604000000000000360000002800000010000000100000000100
+      2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D69E
+      72C4D3996EF4D19668FFCE9263FFCB8E5EFFC98A5BFFC78756FFC38452FFC384
+      52FFC38452FFC38452FFC38452FFC38452FFBB7742B0FFFFFF00FFFFFF00D7A1
+      75FFF8F2EDFFF7F0EAFFF6EDE6FFF4EAE2FFF3E7DEFFF1E4DBFFF0E2D8FFF0E2
+      D8FFF0E2D8FFF0E2D8FFF0E2D8FFF0E2D8FFC58A5DFDFFFFFF00FFFFFF00D9A4
+      7AFFF9F3EEFFEBD2BEFFFFFFFFFFEBD3BFFFFFFFFFFFFFFFFFFFFFFFFFFFEAC7
+      ADFFFFFFFFFFFFFFFFFFFFFFFFFFF0E2D8FFC68C5FFFFFFFFF00FFFFFF00DDA8
+      7EFFF9F3EFFFEBD0BAFFEBD0BBFFEBD0BBFFEBD0BBFFEBD0BBFFEBD1BDFFEACD
+      B5FFEACDB5FFEACDB5FFEACDB5FFF0E2D8FFC68A5CFFFFFFFF00FFFFFF00DFAA
+      82FFF9F3EFFFEACEB7FFFFFFFFFFEBD0BBFFFFFFFFFFFFFFFFFFFFFFFFFFEACF
+      BAFFFBF6F2FFFFFFFFFFFFFFFFFFF0E2D8FFC88D5FFFFFFFFF00FFFFFF00E1AE
+      87FFFAF4F0FFEACBB2FFEACCB3FFEACCB3FFEACCB3FFEACCB3FFEACEB7FFE8C7
+      ACFFE8C7ACFFE8C8B0FFE8C8AEFFF0E2D8FFC48654FFFFFFFF00FFFFFF00E3B1
+      8CFFFAF6F1FFEAC9AEFFFFFFFFFFEAC9B0FFFFFFFFFFFFFFFFFFFFFFFFFFE8C7
+      ACFFFFFFFFFFFFFFFFFFFFFFFFFFF1E5DBFFC68655FFFFFFFF00FFFFFF00E5B4
+      8FFFFAF6F2FFE9C6AAFFE9C6ACFFEAC7ACFFE9C7ADFFE9C9AEFFE9C9B0FFE8C7
+      ACFFE9C9B0FFE8C8B0FFE8CCB5FFF2E7DEFFC88A59FFFFFFFF00FFFFFF00E7B7
+      94FFFBF7F4FFE9C3A6FFFFFFFFFFE8C4A9FFFFFFFFFFFFFFFFFFFFFFFFFFE8C7
+      ACFFFFFFFFFFFFFFFFFFFFFFFFFFF7F1EBFFCB8F5FFFFFFFFF00FFFFFF00E9BA
+      98FFFBF7F4FFE9C3A6FFE9C3A6FFE9C3A6FFE9C3A6FFE9C3A6FFE9C3A6FFE9C3
+      A6FFE9C3A6FFE9C3A6FFE9C3A6FFFBF7F4FFCE9364FFFFFFFF00FFFFFF00EBBD
+      9BFFFBF7F4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFBF7F4FFD1976AFFFFFFFF00FFFFFF00ECBF
+      9EFFFBF7F4FF9CD5A5FF98D3A1FF94D09DFF90CE98FF8BCB93FF87C98EFF82C6
+      89FF7EC384FF7AC180FF76BE7CFFFBF7F4FFD49B6FFFFFFFFF00FFFFFF00EEC1
+      A1EBFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7
+      F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFD7A074F8FFFFFF00FFFFFF00EFC2
+      A37EEFC1A2E3EDC09FFFEBBE9DFFEBBC9AFFE9BA96FFE7B793FFE6B590FFE4B2
+      8CFFE2AF88FFE0AC84FFDDA980FFDCA57DFFDAA37ACAFFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+    }
+    Visible = False
+    OnClick = TableButtonClick
+    ShowCaption = False
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object CheckGrid: TStringGrid
+    Cursor = crIBeam
+    Left = 64
+    Height = 294
+    Top = 48
+    Width = 431
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoEdit = False
+    AutoFillColumns = True
+    Color = clWhite
+    HeaderHotZones = [gzFixedRows]
+    MouseWheelOption = mwGrid
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goDblClickAutoSize, goSmoothScroll]
+    RowCount = 13
+    TabOrder = 5
+    Visible = False
+    ColWidths = (
+      41
+      97
+      97
+      97
+      97
+    )
+    Cells = (
+      5
+      0
+      0
+      'n'
+      1
+      0
+      'x axis (1)'
+      2
+      0
+      'y axis (1)'
+      3
+      0
+      'y axis (2)'
+      4
+      0
+      'x axis (2)'
+    )
+  end
+  object ChartNavPanel1: TChartNavPanel
+    Left = 16
+    Height = 24
+    Hint = 'Drag to select the part of the plot to be displayed.'
+    Top = 72
+    Width = 23
+    Chart = EquilibriumChart
+    LogicalExtentPen.Color = clMaroon
+    MiniMap = True
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 376
+    Top = 536
+    object UndoItem: TMenuItem
+      Caption = 'Undo'
+      Enabled = False
+    end
+    object Divider1: TMenuItem
+      Caption = '-'
+    end
+    object CutItem: TMenuItem
+      Caption = 'Cut'
+      Enabled = False
+    end
+    object CopyItem: TMenuItem
+      Caption = 'Copy'
+      OnClick = CopyItemClick
+    end
+    object PasteItem: TMenuItem
+      Caption = 'Paste'
+      Enabled = False
+    end
+  end
+  object ChartToolset1: TChartToolset
+    Left = 232
+    Top = 168
+    object ChartToolset1DataPointClickTool1: TDataPointClickTool
+      Shift = [ssShift, ssLeft]
+      OnPointClick = ChartToolset1DataPointClickTool1PointClick
+    end
+    object ChartToolset1ZoomDragTool1: TZoomDragTool
+      Shift = [ssLeft]
+      Brush.Style = bsClear
+    end
+  end
+end

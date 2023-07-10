@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=SimThyr
+Comment=SimThyr
+Exec="/home/pi/SimThyr"
+Terminal=false
+Type=Application
+Icon=simthyr.png
+Categories=Application;Education;Science

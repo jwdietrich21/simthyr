@@ -1,0 +1,38 @@
+Copyright (c) 1994-2013, Dr. Johannes W. Dietrich M.D., Klinikum der Universitaet Muenchen, Universitaetsklinikum Ulm, and Universitaetsklinikum Bergmannsheil, Ruhr-Universitaet Bochum.
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+Neither the name of Johannes W. Dietrich nor the names of contributors or sponsors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+------------------------------------------------------------
+
+We have invested a lot of time and effort in creating SimThyr, please cite it when using it for scientific projects and publications.
+
+In order to cite SimThyr in publications use:
+
+* J. W. Dietrich (1994-2013). SimThyr, a simulator of thyrotropic feedback control. URL http://simthyr.sf.net.
+
+Additionally you might want to cite one of the following papers:
+
+1. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Fractal Properties of the Thyrotropic Feedback Control: Implications of a Nonlinear Model Compared with Empirical Data. In: Trappl R, ed. Cybernetics and Systems 2002. Vienna: Austrian Society for Cybernetic Studies; 2002:329-34.
+
+2. Dietrich JW. Der Hypophysen-Schilddrüsen-Regelkreis. Entwicklung und klinische Anwendung eines nichtlinearen Modells. Vol. 2 Berlin: Logos-Verlag; 2002. (Schardt F, ed. Spektrum medizinischer Forschung).
+
+3. Dietrich JW, Tesche A, Pickardt CR, Mitzdorf U. Thyrotropic Feedback Control: Evidence for an Additional Ultrashort Feedback Loop from Fractal Analysis. Cybernetics and Systems. 2004;35(4):315-31.
+
+4. Dietrich, JW and BO Boehm (2006). Equilibrium behaviour of feedback-coupled physiological saturation kinetics. In: Cybernetics and Systems 2006. R. Trappl (Hrsg). Vienna, Austrian Society for Cybernetic Studies. 1:269-74.
+
+5. Dietrich, JW, G Landgrafe, EH Fotiadou (2012). TSH and thyrotropic agonists: Key actors in thyroid homeostasis. Journal of Thyroid Research, vol. 2012, Article ID 351864, 29 pages, 2012. doi:10.1155/2012/351864.
+
+6. Hoermann R, Midgley JE, Larisch R, Dietrich JW (2013). Is pituitary TSH an adequate measure of thyroid hormone-controlled homoeostasis during thyroxine treatment? Eur J Endocrinol. 168(2):271-80. doi 10.1530/EJE-12-0819. PMID 23184912.
+
+7. Midgley JE, Hoermann R, Larisch R, Dietrich JW (2013). Physiological states and functional relation between thyrotropin and free thyroxine in thyroid health and disease: in vivo and in silico data suggest a hierarchical model. J Clin Pathol. 2013 Apr;66(4):335-42. doi: 10.1136/jclinpath-2012-201213. PMID 23423518.
+

@@ -1,0 +1,294 @@
+object TornadoPlotForm: TTornadoPlotForm
+  Left = 293
+  Height = 465
+  Top = 235
+  Width = 640
+  AlphaBlendValue = 0
+  Caption = 'Tornado Plot'
+  ClientHeight = 465
+  ClientWidth = 640
+  Color = clWhite
+  Constraints.MinHeight = 465
+  Constraints.MinWidth = 600
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.2.0.4'
+  Visible = True
+  object CheckGroup1: TCheckGroup
+    Left = 440
+    Height = 217
+    Hint = 'Select the independent structure parameters whose influence you want to check'
+    Top = 39
+    Width = 185
+    Anchors = [akTop, akRight]
+    AutoFill = True
+    Caption = 'Structure parameters'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 198
+    ClientWidth = 175
+    Columns = 2
+    Items.Strings = (
+      'GD1'
+      'GD2'
+      'KM1'
+      'KM2'
+      'GT'
+      'DT'
+      'GH'
+      'DH'
+      'SS'
+      'DS'
+      'GR'
+      'DR'
+      'LS'
+      'betaS'
+      'betaS2'
+      'betaT'
+      'beta31'
+      'beta32'
+      'TBG'
+      'TBPA'
+    )
+    OnClick = CheckGroup1Click
+    OnItemClick = CheckGroup1ItemClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+    Data = {
+      140000000202020202020202020202020202020202020202
+    }
+  end
+  object DepParameterCombo: TComboBox
+    Left = 440
+    Height = 20
+    Hint = 'Select the depdentent parameter, e.g. hormone level here.'
+    Top = 13
+    Width = 185
+    Anchors = [akRight, akBottom]
+    ItemHeight = 19
+    ItemIndex = 0
+    Items.Strings = (
+      'Dependent parameter...'
+      'TSH'
+      'TT4'
+      'FT4'
+      'TT3'
+      'FT3'
+      'cT3'
+    )
+    OnChange = DepParameterComboChange
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 1
+    Text = 'Dependent parameter...'
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 18
+    Top = 447
+    Width = 640
+    Panels = <>
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 440
+    Height = 83
+    Top = 264
+    Width = 185
+    Anchors = [akTop, akRight]
+    AutoFill = True
+    Caption = 'Display change as'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.TopBottomSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 64
+    ClientWidth = 175
+    ItemIndex = 0
+    Items.Strings = (
+      'Fraction'
+      'percent'
+    )
+    OnClick = RadioGroup1Click
+    TabOrder = 3
+  end
+  object Panel1: TPanel
+    Left = 8
+    Height = 418
+    Top = 8
+    Width = 419
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Caption = 'Panel1'
+    ClientHeight = 418
+    ClientWidth = 419
+    TabOrder = 4
+    object Chart1: TChart
+      Cursor = crCross
+      Left = 8
+      Height = 399
+      Hint = 'Drag to zoom'
+      Top = 16
+      Width = 407
+      AxisList = <      
+        item
+          Grid.Visible = False
+          TickLength = 0
+          Arrow.Inverted = True
+          Inverted = True
+          Marks.Distance = 7
+          Marks.Format = '%2:s'
+          Marks.LabelBrush.Style = bsClear
+          Marks.Source = ListChartSource1
+          Marks.Style = smsLabel
+          Minors = <>
+          Title.LabelFont.Orientation = 900
+          Title.LabelBrush.Style = bsClear
+        end      
+        item
+          Alignment = calBottom
+          Marks.LabelFont.Height = 11
+          Marks.LabelBrush.Style = bsClear
+          Minors = <>
+          Title.LabelFont.Height = -9
+          Title.Visible = True
+          Title.Caption = 'Change in dependent variable'
+          Title.LabelBrush.Style = bsClear
+        end>
+      BackColor = clWhite
+      Foot.Brush.Color = clBtnFace
+      Foot.Font.Color = clBlue
+      Legend.BackgroundBrush.Style = bsClear
+      Legend.Font.Height = -9
+      Legend.Frame.Visible = False
+      Legend.SymbolWidth = 13
+      Legend.UseSidebar = False
+      Legend.Visible = True
+      Title.Brush.Color = clBtnFace
+      Title.Font.Color = clBlue
+      Title.Text.Strings = (
+        'TAChart'
+      )
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      Color = clWhite
+      ParentShowHint = False
+      PopupMenu = PopupMenu1
+      ShowHint = True
+      object FBar: TBarSeries
+        Title = '20% decrease'
+        AxisIndexX = 1
+        AxisIndexY = 0
+        BarBrush.Color = clGray
+        BarWidthStyle = bwPercentMin
+        Marks.Distance = 1
+      end
+      object DummySeries: TBarSeries
+        Title = '20% increase'
+        AxisIndexX = 1
+        AxisIndexY = 0
+        BarBrush.Color = clBlack
+      end
+    end
+  end
+  object LegendPosCombo: TComboBox
+    Left = 440
+    Height = 20
+    Top = 406
+    Width = 185
+    Anchors = [akRight, akBottom]
+    ItemHeight = 19
+    ItemIndex = 0
+    Items.Strings = (
+      'Legend position...'
+      'Top left'
+      'Top right'
+      'Bottom left'
+      'Bottom right'
+    )
+    OnChange = LegendPosComboChange
+    TabOrder = 5
+    Text = 'Legend position...'
+  end
+  object DecreaseColorBox: TColorBox
+    Left = 440
+    Height = 20
+    Hint = 'Select color for decresing indepenent variable here.'
+    Top = 348
+    Width = 185
+    DefaultColorColor = clGray
+    Selected = clGray
+    Anchors = [akRight, akBottom]
+    ItemHeight = 16
+    OnChange = DecreaseColorBoxChange
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 6
+  end
+  object IncreaseColorBox: TColorBox
+    Left = 440
+    Height = 20
+    Hint = 'Select color for incresing indepenent variable here.'
+    Top = 372
+    Width = 185
+    Anchors = [akRight, akBottom]
+    ItemHeight = 16
+    OnChange = IncreaseColorBoxChange
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 7
+  end
+  object ListChartSource1: TListChartSource
+    DataPoints.Strings = (
+      '1|1|?|'
+      '2|2|?|'
+      '3|3|?|'
+      '4|4|?|'
+      '5|5|?|'
+      '6|6|?|'
+      '7|7|?|'
+      '8|8|?|'
+      '9|9|?|'
+      '10|10|?|'
+      '11|11|?|'
+      '12|12|?|'
+      '13|13|?|'
+    )
+    Left = 264
+    Top = 632
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 208
+    Top = 296
+    object UndoItem: TMenuItem
+      Caption = 'Undo'
+      Enabled = False
+    end
+    object Divider1: TMenuItem
+      Caption = '-'
+    end
+    object CutItem: TMenuItem
+      Caption = 'Cut'
+      Enabled = False
+    end
+    object CopyItem: TMenuItem
+      Caption = 'Copy'
+      OnClick = CopyItemClick
+    end
+    object PasteItem: TMenuItem
+      Caption = 'Paste'
+      Enabled = False
+    end
+  end
+end

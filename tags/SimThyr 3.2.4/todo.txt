@@ -1,0 +1,5 @@
+{TODO: 5 -oJ. W. Dietrich -cFeatures : Ticket #2 (Pharmacology module) }
+{DONE: 3 -oJ. W. Dietrich -cBugs : Ticket #12 (SVG export creates flawed files) }
+{DONE: 5 -oJ. W. Dietrich -cFeatures : Ticket #13 (Log table and plot window should be activated on simulation) }
+{DONE: 5 -oJ. W. Dietrich -ccFeatures : Ticket #14 (Parameter editor should contain measurement units) }
+
