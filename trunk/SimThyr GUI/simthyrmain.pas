@@ -334,8 +334,8 @@ begin
   if simready then
   begin
   {$IFDEF DARWIN}
-    SimThyrLogWindow.ValuesGrid.BeginUpdate;
-    SimThyrLogWindow.ValuesGrid.EndUpdate(True);
+    //SimThyrLogWindow.ValuesGrid.BeginUpdate;
+    //SimThyrLogWindow.ValuesGrid.EndUpdate(True);
   {$ENDIF}
     application.ProcessMessages;
     Notice.Hide;

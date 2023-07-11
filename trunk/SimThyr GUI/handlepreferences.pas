@@ -220,7 +220,10 @@ function InterimTSHFactor:real;
 {Calculates a preliminary conversion factor}
 begin
   with PreferencesDialog do
-    result := VolumePrefixFactors[TSH_pos, TSHVolumePrefixCombo.ItemIndex] * UTSH / MassPrefixFactors[TSH_pos, TSHMassPrefixCombo.ItemIndex];
+    if (TSHVolumePrefixCombo.ItemIndex >= 0) and (TSHMassPrefixCombo.ItemIndex >= 0) then
+      result := VolumePrefixFactors[TSH_pos, TSHVolumePrefixCombo.ItemIndex] * UTSH / MassPrefixFactors[TSH_pos, TSHMassPrefixCombo.ItemIndex]
+    else
+      result := 1;
 end;
 
 function InterimTT4Factor:real;
@@ -298,6 +301,7 @@ begin
   MassPrefixFactors[par1, position] := PrefixFactor[theItem];
   if par2 >= 0 then
     MassPrefixFactors[par2, position] := PrefixFactor[theItem];
+  theComboBox.ItemIndex := 0;
 end;
 
 procedure SetT4MassUnitAndFactor(par1, par2: integer; theComboBox: TComboBox; position, theItem: integer);
@@ -322,12 +326,16 @@ begin
   VolumePrefixFactors[par1, position] := PrefixFactor[theItem];
   if par2 >= 0 then
     VolumePrefixFactors[par2, position] := PrefixFactor[theItem];
+  theComboBox.ItemIndex := 0;
 end;
 
 { TPreferencesDialog }
 
 procedure TPreferencesDialog.InitMenuItems;
 {sets menu items to initial values}
+var
+  testIndex: integer;  // for testing only
+  theItems: TStrings;
 begin
   with PreferencesDialog.TSHMassPrefixCombo do
   begin
@@ -335,15 +343,15 @@ begin
     SetMassItemAndFactor(pTSH_pos, TSH_pos, PreferencesDialog.TSHMassPrefixCombo, 0, 3);
     SetMassItemAndFactor(pTSH_pos, TSH_pos, PreferencesDialog.TSHMassPrefixCombo, 1, 5);
     ItemIndex := 0;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.TSHVolumePrefixCombo do
   begin
     Items.Clear;
     SetVolumeItemAndFactor(pTSH_pos, TSH_pos, PreferencesDialog.TSHVolumePrefixCombo, 0, 0);
     SetVolumeItemAndFactor(pTSH_pos, TSH_pos, PreferencesDialog.TSHVolumePrefixCombo, 1, 3);
-    ItemIndex := 0;
-    Text := Items[ItemIndex];
+    ItemIndex := 0;               { #todo -oJWD : Bug in 3.0? }
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.TT4MassPrefixCombo do
   begin
@@ -351,7 +359,7 @@ begin
     SetMassItemAndFactor(TT4_pos, -1, PreferencesDialog.TT4MassPrefixCombo, 0, 5);
     SetMassItemAndFactor(TT4_pos, -1, PreferencesDialog.TT4MassPrefixCombo, 1, 6);
     ItemIndex := 1;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.TT4MassUnitCombo do
   begin
@@ -359,7 +367,7 @@ begin
     SetT4MassUnitAndFactor(TT4_pos, -1, PreferencesDialog.TT4MassUnitCombo, 0, 0);
     SetT4MassUnitAndFactor(TT4_pos, -1, PreferencesDialog.TT4MassUnitCombo, 1, 1);
     ItemIndex := 0;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.TT4VolumePrefixCombo do
   begin
@@ -367,7 +375,7 @@ begin
     SetVolumeItemAndFactor(TT4_pos, -1, PreferencesDialog.TT4VolumePrefixCombo, 0, 0);
     SetVolumeItemAndFactor(TT4_pos, -1, PreferencesDialog.TT4VolumePrefixCombo, 1, 1);
     ItemIndex := 1;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.FT4MassPrefixCombo do
   begin
@@ -375,7 +383,7 @@ begin
     SetMassItemAndFactor(FT4_pos, -1, PreferencesDialog.FT4MassPrefixCombo, 0, 6);
     SetMassItemAndFactor(FT4_pos, -1, PreferencesDialog.FT4MassPrefixCombo, 1, 7);
     ItemIndex := 0;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.FT4MassUnitCombo do
   begin
@@ -383,7 +391,7 @@ begin
     SetT4MassUnitAndFactor(FT4_pos, -1, PreferencesDialog.FT4MassUnitCombo, 0, 0);
     SetT4MassUnitAndFactor(FT4_pos, -1, PreferencesDialog.FT4MassUnitCombo, 1, 1);
     ItemIndex := 0;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.FT4VolumePrefixCombo do
   begin
@@ -391,7 +399,7 @@ begin
     SetVolumeItemAndFactor(FT4_pos, -1, PreferencesDialog.FT4VolumePrefixCombo, 0, 0);
     SetVolumeItemAndFactor(FT4_pos, -1, PreferencesDialog.FT4VolumePrefixCombo, 1, 1);
     ItemIndex := 1;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.TT3MassPrefixCombo do
   begin
@@ -400,7 +408,7 @@ begin
     SetMassItemAndFactor(TT3_pos, -1, PreferencesDialog.TT3MassPrefixCombo, 1, 6);
     SetMassItemAndFactor(TT3_pos, -1, PreferencesDialog.TT3MassPrefixCombo, 2, 7);
     ItemIndex := 2;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.TT3MassUnitCombo do
   begin
@@ -408,7 +416,7 @@ begin
     SetT3MassUnitAndFactor(TT3_pos, -1, PreferencesDialog.TT3MassUnitCombo, 0, 0);
     SetT3MassUnitAndFactor(TT3_pos, -1, PreferencesDialog.TT3MassUnitCombo, 1, 1);
     ItemIndex := 0;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.TT3VolumePrefixCombo do
   begin
@@ -417,7 +425,7 @@ begin
     SetVolumeItemAndFactor(TT3_pos, -1, PreferencesDialog.TT3VolumePrefixCombo, 1, 1);
     SetVolumeItemAndFactor(TT3_pos, -1, PreferencesDialog.TT3VolumePrefixCombo, 2, 3);
     ItemIndex := 2;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.FT3MassPrefixCombo do
   begin
@@ -425,7 +433,7 @@ begin
     SetMassItemAndFactor(FT3_pos, -1, PreferencesDialog.FT3MassPrefixCombo, 0, 6);
     SetMassItemAndFactor(FT3_pos, -1, PreferencesDialog.FT3MassPrefixCombo, 1, 7);
     ItemIndex := 1;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.FT3MassUnitCombo do
   begin
@@ -433,7 +441,7 @@ begin
     SetT3MassUnitAndFactor(FT3_pos, -1, PreferencesDialog.FT3MassUnitCombo, 0, 0);
     SetT3MassUnitAndFactor(FT3_pos, -1, PreferencesDialog.FT3MassUnitCombo, 1, 1);
     ItemIndex := 0;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
   with PreferencesDialog.FT3VolumePrefixCombo do
   begin
@@ -442,7 +450,7 @@ begin
     SetVolumeItemAndFactor(FT3_pos, -1, PreferencesDialog.FT3VolumePrefixCombo, 1, 1);
     SetVolumeItemAndFactor(FT3_pos, -1, PreferencesDialog.FT3VolumePrefixCombo, 2, 3);
     ItemIndex := 2;
-    Text := Items[ItemIndex];
+    //Text := Items[ItemIndex];
   end;
 end;
 

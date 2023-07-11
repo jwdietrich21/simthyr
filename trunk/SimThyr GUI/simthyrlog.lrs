@@ -336,7 +336,7 @@ LazarusResources.Add('TSimThyrLogWindow','FORMDATA',[
   +#172'A'#192#15#172'A'#192#7#172'A'#128#7#172'A'#128#7#172'A'#132#135#172'A'
   +#140#135#172'A'#140#195#172'A'#140#195#172'A'#204#227#172'A'#205#243#172'A'
   +#239#255#172'A'#255#255#172'A'#10'OnActivate'#7#12'FormActivate'#7'OnPaint'#7
-  +#9'FormPaint'#6'OnShow'#7#8'FormShow'#10'LCLVersion'#6#7'2.2.6.0'#7'Visible'
+  +#9'FormPaint'#6'OnShow'#7#8'FormShow'#10'LCLVersion'#6#7'3.0.0.1'#7'Visible'
   +#9#0#11'TStringGrid'#10'ValuesGrid'#6'Cursor'#7#7'crIBeam'#4'Left'#2#0#6'Hei'
   +'ght'#3#20#1#4'Hint'#6'7Simulated behavioural parameters of thyroid homeosta'
   +'sis'#3'Top'#2#0#5'Width'#3#176#2#5'Align'#7#8'alClient'#15'AutoFillColumns'
@@ -346,8 +346,8 @@ LazarusResources.Add('TSimThyrLogWindow','FORMDATA',[
   +'edHorzLine'#10'goVertLine'#10'goHorzLine'#13'goRangeSelect'#11'goColSizing'
   +#6'goTabs'#18'goDblClickAutoSize'#14'goSmoothScroll'#16'goFixedColSizing'#11
   +'goCellHints'#0#14'ParentShowHint'#8#9'PopupMenu'#7#10'PopupMenu1'#8'RowCoun'
-  +'t'#2#2#8'ShowHint'#9#8'TabOrder'#2#0#15'TitleFont.Pitch'#7#10'fpVariable'#9
-  +'ColWidths'#1#2'@'#2'E'#2'E'#2'E'#2'E'#2'E'#2'E'#2'E'#2'E'#2'H'#0#5'Cells'#1
+  +'t'#2#3#8'ShowHint'#9#8'TabOrder'#2#0#15'TitleFont.Pitch'#7#10'fpVariable'#9
+  +'ColWidths'#1#2'@'#2'F'#2'F'#2'F'#2'E'#2'E'#2'E'#2'E'#2'E'#2'E'#0#5'Cells'#1
   +#2#10#2#0#2#0#6#1'i'#2#1#2#0#6#1't'#2#2#2#0#6#3'TRH'#2#3#2#0#6#4'pTSH'#2#4#2
   +#0#6#3'TSH'#2#5#2#0#6#3'TT4'#2#6#2#0#6#3'FT4'#2#7#2#0#6#3'TT3'#2#8#2#0#6#3'F'
   +'T3'#2#9#2#0#6#3'cT3'#0#0#0#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Heig'

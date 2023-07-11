@@ -1,7 +1,7 @@
 object StructureParameters: TStructureParameters
-  Left = 390
+  Left = 407
   Height = 663
-  Top = 187
+  Top = 124
   Width = 664
   AlphaBlend = True
   AlphaBlendValue = 0
@@ -16,7 +16,7 @@ object StructureParameters: TStructureParameters
   OnPaint = FormPaint
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.1'
   Visible = True
   object OKButton: TButton
     Left = 555

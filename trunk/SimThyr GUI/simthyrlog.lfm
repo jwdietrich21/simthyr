@@ -309,7 +309,7 @@ object SimThyrLogWindow: TSimThyrLogWindow
   OnActivate = FormActivate
   OnPaint = FormPaint
   OnShow = FormShow
-  LCLVersion = '2.2.6.0'
+  LCLVersion = '3.0.0.1'
   Visible = True
   object ValuesGrid: TStringGrid
     Cursor = crIBeam
@@ -330,21 +330,21 @@ object SimThyrLogWindow: TSimThyrLogWindow
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goTabs, goDblClickAutoSize, goSmoothScroll, goFixedColSizing, goCellHints]
     ParentShowHint = False
     PopupMenu = PopupMenu1
-    RowCount = 2
+    RowCount = 3
     ShowHint = True
     TabOrder = 0
     TitleFont.Pitch = fpVariable
     ColWidths = (
       64
+      70
+      70
+      70
       69
       69
       69
       69
       69
       69
-      69
-      69
-      72
     )
     Cells = (
       10
