@@ -16,7 +16,7 @@ object PlotOptionsForm: TPlotOptionsForm
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.3'
   object TitleEdit: TEdit
     Left = 16
     Height = 22
@@ -50,8 +50,8 @@ object PlotOptionsForm: TPlotOptionsForm
     Anchors = [akTop, akRight]
     Caption = 'OK'
     Default = True
-    OnClick = OKButtonClick
     TabOrder = 1
+    OnClick = OKButtonClick
   end
   object TitleLabel: TLabel
     Left = 16

@@ -312,7 +312,7 @@ object ValuesPlot: TValuesPlot
   OnCreate = FormCreate
   OnPaint = FormPaint
   OnShow = FormShow
-  LCLVersion = '2.2.6.0'
+  LCLVersion = '3.0.0.3'
   Visible = True
   object Panel1: TPanel
     Left = 0
@@ -323,6 +323,7 @@ object ValuesPlot: TValuesPlot
     Anchors = [akTop, akLeft, akRight]
     ClientHeight = 216
     ClientWidth = 856
+    ParentBackground = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
@@ -345,11 +346,11 @@ object ValuesPlot: TValuesPlot
         'Serum free T3'
         'Central T3'
       )
-      OnChange = ComboBox1Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
       Text = 'Unit 1'
+      OnChange = ComboBox1Change
     end
     object PlotPanel1: TPanel
       Cursor = crCross
@@ -362,6 +363,7 @@ object ValuesPlot: TValuesPlot
       ClientHeight = 203
       ClientWidth = 622
       Color = clWhite
+      ParentBackground = False
       ParentColor = False
       TabOrder = 1
       object Chart1: TChart
@@ -544,6 +546,7 @@ object ValuesPlot: TValuesPlot
     Anchors = [akTop, akLeft, akRight]
     ClientHeight = 208
     ClientWidth = 856
+    ParentBackground = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
@@ -559,6 +562,7 @@ object ValuesPlot: TValuesPlot
       ClientHeight = 196
       ClientWidth = 622
       Color = clWhite
+      ParentBackground = False
       ParentColor = False
       TabOrder = 0
       object Chart2: TChart
@@ -635,11 +639,11 @@ object ValuesPlot: TValuesPlot
         'Serum free T3'
         'Central T3'
       )
-      OnChange = ComboBox2Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
       Text = 'Unit 2'
+      OnChange = ComboBox2Change
     end
     object ColorListBox2: TColorListBox
       Left = 689

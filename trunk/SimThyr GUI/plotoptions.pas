@@ -5,9 +5,9 @@ unit PlotOptions;
 
 { Version 5.0.0 (Mirage) }
 
-{ (c) J. W. Dietrich, 1994 - 2023 }
+{ (c) J. W. Dietrich, 1994 - 2024 }
 { (c) Ludwig Maximilian University of Munich 1995 - 2002 }
-{ (c) Ruhr University of Bochum 2005 - 2023 }
+{ (c) Ruhr University of Bochum 2005 - 2024 }
 
 { This unit implements a dialog box for plot options }
 

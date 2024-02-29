@@ -21,7 +21,7 @@ object SplashScreen: TSplashScreen
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.3'
   Visible = True
   object BigLogo: TImage
     Left = 160

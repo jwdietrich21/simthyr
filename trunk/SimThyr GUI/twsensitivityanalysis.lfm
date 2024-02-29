@@ -19,7 +19,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
   OnShow = FormShow
   ParentDoubleBuffered = False
   Position = poScreenCenter
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.3'
   object PlotPanel: TPanel
     Left = 48
     Height = 288
@@ -29,6 +29,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     BorderStyle = bsSingle
     ClientHeight = 286
     ClientWidth = 643
+    ParentBackground = False
     TabOrder = 0
     object CheckGrid: TStringGrid
       Left = 12
@@ -118,6 +119,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
       BevelOuter = bvNone
       ClientHeight = 273
       ClientWidth = 138
+      ParentBackground = False
       TabOrder = 0
       object LegendFrame: TShape
         Left = 8
@@ -220,6 +222,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Caption = 'Parameters'
     ClientHeight = 85
     ClientWidth = 498
+    ParentBackground = False
     TabOrder = 1
     object MinSpinEdit1: TFloatSpinEdit
       Left = 12
@@ -281,11 +284,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         'TBG (nmol/l)'
         'TBPA (µmol/l)'
       )
-      OnChange = StrucParCombo1Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
       Text = 'Select independent parameter (x axis)...'
+      OnChange = StrucParCombo1Change
     end
     object MinSpinEdit2: TFloatSpinEdit
       Left = 12
@@ -333,11 +336,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         'TBG (nmol/l)'
         'TBPA (µmol/l)'
       )
-      OnChange = StrucParCombo2Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
       Text = 'Select independent parameter (y axis)...'
+      OnChange = StrucParCombo2Change
     end
     object MaxSpinEdit2: TFloatSpinEdit
       Left = 414
@@ -372,11 +375,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
         'FT3'
         'cT3'
       )
-      OnChange = DependentParComboChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 6
       Text = 'Select dependent parameter (colour map)...'
+      OnChange = DependentParComboChange
     end
   end
   object StatusBar1: TStatusBar
@@ -459,6 +462,7 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Caption = 'Colour Map'
     ClientHeight = 86
     ClientWidth = 119
+    ParentBackground = False
     TabOrder = 4
     object ColorButton1: TColorButton
       Left = 16
@@ -507,11 +511,11 @@ object TWSensitivityAnalysisForm: TTWSensitivityAnalysisForm
     Top = 116
     Width = 23
     Caption = 'T'
-    OnChange = CheckToggleBoxChange
     ParentShowHint = False
     ShowHint = True
     TabOrder = 5
     Visible = False
+    OnChange = CheckToggleBoxChange
   end
   object ResetButton: TSpeedButton
     AnchorSideBottom.Control = PlotPanel

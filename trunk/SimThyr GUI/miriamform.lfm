@@ -14,7 +14,7 @@ object AnnotationForm: TAnnotationForm
   OnPaint = FormPaint
   OnShow = FormShow
   ShowHint = True
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.3'
   object ScrollBox1: TScrollBox
     Left = 16
     Height = 299
@@ -291,6 +291,7 @@ object AnnotationForm: TAnnotationForm
     ClientHeight = 117
     ClientWidth = 598
     Color = clWhite
+    ParentBackground = False
     ParentColor = False
     TabOrder = 1
     object OKButton: TButton
@@ -301,8 +302,8 @@ object AnnotationForm: TAnnotationForm
       Anchors = [akRight, akBottom]
       Caption = 'OK'
       Default = True
-      OnClick = OKButtonClick
       TabOrder = 0
+      OnClick = OKButtonClick
     end
     object MIRIAMLogo: TImage
       Cursor = crHandPoint
@@ -1362,8 +1363,8 @@ object AnnotationForm: TAnnotationForm
       Width = 75
       Anchors = [akRight, akBottom]
       Caption = 'Standard'
-      OnClick = StandardButtonClick
       TabOrder = 1
+      OnClick = StandardButtonClick
     end
   end
   object Image1: TImage

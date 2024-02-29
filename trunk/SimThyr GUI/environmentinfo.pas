@@ -6,7 +6,7 @@ unit EnvironmentInfo;
 { Partly based on code provided by Mike Thompson, published at}
 { http://www.lazarus.freepascal.org/index.php/topic,13957.0.html}
 
-{ (c) J. W. Dietrich, 2007 - 2022 }
+{ (c) J. W. Dietrich, 2007 - 2024 }
 
 {$mode objfpc}{$H+}
 {$IFDEF LCLCocoa}
@@ -219,6 +219,8 @@ begin
     OSVersion := 'Windows 8.1 / '
   else if WindowsVersion = wv10 then
     OSVersion := 'Windows 10 / '
+  else if WindowsVersion = wv11 then
+    OSVersion := 'Windows 11 / '
   else if WindowsVersion = wvLater then
     OSVersion := 'Windows '
   {$ENDIF}

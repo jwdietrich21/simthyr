@@ -16,7 +16,7 @@ object StructureParameters: TStructureParameters
   OnPaint = FormPaint
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '3.0.0.1'
+  LCLVersion = '3.0.0.3'
   Visible = True
   object OKButton: TButton
     Left = 555
@@ -29,8 +29,8 @@ object StructureParameters: TStructureParameters
     Caption = 'OK'
     Default = True
     ModalResult = 1
-    OnClick = OKButtonClick
     TabOrder = 6
+    OnClick = OKButtonClick
   end
   object CancelButton: TButton
     Left = 555
@@ -41,8 +41,8 @@ object StructureParameters: TStructureParameters
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2
-    OnClick = CancelButtonClick
     TabOrder = 8
+    OnClick = CancelButtonClick
   end
   object Tau0REdit: TEdit
     Left = 88
@@ -180,10 +180,10 @@ object StructureParameters: TStructureParameters
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Standard'
-    OnClick = StandardButtonClick
     ParentShowHint = False
     ShowHint = True
     TabOrder = 7
+    OnClick = StandardButtonClick
   end
   object Image6: TImage
     Left = 208
@@ -273,10 +273,10 @@ object StructureParameters: TStructureParameters
     Width = 75
     Anchors = [akRight, akBottom]
     Caption = 'Options'
-    OnClick = OptionsButtonClick
     ParentShowHint = False
     ShowHint = True
     TabOrder = 9
+    OnClick = OptionsButtonClick
   end
   object Label51: TLabel
     Left = 176

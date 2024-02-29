@@ -20,7 +20,7 @@ object SimOptionsDlg: TSimOptionsDlg
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.3'
   Visible = True
   object NoiseCheckBox: TCheckBox
     Left = 32
@@ -30,11 +30,11 @@ object SimOptionsDlg: TSimOptionsDlg
     Width = 134
     Caption = 'Superimpose noise'
     Checked = True
-    OnChange = NoiseCheckBoxChange
     ParentShowHint = False
     ShowHint = True
     State = cbChecked
     TabOrder = 0
+    OnChange = NoiseCheckBoxChange
   end
   object PreviewCheckBox: TCheckBox
     Left = 32
@@ -44,11 +44,11 @@ object SimOptionsDlg: TSimOptionsDlg
     Width = 301
     Caption = 'Use calculated equilibrium values as start values'
     Checked = True
-    OnChange = PreviewCheckBoxChange
     ParentShowHint = False
     ShowHint = True
     State = cbChecked
     TabOrder = 1
+    OnChange = PreviewCheckBoxChange
   end
   object OKButton: TButton
     Left = 327
@@ -58,8 +58,8 @@ object SimOptionsDlg: TSimOptionsDlg
     Anchors = [akRight, akBottom]
     Caption = 'OK'
     Default = True
-    OnClick = OKButtonClick
     TabOrder = 2
+    OnClick = OKButtonClick
   end
   object CancelButton: TButton
     Left = 239
@@ -69,8 +69,8 @@ object SimOptionsDlg: TSimOptionsDlg
     Anchors = [akRight, akBottom]
     Cancel = True
     Caption = 'Cancel'
-    OnClick = CancelButtonClick
     TabOrder = 3
+    OnClick = CancelButtonClick
   end
   object TRHEdit: TEdit
     Left = 152
@@ -107,11 +107,11 @@ object SimOptionsDlg: TSimOptionsDlg
     Width = 272
     Caption = 'Simulate circadian rhythm of TRH secretion'
     Checked = True
-    OnChange = CircadianCheckBoxChange
     ParentShowHint = False
     ShowHint = True
     State = cbChecked
     TabOrder = 5
+    OnChange = CircadianCheckBoxChange
   end
   object NeuronImage: TImage
     Left = 370

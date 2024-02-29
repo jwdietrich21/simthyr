@@ -16,7 +16,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
   OnHide = FormHide
   OnPaint = FormPaint
   OnShow = FormShow
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.3'
   object MainPanel: TPanel
     Left = 48
     Height = 323
@@ -28,6 +28,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     Caption = 'MainPanel'
     ClientHeight = 321
     ClientWidth = 454
+    ParentBackground = False
     TabOrder = 0
     object EquilibriumChart: TChart
       Cursor = crCross
@@ -198,6 +199,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     Caption = 'Structure Parameters'
     ClientHeight = 294
     ClientWidth = 208
+    ParentBackground = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 2
@@ -230,11 +232,11 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'TBG (nmol/l)'
         'TBPA (µmol/l)'
       )
-      OnChange = SParCombo1Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
       Text = 'Select structure parameter...'
+      OnChange = SParCombo1Change
     end
     object SParTrackBar1: TTrackBar
       Left = 8
@@ -280,11 +282,11 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'TBG (nmol/l)'
         'TBPA (µmol/l)'
       )
-      OnChange = SParCombo2Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
       Text = 'Select structure parameter...'
+      OnChange = SParCombo2Change
     end
     object SParTrackBar2: TTrackBar
       Left = 8
@@ -330,11 +332,11 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'TBG (nmol/l)'
         'TBPA (µmol/l)'
       )
-      OnChange = SParCombo3Change
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
       Text = 'Select structure parameter...'
+      OnChange = SParCombo3Change
     end
     object SParTrackBar3: TTrackBar
       Left = 8
@@ -409,6 +411,7 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
     Caption = 'Behavioural Parameters'
     ClientHeight = 67
     ClientWidth = 676
+    ParentBackground = False
     TabOrder = 3
     object yMinSpinEdit: TFloatSpinEdit
       Left = 8
@@ -456,11 +459,11 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'Thyroid response (FT4 concentration)'
         'Central deiodination (cT3 concentration)'
       )
-      OnChange = yBParComboChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
       Text = 'Select zero isocline 2 (y axis)...'
+      OnChange = yBParComboChange
     end
     object xMinSpinEdit: TFloatSpinEdit
       Left = 8
@@ -493,11 +496,11 @@ object EquilibriumDiagramForm: TEquilibriumDiagramForm
         'Thyroid response (FT4 concentration)'
         'Central deiodination (cT3 concentration)'
       )
-      OnChange = xBParComboChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 4
       Text = 'Select zero isocline 1 (x axis)...'
+      OnChange = xBParComboChange
     end
     object xMaxSpinEdit: TFloatSpinEdit
       Left = 464

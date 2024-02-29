@@ -15,7 +15,7 @@ object TornadoPlotForm: TTornadoPlotForm
   OnPaint = FormPaint
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.3'
   Visible = True
   object CheckGroup1: TCheckGroup
     Left = 440
@@ -61,6 +61,7 @@ object TornadoPlotForm: TTornadoPlotForm
     )
     OnClick = CheckGroup1Click
     OnItemClick = CheckGroup1ItemClick
+    ParentBackground = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
@@ -86,11 +87,11 @@ object TornadoPlotForm: TTornadoPlotForm
       'FT3'
       'cT3'
     )
-    OnChange = DepParameterComboChange
     ParentShowHint = False
     ShowHint = True
     TabOrder = 1
     Text = 'Dependent parameter...'
+    OnChange = DepParameterComboChange
   end
   object StatusBar1: TStatusBar
     Left = 0
@@ -123,6 +124,7 @@ object TornadoPlotForm: TTornadoPlotForm
       'percent'
     )
     OnClick = RadioGroup1Click
+    ParentBackground = False
     TabOrder = 3
   end
   object Panel1: TPanel
@@ -134,6 +136,7 @@ object TornadoPlotForm: TTornadoPlotForm
     Caption = 'Panel1'
     ClientHeight = 418
     ClientWidth = 419
+    ParentBackground = False
     TabOrder = 4
     object Chart1: TChart
       Cursor = crCross
@@ -217,9 +220,9 @@ object TornadoPlotForm: TTornadoPlotForm
       'Bottom left'
       'Bottom right'
     )
-    OnChange = LegendPosComboChange
     TabOrder = 5
     Text = 'Legend position...'
+    OnChange = LegendPosComboChange
   end
   object DecreaseColorBox: TColorBox
     Left = 440

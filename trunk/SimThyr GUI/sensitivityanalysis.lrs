@@ -8,7 +8,7 @@ LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
   +#7'clWhite'#21'Constraints.MinHeight'#3#144#1#20'Constraints.MinWidth'#3'X'#2
   +#10'OnActivate'#7#12'FormActivate'#8'OnCreate'#7#10'FormCreate'#7'OnPaint'#7
   +#9'FormPaint'#6'OnShow'#7#8'FormShow'#8'Position'#7#14'poScreenCenter'#10'LC'
-  +'LVersion'#6#7'3.0.0.1'#7'Visible'#9#0#6'TPanel'#6'Panel1'#4'Left'#2'0'#6'He'
+  +'LVersion'#6#7'3.0.0.3'#7'Visible'#9#0#6'TPanel'#6'Panel1'#4'Left'#2'0'#6'He'
   +'ight'#3#25#1#3'Top'#2' '#5'Width'#3#200#1#7'Anchors'#11#5'akTop'#6'akLeft'#7
   +'akRight'#8'akBottom'#0#17'BorderSpacing.Top'#2#20#11'BorderStyle'#7#8'bsSin'
   +'gle'#7'Caption'#6#6'Panel1'#12'ClientHeight'#3#23#1#11'ClientWidth'#3#198#1
@@ -79,8 +79,8 @@ LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
   +'(nmol/l)'#6#9'SS (l/mU)'#6#9'DS (mU/l)'#6#10'GR (mol/s)'#6#11'DR (pmol/l)'#6
   +#12'LS (l/'#194#181'mol)'#6#10'betaS (/s)'#6#11'betaS2 (/s)'#6#10'betaT (/s)'
   +#6#12'beta31 (/Ms)'#6#12'beta32 (/Ms)'#6#12'TBG (nmol/l)'#6#14'TBPA ('#194
-  +#181'mol/l)'#0#8'OnChange'#7#19'StrucParComboChange'#14'ParentShowHint'#8#8
-  +'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6#31'Select independent parameter...'#0
+  +#181'mol/l)'#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6
+  +#31'Select independent parameter...'#8'OnChange'#7#19'StrucParComboChange'#0
   +#0#0#10'TStatusBar'#10'StatusBar1'#4'Left'#2#0#6'Height'#2#18#3'Top'#3'~'#1#5
   +'Width'#3#240#2#6'Panels'#14#0#0#0#12'TSpeedButton'#16'FullScaleButton1'#4'L'
   +'eft'#2#16#6'Height'#2#22#4'Hint'#6'3Full scale plot (drag with mouse over p'
@@ -264,7 +264,7 @@ LazarusResources.Add('TSensitivityAnalysisForm','FORMDATA',[
   +'xedVertLine'#15'goFixedHorzLine'#10'goVertLine'#10'goHorzLine'#13'goRangeSe'
   +'lect'#11'goColSizing'#18'goDblClickAutoSize'#14'goSmoothScroll'#0#8'RowCoun'
   +'t'#2#13#8'TabOrder'#2#11#7'Visible'#8#9'ColWidths'#1#2')'#2'\'#2'\'#2'\'#2
-  +'\'#0#5'Cells'#1#2#2#2#0#2#0#6#1'n'#2#1#2#0#6#20'Independent parmater'#0#0#0
+  +'['#0#5'Cells'#1#2#2#2#0#2#0#6#1'n'#2#1#2#0#6#20'Independent parmater'#0#0#0
   +#25'TChartAxisTransformations'#25'ChartAxisTransformations1'#4'Left'#3'x'#1#3
   +'Top'#3#152#2#0#20'TLinearAxisTransform-ChartAxisTransformations1LinearAxisT'
   +'ransform1'#0#0#0#10'TPopupMenu'#10'PopupMenu1'#4'Left'#3'x'#1#3'Top'#3#24#2

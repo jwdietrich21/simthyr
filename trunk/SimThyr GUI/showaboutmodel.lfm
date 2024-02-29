@@ -156,7 +156,7 @@ object AboutModelForm: TAboutModelForm
   OnPaint = FormPaint
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.3'
   object Label1: TLabel
     Left = 56
     Height = 16
@@ -308,11 +308,11 @@ object AboutModelForm: TAboutModelForm
       ''
       ''
     )
-    OnChange = Memo1Change
     ReadOnly = True
     ScrollBars = ssAutoBoth
     TabOrder = 1
     WantReturns = False
+    OnChange = Memo1Change
   end
   object Image1: TImage
     Left = 502

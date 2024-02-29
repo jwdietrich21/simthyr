@@ -16,7 +16,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
   OnPaint = FormPaint
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '3.0.0.1'
+  LCLVersion = '3.0.0.3'
   Visible = True
   object Panel1: TPanel
     Left = 48
@@ -242,11 +242,11 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
         'TBG (nmol/l)'
         'TBPA (µmol/l)'
       )
-      OnChange = StrucParComboChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
       Text = 'Select independent parameter...'
+      OnChange = StrucParComboChange
     end
   end
   object StatusBar1: TStatusBar
@@ -455,7 +455,7 @@ object SensitivityAnalysisForm: TSensitivityAnalysisForm
       92
       92
       92
-      92
+      91
     )
     Cells = (
       2

@@ -9,34 +9,34 @@ LazarusResources.Add('TSimOptionsDlg','FORMDATA',[
   +'ite'#21'Constraints.MinHeight'#3#190#0#20'Constraints.MinWidth'#3#164#1#10
   +'OnActivate'#7#12'FormActivate'#8'OnCreate'#7#10'FormCreate'#7'OnPaint'#7#9
   +'FormPaint'#6'OnShow'#7#8'FormShow'#8'Position'#7#14'poScreenCenter'#13'Show'
-  +'InTaskBar'#7#7'stNever'#10'LCLVersion'#6#7'2.2.4.0'#7'Visible'#9#0#9'TCheck'
+  +'InTaskBar'#7#7'stNever'#10'LCLVersion'#6#7'3.0.0.3'#7'Visible'#9#0#9'TCheck'
   +'Box'#13'NoiseCheckBox'#4'Left'#2' '#6'Height'#2#18#4'Hint'#6'&Use noise at '
   +'the level of hypothalamus'#3'Top'#2'8'#5'Width'#3#134#0#7'Caption'#6#17'Sup'
-  +'erimpose noise'#7'Checked'#9#8'OnChange'#7#19'NoiseCheckBoxChange'#14'Paren'
-  +'tShowHint'#8#8'ShowHint'#9#5'State'#7#9'cbChecked'#8'TabOrder'#2#0#0#0#9'TC'
-  +'heckBox'#15'PreviewCheckBox'#4'Left'#2' '#6'Height'#2#18#4'Hint'#6'_Use the'
-  +' calculated equilibrium values as shown in the preview palette as initial h'
-  +'ormone levels'#3'Top'#2'P'#5'Width'#3'-'#1#7'Caption'#6'1Use calculated equ'
-  +'ilibrium values as start values'#7'Checked'#9#8'OnChange'#7#21'PreviewCheck'
-  +'BoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#5'State'#7#9'cbChecked'#8'Tab'
-  +'Order'#2#1#0#0#7'TButton'#8'OKButton'#4'Left'#3'G'#1#6'Height'#2#25#3'Top'#3
-  +#148#0#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#7'Caption'#6#2'O'
-  +'K'#7'Default'#9#7'OnClick'#7#13'OKButtonClick'#8'TabOrder'#2#2#0#0#7'TButto'
-  +'n'#12'CancelButton'#4'Left'#3#239#0#6'Height'#2#25#3'Top'#3#148#0#5'Width'#2
-  +'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#6'Cancel'#9#7'Caption'#6#6'Cancel'
-  +#7'OnClick'#7#17'CancelButtonClick'#8'TabOrder'#2#3#0#0#5'TEdit'#7'TRHEdit'#4
-  +'Left'#3#152#0#6'Height'#2#22#4'Hint'#6'FMean concentration of TRH in the hy'
-  +'pothalamo-hypophyseal portal system'#3'Top'#2#16#5'Width'#2'P'#14'ParentSho'
-  +'wHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6#7'TRHEdit'#0#0#6'TLabel'#6
+  +'erimpose noise'#7'Checked'#9#14'ParentShowHint'#8#8'ShowHint'#9#5'State'#7#9
+  +'cbChecked'#8'TabOrder'#2#0#8'OnChange'#7#19'NoiseCheckBoxChange'#0#0#9'TChe'
+  +'ckBox'#15'PreviewCheckBox'#4'Left'#2' '#6'Height'#2#18#4'Hint'#6'_Use the c'
+  +'alculated equilibrium values as shown in the preview palette as initial hor'
+  +'mone levels'#3'Top'#2'P'#5'Width'#3'-'#1#7'Caption'#6'1Use calculated equil'
+  +'ibrium values as start values'#7'Checked'#9#14'ParentShowHint'#8#8'ShowHint'
+  +#9#5'State'#7#9'cbChecked'#8'TabOrder'#2#1#8'OnChange'#7#21'PreviewCheckBoxC'
+  +'hange'#0#0#7'TButton'#8'OKButton'#4'Left'#3'G'#1#6'Height'#2#25#3'Top'#3#148
+  +#0#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#7'Caption'#6#2'OK'#7
+  +'Default'#9#8'TabOrder'#2#2#7'OnClick'#7#13'OKButtonClick'#0#0#7'TButton'#12
+  +'CancelButton'#4'Left'#3#239#0#6'Height'#2#25#3'Top'#3#148#0#5'Width'#2'K'#7
+  +'Anchors'#11#7'akRight'#8'akBottom'#0#6'Cancel'#9#7'Caption'#6#6'Cancel'#8'T'
+  +'abOrder'#2#3#7'OnClick'#7#17'CancelButtonClick'#0#0#5'TEdit'#7'TRHEdit'#4'L'
+  +'eft'#3#152#0#6'Height'#2#22#4'Hint'#6'FMean concentration of TRH in the hyp'
+  +'othalamo-hypophyseal portal system'#3'Top'#2#16#5'Width'#2'P'#14'ParentShow'
+  +'Hint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6#7'TRHEdit'#0#0#6'TLabel'#6
   +'Label1'#4'Left'#2' '#6'Height'#2#16#3'Top'#2#21#5'Width'#2'b'#7'Caption'#6
   +#15'Mean TRH level:'#11'ParentColor'#8#0#0#6'TLabel'#6'Label2'#4'Left'#3#240
   +#0#6'Height'#2#16#3'Top'#2#21#5'Width'#2#22#7'Caption'#6#4'ng/l'#11'ParentCo'
   +'lor'#8#0#0#9'TCheckBox'#17'CircadianCheckBox'#4'Left'#2' '#6'Height'#2#18#4
   +'Hint'#6'oSimulate physiological circadian variation of portal TRH concentra'
   +'tions (around the mean as defined from above)'#3'Top'#2'h'#5'Width'#3#16#1#7
-  +'Caption'#6'*Simulate circadian rhythm of TRH secretion'#7'Checked'#9#8'OnCh'
-  +'ange'#7#23'CircadianCheckBoxChange'#14'ParentShowHint'#8#8'ShowHint'#9#5'St'
-  +'ate'#7#9'cbChecked'#8'TabOrder'#2#5#0#0#6'TImage'#11'NeuronImage'#4'Left'#3
+  +'Caption'#6'*Simulate circadian rhythm of TRH secretion'#7'Checked'#9#14'Par'
+  +'entShowHint'#8#8'ShowHint'#9#5'State'#7#9'cbChecked'#8'TabOrder'#2#5#8'OnCh'
+  +'ange'#7#23'CircadianCheckBoxChange'#0#0#6'TImage'#11'NeuronImage'#4'Left'#3
   +'r'#1#6'Height'#2'E'#3'Top'#2#16#5'Width'#2' '#12'Picture.Data'#10':'#30#0#0
   +#23'TPortableNetworkGraphic'#30#30#0#0#137'PNG'#13#10#26#10#0#0#0#13'IHDR'#0
   +#0#0#30#0#0#0'C'#8#6#0#0#0#139' '#181#139#0#0#10'0iCCPICCProfile'#0#0'x'#156

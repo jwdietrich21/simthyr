@@ -151,7 +151,7 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#7'OnPaint'#7#9'FormPain'
   +'t'#6'OnShow'#7#8'FormShow'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6
-  +#7'2.2.4.0'#0#6'TLabel'#6'Label1'#4'Left'#2'8'#6'Height'#2#16#3'Top'#2'h'#5
+  +#7'3.0.0.3'#0#6'TLabel'#6'Label1'#4'Left'#2'8'#6'Height'#2#16#3'Top'#2'h'#5
   +'Width'#2'M'#7'Caption'#6#11'References:'#12'Font.Quality'#7#13'fqAntialiase'
   +'d'#10'Font.Style'#11#6'fsBold'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#11
   +'TStaticText'#11'StaticText2'#4'Left'#2'8'#6'Height'#2'B'#3'Top'#2#16#5'Widt'
@@ -235,8 +235,8 @@ LazarusResources.Add('TAboutModelForm','FORMDATA',[
   +'sch R, Dietrich JW. The role of '#6'Ffunctional thyroid capacity in pituita'
   +'ry thyroid feedback regulation. '#6'CEur J Clin Invest. 2018 Oct;48(10):e13'
   +'003. doi: 10.1111/eci.13003. '#6' Epub 2018 Aug 1. PMID: 30022470.'#6#0#6#0
-  +#0#8'OnChange'#7#11'Memo1Change'#8'ReadOnly'#9#10'ScrollBars'#7#10'ssAutoBot'
-  +'h'#8'TabOrder'#2#1#11'WantReturns'#8#0#0#6'TImage'#6'Image1'#4'Left'#3#246#1
+  +#0#8'ReadOnly'#9#10'ScrollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#1#11'WantRetu'
+  +'rns'#8#8'OnChange'#7#11'Memo1Change'#0#0#6'TImage'#6'Image1'#4'Left'#3#246#1
   +#6'Height'#2#16#4'Hint'#6#22'Edit model annotations'#3'Top'#2'g'#5'Width'#2
   +#16#7'Anchors'#11#5'akTop'#7'akRight'#0#7'OnClick'#7#11'Image1Click'#14'Pare'
   +'ntShowHint'#8#12'Picture.Data'#10#247#2#0#0#23'TPortableNetworkGraphic'#219

@@ -20,7 +20,7 @@ object AboutWindow: TAboutWindow
   OnShow = FormShow
   Position = poScreenCenter
   ShowInTaskBar = stNever
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.3'
   Visible = True
   object OKButton: TButton
     Left = 224
@@ -29,8 +29,8 @@ object AboutWindow: TAboutWindow
     Width = 75
     Anchors = [akBottom]
     Caption = 'OK'
-    OnClick = OKButtonClick
     TabOrder = 0
+    OnClick = OKButtonClick
   end
   object Tabs: TPageControl
     Left = 32
@@ -43,7 +43,7 @@ object AboutWindow: TAboutWindow
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Version'
-      ClientHeight = 298
+      ClientHeight = 292
       ClientWidth = 427
       object BigLogo: TImage
         Left = 168
@@ -7910,22 +7910,22 @@ object AboutWindow: TAboutWindow
     end
     object TabSheet2: TTabSheet
       Caption = 'Additional Information'
-      ClientHeight = 298
+      ClientHeight = 292
       ClientWidth = 427
       object Memo1: TMemo
         Left = 26
         Height = 248
         Top = 26
         Width = 361
-        OnKeyDown = FormKeyDown
         ReadOnly = True
         ScrollBars = ssAutoVertical
         TabOrder = 0
+        OnKeyDown = FormKeyDown
       end
     end
     object TabSheet3: TTabSheet
       Caption = 'Acknowledgement'
-      ClientHeight = 298
+      ClientHeight = 292
       ClientWidth = 427
       object Label3: TLabel
         Left = 25
@@ -8049,7 +8049,7 @@ object AboutWindow: TAboutWindow
     end
     object TabSheet4: TTabSheet
       Caption = 'Links'
-      ClientHeight = 298
+      ClientHeight = 292
       ClientWidth = 427
       object Image2: TImage
         Cursor = crHandPoint

@@ -8,39 +8,39 @@ LazarusResources.Add('TStructureParameters','FORMDATA',[
   +'t'#3#151#2#11'ClientWidth'#3#152#2#5'Color'#7#7'clWhite'#10'OnActivate'#7#12
   +'FormActivate'#8'OnCreate'#7#10'FormCreate'#7'OnPaint'#7#9'FormPaint'#6'OnSh'
   +'ow'#7#8'FormShow'#8'Position'#7#14'poScreenCenter'#10'LCLVersion'#6#7'3.0.0'
-  +'.1'#7'Visible'#9#0#7'TButton'#8'OKButton'#4'Left'#3'+'#2#6'Height'#2#25#3'T'
+  +'.3'#7'Visible'#9#0#7'TButton'#8'OKButton'#4'Left'#3'+'#2#6'Height'#2#25#3'T'
   +'op'#3'c'#2#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#19'BorderSp'
   +'acing.Right'#2#13#20'BorderSpacing.Bottom'#2#13#7'Caption'#6#2'OK'#7'Defaul'
-  +'t'#9#11'ModalResult'#2#1#7'OnClick'#7#13'OKButtonClick'#8'TabOrder'#2#6#0#0
+  +'t'#9#11'ModalResult'#2#1#8'TabOrder'#2#6#7'OnClick'#7#13'OKButtonClick'#0#0
   +#7'TButton'#12'CancelButton'#4'Left'#3'+'#2#6'Height'#2#25#3'Top'#3'@'#2#5'W'
   +'idth'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#6'Cancel'#9#7'Caption'#6#6
-  +'Cancel'#11'ModalResult'#2#2#7'OnClick'#7#17'CancelButtonClick'#8'TabOrder'#2
-  +#8#0#0#5'TEdit'#9'Tau0REdit'#4'Left'#2'X'#6'Height'#2#22#4'Hint'#6'JTau0R: D'
-  +'ead time delay for TRH in the hypothalamic-pituitary portal system'#3'Top'#3
-  +#15#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#14'ParentShowHint'
-  +#8#8'ShowHint'#9#8'TabOrder'#2#1#4'Text'#6#9'Tau0REdit'#0#0#5'TEdit'#9'Tau0S'
-  +'Edit'#4'Left'#2'X'#6'Height'#2#22#4'Hint'#6')Tau0S: Dead time delay for per'
-  +'ipheral TSH'#3'Top'#3''''#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBotto'
-  +'m'#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6#9'Tau0SEd'
-  +'it'#0#0#5'TEdit'#10'Tau0S2Edit'#4'Left'#2'X'#6'Height'#2#22#4'Hint'#6'4Tau0'
-  +'S2: Dead time delay for TSH within the pituitary'#3'Top'#3'?'#2#5'Width'#2
-  +'P'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#14'ParentShowHint'#8#8'ShowHint'#9
-  +#8'TabOrder'#2#3#4'Text'#6#10'Tau0S2Edit'#0#0#5'TEdit'#9'Tau0TEdit'#4'Left'#3
-  +'8'#1#6'Height'#2#22#4'Hint'#6'%Tau0T: Dead time delay for T4 effects'#3'Top'
-  +#3''''#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#14'ParentShowHi'
-  +'nt'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6#9'Tau0TEdit'#0#0#5'TEdit'#10
-  +'Tau03zEdit'#4'Left'#3'8'#1#6'Height'#2#22#4'Hint'#6'&Tau03z: Dead time dela'
-  +'y for central T3'#3'Top'#3'?'#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akB'
-  +'ottom'#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#4'Text'#6#10'Ta'
-  +'u03zEdit'#0#0#6'TLabel'#7'Label32'#4'Left'#2#24#6'Height'#2#16#3'Top'#3#19#2
-  +#5'Width'#2'-'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6#7'Tau0 R:'
-  +#11'ParentColor'#8#0#0#6'TLabel'#7'Label33'#4'Left'#2#24#6'Height'#2#16#3'To'
-  +'p'#3'-'#2#5'Width'#2'-'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6#7
-  +'Tau0 S:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label34'#4'Left'#2#24#6'Height'#2
-  +#16#3'Top'#3'E'#2#5'Width'#2'5'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Capt'
-  +'ion'#6#8'Tau0 S2:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label35'#4'Left'#3#0#1
-  +#6'Height'#2#16#3'Top'#3'-'#2#5'Width'#2'-'#7'Anchors'#11#6'akLeft'#8'akBott'
-  +'om'#0#7'Caption'#6#7'Tau0 T:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label36'#4
+  +'Cancel'#11'ModalResult'#2#2#8'TabOrder'#2#8#7'OnClick'#7#17'CancelButtonCli'
+  +'ck'#0#0#5'TEdit'#9'Tau0REdit'#4'Left'#2'X'#6'Height'#2#22#4'Hint'#6'JTau0R:'
+  +' Dead time delay for TRH in the hypothalamic-pituitary portal system'#3'Top'
+  +#3#15#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#14'ParentShowHin'
+  +'t'#8#8'ShowHint'#9#8'TabOrder'#2#1#4'Text'#6#9'Tau0REdit'#0#0#5'TEdit'#9'Ta'
+  +'u0SEdit'#4'Left'#2'X'#6'Height'#2#22#4'Hint'#6')Tau0S: Dead time delay for '
+  +'peripheral TSH'#3'Top'#3''''#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBo'
+  +'ttom'#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#2#4'Text'#6#9'Tau0'
+  +'SEdit'#0#0#5'TEdit'#10'Tau0S2Edit'#4'Left'#2'X'#6'Height'#2#22#4'Hint'#6'4T'
+  +'au0S2: Dead time delay for TSH within the pituitary'#3'Top'#3'?'#2#5'Width'
+  +#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#14'ParentShowHint'#8#8'ShowHint'
+  +#9#8'TabOrder'#2#3#4'Text'#6#10'Tau0S2Edit'#0#0#5'TEdit'#9'Tau0TEdit'#4'Left'
+  +#3'8'#1#6'Height'#2#22#4'Hint'#6'%Tau0T: Dead time delay for T4 effects'#3'T'
+  +'op'#3''''#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#14'ParentSh'
+  +'owHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#4'Text'#6#9'Tau0TEdit'#0#0#5'TEdit'
+  +#10'Tau03zEdit'#4'Left'#3'8'#1#6'Height'#2#22#4'Hint'#6'&Tau03z: Dead time d'
+  +'elay for central T3'#3'Top'#3'?'#2#5'Width'#2'P'#7'Anchors'#11#6'akLeft'#8
+  +'akBottom'#0#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#5#4'Text'#6#10
+  +'Tau03zEdit'#0#0#6'TLabel'#7'Label32'#4'Left'#2#24#6'Height'#2#16#3'Top'#3#19
+  +#2#5'Width'#2'-'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6#7'Tau0 R'
+  +':'#11'ParentColor'#8#0#0#6'TLabel'#7'Label33'#4'Left'#2#24#6'Height'#2#16#3
+  +'Top'#3'-'#2#5'Width'#2'-'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Caption'#6
+  +#7'Tau0 S:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label34'#4'Left'#2#24#6'Height'
+  +#2#16#3'Top'#3'E'#2#5'Width'#2'5'#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7'Ca'
+  +'ption'#6#8'Tau0 S2:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label35'#4'Left'#3#0
+  +#1#6'Height'#2#16#3'Top'#3'-'#2#5'Width'#2'-'#7'Anchors'#11#6'akLeft'#8'akBo'
+  +'ttom'#0#7'Caption'#6#7'Tau0 T:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label36'#4
   +'Left'#3#0#1#6'Height'#2#16#3'Top'#3'E'#2#5'Width'#2'4'#7'Anchors'#11#6'akLe'
   +'ft'#8'akBottom'#0#7'Caption'#6#8'Tau0 3z:'#11'ParentColor'#8#0#0#6'TLabel'#7
   +'Label37'#4'Left'#2#24#6'Height'#2','#3'Top'#3'`'#2#5'Width'#3#200#1#7'Ancho'
@@ -52,9 +52,9 @@ LazarusResources.Add('TStructureParameters','FORMDATA',[
   +#11'ParentColor'#8#10'ParentFont'#8#7'OnClick'#7#12'Label31Click'#0#0#7'TBut'
   +'ton'#14'StandardButton'#4'Left'#3'+'#2#6'Height'#2#25#4'Hint'#6',Set all pa'
   +'rameters to normal standard values'#3'Top'#3#30#2#5'Width'#2'K'#7'Anchors'
-  +#11#7'akRight'#8'akBottom'#0#7'Caption'#6#8'Standard'#7'OnClick'#7#19'Standa'
-  +'rdButtonClick'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#7#0#0#6'TIm'
-  +'age'#6'Image6'#4'Left'#3#208#0#6'Height'#2#24#3'Top'#3#13#2#5'Width'#2'"'#7
+  +#11#7'akRight'#8'akBottom'#0#7'Caption'#6#8'Standard'#14'ParentShowHint'#8#8
+  +'ShowHint'#9#8'TabOrder'#2#7#7'OnClick'#7#19'StandardButtonClick'#0#0#6'TIma'
+  +'ge'#6'Image6'#4'Left'#3#208#0#6'Height'#2#24#3'Top'#3#13#2#5'Width'#2'"'#7
   +'Anchors'#11#6'akLeft'#8'akBottom'#0#12'Picture.Data'#10#200#8#0#0#5'TIcon'
   +#190#8#0#0#0#0#1#0#1#0'  '#0#0#0#0#0#0#168#8#0#0#22#0#0#0'('#0#0#0' '#0#0#0
   +'@'#0#0#0#1#0#8#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#255#255
@@ -134,9 +134,9 @@ LazarusResources.Add('TStructureParameters','FORMDATA',[
   +#0#0#7'TButton'#13'OptionsButton'#4'Left'#3'+'#2#6'Height'#2#25#4'Hint'#6'KS'
   +'et additional simulation options like noise and standard TRH level here...'
   +#3'Top'#3#225#1#5'Width'#2'K'#7'Anchors'#11#7'akRight'#8'akBottom'#0#7'Capti'
-  +'on'#6#7'Options'#7'OnClick'#7#18'OptionsButtonClick'#14'ParentShowHint'#8#8
-  +'ShowHint'#9#8'TabOrder'#2#9#0#0#6'TLabel'#7'Label51'#4'Left'#3#176#0#6'Heig'
-  +'ht'#2#16#3'Top'#3#19#2#5'Width'#2#7#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7
+  +'on'#6#7'Options'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#9#7'OnCli'
+  +'ck'#7#18'OptionsButtonClick'#0#0#6'TLabel'#7'Label51'#4'Left'#3#176#0#6'Hei'
+  +'ght'#2#16#3'Top'#3#19#2#5'Width'#2#7#7'Anchors'#11#6'akLeft'#8'akBottom'#0#7
   +'Caption'#6#1's'#11'ParentColor'#8#0#0#6'TLabel'#7'Label52'#4'Left'#3#176#0#6
   +'Height'#2#16#3'Top'#3'-'#2#5'Width'#2#7#7'Anchors'#11#6'akLeft'#8'akBottom'
   +#0#7'Caption'#6#1's'#11'ParentColor'#8#0#0#6'TLabel'#7'Label53'#4'Left'#3#176

@@ -24,7 +24,7 @@ object SimulationSettings: TSimulationSettings
   Position = poScreenCenter
   ShowHint = True
   ShowInTaskBar = stNever
-  LCLVersion = '2.2.6.0'
+  LCLVersion = '3.0.0.3'
   object TitleLabel: TLabel
     Left = 113
     Height = 16
@@ -56,11 +56,11 @@ object SimulationSettings: TSimulationSettings
       Top = 6
       Width = 80
       Alignment = taRightJustify
-      OnChange = RunTimeEditChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
       Text = '1'
+      OnChange = RunTimeEditChange
     end
     object RunTimeUnit: TComboBox
       Left = 209
@@ -124,10 +124,10 @@ object SimulationSettings: TSimulationSettings
       Top = 6
       Width = 100
       Caption = '200 µg TRH'
-      OnChange = TestTRHRadioChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
+      OnChange = TestTRHRadioChange
     end
     object TestTBGRadio: TRadioButton
       Left = 329
@@ -136,10 +136,10 @@ object SimulationSettings: TSimulationSettings
       Top = 6
       Width = 110
       Caption = '50% TBG rise'
-      OnChange = TestTBGRadioChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
+      OnChange = TestTBGRadioChange
     end
     object TestTimeEdit: TEdit
       Left = 95
@@ -187,10 +187,10 @@ object SimulationSettings: TSimulationSettings
     Width = 152
     Anchors = [akLeft, akBottom]
     Caption = 'Additional Options...'
-    OnClick = OptButtonClick
     ParentShowHint = False
     ShowHint = True
     TabOrder = 2
+    OnClick = OptButtonClick
   end
   object StartButton: TButton
     Left = 472
@@ -202,10 +202,10 @@ object SimulationSettings: TSimulationSettings
     Caption = 'Start'
     Default = True
     ModalResult = 1
-    OnClick = StartButtonClick
     ParentShowHint = False
     ShowHint = True
     TabOrder = 3
+    OnClick = StartButtonClick
   end
   object CancelButton: TButton
     Left = 384
@@ -216,8 +216,8 @@ object SimulationSettings: TSimulationSettings
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2
-    OnClick = CancelButtonClick
     TabOrder = 4
+    OnClick = CancelButtonClick
   end
   object ThyroidIcon: TImage
     Left = 32
@@ -299,10 +299,10 @@ object SimulationSettings: TSimulationSettings
     Width = 168
     Anchors = [akLeft, akBottom]
     Caption = 'Structure Parameters...'
-    OnClick = ParsButtonClick
     ParentShowHint = False
     ShowHint = True
     TabOrder = 5
+    OnClick = ParsButtonClick
   end
   object SimThyrLabel: TLabel
     Left = 461

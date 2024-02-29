@@ -310,7 +310,7 @@ object Prediction: TPrediction
   }
   OnPaint = FormPaint
   OnShow = FormShow
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '3.0.0.3'
   Visible = True
   object PredictionMemo: TMemo
     Left = 16

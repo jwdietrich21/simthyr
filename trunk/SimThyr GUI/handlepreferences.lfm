@@ -15,7 +15,7 @@ object PreferencesDialog: TPreferencesDialog
   OnDestroy = FormDestroy
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '3.0.0.1'
+  LCLVersion = '3.0.0.3'
   Visible = True
   object GroupBox1: TGroupBox
     Left = 24
@@ -37,8 +37,8 @@ object PreferencesDialog: TPreferencesDialog
       Items.Strings = (
         ''
       )
-      OnChange = TSHMassPrefixComboChange
       TabOrder = 0
+      OnChange = TSHMassPrefixComboChange
     end
     object Label1: TLabel
       Left = 12
@@ -65,8 +65,8 @@ object PreferencesDialog: TPreferencesDialog
       Items.Strings = (
         ''
       )
-      OnChange = TSHVolumePrefixComboChange
       TabOrder = 1
+      OnChange = TSHVolumePrefixComboChange
     end
     object TSHVolumeUnitLabel: TLabel
       Left = 271
@@ -106,8 +106,8 @@ object PreferencesDialog: TPreferencesDialog
       Top = 42
       Width = 48
       ItemHeight = 19
-      OnChange = TT4MassPrefixComboChange
       TabOrder = 2
+      OnChange = TT4MassPrefixComboChange
     end
     object TT4MassUnitCombo: TComboBox
       Left = 127
@@ -120,9 +120,9 @@ object PreferencesDialog: TPreferencesDialog
         'g'
         'mol'
       )
-      OnChange = TT4MassUnitComboChange
       TabOrder = 3
       Text = 'g'
+      OnChange = TT4MassUnitComboChange
     end
     object Label3: TLabel
       Left = 12
@@ -178,8 +178,8 @@ object PreferencesDialog: TPreferencesDialog
       Top = 42
       Width = 52
       ItemHeight = 19
-      OnChange = TT4VolumePrefixComboChange
       TabOrder = 4
+      OnChange = TT4VolumePrefixComboChange
     end
     object TT4VolumeUnitLabel: TLabel
       Left = 271
@@ -206,8 +206,8 @@ object PreferencesDialog: TPreferencesDialog
       Items.Strings = (
         ''
       )
-      OnChange = FT4MassPrefixComboChange
       TabOrder = 5
+      OnChange = FT4MassPrefixComboChange
     end
     object FT4MassUnitCombo: TComboBox
       Left = 127
@@ -220,9 +220,9 @@ object PreferencesDialog: TPreferencesDialog
         'g'
         'mol'
       )
-      OnChange = FT4MassUnitComboChange
       TabOrder = 6
       Text = 'g'
+      OnChange = FT4MassUnitComboChange
     end
     object Label7: TLabel
       Left = 190
@@ -241,8 +241,8 @@ object PreferencesDialog: TPreferencesDialog
       Items.Strings = (
         ''
       )
-      OnChange = FT4VolumePrefixComboChange
       TabOrder = 7
+      OnChange = FT4VolumePrefixComboChange
     end
     object FT4VolumeUnitLabel: TLabel
       Left = 271
@@ -261,8 +261,8 @@ object PreferencesDialog: TPreferencesDialog
       Items.Strings = (
         ''
       )
-      OnChange = TT3MassPrefixComboChange
       TabOrder = 8
+      OnChange = TT3MassPrefixComboChange
     end
     object TT3MassUnitCombo: TComboBox
       Left = 127
@@ -275,9 +275,9 @@ object PreferencesDialog: TPreferencesDialog
         'g'
         'mol'
       )
-      OnChange = TT3MassUnitComboChange
       TabOrder = 9
       Text = 'g'
+      OnChange = TT3MassUnitComboChange
     end
     object Label8: TLabel
       Left = 190
@@ -296,8 +296,8 @@ object PreferencesDialog: TPreferencesDialog
       Items.Strings = (
         ''
       )
-      OnChange = TT3VolumePrefixComboChange
       TabOrder = 10
+      OnChange = TT3VolumePrefixComboChange
     end
     object TT3VolumeUnitLabel: TLabel
       Left = 271
@@ -316,8 +316,8 @@ object PreferencesDialog: TPreferencesDialog
       Items.Strings = (
         ''
       )
-      OnChange = FT3MassPrefixComboChange
       TabOrder = 11
+      OnChange = FT3MassPrefixComboChange
     end
     object FT3MassUnitCombo: TComboBox
       Left = 127
@@ -330,9 +330,9 @@ object PreferencesDialog: TPreferencesDialog
         'g'
         'mol'
       )
-      OnChange = FT3MassUnitComboChange
       TabOrder = 12
       Text = 'g'
+      OnChange = FT3MassUnitComboChange
     end
     object Label10: TLabel
       Left = 190
@@ -351,8 +351,8 @@ object PreferencesDialog: TPreferencesDialog
       Items.Strings = (
         ''
       )
-      OnChange = FT3VolumePrefixComboChange
       TabOrder = 13
+      OnChange = FT3VolumePrefixComboChange
     end
     object FT3VolumeUnitLabel: TLabel
       Left = 271
@@ -379,11 +379,11 @@ object PreferencesDialog: TPreferencesDialog
       Hint = '0: Digit place holder (replaces/fills with 0); 1: Digit place holder (digit in the value replaces #); .: Location of decimal separator; ,: Location of thousands separator e+ and e-: Scientific notation; ; Separates positive, negative and zero numbers, respectively.'
       Top = 8
       Width = 168
-      OnChange = NumberFormatEditChange
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
       Text = '###,###.00##'
+      OnChange = NumberFormatEditChange
     end
     object Label11: TLabel
       Left = 12
@@ -432,8 +432,8 @@ object PreferencesDialog: TPreferencesDialog
     BorderSpacing.Bottom = 13
     Cancel = True
     Caption = 'Cancel'
-    OnClick = CancelButtonClick
     TabOrder = 1
+    OnClick = CancelButtonClick
   end
   object OKButton: TButton
     Left = 444
@@ -445,7 +445,7 @@ object PreferencesDialog: TPreferencesDialog
     BorderSpacing.Bottom = 13
     Caption = 'OK'
     Default = True
-    OnClick = OKButtonClick
     TabOrder = 0
+    OnClick = OKButtonClick
   end
 end
